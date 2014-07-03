@@ -4,9 +4,9 @@
 
 # Site
 title: FHIR 中文版
-subtitle: the Chinese translation of FHIR
-description:
-author: wanghaisheng
+subtitle:  the Chinese translation of FHIR
+description: 
+author:  wanghaisheng
 email:
 language:
 
@@ -17,7 +17,7 @@ root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
 archive_dir: archives
-category_dir: categories
+category_dir: /
 code_dir: downloads/code
 
 # Directory

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Diet</h2>
+      <p>This value set defines a set of codes that can be used to indicate the encounter priority as determined by triage.</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/diet</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>imm
+            <a name="imm"> </a>
+          </td>
+          <td>Immediate</td>
+          <td>Within seconds</td>
+        </tr>
+        <tr>
+          <td>emg
+            <a name="emg"> </a>
+          </td>
+          <td>Emergency</td>
+          <td>Within 10 minutes</td>
+        </tr>
+        <tr>
+          <td>urg
+            <a name="urg"> </a>
+          </td>
+          <td>Urgent</td>
+          <td>Within 30 minutes</td>
+        </tr>
+        <tr>
+          <td>s-urg
+            <a name="s-urg"> </a>
+          </td>
+          <td>Semi-urgent</td>
+          <td>Within 60 minutes</td>
+        </tr>
+        <tr>
+          <td>no-urg
+            <a name="no-urg"> </a>
+          </td>
+          <td>Non-urgent</td>
+          <td>Within 120 minutes</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/encounter-priority"/>
+  <name value="Diet"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="This value set defines a set of codes that can be used to indicate the encounter priority as determined by triage."/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/diet"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="imm"/>
+      <display value="Immediate"/>
+      <definition value="Within seconds"/>
+    </concept>
+    <concept>
+      <code value="emg"/>
+      <display value="Emergency"/>
+      <definition value="Within 10 minutes"/>
+    </concept>
+    <concept>
+      <code value="urg"/>
+      <display value="Urgent"/>
+      <definition value="Within 30 minutes"/>
+    </concept>
+    <concept>
+      <code value="s-urg"/>
+      <display value="Semi-urgent"/>
+      <definition value="Within 60 minutes"/>
+    </concept>
+    <concept>
+      <code value="no-urg"/>
+      <display value="Non-urgent"/>
+      <definition value="Within 120 minutes"/>
+    </concept>
+  </define>
+</ValueSet>

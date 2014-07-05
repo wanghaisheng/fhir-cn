@@ -1,0 +1,41 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div>to do</div>"
+  },
+  "url": "http://hl7.org/fhir/Profile/provenance-extensions-spreadsheet",
+  "name": "Provenance HL7 Extensions",
+  "publisher": "HL7",
+  "description": "Defines common extensions used with or related to the Provenance resource",
+  "status": "draft",
+  "date": "2014-07-02T16:21:45.837+08:00",
+  "extensionDefn": [
+    {
+      "code": "provenance",
+      "display": "Most recent change",
+      "contextType": "resource",
+      "context": [
+        "*"
+      ],
+      "element": [
+        {
+          "path": "provenance",
+          "definition": {
+            "short": "Most recent change",
+            "formal": "Provides the provenance record associated with the most recent update of the resource.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Provenance)"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

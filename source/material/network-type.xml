@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SecurityEventParticipantNetworkType</h2>
+      <p>The type of network access point that originated the audit event</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/network-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>1
+            <a name="1"> </a>
+          </td>
+          <td/>
+          <td>Machine Name, including DNS name.</td>
+        </tr>
+        <tr>
+          <td>2
+            <a name="2"> </a>
+          </td>
+          <td/>
+          <td>IP Address.</td>
+        </tr>
+        <tr>
+          <td>3
+            <a name="3"> </a>
+          </td>
+          <td/>
+          <td>Telephone Number.</td>
+        </tr>
+        <tr>
+          <td>4
+            <a name="4"> </a>
+          </td>
+          <td/>
+          <td>Email address.</td>
+        </tr>
+        <tr>
+          <td>5
+            <a name="5"> </a>
+          </td>
+          <td/>
+          <td>URI (User directory, HTTP-PUT, ftp, etc.).</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/network-type"/>
+  <name value="SecurityEventParticipantNetworkType"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The type of network access point that originated the audit event"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.904+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/network-type"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="1"/>
+      <definition value="Machine Name, including DNS name."/>
+    </concept>
+    <concept>
+      <code value="2"/>
+      <definition value="IP Address."/>
+    </concept>
+    <concept>
+      <code value="3"/>
+      <definition value="Telephone Number."/>
+    </concept>
+    <concept>
+      <code value="4"/>
+      <definition value="Email address."/>
+    </concept>
+    <concept>
+      <code value="5"/>
+      <definition value="URI (User directory, HTTP-PUT, ftp, etc.)."/>
+    </concept>
+  </define>
+</ValueSet>

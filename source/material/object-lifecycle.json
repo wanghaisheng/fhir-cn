@@ -1,0 +1,89 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SecurityEventObjectLifecycle</h2><p>Identifier for the data life-cycle stage for the participant object</p><p>This value set defines its own terms in the system http://hl7.org/fhir/object-lifecycle</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>1<a name=\"1\"> </a></td><td/><td>Origination / Creation.</td></tr><tr><td>2<a name=\"2\"> </a></td><td/><td>Import / Copy from original.</td></tr><tr><td>3<a name=\"3\"> </a></td><td/><td>Amendment.</td></tr><tr><td>4<a name=\"4\"> </a></td><td/><td>Verification.</td></tr><tr><td>5<a name=\"5\"> </a></td><td/><td>Translation.</td></tr><tr><td>6<a name=\"6\"> </a></td><td/><td>Access / Use.</td></tr><tr><td>7<a name=\"7\"> </a></td><td/><td>De-identification.</td></tr><tr><td>8<a name=\"8\"> </a></td><td/><td>Aggregation, summarization, derivation.</td></tr><tr><td>9<a name=\"9\"> </a></td><td/><td>Report.</td></tr><tr><td>10<a name=\"10\"> </a></td><td/><td>Export / Copy to target.</td></tr><tr><td>11<a name=\"11\"> </a></td><td/><td>Disclosure.</td></tr><tr><td>12<a name=\"12\"> </a></td><td/><td>Receipt of disclosure.</td></tr><tr><td>13<a name=\"13\"> </a></td><td/><td>Archiving.</td></tr><tr><td>14<a name=\"14\"> </a></td><td/><td>Logical deletion.</td></tr><tr><td>15<a name=\"15\"> </a></td><td/><td>Permanent erasure / Physical destruction.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/object-lifecycle",
+  "name": "SecurityEventObjectLifecycle",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Identifier for the data life-cycle stage for the participant object",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.904+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/object-lifecycle",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "1",
+        "definition": "Origination / Creation."
+      },
+      {
+        "code": "2",
+        "definition": "Import / Copy from original."
+      },
+      {
+        "code": "3",
+        "definition": "Amendment."
+      },
+      {
+        "code": "4",
+        "definition": "Verification."
+      },
+      {
+        "code": "5",
+        "definition": "Translation."
+      },
+      {
+        "code": "6",
+        "definition": "Access / Use."
+      },
+      {
+        "code": "7",
+        "definition": "De-identification."
+      },
+      {
+        "code": "8",
+        "definition": "Aggregation, summarization, derivation."
+      },
+      {
+        "code": "9",
+        "definition": "Report."
+      },
+      {
+        "code": "10",
+        "definition": "Export / Copy to target."
+      },
+      {
+        "code": "11",
+        "definition": "Disclosure."
+      },
+      {
+        "code": "12",
+        "definition": "Receipt of disclosure."
+      },
+      {
+        "code": "13",
+        "definition": "Archiving."
+      },
+      {
+        "code": "14",
+        "definition": "Logical deletion."
+      },
+      {
+        "code": "15",
+        "definition": "Permanent erasure / Physical destruction."
+      }
+    ]
+  }
+}

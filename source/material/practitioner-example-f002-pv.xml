@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: 730291637 (official), 174BIP3JH438 (usual)
+      </p>
+      <p>
+        <b>name</b>: Pieter Voigt (official)
+      </p>
+      <p>
+        <b>telecom</b>: ph: 0205569336(work), p.voigt@bmc.nl(work), fax: 0205669382(work)
+      </p>
+      <p>
+        <b>address</b>: Galapagosweg 91 Den Burg 9105 PZ NLD (work)
+      </p>
+      <p>
+        <b>gender</b>: Male 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.4.642.1.24 code &#39;M&#39; = &#39;M&#39;, given as &#39;Male&#39;})</span>
+      </p>
+      <p>
+        <b>birthDate</b>: 29-Apr 1979
+      </p>
+      <p>
+        <b>organization</b>: 
+        <a href="organization-example-f001-burgers.html">BMC. Generated Summary: 91654 (official), 17-0112278 (usual); name: Burgers University Medical Center; 
+          <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.1060 V6}, {http://hl7.org/fhir/organization-type prov}">University Medical Hospital</span>
+        </a>
+      </p>
+      <p>
+        <b>role</b>: Care role 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.2.4.15.111 code &#39;01.000&#39; = &#39;01.000&#39;, given as &#39;Arts&#39;})</span>
+      </p>
+      <p>
+        <b>specialty</b>: specialisation 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.2.4.15.111 code &#39;01.011&#39; = &#39;01.011&#39;, given as &#39;Cardiothoracal surgery&#39;})</span>
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="urn:oid:2.16.528.1.1007.3.1"/>
+    <value value="730291637"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+    <value value="174BIP3JH438"/>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <family value="Voigt"/>
+    <given value="Pieter"/>
+    <suffix value="MD"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="0205569336"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="p.voigt@bmc.nl"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="0205669382"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="Galapagosweg 91"/>
+    <city value="Den Burg"/>
+    <zip value="9105 PZ"/>
+    <country value="NLD"/>
+  </address>
+  <gender>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.4.642.1.24"/>
+      <code value="M"/>
+      <display value="Male"/>
+    </coding>
+  </gender>
+  <birthDate value="1979-04-29"/>
+  <organization>
+    <reference value="Organization/f001"/>
+    <display value="BMC"/>
+  </organization>
+  <role>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+      <code value="01.000"/>
+      <display value="Arts"/>
+    </coding>
+    <text value="Care role"/>
+  </role>
+  <specialty>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+      <code value="01.011"/>
+      <display value="Cardiothoracal surgery"/>
+    </coding>
+    <text value="specialisation"/>
+  </specialty>
+</Practitioner>

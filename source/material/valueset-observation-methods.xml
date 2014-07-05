@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      
+      <p>This value sets refers to 3 different sources of observation method codes, each with issues:</p>
+      
+      <ul>
+        
+        <li>v3 Code System &quot;ObservationMethod&quot;: this is very incomplete and not currently maintained</li>      
+        
+        <li>SNOMED CT Techniques (descendents of 272394005): this is very incomplete, more than just observation methods, and has SNOMED CT licensing issues</li>      
+        
+        <li>LOINC Method List: this is less incomplete, but not designed to be used as a formal code system</li>      
+      
+      </ul>
+    
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/observation-methods"/>
+  <name value="Observation Methods"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Method Codes defined as part of v3"/>
+  <status value="draft"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/v3/ObservationMethod"/>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="272394005"/>
+      </filter>
+    </include>
+    <include>
+      <system value="http://loinc.org"/>
+      <filter>
+        <property value="Type"/>
+        <op value="="/>
+        <value value="Method"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

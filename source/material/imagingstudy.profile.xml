@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><table style="border: 0px; font-size: 11px; font-family: verdana; vertical-align: top;" cellpadding="0" border="0" cellspacing="0"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Name</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Card.</th><th style="width: 100px" class="heirarchy">Type</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Description &amp; Constraints</th></tr><tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJBSURBVDjLhdKxa5NBGMfx713yvkmbJnaoFiSF4mJTh06Kg4OgiyCCRXCof4YIdXdxFhQVHPo3OFSoUx0FySQttaVKYq2NbdO8ed/L3fM4JG3tYPvAcfBw9+HHPWdUlf/V0tLSqKo+EpEHInJFRIohhDUR+RBCeDM7O7ua55QSkRfVanVufHyckZERrLV0Op2Zra2tmXq9fg+YsmcAdyYnJykUCke9OI6ZmJgghHAZ4KwE3ntPs9mkVCohIjQaDWq1GiEEAM5KoHEcY62lVCrRarUoFotUKpUjIL/y/uqXYmV62ph/LSVrr30P4bEFcM4B0Ov1jk547/uAUTs1ceNdZIwB7V/GGHz6+9LXxY96eDiEgHMOY8xJAK8p4grZz5cElwNbwZgyxYu3EFM01lriOCZJEqIoIooiALIsGwA9Y1UcwcWoKNLdpLu9zvbnBWqNBhuvn5EDUmB0EH/1E2TZw5U+YLQovkun+Ytsaw1xCbnCOap334LC7s4Oe/ttvA+ICLmhMXRxDufczUECS37oAuevPwUEVFFp4/eXkXSdYc2IopSepnjtUh5/wg9gfn6+OQBUNaRIUkfDHhraSLoBKqikIF3yHJDLHaAkFOLciVHnyVAVj/S2Ub/XRyQD9aAZKgkaOohvo6ENgykcA07VEFDfQv1uf4W9Y8y30bCPhg4qKZJtMnjTPqBO/vhkZ7h3EJeRslWNQMqgY2jIAIfa/m5sIKSpqpPsGEiz599e3b+GchtD+bSvjQJm2SG6cNj6C+QmaxAek5tyAAAAAElFTkSuQmCC"/> <span title="Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images.">ImagingStudy</span><a name="ImagingStudy"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="resources.html">Resource</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A set of images produced in single study (one or more series of references images)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Date and Time the study took place.">dateTime</span><a name="ImagingStudy.dateTime"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#dateTime">dateTime</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">When the study was performed</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="Who the images are of.">subject</span><a name="ImagingStudy.subject"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="patient.html">Patient</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Who the images are of</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Formal identifier for the study.">uid</span><a name="ImagingStudy.uid"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#oid">oid</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Formal identifier for the study (0020,000D)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Accession Number.">accessionNo</span><a name="ImagingStudy.accessionNo"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Accession Number (0008,0050)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Other identifiers for the study.">identifier</span><a name="ImagingStudy.identifier"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Other identifiers for the study (0020,0010)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="A list of the diagnostic orders that resulted in this imaging study being performed.">order</span><a name="ImagingStudy.order"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="diagnosticorder.html">DiagnosticOrder</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Order(s) that caused this study to be performed</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).">modality</span><a name="ImagingStudy.modality"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">All series.modality if actual acquisition modalities<br/><a title="Type of acquired image data in the instance" href="imaging-modality.html">ImagingModality</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The requesting/referring physician.">referrer</span><a name="ImagingStudy.referrer"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="practitioner.html">Practitioner</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Referring physician (0008,0090)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Availability of study (online, offline or nearline).">availability</span><a name="ImagingStudy.availability"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)<br/><a title="Availability of the resource" href="instance-availability.html">InstanceAvailability</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="WADO-RS URI where Study is available.">url</span><a name="ImagingStudy.url"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Retrieve URI (0008,1190)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Number of Series in Study.">numberOfSeries</span><a name="ImagingStudy.numberOfSeries"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#integer">integer</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Number of Study Related Series (0020,1206)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Number of SOP Instances in Study.">numberOfInstances</span><a name="ImagingStudy.numberOfInstances"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#integer">integer</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Number of Study Related Instances (0020,1208)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Diagnoses etc provided with request.">clinicalInformation</span><a name="ImagingStudy.clinicalInformation"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Diagnoses etc with request (0040,1002)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Type of procedure performed.">procedure</span><a name="ImagingStudy.procedure"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Type of procedure performed (0008,1032)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="Who read study and interpreted the images.">interpreter</span><a name="ImagingStudy.interpreter"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="practitioner.html">Practitioner</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Who interpreted images (0008,1060)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Institution-generated description or classification of the Study (component) performed.">description</span><a name="ImagingStudy.description"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Institution-generated description (0008,1030)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAMQfAOvGUf7ztuvPMf/78/fkl/Pbg+u8Rvjqteu2Pf3zxPz36Pz0z+vTmPzurPvuw/npofbjquvNefHVduuyN+uuMu3Oafbgjfnqvf/3zv/3xevPi+vRjP/20/bmsP///////yH5BAEAAB8ALAAAAAAQABAAAAV24CeOZGmepqeqqOgxjBZFa+19r4ftWQUAgqDgltthMshMIJAZ4jYDHsBARSAmFOJvq+g6HIdEFgcYmBWNxoNAsDjGHgBnmV5bCoUDHLBIq9sFEhIdcAYJdYASFRUQhQkLCwkOFwcdEBAXhVabE52ecDahKy0oIQA7"/> <span title="Each study has one or more series of image instances.">series</span><a name="ImagingStudy.series"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Element</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Each study has one or more series of instances</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="The number of this series in the overall sequence.">number</span><a name="ImagingStudy.series.number"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#integer">integer</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Number of this series in overall sequence (0020,0011)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="The modality of this series sequence.">modality</span><a name="ImagingStudy.series.modality"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The modality of the instances in the series (0008,0060)<br/><a title="Type of data in the instance" href="modality.html">Modality</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Formal identifier for this series.">uid</span><a name="ImagingStudy.series.uid"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#oid">oid</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Formal identifier for this series (0020,000E)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="A description of the series.">description</span><a name="ImagingStudy.series.description"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A description of the series (0008,103E)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Sequence that contains attributes from the.">numberOfInstances</span><a name="ImagingStudy.series.numberOfInstances"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#integer">integer</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Number of Series Related Instances (0020,1209)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Availability of series (online, offline or nearline).">availability</span><a name="ImagingStudy.series.availability"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)<br/><a title="Availability of the resource" href="instance-availability.html">InstanceAvailability</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="WADO-RS URI where Series is available.">url</span><a name="ImagingStudy.series.url"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Retrieve URI (0008,1115 &gt; 0008,1190)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed.">bodySite</span><a name="ImagingStudy.series.bodySite"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Body part examined (Map from 0018,0015)<br/><a title="Codes describing anatomical locations. May include laterality" href="valueset-body-site.html">BodySite</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAFElEQVR42mP4////9/8kAYb/JAMA1odjlXxALpEAAAAASUVORK5CYII=)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="When the series started.">dateTime</span><a name="ImagingStudy.series.dateTime"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#dateTime">dateTime</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">When the series started</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAMQfAOvGUf7ztuvPMf/78/fkl/Pbg+u8Rvjqteu2Pf3zxPz36Pz0z+vTmPzurPvuw/npofbjquvNefHVduuyN+uuMu3Oafbgjfnqvf/3zv/3xevPi+vRjP/20/bmsP///////yH5BAEAAB8ALAAAAAAQABAAAAV24CeOZGmepqeqqOgxjBZFa+19r4ftWQUAgqDgltthMshMIJAZ4jYDHsBARSAmFOJvq+g6HIdEFgcYmBWNxoNAsDjGHgBnmV5bCoUDHLBIq9sFEhIdcAYJdYASFRUQhQkLCwkOFwcdEBAXhVabE52ecDahKy0oIQA7"/> <span title="A single image taken from a patient.">instance</span><a name="ImagingStudy.series.instance"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Element</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A single instance taken from a patient (image or other)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="The number of this image in the series.">number</span><a name="ImagingStudy.series.instance.number"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#integer">integer</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The number of this instance in the series (0020,0013)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Formal identifier for this image.">uid</span><a name="ImagingStudy.series.instance.uid"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#oid">oid</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Formal identifier for this instance (0008,0018)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="DICOM Image type.">sopclass</span><a name="ImagingStudy.series.instance.sopclass"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#oid">oid</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">DICOM class type (0008,0016)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Type of instance (image etc) (0004,1430).">type</span><a name="ImagingStudy.series.instance.type"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Type of instance (image etc) (0004,1430)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Description (0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008).">title</span><a name="ImagingStudy.series.instance.title"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Description (0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAE0lEQVR42mP4DwLf/5MAGP6TDADWl2OVL6gPrgAAAABJRU5ErkJggg==)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="WADO-RS url where image is available.">url</span><a name="ImagingStudy.series.instance.url"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#uri">uri</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">WADO-RS service where instance is available  (0008,1199 &gt; 0008,1190)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAD0lEQVR42mP4TzJgIF0LANmXY523xFiMAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQA2FH5D8AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAHElEQVQ4y2P8//8/AymAiYFEMKphVMOohuGlAQDw8gMpyiAhRwAAAABJRU5ErkJggg=="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="A FHIR resource with content for this instance.">attachment</span><a name="ImagingStudy.series.instance.attachment"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="resourcelist.html">Any</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A FHIR resource with content for this instance</td></tr>
+</table></div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/ImagingStudy"/>
+  <name value="ImagingStudy"/>
+  <publisher value="HL7 FHIR Standard"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Base Profile for ImagingStudy Resource"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:21:45.837+08:00"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="dicom"/>
+    <uri value="http://nema.org/dicom"/>
+    <name value="DICOM"/>
+  </mapping>
+  <structure>
+    <type value="ImagingStudy"/>
+    <publish value="true"/>
+    <purpose value="This is the definition for the ImagingStudy resource"/>
+    <snapshot>
+      <element>
+        <path value="ImagingStudy"/>
+        <definition>
+          <short value="A set of images produced in single study (one or more series of references images)"/>
+          <formal value="Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Act[classCode=COMPOSITION, moodCode=EVN]"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="Reference IHE radiology TF vol 2 table 4.14.1"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.language"/>
+        <definition>
+          <short value="Language of the resource content"/>
+          <formal value="The base language in which the resource is written."/>
+          <comments value="Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource
+
+Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.text"/>
+        <definition>
+          <short value="Text summary of the resource, for human interpretation"/>
+          <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+          <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+          <synonym value="narrative"/>
+          <synonym value="html"/>
+          <synonym value="xhtml"/>
+          <synonym value="display"/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Narrative"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.contained"/>
+        <definition>
+          <short value="Contained, inline Resources"/>
+          <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+          <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+          <synonym value="inline resources"/>
+          <synonym value="anonymous resources"/>
+          <synonym value="contained resources"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.dateTime"/>
+        <definition>
+          <short value="When the study was performed"/>
+          <formal value="Date and Time the study took place."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".effectiveTime"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0020+0008,0030"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.subject"/>
+        <definition>
+          <short value="Who the images are of"/>
+          <formal value="Who the images are of."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=SBJ].role"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0010/*"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.uid"/>
+        <definition>
+          <short value="Formal identifier for the study (0020,000D)"/>
+          <formal value="Formal identifier for the study."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,000D"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.accessionNo"/>
+        <definition>
+          <short value="Accession Number (0008,0050)"/>
+          <formal value="Accession Number."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP].source[classCode=ACSN, moodCode=EVN].id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0050"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.identifier"/>
+        <definition>
+          <short value="Other identifiers for the study (0020,0010)"/>
+          <formal value="Other identifiers for the study."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id (no means to distinguish from uid)"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,0010"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.order"/>
+        <definition>
+          <short value="Order(s) that caused this study to be performed"/>
+          <formal value="A list of the diagnostic orders that resulted in this imaging study being performed."/>
+          <comments value="The order(s) can be inferred from information such as accession numbers, but the details of this depend on local workflow management. 
+Note that there is a many-many relationship between orders and studies."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DiagnosticOrder"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=FLFS].target[classCode=DGIMG, moodCode=RQO]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.modality"/>
+        <definition>
+          <short value="All series.modality if actual acquisition modalities"/>
+          <formal value="A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19)."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="ImagingModality"/>
+            <isExtensible value="false"/>
+            <description value="Type of acquired image data in the instance"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/imaging-modality"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0061"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.referrer"/>
+        <definition>
+          <short value="Referring physician (0008,0090)"/>
+          <formal value="The requesting/referring physician."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=FLFS].target[classCode=DGIMG, moodCode=RQO].participation[typeCode=AUT].role"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0090"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.availability"/>
+        <definition>
+          <short value="ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)"/>
+          <formal value="Availability of study (online, offline or nearline)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="InstanceAvailability"/>
+            <isExtensible value="false"/>
+            <description value="Availability of the resource"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/instance-availability"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Not supported"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0056"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.url"/>
+        <definition>
+          <short value="Retrieve URI (0008,1190)"/>
+          <formal value="WADO-RS URI where Study is available."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="uri"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.reference"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1190"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.numberOfSeries"/>
+        <definition>
+          <short value="Number of Study Related Series (0020,1206)"/>
+          <formal value="Number of Series in Study."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP, subsetCode=SUMM].target[classCode=OBSSER, moodCode=EVN].repeatNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="(0020,1206)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.numberOfInstances"/>
+        <definition>
+          <short value="Number of Study Related Instances (0020,1208)"/>
+          <formal value="Number of SOP Instances in Study."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP, subsetCode=SUMM].target[classCode=DGIMG, moodCode=EVN].repeatNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="(0020,1208)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.clinicalInformation"/>
+        <definition>
+          <short value="Diagnoses etc with request (0040,1002)"/>
+          <formal value="Diagnoses etc provided with request."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=PERT].target"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0040,1002, 0008,1080"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.procedure"/>
+        <definition>
+          <short value="Type of procedure performed (0008,1032)"/>
+          <formal value="Type of procedure performed."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Coding"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=PROC, moodCode=EVN]"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1032"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.interpreter"/>
+        <definition>
+          <short value="Who interpreted images (0008,1060)"/>
+          <formal value="Who read study and interpreted the images."/>
+          <comments value="or is this 4008,010C?."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=PRF].role"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1060"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.description"/>
+        <definition>
+          <short value="Institution-generated description (0008,1030)"/>
+          <formal value="Institution-generated description or classification of the Study (component) performed."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1030"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series"/>
+        <definition>
+          <short value="Each study has one or more series of instances"/>
+          <formal value="Each study has one or more series of image instances."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBSSER, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.number"/>
+        <definition>
+          <short value="Number of this series in overall sequence (0020,0011)"/>
+          <formal value="The number of this series in the overall sequence."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[type=COMP, source[classCode=COMPOSITION, moodCode=EVN]].sequenceNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,0011"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.modality"/>
+        <definition>
+          <short value="The modality of the instances in the series (0008,0060)"/>
+          <formal value="The modality of this series sequence."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="Modality"/>
+            <isExtensible value="false"/>
+            <description value="Type of data in the instance"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/modality"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0060"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.uid"/>
+        <definition>
+          <short value="Formal identifier for this series (0020,000E)"/>
+          <formal value="Formal identifier for this series."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,000E"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.description"/>
+        <definition>
+          <short value="A description of the series (0008,103E)"/>
+          <formal value="A description of the series."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,103E"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.numberOfInstances"/>
+        <definition>
+          <short value="Number of Series Related Instances (0020,1209)"/>
+          <formal value="Sequence that contains attributes from the."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP, subsetCode=SUMM].target[classCode=DGIMG, moodCode=EVN].repeatNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,1209"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.availability"/>
+        <definition>
+          <short value="ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)"/>
+          <formal value="Availability of series (online, offline or nearline)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="InstanceAvailability"/>
+            <isExtensible value="false"/>
+            <description value="Availability of the resource"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/instance-availability"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP]. source[classCode=OBS, moodCode=EVN, code=&quot;availability&quot;].value"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0056"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.url"/>
+        <definition>
+          <short value="Retrieve URI (0008,1115 &gt; 0008,1190)"/>
+          <formal value="WADO-RS URI where Series is available."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="uri"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.reference"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1115 &gt; 0008,1190"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.bodySite"/>
+        <definition>
+          <short value="Body part examined (Map from 0018,0015)"/>
+          <formal value="Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Coding"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="BodySite"/>
+            <isExtensible value="false"/>
+            <description value="Codes describing anatomical locations. May include laterality"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/body-site"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".targetSiteCode"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0018,0015"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.dateTime"/>
+        <definition>
+          <short value="When the series started"/>
+          <formal value="When the series started."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".effectiveTime"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance"/>
+        <definition>
+          <short value="A single instance taken from a patient (image or other)"/>
+          <formal value="A single image taken from a patient."/>
+          <min value="1"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=DGIMG, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.number"/>
+        <definition>
+          <short value="The number of this instance in the series (0020,0013)"/>
+          <formal value="The number of this image in the series."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP, source[classCode=OBSSER, moodCode=EVN]].sequenceNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,0013"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.uid"/>
+        <definition>
+          <short value="Formal identifier for this instance (0008,0018)"/>
+          <formal value="Formal identifier for this image."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0018"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.sopclass"/>
+        <definition>
+          <short value="DICOM class type (0008,0016)"/>
+          <formal value="DICOM Image type."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP]. source[classCode=OBS, moodCode=EVN, code=&quot;sop class&quot;].value"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0016"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.type"/>
+        <definition>
+          <short value="Type of instance (image etc) (0004,1430)"/>
+          <formal value="Type of instance (image etc) (0004,1430)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0004,1430"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.title"/>
+        <definition>
+          <short value="Description (0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008)"/>
+          <formal value="Description (0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".title"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.url"/>
+        <definition>
+          <short value="WADO-RS service where instance is available  (0008,1199 &gt; 0008,1190)"/>
+          <formal value="WADO-RS url where image is available."/>
+          <comments value="Each instance may have a url and an attachment. Both represent the same information, but using different approaches. The URL is a reference to a WADO-RS service that makes the instance available."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="uri"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.reference"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1199 &gt; 0008,1190"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.attachment"/>
+        <definition>
+          <short value="A FHIR resource with content for this instance"/>
+          <formal value="A FHIR resource with content for this instance."/>
+          <comments value="Each instance may have a url and an attachment. Both represent the same information, but using different approaches. The attachment is a reference to a FHIR resource (Media, Document, etc)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Any"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.binary"/>
+          </mapping>
+        </definition>
+      </element>
+    </snapshot>
+    <differential>
+      <element>
+        <path value="ImagingStudy"/>
+        <definition>
+          <short value="A set of images produced in single study (one or more series of references images)"/>
+          <formal value="Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Act[classCode=COMPOSITION, moodCode=EVN]"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="Reference IHE radiology TF vol 2 table 4.14.1"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.dateTime"/>
+        <definition>
+          <short value="When the study was performed"/>
+          <formal value="Date and Time the study took place."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".effectiveTime"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0020+0008,0030"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.subject"/>
+        <definition>
+          <short value="Who the images are of"/>
+          <formal value="Who the images are of."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=SBJ].role"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0010/*"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.uid"/>
+        <definition>
+          <short value="Formal identifier for the study (0020,000D)"/>
+          <formal value="Formal identifier for the study."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,000D"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.accessionNo"/>
+        <definition>
+          <short value="Accession Number (0008,0050)"/>
+          <formal value="Accession Number."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP].source[classCode=ACSN, moodCode=EVN].id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0050"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.identifier"/>
+        <definition>
+          <short value="Other identifiers for the study (0020,0010)"/>
+          <formal value="Other identifiers for the study."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id (no means to distinguish from uid)"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,0010"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.order"/>
+        <definition>
+          <short value="Order(s) that caused this study to be performed"/>
+          <formal value="A list of the diagnostic orders that resulted in this imaging study being performed."/>
+          <comments value="The order(s) can be inferred from information such as accession numbers, but the details of this depend on local workflow management. 
+Note that there is a many-many relationship between orders and studies."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DiagnosticOrder"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=FLFS].target[classCode=DGIMG, moodCode=RQO]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.modality"/>
+        <definition>
+          <short value="All series.modality if actual acquisition modalities"/>
+          <formal value="A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19)."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="ImagingModality"/>
+            <isExtensible value="false"/>
+            <description value="Type of acquired image data in the instance"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/imaging-modality"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0061"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.referrer"/>
+        <definition>
+          <short value="Referring physician (0008,0090)"/>
+          <formal value="The requesting/referring physician."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=FLFS].target[classCode=DGIMG, moodCode=RQO].participation[typeCode=AUT].role"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0090"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.availability"/>
+        <definition>
+          <short value="ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)"/>
+          <formal value="Availability of study (online, offline or nearline)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="InstanceAvailability"/>
+            <isExtensible value="false"/>
+            <description value="Availability of the resource"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/instance-availability"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Not supported"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0056"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.url"/>
+        <definition>
+          <short value="Retrieve URI (0008,1190)"/>
+          <formal value="WADO-RS URI where Study is available."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="uri"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.reference"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1190"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.numberOfSeries"/>
+        <definition>
+          <short value="Number of Study Related Series (0020,1206)"/>
+          <formal value="Number of Series in Study."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP, subsetCode=SUMM].target[classCode=OBSSER, moodCode=EVN].repeatNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="(0020,1206)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.numberOfInstances"/>
+        <definition>
+          <short value="Number of Study Related Instances (0020,1208)"/>
+          <formal value="Number of SOP Instances in Study."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP, subsetCode=SUMM].target[classCode=DGIMG, moodCode=EVN].repeatNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="(0020,1208)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.clinicalInformation"/>
+        <definition>
+          <short value="Diagnoses etc with request (0040,1002)"/>
+          <formal value="Diagnoses etc provided with request."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=PERT].target"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0040,1002, 0008,1080"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.procedure"/>
+        <definition>
+          <short value="Type of procedure performed (0008,1032)"/>
+          <formal value="Type of procedure performed."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Coding"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=PROC, moodCode=EVN]"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1032"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.interpreter"/>
+        <definition>
+          <short value="Who interpreted images (0008,1060)"/>
+          <formal value="Who read study and interpreted the images."/>
+          <comments value="or is this 4008,010C?."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=PRF].role"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1060"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.description"/>
+        <definition>
+          <short value="Institution-generated description (0008,1030)"/>
+          <formal value="Institution-generated description or classification of the Study (component) performed."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1030"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series"/>
+        <definition>
+          <short value="Each study has one or more series of instances"/>
+          <formal value="Each study has one or more series of image instances."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBSSER, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.number"/>
+        <definition>
+          <short value="Number of this series in overall sequence (0020,0011)"/>
+          <formal value="The number of this series in the overall sequence."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[type=COMP, source[classCode=COMPOSITION, moodCode=EVN]].sequenceNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,0011"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.modality"/>
+        <definition>
+          <short value="The modality of the instances in the series (0008,0060)"/>
+          <formal value="The modality of this series sequence."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="Modality"/>
+            <isExtensible value="false"/>
+            <description value="Type of data in the instance"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/modality"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0060"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.uid"/>
+        <definition>
+          <short value="Formal identifier for this series (0020,000E)"/>
+          <formal value="Formal identifier for this series."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,000E"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.description"/>
+        <definition>
+          <short value="A description of the series (0008,103E)"/>
+          <formal value="A description of the series."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,103E"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.numberOfInstances"/>
+        <definition>
+          <short value="Number of Series Related Instances (0020,1209)"/>
+          <formal value="Sequence that contains attributes from the."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP, subsetCode=SUMM].target[classCode=DGIMG, moodCode=EVN].repeatNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,1209"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.availability"/>
+        <definition>
+          <short value="ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)"/>
+          <formal value="Availability of series (online, offline or nearline)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="InstanceAvailability"/>
+            <isExtensible value="false"/>
+            <description value="Availability of the resource"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/instance-availability"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP]. source[classCode=OBS, moodCode=EVN, code=&quot;availability&quot;].value"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0056"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.url"/>
+        <definition>
+          <short value="Retrieve URI (0008,1115 &gt; 0008,1190)"/>
+          <formal value="WADO-RS URI where Series is available."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="uri"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.reference"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1115 &gt; 0008,1190"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.bodySite"/>
+        <definition>
+          <short value="Body part examined (Map from 0018,0015)"/>
+          <formal value="Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Coding"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="BodySite"/>
+            <isExtensible value="false"/>
+            <description value="Codes describing anatomical locations. May include laterality"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/body-site"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".targetSiteCode"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0018,0015"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.dateTime"/>
+        <definition>
+          <short value="When the series started"/>
+          <formal value="When the series started."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".effectiveTime"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance"/>
+        <definition>
+          <short value="A single instance taken from a patient (image or other)"/>
+          <formal value="A single image taken from a patient."/>
+          <min value="1"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=DGIMG, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.number"/>
+        <definition>
+          <short value="The number of this instance in the series (0020,0013)"/>
+          <formal value="The number of this image in the series."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="integer"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP, source[classCode=OBSSER, moodCode=EVN]].sequenceNumber"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0020,0013"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.uid"/>
+        <definition>
+          <short value="Formal identifier for this instance (0008,0018)"/>
+          <formal value="Formal identifier for this image."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0018"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.sopclass"/>
+        <definition>
+          <short value="DICOM class type (0008,0016)"/>
+          <formal value="DICOM Image type."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="oid"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP]. source[classCode=OBS, moodCode=EVN, code=&quot;sop class&quot;].value"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,0016"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.type"/>
+        <definition>
+          <short value="Type of instance (image etc) (0004,1430)"/>
+          <formal value="Type of instance (image etc) (0004,1430)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0004,1430"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.title"/>
+        <definition>
+          <short value="Description (0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008)"/>
+          <formal value="Description (0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".title"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0070,0080 | 0040,A043 &gt; 0008,0104 | 0042,0010 | 0008,0008"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.url"/>
+        <definition>
+          <short value="WADO-RS service where instance is available  (0008,1199 &gt; 0008,1190)"/>
+          <formal value="WADO-RS url where image is available."/>
+          <comments value="Each instance may have a url and an attachment. Both represent the same information, but using different approaches. The URL is a reference to a WADO-RS service that makes the instance available."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="uri"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.reference"/>
+          </mapping>
+          <mapping>
+            <identity value="dicom"/>
+            <map value="0008,1199 &gt; 0008,1190"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="ImagingStudy.series.instance.attachment"/>
+        <definition>
+          <short value="A FHIR resource with content for this instance"/>
+          <formal value="A FHIR resource with content for this instance."/>
+          <comments value="Each instance may have a url and an attachment. Both represent the same information, but using different approaches. The attachment is a reference to a FHIR resource (Media, Document, etc)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Any"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text.binary"/>
+          </mapping>
+        </definition>
+      </element>
+    </differential>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The stated language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="accession"/>
+      <type value="token"/>
+      <documentation value="The accession id for the image"/>
+      <xpath value="f:ImagingStudy/f:accessionNo"/>
+    </searchParam>
+    <searchParam>
+      <name value="bodysite"/>
+      <type value="token"/>
+      <documentation value="Body part examined (Map from 0018,0015)"/>
+      <xpath value="f:ImagingStudy/f:series/f:bodySite"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="The date the study was done was taken"/>
+      <xpath value="f:ImagingStudy/f:dateTime"/>
+    </searchParam>
+    <searchParam>
+      <name value="dicom-class"/>
+      <type value="token"/>
+      <documentation value="DICOM class type (0008,0016)"/>
+      <xpath value="f:ImagingStudy/f:series/f:instance/f:sopclass"/>
+    </searchParam>
+    <searchParam>
+      <name value="modality"/>
+      <type value="token"/>
+      <documentation value="The modality of the image"/>
+      <xpath value="f:ImagingStudy/f:series/f:modality"/>
+    </searchParam>
+    <searchParam>
+      <name value="series"/>
+      <type value="token"/>
+      <documentation value="The series id for the image"/>
+      <xpath value="f:ImagingStudy/f:series/f:uid"/>
+    </searchParam>
+    <searchParam>
+      <name value="size"/>
+      <type value="number"/>
+      <documentation value="The size of the image in MB - may include &gt; or &lt; in the value"/>
+    </searchParam>
+    <searchParam>
+      <name value="study"/>
+      <type value="token"/>
+      <documentation value="The study id for the image"/>
+      <xpath value="f:ImagingStudy/f:uid"/>
+    </searchParam>
+    <searchParam>
+      <name value="subject"/>
+      <type value="reference"/>
+      <documentation value="Who the study is about"/>
+      <xpath value="f:ImagingStudy/f:subject"/>
+    </searchParam>
+    <searchParam>
+      <name value="uid"/>
+      <type value="token"/>
+      <documentation value="Formal identifier for this instance (0008,0018)"/>
+      <xpath value="f:ImagingStudy/f:series/f:instance/f:uid"/>
+    </searchParam>
+  </structure>
+</Profile>

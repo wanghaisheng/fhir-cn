@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: UZI-nummer = 12345678903 (official), BIG-nummer = 12345678903 (official)
+      </p>
+      <p>
+        <b>name</b>: Juri van Gelder(official)
+      </p>
+      <p>
+        <b>telecom</b>: ph: +31715269111(work)
+      </p>
+      <p>
+        <b>address</b>: Walvisbaai 3 Den helder 2333ZA NLD (work)
+      </p>
+      <p>
+        <b>gender</b>: Male 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;248153007&#39; = &#39;Male&#39;, given as &#39;Male&#39;})</span>
+      </p>
+      <p>
+        <b>birthDate</b>: 20-Apr 1983
+      </p>
+      <p>
+        <b>organization</b>: 
+        <a href="organization-example-f201-aumc.html">AUMC. Generated Summary: Zorginstelling naam = Artis University Medical Center (official); name: Artis University Medical Center (AUMC); 
+          <span title="Codes: {http://snomed.info/sct 405608006}, {urn:oid:2.16.840.1.113883.2.4.15.1060 V6}, {http://hl7.org/fhir/organization-type prov}">Academic Medical Center</span>; active
+        </a>
+      </p>
+      <p>
+        <b>role</b>: Physical therapist 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;36682004&#39; = &#39;Physiotherapist&#39;, given as &#39;Physical therapist&#39;})</span>
+      </p>
+      <p>
+        <b>specialty</b>: Assess physical therapist service 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;410158009&#39; = &#39;Physical therapy assessment&#39;, given as &#39;Assess physical therapist service&#39;})</span>
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <label value="UZI-nummer"/>
+    <system value="urn:oid:2.16.528.1.1007.3.1"/>
+    <value value="12345678903"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <label value="BIG-nummer"/>
+    <system value="https://www.bigregister.nl/"/>
+    <value value="12345678903"/>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <text value="Juri van Gelder"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="+31715269111"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="Walvisbaai 3"/>
+    <city value="Den helder"/>
+    <zip value="2333ZA"/>
+    <country value="NLD"/>
+  </address>
+  <gender>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="248153007"/>
+      <display value="Male"/>
+    </coding>
+  </gender>
+  <birthDate value="1983-04-20"/>
+  <organization>
+    <reference value="Organization/f201"/>
+    <display value="AUMC"/>
+  </organization>
+  <role>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="36682004"/>
+      <display value="Physical therapist"/>
+    </coding>
+  </role>
+  <specialty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="410158009"/>
+      <display value="Assess physical therapist service"/>
+    </coding>
+  </specialty>
+</Practitioner>

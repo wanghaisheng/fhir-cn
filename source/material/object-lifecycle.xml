@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SecurityEventObjectLifecycle</h2>
+      <p>Identifier for the data life-cycle stage for the participant object</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/object-lifecycle</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>1
+            <a name="1"> </a>
+          </td>
+          <td/>
+          <td>Origination / Creation.</td>
+        </tr>
+        <tr>
+          <td>2
+            <a name="2"> </a>
+          </td>
+          <td/>
+          <td>Import / Copy from original.</td>
+        </tr>
+        <tr>
+          <td>3
+            <a name="3"> </a>
+          </td>
+          <td/>
+          <td>Amendment.</td>
+        </tr>
+        <tr>
+          <td>4
+            <a name="4"> </a>
+          </td>
+          <td/>
+          <td>Verification.</td>
+        </tr>
+        <tr>
+          <td>5
+            <a name="5"> </a>
+          </td>
+          <td/>
+          <td>Translation.</td>
+        </tr>
+        <tr>
+          <td>6
+            <a name="6"> </a>
+          </td>
+          <td/>
+          <td>Access / Use.</td>
+        </tr>
+        <tr>
+          <td>7
+            <a name="7"> </a>
+          </td>
+          <td/>
+          <td>De-identification.</td>
+        </tr>
+        <tr>
+          <td>8
+            <a name="8"> </a>
+          </td>
+          <td/>
+          <td>Aggregation, summarization, derivation.</td>
+        </tr>
+        <tr>
+          <td>9
+            <a name="9"> </a>
+          </td>
+          <td/>
+          <td>Report.</td>
+        </tr>
+        <tr>
+          <td>10
+            <a name="10"> </a>
+          </td>
+          <td/>
+          <td>Export / Copy to target.</td>
+        </tr>
+        <tr>
+          <td>11
+            <a name="11"> </a>
+          </td>
+          <td/>
+          <td>Disclosure.</td>
+        </tr>
+        <tr>
+          <td>12
+            <a name="12"> </a>
+          </td>
+          <td/>
+          <td>Receipt of disclosure.</td>
+        </tr>
+        <tr>
+          <td>13
+            <a name="13"> </a>
+          </td>
+          <td/>
+          <td>Archiving.</td>
+        </tr>
+        <tr>
+          <td>14
+            <a name="14"> </a>
+          </td>
+          <td/>
+          <td>Logical deletion.</td>
+        </tr>
+        <tr>
+          <td>15
+            <a name="15"> </a>
+          </td>
+          <td/>
+          <td>Permanent erasure / Physical destruction.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/object-lifecycle"/>
+  <name value="SecurityEventObjectLifecycle"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Identifier for the data life-cycle stage for the participant object"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.904+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/object-lifecycle"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="1"/>
+      <definition value="Origination / Creation."/>
+    </concept>
+    <concept>
+      <code value="2"/>
+      <definition value="Import / Copy from original."/>
+    </concept>
+    <concept>
+      <code value="3"/>
+      <definition value="Amendment."/>
+    </concept>
+    <concept>
+      <code value="4"/>
+      <definition value="Verification."/>
+    </concept>
+    <concept>
+      <code value="5"/>
+      <definition value="Translation."/>
+    </concept>
+    <concept>
+      <code value="6"/>
+      <definition value="Access / Use."/>
+    </concept>
+    <concept>
+      <code value="7"/>
+      <definition value="De-identification."/>
+    </concept>
+    <concept>
+      <code value="8"/>
+      <definition value="Aggregation, summarization, derivation."/>
+    </concept>
+    <concept>
+      <code value="9"/>
+      <definition value="Report."/>
+    </concept>
+    <concept>
+      <code value="10"/>
+      <definition value="Export / Copy to target."/>
+    </concept>
+    <concept>
+      <code value="11"/>
+      <definition value="Disclosure."/>
+    </concept>
+    <concept>
+      <code value="12"/>
+      <definition value="Receipt of disclosure."/>
+    </concept>
+    <concept>
+      <code value="13"/>
+      <definition value="Archiving."/>
+    </concept>
+    <concept>
+      <code value="14"/>
+      <definition value="Logical deletion."/>
+    </concept>
+    <concept>
+      <code value="15"/>
+      <definition value="Permanent erasure / Physical destruction."/>
+    </concept>
+  </define>
+</ValueSet>

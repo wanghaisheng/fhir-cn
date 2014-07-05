@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>QueryOutcome</h2>
+      <p>The outcome of processing a query request</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/query-outcome</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>ok
+            <a name="ok"> </a>
+          </td>
+          <td/>
+          <td>The query was processed successfully.</td>
+        </tr>
+        <tr>
+          <td>limited
+            <a name="limited"> </a>
+          </td>
+          <td/>
+          <td>The query was processed successfully, but some additional limitations were added.</td>
+        </tr>
+        <tr>
+          <td>refused
+            <a name="refused"> </a>
+          </td>
+          <td/>
+          <td>The server refused to process the query.</td>
+        </tr>
+        <tr>
+          <td>error
+            <a name="error"> </a>
+          </td>
+          <td/>
+          <td>The server tried to process the query, but some error occurred.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/query-outcome"/>
+  <name value="QueryOutcome"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The outcome of processing a query request"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.903+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/query-outcome"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="ok"/>
+      <definition value="The query was processed successfully."/>
+    </concept>
+    <concept>
+      <code value="limited"/>
+      <definition value="The query was processed successfully, but some additional limitations were added."/>
+    </concept>
+    <concept>
+      <code value="refused"/>
+      <definition value="The server refused to process the query."/>
+    </concept>
+    <concept>
+      <code value="error"/>
+      <definition value="The server tried to process the query, but some error occurred."/>
+    </concept>
+  </define>
+</ValueSet>

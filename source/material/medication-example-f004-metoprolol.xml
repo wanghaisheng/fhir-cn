@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>name</b>: Metoprolol
+      </p>
+      <p>
+        <b>code</b>: Metoprolol tartrate 50mg tablet 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;318475005&#39; = &#39;Metoprolol tartrate 50mg tablet&#39;, given as &#39;Metoprolol tartrate 50mg tablet&#39;})</span>
+      </p>
+      <p>
+        <b>isBrand</b>: true
+      </p>
+      <p>
+        <b>kind</b>: product
+      </p>
+      <blockquote>
+        <p>
+          <b>package</b>
+        </p>
+        <p>
+          <b>container</b>: drug container 
+          <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;398124009&#39; = &#39;Drug container&#39;, given as &#39;drug container&#39;})</span>
+        </p>
+      </blockquote>
+    </div>
+  </text>
+  <name value="Metoprolol"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="318475005"/>
+      <display value="Metoprolol tartrate 50mg tablet"/>
+    </coding>
+  </code>
+  <isBrand value="true"/>
+  <kind value="product"/>
+  <package>
+    <container>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="398124009"/>
+        <display value="drug container"/>
+      </coding>
+    </container>
+  </package>
+</Medication>

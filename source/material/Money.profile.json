@@ -1,0 +1,244 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Data type Money</h2><p>An amount of money. With regard to precision, see [[X]]</p><h3>Rule</h3><p>There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = &quot;urn:std:iso:4217&quot; - currency).</p><p>XPath:</p><blockquote><pre>(f:code or not(f:value)) and (not(exists(f:system)) or f:system/@value='urn:std:iso:4217')</pre></blockquote></div>"
+  },
+  "url": "http://hl7.org/fhir/Profile/Money",
+  "name": "Money",
+  "publisher": "HL7 FHIR Standard",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "An amount of money. With regard to precision, see [[X]]",
+  "status": "draft",
+  "date": "2014-07-02T16:21:45.837+08:00",
+  "structure": [
+    {
+      "type": "Quantity",
+      "base": "http://hl7.org/fhir/Profile/Quantity",
+      "publish": true,
+      "purpose": "This is the invariants for the Money data type profile",
+      "snapshot": {
+        "element": [
+          {
+            "path": "Quantity",
+            "definition": {
+              "short": "An amount of money. With regard to precision, see [[X]]",
+              "formal": "There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = \"urn:std:iso:4217\" - currency).",
+              "comments": "The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for the comparator.",
+              "min": 1,
+              "max": "1",
+              "constraint": [
+                {
+                  "key": "3",
+                  "name": "SHALL have a system",
+                  "severity": "error",
+                  "human": "If a code for the units is present, the system SHALL also be present",
+                  "xpath": "not(exists(f:code)) or exists(f:system)"
+                },
+                {
+                  "key": "1",
+                  "severity": "error",
+                  "human": "There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = \"urn:std:iso:4217\" - currency).",
+                  "xpath": "(f:code or not(f:value)) and (not(exists(f:system)) or f:system/@value='urn:std:iso:4217')"
+                }
+              ],
+              "isModifier": false,
+              "mapping": [
+                {
+                  "identity": "v2",
+                  "map": "SN (see also Range) or CQ"
+                },
+                {
+                  "identity": "rim",
+                  "map": "PQ, IVL<PQ>, MO, CO, depending on the values"
+                }
+              ]
+            }
+          },
+          {
+            "path": "Quantity.extension",
+            "definition": {
+              "short": "Additional Content defined by implementations",
+              "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+              "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+              "synonym": [
+                "extensions",
+                "user content"
+              ],
+              "min": 0,
+              "max": "*",
+              "type": [
+                {
+                  "code": "Extension"
+                }
+              ]
+            }
+          },
+          {
+            "path": "Quantity.value",
+            "definition": {
+              "short": "Numerical value (with implicit precision)",
+              "formal": "The value of the measured amount. The value includes an implicit precision in the presentation of the value.",
+              "comments": "The implicit precision in the value should always be honored. Monetary values have their own rules for handling precision (refer to standard accounting text books).",
+              "min": 0,
+              "max": "1",
+              "type": [
+                {
+                  "code": "decimal"
+                }
+              ],
+              "isModifier": false,
+              "mapping": [
+                {
+                  "identity": "v2",
+                  "map": "SN.2  / CQ - N/A"
+                },
+                {
+                  "identity": "rim",
+                  "map": "PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"
+                }
+              ]
+            }
+          },
+          {
+            "path": "Quantity.comparator",
+            "definition": {
+              "short": "< | <= | >= | > - how to understand the value",
+              "formal": "How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is \"<\" , then the real value is < stated value.",
+              "comments": "This is labeled as \"Is Modifier\" because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no modification of the value.",
+              "min": 0,
+              "max": "1",
+              "type": [
+                {
+                  "code": "code"
+                }
+              ],
+              "isModifier": true,
+              "binding": {
+                "name": "QuantityCompararator",
+                "isExtensible": false,
+                "description": "How the Quantity should be understood and represented",
+                "referenceResource": {
+                  "reference": "http://hl7.org/fhir/vs/quantity-comparator"
+                }
+              },
+              "mapping": [
+                {
+                  "identity": "v2",
+                  "map": "SN.1  / CQ.1"
+                },
+                {
+                  "identity": "rim",
+                  "map": "IVL properties"
+                }
+              ]
+            }
+          },
+          {
+            "path": "Quantity.units",
+            "definition": {
+              "short": "Unit representation",
+              "formal": "A human-readable form of the units.",
+              "min": 0,
+              "max": "1",
+              "type": [
+                {
+                  "code": "string"
+                }
+              ],
+              "isModifier": false,
+              "mapping": [
+                {
+                  "identity": "v2",
+                  "map": "(see OBX.6 etc) / CQ.2"
+                },
+                {
+                  "identity": "rim",
+                  "map": "PQ.unit"
+                }
+              ]
+            }
+          },
+          {
+            "path": "Quantity.system",
+            "definition": {
+              "short": "System that defines coded unit form",
+              "formal": "The identification of the system that provides the coded form of the unit.",
+              "min": 0,
+              "max": "1",
+              "type": [
+                {
+                  "code": "uri"
+                }
+              ],
+              "isModifier": false,
+              "mapping": [
+                {
+                  "identity": "v2",
+                  "map": "(see OBX.6 etc) / CQ.2"
+                },
+                {
+                  "identity": "rim",
+                  "map": "CO.codeSystem, PQ.translation.codeSystem"
+                }
+              ]
+            }
+          },
+          {
+            "path": "Quantity.code",
+            "definition": {
+              "short": "Coded form of the unit",
+              "formal": "A computer processable form of the units in some unit representation system.",
+              "comments": "The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.\n\nThe context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag).",
+              "min": 0,
+              "max": "1",
+              "type": [
+                {
+                  "code": "code"
+                }
+              ],
+              "isModifier": false,
+              "mapping": [
+                {
+                  "identity": "v2",
+                  "map": "(see OBX.6 etc) / CQ.2"
+                },
+                {
+                  "identity": "rim",
+                  "map": "PQ.code, MO.currency, PQ.translation.code"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "differential": {
+        "element": [
+          {
+            "path": "Quantity",
+            "name": "Money",
+            "definition": {
+              "short": "An amount of money. With regard to precision, see [[X]]",
+              "formal": "There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = \"urn:std:iso:4217\" - currency).",
+              "min": 1,
+              "max": "1",
+              "constraint": [
+                {
+                  "key": "1",
+                  "severity": "error",
+                  "human": "There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = \"urn:std:iso:4217\" - currency).",
+                  "xpath": "(f:code or not(f:value)) and (not(exists(f:system)) or f:system/@value='urn:std:iso:4217')"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

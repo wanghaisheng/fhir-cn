@@ -1,0 +1,1 @@
+{"resourceType":"OrderResponse","text":{"status":"generated","div":"<div>Lab Report completed at 13:10 28-Dec 2012</div>"},"request":{"reference":"Order/example"},"date":"2012-12-28T13:10:56+11:00","who":{"reference":"Organization/1832473e-2fe0-452d-abe9-3cdb9879522f"},"code":"complete","fulfillment":[{"reference":"DiagnosticReport/101"}]}

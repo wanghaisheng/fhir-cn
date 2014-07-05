@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SecurityEvent xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <h3>Events</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Subtype</b>
+          </td>
+          <td>
+            <b>Action</b>
+          </td>
+          <td>
+            <b>DateTime</b>
+          </td>
+          <td>
+            <b>Outcome</b>
+          </td>
+          <td>
+            <b>OutcomeDesc</b>
+          </td>
+        </tr>
+        <tr>
+          <td>User Authentication 
+            <span style="background: LightGoldenRodYellow ">(Details : {http://nema.org/dicom/dcid code &#39;110114&#39; = &#39;User Authentication&#39;, given as &#39;User Authentication&#39;})</span>
+          </td>
+          <td>Login 
+            <span style="background: LightGoldenRodYellow ">(Details : {http://nema.org/dicom/dcid code &#39;110122&#39; = &#39;Login&#39;, given as &#39;Login&#39;})</span>
+          </td>
+          <td>E</td>
+          <td>20-Jun 2013 23:41</td>
+          <td>_0</td>
+          <td> </td>
+        </tr>
+      </table>
+      <blockquote>
+        <p>
+          <b>participant</b>
+        </p>
+        <p>
+          <b>userId</b>: 95
+        </p>
+        <p>
+          <b>altId</b>: 601847123
+        </p>
+        <p>
+          <b>name</b>: Grahame Grieve
+        </p>
+        <p>
+          <b>requestor</b>: true
+        </p>
+        <h3>Networks</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Identifier</b>
+            </td>
+            <td>
+              <b>Type</b>
+            </td>
+          </tr>
+          <tr>
+            <td>127.0.0.1</td>
+            <td>_2</td>
+          </tr>
+        </table>
+      </blockquote>
+      <h3>Sources</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Site</b>
+          </td>
+          <td>
+            <b>Identifier</b>
+          </td>
+          <td>
+            <b>Type</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Cloud</td>
+          <td>hl7connect.healthintersections.com.au</td>
+          <td>Web Server (Details: http://hl7.org/fhir/security-source-type code 3 = &#39;Web Server&#39;, stated as &#39;Web Server&#39;)</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <event>
+    <type>
+      <coding>
+        <system value="http://nema.org/dicom/dcid"/>
+        <code value="110114"/>
+        <display value="User Authentication"/>
+      </coding>
+    </type>
+    <subtype>
+      <coding>
+        <system value="http://nema.org/dicom/dcid"/>
+        <code value="110122"/>
+        <display value="Login"/>
+      </coding>
+    </subtype>
+    <action value="E"/>
+    <dateTime value="2013-06-20T23:41:23Z"/>
+    <outcome value="0"/>
+  </event>
+  <participant>
+    <userId value="95"/>
+    <altId value="601847123"/>
+    <name value="Grahame Grieve"/>
+    <requestor value="true"/>
+    <network>
+      <identifier value="127.0.0.1"/>
+      <type value="2"/>
+    </network>
+  </participant>
+  <source>
+    <site value="Cloud"/>
+    <identifier value="hl7connect.healthintersections.com.au"/>
+    <type>
+      <system value="http://hl7.org/fhir/security-source-type"/>
+      <code value="3"/>
+      <display value="Web Server"/>
+    </type>
+  </source>
+</SecurityEvent>

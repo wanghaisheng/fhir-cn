@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>AnimalBreeds</h2><p>This example value set defines a set of codes that can be used to indicate breeds of species.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/animal-breed</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>gsd<a name=\"gsd\"> </a></td><td>German Shepherd Dog</td><td/></tr><tr><td>irt<a name=\"irt\"> </a></td><td>Irish Terrier</td><td/></tr><tr><td>tibmas<a name=\"tibmas\"> </a></td><td>Tibetan Mastiff</td><td/></tr><tr><td>gret<a name=\"gret\"> </a></td><td>Golden Retriever</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/animal-breeds",
+  "name": "AnimalBreeds",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate breeds of species.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/animal-breed",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "gsd",
+        "display": "German Shepherd Dog"
+      },
+      {
+        "code": "irt",
+        "display": "Irish Terrier"
+      },
+      {
+        "code": "tibmas",
+        "display": "Tibetan Mastiff"
+      },
+      {
+        "code": "gret",
+        "display": "Golden Retriever"
+      }
+    ]
+  }
+}

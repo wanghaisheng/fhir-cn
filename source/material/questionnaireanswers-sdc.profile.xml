@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">to do</div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/questionnaireanswers-sdc"/>
+  <name value="Structured Data Capture Data Capture"/>
+  <publisher value="U.S. Office of the National Coordinator (ONC)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://wiki.siframework.org/Structured+Data+Capture+Initiative"/>
+  </telecom>
+  <description value="Defines how the questionnaire answers resource is used to reflect form data within the ONC&#39;s Structured Data Capture standard."/>
+  <status value="draft"/>
+  <date value="2014-04-21"/>
+  <structure>
+    <type value="QuestionnaireAnswers"/>
+    <base value="http://hl7.org/fhir/Profile/QuestionnaireAnswers"/>
+    <name value="StructuredDataCaptureAnswers"/>
+    <publish value="true"/>
+    <snapshot>
+      <element>
+        <path value="QuestionnaireAnswers"/>
+        <definition>
+          <short value="A structured set of questions and their answers"/>
+          <formal value="A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Observation[moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.language"/>
+        <definition>
+          <short value="Language of the resource content"/>
+          <formal value="The base language in which the resource is written."/>
+          <comments value="Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource
+
+Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.text"/>
+        <definition>
+          <short value="Text summary of the resource, for human interpretation"/>
+          <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+          <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+          <synonym value="narrative"/>
+          <synonym value="html"/>
+          <synonym value="xhtml"/>
+          <synonym value="display"/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Narrative"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.contained"/>
+        <definition>
+          <short value="Contained, inline Resources"/>
+          <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+          <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+          <synonym value="inline resources"/>
+          <synonym value="anonymous resources"/>
+          <synonym value="contained resources"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.questionnaire"/>
+        <definition>
+          <short value="Form being answered"/>
+          <formal value="Indicates the Questionnaire resource that defines the form for which answers are being provided."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Questionnaire"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./outboundRelationship[typeCode=INST]/target[classCode=OBS, moodCode=DEFN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.status"/>
+        <definition>
+          <short value="in progress | completed | amended"/>
+          <formal value="The lifecycle status of the questionnaire answers as a whole."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="true"/>
+          <binding>
+            <name value="QuestionnaireAnswersStatus"/>
+            <isExtensible value="false"/>
+            <description value="Lifecycle status of the questionnaire answers"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/questionnaire-answers-status"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".statusCode (also whether there&#39;s a revisionControlAct - and possibly mood to distinguish &quot;in progress&quot; from &quot;published)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.subject"/>
+        <definition>
+          <short value="The subject of the questions"/>
+          <formal value="The subject of the questionnaire answers.  This could be a patient, organization, practitioner, device, etc.  This is who/what the answers apply to, but is not necessarily the source of information."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=SBJ].role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.author"/>
+        <definition>
+          <short value="Person who received and recorded the answers"/>
+          <formal value="Person who received the answers to the questions in the QuestionnaireAnswers and recorded them in the system."/>
+          <comments value="Mapping a subject&#39;s answers to multiple choice options and determining what to put in the textual answer is a matter of interpretation."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/RelatedPerson"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=AUT].role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.authored"/>
+        <definition>
+          <short value="Identifies when this version of the answer set was created.  Changes whenever the answers are updated."/>
+          <formal value="Identifies when this version of the answer set was created.  Changes whenever the answers are updated."/>
+          <comments value="May be different from the update time of the resource itself, because that is the status of the collection and authoring."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=AUT].time"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.source"/>
+        <definition>
+          <short value="The person who answered the questions"/>
+          <formal value="The person who answered the questions about the subject. Only used when this is not the subject him/herself."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/RelatedPerson"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=INF].role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.encounter"/>
+        <definition>
+          <short value="Primary encounter during which the answers were collected"/>
+          <formal value="Encounter during which this set of questionnaire answers were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Encounter"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group"/>
+        <definition>
+          <short value="Grouped questions"/>
+          <formal value="A group of questions to a possibly similarly grouped set of questions in the questionnaire answers."/>
+          <comments value="The Questionnaire itself has one &quot;root&quot; group with the actual contents of the Questionnaire."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="=Group"/>
+          </type>
+          <constraint>
+            <key value="1"/>
+            <name value="GroupHaveSubOrQuestions"/>
+            <severity value="error"/>
+            <human value="Groups may either contain questions or groups but not both"/>
+            <xpath value="not(exists(f:group) and exists(f:question))"/>
+          </constraint>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.linkId"/>
+        <definition>
+          <short value="Corresponding group within Questionnaire"/>
+          <formal value="Identifies the group from the Questionnaire that corresponds to this group in the QuestionnaireAnswers resource."/>
+          <min value="1"/>
+          <max value="1"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.title"/>
+        <definition>
+          <short value="Name for this group"/>
+          <formal value="Text that is displayed above the contents of the group."/>
+          <comments value="On the root group, this is the title of the questionnaire."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".title"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.text"/>
+        <definition>
+          <short value="Additional text for the group"/>
+          <formal value="Additional text for the group, used for display purposes."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".text"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.subject"/>
+        <definition>
+          <short value="The subject this group&#39;s answers are about"/>
+          <formal value="More specific subject this section&#39;s answers are about, details the subject given in QuestionnaireAnswers."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Any"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=SBJ].role
+or
+.outboundRelationship[typeCode=SUBJ].target"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.group"/>
+        <definition>
+          <short value="Nested questionnaire answers group"/>
+          <formal value="A sub-group within a group. The ordering of groups within this group is relevant."/>
+          <min value="0"/>
+          <max value="*"/>
+          <nameReference value="QuestionnaireAnswers.group"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question"/>
+        <definition>
+          <short value="Questions in this group"/>
+          <formal value="Set of questions within this group. The order of questions within the group is relevant."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="=Question"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=OBS, moodCode=EVN or DEF]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.linkId"/>
+        <definition>
+          <short value="Corresponding question within Questionnaire"/>
+          <formal value="Identifies the question from the Questionnaire that corresponds to this question in the QuestionnaireAnswers resource."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=DEFN].target[classCode=OBS, moodCode=DEFN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.text"/>
+        <definition>
+          <short value="Text of the question as it is shown to the user"/>
+          <formal value="Text of the question as it is shown to the user."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code.display"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.answer"/>
+        <definition>
+          <short value="The response(s) to the question"/>
+          <formal value="The respondant&#39;s answer(s) to the question."/>
+          <comments value="We nest the value because we can&#39;t have a repeating structure that has variable type."/>
+          <min value="0"/>
+          <max value="0"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".value[type=LIST_ANY]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.answer.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.answer.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.answer.value[x]"/>
+        <definition>
+          <short value="Single-valued answer to the question"/>
+          <formal value="Single-valued answer to the question."/>
+          <comments value="More complex structures (Attachment, Resource, Quantity) will typically be limited to electronic forms that can expose an appropriate user interface to capture the components and enforce the constraints of a complex data type."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="*"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".item"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.group"/>
+        <definition>
+          <short value="Nested questionnaire group"/>
+          <formal value="Nested group, containing nested question for this question. The order of groups within the question is relevant."/>
+          <min value="0"/>
+          <max value="*"/>
+          <nameReference value="QuestionnaireAnswers.group"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=DOCSECT, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+    </snapshot>
+    <differential>
+      <element>
+        <path value="QuestionnaireAnswers"/>
+        <name value="StructuredDataCaptureAnswers"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.questionnaire"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Questionnaire"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.status"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="true"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.subject"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.author"/>
+        <definition>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/RelatedPerson"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.authored"/>
+        <definition>
+          <short value="Identifies when this version of the answer set was created.  Changes whenever the answers are updated."/>
+          <formal value="Identifies when this version of the answer set was created.  Changes whenever the answers are updated."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.source"/>
+        <definition>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/RelatedPerson"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.encounter"/>
+        <definition>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Encounter"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="=Group"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.linkId"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.title"/>
+        <definition>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.text"/>
+        <definition>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.subject"/>
+        <definition>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Any"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.group"/>
+        <definition>
+          <min value="0"/>
+          <max value="*"/>
+          <nameReference value="QuestionnaireAnswers.group"/>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question"/>
+        <definition>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="=Question"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.linkId"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.text"/>
+        <definition>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.answer"/>
+        <definition>
+          <min value="0"/>
+          <max value="0"/>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.answer.value[x]"/>
+        <definition>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="*"/>
+          </type>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+      <element>
+        <path value="QuestionnaireAnswers.group.question.group"/>
+        <definition>
+          <min value="0"/>
+          <max value="*"/>
+          <nameReference value="QuestionnaireAnswers.group"/>
+          <isModifier value="false"/>
+        </definition>
+      </element>
+    </differential>
+  </structure>
+</Profile>

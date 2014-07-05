@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>LocationType</h2>
+      <p>This example value set defines a set of codes that can be used to indicate the physical form of the Location.</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/location-physical-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>bu
+            <a name="bu"> </a>
+          </td>
+          <td>Building</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>wi
+            <a name="wi"> </a>
+          </td>
+          <td>Wing</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>co
+            <a name="co"> </a>
+          </td>
+          <td>Corridor</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>ro
+            <a name="ro"> </a>
+          </td>
+          <td>Room</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>ve
+            <a name="ve"> </a>
+          </td>
+          <td>Vehicle</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>ho
+            <a name="ho"> </a>
+          </td>
+          <td>House</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>ca
+            <a name="ca"> </a>
+          </td>
+          <td>Cabinet</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>rd
+            <a name="rd"> </a>
+          </td>
+          <td>Road</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/location-physical-type"/>
+  <name value="LocationType"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="This example value set defines a set of codes that can be used to indicate the physical form of the Location."/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/location-physical-type"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="bu"/>
+      <display value="Building"/>
+    </concept>
+    <concept>
+      <code value="wi"/>
+      <display value="Wing"/>
+    </concept>
+    <concept>
+      <code value="co"/>
+      <display value="Corridor"/>
+    </concept>
+    <concept>
+      <code value="ro"/>
+      <display value="Room"/>
+    </concept>
+    <concept>
+      <code value="ve"/>
+      <display value="Vehicle"/>
+    </concept>
+    <concept>
+      <code value="ho"/>
+      <display value="House"/>
+    </concept>
+    <concept>
+      <code value="ca"/>
+      <display value="Cabinet"/>
+    </concept>
+    <concept>
+      <code value="rd"/>
+      <display value="Road"/>
+    </concept>
+  </define>
+</ValueSet>

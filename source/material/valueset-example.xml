@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      
+      <p>Value set &quot;LOINC Codes for Cholesterol&quot;: This is an example value set that includes 
+        all the LOINC codes for serum cholesterol from v2.36. 
+        Developed by: FHIR project team (example)</p>
+      
+      <p>Published for testing on 13-June 2012</p>
+      
+      <p>This is a restriction on
+
+        <a href="http://hl7.org/svc/fhir/ValueSet/03acace4-5206-4c8f-a8b4-df27a4c18b09?format=text/html">
+        the value set &quot;all serum test codes&quot;</a>, and contains the following LOINC codes:
+      </p>
+      
+      <ul>
+        
+        <li>14647-2</li>
+        
+        <li>2093-3</li>
+        
+        <li>35200-5</li>
+        
+        <li>9342-7</li>
+      
+      </ul>
+    
+    </div>
+  </text>
+  <identifier value="urn:uuid:256a5231-a2bb-49bd-9fea-f349d428b70d"/>
+  <version value="20120613"/>
+  <name value="LOINC Codes for Cholesterol"/>
+  <publisher value="FHIR project team (example)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="This is an example value set that includes        all the LOINC codes for serum cholesterol from v2.36"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2012-06-13"/>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <version value="2.36"/>
+      <code value="14647-2"/>
+      <code value="2093-3"/>
+      <code value="35200-5"/>
+      <code value="9342-7"/>
+    </include>
+  </compose>
+</ValueSet>

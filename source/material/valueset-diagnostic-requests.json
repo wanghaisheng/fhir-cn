@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      This value set includes all LOINC codes in the &quot;Clinical&quot; or &quot;Lab&quot; class types (TODO: narrow this further - diagnostic codes, panels only)\n    <hr/><h2>LOINC Diagnostic Order Codes</h2><p>This value set includes all the LOINC Order codes</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include codes from http://loinc.org where ORDER_OBS  =  Order</li><li>Include codes from http://loinc.org where ORDER_OBS  =  Both</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/diagnostic-requests",
+  "name": "LOINC Diagnostic Order Codes",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set includes all the LOINC Order codes",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "filter": [
+          {
+            "property": "ORDER_OBS",
+            "op": "=",
+            "value": "Order"
+          }
+        ]
+      },
+      {
+        "system": "http://loinc.org",
+        "filter": [
+          {
+            "property": "ORDER_OBS",
+            "op": "=",
+            "value": "Both"
+          }
+        ]
+      }
+    ]
+  }
+}

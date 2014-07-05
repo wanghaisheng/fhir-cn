@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><table style="border: 0px; font-size: 11px; font-family: verdana; vertical-align: top;" cellpadding="0" border="0" cellspacing="0"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Name</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Card.</th><th style="width: 100px" class="heirarchy">Type</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Description &amp; Constraints</th></tr><tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJBSURBVDjLhdKxa5NBGMfx713yvkmbJnaoFiSF4mJTh06Kg4OgiyCCRXCof4YIdXdxFhQVHPo3OFSoUx0FySQttaVKYq2NbdO8ed/L3fM4JG3tYPvAcfBw9+HHPWdUlf/V0tLSqKo+EpEHInJFRIohhDUR+RBCeDM7O7ua55QSkRfVanVufHyckZERrLV0Op2Zra2tmXq9fg+YsmcAdyYnJykUCke9OI6ZmJgghHAZ4KwE3ntPs9mkVCohIjQaDWq1GiEEAM5KoHEcY62lVCrRarUoFotUKpUjIL/y/uqXYmV62ph/LSVrr30P4bEFcM4B0Ov1jk547/uAUTs1ceNdZIwB7V/GGHz6+9LXxY96eDiEgHMOY8xJAK8p4grZz5cElwNbwZgyxYu3EFM01lriOCZJEqIoIooiALIsGwA9Y1UcwcWoKNLdpLu9zvbnBWqNBhuvn5EDUmB0EH/1E2TZw5U+YLQovkun+Ytsaw1xCbnCOap334LC7s4Oe/ttvA+ICLmhMXRxDufczUECS37oAuevPwUEVFFp4/eXkXSdYc2IopSepnjtUh5/wg9gfn6+OQBUNaRIUkfDHhraSLoBKqikIF3yHJDLHaAkFOLciVHnyVAVj/S2Ub/XRyQD9aAZKgkaOohvo6ENgykcA07VEFDfQv1uf4W9Y8y30bCPhg4qKZJtMnjTPqBO/vhkZ7h3EJeRslWNQMqgY2jIAIfa/m5sIKSpqpPsGEiz599e3b+GchtD+bSvjQJm2SG6cNj6C+QmaxAek5tyAAAAAElFTkSuQmCC"/> <span title="An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy.">Procedure</span><a name="Procedure"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="resources.html">Resource</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">An action that is performed on a patient</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="This records identifiers associated with this procedure that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).">identifier</span><a name="Procedure.identifier"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">External Ids for this procedure</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The person on whom the procedure was performed.">subject</span><a name="Procedure.subject"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="patient.html">Patient</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Who procedure was performed on</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="The specific procedure that is performed. Use text if the exact nature of the procedure can&#39;t be coded.">type</span><a name="Procedure.type"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Identification of the procedure</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.">bodySite</span><a name="Procedure.bodySite"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Precise location details</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="The reason why the procedure was performed. This may be due to a Condition, may be coded entity of some type, or may simply be present as text.">indication</span><a name="Procedure.indication"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Reason procedure performed</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAMQfAOvGUf7ztuvPMf/78/fkl/Pbg+u8Rvjqteu2Pf3zxPz36Pz0z+vTmPzurPvuw/npofbjquvNefHVduuyN+uuMu3Oafbgjfnqvf/3zv/3xevPi+vRjP/20/bmsP///////yH5BAEAAB8ALAAAAAAQABAAAAV24CeOZGmepqeqqOgxjBZFa+19r4ftWQUAgqDgltthMshMIJAZ4jYDHsBARSAmFOJvq+g6HIdEFgcYmBWNxoNAsDjGHgBnmV5bCoUDHLBIq9sFEhIdcAYJdYASFRUQhQkLCwkOFwcdEBAXhVabE52ecDahKy0oIQA7"/> <span title="Limited to &#39;real&#39; people rather than equipment.">performer</span><a name="Procedure.performer"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Element</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The people who performed the procedure</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The practitioner who was involved in the procedure.">person</span><a name="Procedure.performer.person"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="practitioner.html">Practitioner</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The reference to the practitioner</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="E.g. surgeon, anaethetist, endoscopist.">role</span><a name="Procedure.performer.role"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The role the person was in</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="The dates over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">date</span><a name="Procedure.date"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Period">Period</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The date the procedure was performed</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The encounter during which the procedure was performed.">encounter</span><a name="Procedure.encounter"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="encounter.html">Encounter</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The encounter when procedure performed</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="What was the outcome of the procedure - did it resolve reasons why the procedure was performed?.">outcome</span><a name="Procedure.outcome"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">What was result of procedure?</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="This could be a histology result. There could potentially be multiple reports - e.g. if this was a procedure that made multiple biopsies.">report</span><a name="Procedure.report"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="diagnosticreport.html">DiagnosticReport</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Any report that results from the procedure</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Any complications that occurred during the procedure, or in the immediate post-operative period. These are generally tracked separately from the notes, which typically will describe the procedure itself rather than any &#39;post procedure&#39; issues.">complication</span><a name="Procedure.complication"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Complication following the procedure</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or potentially could be more complex in which case the CarePlan resource can be used.">followUp</span><a name="Procedure.followUp"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Instructions for follow up</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAMQfAOvGUf7ztuvPMf/78/fkl/Pbg+u8Rvjqteu2Pf3zxPz36Pz0z+vTmPzurPvuw/npofbjquvNefHVduuyN+uuMu3Oafbgjfnqvf/3zv/3xevPi+vRjP/20/bmsP///////yH5BAEAAB8ALAAAAAAQABAAAAV24CeOZGmepqeqqOgxjBZFa+19r4ftWQUAgqDgltthMshMIJAZ4jYDHsBARSAmFOJvq+g6HIdEFgcYmBWNxoNAsDjGHgBnmV5bCoUDHLBIq9sFEhIdcAYJdYASFRUQhQkLCwkOFwcdEBAXhVabE52ecDahKy0oIQA7"/> <span title="Procedures may be related to other items such as procedures or medications. For example treating wound dehiscence following a previous procedure.">relatedItem</span><a name="Procedure.relatedItem"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Element</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A procedure that is related to this one</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="The nature of the relationship.">type</span><a name="Procedure.relatedItem.type"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">caused-by | because-of<br/><a title="The nature of the relationship with this procedure" href="procedure-relationship-type.html">ProcedureRelationshipType</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The related item - e.g. a procedure.">target</span><a name="Procedure.relatedItem.target"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="adversereaction.html">AdverseReaction</a> | <a href="allergyintolerance.html">AllergyIntolerance</a> | <a href="careplan.html">CarePlan</a> | <a href="condition.html">Condition</a> | <a href="deviceobservationreport.html">DeviceObservationReport</a> | <a href="diagnosticreport.html">DiagnosticReport</a> | <a href="familyhistory.html">FamilyHistory</a> | <a href="imagingstudy.html">ImagingStudy</a> | <a href="immunization.html">Immunization</a> | <a href="immunizationrecommendation.html">ImmunizationRecommendation</a> | <a href="medicationadministration.html">MedicationAdministration</a> | <a href="medicationdispense.html">MedicationDispense</a> | <a href="medicationprescription.html">MedicationPrescription</a> | <a href="medicationstatement.html">MedicationStatement</a> | <a href="observation.html">Observation</a> | <a href="procedure.html">Procedure</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The related item - e.g. a procedure</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAD0lEQVR42mP4TzJgIF0LANmXY523xFiMAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="Any other notes about the procedure - e.g. the operative notes.">notes</span><a name="Procedure.notes"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Additional information about procedure</td></tr>
+</table></div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/Procedure"/>
+  <name value="Procedure"/>
+  <publisher value="HL7 FHIR Standard"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Base Profile for Procedure Resource"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:21:45.837+08:00"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <structure>
+    <type value="Procedure"/>
+    <publish value="true"/>
+    <purpose value="This is the definition for the Procedure resource"/>
+    <snapshot>
+      <element>
+        <path value="Procedure"/>
+        <definition>
+          <short value="An action that is performed on a patient"/>
+          <formal value="An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Procedure[moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.language"/>
+        <definition>
+          <short value="Language of the resource content"/>
+          <formal value="The base language in which the resource is written."/>
+          <comments value="Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource
+
+Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.text"/>
+        <definition>
+          <short value="Text summary of the resource, for human interpretation"/>
+          <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+          <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+          <synonym value="narrative"/>
+          <synonym value="html"/>
+          <synonym value="xhtml"/>
+          <synonym value="display"/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Narrative"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.contained"/>
+        <definition>
+          <short value="Contained, inline Resources"/>
+          <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+          <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+          <synonym value="inline resources"/>
+          <synonym value="anonymous resources"/>
+          <synonym value="contained resources"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.identifier"/>
+        <definition>
+          <short value="External Ids for this procedure"/>
+          <formal value="This records identifiers associated with this procedure that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.subject"/>
+        <definition>
+          <short value="Who procedure was performed on"/>
+          <formal value="The person on whom the procedure was performed."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=SBJ].role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.type"/>
+        <definition>
+          <short value="Identification of the procedure"/>
+          <formal value="The specific procedure that is performed. Use text if the exact nature of the procedure can&#39;t be coded."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.bodySite"/>
+        <definition>
+          <short value="Precise location details"/>
+          <formal value="Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".approachSiteCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.indication"/>
+        <definition>
+          <short value="Reason procedure performed"/>
+          <formal value="The reason why the procedure was performed. This may be due to a Condition, may be coded entity of some type, or may simply be present as text."/>
+          <comments value="e.g. endoscopy for dilatation and biopsy, combination diagnosis and therapuetic."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".reasonCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer"/>
+        <definition>
+          <short value="The people who performed the procedure"/>
+          <formal value="Limited to &#39;real&#39; people rather than equipment."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=PFM]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer.person"/>
+        <definition>
+          <short value="The reference to the practitioner"/>
+          <formal value="The practitioner who was involved in the procedure."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer.role"/>
+        <definition>
+          <short value="The role the person was in"/>
+          <formal value="E.g. surgeon, anaethetist, endoscopist."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".functionCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.date"/>
+        <definition>
+          <short value="The date the procedure was performed"/>
+          <formal value="The dates over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Period"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="This should be choice of dateTime|Period"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".effectiveTime"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.encounter"/>
+        <definition>
+          <short value="The encounter when procedure performed"/>
+          <formal value="The encounter during which the procedure was performed."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Encounter"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.outcome"/>
+        <definition>
+          <short value="What was result of procedure?"/>
+          <formal value="What was the outcome of the procedure - did it resolve reasons why the procedure was performed?."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=OUT].target.text"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.report"/>
+        <definition>
+          <short value="Any report that results from the procedure"/>
+          <formal value="This could be a histology result. There could potentially be multiple reports - e.g. if this was a procedure that made multiple biopsies."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DiagnosticReport"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.complication"/>
+        <definition>
+          <short value="Complication following the procedure"/>
+          <formal value="Any complications that occurred during the procedure, or in the immediate post-operative period. These are generally tracked separately from the notes, which typically will describe the procedure itself rather than any &#39;post procedure&#39; issues."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Need specialization of OUT for this."/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.followUp"/>
+        <definition>
+          <short value="Instructions for follow up"/>
+          <formal value="If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or potentially could be more complex in which case the CarePlan resource can be used."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=ACT, moodCode=INT].text"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem"/>
+        <definition>
+          <short value="A procedure that is related to this one"/>
+          <formal value="Procedures may be related to other items such as procedures or medications. For example treating wound dehiscence following a previous procedure."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=TRIG and target[classCode=PROC, moodCode=EVN]]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem.type"/>
+        <definition>
+          <short value="caused-by | because-of"/>
+          <formal value="The nature of the relationship."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="ProcedureRelationshipType"/>
+            <isExtensible value="false"/>
+            <description value="The nature of the relationship with this procedure"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/procedure-relationship-type"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inversionInd"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem.target"/>
+        <definition>
+          <short value="The related item - e.g. a procedure"/>
+          <formal value="The related item - e.g. a procedure."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/AdverseReaction"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/AllergyIntolerance"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/CarePlan"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Condition"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DeviceObservationReport"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DiagnosticReport"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/FamilyHistory"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/ImagingStudy"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Immunization"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/ImmunizationRecommendation"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationAdministration"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationDispense"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationPrescription"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationStatement"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Observation"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Procedure"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".target"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.notes"/>
+        <definition>
+          <short value="Additional information about procedure"/>
+          <formal value="Any other notes about the procedure - e.g. the operative notes."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value"/>
+          </mapping>
+        </definition>
+      </element>
+    </snapshot>
+    <differential>
+      <element>
+        <path value="Procedure"/>
+        <definition>
+          <short value="An action that is performed on a patient"/>
+          <formal value="An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Procedure[moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.identifier"/>
+        <definition>
+          <short value="External Ids for this procedure"/>
+          <formal value="This records identifiers associated with this procedure that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".id"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.subject"/>
+        <definition>
+          <short value="Who procedure was performed on"/>
+          <formal value="The person on whom the procedure was performed."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Patient"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=SBJ].role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.type"/>
+        <definition>
+          <short value="Identification of the procedure"/>
+          <formal value="The specific procedure that is performed. Use text if the exact nature of the procedure can&#39;t be coded."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".code"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.bodySite"/>
+        <definition>
+          <short value="Precise location details"/>
+          <formal value="Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".approachSiteCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.indication"/>
+        <definition>
+          <short value="Reason procedure performed"/>
+          <formal value="The reason why the procedure was performed. This may be due to a Condition, may be coded entity of some type, or may simply be present as text."/>
+          <comments value="e.g. endoscopy for dilatation and biopsy, combination diagnosis and therapuetic."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".reasonCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer"/>
+        <definition>
+          <short value="The people who performed the procedure"/>
+          <formal value="Limited to &#39;real&#39; people rather than equipment."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".participation[typeCode=PFM]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer.person"/>
+        <definition>
+          <short value="The reference to the practitioner"/>
+          <formal value="The practitioner who was involved in the procedure."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Practitioner"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".role"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.performer.role"/>
+        <definition>
+          <short value="The role the person was in"/>
+          <formal value="E.g. surgeon, anaethetist, endoscopist."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".functionCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.date"/>
+        <definition>
+          <short value="The date the procedure was performed"/>
+          <formal value="The dates over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Period"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="This should be choice of dateTime|Period"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".effectiveTime"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.encounter"/>
+        <definition>
+          <short value="The encounter when procedure performed"/>
+          <formal value="The encounter during which the procedure was performed."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Encounter"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.outcome"/>
+        <definition>
+          <short value="What was result of procedure?"/>
+          <formal value="What was the outcome of the procedure - did it resolve reasons why the procedure was performed?."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=OUT].target.text"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.report"/>
+        <definition>
+          <short value="Any report that results from the procedure"/>
+          <formal value="This could be a histology result. There could potentially be multiple reports - e.g. if this was a procedure that made multiple biopsies."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DiagnosticReport"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.complication"/>
+        <definition>
+          <short value="Complication following the procedure"/>
+          <formal value="Any complications that occurred during the procedure, or in the immediate post-operative period. These are generally tracked separately from the notes, which typically will describe the procedure itself rather than any &#39;post procedure&#39; issues."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Need specialization of OUT for this."/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.followUp"/>
+        <definition>
+          <short value="Instructions for follow up"/>
+          <formal value="If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or potentially could be more complex in which case the CarePlan resource can be used."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=COMP].target[classCode=ACT, moodCode=INT].text"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem"/>
+        <definition>
+          <short value="A procedure that is related to this one"/>
+          <formal value="Procedures may be related to other items such as procedures or medications. For example treating wound dehiscence following a previous procedure."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".outboundRelationship[typeCode=TRIG and target[classCode=PROC, moodCode=EVN]]"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem.type"/>
+        <definition>
+          <short value="caused-by | because-of"/>
+          <formal value="The nature of the relationship."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="ProcedureRelationshipType"/>
+            <isExtensible value="false"/>
+            <description value="The nature of the relationship with this procedure"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/procedure-relationship-type"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inversionInd"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.relatedItem.target"/>
+        <definition>
+          <short value="The related item - e.g. a procedure"/>
+          <formal value="The related item - e.g. a procedure."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/AdverseReaction"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/AllergyIntolerance"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/CarePlan"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Condition"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DeviceObservationReport"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/DiagnosticReport"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/FamilyHistory"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/ImagingStudy"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Immunization"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/ImmunizationRecommendation"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationAdministration"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationDispense"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationPrescription"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/MedicationStatement"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Observation"/>
+          </type>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Procedure"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".target"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Procedure.notes"/>
+        <definition>
+          <short value="Additional information about procedure"/>
+          <formal value="Any other notes about the procedure - e.g. the operative notes."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="string"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value"/>
+          </mapping>
+        </definition>
+      </element>
+    </differential>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The stated language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="date"/>
+      <type value="date"/>
+      <documentation value="The date the procedure was performed on"/>
+      <xpath value="f:Procedure/f:date"/>
+    </searchParam>
+    <searchParam>
+      <name value="subject"/>
+      <type value="reference"/>
+      <documentation value="The identity of a patient to list procedures  for"/>
+      <xpath value="f:Procedure/f:subject"/>
+    </searchParam>
+    <searchParam>
+      <name value="type"/>
+      <type value="token"/>
+      <documentation value="Type of procedure"/>
+      <xpath value="f:Procedure/f:type"/>
+    </searchParam>
+  </structure>
+</Profile>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>FHIR Document Codes</h2>
+      <p>FHIR Document Codes - all LOINC codes where scale_type = &#39;DOC&#39;</p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include codes from http://loinc.org where SCALE_TYP  =  DOC</li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/docset-codes"/>
+  <name value="FHIR Document Codes"/>
+  <publisher value="HL7"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org"/>
+  </telecom>
+  <description value="FHIR Document Codes - all LOINC codes where scale_type = &#39;DOC&#39;"/>
+  <status value="draft"/>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <filter>
+        <property value="SCALE_TYP"/>
+        <op value="="/>
+        <value value="DOC"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

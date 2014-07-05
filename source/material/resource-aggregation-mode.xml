@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>AggregationMode</h2>
+      <p>How resource references can be aggregated</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/resource-aggregation-mode</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>contained
+            <a name="contained"> </a>
+          </td>
+          <td/>
+          <td>The reference is a local reference to a contained resource.</td>
+        </tr>
+        <tr>
+          <td>referenced
+            <a name="referenced"> </a>
+          </td>
+          <td/>
+          <td>The reference to to a resource that has to be resolved externally to the resource that includes the reference.</td>
+        </tr>
+        <tr>
+          <td>..bundled
+            <a name="bundled"> </a>
+          </td>
+          <td/>
+          <td>The resource the reference points to will be found in the same bundle as the resource that includes the reference.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/resource-aggregation-mode"/>
+  <name value="AggregationMode"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="How resource references can be aggregated"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.903+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/resource-aggregation-mode"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="contained"/>
+      <definition value="The reference is a local reference to a contained resource."/>
+    </concept>
+    <concept>
+      <code value="referenced"/>
+      <definition value="The reference to to a resource that has to be resolved externally to the resource that includes the reference."/>
+      <concept>
+        <code value="bundled"/>
+        <definition value="The resource the reference points to will be found in the same bundle as the resource that includes the reference."/>
+      </concept>
+    </concept>
+  </define>
+</ValueSet>

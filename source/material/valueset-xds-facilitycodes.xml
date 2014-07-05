@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>XDS Connect-a-thon healthcareFacilityTypeCodes</h2>
+      <p>Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml, with substantial corrections applied</p>
+      <p>This value set defines its own terms in the system urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Home
+            <a name="Home"> </a>
+          </td>
+          <td>Home</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Assisted Living
+            <a name="AssistedLiving"> </a>
+          </td>
+          <td>Assisted Living</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Home Health Care
+            <a name="HomeHealthCare"> </a>
+          </td>
+          <td>Home Health Care</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Hospital Setting
+            <a name="HospitalSetting"> </a>
+          </td>
+          <td>Hospital Setting</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Acute care hospital
+            <a name="Acutecarehospital"> </a>
+          </td>
+          <td>Acute care hospital</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Hospital Unit
+            <a name="HospitalUnit"> </a>
+          </td>
+          <td>Hospital Unit</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Critical Care Unit
+            <a name="CriticalCareUnit"> </a>
+          </td>
+          <td>Critical Care Unit</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Emergency Department
+            <a name="EmergencyDepartment"> </a>
+          </td>
+          <td>Emergency Department</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Observation Ward
+            <a name="ObservationWard"> </a>
+          </td>
+          <td>Observation Ward</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Rehabilitation hospital
+            <a name="Rehabilitationhospital"> </a>
+          </td>
+          <td>Rehabilitation hospital</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Nursing Home
+            <a name="NursingHome"> </a>
+          </td>
+          <td>Nursing Home</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Skilled Nursing Facility
+            <a name="SkilledNursingFacility"> </a>
+          </td>
+          <td>Skilled Nursing Facility</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>Outpatient
+            <a name="Outpatient"> </a>
+          </td>
+          <td>Outpatient</td>
+          <td/>
+        </tr>
+      </table>
+      <p>In addition, this value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include these codes as defined in 
+          <a href="http://hl7.org/fhir/v3/HealthcareProviderTaxonomyHIPAA">http://hl7.org/fhir/v3/HealthcareProviderTaxonomyHIPAA</a>
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>394802001</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>281PC2000N</td>
+              <td>Hospitals; Chronic Disease Hospital; Children</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>282NC2000N</td>
+              <td>Hospitals; General Acute Care Hospital; Children</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>281NR1301N</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>282NW0100N</td>
+              <td>Hospitals; General Acute Care Hospital; Women</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>283XC2000N</td>
+              <td>Hospitals; Rehabilitation Hospital; Children</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>2865C1500N</td>
+              <td>Hospitals; Military Hospital; Community Health</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>2865M2000N</td>
+              <td>Hospitals; Military Hospital; Medical Center</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>2865X1600N</td>
+              <td>Hospitals; Military Hospital; Operational Component Facility</td>
+              <td/>
+            </tr>
+          </table>
+        </li>
+        <li>Include these codes as defined in 
+          <a href="http://hl7.org/fhir/v3/RoleCode">http://hl7.org/fhir/v3/RoleCode</a>
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>ACC</td>
+              <td>accident site</td>
+              <td>Location of an accident where healthcare service was delivered, such as a roadside.</td>
+            </tr>
+            <tr>
+              <td>ALL</td>
+              <td>Allergy clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>AMB</td>
+              <td>Ambulance</td>
+              <td>Location (mobile) where healthcare service was delivered, identified specifically as an ambulance.</td>
+            </tr>
+            <tr>
+              <td>AMPUT</td>
+              <td>Amputee clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>BMTC</td>
+              <td>Bone marrow transplant clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>BMTU</td>
+              <td>Bone marrow transplant unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>BREAST</td>
+              <td>Breast clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CANC</td>
+              <td>Child and adolescent neurology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CAPC</td>
+              <td>Child and adolescent psychiatry clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CARD</td>
+              <td>Ambulatory Health Care Facilities; Clinic/Center; Rehabilitation: Cardiac Facilities</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CATH</td>
+              <td>Cardiac catheterization lab</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CCU</td>
+              <td>Coronary care unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CHEST</td>
+              <td>Chest unit</td>
+              <td>A specialty unit in hospital that focuses on chronic respirator patients and pulmonary failure</td>
+            </tr>
+            <tr>
+              <td>CHR</td>
+              <td>Chronic Care Facility</td>
+              <td>(1) A hospital including a physical plant and personnel that provides multidisciplinary diagnosis and treatment for diseases that have one or more of the following characteristics: is permanent; leaves residual disability; is caused by nonreversible pathological alteration; requires special training of the patient for rehabilitation; and/or may be expected to require a long period of supervision or care. In addition, patients require the safety, security, and shelter of these specialized inpatient or partial hospitalization settings. (2) A hospital that provides medical and skilled nursing services to patients with long-term illnesses who are not in an acute phase but who require an intensity of services not available in nursing homes</td>
+            </tr>
+            <tr>
+              <td>COAG</td>
+              <td>Coagulation clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>COMM</td>
+              <td>Community Location</td>
+              <td>Community location where healthcare is delivered.</td>
+            </tr>
+            <tr>
+              <td>CRS</td>
+              <td>Colon and rectal surgery clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>CVDX</td>
+              <td>Cardiovascular diagnostics or therapeutics unit</td>
+              <td>A practice setting where cardiovascular diagnostic procedures or therapeutic interventions are performed (e.g., cardiac catheterization lab, echocardiography suite)</td>
+            </tr>
+            <tr>
+              <td>DADDR</td>
+              <td>Delivery Address</td>
+              <td>Location address where medical supplies were transported to for use.</td>
+            </tr>
+            <tr>
+              <td>DERM</td>
+              <td>Dermatology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>DX</td>
+              <td>Diagnostics or therapeutics unit</td>
+              <td>A practice setting where diagnostic procedures or therapeutic interventions are performed</td>
+            </tr>
+            <tr>
+              <td>ECHO</td>
+              <td>Echocardiography lab</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>ENDO</td>
+              <td>Endocrinology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>ENDOS</td>
+              <td>Endoscopy lab</td>
+              <td>(X12N 261QD0000N)</td>
+            </tr>
+            <tr>
+              <td>ENT</td>
+              <td>Otorhinolaryngology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>EPIL</td>
+              <td>Epilepsy unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>ER</td>
+              <td>Emergency room</td>
+              <td>The section of a health care facility for providing rapid treatment to victims of sudden illness or trauma.</td>
+            </tr>
+            <tr>
+              <td>ETU</td>
+              <td>Emergency trauma unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>FMC</td>
+              <td>Family medicine clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>GACH</td>
+              <td>Hospitals; General Acute Care Hospital</td>
+              <td>(X12N 282N00000N)</td>
+            </tr>
+            <tr>
+              <td>GI</td>
+              <td>Gastroenterology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>GIDX</td>
+              <td>Gastroenterology diagnostics or therapeutics lab</td>
+              <td>A practice setting where GI procedures (such as endoscopies) are performed</td>
+            </tr>
+            <tr>
+              <td>GIM</td>
+              <td>General internal medicine clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>GYN</td>
+              <td>Gynecology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>HAND</td>
+              <td>Hand clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>HD</td>
+              <td>Hemodialysis unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>HEM</td>
+              <td>Hematology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>HOSP</td>
+              <td>Hospital</td>
+              <td>An acute care institution that provides medical, surgical, or psychiatric care and treatment for the sick or the injured.</td>
+            </tr>
+            <tr>
+              <td>HTN</td>
+              <td>Hypertension clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>HU</td>
+              <td>Hospital unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>ICU</td>
+              <td>Intensive care unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>IEC</td>
+              <td>Impairment evaluation center</td>
+              <td>Focuses on assessing disability</td>
+            </tr>
+            <tr>
+              <td>INFD</td>
+              <td>Infectious disease clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>INV</td>
+              <td>Infertility clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>LYMPH</td>
+              <td>Lympedema clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>MGEN</td>
+              <td>Medical genetics clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>MHSP</td>
+              <td>Military Hospital</td>
+              <td>A health care facility operated by the Department of Defense or other military operation.</td>
+            </tr>
+            <tr>
+              <td>MOBL</td>
+              <td>Mobile Unit</td>
+              <td>Location (mobile) where healthcare service was delivered.</td>
+            </tr>
+            <tr>
+              <td>NCCF</td>
+              <td>Nursing or custodial care facility</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>NCCS</td>
+              <td>Neurology critical care and stroke unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>NEPH</td>
+              <td>Nephrology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>NEUR</td>
+              <td>Neurology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>NS</td>
+              <td>Neurosurgery unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>OB</td>
+              <td>Obstetrics clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>OF</td>
+              <td>Outpatient facility</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>OMS</td>
+              <td>Oral and maxillofacial surgery clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>ONCL</td>
+              <td>Medical oncology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>OPH</td>
+              <td>Opthalmology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>ORTHO</td>
+              <td>Orthopedics clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PAINCL</td>
+              <td>Pain clinic</td>
+              <td>(X12N 261QP3300N)</td>
+            </tr>
+            <tr>
+              <td>PC</td>
+              <td>Primary care clinic</td>
+              <td>(X12N 261QP2300N)</td>
+            </tr>
+            <tr>
+              <td>PEDC</td>
+              <td>Pediatrics clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDCARD</td>
+              <td>Pediatric cardiology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDE</td>
+              <td>Pediatric endocrinology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDGI</td>
+              <td>Pediatric gastroenterology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDHEM</td>
+              <td>Pediatric hematology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDHO</td>
+              <td>Pediatric oncology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDICU</td>
+              <td>Pediatric intensive care unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDID</td>
+              <td>Pediatric infectious disease clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDNEPH</td>
+              <td>Pediatric nephrology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDNICU</td>
+              <td>Pediatric neonatal intensive care unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDRHEUM</td>
+              <td>Pediatric rheumatology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PEDU</td>
+              <td>Pediatric unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PHARM</td>
+              <td>Pharmacy</td>
+              <td>Location where healthcare service was delivered, identified as a pharmacy.</td>
+            </tr>
+            <tr>
+              <td>PHU</td>
+              <td>Psychiatric hospital unit</td>
+              <td>(X12N 273R00000N)</td>
+            </tr>
+            <tr>
+              <td>PLS</td>
+              <td>Plastic surgery clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>POD</td>
+              <td>Podiatry clinic</td>
+              <td>(X12N 261QP1100N)</td>
+            </tr>
+            <tr>
+              <td>PRC</td>
+              <td>Pain rehabilitation center</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PREV</td>
+              <td>Preventive medicine clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PROCTO</td>
+              <td>Proctology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PROFF</td>
+              <td>Provider&#39;s Office</td>
+              <td>Location where healthcare service was delivered, identified as the healthcare provider&#39;s practice office.</td>
+            </tr>
+            <tr>
+              <td>PROS</td>
+              <td>Prosthodontics clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PSI</td>
+              <td>Psychology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PSY</td>
+              <td>Psychiatry clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>PSYCHF</td>
+              <td>Psychatric Care Facility</td>
+              <td>Healthcare facility that cares for patients with psychiatric illness(s).</td>
+            </tr>
+            <tr>
+              <td>PTRES</td>
+              <td>Patient&#39;s Residence</td>
+              <td>location where healthcare was delivered which is the residence of the Patient.</td>
+            </tr>
+            <tr>
+              <td>RADDX</td>
+              <td>Radiology diagnostics or therapeutics unit</td>
+              <td>A practice setting where radiology services (diagnostic or therapeutic) are provided            (X12N 261QR0200N)</td>
+            </tr>
+            <tr>
+              <td>RADO</td>
+              <td>Radiation oncology unit</td>
+              <td>(X12N 261QX0203N)</td>
+            </tr>
+            <tr>
+              <td>RH</td>
+              <td>Rehabilitation hospital</td>
+              <td>(X12N 283X00000N)</td>
+            </tr>
+            <tr>
+              <td>RHEUM</td>
+              <td>Rheumatology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>RHU</td>
+              <td>Rehabilitation hospital unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>RNEU</td>
+              <td>Neuroradiology unit</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>RTF</td>
+              <td>Residential treatment facility</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>SCHOOL</td>
+              <td>school</td>
+              <td>Location where healthcare service was delivered, identified as a school or educational facility.</td>
+            </tr>
+            <tr>
+              <td>SLEEP</td>
+              <td>Sleep disorders unit</td>
+              <td>(X12N 261QA1200N)</td>
+            </tr>
+            <tr>
+              <td>SNF</td>
+              <td>Skilled nursing facility</td>
+              <td>(X12N 314000000N)</td>
+            </tr>
+            <tr>
+              <td>SPMED</td>
+              <td>Sports medicine clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>SU</td>
+              <td>Surgery clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>SURF</td>
+              <td>Substance use rehabilitation facility</td>
+              <td>(X12N 324500000N)</td>
+            </tr>
+            <tr>
+              <td>TR</td>
+              <td>Transplant clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>TRAVEL</td>
+              <td>Travel and geographic medicine clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>URO</td>
+              <td>Urology clinic</td>
+              <td/>
+            </tr>
+            <tr>
+              <td>WND</td>
+              <td>Wound clinic</td>
+              <td/>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/xds-facilitycodes"/>
+  <name value="XDS Connect-a-thon healthcareFacilityTypeCodes"/>
+  <publisher value="IHE"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://ihe.net"/>
+  </telecom>
+  <description value="Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml, with substantial corrections applied"/>
+  <status value="draft"/>
+  <define>
+    <system value="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"/>
+    <concept>
+      <code value="Home"/>
+      <display value="Home"/>
+    </concept>
+    <concept>
+      <code value="Assisted Living"/>
+      <display value="Assisted Living"/>
+    </concept>
+    <concept>
+      <code value="Home Health Care"/>
+      <display value="Home Health Care"/>
+    </concept>
+    <concept>
+      <code value="Hospital Setting"/>
+      <display value="Hospital Setting"/>
+    </concept>
+    <concept>
+      <code value="Acute care hospital"/>
+      <display value="Acute care hospital"/>
+    </concept>
+    <concept>
+      <code value="Hospital Unit"/>
+      <display value="Hospital Unit"/>
+    </concept>
+    <concept>
+      <code value="Critical Care Unit"/>
+      <display value="Critical Care Unit"/>
+    </concept>
+    <concept>
+      <code value="Emergency Department"/>
+      <display value="Emergency Department"/>
+    </concept>
+    <concept>
+      <code value="Observation Ward"/>
+      <display value="Observation Ward"/>
+    </concept>
+    <concept>
+      <code value="Rehabilitation hospital"/>
+      <display value="Rehabilitation hospital"/>
+    </concept>
+    <concept>
+      <code value="Nursing Home"/>
+      <display value="Nursing Home"/>
+    </concept>
+    <concept>
+      <code value="Skilled Nursing Facility"/>
+      <display value="Skilled Nursing Facility"/>
+    </concept>
+    <concept>
+      <code value="Outpatient"/>
+      <display value="Outpatient"/>
+    </concept>
+  </define>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/v3/HealthcareProviderTaxonomyHIPAA"/>
+      <code value="394802001"/>
+      <code value="281PC2000N"/>
+      <code value="282NC2000N"/>
+      <code value="281NR1301N"/>
+      <code value="282NW0100N"/>
+      <code value="283XC2000N"/>
+      <code value="2865C1500N"/>
+      <code value="2865M2000N"/>
+      <code value="2865X1600N"/>
+    </include>
+    <include>
+      <system value="http://hl7.org/fhir/v3/RoleCode"/>
+      <code value="ACC"/>
+      <code value="ALL"/>
+      <code value="AMB"/>
+      <code value="AMPUT"/>
+      <code value="BMTC"/>
+      <code value="BMTU"/>
+      <code value="BREAST"/>
+      <code value="CANC"/>
+      <code value="CAPC"/>
+      <code value="CARD"/>
+      <code value="CATH"/>
+      <code value="CCU"/>
+      <code value="CHEST"/>
+      <code value="CHR"/>
+      <code value="COAG"/>
+      <code value="COMM"/>
+      <code value="CRS"/>
+      <code value="CVDX"/>
+      <code value="DADDR"/>
+      <code value="DERM"/>
+      <code value="DX"/>
+      <code value="ECHO"/>
+      <code value="ENDO"/>
+      <code value="ENDOS"/>
+      <code value="ENT"/>
+      <code value="EPIL"/>
+      <code value="ER"/>
+      <code value="ETU"/>
+      <code value="FMC"/>
+      <code value="GACH"/>
+      <code value="GI"/>
+      <code value="GIDX"/>
+      <code value="GIM"/>
+      <code value="GYN"/>
+      <code value="HAND"/>
+      <code value="HD"/>
+      <code value="HEM"/>
+      <code value="HOSP"/>
+      <code value="HTN"/>
+      <code value="HU"/>
+      <code value="ICU"/>
+      <code value="IEC"/>
+      <code value="INFD"/>
+      <code value="INV"/>
+      <code value="LYMPH"/>
+      <code value="MGEN"/>
+      <code value="MHSP"/>
+      <code value="MOBL"/>
+      <code value="NCCF"/>
+      <code value="NCCS"/>
+      <code value="NEPH"/>
+      <code value="NEUR"/>
+      <code value="NS"/>
+      <code value="OB"/>
+      <code value="OF"/>
+      <code value="OMS"/>
+      <code value="ONCL"/>
+      <code value="OPH"/>
+      <code value="ORTHO"/>
+      <code value="PAINCL"/>
+      <code value="PC"/>
+      <code value="PEDC"/>
+      <code value="PEDCARD"/>
+      <code value="PEDE"/>
+      <code value="PEDGI"/>
+      <code value="PEDHEM"/>
+      <code value="PEDHO"/>
+      <code value="PEDICU"/>
+      <code value="PEDID"/>
+      <code value="PEDNEPH"/>
+      <code value="PEDNICU"/>
+      <code value="PEDRHEUM"/>
+      <code value="PEDU"/>
+      <code value="PHARM"/>
+      <code value="PHU"/>
+      <code value="PLS"/>
+      <code value="POD"/>
+      <code value="PRC"/>
+      <code value="PREV"/>
+      <code value="PROCTO"/>
+      <code value="PROFF"/>
+      <code value="PROS"/>
+      <code value="PSI"/>
+      <code value="PSY"/>
+      <code value="PSYCHF"/>
+      <code value="PTRES"/>
+      <code value="RADDX"/>
+      <code value="RADO"/>
+      <code value="RH"/>
+      <code value="RHEUM"/>
+      <code value="RHU"/>
+      <code value="RNEU"/>
+      <code value="RTF"/>
+      <code value="SCHOOL"/>
+      <code value="SLEEP"/>
+      <code value="SNF"/>
+      <code value="SPMED"/>
+      <code value="SU"/>
+      <code value="SURF"/>
+      <code value="TR"/>
+      <code value="TRAVEL"/>
+      <code value="URO"/>
+      <code value="WND"/>
+    </include>
+  </compose>
+</ValueSet>

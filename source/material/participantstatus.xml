@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ParticipantStatus</h2>
+      <p>The Participation status of an appointment</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/participantstatus</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>accepted
+            <a name="accepted"> </a>
+          </td>
+          <td/>
+          <td>The appointment participant has accepted that they can attend the appointment at the time specified in the AppointmentResponse.</td>
+        </tr>
+        <tr>
+          <td>declined
+            <a name="declined"> </a>
+          </td>
+          <td/>
+          <td>The appointment participant has declined the appointment.</td>
+        </tr>
+        <tr>
+          <td>tentative
+            <a name="tentative"> </a>
+          </td>
+          <td/>
+          <td>The appointment participant has tentatively accepted the appointment.</td>
+        </tr>
+        <tr>
+          <td>in-process
+            <a name="in-process"> </a>
+          </td>
+          <td/>
+          <td>The participant has in-process the appointment.</td>
+        </tr>
+        <tr>
+          <td>completed
+            <a name="completed"> </a>
+          </td>
+          <td/>
+          <td>The participant has completed the appointment.</td>
+        </tr>
+        <tr>
+          <td>needs-action
+            <a name="needs-action"> </a>
+          </td>
+          <td/>
+          <td>This is the intitial status of an appointment participant until a participant has replied. It implies that there is no commitment for the appointment.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/participantstatus"/>
+  <name value="ParticipantStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The Participation status of an appointment"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.901+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/participantstatus"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="accepted"/>
+      <definition value="The appointment participant has accepted that they can attend the appointment at the time specified in the AppointmentResponse."/>
+    </concept>
+    <concept>
+      <code value="declined"/>
+      <definition value="The appointment participant has declined the appointment."/>
+    </concept>
+    <concept>
+      <code value="tentative"/>
+      <definition value="The appointment participant has tentatively accepted the appointment."/>
+    </concept>
+    <concept>
+      <code value="in-process"/>
+      <definition value="The participant has in-process the appointment."/>
+    </concept>
+    <concept>
+      <code value="completed"/>
+      <definition value="The participant has completed the appointment."/>
+    </concept>
+    <concept>
+      <code value="needs-action"/>
+      <definition value="This is the intitial status of an appointment participant until a participant has replied. It implies that there is no commitment for the appointment."/>
+    </concept>
+  </define>
+</ValueSet>

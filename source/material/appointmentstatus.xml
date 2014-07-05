@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>AppointmentStatus</h2>
+      <p>The free/busy status of an appointment</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/appointmentstatus</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>busy
+            <a name="busy"> </a>
+          </td>
+          <td/>
+          <td>The participant(s) will be unavailable during this appointment.</td>
+        </tr>
+        <tr>
+          <td>free
+            <a name="free"> </a>
+          </td>
+          <td/>
+          <td>The participant(s) will still be available during this appointment.</td>
+        </tr>
+        <tr>
+          <td>tentative
+            <a name="tentative"> </a>
+          </td>
+          <td/>
+          <td>This appointment has not been confirmed, and may become available.</td>
+        </tr>
+        <tr>
+          <td>outofoffice
+            <a name="outofoffice"> </a>
+          </td>
+          <td/>
+          <td>The participant(s) will not be at the usual location.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/appointmentstatus"/>
+  <name value="AppointmentStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The free/busy status of an appointment"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.895+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/appointmentstatus"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="busy"/>
+      <definition value="The participant(s) will be unavailable during this appointment."/>
+    </concept>
+    <concept>
+      <code value="free"/>
+      <definition value="The participant(s) will still be available during this appointment."/>
+    </concept>
+    <concept>
+      <code value="tentative"/>
+      <definition value="This appointment has not been confirmed, and may become available."/>
+    </concept>
+    <concept>
+      <code value="outofoffice"/>
+      <definition value="The participant(s) will not be at the usual location."/>
+    </concept>
+  </define>
+</ValueSet>

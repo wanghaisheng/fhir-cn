@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><table style="border: 0px; font-size: 11px; font-family: verdana; vertical-align: top;" cellpadding="0" border="0" cellspacing="0"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Name</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Card.</th><th style="width: 100px" class="heirarchy">Type</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Description &amp; Constraints</th></tr><tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJBSURBVDjLhdKxa5NBGMfx713yvkmbJnaoFiSF4mJTh06Kg4OgiyCCRXCof4YIdXdxFhQVHPo3OFSoUx0FySQttaVKYq2NbdO8ed/L3fM4JG3tYPvAcfBw9+HHPWdUlf/V0tLSqKo+EpEHInJFRIohhDUR+RBCeDM7O7ua55QSkRfVanVufHyckZERrLV0Op2Zra2tmXq9fg+YsmcAdyYnJykUCke9OI6ZmJgghHAZ4KwE3ntPs9mkVCohIjQaDWq1GiEEAM5KoHEcY62lVCrRarUoFotUKpUjIL/y/uqXYmV62ph/LSVrr30P4bEFcM4B0Ov1jk547/uAUTs1ceNdZIwB7V/GGHz6+9LXxY96eDiEgHMOY8xJAK8p4grZz5cElwNbwZgyxYu3EFM01lriOCZJEqIoIooiALIsGwA9Y1UcwcWoKNLdpLu9zvbnBWqNBhuvn5EDUmB0EH/1E2TZw5U+YLQovkun+Ytsaw1xCbnCOap334LC7s4Oe/ttvA+ICLmhMXRxDufczUECS37oAuevPwUEVFFp4/eXkXSdYc2IopSepnjtUh5/wg9gfn6+OQBUNaRIUkfDHhraSLoBKqikIF3yHJDLHaAkFOLciVHnyVAVj/S2Ub/XRyQD9aAZKgkaOohvo6ENgykcA07VEFDfQv1uf4W9Y8y30bCPhg4qKZJtMnjTPqBO/vhkZ7h3EJeRslWNQMqgY2jIAIfa/m5sIKSpqpPsGEiz599e3b+GchtD+bSvjQJm2SG6cNj6C+QmaxAek5tyAAAAAElFTkSuQmCC"/> <span title="A person who is directly or indirectly involved in the provisioning of healthcare.">Practitioner</span><a name="Practitioner"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="resources.html">Resource</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A person with a  formal responsibility in the provisioning of healthcare or related services</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="An identifier that applies to this person in this role.">identifier</span><a name="Practitioner.identifier"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Identifier">Identifier</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A identifier for the person as this agent</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="A name associated with the person.">name</span><a name="Practitioner.name"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#HumanName">HumanName</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A name associated with the person</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="A contact detail for the practitioner, e.g. a telephone number or an email address.">telecom</span><a name="Practitioner.telecom"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Contact">Contact</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A contact detail for the practitioner</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="The postal address where the practitioner can be found or visited or to which mail can be delivered.">address</span><a name="Practitioner.address"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Address">Address</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Where practitioner can be found/visited</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.">gender</span><a name="Practitioner.gender"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Gender for administrative purposes<br/><a title="The gender of a person used for administrative purposes" href="valueset-administrative-gender.html">AdministrativeGender</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFzI0BrFQCwAAAERJREFUOMtj/P//PwMlgImBQjDwBrCcOnWKokBgYWBgYDCU+06W5i8MUggvnH/EOVJjAW4AuQHJ+O75LYqikXE0LzAAALePEntTkEoSAAAAAElFTkSuQmCC"/> <span title="The date and time of birth for the practitioner.">birthDate</span><a name="Practitioner.birthDate"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#dateTime">dateTime</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The date and time of birth for the practitioner</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Image of the person.">photo</span><a name="Practitioner.photo"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Attachment">Attachment</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Image of the person</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The organization that the practitioner represents.">organization</span><a name="Practitioner.organization"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="organization.html">Organization</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The represented organization</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Roles which this practitioner is authorized to perform for the organization.">role</span><a name="Practitioner.role"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Roles which this practitioner may perform<br/><a title="The role a person plays representing an organization" href="valueset-practitioner-role.html">PractitionerRole</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Specific specialty of the practitioner.">specialty</span><a name="Practitioner.specialty"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Specific specialty of the practitioner<br/><a title="Specific specialty associated with the agency" href="valueset-practitioner-specialty.html">PractitionerSpecialty</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="The period during which the person is authorized to act as a practitioner in these role(s) for the organization.">period</span><a name="Practitioner.period"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Period">Period</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The period during which the practitioner is authorized to perform in these role(s)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="The location(s) at which this practitioner provides care.">location</span><a name="Practitioner.location"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="location.html">Location</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">The location(s) at which this practitioner provides care</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAMQfAOvGUf7ztuvPMf/78/fkl/Pbg+u8Rvjqteu2Pf3zxPz36Pz0z+vTmPzurPvuw/npofbjquvNefHVduuyN+uuMu3Oafbgjfnqvf/3zv/3xevPi+vRjP/20/bmsP///////yH5BAEAAB8ALAAAAAAQABAAAAV24CeOZGmepqeqqOgxjBZFa+19r4ftWQUAgqDgltthMshMIJAZ4jYDHsBARSAmFOJvq+g6HIdEFgcYmBWNxoNAsDjGHgBnmV5bCoUDHLBIq9sFEhIdcAYJdYASFRUQhQkLCwkOFwcdEBAXhVabE52ecDahKy0oIQA7"/> <span title="Qualifications obtained by training and certification.">qualification</span><a name="Practitioner.qualification"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"/><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Element</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Qualifications obtained by training and certification</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Coded representation of the qualification.">code</span><a name="Practitioner.qualification.code"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Coded representation of the qualification<br/><a title="Specific qualification the practitioner has to provide a service" href="valueset-anzsco-occupations.html">Qualification</a> (??)</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4/x0ISQIM/0kGANNnY41GtlCWAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQUUvGn2UQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASY6G0qgNA2kDAHnCJyR4Ta2WAAAAAElFTkSuQmCC"/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="Period during which the qualification is valid.">period</span><a name="Practitioner.qualification.period"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#Period">Period</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Period during which the qualification is valid</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAEklEQVR42mP4//0/iYDhP8kAANZ3Y5Ucw2ZoAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQEfT9fq3QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAALElEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2jNowasOgtgEAYt8nG43rdKUAAAAASUVORK5CYII="/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAFxJREFUOE/NjEEOACEIA/0o/38GGw+agoXYeNnDJDCUDnd/gkoFKhWozJiZI3gLwY6rAgxhsPKTPUzycTl8lAryMyMsVQG6TFi6cHULyz8KOjC7OIQKlQpU3uPjAwhX2CCcGsgOAAAAAElFTkSuQmCC"/> <span title="Organization that regulates and issues the qualification.">issuer</span><a name="Practitioner.qualification.issuer"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="organization.html">Organization</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Organization that regulates and issues the qualification</td></tr>
+<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAACAQAAAABeHbedAAAAD0lEQVR42mP4TzJgIF0LANmXY523xFiMAAAAAElFTkSuQmCC)" class="heirarchy"><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBFTQr3mcuFgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDA7UxAAidAygBXEHpAAAAAElFTkSuQmCC"/><img alt="." class="heirarchy" src="data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAIAAABGyIsrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYBDQcJ7Vn4CgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMklEQVQ4y2P8//8/AwZgZGTEKs7AwIBTAhdgwm4MIyMuDaM2oNmASVLPhlENoxpI1wAA9XMVKngLMyMAAAAASUVORK5CYII="/><img style="background-color: white;" alt="." class="heirarchy" src="data: image/png;base64,R0lGODlhEAAQAOZ/APrkusOiYvvfqbiXWaV2G+jGhdq1b8GgYf3v1frw3vTUlsWkZNewbcSjY/DQkad4Hb6dXv3u0f3v1ObEgfPTlerJiP3w1v79+e7OkPrfrfnjuNOtZPrpydaxa+/YrvvdpP779ZxvFPvnwKKBQaFyF/369M2vdaqHRPz58/HNh/vowufFhfroxO3OkPrluv779tK0e6JzGProwvrow9m4eOnIifPTlPDPkP78+Naxaf3v0/zowfXRi+bFhLWUVv379/rnwPvszv3rye3LiPvnv+3MjPDasKiIS/789/3x2f747eXDg+7Mifvu0tu7f+/QkfDTnPXWmPrjsvrjtPbPgrqZW+/QlPz48K2EMv36866OUPvowat8Ivvgq/Pbrvzgq/PguvrgrqN0Gda2evfYm9+7d/rpw9q6e/LSku/Rl/XVl/LSlfrkt+zVqe7Wqv3x1/bNffbOf59wFdS6if3u0vrqyP3owPvepfXQivDQkO/PkKh9K7STVf779P///////yH5BAEAAH8ALAAAAAAQABAAAAfNgH+Cg36FfoOIhH4JBxBghYl/hQkNAV0IVT5GkJKLCwtQaSsSdx9aR26Gcwt2IkQaNRI6dBERIzCFDSgWSW8WCDkbBnoOQ3uFARc/JQJfCAZlT0x4ZFyFBxdNQT9ZCBNWKQoKUQ+FEDgcdTIAV14YDmg2CgSFA0hmQC5TLE4VRTdrKJAoxOeFCzZSwsw4U6BCizwUQhQyEaAPiAwCVNCY0FCNnA6GPAwYoETIFgY9loiRA4dToTYnsOxg8CBGHE6ICvEYQ4AKzkidfgoKBAA7"/> <span title="A language the practitioner is able to use in patient communication.">communication</span><a name="Practitioner.communication"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..*</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">A language the practitioner is able to use in patient communication<br/><a title="A human language" href="http://tools.ietf.org/html/bcp47">Language</a> (??)</td></tr>
+</table></div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/Practitioner"/>
+  <name value="Practitioner"/>
+  <publisher value="HL7 FHIR Standard"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Base Profile for Practitioner Resource"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:21:45.837+08:00"/>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="servd"/>
+    <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+    <name value="ServD"/>
+  </mapping>
+  <structure>
+    <type value="Practitioner"/>
+    <publish value="true"/>
+    <purpose value="This is the definition for the Practitioner resource"/>
+    <snapshot>
+      <element>
+        <path value="Practitioner"/>
+        <definition>
+          <short value="A person with a  formal responsibility in the provisioning of healthcare or related services"/>
+          <formal value="A person who is directly or indirectly involved in the provisioning of healthcare."/>
+          <comments value="Note that a cab driver no longer fits the bill. You probably would be interested in the organization rather than the individual?."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD (as one example)"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Role"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="Provider"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.language"/>
+        <definition>
+          <short value="Language of the resource content"/>
+          <formal value="The base language in which the resource is written."/>
+          <comments value="Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource
+
+Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute)."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="code"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.text"/>
+        <definition>
+          <short value="Text summary of the resource, for human interpretation"/>
+          <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+          <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
+          <synonym value="narrative"/>
+          <synonym value="html"/>
+          <synonym value="xhtml"/>
+          <synonym value="display"/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Narrative"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.contained"/>
+        <definition>
+          <short value="Contained, inline Resources"/>
+          <formal value="These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."/>
+          <comments value="This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."/>
+          <synonym value="inline resources"/>
+          <synonym value="anonymous resources"/>
+          <synonym value="contained resources"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.identifier"/>
+        <definition>
+          <short value="A identifier for the person as this agent"/>
+          <formal value="An identifier that applies to this person in this role."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-7 (or XCN.1 Person Identifier)"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./id"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Identifiers"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.name"/>
+        <definition>
+          <short value="A name associated with the person"/>
+          <formal value="A name associated with the person."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="HumanName"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="XCN Components"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./name"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./PreferredName (GivenNames, FamilyName, TitleCode)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.telecom"/>
+        <definition>
+          <short value="A contact detail for the practitioner"/>
+          <formal value="A contact detail for the practitioner, e.g. a telephone number or an email address."/>
+          <comments value="Person may have multiple ways to be contacted with different uses or applicable periods. May need to have options for contacting the person urgently, and also to help with identification."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Contact"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRT-15, STF-10, ROL-12"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./telecom"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./ContactPoints"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.address"/>
+        <definition>
+          <short value="Where practitioner can be found/visited"/>
+          <formal value="The postal address where the practitioner can be found or visited or to which mail can be delivered."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Address"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="ORC-24, STF-11, ROL-11, PRT-14"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./addr"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Addresses"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.gender"/>
+        <definition>
+          <short value="Gender for administrative purposes"/>
+          <formal value="Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="AdministrativeGender"/>
+            <isExtensible value="false"/>
+            <description value="The gender of a person used for administrative purposes"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/administrative-gender"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="STF-5"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./administrativeGender"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./GenderCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.birthDate"/>
+        <definition>
+          <short value="The date and time of birth for the practitioner"/>
+          <formal value="The date and time of birth for the practitioner."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="STF-6"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./birthTime"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(not represented in ServD)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.photo"/>
+        <definition>
+          <short value="Image of the person"/>
+          <formal value="Image of the person."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Attachment"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./subjectOf/ObservationEvent[code=&quot;photo&quot;]/value"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./ImageURI (only supports the URI reference)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.organization"/>
+        <definition>
+          <short value="The represented organization"/>
+          <formal value="The organization that the practitioner represents."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Organization"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-10 (-&gt; 14) / PRA-9-Institution / PRT-8-Participation Organization for person participation"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./scoper"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.role"/>
+        <definition>
+          <short value="Roles which this practitioner may perform"/>
+          <formal value="Roles which this practitioner is authorized to perform for the organization."/>
+          <comments value="A person may have more than one role. At least one role is required."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="PractitionerRole"/>
+            <isExtensible value="false"/>
+            <description value="The role a person plays representing an organization"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/practitioner-role"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-1 / STF-18-job title / PRA-3-practitioner category  / PRT-4-Participation / ROL-3-role-ROL / ORC-12-ordering provider / OBR-16-ordering provider / PV1-7-attending doctor / PV1-8-referring doctor / PV1-9-consulting doctor / PV1-17-admitting doctor"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./code"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.specialty"/>
+        <definition>
+          <short value="Specific specialty of the practitioner"/>
+          <formal value="Specific specialty of the practitioner."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="PractitionerSpecialty"/>
+            <isExtensible value="false"/>
+            <description value="Specific specialty associated with the agency"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/practitioner-specialty"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRA-5-specialty"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="indirectAuthority/QualifiedEntity[code &lt; Speciality]/code"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Specialty"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.period"/>
+        <definition>
+          <short value="The period during which the practitioner is authorized to perform in these role(s)"/>
+          <formal value="The period during which the person is authorized to act as a practitioner in these role(s) for the organization."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Period"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-8/9 / PRA-5.4-date of certification"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./effectiveTime"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.location"/>
+        <definition>
+          <short value="The location(s) at which this practitioner provides care"/>
+          <formal value="The location(s) at which this practitioner provides care."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Location"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./target[classCode=&quot;indirectAuthority].source[classCode=SDLOC]"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)&lt;br/&gt;
+However these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification"/>
+        <definition>
+          <short value="Qualifications obtained by training and certification"/>
+          <formal value="Qualifications obtained by training and certification."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="CER?"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./indirectAuthority/QualifiedEntity[code &lt; qualifiedEntity]"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Qualifications"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.extension"/>
+        <definition>
+          <short value="Additional Content defined by implementations"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.modifierExtension"/>
+        <definition>
+          <short value="Extensions that cannot be ignored"/>
+          <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+          <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+          <synonym value="extensions"/>
+          <synonym value="user content"/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Extension"/>
+          </type>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.code"/>
+        <definition>
+          <short value="Coded representation of the qualification"/>
+          <formal value="Coded representation of the qualification."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="Qualification"/>
+            <isExtensible value="false"/>
+            <description value="Specific qualification the practitioner has to provide a service"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/anzsco-occupations"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./code"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Qualifications.Value"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.period"/>
+        <definition>
+          <short value="Period during which the qualification is valid"/>
+          <formal value="Period during which the qualification is valid."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Period"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./effectiveTime"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Qualifications.StartDate and ./Qualifications.EndDate"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.issuer"/>
+        <definition>
+          <short value="Organization that regulates and issues the qualification"/>
+          <formal value="Organization that regulates and issues the qualification."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Organization"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./scoper"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.communication"/>
+        <definition>
+          <short value="A language the practitioner is able to use in patient communication"/>
+          <formal value="A language the practitioner is able to use in patient communication."/>
+          <comments value="The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems actually code this but instead have it as free text. Hence CodeableConcept instead of code as the data type."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="Language"/>
+            <isExtensible value="false"/>
+            <description value="A human language"/>
+            <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PID-15, NK1-20, LAN-2"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./languageCode"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Languages.LanguageSpokenCode"/>
+          </mapping>
+        </definition>
+      </element>
+    </snapshot>
+    <differential>
+      <element>
+        <path value="Practitioner"/>
+        <definition>
+          <short value="A person with a  formal responsibility in the provisioning of healthcare or related services"/>
+          <formal value="A person who is directly or indirectly involved in the provisioning of healthcare."/>
+          <comments value="Note that a cab driver no longer fits the bill. You probably would be interested in the organization rather than the individual?."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="Resource"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD (as one example)"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="Role"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="Provider"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.identifier"/>
+        <definition>
+          <short value="A identifier for the person as this agent"/>
+          <formal value="An identifier that applies to this person in this role."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Identifier"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-7 (or XCN.1 Person Identifier)"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./id"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Identifiers"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.name"/>
+        <definition>
+          <short value="A name associated with the person"/>
+          <formal value="A name associated with the person."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="HumanName"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="XCN Components"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./name"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./PreferredName (GivenNames, FamilyName, TitleCode)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.telecom"/>
+        <definition>
+          <short value="A contact detail for the practitioner"/>
+          <formal value="A contact detail for the practitioner, e.g. a telephone number or an email address."/>
+          <comments value="Person may have multiple ways to be contacted with different uses or applicable periods. May need to have options for contacting the person urgently, and also to help with identification."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Contact"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRT-15, STF-10, ROL-12"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./telecom"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./ContactPoints"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.address"/>
+        <definition>
+          <short value="Where practitioner can be found/visited"/>
+          <formal value="The postal address where the practitioner can be found or visited or to which mail can be delivered."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Address"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="ORC-24, STF-11, ROL-11, PRT-14"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./addr"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Addresses"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.gender"/>
+        <definition>
+          <short value="Gender for administrative purposes"/>
+          <formal value="Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="AdministrativeGender"/>
+            <isExtensible value="false"/>
+            <description value="The gender of a person used for administrative purposes"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/administrative-gender"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="STF-5"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./administrativeGender"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./GenderCode"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.birthDate"/>
+        <definition>
+          <short value="The date and time of birth for the practitioner"/>
+          <formal value="The date and time of birth for the practitioner."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="dateTime"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="STF-6"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./birthTime"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(not represented in ServD)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.photo"/>
+        <definition>
+          <short value="Image of the person"/>
+          <formal value="Image of the person."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="Attachment"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./subjectOf/ObservationEvent[code=&quot;photo&quot;]/value"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./ImageURI (only supports the URI reference)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.organization"/>
+        <definition>
+          <short value="The represented organization"/>
+          <formal value="The organization that the practitioner represents."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Organization"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-10 (-&gt; 14) / PRA-9-Institution / PRT-8-Participation Organization for person participation"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./scoper"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.role"/>
+        <definition>
+          <short value="Roles which this practitioner may perform"/>
+          <formal value="Roles which this practitioner is authorized to perform for the organization."/>
+          <comments value="A person may have more than one role. At least one role is required."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="PractitionerRole"/>
+            <isExtensible value="false"/>
+            <description value="The role a person plays representing an organization"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/practitioner-role"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-1 / STF-18-job title / PRA-3-practitioner category  / PRT-4-Participation / ROL-3-role-ROL / ORC-12-ordering provider / OBR-16-ordering provider / PV1-7-attending doctor / PV1-8-referring doctor / PV1-9-consulting doctor / PV1-17-admitting doctor"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./code"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.specialty"/>
+        <definition>
+          <short value="Specific specialty of the practitioner"/>
+          <formal value="Specific specialty of the practitioner."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="PractitionerSpecialty"/>
+            <isExtensible value="false"/>
+            <description value="Specific specialty associated with the agency"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/practitioner-specialty"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRA-5-specialty"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="indirectAuthority/QualifiedEntity[code &lt; Speciality]/code"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Specialty"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.period"/>
+        <definition>
+          <short value="The period during which the practitioner is authorized to perform in these role(s)"/>
+          <formal value="The period during which the person is authorized to act as a practitioner in these role(s) for the organization."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Period"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PRD-8/9 / PRA-5.4-date of certification"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./effectiveTime"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.location"/>
+        <definition>
+          <short value="The location(s) at which this practitioner provides care"/>
+          <formal value="The location(s) at which this practitioner provides care."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Location"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./target[classCode=&quot;indirectAuthority].source[classCode=SDLOC]"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="(ServD maps Practitioners and Organizations via another entity, so this concept is not available)&lt;br/&gt;
+However these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification"/>
+        <definition>
+          <short value="Qualifications obtained by training and certification"/>
+          <formal value="Qualifications obtained by training and certification."/>
+          <min value="0"/>
+          <max value="*"/>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="v2"/>
+            <map value="CER?"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./indirectAuthority/QualifiedEntity[code &lt; qualifiedEntity]"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Qualifications"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.code"/>
+        <definition>
+          <short value="Coded representation of the qualification"/>
+          <formal value="Coded representation of the qualification."/>
+          <min value="1"/>
+          <max value="1"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="Qualification"/>
+            <isExtensible value="false"/>
+            <description value="Specific qualification the practitioner has to provide a service"/>
+            <referenceResource>
+              <reference value="http://hl7.org/fhir/vs/anzsco-occupations"/>
+            </referenceResource>
+          </binding>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./code"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Qualifications.Value"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.period"/>
+        <definition>
+          <short value="Period during which the qualification is valid"/>
+          <formal value="Period during which the qualification is valid."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="Period"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./effectiveTime"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Qualifications.StartDate and ./Qualifications.EndDate"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.qualification.issuer"/>
+        <definition>
+          <short value="Organization that regulates and issues the qualification"/>
+          <formal value="Organization that regulates and issues the qualification."/>
+          <min value="0"/>
+          <max value="1"/>
+          <type>
+            <code value="ResourceReference"/>
+            <profile value="http://hl7.org/fhir/Profile/Organization"/>
+          </type>
+          <isModifier value="false"/>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./scoper"/>
+          </mapping>
+        </definition>
+      </element>
+      <element>
+        <path value="Practitioner.communication"/>
+        <definition>
+          <short value="A language the practitioner is able to use in patient communication"/>
+          <formal value="A language the practitioner is able to use in patient communication."/>
+          <comments value="The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems actually code this but instead have it as free text. Hence CodeableConcept instead of code as the data type."/>
+          <min value="0"/>
+          <max value="*"/>
+          <type>
+            <code value="CodeableConcept"/>
+          </type>
+          <isModifier value="false"/>
+          <binding>
+            <name value="Language"/>
+            <isExtensible value="false"/>
+            <description value="A human language"/>
+            <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+          </binding>
+          <mapping>
+            <identity value="v2"/>
+            <map value="PID-15, NK1-20, LAN-2"/>
+          </mapping>
+          <mapping>
+            <identity value="rim"/>
+            <map value="./languageCode"/>
+          </mapping>
+          <mapping>
+            <identity value="servd"/>
+            <map value="./Languages.LanguageSpokenCode"/>
+          </mapping>
+        </definition>
+      </element>
+    </differential>
+    <searchParam>
+      <name value="_id"/>
+      <type value="token"/>
+      <documentation value="The logical resource id associated with the resource (must be supported by all servers)"/>
+    </searchParam>
+    <searchParam>
+      <name value="_language"/>
+      <type value="token"/>
+      <documentation value="The stated language of the resource"/>
+    </searchParam>
+    <searchParam>
+      <name value="address"/>
+      <type value="string"/>
+      <documentation value="An address in any kind of address/part"/>
+      <xpath value="f:Practitioner/f:address"/>
+    </searchParam>
+    <searchParam>
+      <name value="family"/>
+      <type value="string"/>
+      <documentation value="A portion of the family name"/>
+      <xpath value="f:Practitioner/f:name"/>
+    </searchParam>
+    <searchParam>
+      <name value="gender"/>
+      <type value="token"/>
+      <documentation value="Gender of the practitioner"/>
+      <xpath value="f:Practitioner/f:gender"/>
+    </searchParam>
+    <searchParam>
+      <name value="given"/>
+      <type value="string"/>
+      <documentation value="A portion of the given name"/>
+      <xpath value="f:Practitioner/f:name"/>
+    </searchParam>
+    <searchParam>
+      <name value="identifier"/>
+      <type value="token"/>
+      <documentation value="A practitioner&#39;s Identifier"/>
+      <xpath value="f:Practitioner/f:identifier"/>
+    </searchParam>
+    <searchParam>
+      <name value="name"/>
+      <type value="string"/>
+      <documentation value="A portion of either family or given name"/>
+      <xpath value="f:Practitioner/f:name"/>
+    </searchParam>
+    <searchParam>
+      <name value="organization"/>
+      <type value="reference"/>
+      <documentation value="The identity of the organization the practitioner represents / acts on behalf of"/>
+      <xpath value="f:Practitioner/f:organization"/>
+    </searchParam>
+    <searchParam>
+      <name value="phonetic"/>
+      <type value="string"/>
+      <documentation value="A portion of either family or given name using some kind of phonetic matching algorithm"/>
+      <xpath value="f:Practitioner/f:name"/>
+    </searchParam>
+    <searchParam>
+      <name value="telecom"/>
+      <type value="string"/>
+      <documentation value="The value in any kind of contact"/>
+      <xpath value="f:Practitioner/f:telecom"/>
+    </searchParam>
+  </structure>
+</Profile>

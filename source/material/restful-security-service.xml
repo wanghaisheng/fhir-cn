@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>RestfulSecurityService</h2>
+      <p>Types of security services used with FHIR</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/restful-security-service</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>OAuth
+            <a name="OAuth"> </a>
+          </td>
+          <td/>
+          <td>OAuth (see oauth.net).</td>
+        </tr>
+        <tr>
+          <td>OAuth2
+            <a name="OAuth2"> </a>
+          </td>
+          <td/>
+          <td>OAuth version 2 (see oauth.net).</td>
+        </tr>
+        <tr>
+          <td>NTLM
+            <a name="NTLM"> </a>
+          </td>
+          <td/>
+          <td>Microsoft NTLM Authentication.</td>
+        </tr>
+        <tr>
+          <td>Basic
+            <a name="Basic"> </a>
+          </td>
+          <td/>
+          <td>Basic authentication defined in HTTP specification.</td>
+        </tr>
+        <tr>
+          <td>Kerberos
+            <a name="Kerberos"> </a>
+          </td>
+          <td/>
+          <td>see http://www.ietf.org/rfc/rfc4120.txt.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/restful-security-service"/>
+  <name value="RestfulSecurityService"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Types of security services used with FHIR"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.904+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/restful-security-service"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="OAuth"/>
+      <definition value="OAuth (see oauth.net)."/>
+    </concept>
+    <concept>
+      <code value="OAuth2"/>
+      <definition value="OAuth version 2 (see oauth.net)."/>
+    </concept>
+    <concept>
+      <code value="NTLM"/>
+      <definition value="Microsoft NTLM Authentication."/>
+    </concept>
+    <concept>
+      <code value="Basic"/>
+      <definition value="Basic authentication defined in HTTP specification."/>
+    </concept>
+    <concept>
+      <code value="Kerberos"/>
+      <definition value="see http://www.ietf.org/rfc/rfc4120.txt."/>
+    </concept>
+  </define>
+</ValueSet>

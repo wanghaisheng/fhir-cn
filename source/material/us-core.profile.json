@@ -1,0 +1,109 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div>to do</div>"
+  },
+  "url": "http://hl7.org/fhir/Profile/us-core",
+  "name": "United States Realm FHIR Profile",
+  "publisher": "Fhir Core Team",
+  "description": "Contains constraints and extensions to the FHIR specification specific to the US realm",
+  "status": "draft",
+  "date": "2013-12-03",
+  "extensionDefn": [
+    {
+      "code": "race",
+      "display": "A category of humans sharing history, origin or nationality",
+      "contextType": "resource",
+      "context": [
+        "Patient"
+      ],
+      "element": [
+        {
+          "path": "race",
+          "definition": {
+            "short": "A category of humans sharing history, origin or nationality",
+            "formal": "A code classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "binding": {
+              "name": "Race",
+              "isExtensible": false,
+              "description": "A code classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/v3/vs/Race"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "ethnicity",
+      "display": "A category of human sharing heritage",
+      "contextType": "resource",
+      "context": [
+        "Patient"
+      ],
+      "element": [
+        {
+          "path": "ethnicity",
+          "definition": {
+            "short": "A category of human sharing heritage",
+            "formal": "A code classifying the person into a named category of humans sharing a common real or presumed heritage.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "binding": {
+              "name": "Ethnicity",
+              "isExtensible": false,
+              "description": "A code classifying the person into a named category of humans sharing a common real or presumed heritage.",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/v3/vs/Ethnicity"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "county",
+      "display": "Name of county",
+      "contextType": "datatype",
+      "context": [
+        "Address"
+      ],
+      "element": [
+        {
+          "path": "county",
+          "definition": {
+            "short": "Name of county",
+            "formal": "Name of county.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>MedicationDispenseStatus</h2>
+      <p>A code specifying the state of the dispense event.
+        <br/>
+        <br/>Describes the lifecycle of the dispense.
+      </p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/medication-dispense-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>in progress
+            <a name="inprogress"> </a>
+          </td>
+          <td/>
+          <td>The dispense has started but has not yet completed.</td>
+        </tr>
+        <tr>
+          <td>on hold
+            <a name="onhold"> </a>
+          </td>
+          <td/>
+          <td>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;suspended&quot;.</td>
+        </tr>
+        <tr>
+          <td>completed
+            <a name="completed"> </a>
+          </td>
+          <td/>
+          <td>All actions that are implied by the dispense have occurred.</td>
+        </tr>
+        <tr>
+          <td>entered in error
+            <a name="enteredinerror"> </a>
+          </td>
+          <td/>
+          <td>The dispense was entered in error and therefore nullified.</td>
+        </tr>
+        <tr>
+          <td>stopped
+            <a name="stopped"> </a>
+          </td>
+          <td/>
+          <td>Actions implied by the dispense have been permanently halted, before all of them occurred.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/medication-dispense-status"/>
+  <name value="MedicationDispenseStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="A code specifying the state of the dispense event.
+
+Describes the lifecycle of the dispense."/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.892+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/medication-dispense-status"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="in progress"/>
+      <definition value="The dispense has started but has not yet completed."/>
+    </concept>
+    <concept>
+      <code value="on hold"/>
+      <definition value="Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;suspended&quot;."/>
+    </concept>
+    <concept>
+      <code value="completed"/>
+      <definition value="All actions that are implied by the dispense have occurred."/>
+    </concept>
+    <concept>
+      <code value="entered in error"/>
+      <definition value="The dispense was entered in error and therefore nullified."/>
+    </concept>
+    <concept>
+      <code value="stopped"/>
+      <definition value="Actions implied by the dispense have been permanently halted, before all of them occurred."/>
+    </concept>
+  </define>
+</ValueSet>

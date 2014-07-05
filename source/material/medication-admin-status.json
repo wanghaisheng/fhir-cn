@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>MedicationAdministrationStatus</h2><p>A set of codes indicating the current status of a MedicationAdministration</p><p>This value set defines its own terms in the system http://hl7.org/fhir/medication-admin-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in progress<a name=\"inprogress\"> </a></td><td/><td>The administration has started but has not yet completed.</td></tr><tr><td>on hold<a name=\"onhold\"> </a></td><td/><td>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;suspended&quot;.</td></tr><tr><td>completed<a name=\"completed\"> </a></td><td/><td>All actions that are implied by the administration have occurred.</td></tr><tr><td>entered in error<a name=\"enteredinerror\"> </a></td><td/><td>The administration was entered in error and therefore nullified.</td></tr><tr><td>stopped<a name=\"stopped\"> </a></td><td/><td>Actions implied by the administration have been permanently halted, before all of them occurred.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/medication-admin-status",
+  "name": "MedicationAdministrationStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "A set of codes indicating the current status of a MedicationAdministration",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.896+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/medication-admin-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "in progress",
+        "definition": "The administration has started but has not yet completed."
+      },
+      {
+        "code": "on hold",
+        "definition": "Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called \"suspended\"."
+      },
+      {
+        "code": "completed",
+        "definition": "All actions that are implied by the administration have occurred."
+      },
+      {
+        "code": "entered in error",
+        "definition": "The administration was entered in error and therefore nullified."
+      },
+      {
+        "code": "stopped",
+        "definition": "Actions implied by the administration have been permanently halted, before all of them occurred."
+      }
+    ]
+  }
+}

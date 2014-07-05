@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Questionnaire Question Text Type</h2>
+      <p>Codes that define types of additional text that may be associated with a Questionnaire group or question.</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/questionnaire-question-text-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>units
+            <a name="units"> </a>
+          </td>
+          <td>units</td>
+          <td>Identifies the units in which the question&#39;s answer should be captured</td>
+        </tr>
+      </table>
+      <p>In addition, this value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Import all the codes that are part of http://hl7.org/fhir/vs/valueset-questionnaire-text-type</li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/questionnaire-question-text-type"/>
+  <name value="Questionnaire Question Text Type"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Codes that define types of additional text that may be associated with a Questionnaire group or question."/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/questionnaire-question-text-type"/>
+    <caseSensitive value="false"/>
+    <concept>
+      <code value="units"/>
+      <display value="units"/>
+      <definition value="Identifies the units in which the question&#39;s answer should be captured"/>
+    </concept>
+  </define>
+  <compose>
+    <import value="http://hl7.org/fhir/vs/valueset-questionnaire-text-type"/>
+  </compose>
+</ValueSet>

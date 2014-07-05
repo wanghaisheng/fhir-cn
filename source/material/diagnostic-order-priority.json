@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>DiagnosticOrderPriority</h2><p>The clinical priority of a diagnostic order</p><p>This value set defines its own terms in the system http://hl7.org/fhir/diagnostic-order-priority</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>routine<a name=\"routine\"> </a></td><td>Routine</td><td>The order has a normal priority.</td></tr><tr><td>urgent<a name=\"urgent\"> </a></td><td>Urgent</td><td>The order should be urgently.</td></tr><tr><td>stat<a name=\"stat\"> </a></td><td>Stat</td><td>The order is time-critical.</td></tr><tr><td>asap<a name=\"asap\"> </a></td><td>ASAP</td><td>The order should be acted on as soon as possible.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/diagnostic-order-priority",
+  "name": "DiagnosticOrderPriority",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The clinical priority of a diagnostic order",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.896+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/diagnostic-order-priority",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "routine",
+        "display": "Routine",
+        "definition": "The order has a normal priority."
+      },
+      {
+        "code": "urgent",
+        "display": "Urgent",
+        "definition": "The order should be urgently."
+      },
+      {
+        "code": "stat",
+        "display": "Stat",
+        "definition": "The order is time-critical."
+      },
+      {
+        "code": "asap",
+        "display": "ASAP",
+        "definition": "The order should be acted on as soon as possible."
+      }
+    ]
+  }
+}

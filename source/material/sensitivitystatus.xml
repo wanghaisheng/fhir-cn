@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SensitivityStatus</h2>
+      <p>The status of the adverse sensitivity</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/sensitivitystatus</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>suspected
+            <a name="suspected"> </a>
+          </td>
+          <td/>
+          <td>A suspected sensitivity to a substance.</td>
+        </tr>
+        <tr>
+          <td>confirmed
+            <a name="confirmed"> </a>
+          </td>
+          <td/>
+          <td>The sensitivity has been confirmed and is active.</td>
+        </tr>
+        <tr>
+          <td>refuted
+            <a name="refuted"> </a>
+          </td>
+          <td/>
+          <td>The sensitivity has been shown to never have existed.</td>
+        </tr>
+        <tr>
+          <td>resolved
+            <a name="resolved"> </a>
+          </td>
+          <td/>
+          <td>The sensitivity used to exist but no longer does.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/sensitivitystatus"/>
+  <name value="SensitivityStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The status of the adverse sensitivity"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.905+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/sensitivitystatus"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="suspected"/>
+      <definition value="A suspected sensitivity to a substance."/>
+    </concept>
+    <concept>
+      <code value="confirmed"/>
+      <definition value="The sensitivity has been confirmed and is active."/>
+    </concept>
+    <concept>
+      <code value="refuted"/>
+      <definition value="The sensitivity has been shown to never have existed."/>
+    </concept>
+    <concept>
+      <code value="resolved"/>
+      <definition value="The sensitivity used to exist but no longer does."/>
+    </concept>
+  </define>
+</ValueSet>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationPrescription xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>dateWritten</b>: 11-Mar 2013
+      </p>
+      <p>
+        <b>status</b>: active
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>prescriber</b>: 
+        <a href="practitioner-example-f201-ab.html">Dokter Bonsig. Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+          <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+          <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+        </a>
+      </p>
+      <p>
+        <b>reason</b>: 
+        <a href="condition-example-f201-fever.html">fever. Generated Summary: ????; dateAsserted: 4-Apr 2013; 
+          <span title="Codes: {http://snomed.info/sct 386661006}">Fever</span>; 
+          <span title="Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category condition}">Problem</span>; confirmed; 
+          <span title="Codes: {http://snomed.info/sct 255604002}">Mild</span>; onset: 2-Apr 2013
+        </a>
+      </p>
+      <p>
+        <b>medication</b>: 
+        <a href="medication-example-f201-salmeterol.html">25ug Salmeterol + 250ug Fluticasone. Generated Summary: name: Salmeterol/fluticason; 
+          <span title="Codes: {http://snomed.info/sct 411106009}">25ug Flutacisone + 250ug Salmeterol</span>; product
+        </a>
+      </p>
+      <h3>DosageInstructions</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Text</b>
+          </td>
+          <td>
+            <b>AdditionalInstructions</b>
+          </td>
+          <td>
+            <b>Timing[x]</b>
+          </td>
+          <td>
+            <b>AsNeeded[x]</b>
+          </td>
+          <td>
+            <b>Site</b>
+          </td>
+          <td>
+            <b>Route</b>
+          </td>
+          <td>
+            <b>Method</b>
+          </td>
+          <td>
+            <b>DoseQuantity</b>
+          </td>
+          <td>
+            <b>Rate</b>
+          </td>
+          <td>
+            <b>MaxDosePerPeriod</b>
+          </td>
+        </tr>
+        <tr>
+          <td>aerosol 25/250ug/do 120do 2x - 1 dose - daily</td>
+          <td> </td>
+          <td>Starting 11-Mar 2013 --&gt; 11-May 2013, 2 per 1 days</td>
+          <td> </td>
+          <td>Oral cavity 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;74262004&#39; = &#39;Oral cavity&#39;, given as &#39;Oral cavity&#39;})</span>
+          </td>
+          <td>Respiratory tract 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;321667001&#39; = &#39;Respiratory tract&#39;, given as &#39;Respiratory tract&#39;})</span>
+          </td>
+          <td>Salmeterol+fluticasone 25/250ug inhaler 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;320276009&#39; = &#39;Salmeterol+fluticasone propionate 25micrograms/250micrograms CFC-free inhaler&#39;, given as &#39;Salmeterol+fluticasone 25/250ug inhaler&#39;})</span>
+          </td>
+          <td>1 PUFF
+            <span style="background: LightGoldenRodYellow "> (Details: http://hl7.org/fhir/v3/orderableDrugForm code PUFF = &#39;Puff&#39;)</span>
+          </td>
+          <td> </td>
+          <td>2 puffs
+            <span style="background: LightGoldenRodYellow "> (Details: SNOMED CT code 415215001 = &#39;Puff - unit of product usage (qualifier value)&#39;)</span>/1 daily
+            <span style="background: LightGoldenRodYellow "> (Details: SNOMED CT code 259032004 = &#39;per day (qualifier value)&#39;)</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <dateWritten value="2013-03-11"/>
+  <status value="active"/>
+  <patient>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </patient>
+  <prescriber>
+    <reference value="Practitioner/f201"/>
+    <display value="Dokter Bonsig"/>
+  </prescriber>
+  <reasonResource>
+    <reference value="Condition/f201"/>
+    <display value="fever"/>
+  </reasonResource>
+  <medication>
+    <reference value="Medication/f201"/>
+    <display value="25ug Salmeterol + 250ug Fluticasone"/>
+  </medication>
+  <dosageInstruction>
+    <text value="aerosol 25/250ug/do 120do 2x - 1 dose - daily"/>
+    <timingSchedule>
+      <event>
+        <start value="2013-03-11"/>
+        <end value="2013-05-11"/>
+      </event>
+      <repeat>
+        <frequency value="2"/>
+        <duration value="1"/>
+        <units value="d"/>
+      </repeat>
+    </timingSchedule>
+    <site>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="74262004"/>
+        <display value="Oral cavity"/>
+      </coding>
+    </site>
+    <route>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="321667001"/>
+        <display value="Respiratory tract"/>
+      </coding>
+    </route>
+    <method>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="320276009"/>
+        <display value="Salmeterol+fluticasone 25/250ug inhaler"/>
+      </coding>
+    </method>
+    <doseQuantity>
+      <value value="1"/>
+      <system value="http://hl7.org/fhir/v3/orderableDrugForm"/>
+      <code value="PUFF"/>
+    </doseQuantity>
+    <maxDosePerPeriod>
+      <numerator>
+        <value value="2"/>
+        <units value="puffs"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="415215001"/>
+      </numerator>
+      <denominator>
+        <value value="1"/>
+        <units value="daily"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="259032004"/>
+      </denominator>
+    </maxDosePerPeriod>
+  </dosageInstruction>
+</MedicationPrescription>

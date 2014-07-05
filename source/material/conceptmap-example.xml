@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>FHIR/v3 Address Use Mapping (256a5231-a2bb-49bd-9fea-f349d428b70d)</h2>
+      <p>Mapping from 
+        <a href="address-use.html">http://hl7.org/fhir/address-use</a> to 
+        <a href="v3/AddressUse/index.html">http://hl7.org/fhir/v3/AddressUse</a>
+      </p>
+      <p>Draft (not intended for production usage). Published on 13-Jun 2012 by FHIR project team (example) (
+        <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>). 
+      </p>
+      <p>A mapping between the FHIR and V3 AddressUse Code systems</p>
+      <br/>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Source Code</b>
+          </td>
+          <td>
+            <b>Equivalence</b>
+          </td>
+          <td>
+            <b>Destination Code</b>
+          </td>
+          <td>
+            <b>Comments</b>
+          </td>
+        </tr>
+        <tr>
+          <td>home</td>
+          <td>equivalent</td>
+          <td>H (home address)</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>home</td>
+          <td>equivalent</td>
+          <td>H (home address)</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>work</td>
+          <td>equivalent</td>
+          <td>WP (work place)</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>temp</td>
+          <td>equivalent</td>
+          <td>TMP (temporary address)</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>old</td>
+          <td>disjoint</td>
+          <td>BAD (bad address)</td>
+          <td>In the V3 AD, old is handled by the usablePeriod element, but you have to provide a time, there&#39;s no simple equivalent of flagging an address as old</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="256a5231-a2bb-49bd-9fea-f349d428b70d"/>
+  <version value="20120613"/>
+  <name value="FHIR/v3 Address Use Mapping"/>
+  <publisher value="FHIR project team (example)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="A mapping between the FHIR and V3 AddressUse Code systems"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2012-06-13"/>
+  <sourceResource>
+    <reference value="http://hl7.org/fhir/address-use"/>
+  </sourceResource>
+  <targetResource>
+    <reference value="http://hl7.org/fhir/v3/AddressUse"/>
+  </targetResource>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/address-use"/>
+    <code value="home"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/AddressUse"/>
+      <code value="H"/>
+      <equivalence value="equivalent"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/address-use"/>
+    <code value="home"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/AddressUse"/>
+      <code value="H"/>
+      <equivalence value="equivalent"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/address-use"/>
+    <code value="work"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/AddressUse"/>
+      <code value="WP"/>
+      <equivalence value="equivalent"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/address-use"/>
+    <code value="temp"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/AddressUse"/>
+      <code value="TMP"/>
+      <equivalence value="equivalent"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/address-use"/>
+    <code value="old"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/AddressUse"/>
+      <code value="BAD"/>
+      <equivalence value="disjoint"/>
+      <comments value="In the V3 AD, old is handled by the usablePeriod element, but you have to provide a time, there&#39;s no simple equivalent of flagging an address as old"/>
+    </map>
+  </element>
+</ConceptMap>

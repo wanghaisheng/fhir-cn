@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Example Message Reason Codes</h2>
+      <p>Example Message Reasons. These are the set of codes that might be used an updating an encounter using admin-update</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/message-reasons-encounter</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>admit
+            <a name="admit"> </a>
+          </td>
+          <td>Admit</td>
+          <td>The patient has been admitted</td>
+        </tr>
+        <tr>
+          <td>discharge
+            <a name="discharge"> </a>
+          </td>
+          <td>Discharge</td>
+          <td>The patient has been discharged</td>
+        </tr>
+        <tr>
+          <td>absent
+            <a name="absent"> </a>
+          </td>
+          <td>Absent</td>
+          <td>The patient has temporarily left the institution</td>
+        </tr>
+        <tr>
+          <td>return
+            <a name="return"> </a>
+          </td>
+          <td>Returned</td>
+          <td>The patient has returned from a temporary absence</td>
+        </tr>
+        <tr>
+          <td>moved
+            <a name="moved"> </a>
+          </td>
+          <td>Moved</td>
+          <td>The patient has been moved to a new location</td>
+        </tr>
+        <tr>
+          <td>edit
+            <a name="edit"> </a>
+          </td>
+          <td>Edit</td>
+          <td>Encounter details have been updated (e.g. to correct a coding error)</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/message-reason-encounter"/>
+  <name value="Example Message Reason Codes"/>
+  <publisher value="FHIR Project"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Example Message Reasons. These are the set of codes that might be used an updating an encounter using admin-update"/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/message-reasons-encounter"/>
+    <concept>
+      <code value="admit"/>
+      <display value="Admit"/>
+      <definition value="The patient has been admitted"/>
+    </concept>
+    <concept>
+      <code value="discharge"/>
+      <display value="Discharge"/>
+      <definition value="The patient has been discharged"/>
+    </concept>
+    <concept>
+      <code value="absent"/>
+      <display value="Absent"/>
+      <definition value="The patient has temporarily left the institution"/>
+    </concept>
+    <concept>
+      <code value="return"/>
+      <display value="Returned"/>
+      <definition value="The patient has returned from a temporary absence"/>
+    </concept>
+    <concept>
+      <code value="moved"/>
+      <display value="Moved"/>
+      <definition value="The patient has been moved to a new location"/>
+    </concept>
+    <concept>
+      <code value="edit"/>
+      <display value="Edit"/>
+      <definition value="Encounter details have been updated (e.g. to correct a coding error)"/>
+    </concept>
+  </define>
+</ValueSet>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>EncounterClass</h2>
+      <p>Classification of the encounter</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-class</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>inpatient
+            <a name="inpatient"> </a>
+          </td>
+          <td/>
+          <td>An encounter during which the patient is hospitalized and stays overnight.</td>
+        </tr>
+        <tr>
+          <td>outpatient
+            <a name="outpatient"> </a>
+          </td>
+          <td/>
+          <td>An encounter during which the patient is not hospitalized overnight.</td>
+        </tr>
+        <tr>
+          <td>ambulatory
+            <a name="ambulatory"> </a>
+          </td>
+          <td/>
+          <td>An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit.</td>
+        </tr>
+        <tr>
+          <td>emergency
+            <a name="emergency"> </a>
+          </td>
+          <td/>
+          <td>An encounter where the patient needs urgent care.</td>
+        </tr>
+        <tr>
+          <td>home
+            <a name="home"> </a>
+          </td>
+          <td/>
+          <td>An encounter where the practitioner visits the patient at his/her home.</td>
+        </tr>
+        <tr>
+          <td>field
+            <a name="field"> </a>
+          </td>
+          <td/>
+          <td>An encounter taking place outside the regular environment for giving care.</td>
+        </tr>
+        <tr>
+          <td>daytime
+            <a name="daytime"> </a>
+          </td>
+          <td/>
+          <td>An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight.</td>
+        </tr>
+        <tr>
+          <td>virtual
+            <a name="virtual"> </a>
+          </td>
+          <td/>
+          <td>An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/encounter-class"/>
+  <name value="EncounterClass"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Classification of the encounter"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.901+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/encounter-class"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="inpatient"/>
+      <definition value="An encounter during which the patient is hospitalized and stays overnight."/>
+    </concept>
+    <concept>
+      <code value="outpatient"/>
+      <definition value="An encounter during which the patient is not hospitalized overnight."/>
+    </concept>
+    <concept>
+      <code value="ambulatory"/>
+      <definition value="An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit."/>
+    </concept>
+    <concept>
+      <code value="emergency"/>
+      <definition value="An encounter where the patient needs urgent care."/>
+    </concept>
+    <concept>
+      <code value="home"/>
+      <definition value="An encounter where the practitioner visits the patient at his/her home."/>
+    </concept>
+    <concept>
+      <code value="field"/>
+      <definition value="An encounter taking place outside the regular environment for giving care."/>
+    </concept>
+    <concept>
+      <code value="daytime"/>
+      <definition value="An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight."/>
+    </concept>
+    <concept>
+      <code value="virtual"/>
+      <definition value="An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact."/>
+    </concept>
+  </define>
+</ValueSet>

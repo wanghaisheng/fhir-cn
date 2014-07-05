@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DocumentMode</h2>
+      <p>Whether the application produces or consumes documents</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/document-mode</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>producer
+            <a name="producer"> </a>
+          </td>
+          <td/>
+          <td>The application produces documents of the specified type.</td>
+        </tr>
+        <tr>
+          <td>consumer
+            <a name="consumer"> </a>
+          </td>
+          <td/>
+          <td>The application consumes documents of the specified type.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/document-mode"/>
+  <name value="DocumentMode"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Whether the application produces or consumes documents"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.905+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/document-mode"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="producer"/>
+      <definition value="The application produces documents of the specified type."/>
+    </concept>
+    <concept>
+      <code value="consumer"/>
+      <definition value="The application consumes documents of the specified type."/>
+    </concept>
+  </define>
+</ValueSet>

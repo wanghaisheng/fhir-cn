@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Substance xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>type</b>: Potassium 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;88480006&#39; = &#39;Potassium&#39;, given as &#39;Potassium&#39;})</span>
+      </p>
+    </div>
+  </text>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="88480006"/>
+      <display value="Potassium"/>
+    </coding>
+  </type>
+</Substance>

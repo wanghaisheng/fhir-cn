@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DocumentReferenceStatus</h2>
+      <p>The status of the document reference</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/document-reference-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+          <td>
+            <b>
+              <a href="v3\ActStatus\index.html">v3 Map (ActStatus)</a>
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td>current
+            <a name="current"> </a>
+          </td>
+          <td/>
+          <td>This is the current reference for this document.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v3\ActStatus\index.html#active">active</a>
+          </td>
+        </tr>
+        <tr>
+          <td>superceded
+            <a name="superceded"> </a>
+          </td>
+          <td/>
+          <td>This reference has been superseded by another reference.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v3\ActStatus\index.html#obsolete">obsolete</a>
+          </td>
+        </tr>
+        <tr>
+          <td>entered in error
+            <a name="enteredinerror"> </a>
+          </td>
+          <td/>
+          <td>This reference was created in error.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v3\ActStatus\index.html#nullified">nullified</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/document-reference-status"/>
+  <name value="DocumentReferenceStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The status of the document reference"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.894+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/document-reference-status"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="current"/>
+      <definition value="This is the current reference for this document."/>
+    </concept>
+    <concept>
+      <code value="superceded"/>
+      <definition value="This reference has been superseded by another reference."/>
+    </concept>
+    <concept>
+      <code value="entered in error"/>
+      <definition value="This reference was created in error."/>
+    </concept>
+  </define>
+</ValueSet>

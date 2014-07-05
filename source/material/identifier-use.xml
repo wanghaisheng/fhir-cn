@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>IdentifierUse</h2>
+      <p>Identifies the purpose for this identifier, if known</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/identifier-use</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>usual
+            <a name="usual"> </a>
+          </td>
+          <td/>
+          <td>the identifier recommended for display and use in real-world interactions.</td>
+        </tr>
+        <tr>
+          <td>official
+            <a name="official"> </a>
+          </td>
+          <td/>
+          <td>the identifier considered to be most trusted for the identification of this item.</td>
+        </tr>
+        <tr>
+          <td>temp
+            <a name="temp"> </a>
+          </td>
+          <td/>
+          <td>A temporary identifier.</td>
+        </tr>
+        <tr>
+          <td>secondary
+            <a name="secondary"> </a>
+          </td>
+          <td/>
+          <td>An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/identifier-use"/>
+  <name value="IdentifierUse"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Identifies the purpose for this identifier, if known"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.894+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/identifier-use"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="usual"/>
+      <definition value="the identifier recommended for display and use in real-world interactions."/>
+    </concept>
+    <concept>
+      <code value="official"/>
+      <definition value="the identifier considered to be most trusted for the identification of this item."/>
+    </concept>
+    <concept>
+      <code value="temp"/>
+      <definition value="A temporary identifier."/>
+    </concept>
+    <concept>
+      <code value="secondary"/>
+      <definition value="An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context."/>
+    </concept>
+  </define>
+</ValueSet>

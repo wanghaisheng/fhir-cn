@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>PropertyRepresentation</h2><p>How a property is represented on the wire</p><p>This value set defines its own terms in the system http://hl7.org/fhir/property-representation</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>xmlAttr<a name=\"xmlAttr\"> </a></td><td/><td>In XML, this property is represented as an attribute not an element.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/property-representation",
+  "name": "PropertyRepresentation",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "How a property is represented on the wire",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.906+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/property-representation",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "xmlAttr",
+        "definition": "In XML, this property is represented as an attribute not an element."
+      }
+    ]
+  }
+}

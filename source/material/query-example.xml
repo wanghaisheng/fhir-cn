@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Query xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">[Put rendering here]</div>
+  </text>
+  <identifier value="urn:uuid:42b253f5-fa17-40d0-8da5-44aeb4230376"/>
+  <parameter url="http://hl7.org/fhir/query#_query">
+    <valueString value="example"/>
+  </parameter>
+</Query>

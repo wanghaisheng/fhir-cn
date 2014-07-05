@@ -1,0 +1,76 @@
+{
+  "resourceType": "ConceptMap",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>v2 map for AddressUse (http://hl7.org/fhir/cm/v2/address-use)</h2><p>Mapping from <a href=\"address-use.html\">http://hl7.org/fhir/vs/address-use</a> to <a href=\"v2/0190/index.html\">http://hl7.org/fhir/v2/vs/0190</a></p><p>Draft. Published on 2-Jul 2014 16:26 by HL7 (FHIR Project) (<a href=\"http://hl7.org/fhir\">http://hl7.org/fhir</a>, <a href=\"mailto:fhir@lists.hl7.org\">fhir@lists.hl7.org</a>). </p><p>v2 Map (0190)</p><br/><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Equivalence</b></td><td><b>Destination Code</b></td><td><b>Comments</b></td></tr><tr><td>home</td><td>equivalent</td><td>H (Home)</td><td/></tr><tr><td>work</td><td>equivalent</td><td>O (Office/Business)</td><td/></tr><tr><td>temp</td><td>equivalent</td><td>C (Current Or Temporary)</td><td/></tr><tr><td>old</td><td>narrower</td><td>BA (Bad address)</td><td>unclear about old addresses</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/cm/v2/address-use",
+  "name": "v2 map for AddressUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v2 Map (0190)",
+  "status": "draft",
+  "date": "2014-07-02T16:26:24.078+08:00",
+  "sourceResource": {
+    "reference": "http://hl7.org/fhir/vs/address-use"
+  },
+  "targetResource": {
+    "reference": "http://hl7.org/fhir/v2/vs/0190"
+  },
+  "element": [
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "home",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0190",
+          "code": "H",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "work",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0190",
+          "code": "O",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "temp",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0190",
+          "code": "C",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "old",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0190",
+          "code": "BA",
+          "equivalence": "narrower",
+          "comments": "unclear about old addresses"
+        }
+      ]
+    }
+  ]
+}

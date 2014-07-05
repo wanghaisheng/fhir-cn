@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    
+    
+      <hr/>
+      <h2>Security Event Sub-Type</h2>
+      <p>More detailed code concerning the type of the security event - defined by DICOM with some FHIR specific additions</p>
+      <p>
+        <b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association
+      </p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include these codes as defined in http://nema.org/dicom/dcid
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>110120</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110121</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110122</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110123</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110124</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110125</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110126</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110127</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110128</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110129</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110130</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110131</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110132</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110133</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110134</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110135</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110136</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110137</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110138</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110139</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110140</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110141</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>110142</td>
+              <td/>
+              <td/>
+            </tr>
+          </table>
+        </li>
+        <li>Include these codes as defined in http://hl7.org/fhir/restful-operation
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>read</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>vread</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>update</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>delete</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>validate</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>create</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-instance</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-type</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-system</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>search-type</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>search-system</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>transaction</td>
+              <td/>
+              <td/>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/security-event-sub-type"/>
+  <version value="20100826"/>
+  <name value="Security Event Sub-Type"/>
+  <publisher value="NEMA/DICOM"/>
+  <description value="More detailed code concerning the type of the security event - defined by DICOM with some FHIR specific additions"/>
+  <copyright value="These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association"/>
+  <status value="active"/>
+  <date value="2010-08-26"/>
+  <compose>
+    <include>
+      <system value="http://nema.org/dicom/dcid"/>
+      <code value="110120"/>
+      <code value="110121"/>
+      <code value="110122"/>
+      <code value="110123"/>
+      <code value="110124"/>
+      <code value="110125"/>
+      <code value="110126"/>
+      <code value="110127"/>
+      <code value="110128"/>
+      <code value="110129"/>
+      <code value="110130"/>
+      <code value="110131"/>
+      <code value="110132"/>
+      <code value="110133"/>
+      <code value="110134"/>
+      <code value="110135"/>
+      <code value="110136"/>
+      <code value="110137"/>
+      <code value="110138"/>
+      <code value="110139"/>
+      <code value="110140"/>
+      <code value="110141"/>
+      <code value="110142"/>
+    </include>
+    <include>
+      <system value="http://hl7.org/fhir/restful-operation"/>
+      <code value="read"/>
+      <code value="vread"/>
+      <code value="update"/>
+      <code value="delete"/>
+      <code value="validate"/>
+      <code value="create"/>
+      <code value="history-instance"/>
+      <code value="history-type"/>
+      <code value="history-system"/>
+      <code value="search-type"/>
+      <code value="search-system"/>
+      <code value="transaction"/>
+    </include>
+  </compose>
+</ValueSet>

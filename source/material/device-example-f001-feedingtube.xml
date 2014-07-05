@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Device xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>type</b>: Feeding tube, device 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;25062003&#39; = &#39;Feeding tube&#39;, given as &#39;Feeding tube, device&#39;})</span>
+      </p>
+    </div>
+  </text>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="25062003"/>
+      <display value="Feeding tube, device"/>
+    </coding>
+  </type>
+</Device>

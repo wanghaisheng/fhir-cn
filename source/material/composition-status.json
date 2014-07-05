@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>CompositionStatus</h2><p>The workflow/clinical status of the composition</p><p>This value set defines its own terms in the system http://hl7.org/fhir/composition-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href=\"v3\\ActStatus\\index.html\">v3 Map (ActStatus)</a></b></td></tr><tr><td>preliminary<a name=\"preliminary\"> </a></td><td/><td>This is a preliminary composition or document (also known as initial or interim). The content may be incomplete or unverified.</td><td><span title=\"equivalent\">~</span><a href=\"v3\\ActStatus\\index.html#active\">active</a></td></tr><tr><td>final<a name=\"final\"> </a></td><td/><td>The composition or document is complete and verified by an appropriate person, and no further work is planned.</td><td><span title=\"wider\">&lt;</span><a href=\"v3\\ActStatus\\index.html#completed\">completed</a></td></tr><tr><td>appended<a name=\"appended\"> </a></td><td/><td>The composition or document has been modified subsequent to being released as &quot;final&quot;, and is complete and verified by an authorized person. The modifications added new information to the composition or document, but did not revise existing content.</td><td><span title=\"wider\">&lt;</span><a href=\"v3\\ActStatus\\index.html#completed\">completed</a></td></tr><tr><td>amended<a name=\"amended\"> </a></td><td/><td>The composition or document has been modified subsequent to being released as &quot;final&quot;, and is complete and verified by an authorized person.</td><td><span title=\"wider\">&lt;</span><a href=\"v3\\ActStatus\\index.html#completed\">completed</a></td></tr><tr><td>entered in error<a name=\"enteredinerror\"> </a></td><td/><td>The composition or document was originally created/issued in error, and this is an amendment that marks that the entire series should not be considered as valid.</td><td><span title=\"equivalent\">~</span><a href=\"v3\\ActStatus\\index.html#nullified\">nullified</a></td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/composition-status",
+  "name": "CompositionStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The workflow/clinical status of the composition",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.905+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/composition-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "preliminary",
+        "definition": "This is a preliminary composition or document (also known as initial or interim). The content may be incomplete or unverified."
+      },
+      {
+        "code": "final",
+        "definition": "The composition or document is complete and verified by an appropriate person, and no further work is planned."
+      },
+      {
+        "code": "appended",
+        "definition": "The composition or document has been modified subsequent to being released as \"final\", and is complete and verified by an authorized person. The modifications added new information to the composition or document, but did not revise existing content."
+      },
+      {
+        "code": "amended",
+        "definition": "The composition or document has been modified subsequent to being released as \"final\", and is complete and verified by an authorized person."
+      },
+      {
+        "code": "entered in error",
+        "definition": "The composition or document was originally created/issued in error, and this is an amendment that marks that the entire series should not be considered as valid."
+      }
+    ]
+  }
+}

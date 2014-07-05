@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ResourceType</h2>
+      <p>One of the resource types defined as part of FHIR</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/resource-types</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>AdverseReaction
+            <a name="AdverseReaction"> </a>
+          </td>
+          <td/>
+          <td>Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance.</td>
+        </tr>
+        <tr>
+          <td>Alert
+            <a name="Alert"> </a>
+          </td>
+          <td/>
+          <td>Prospective warnings of potential issues when providing care to the patient.</td>
+        </tr>
+        <tr>
+          <td>AllergyIntolerance
+            <a name="AllergyIntolerance"> </a>
+          </td>
+          <td/>
+          <td>Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance.</td>
+        </tr>
+        <tr>
+          <td>Appointment
+            <a name="Appointment"> </a>
+          </td>
+          <td/>
+          <td>(informative) A scheduled appointment for a patient and/or practitioner(s) where a service may take place.</td>
+        </tr>
+        <tr>
+          <td>AppointmentResponse
+            <a name="AppointmentResponse"> </a>
+          </td>
+          <td/>
+          <td>(informative) A response to a scheduled appointment for a patient and/or practitioner(s).</td>
+        </tr>
+        <tr>
+          <td>Availability
+            <a name="Availability"> </a>
+          </td>
+          <td/>
+          <td>(informative) A container for slot(s) of time that may be available for booking appointments.</td>
+        </tr>
+        <tr>
+          <td>CarePlan
+            <a name="CarePlan"> </a>
+          </td>
+          <td/>
+          <td>Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.</td>
+        </tr>
+        <tr>
+          <td>Composition
+            <a name="Composition"> </a>
+          </td>
+          <td/>
+          <td>A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</td>
+        </tr>
+        <tr>
+          <td>ConceptMap
+            <a name="ConceptMap"> </a>
+          </td>
+          <td/>
+          <td>A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.</td>
+        </tr>
+        <tr>
+          <td>Condition
+            <a name="Condition"> </a>
+          </td>
+          <td/>
+          <td>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</td>
+        </tr>
+        <tr>
+          <td>Conformance
+            <a name="Conformance"> </a>
+          </td>
+          <td/>
+          <td>A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.</td>
+        </tr>
+        <tr>
+          <td>DataElement
+            <a name="DataElement"> </a>
+          </td>
+          <td/>
+          <td>The formal description of a single piece of information that can be gathered and reported.</td>
+        </tr>
+        <tr>
+          <td>Device
+            <a name="Device"> </a>
+          </td>
+          <td/>
+          <td>This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.</td>
+        </tr>
+        <tr>
+          <td>DeviceObservationReport
+            <a name="DeviceObservationReport"> </a>
+          </td>
+          <td/>
+          <td>Describes the data produced by a device at a point in time.</td>
+        </tr>
+        <tr>
+          <td>DiagnosticOrder
+            <a name="DiagnosticOrder"> </a>
+          </td>
+          <td/>
+          <td>A request for a diagnostic investigation service to be performed.</td>
+        </tr>
+        <tr>
+          <td>DiagnosticReport
+            <a name="DiagnosticReport"> </a>
+          </td>
+          <td/>
+          <td>The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.</td>
+        </tr>
+        <tr>
+          <td>DocumentManifest
+            <a name="DocumentManifest"> </a>
+          </td>
+          <td/>
+          <td>A manifest that defines a set of documents.</td>
+        </tr>
+        <tr>
+          <td>DocumentReference
+            <a name="DocumentReference"> </a>
+          </td>
+          <td/>
+          <td>A reference to a document.</td>
+        </tr>
+        <tr>
+          <td>Encounter
+            <a name="Encounter"> </a>
+          </td>
+          <td/>
+          <td>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.</td>
+        </tr>
+        <tr>
+          <td>FamilyHistory
+            <a name="FamilyHistory"> </a>
+          </td>
+          <td/>
+          <td>Significant health events and conditions for people related to the subject relevant in the context of care for the subject.</td>
+        </tr>
+        <tr>
+          <td>Group
+            <a name="Group"> </a>
+          </td>
+          <td/>
+          <td>Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn&#39;t an Organization.</td>
+        </tr>
+        <tr>
+          <td>ImagingStudy
+            <a name="ImagingStudy"> </a>
+          </td>
+          <td/>
+          <td>Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images.</td>
+        </tr>
+        <tr>
+          <td>Immunization
+            <a name="Immunization"> </a>
+          </td>
+          <td/>
+          <td>Immunization event information.</td>
+        </tr>
+        <tr>
+          <td>ImmunizationRecommendation
+            <a name="ImmunizationRecommendation"> </a>
+          </td>
+          <td/>
+          <td>A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification.</td>
+        </tr>
+        <tr>
+          <td>List
+            <a name="List"> </a>
+          </td>
+          <td/>
+          <td>A set of information summarized from a list of other resources.</td>
+        </tr>
+        <tr>
+          <td>Location
+            <a name="Location"> </a>
+          </td>
+          <td/>
+          <td>Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</td>
+        </tr>
+        <tr>
+          <td>Media
+            <a name="Media"> </a>
+          </td>
+          <td/>
+          <td>A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.</td>
+        </tr>
+        <tr>
+          <td>Medication
+            <a name="Medication"> </a>
+          </td>
+          <td/>
+          <td>Primarily used for identification and definition of Medication, but also covers ingredients and packaging.</td>
+        </tr>
+        <tr>
+          <td>MedicationAdministration
+            <a name="MedicationAdministration"> </a>
+          </td>
+          <td/>
+          <td>Describes the event of a patient being given a dose of a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.
+
+Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.</td>
+        </tr>
+        <tr>
+          <td>MedicationDispense
+            <a name="MedicationDispense"> </a>
+          </td>
+          <td/>
+          <td>Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.</td>
+        </tr>
+        <tr>
+          <td>MedicationPrescription
+            <a name="MedicationPrescription"> </a>
+          </td>
+          <td/>
+          <td>An order for both supply of the medication and the instructions for administration of the medicine to a patient.</td>
+        </tr>
+        <tr>
+          <td>MedicationStatement
+            <a name="MedicationStatement"> </a>
+          </td>
+          <td/>
+          <td>A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician.</td>
+        </tr>
+        <tr>
+          <td>MessageHeader
+            <a name="MessageHeader"> </a>
+          </td>
+          <td/>
+          <td>The header for a message exchange that is either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.</td>
+        </tr>
+        <tr>
+          <td>Namespace
+            <a name="Namespace"> </a>
+          </td>
+          <td/>
+          <td>A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a &quot;System&quot; used within the Identifier and Coding data types.</td>
+        </tr>
+        <tr>
+          <td>Observation
+            <a name="Observation"> </a>
+          </td>
+          <td/>
+          <td>Measurements and simple assertions made about a patient, device or other subject.</td>
+        </tr>
+        <tr>
+          <td>OperationOutcome
+            <a name="OperationOutcome"> </a>
+          </td>
+          <td/>
+          <td>A collection of error, warning or information messages that result from a system action.</td>
+        </tr>
+        <tr>
+          <td>Order
+            <a name="Order"> </a>
+          </td>
+          <td/>
+          <td>A request to perform an action.</td>
+        </tr>
+        <tr>
+          <td>OrderResponse
+            <a name="OrderResponse"> </a>
+          </td>
+          <td/>
+          <td>A response to an order.</td>
+        </tr>
+        <tr>
+          <td>Organization
+            <a name="Organization"> </a>
+          </td>
+          <td/>
+          <td>A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.</td>
+        </tr>
+        <tr>
+          <td>Other
+            <a name="Other"> </a>
+          </td>
+          <td/>
+          <td>Other is a conformant for handling resource concepts not yet defined for FHIR or outside HL7&#39;s scope of interest.</td>
+        </tr>
+        <tr>
+          <td>Patient
+            <a name="Patient"> </a>
+          </td>
+          <td/>
+          <td>Demographics and other administrative information about a person or animal receiving care or other health-related services.</td>
+        </tr>
+        <tr>
+          <td>Practitioner
+            <a name="Practitioner"> </a>
+          </td>
+          <td/>
+          <td>A person who is directly or indirectly involved in the provisioning of healthcare.</td>
+        </tr>
+        <tr>
+          <td>Procedure
+            <a name="Procedure"> </a>
+          </td>
+          <td/>
+          <td>An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy.</td>
+        </tr>
+        <tr>
+          <td>Profile
+            <a name="Profile"> </a>
+          </td>
+          <td/>
+          <td>A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.</td>
+        </tr>
+        <tr>
+          <td>Provenance
+            <a name="Provenance"> </a>
+          </td>
+          <td/>
+          <td>Provenance information that describes the activity that led to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.</td>
+        </tr>
+        <tr>
+          <td>Query
+            <a name="Query"> </a>
+          </td>
+          <td/>
+          <td>A description of a query with a set of parameters.</td>
+        </tr>
+        <tr>
+          <td>Questionnaire
+            <a name="Questionnaire"> </a>
+          </td>
+          <td/>
+          <td>A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.</td>
+        </tr>
+        <tr>
+          <td>QuestionnaireAnswers
+            <a name="QuestionnaireAnswers"> </a>
+          </td>
+          <td/>
+          <td>A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.</td>
+        </tr>
+        <tr>
+          <td>RelatedPerson
+            <a name="RelatedPerson"> </a>
+          </td>
+          <td/>
+          <td>Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.</td>
+        </tr>
+        <tr>
+          <td>SecurityEvent
+            <a name="SecurityEvent"> </a>
+          </td>
+          <td/>
+          <td>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</td>
+        </tr>
+        <tr>
+          <td>Slot
+            <a name="Slot"> </a>
+          </td>
+          <td/>
+          <td>(informative) A slot of time on a schedule that may be available for booking appointments.</td>
+        </tr>
+        <tr>
+          <td>Specimen
+            <a name="Specimen"> </a>
+          </td>
+          <td/>
+          <td>Sample for analysis.</td>
+        </tr>
+        <tr>
+          <td>Subscription
+            <a name="Subscription"> </a>
+          </td>
+          <td/>
+          <td>Todo.</td>
+        </tr>
+        <tr>
+          <td>Substance
+            <a name="Substance"> </a>
+          </td>
+          <td/>
+          <td>A homogeneous material with a definite composition.</td>
+        </tr>
+        <tr>
+          <td>Supply
+            <a name="Supply"> </a>
+          </td>
+          <td/>
+          <td>A supply - a  request for something, and provision of what is supplied.</td>
+        </tr>
+        <tr>
+          <td>ValueSet
+            <a name="ValueSet"> </a>
+          </td>
+          <td/>
+          <td>A value set specifies a set of codes drawn from one or more code systems.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/resource-types"/>
+  <name value="ResourceType"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="One of the resource types defined as part of FHIR"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.903+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/resource-types"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="AdverseReaction"/>
+      <definition value="Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance."/>
+    </concept>
+    <concept>
+      <code value="Alert"/>
+      <definition value="Prospective warnings of potential issues when providing care to the patient."/>
+    </concept>
+    <concept>
+      <code value="AllergyIntolerance"/>
+      <definition value="Indicates the patient has a susceptibility to an adverse reaction upon exposure to a specified substance."/>
+    </concept>
+    <concept>
+      <code value="Appointment"/>
+      <definition value="(informative) A scheduled appointment for a patient and/or practitioner(s) where a service may take place."/>
+    </concept>
+    <concept>
+      <code value="AppointmentResponse"/>
+      <definition value="(informative) A response to a scheduled appointment for a patient and/or practitioner(s)."/>
+    </concept>
+    <concept>
+      <code value="Availability"/>
+      <definition value="(informative) A container for slot(s) of time that may be available for booking appointments."/>
+    </concept>
+    <concept>
+      <code value="CarePlan"/>
+      <definition value="Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions."/>
+    </concept>
+    <concept>
+      <code value="Composition"/>
+      <definition value="A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement."/>
+    </concept>
+    <concept>
+      <code value="ConceptMap"/>
+      <definition value="A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models."/>
+    </concept>
+    <concept>
+      <code value="Condition"/>
+      <definition value="Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary."/>
+    </concept>
+    <concept>
+      <code value="Conformance"/>
+      <definition value="A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation."/>
+    </concept>
+    <concept>
+      <code value="DataElement"/>
+      <definition value="The formal description of a single piece of information that can be gathered and reported."/>
+    </concept>
+    <concept>
+      <code value="Device"/>
+      <definition value="This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health."/>
+    </concept>
+    <concept>
+      <code value="DeviceObservationReport"/>
+      <definition value="Describes the data produced by a device at a point in time."/>
+    </concept>
+    <concept>
+      <code value="DiagnosticOrder"/>
+      <definition value="A request for a diagnostic investigation service to be performed."/>
+    </concept>
+    <concept>
+      <code value="DiagnosticReport"/>
+      <definition value="The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."/>
+    </concept>
+    <concept>
+      <code value="DocumentManifest"/>
+      <definition value="A manifest that defines a set of documents."/>
+    </concept>
+    <concept>
+      <code value="DocumentReference"/>
+      <definition value="A reference to a document."/>
+    </concept>
+    <concept>
+      <code value="Encounter"/>
+      <definition value="An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."/>
+    </concept>
+    <concept>
+      <code value="FamilyHistory"/>
+      <definition value="Significant health events and conditions for people related to the subject relevant in the context of care for the subject."/>
+    </concept>
+    <concept>
+      <code value="Group"/>
+      <definition value="Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn&#39;t an Organization."/>
+    </concept>
+    <concept>
+      <code value="ImagingStudy"/>
+      <definition value="Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images."/>
+    </concept>
+    <concept>
+      <code value="Immunization"/>
+      <definition value="Immunization event information."/>
+    </concept>
+    <concept>
+      <code value="ImmunizationRecommendation"/>
+      <definition value="A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification."/>
+    </concept>
+    <concept>
+      <code value="List"/>
+      <definition value="A set of information summarized from a list of other resources."/>
+    </concept>
+    <concept>
+      <code value="Location"/>
+      <definition value="Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated."/>
+    </concept>
+    <concept>
+      <code value="Media"/>
+      <definition value="A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference."/>
+    </concept>
+    <concept>
+      <code value="Medication"/>
+      <definition value="Primarily used for identification and definition of Medication, but also covers ingredients and packaging."/>
+    </concept>
+    <concept>
+      <code value="MedicationAdministration"/>
+      <definition value="Describes the event of a patient being given a dose of a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.
+
+Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner."/>
+    </concept>
+    <concept>
+      <code value="MedicationDispense"/>
+      <definition value="Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication."/>
+    </concept>
+    <concept>
+      <code value="MedicationPrescription"/>
+      <definition value="An order for both supply of the medication and the instructions for administration of the medicine to a patient."/>
+    </concept>
+    <concept>
+      <code value="MedicationStatement"/>
+      <definition value="A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician."/>
+    </concept>
+    <concept>
+      <code value="MessageHeader"/>
+      <definition value="The header for a message exchange that is either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle."/>
+    </concept>
+    <concept>
+      <code value="Namespace"/>
+      <definition value="A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a &quot;System&quot; used within the Identifier and Coding data types."/>
+    </concept>
+    <concept>
+      <code value="Observation"/>
+      <definition value="Measurements and simple assertions made about a patient, device or other subject."/>
+    </concept>
+    <concept>
+      <code value="OperationOutcome"/>
+      <definition value="A collection of error, warning or information messages that result from a system action."/>
+    </concept>
+    <concept>
+      <code value="Order"/>
+      <definition value="A request to perform an action."/>
+    </concept>
+    <concept>
+      <code value="OrderResponse"/>
+      <definition value="A response to an order."/>
+    </concept>
+    <concept>
+      <code value="Organization"/>
+      <definition value="A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc."/>
+    </concept>
+    <concept>
+      <code value="Other"/>
+      <definition value="Other is a conformant for handling resource concepts not yet defined for FHIR or outside HL7&#39;s scope of interest."/>
+    </concept>
+    <concept>
+      <code value="Patient"/>
+      <definition value="Demographics and other administrative information about a person or animal receiving care or other health-related services."/>
+    </concept>
+    <concept>
+      <code value="Practitioner"/>
+      <definition value="A person who is directly or indirectly involved in the provisioning of healthcare."/>
+    </concept>
+    <concept>
+      <code value="Procedure"/>
+      <definition value="An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy."/>
+    </concept>
+    <concept>
+      <code value="Profile"/>
+      <definition value="A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions."/>
+    </concept>
+    <concept>
+      <code value="Provenance"/>
+      <definition value="Provenance information that describes the activity that led to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance."/>
+    </concept>
+    <concept>
+      <code value="Query"/>
+      <definition value="A description of a query with a set of parameters."/>
+    </concept>
+    <concept>
+      <code value="Questionnaire"/>
+      <definition value="A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."/>
+    </concept>
+    <concept>
+      <code value="QuestionnaireAnswers"/>
+      <definition value="A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."/>
+    </concept>
+    <concept>
+      <code value="RelatedPerson"/>
+      <definition value="Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process."/>
+    </concept>
+    <concept>
+      <code value="SecurityEvent"/>
+      <definition value="A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage."/>
+    </concept>
+    <concept>
+      <code value="Slot"/>
+      <definition value="(informative) A slot of time on a schedule that may be available for booking appointments."/>
+    </concept>
+    <concept>
+      <code value="Specimen"/>
+      <definition value="Sample for analysis."/>
+    </concept>
+    <concept>
+      <code value="Subscription"/>
+      <definition value="Todo."/>
+    </concept>
+    <concept>
+      <code value="Substance"/>
+      <definition value="A homogeneous material with a definite composition."/>
+    </concept>
+    <concept>
+      <code value="Supply"/>
+      <definition value="A supply - a  request for something, and provision of what is supplied."/>
+    </concept>
+    <concept>
+      <code value="ValueSet"/>
+      <definition value="A value set specifies a set of codes drawn from one or more code systems."/>
+    </concept>
+  </define>
+</ValueSet>

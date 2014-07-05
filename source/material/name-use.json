@@ -1,0 +1,57 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>NameUse</h2><p>The use of a human name</p><p>This value set defines its own terms in the system http://hl7.org/fhir/name-use</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b><a href=\"v3\\EntityNameUseR2\\index.html\">v3 Map (EntityNameUseR2)</a></b></td><td><b><a href=\"v2\\0200\\index.html\">v2 Map (0200)</a></b></td></tr><tr><td>usual<a name=\"usual\"> </a></td><td/><td>Known as/conventional/the one you normally use.</td><td><span title=\"equal\">=</span><a href=\"v3\\EntityNameUseR2\\index.html#C\">C</a></td><td><span title=\"equivalent\">~</span><a href=\"v2\\0200\\index.html#D\">D</a></td></tr><tr><td>official<a name=\"official\"> </a></td><td/><td>The formal name as registered in an official (government) registry, but which name might not be commonly used. May be called &quot;legal name&quot;.</td><td><span title=\"equal\">=</span><a href=\"v3\\EntityNameUseR2\\index.html#OR\">OR</a></td><td><span title=\"equivalent\">~</span><a href=\"v2\\0200\\index.html#L\">L</a></td></tr><tr><td>temp<a name=\"temp\"> </a></td><td/><td>A temporary name. Name.period can provide more detailed information. This may also be used for temporary names assigned at birth or in emergency situations.</td><td><span title=\"equal\">=</span><a href=\"v3\\EntityNameUseR2\\index.html#T\">T</a></td><td><span title=\"equivalent\">~</span><a href=\"v2\\0200\\index.html#TEMP\">TEMP</a></td></tr><tr><td>nickname<a name=\"nickname\"> </a></td><td/><td>A name that is used to address the person in an informal manner, but is not part of their formal or usual name.</td><td><span title=\"equivalent\">~</span><a href=\"v3\\EntityNameUseR2\\index.html#P\">P</a></td><td><span title=\"equivalent\">~</span><a href=\"v2\\0200\\index.html#N\">N</a></td></tr><tr><td>anonymous<a name=\"anonymous\"> </a></td><td/><td>Anonymous assigned name, alias, or pseudonym (used to protect a person's identity for privacy reasons).</td><td><span title=\"equivalent\">~</span><a href=\"v3\\EntityNameUseR2\\index.html#ANON\">ANON</a></td><td><span title=\"equivalent\">~</span><a href=\"v2\\0200\\index.html#S\">S</a></td></tr><tr><td>old<a name=\"old\"> </a></td><td/><td>This name is no longer in use (or was never correct, but retained for records).</td><td><span title=\"equivalent\">~</span><a href=\"v3\\EntityNameUseR2\\index.html#OLD\">OLD</a></td><td><span title=\"narrower\">&gt;</span><a href=\"v2\\0200\\index.html#NOUSE\">NOUSE</a><br/><span title=\"narrower\">&gt;</span><a href=\"v2\\0200\\index.html#BAD\">BAD</a></td></tr><tr><td>maiden<a name=\"maiden\"> </a></td><td/><td>A name used prior to marriage. Marriage naming customs vary greatly around the world. This name use is for use by applications that collect and store &quot;maiden&quot; names. Though the concept of maiden name is often gender specific, the use of this term is not gender specific. The use of this term does not imply any particular history for a person's name, nor should the maiden name be determined algorithmically.</td><td><span title=\"equal\">=</span><a href=\"v3\\EntityNameUseR2\\index.html#M\">M</a></td><td><span title=\"equivalent\">~</span><a href=\"v2\\0200\\index.html#M\">M</a></td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/name-use",
+  "name": "NameUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The use of a human name",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.900+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/name-use",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "usual",
+        "definition": "Known as/conventional/the one you normally use."
+      },
+      {
+        "code": "official",
+        "definition": "The formal name as registered in an official (government) registry, but which name might not be commonly used. May be called \"legal name\"."
+      },
+      {
+        "code": "temp",
+        "definition": "A temporary name. Name.period can provide more detailed information. This may also be used for temporary names assigned at birth or in emergency situations."
+      },
+      {
+        "code": "nickname",
+        "definition": "A name that is used to address the person in an informal manner, but is not part of their formal or usual name."
+      },
+      {
+        "code": "anonymous",
+        "definition": "Anonymous assigned name, alias, or pseudonym (used to protect a person's identity for privacy reasons)."
+      },
+      {
+        "code": "old",
+        "definition": "This name is no longer in use (or was never correct, but retained for records)."
+      },
+      {
+        "code": "maiden",
+        "definition": "A name used prior to marriage. Marriage naming customs vary greatly around the world. This name use is for use by applications that collect and store \"maiden\" names. Though the concept of maiden name is often gender specific, the use of this term is not gender specific. The use of this term does not imply any particular history for a person's name, nor should the maiden name be determined algorithmically."
+      }
+    ]
+  }
+}

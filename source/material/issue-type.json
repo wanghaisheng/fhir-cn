@@ -1,0 +1,141 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>IssueType</h2><p>A coded expression of the type of issue</p><p>This value set defines its own terms in the system http://hl7.org/fhir/issue-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>invalid<a name=\"invalid\"> </a></td><td/><td>Content invalid against Specification or Profile.</td></tr><tr><td>..structure<a name=\"structure\"> </a></td><td/><td>content structural issue.</td></tr><tr><td>..required<a name=\"required\"> </a></td><td/><td>required element missing.</td></tr><tr><td>..value<a name=\"value\"> </a></td><td/><td>element value invalid.</td></tr><tr><td>..invariant<a name=\"invariant\"> </a></td><td/><td>schematron rule.</td></tr><tr><td>security<a name=\"security\"> </a></td><td/><td>authorization/permissions issue.</td></tr><tr><td>..login<a name=\"login\"> </a></td><td/><td>the client needs to initiate the authentication process ().</td></tr><tr><td>..unknown<a name=\"unknown\"> </a></td><td/><td>user/system not able to be authenticated.</td></tr><tr><td>..expired<a name=\"expired\"> </a></td><td/><td>user session expired.</td></tr><tr><td>..forbidden<a name=\"forbidden\"> </a></td><td/><td>user rights failure.</td></tr><tr><td>processing<a name=\"processing\"> </a></td><td/><td>processing issues.</td></tr><tr><td>..not-supported<a name=\"not-supported\"> </a></td><td/><td>resource not supported.</td></tr><tr><td>..duplicate<a name=\"duplicate\"> </a></td><td/><td>duplicate resource.</td></tr><tr><td>..not-found<a name=\"not-found\"> </a></td><td/><td>reference not found.</td></tr><tr><td>..too-long<a name=\"too-long\"> </a></td><td/><td>existing content too long.</td></tr><tr><td>..code-unknown<a name=\"code-unknown\"> </a></td><td/><td>code could not be understood.</td></tr><tr><td>..extension<a name=\"extension\"> </a></td><td/><td>extension not recognized.</td></tr><tr><td>..too-costly<a name=\"too-costly\"> </a></td><td/><td>operation denied to protect server resources.</td></tr><tr><td>..business-rule<a name=\"business-rule\"> </a></td><td/><td>content failed to pass some business rule.</td></tr><tr><td>..conflict<a name=\"conflict\"> </a></td><td/><td>content could not be accepted because of an edit conflict (i.e. version aware updates).</td></tr><tr><td>transient<a name=\"transient\"> </a></td><td/><td>transient processing issues.</td></tr><tr><td>..lock-error<a name=\"lock-error\"> </a></td><td/><td>resource/record locking failure.</td></tr><tr><td>..no-store<a name=\"no-store\"> </a></td><td/><td>persistent store unavailable.</td></tr><tr><td>..exception<a name=\"exception\"> </a></td><td/><td>unexpected internal error.</td></tr><tr><td>..timeout<a name=\"timeout\"> </a></td><td/><td>internal timeout.</td></tr><tr><td>..throttled<a name=\"throttled\"> </a></td><td/><td>The system is not prepared to handle this request due to load management.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/issue-type",
+  "name": "IssueType",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "A coded expression of the type of issue",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.895+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/issue-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "invalid",
+        "definition": "Content invalid against Specification or Profile.",
+        "concept": [
+          {
+            "code": "structure",
+            "definition": "content structural issue."
+          },
+          {
+            "code": "required",
+            "definition": "required element missing."
+          },
+          {
+            "code": "value",
+            "definition": "element value invalid."
+          },
+          {
+            "code": "invariant",
+            "definition": "schematron rule."
+          }
+        ]
+      },
+      {
+        "code": "security",
+        "definition": "authorization/permissions issue.",
+        "concept": [
+          {
+            "code": "login",
+            "definition": "the client needs to initiate the authentication process ()."
+          },
+          {
+            "code": "unknown",
+            "definition": "user/system not able to be authenticated."
+          },
+          {
+            "code": "expired",
+            "definition": "user session expired."
+          },
+          {
+            "code": "forbidden",
+            "definition": "user rights failure."
+          }
+        ]
+      },
+      {
+        "code": "processing",
+        "definition": "processing issues.",
+        "concept": [
+          {
+            "code": "not-supported",
+            "definition": "resource not supported."
+          },
+          {
+            "code": "duplicate",
+            "definition": "duplicate resource."
+          },
+          {
+            "code": "not-found",
+            "definition": "reference not found."
+          },
+          {
+            "code": "too-long",
+            "definition": "existing content too long."
+          },
+          {
+            "code": "code-unknown",
+            "definition": "code could not be understood."
+          },
+          {
+            "code": "extension",
+            "definition": "extension not recognized."
+          },
+          {
+            "code": "too-costly",
+            "definition": "operation denied to protect server resources."
+          },
+          {
+            "code": "business-rule",
+            "definition": "content failed to pass some business rule."
+          },
+          {
+            "code": "conflict",
+            "definition": "content could not be accepted because of an edit conflict (i.e. version aware updates)."
+          }
+        ]
+      },
+      {
+        "code": "transient",
+        "definition": "transient processing issues.",
+        "concept": [
+          {
+            "code": "lock-error",
+            "definition": "resource/record locking failure."
+          },
+          {
+            "code": "no-store",
+            "definition": "persistent store unavailable."
+          },
+          {
+            "code": "exception",
+            "definition": "unexpected internal error."
+          },
+          {
+            "code": "timeout",
+            "definition": "internal timeout."
+          },
+          {
+            "code": "throttled",
+            "definition": "The system is not prepared to handle this request due to load management."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>CarePlanStatus</h2><p>Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/care-plan-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>planned<a name=\"planned\"> </a></td><td/><td>The plan is in development or awaiting use but is not yet intended to be acted upon.</td></tr><tr><td>active<a name=\"active\"> </a></td><td/><td>The plan is intended to be followed and used as part of patient care.</td></tr><tr><td>completed<a name=\"completed\"> </a></td><td/><td>The plan is no longer in use and is not expected to be followed or used in patient care.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/care-plan-status",
+  "name": "CarePlanStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record.",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.902+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/care-plan-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "planned",
+        "definition": "The plan is in development or awaiting use but is not yet intended to be acted upon."
+      },
+      {
+        "code": "active",
+        "definition": "The plan is intended to be followed and used as part of patient care."
+      },
+      {
+        "code": "completed",
+        "definition": "The plan is no longer in use and is not expected to be followed or used in patient care."
+      }
+    ]
+  }
+}

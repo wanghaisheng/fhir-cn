@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>status</b>: active
+      </p>
+      <p>
+        <b>concern</b>: 
+        <a href="condition-example-f202-malignancy.html">Roel&#39;s head-neck tumor. Generated Summary: dateAsserted: 1-Dec 2012; 
+          <span title="Codes: {http://snomed.info/sct 363346000}">Malignant neoplastic disease</span>; 
+          <span title="Codes: {http://hl7.org/fhir/condition-category diagnose}">diagnose</span>; confirmed; 
+          <span title="Codes: {http://snomed.info/sct 17162000}">Certain</span>; 
+          <span title="Codes: {http://snomed.info/sct 24484000}">Severe</span>; 52 years
+        </a>
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Role</b>
+          </td>
+          <td>
+            <b>Member</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Treated with 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;28995006&#39; = &#39;TW&#39;, given as &#39;Treated with&#39;})</span>
+          </td>
+          <td>
+            <a href="practitioner-example-f201-ab.html">Dokter Bronsig. Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+              <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+              <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+              <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h3>Goals</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Description</b>
+          </td>
+          <td>
+            <b>Status</b>
+          </td>
+          <td>
+            <b>Notes</b>
+          </td>
+          <td>
+            <b>Concern</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Elimination of the spenoid bone tumor</td>
+          <td>inProgress</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <blockquote>
+        <p>
+          <b>activity</b>
+        </p>
+        <p>
+          <b>status</b>: inProgress
+        </p>
+        <p>
+          <b>prohibited</b>: false
+        </p>
+        <p>
+          <b>actionResulting</b>: 
+          <a href="procedure-example-f201-tpf.html">Roel&#39;s Chemotherapy. Generated Summary: 
+            <span title="Codes: {http://snomed.info/sct 367336001}">Chemotherapy</span>; 
+            <span title="Codes: {http://snomed.info/sct 272676008}">Sphenoid bone</span>; 
+            <span title="Codes: ">DiagnosticReport/f201</span>; date: 28-Jan 2013 13:31 --&gt; 28-Jan 2013 14:27; notes: Eerste neo-adjuvante TPF-kuur bij groot proces in sphenoid met intracraniale uitbreiding.
+          </a>
+        </p>
+        <h3>Simples</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Category</b>
+            </td>
+            <td>
+              <b>Code</b>
+            </td>
+            <td>
+              <b>Timing[x]</b>
+            </td>
+            <td>
+              <b>Location</b>
+            </td>
+            <td>
+              <b>Performer</b>
+            </td>
+            <td>
+              <b>Product</b>
+            </td>
+            <td>
+              <b>DailyAmount</b>
+            </td>
+            <td>
+              <b>Quantity</b>
+            </td>
+            <td>
+              <b>Details</b>
+            </td>
+          </tr>
+          <tr>
+            <td>procedure</td>
+            <td>Chemotherapy 
+              <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;367336001&#39; = &#39;Chemotherapy&#39;, given as &#39;Chemotherapy&#39;})</span>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>name: TPF</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+    </div>
+  </text>
+  <contained>
+    <Medication id="tpf">
+      <contained>
+        <Medication id="doce">
+          <name value="Docetaxel"/>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="108806006"/>
+            </coding>
+          </code>
+        </Medication>
+      </contained>
+      <contained>
+        <Medication id="cisp">
+          <name value="Cisplatin"/>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="57066004"/>
+            </coding>
+          </code>
+        </Medication>
+      </contained>
+      <contained>
+        <Medication id="fluo">
+          <name value="5-Fluorouracil"/>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="3127006"/>
+            </coding>
+          </code>
+        </Medication>
+      </contained>
+      <name value="TPF"/>
+      <product>
+        <ingredient>
+          <item>
+            <reference value="#doce"/>
+          </item>
+        </ingredient>
+        <ingredient>
+          <item>
+            <reference value="#cisp"/>
+          </item>
+        </ingredient>
+        <ingredient>
+          <item>
+            <reference value="#fluo"/>
+          </item>
+        </ingredient>
+      </product>
+    </Medication>
+  </contained>
+  <patient>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </patient>
+  <status value="active"/>
+  <concern>
+    <reference value="Condition/f202"/>
+    <display value="Roel&#39;s head-neck tumor"/>
+  </concern>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="28995006"/>
+        <display value="Treated with"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f201"/>
+      <display value="Dokter Bronsig"/>
+    </member>
+  </participant>
+  <goal>
+    <description value="Elimination of the spenoid bone tumor"/>
+    <status value="in progress"/>
+  </goal>
+  <activity>
+    <status value="in progress"/>
+    <prohibited value="false"/>
+    <actionResulting>
+      <reference value="Procedure/f201"/>
+      <display value="Roel&#39;s Chemotherapy"/>
+    </actionResulting>
+    <simple>
+      <category value="procedure"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="367336001"/>
+          <display value="Chemotherapy"/>
+        </coding>
+      </code>
+      <product>
+        <reference value="#tpf"/>
+      </product>
+    </simple>
+  </activity>
+</CarePlan>

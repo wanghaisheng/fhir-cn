@@ -1,0 +1,30 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n    \n    <hr/><h2>Audit Active Participant Role ID Code</h2><p>Audit Active Participant Role ID Code</p><p><b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include these codes as defined in http://nema.org/dicom/dcid<table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>110150</td><td/><td/></tr><tr><td>110151</td><td/><td/></tr><tr><td>110152</td><td/><td/></tr><tr><td>110153</td><td/><td/></tr><tr><td>110154</td><td/><td/></tr><tr><td>110155</td><td/><td/></tr></table></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/dicm-402-roleid",
+  "version": "20100826",
+  "name": "Audit Active Participant Role ID Code",
+  "publisher": "NEMA/DICOM",
+  "description": "Audit Active Participant Role ID Code",
+  "copyright": "These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association",
+  "status": "active",
+  "date": "2010-08-26",
+  "compose": {
+    "include": [
+      {
+        "system": "http://nema.org/dicom/dcid",
+        "code": [
+          "110150",
+          "110151",
+          "110152",
+          "110153",
+          "110154",
+          "110155"
+        ]
+      }
+    ]
+  }
+}

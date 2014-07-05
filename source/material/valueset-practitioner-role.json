@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>PractitionerRole</h2><p>This example value set defines a set of codes that can be used to indicate the role of a Practitioner.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/practitioner-role</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>doctor<a name=\"doctor\"> </a></td><td/><td/></tr><tr><td>nurse<a name=\"nurse\"> </a></td><td/><td/></tr><tr><td>pharmacist<a name=\"pharmacist\"> </a></td><td/><td/></tr><tr><td>researcher<a name=\"researcher\"> </a></td><td/><td/></tr><tr><td>teacher<a name=\"teacher\"> </a></td><td>Teacher/educator</td><td/></tr><tr><td>ict<a name=\"ict\"> </a></td><td>ICT professional</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/practitioner-role",
+  "name": "PractitionerRole",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate the role of a Practitioner.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/practitioner-role",
+    "concept": [
+      {
+        "code": "doctor"
+      },
+      {
+        "code": "nurse"
+      },
+      {
+        "code": "pharmacist"
+      },
+      {
+        "code": "researcher"
+      },
+      {
+        "code": "teacher",
+        "display": "Teacher/educator"
+      },
+      {
+        "code": "ict",
+        "display": "ICT professional"
+      }
+    ]
+  }
+}

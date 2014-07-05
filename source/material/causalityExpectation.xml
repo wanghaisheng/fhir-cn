@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>CausalityExpectation</h2>
+      <p>How likely is it that the given exposure caused a reaction</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/causalityExpectation</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>likely
+            <a name="likely"> </a>
+          </td>
+          <td/>
+          <td>Likely that this specific exposure caused the reaction.</td>
+        </tr>
+        <tr>
+          <td>unlikely
+            <a name="unlikely"> </a>
+          </td>
+          <td/>
+          <td>Unlikely that this specific exposure caused the reaction - the exposure is being linked to for information purposes.</td>
+        </tr>
+        <tr>
+          <td>confirmed
+            <a name="confirmed"> </a>
+          </td>
+          <td/>
+          <td>It has been confirmed that this exposure was one of the causes of the reaction.</td>
+        </tr>
+        <tr>
+          <td>unknown
+            <a name="unknown"> </a>
+          </td>
+          <td/>
+          <td>It is unknown whether this exposure had anything to do with the reaction.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/causalityExpectation"/>
+  <name value="CausalityExpectation"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="How likely is it that the given exposure caused a reaction"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.892+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/causalityExpectation"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="likely"/>
+      <definition value="Likely that this specific exposure caused the reaction."/>
+    </concept>
+    <concept>
+      <code value="unlikely"/>
+      <definition value="Unlikely that this specific exposure caused the reaction - the exposure is being linked to for information purposes."/>
+    </concept>
+    <concept>
+      <code value="confirmed"/>
+      <definition value="It has been confirmed that this exposure was one of the causes of the reaction."/>
+    </concept>
+    <concept>
+      <code value="unknown"/>
+      <definition value="It is unknown whether this exposure had anything to do with the reaction."/>
+    </concept>
+  </define>
+</ValueSet>

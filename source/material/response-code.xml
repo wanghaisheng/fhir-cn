@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ResponseType</h2>
+      <p>The kind of response to a message</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/response-code</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>ok
+            <a name="ok"> </a>
+          </td>
+          <td/>
+          <td>The message was accepted and processed without error.</td>
+        </tr>
+        <tr>
+          <td>transient-error
+            <a name="transient-error"> </a>
+          </td>
+          <td/>
+          <td>Some internal unexpected error occurred - wait and try again. Note - this is usually used for things like database unavailable, which may be expected to resolve, though human intervention may be required.</td>
+        </tr>
+        <tr>
+          <td>fatal-error
+            <a name="fatal-error"> </a>
+          </td>
+          <td/>
+          <td>The message was rejected because of some content in it. There is no point in re-sending without change. The response narrative SHALL describe what the issue is.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/response-code"/>
+  <name value="ResponseType"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The kind of response to a message"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.903+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/response-code"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="ok"/>
+      <definition value="The message was accepted and processed without error."/>
+    </concept>
+    <concept>
+      <code value="transient-error"/>
+      <definition value="Some internal unexpected error occurred - wait and try again. Note - this is usually used for things like database unavailable, which may be expected to resolve, though human intervention may be required."/>
+    </concept>
+    <concept>
+      <code value="fatal-error"/>
+      <definition value="The message was rejected because of some content in it. There is no point in re-sending without change. The response narrative SHALL describe what the issue is."/>
+    </concept>
+  </define>
+</ValueSet>

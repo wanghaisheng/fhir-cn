@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      This value set includes all LOINC codes (TODO: can we exclude panels without excluding too much?)\n    <hr/><h2>LOINC Codes</h2><p>This value set includes all LOINC codes</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include all codes defined in http://loinc.org</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/observation-codes",
+  "name": "LOINC Codes",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set includes all LOINC codes",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org"
+      }
+    ]
+  }
+}

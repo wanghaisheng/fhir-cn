@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ParticipantRequired</h2>
+      <p>Is the Participant required to attend the appointment</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/participantrequired</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>required
+            <a name="required"> </a>
+          </td>
+          <td/>
+          <td>The participant is required to attend the appointment.</td>
+        </tr>
+        <tr>
+          <td>optional
+            <a name="optional"> </a>
+          </td>
+          <td/>
+          <td>The participant may optionally attend the appointment.</td>
+        </tr>
+        <tr>
+          <td>information-only
+            <a name="information-only"> </a>
+          </td>
+          <td/>
+          <td>The participant is not required to attend the appointment (appointment is about them, not for them).</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/participantrequired"/>
+  <name value="ParticipantRequired"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Is the Participant required to attend the appointment"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.894+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/participantrequired"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="required"/>
+      <definition value="The participant is required to attend the appointment."/>
+    </concept>
+    <concept>
+      <code value="optional"/>
+      <definition value="The participant may optionally attend the appointment."/>
+    </concept>
+    <concept>
+      <code value="information-only"/>
+      <definition value="The participant is not required to attend the appointment (appointment is about them, not for them)."/>
+    </concept>
+  </define>
+</ValueSet>

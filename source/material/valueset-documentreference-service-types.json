@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Document Reference Service Types</h2><p>Known Service types that can be referred to from a Document Reference</p><p>This value set defines its own terms in the system http://hl7.org/fhir/document-reference-service-types</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>XDS<a name=\"XDS\"> </a></td><td>IHE XDS</td><td/></tr><tr><td>RLUS<a name=\"RLUS\"> </a></td><td>OMG RLUS</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/documentreference-service-types",
+  "name": "Document Reference Service Types",
+  "publisher": "HL7 FHIR",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Known Service types that can be referred to from a Document Reference",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/document-reference-service-types",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "XDS",
+        "display": "IHE XDS"
+      },
+      {
+        "code": "RLUS",
+        "display": "OMG RLUS"
+      }
+    ]
+  }
+}

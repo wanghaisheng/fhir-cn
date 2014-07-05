@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SecurityEventOutcome</h2><p>Indicates whether the event succeeded or failed</p><p>This value set defines its own terms in the system http://hl7.org/fhir/security-event-outcome</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>0<a name=\"0\"> </a></td><td>Success</td><td>The operation completed successfully (whether with warnings or not).</td></tr><tr><td>4<a name=\"4\"> </a></td><td>Minor failure</td><td>The action was not successful due to some kind of catered for error (often equivalent to an HTTP 400 response).</td></tr><tr><td>8<a name=\"8\"> </a></td><td>Serious failure</td><td>The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response).</td></tr><tr><td>12<a name=\"12\"> </a></td><td>Major failure</td><td>An error of such magnitude occurred that the system is not longer available for use (i.e. the system died).</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/security-event-outcome",
+  "name": "SecurityEventOutcome",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Indicates whether the event succeeded or failed",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.904+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/security-event-outcome",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "0",
+        "display": "Success",
+        "definition": "The operation completed successfully (whether with warnings or not)."
+      },
+      {
+        "code": "4",
+        "display": "Minor failure",
+        "definition": "The action was not successful due to some kind of catered for error (often equivalent to an HTTP 400 response)."
+      },
+      {
+        "code": "8",
+        "display": "Serious failure",
+        "definition": "The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response)."
+      },
+      {
+        "code": "12",
+        "display": "Major failure",
+        "definition": "An error of such magnitude occurred that the system is not longer available for use (i.e. the system died)."
+      }
+    ]
+  }
+}

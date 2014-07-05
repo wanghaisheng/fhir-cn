@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ReactionSeverity</h2><p>The severity of an adverse reaction.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/reactionSeverity</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>severe<a name=\"severe\"> </a></td><td/><td>Severe complications arose due to the reaction.</td></tr><tr><td>serious<a name=\"serious\"> </a></td><td/><td>Serious inconvenience to the subject.</td></tr><tr><td>moderate<a name=\"moderate\"> </a></td><td/><td>Moderate inconvenience to the subject.</td></tr><tr><td>minor<a name=\"minor\"> </a></td><td/><td>Minor inconvenience to the subject.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/reactionSeverity",
+  "name": "ReactionSeverity",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The severity of an adverse reaction.",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.904+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/reactionSeverity",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "severe",
+        "definition": "Severe complications arose due to the reaction."
+      },
+      {
+        "code": "serious",
+        "definition": "Serious inconvenience to the subject."
+      },
+      {
+        "code": "moderate",
+        "definition": "Moderate inconvenience to the subject."
+      },
+      {
+        "code": "minor",
+        "definition": "Minor inconvenience to the subject."
+      }
+    ]
+  }
+}

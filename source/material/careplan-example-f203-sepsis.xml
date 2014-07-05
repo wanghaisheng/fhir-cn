@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>status</b>: completed
+      </p>
+      <p>
+        <b>period</b>: 14-Apr 2013 --&gt; 21-Apr 2013
+      </p>
+      <p>
+        <b>modified</b>: 11-Mar 2013
+      </p>
+      <p>
+        <b>concern</b>: 
+        <a href="condition-example-f203-sepsis.html">Roel&#39;s sepsis. Generated Summary: ????; dateAsserted: 11-Mar 2013; 
+          <span title="Codes: {http://snomed.info/sct 10001005}">Bacterial sepsis</span>; 
+          <span title="Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category finding}">Problem</span>; confirmed; 
+          <span title="Codes: {http://snomed.info/sct 17162000}">Certain</span>; 
+          <span title="Codes: {http://snomed.info/sct 371924009}">Moderate to severe</span>; onset: 8-Mar 2013
+        </a>
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Role</b>
+          </td>
+          <td>
+            <b>Member</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Review of care plan 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;425268008&#39; = &#39;Review of care plan&#39;, given as &#39;Review of care plan&#39;})</span>
+          </td>
+          <td>
+            <a href="practitioner-example-f201-ab.html">Dokter Bronsig. Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+              <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+              <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+              <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Radiographic imaging 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;278110001&#39; = &#39;Radiographic imaging&#39;, given as &#39;Radiographic imaging&#39;})</span>
+          </td>
+          <td>
+            <a href="practitioner-example-f202-lm.html">Luigi Maas. Generated Summary: UZI-nummer = 12345678902 (official), BIG-nummer = 12345678902 (official); Luigi Maas(official); 
+              <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 12-Jun 1960; 
+              <span title="Codes: {http://snomed.info/sct 33526004}">Electronic laboratory reporting</span>; 
+              <span title="Codes: {http://snomed.info/sct 159285000}">Medical laboratory technician</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h3>Goals</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Description</b>
+          </td>
+          <td>
+            <b>Status</b>
+          </td>
+          <td>
+            <b>Notes</b>
+          </td>
+          <td>
+            <b>Concern</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Check whether further treatment of sepsis/pulmonary abcess is required</td>
+          <td>cancelled</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <blockquote>
+        <p>
+          <b>activity</b>
+        </p>
+        <p>
+          <b>status</b>: notStarted
+        </p>
+        <p>
+          <b>prohibited</b>: false
+        </p>
+        <h3>Simples</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Category</b>
+            </td>
+            <td>
+              <b>Code</b>
+            </td>
+            <td>
+              <b>Timing[x]</b>
+            </td>
+            <td>
+              <b>Location</b>
+            </td>
+            <td>
+              <b>Performer</b>
+            </td>
+            <td>
+              <b>Product</b>
+            </td>
+            <td>
+              <b>DailyAmount</b>
+            </td>
+            <td>
+              <b>Quantity</b>
+            </td>
+            <td>
+              <b>Details</b>
+            </td>
+          </tr>
+          <tr>
+            <td>observation</td>
+            <td>High resolution computed tomography of lungs 
+              <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;241541005&#39; = &#39;High resolution CT of lungs&#39;, given as &#39;High resolution computed tomography of lungs&#39;})</span>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+    </div>
+  </text>
+  <patient>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </patient>
+  <status value="completed"/>
+  <period>
+    <start value="2013-04-14"/>
+    <end value="2013-04-21"/>
+  </period>
+  <modified value="2013-03-11"/>
+  <concern>
+    <reference value="Condition/f203"/>
+    <display value="Roel&#39;s sepsis"/>
+  </concern>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="425268008"/>
+        <display value="Review of care plan"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f201"/>
+      <display value="Dokter Bronsig"/>
+    </member>
+  </participant>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="278110001"/>
+        <display value="Radiographic imaging"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f202"/>
+      <display value="Luigi Maas"/>
+    </member>
+  </participant>
+  <goal>
+    <description value="Check whether further treatment of sepsis/pulmonary abcess is required"/>
+    <status value="cancelled"/>
+  </goal>
+  <activity>
+    <status value="not started"/>
+    <prohibited value="false"/>
+    <simple>
+      <category value="observation"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="241541005"/>
+          <display value="High resolution computed tomography of lungs"/>
+        </coding>
+      </code>
+    </simple>
+  </activity>
+</CarePlan>

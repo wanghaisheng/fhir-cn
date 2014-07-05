@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Criticality</h2><p>The criticality of an adverse sensitivity</p><p>This value set defines its own terms in the system http://hl7.org/fhir/criticality</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>fatal<a name=\"fatal\"> </a></td><td/><td>Likely to result in death if re-exposed.</td></tr><tr><td>high<a name=\"high\"> </a></td><td/><td>Likely to result in reactions that will need to be treated if re-exposed.</td></tr><tr><td>medium<a name=\"medium\"> </a></td><td/><td>Likely to result in reactions that will inconvenience the subject.</td></tr><tr><td>low<a name=\"low\"> </a></td><td/><td>Not likely to result in any inconveniences for the subject.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/criticality",
+  "name": "Criticality",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The criticality of an adverse sensitivity",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.894+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/criticality",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "fatal",
+        "definition": "Likely to result in death if re-exposed."
+      },
+      {
+        "code": "high",
+        "definition": "Likely to result in reactions that will need to be treated if re-exposed."
+      },
+      {
+        "code": "medium",
+        "definition": "Likely to result in reactions that will inconvenience the subject."
+      },
+      {
+        "code": "low",
+        "definition": "Not likely to result in any inconveniences for the subject."
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SlicingRules</h2><p>How slices are interpreted when evaluating an instance</p><p>This value set defines its own terms in the system http://hl7.org/fhir/resource-slicing-rules</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>closed<a name=\"closed\"> </a></td><td/><td>No additional content is allowed other than that described by the slices in this profile.</td></tr><tr><td>open<a name=\"open\"> </a></td><td/><td>Additional content is allowed anywhere in the list.</td></tr><tr><td>openAtEnd<a name=\"openAtEnd\"> </a></td><td/><td>Additional content is allowed, but only at the end of the list.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/resource-slicing-rules",
+  "name": "SlicingRules",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "How slices are interpreted when evaluating an instance",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.905+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/resource-slicing-rules",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "closed",
+        "definition": "No additional content is allowed other than that described by the slices in this profile."
+      },
+      {
+        "code": "open",
+        "definition": "Additional content is allowed anywhere in the list."
+      },
+      {
+        "code": "openAtEnd",
+        "definition": "Additional content is allowed, but only at the end of the list."
+      }
+    ]
+  }
+}

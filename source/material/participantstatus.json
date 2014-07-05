@@ -1,0 +1,53 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ParticipantStatus</h2><p>The Participation status of an appointment</p><p>This value set defines its own terms in the system http://hl7.org/fhir/participantstatus</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>accepted<a name=\"accepted\"> </a></td><td/><td>The appointment participant has accepted that they can attend the appointment at the time specified in the AppointmentResponse.</td></tr><tr><td>declined<a name=\"declined\"> </a></td><td/><td>The appointment participant has declined the appointment.</td></tr><tr><td>tentative<a name=\"tentative\"> </a></td><td/><td>The appointment participant has tentatively accepted the appointment.</td></tr><tr><td>in-process<a name=\"in-process\"> </a></td><td/><td>The participant has in-process the appointment.</td></tr><tr><td>completed<a name=\"completed\"> </a></td><td/><td>The participant has completed the appointment.</td></tr><tr><td>needs-action<a name=\"needs-action\"> </a></td><td/><td>This is the intitial status of an appointment participant until a participant has replied. It implies that there is no commitment for the appointment.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/participantstatus",
+  "name": "ParticipantStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The Participation status of an appointment",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.901+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/participantstatus",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "accepted",
+        "definition": "The appointment participant has accepted that they can attend the appointment at the time specified in the AppointmentResponse."
+      },
+      {
+        "code": "declined",
+        "definition": "The appointment participant has declined the appointment."
+      },
+      {
+        "code": "tentative",
+        "definition": "The appointment participant has tentatively accepted the appointment."
+      },
+      {
+        "code": "in-process",
+        "definition": "The participant has in-process the appointment."
+      },
+      {
+        "code": "completed",
+        "definition": "The participant has completed the appointment."
+      },
+      {
+        "code": "needs-action",
+        "definition": "This is the intitial status of an appointment participant until a participant has replied. It implies that there is no commitment for the appointment."
+      }
+    ]
+  }
+}

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">to do</div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/element-extensions"/>
+  <name value="Element-definition Extensions for use by FHIR Implementers"/>
+  <publisher value="HL7 FHIR project"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="A set of extensions that constrain data elements, whether used in CommonDataElements, Profiles or Questionnaires"/>
+  <status value="draft"/>
+  <date value="2014-04-27"/>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <extensionDefn>
+    <code value="minLength"/>
+    <display value="At least this many characters"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <context value="Profile.structure.element.definition"/>
+    <element>
+      <path value="minLength"/>
+      <definition>
+        <short value="At least this many characters"/>
+        <formal value="The minimum number of characters that must be present in the simple data type to be considered a &quot;valid&quot; instance."/>
+        <comments value="For base64binary, reflects the number of characters representing the encoded data, not the number of bytes of the binary data."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="maxLength"/>
+    <display value="No more than this many characters"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <element>
+      <path value="maxLength"/>
+      <definition>
+        <short value="No more than this many characters"/>
+        <formal value="The maximum number of characters that must be present in the simple data type to be considered a &quot;valid&quot; instance."/>
+        <comments value="For base64binary, reflects the number of characters representing the encoded data, not the number of bytes of the binary data."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="regex"/>
+    <display value="Regular expression pattern"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <context value="Profile.structure.element.definition"/>
+    <element>
+      <path value="regex"/>
+      <definition>
+        <short value="Regular expression pattern"/>
+        <formal value="A regular expression that defines the syntax for the data element to be considered valid."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="entryFormat"/>
+    <display value="User prompt for format"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <context value="Profile.structure.element.definition"/>
+    <element>
+      <path value="entryFormat"/>
+      <definition>
+        <short value="User prompt for format"/>
+        <formal value="A syntax intended for display to the user to guide their input (i.e. a human readable version of a rgular expression).  For example &quot;nnn-nnn-nnn&quot;."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="minValue"/>
+    <display value="Must be &gt;= this value"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <context value="Profile.structure.element.definition"/>
+    <element>
+      <path value="minValue"/>
+      <definition>
+        <short value="Must be &gt;= this value"/>
+        <formal value="The inclusive lower bound on the range of allowed values for the data element."/>
+        <comments value="Data type specified must be the same as the data type for the data element."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="date"/>
+        </type>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <type>
+          <code value="decimal"/>
+        </type>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="maxValue"/>
+    <display value="Must be &lt;= this value"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <context value="Profile.structure.element.definition"/>
+    <element>
+      <path value="maxValue"/>
+      <definition>
+        <short value="Must be &lt;= this value"/>
+        <formal value="The inclusive upper bound on the range of allowed values for the data element."/>
+        <comments value="Data type specified must be the same as the data type for the data element."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="date"/>
+        </type>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <type>
+          <code value="decimal"/>
+        </type>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="maxDecimalPlaces"/>
+    <display value="Maximum digits after decimal"/>
+    <contextType value="resource"/>
+    <context value="DataElement"/>
+    <context value="Questionnaire.group.question"/>
+    <context value="Profile.structure.element.definition"/>
+    <element>
+      <path value="maxDecimalPlaces"/>
+      <definition>
+        <short value="Maximum digits after decimal"/>
+        <formal value="Identifies the maximum number of decimal places that may be specified for the data element."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (MIF-level)"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+</Profile>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">to do</div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/valueset-extensions"/>
+  <name value="ValueSet HL7 Extensions"/>
+  <publisher value="HL7"/>
+  <description value="Defines common extensions used with or related to the ValueSet resource"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:21:45.837+08:00"/>
+  <extensionDefn>
+    <code value="ordinalValue"/>
+    <display value="Comparison value for ordinal codes"/>
+    <contextType value="resource"/>
+    <context value="ValueSet.compose.include.code"/>
+    <element>
+      <path value="ordinalValue"/>
+      <definition>
+        <short value="Comparison value for ordinal codes"/>
+        <formal value="Comparison value for ordinal codes."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="conceptOrder"/>
+    <display value="Appearance order for user selection"/>
+    <contextType value="resource"/>
+    <context value="ValueSet.compose.include.code"/>
+    <element>
+      <path value="conceptOrder"/>
+      <definition>
+        <short value="Appearance order for user selection"/>
+        <formal value="Appearance order for user selection."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="integer"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="display"/>
+    <display value="Display value for the code"/>
+    <contextType value="resource"/>
+    <context value="ValueSet.compose.include.code"/>
+    <element>
+      <path value="display"/>
+      <definition>
+        <short value="Display value for the code"/>
+        <formal value="Display value for the code."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="systemName"/>
+    <display value="Code system name"/>
+    <contextType value="resource"/>
+    <context value="ValueSet.compose.include"/>
+    <element>
+      <path value="systemName"/>
+      <definition>
+        <short value="Code system name"/>
+        <formal value="Code system name."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="systemRef"/>
+    <display value="Where to find code system"/>
+    <contextType value="resource"/>
+    <context value="ValueSet.compose.include"/>
+    <element>
+      <path value="systemRef"/>
+      <definition>
+        <short value="Where to find code system"/>
+        <formal value="Where to find code system."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="uri"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="otherName"/>
+    <display value="Alternative names"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="otherName"/>
+      <definition>
+        <short value="Alternative names"/>
+        <formal value="Human readable names for the valueset."/>
+        <min value="0"/>
+        <max value="*"/>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="otherName.name"/>
+      <definition>
+        <short value="Human readable, short and specific"/>
+        <formal value="This name is intended to be human readable, short and as specific as possible and to convey the purpose of the value set.  It is considered to be the name of the value set."/>
+        <comments value="This need not be unique. However some use cases require uniqueness within a namespace and therefore best practice would be to make the name unique."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="otherName.language"/>
+      <definition>
+        <short value="IETF language tag (BCP-13)"/>
+        <formal value="This indicates the language system (e.g. US English) in which the name is expressed."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="otherName.preferred"/>
+      <definition>
+        <short value="Which name is preferred for this language"/>
+        <formal value="Flag that this Name in this Name Language is the preferred human-readable signifier in this language."/>
+        <comments value="There may be multiple human readable names in a given language, and this flag indicates which of them is preferred for the given language."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="boolean"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="sourceReference"/>
+    <display value="An external source useful in understanding the basis for the value set"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="sourceReference"/>
+      <definition>
+        <short value="An external source useful in understanding the basis for the value set"/>
+        <formal value=": This text is intended to act as a citation to work done elsewhere that is not part of the current stewarding process where the referenced source is in some way a basis of the current value set definition."/>
+        <comments value="This is not intended to be a direct link to another value set. It is only intended to support a link or textual description that indicates related material for the value set."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="uri"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="keyWord"/>
+    <display value="can be used to help find the value set"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="keyWord"/>
+      <definition>
+        <short value="can be used to help find the value set"/>
+        <formal value="Word or words used in an information retrieval system to indicate the content of the value set."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="usage"/>
+    <display value="Consumers of the value set and the implementations, projects or standards that the author has utilized the value set in"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="usage"/>
+      <definition>
+        <short value="Consumers of the value set and the implementations, projects or standards that the author has utilized the value set in"/>
+        <formal value="The optional and repeating Use set of elements hold information about consumers of the value set and the implementations, projects or standards that the author has utilized the value set in.  Value sets that share the same Use information can be grouped together by that information for implementation purposes."/>
+        <comments value="This is likely to be a “point in time” view and should not be considered an authoritative listing of all uses of the value set."/>
+        <min value="0"/>
+        <max value="*"/>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="usage.user"/>
+      <definition>
+        <short value="A consumer of or client for the value set"/>
+        <formal value="This is most likely to be an organization but can be an individual. It would not be a program, that information should be recorded in the Usage."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="usage.use"/>
+      <definition>
+        <short value="Implementation or project or standard that uses the value set"/>
+        <formal value="A descriptive name of the project or standard in which the value set is used."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="workflowStatus"/>
+    <display value="Indicates the state of development of the value set"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="workflowStatus"/>
+      <definition>
+        <short value="Indicates the state of development of the value set"/>
+        <formal value="Workflow Status is used to represent details of the value set development process while the value set has an Activity Status of Preliminary. The development of a value set often follows a formal workflow process from initiation to completion, and this element carries the state variable for this state machine. The assumption is that when first created a value set would have a workflow state of Draft. Additional workflow states may be used."/>
+        <comments value="The values that this element may assume include phrases that capture various stages in review and approval. In addition to the minimum of “Draft”,  these include “Proposed”, “Approved”, “Ready to Publish”.  There may be additional states defined by different developers. This is an optional element because the use of Activity Status “Preliminary” may be sufficient for some implementations."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="effectiveDate"/>
+    <display value="When the value set version becomes Active and is available for use"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="effectiveDate"/>
+      <definition>
+        <short value="When the value set version becomes Active and is available for use"/>
+        <formal value="This is the first date-time when the value set version becomes active, so this value is present on Inactive value set versions as well. The start Date_time is expected to be as of 0001 UTC of the Effective Date."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="date"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="expirationDate"/>
+    <display value="When the value set version should no longer be used"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="expirationDate"/>
+      <definition>
+        <short value="When the value set version should no longer be used"/>
+        <formal value="The date when the value set version is no longer expected to be used to create new content. This is the first date-time when the value set version becomes Inactive, so this value MUST present on all Inactive value set versions. The start Date_time is expected to be as of 0001 UTC of the Expiration Date."/>
+        <comments value="Upon reaching the Expiration Date, the value set Activity Status should be consdiered as inactive. An Inactive value set version may no longer be used to create new content, but it may be used to evaluate content created prior to the Expiration Date."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="date"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="author"/>
+    <display value="User or Org actually involved in creating the value set content"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="author"/>
+      <definition>
+        <short value="User or Org actually involved in creating the value set content"/>
+        <formal value="User or Org actually involved in creating the value set content."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="comment"/>
+    <display value="Human-specified notes and other documentation"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="comment"/>
+      <definition>
+        <short value="Human-specified notes and other documentation"/>
+        <formal value="Each comment is a time-stamped entry of arbitrary length that is not editable except by anyone in the author group."/>
+        <min value="0"/>
+        <max value="*"/>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="comment.content"/>
+      <definition>
+        <short value="Remarks or other text"/>
+        <formal value="Remarks or other text."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="comment.timestamp"/>
+      <definition>
+        <short value="When the comment was created"/>
+        <formal value="When the comment was created."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="instant"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="trusted-expansion"/>
+    <display value="Reference to a trusted expansion"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="trusted-expansion"/>
+      <definition>
+        <short value="Reference to a trusted expansion"/>
+        <formal value="Reference to a trusted expansion."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="uri"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="history"/>
+    <display value="Information on changes made to the Value Set Definition over time, and also has a contained audit trail of all such changes"/>
+    <contextType value="resource"/>
+    <context value="ValueSet"/>
+    <element>
+      <path value="history"/>
+      <definition>
+        <short value="Information on changes made to the Value Set Definition over time, and also has a contained audit trail of all such changes"/>
+        <formal value="Information on changes made to the Value Set Definition over time, and also has a contained audit trail of all such changes."/>
+        <min value="0"/>
+        <max value="*"/>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="history.name"/>
+      <definition>
+        <short value="The name of this set of history entries"/>
+        <formal value="The name of this set of history entries."/>
+        <comments value="Typically, a value set will have a set of history entries for each maor publication milestone."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="history.revision"/>
+      <definition>
+        <short value="Audit of all changes for a history entry"/>
+        <formal value="Audit of all changes for a history entry."/>
+        <min value="0"/>
+        <max value="*"/>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="history.revision.date"/>
+      <definition>
+        <short value="Date the change was made"/>
+        <formal value="Date the change was made."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="dateTime"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="history.revision.id"/>
+      <definition>
+        <short value="Version marker after the change was made"/>
+        <formal value="Version marker after the change was made."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="history.revision.author"/>
+      <definition>
+        <short value="Who made the change"/>
+        <formal value="Who made the change."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="history.revision.notes"/>
+      <definition>
+        <short value="Information about the change"/>
+        <formal value="Information about the change."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+  </extensionDefn>
+</Profile>

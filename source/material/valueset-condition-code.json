@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>This value set includes all SNOMED CT clinical findings (concepts with an is-a relationship with 404684003)</p>\n    </div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/condition-code",
+  "name": "Condition/Problem/Diagnosis Codes",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Example value set for Condition/Problem/Diagnosis codes",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "404684003"
+          }
+        ]
+      }
+    ]
+  }
+}

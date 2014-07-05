@@ -1,0 +1,64 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>AdmitSource</h2><p>This value set defines a set of codes that can be used to indicate from where the patient came in.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/admit-source</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>hosp-trans<a name=\"hosp-trans\"> </a></td><td>Transferred from other hospital</td><td/></tr><tr><td>emd<a name=\"emd\"> </a></td><td>From accident/emergency department</td><td/></tr><tr><td>outp<a name=\"outp\"> </a></td><td>From outpatient department</td><td/></tr><tr><td>born<a name=\"born\"> </a></td><td>Born in hospital</td><td/></tr><tr><td>gp<a name=\"gp\"> </a></td><td>General Practitioner referral</td><td/></tr><tr><td>mp<a name=\"mp\"> </a></td><td>Medical Practitioner/physician referral</td><td/></tr><tr><td>nursing<a name=\"nursing\"> </a></td><td>From nursing home</td><td/></tr><tr><td>psych<a name=\"psych\"> </a></td><td>From psychiatric hospital</td><td/></tr><tr><td>rehab<a name=\"rehab\"> </a></td><td>From rehabilitation facility</td><td/></tr><tr><td>other<a name=\"other\"> </a></td><td>Other</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-admit-source",
+  "name": "AdmitSource",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines a set of codes that can be used to indicate from where the patient came in.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/admit-source",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "hosp-trans",
+        "display": "Transferred from other hospital"
+      },
+      {
+        "code": "emd",
+        "display": "From accident/emergency department"
+      },
+      {
+        "code": "outp",
+        "display": "From outpatient department"
+      },
+      {
+        "code": "born",
+        "display": "Born in hospital"
+      },
+      {
+        "code": "gp",
+        "display": "General Practitioner referral"
+      },
+      {
+        "code": "mp",
+        "display": "Medical Practitioner/physician referral"
+      },
+      {
+        "code": "nursing",
+        "display": "From nursing home"
+      },
+      {
+        "code": "psych",
+        "display": "From psychiatric hospital"
+      },
+      {
+        "code": "rehab",
+        "display": "From rehabilitation facility"
+      },
+      {
+        "code": "other",
+        "display": "Other"
+      }
+    ]
+  }
+}

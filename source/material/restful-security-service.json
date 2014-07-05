@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>RestfulSecurityService</h2><p>Types of security services used with FHIR</p><p>This value set defines its own terms in the system http://hl7.org/fhir/restful-security-service</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>OAuth<a name=\"OAuth\"> </a></td><td/><td>OAuth (see oauth.net).</td></tr><tr><td>OAuth2<a name=\"OAuth2\"> </a></td><td/><td>OAuth version 2 (see oauth.net).</td></tr><tr><td>NTLM<a name=\"NTLM\"> </a></td><td/><td>Microsoft NTLM Authentication.</td></tr><tr><td>Basic<a name=\"Basic\"> </a></td><td/><td>Basic authentication defined in HTTP specification.</td></tr><tr><td>Kerberos<a name=\"Kerberos\"> </a></td><td/><td>see http://www.ietf.org/rfc/rfc4120.txt.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/restful-security-service",
+  "name": "RestfulSecurityService",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Types of security services used with FHIR",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.904+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/restful-security-service",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "OAuth",
+        "definition": "OAuth (see oauth.net)."
+      },
+      {
+        "code": "OAuth2",
+        "definition": "OAuth version 2 (see oauth.net)."
+      },
+      {
+        "code": "NTLM",
+        "definition": "Microsoft NTLM Authentication."
+      },
+      {
+        "code": "Basic",
+        "definition": "Basic authentication defined in HTTP specification."
+      },
+      {
+        "code": "Kerberos",
+        "definition": "see http://www.ietf.org/rfc/rfc4120.txt."
+      }
+    ]
+  }
+}

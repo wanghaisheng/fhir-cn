@@ -1,0 +1,73 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>MessageEvent</h2><p>One of the message events defined as part of FHIR</p><p>This value set defines its own terms in the system http://hl7.org/fhir/message-events</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>MedicationAdministration-Complete<a name=\"MedicationAdministration-Complete\"> </a></td><td/><td>Change the status of a Medication Administration to show that it is complete.</td></tr><tr><td>MedicationAdministration-Nullification<a name=\"MedicationAdministration-Nullification\"> </a></td><td/><td>Someone wishes to record that the record of administration of a medication is in error and should be ignored.</td></tr><tr><td>MedicationAdministration-Recording<a name=\"MedicationAdministration-Recording\"> </a></td><td/><td>Indicates that a medication has been recorded against the patient's record.</td></tr><tr><td>MedicationAdministration-Update<a name=\"MedicationAdministration-Update\"> </a></td><td/><td>Update a Medication Administration record.</td></tr><tr><td>admin-notify<a name=\"admin-notify\"> </a></td><td/><td>Notification that a patient or other administrative resource as been created or updated.</td></tr><tr><td>diagnosticreport-provide<a name=\"diagnosticreport-provide\"> </a></td><td/><td>Provide a diagnostic report, or update a previously provided diagnostic report.</td></tr><tr><td>observation-provide<a name=\"observation-provide\"> </a></td><td/><td>Provide a simple observation or update a previously provided simple observation.</td></tr><tr><td>patient-link<a name=\"patient-link\"> </a></td><td/><td>Notification that two patient records actually identify the same patient.</td></tr><tr><td>patient-unlink<a name=\"patient-unlink\"> </a></td><td/><td>Notification that previous advice that two patient records concern the same patient is now considered incorrect.</td></tr><tr><td>query<a name=\"query\"> </a></td><td/><td>Request to perform a query according to the attached query resource.</td></tr><tr><td>query-response<a name=\"query-response\"> </a></td><td/><td>Response with the result of processing the query.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/message-events",
+  "name": "MessageEvent",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "One of the message events defined as part of FHIR",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.905+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/message-events",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "MedicationAdministration-Complete",
+        "definition": "Change the status of a Medication Administration to show that it is complete."
+      },
+      {
+        "code": "MedicationAdministration-Nullification",
+        "definition": "Someone wishes to record that the record of administration of a medication is in error and should be ignored."
+      },
+      {
+        "code": "MedicationAdministration-Recording",
+        "definition": "Indicates that a medication has been recorded against the patient's record."
+      },
+      {
+        "code": "MedicationAdministration-Update",
+        "definition": "Update a Medication Administration record."
+      },
+      {
+        "code": "admin-notify",
+        "definition": "Notification that a patient or other administrative resource as been created or updated."
+      },
+      {
+        "code": "diagnosticreport-provide",
+        "definition": "Provide a diagnostic report, or update a previously provided diagnostic report."
+      },
+      {
+        "code": "observation-provide",
+        "definition": "Provide a simple observation or update a previously provided simple observation."
+      },
+      {
+        "code": "patient-link",
+        "definition": "Notification that two patient records actually identify the same patient."
+      },
+      {
+        "code": "patient-unlink",
+        "definition": "Notification that previous advice that two patient records concern the same patient is now considered incorrect."
+      },
+      {
+        "code": "query",
+        "definition": "Request to perform a query according to the attached query resource."
+      },
+      {
+        "code": "query-response",
+        "definition": "Response with the result of processing the query."
+      }
+    ]
+  }
+}

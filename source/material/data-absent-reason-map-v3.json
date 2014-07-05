@@ -1,0 +1,108 @@
+{
+  "resourceType": "ConceptMap",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>v3 map for DataAbsentReason (http://hl7.org/fhir/cm/v3/data-absent-reason)</h2><p>Mapping from <a href=\"data-absent-reason.html\">http://hl7.org/fhir/vs/data-absent-reason</a> to <a href=\"v3/NullFlavor/index.html\">http://hl7.org/fhir/v3/vs/NullFlavor</a></p><p>Draft. Published on 2-Jul 2014 16:26 by HL7 (FHIR Project) (<a href=\"http://hl7.org/fhir\">http://hl7.org/fhir</a>, <a href=\"mailto:fhir@lists.hl7.org\">fhir@lists.hl7.org</a>). </p><p>v3 Map (NullFlavor)</p><br/><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Equivalence</b></td><td><b>Destination Code</b></td></tr><tr><td>unknown</td><td>equal</td><td>UNK (unknown)</td></tr><tr><td>asked</td><td>equal</td><td>ASKU (asked but unknown)</td></tr><tr><td>temp</td><td>equal</td><td>NAV (temporarily unavailable)</td></tr><tr><td>notasked</td><td>equal</td><td>NASK (not asked)</td></tr><tr><td>masked</td><td>equal</td><td>MSK (masked)</td></tr><tr><td>unsupported</td><td>wider</td><td>NA (not applicable)</td></tr><tr><td>error</td><td>wider</td><td>NA (not applicable)</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/cm/v3/data-absent-reason",
+  "name": "v3 map for DataAbsentReason",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v3 Map (NullFlavor)",
+  "status": "draft",
+  "date": "2014-07-02T16:26:20.116+08:00",
+  "sourceResource": {
+    "reference": "http://hl7.org/fhir/vs/data-absent-reason"
+  },
+  "targetResource": {
+    "reference": "http://hl7.org/fhir/v3/vs/NullFlavor"
+  },
+  "element": [
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "unknown",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "UNK",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "asked",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "ASKU",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "temp",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NAV",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "notasked",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NASK",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "masked",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "MSK",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "unsupported",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NA",
+          "equivalence": "wider"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/data-absent-reason",
+      "code": "error",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NA",
+          "equivalence": "wider"
+        }
+      ]
+    }
+  ]
+}

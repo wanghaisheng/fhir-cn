@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>QuestionnaireAnswersStatus</h2><p>Lifecycle status of the questionnaire answers</p><p>This value set defines its own terms in the system http://hl7.org/fhir/questionnaire-answers-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in progress<a name=\"inprogress\"> </a></td><td>in progress</td><td>This QuestionnaireAnswers has been partially filled out with answers, but changes or additions are still expected to be made to it.</td></tr><tr><td>completed<a name=\"completed\"> </a></td><td>completed</td><td>This QuestionnaireAnswers has been filled out with answers, and the current content is regarded as definitive.</td></tr><tr><td>amended<a name=\"amended\"> </a></td><td>amended</td><td>This QuestionnaireAnswers has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/questionnaire-answers-status",
+  "name": "QuestionnaireAnswersStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Lifecycle status of the questionnaire answers",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.895+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/questionnaire-answers-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "in progress",
+        "display": "in progress",
+        "definition": "This QuestionnaireAnswers has been partially filled out with answers, but changes or additions are still expected to be made to it."
+      },
+      {
+        "code": "completed",
+        "display": "completed",
+        "definition": "This QuestionnaireAnswers has been filled out with answers, and the current content is regarded as definitive."
+      },
+      {
+        "code": "amended",
+        "display": "amended",
+        "definition": "This QuestionnaireAnswers has been filled out with answers, then marked as complete, yet changes or additions have been made to it afterwards."
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Other Resource Types</h2><p>This value set defines codes for resources not yet supported by (or which will never be supported by) FHIR.  Many of the codes listed here will eventually be turned into official resources.  However, there is no guarantee that any particular resource will be created nor that the scope will be exactly as defined by the codes presented here.  Codes in this set will be deprecated if/when formal resources are defined that encompass these concepts.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/other-resource-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>CONSENT<a name=\"CONSENT\"> </a></td><td>consent</td><td>An assertion of permission for an activity or set of activities to occur, possibly subject to particular limitations.  E.g. surgical consent, information disclosure consent, etc.</td></tr><tr><td>REFERRAL<a name=\"REFERRAL\"> </a></td><td>referral</td><td>A request that care of a particular type be provided to a patient.  Could involve the transfer of care, a consult, etc.</td></tr><tr><td>SLOT<a name=\"SLOT\"> </a></td><td>resource slot</td><td>A bounded time-period when a particular set of resources (practioners, devices and/or locations) is available for the delivery of healthcare services.  Used for scheduling.</td></tr><tr><td>APTMT<a name=\"APTMT\"> </a></td><td>appointment</td><td>An agreement for a particular type of service to occur for a specified patient at a specific time with a particular set of resources (practitioners, devices, locations, etc.)</td></tr><tr><td>APTMTREQ<a name=\"APTMTREQ\"> </a></td><td>appointment request</td><td>A request that a time be scheduled for a type of service for a specified patient, potentially subject to other constraints</td></tr><tr><td>TRANSFER<a name=\"TRANSFER\"> </a></td><td>transfer</td><td>The transition of a patient or set of material from one location to another</td></tr><tr><td>DIET<a name=\"DIET\"> </a></td><td>diet</td><td>The specification of a set of food and/or other nutritonal material to be delivered to a patient.</td></tr><tr><td>ADMINACT<a name=\"ADMINACT\"> </a></td><td>administrative activity</td><td>An occurrence of a non-care-related event in the healthcare domain, such as approvals, reviews, etc.</td></tr><tr><td>EXPOSURE<a name=\"EXPOSURE\"> </a></td><td>exposure</td><td>Record of a situation where a subject was exposed to a substance.  Usually of interest to public health.</td></tr><tr><td>INVESTIGATION<a name=\"INVESTIGATION\"> </a></td><td>investigation</td><td>A formalized inquiry into the circumstances surrounding a particular unplanned event or potential event for the purposes of identifying possible causes and contributing factors for the event</td></tr><tr><td>ACCOUNT<a name=\"ACCOUNT\"> </a></td><td>account</td><td>A financial instrument used to track costs, charges or other amounts.</td></tr><tr><td>INVOICE<a name=\"INVOICE\"> </a></td><td>invoice</td><td>A request for payment for goods and/or services.  Includes the idea of a healthcare insurance claim.</td></tr><tr><td>ADJUDICAT<a name=\"ADJUDICAT\"> </a></td><td>invoice adjudication</td><td>The determination of what will be paid against a particular invoice based on coverage, plan rules, etc.</td></tr><tr><td>PAYMENT<a name=\"PAYMENT\"> </a></td><td>payment</td><td>A record of a transfer of funds between accounts and/or individuals</td></tr><tr><td>PREDETREQ<a name=\"PREDETREQ\"> </a></td><td>predetermination request</td><td>A request for a predication of the cost that would be paid under an insurance plan for a hypothetical claim for goods or services</td></tr><tr><td>PREDETERMINE<a name=\"PREDETERMINE\"> </a></td><td>predetermination</td><td>An adjudication of what would be paid under an insurance plan for a hypothetical claim for goods or services</td></tr><tr><td>STUDY<a name=\"STUDY\"> </a></td><td>study</td><td>An investigation to determine information about a particular therapy or product</td></tr><tr><td>PROTOCOL<a name=\"PROTOCOL\"> </a></td><td>protocol</td><td>A set of (possibly conditional) steps to be taken to achieve some aim.  Includes study protocols, treatment protocols, emergency protocols, etc.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/other-resource-type",
+  "name": "Other Resource Types",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines codes for resources not yet supported by (or which will never be supported by) FHIR.  Many of the codes listed here will eventually be turned into official resources.  However, there is no guarantee that any particular resource will be created nor that the scope will be exactly as defined by the codes presented here.  Codes in this set will be deprecated if/when formal resources are defined that encompass these concepts.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/other-resource-type",
+    "concept": [
+      {
+        "code": "CONSENT",
+        "display": "consent",
+        "definition": "An assertion of permission for an activity or set of activities to occur, possibly subject to particular limitations.  E.g. surgical consent, information disclosure consent, etc."
+      },
+      {
+        "code": "REFERRAL",
+        "display": "referral",
+        "definition": "A request that care of a particular type be provided to a patient.  Could involve the transfer of care, a consult, etc."
+      },
+      {
+        "code": "SLOT",
+        "display": "resource slot",
+        "definition": "A bounded time-period when a particular set of resources (practioners, devices and/or locations) is available for the delivery of healthcare services.  Used for scheduling."
+      },
+      {
+        "code": "APTMT",
+        "display": "appointment",
+        "definition": "An agreement for a particular type of service to occur for a specified patient at a specific time with a particular set of resources (practitioners, devices, locations, etc.)"
+      },
+      {
+        "code": "APTMTREQ",
+        "display": "appointment request",
+        "definition": "A request that a time be scheduled for a type of service for a specified patient, potentially subject to other constraints"
+      },
+      {
+        "code": "TRANSFER",
+        "display": "transfer",
+        "definition": "The transition of a patient or set of material from one location to another"
+      },
+      {
+        "code": "DIET",
+        "display": "diet",
+        "definition": "The specification of a set of food and/or other nutritonal material to be delivered to a patient."
+      },
+      {
+        "code": "ADMINACT",
+        "display": "administrative activity",
+        "definition": "An occurrence of a non-care-related event in the healthcare domain, such as approvals, reviews, etc."
+      },
+      {
+        "code": "EXPOSURE",
+        "display": "exposure",
+        "definition": "Record of a situation where a subject was exposed to a substance.  Usually of interest to public health."
+      },
+      {
+        "code": "INVESTIGATION",
+        "display": "investigation",
+        "definition": "A formalized inquiry into the circumstances surrounding a particular unplanned event or potential event for the purposes of identifying possible causes and contributing factors for the event"
+      },
+      {
+        "code": "ACCOUNT",
+        "display": "account",
+        "definition": "A financial instrument used to track costs, charges or other amounts."
+      },
+      {
+        "code": "INVOICE",
+        "display": "invoice",
+        "definition": "A request for payment for goods and/or services.  Includes the idea of a healthcare insurance claim."
+      },
+      {
+        "code": "ADJUDICAT",
+        "display": "invoice adjudication",
+        "definition": "The determination of what will be paid against a particular invoice based on coverage, plan rules, etc."
+      },
+      {
+        "code": "PAYMENT",
+        "display": "payment",
+        "definition": "A record of a transfer of funds between accounts and/or individuals"
+      },
+      {
+        "code": "PREDETREQ",
+        "display": "predetermination request",
+        "definition": "A request for a predication of the cost that would be paid under an insurance plan for a hypothetical claim for goods or services"
+      },
+      {
+        "code": "PREDETERMINE",
+        "display": "predetermination",
+        "definition": "An adjudication of what would be paid under an insurance plan for a hypothetical claim for goods or services"
+      },
+      {
+        "code": "STUDY",
+        "display": "study",
+        "definition": "An investigation to determine information about a particular therapy or product"
+      },
+      {
+        "code": "PROTOCOL",
+        "display": "protocol",
+        "definition": "A set of (possibly conditional) steps to be taken to achieve some aim.  Includes study protocols, treatment protocols, emergency protocols, etc."
+      }
+    ]
+  }
+}

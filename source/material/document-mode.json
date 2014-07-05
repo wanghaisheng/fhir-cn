@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>DocumentMode</h2><p>Whether the application produces or consumes documents</p><p>This value set defines its own terms in the system http://hl7.org/fhir/document-mode</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>producer<a name=\"producer\"> </a></td><td/><td>The application produces documents of the specified type.</td></tr><tr><td>consumer<a name=\"consumer\"> </a></td><td/><td>The application consumes documents of the specified type.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/document-mode",
+  "name": "DocumentMode",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Whether the application produces or consumes documents",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.905+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/document-mode",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "producer",
+        "definition": "The application produces documents of the specified type."
+      },
+      {
+        "code": "consumer",
+        "definition": "The application consumes documents of the specified type."
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ParticipantType</h2><p>This value set defines a set of codes that can be used to indicate how an individual parcitipates in an encounter</p><p>This value set defines its own terms in the system http://hl7.org/fhir/participant-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>translator<a name=\"translator\"> </a></td><td>Translator</td><td>A translator who is facilitating communication with the patient during the encounter</td></tr><tr><td>emergency<a name=\"emergency\"> </a></td><td>Emergency</td><td>A person to be contacted in case of an emergency during the encounter</td></tr></table><p>In addition, this value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include codes from <a href=\"http://hl7.org/fhir/v3/ParticipationType\">http://hl7.org/fhir/v3/ParticipationType</a> where concept  is-a  <a href=\"v3/ParticipationType/index.html#_ParticipationAncillary\">_ParticipationAncillary</a></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-participant-type",
+  "name": "ParticipantType",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines a set of codes that can be used to indicate how an individual parcitipates in an encounter",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/participant-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "translator",
+        "display": "Translator",
+        "definition": "A translator who is facilitating communication with the patient during the encounter"
+      },
+      {
+        "code": "emergency",
+        "display": "Emergency",
+        "definition": "A person to be contacted in case of an emergency during the encounter"
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/v3/ParticipationType",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "_ParticipationAncillary"
+          }
+        ]
+      }
+    ]
+  }
+}

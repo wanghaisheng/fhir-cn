@@ -1,0 +1,86 @@
+{
+  "resourceType": "ConceptMap",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>v2 map for ContactUse (http://hl7.org/fhir/cm/v2/contact-use)</h2><p>Mapping from <a href=\"contact-use.html\">http://hl7.org/fhir/vs/contact-use</a> to <a href=\"v2/0201/index.html\">http://hl7.org/fhir/v2/vs/0201</a></p><p>Draft. Published on 2-Jul 2014 16:26 by HL7 (FHIR Project) (<a href=\"http://hl7.org/fhir\">http://hl7.org/fhir</a>, <a href=\"mailto:fhir@lists.hl7.org\">fhir@lists.hl7.org</a>). </p><p>v2 Map (0201)</p><br/><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Equivalence</b></td><td><b>Destination Code</b></td></tr><tr><td>home</td><td>narrower</td><td>PRN (Primary Residence Number)</td></tr><tr><td>home</td><td>narrower</td><td>ORN (Other Residence Number)</td></tr><tr><td>home</td><td>narrower</td><td>VHN (Vacation Home Number)</td></tr><tr><td>work</td><td>equivalent</td><td>WPN (Work Number)</td></tr><tr><td>mobile</td><td>equivalent</td><td>PRS (Personal)</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/cm/v2/contact-use",
+  "name": "v2 map for ContactUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v2 Map (0201)",
+  "status": "draft",
+  "date": "2014-07-02T16:26:25.568+08:00",
+  "sourceResource": {
+    "reference": "http://hl7.org/fhir/vs/contact-use"
+  },
+  "targetResource": {
+    "reference": "http://hl7.org/fhir/v2/vs/0201"
+  },
+  "element": [
+    {
+      "codeSystem": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0201",
+          "code": "PRN",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0201",
+          "code": "ORN",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0201",
+          "code": "VHN",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/contact-use",
+      "code": "work",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0201",
+          "code": "WPN",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/contact-use",
+      "code": "mobile",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v2/0201",
+          "code": "PRS",
+          "equivalence": "equivalent"
+        }
+      ]
+    }
+  ]
+}

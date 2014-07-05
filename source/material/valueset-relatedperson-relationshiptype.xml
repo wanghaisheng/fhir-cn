@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>PatientRelationshipType</h2>
+      <p>A set of codes that can be used to indicate the relationship between a Patient and a RelatedPerson.</p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Import all the codes that are part of 
+          <a href="valueset-patient-contact-relationship.html">http://hl7.org/fhir/vs/patient-contact-relationship</a>
+        </li>
+        <li>Include codes from 
+          <a href="http://hl7.org/fhir/v3/RoleCode">http://hl7.org/fhir/v3/RoleCode</a> where concept  is-a  
+          <a href="v3/RoleCode/index.html#_PersonalRelationshipRoleType">_PersonalRelationshipRoleType</a>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/relatedperson-relationshiptype"/>
+  <name value="PatientRelationshipType"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="A set of codes that can be used to indicate the relationship between a Patient and a RelatedPerson."/>
+  <status value="draft"/>
+  <compose>
+    <import value="http://hl7.org/fhir/vs/patient-contact-relationship"/>
+    <include>
+      <system value="http://hl7.org/fhir/v3/RoleCode"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="_PersonalRelationshipRoleType"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ListMode</h2><p>The processing mode that applies to this list</p><p>This value set defines its own terms in the system http://hl7.org/fhir/list-mode</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>working<a name=\"working\"> </a></td><td/><td>This list is the master list, maintained in an ongoing fashion with regular updates as the real world list it is tracking changes.</td></tr><tr><td>snapshot<a name=\"snapshot\"> </a></td><td/><td>This list was prepared as a snapshot. It should not be assumed to be current.</td></tr><tr><td>changes<a name=\"changes\"> </a></td><td/><td>The list is prepared as a statement of changes that have been made or recommended.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/list-mode",
+  "name": "ListMode",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The processing mode that applies to this list",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.895+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/list-mode",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "working",
+        "definition": "This list is the master list, maintained in an ongoing fashion with regular updates as the real world list it is tracking changes."
+      },
+      {
+        "code": "snapshot",
+        "definition": "This list was prepared as a snapshot. It should not be assumed to be current."
+      },
+      {
+        "code": "changes",
+        "definition": "The list is prepared as a statement of changes that have been made or recommended."
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>PostalAddressUse</h2>
+      <p>Uses of an address not included in Address.use</p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include these codes as defined in 
+          <a href="http://hl7.org/fhir/v3/AddressUse">http://hl7.org/fhir/v3/AddressUse</a>
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>BAD</td>
+              <td>bad address</td>
+              <td>Description: A flag indicating that the address is bad, in fact, useless.</td>
+            </tr>
+            <tr>
+              <td>CONF</td>
+              <td>confidential address</td>
+              <td>Description: Indicates that the address is considered sensitive and should only be shared or published in accordance with organizational controls governing patient demographic information with increased sensitivity. Uses of Addresses. Lloyd to supply more complete description.</td>
+            </tr>
+            <tr>
+              <td>HP</td>
+              <td>primary home</td>
+              <td>Description: The primary home, to reach a person after business hours.</td>
+            </tr>
+            <tr>
+              <td>HV</td>
+              <td>vacation home</td>
+              <td>Description: A vacation home, to reach a person while on vacation.</td>
+            </tr>
+            <tr>
+              <td>DIR</td>
+              <td>direct</td>
+              <td>Description: Indicates a work place address or telecommunication address that reaches the individual or organization directly without intermediaries. For phones, often referred to as a &#39;private line&#39;.</td>
+            </tr>
+            <tr>
+              <td>PUB</td>
+              <td>public</td>
+              <td>Description: Indicates a work place address or telecommunication address that is a &#39;standard&#39; address which may reach a reception service, mail-room, or other intermediary prior to the target entity.</td>
+            </tr>
+            <tr>
+              <td>PHYS</td>
+              <td>physical visit address</td>
+              <td>Description: Used primarily to visit an address.</td>
+            </tr>
+            <tr>
+              <td>PST</td>
+              <td>postal address</td>
+              <td>Description: Used to send mail.</td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/postal-address-use"/>
+  <name value="PostalAddressUse"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Uses of an address not included in Address.use"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.906+08:00"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/v3/AddressUse"/>
+      <code value="BAD">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: A flag indicating that the address is bad, in fact, useless."/>
+        </extension>
+      </code>
+      <code value="CONF">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: Indicates that the address is considered sensitive and should only be shared or published in accordance with organizational controls governing patient demographic information with increased sensitivity. Uses of Addresses. Lloyd to supply more complete description."/>
+        </extension>
+      </code>
+      <code value="HP">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: The primary home, to reach a person after business hours."/>
+        </extension>
+      </code>
+      <code value="HV">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: A vacation home, to reach a person while on vacation."/>
+        </extension>
+      </code>
+      <code value="DIR">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: Indicates a work place address or telecommunication address that reaches the individual or organization directly without intermediaries. For phones, often referred to as a &#39;private line&#39;."/>
+        </extension>
+      </code>
+      <code value="PUB">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: Indicates a work place address or telecommunication address that is a &#39;standard&#39; address which may reach a reception service, mail-room, or other intermediary prior to the target entity."/>
+        </extension>
+      </code>
+      <code value="PHYS">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: Used primarily to visit an address."/>
+        </extension>
+      </code>
+      <code value="PST">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
+          <valueString value="Description: Used to send mail."/>
+        </extension>
+      </code>
+    </include>
+  </compose>
+</ValueSet>

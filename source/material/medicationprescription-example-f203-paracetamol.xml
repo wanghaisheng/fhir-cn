@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationPrescription xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>dateWritten</b>: 4-Apr 2013
+      </p>
+      <p>
+        <b>status</b>: active
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>prescriber</b>: 
+        <a href="practitioner-example-f201-ab.html">Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+          <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+          <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+        </a>
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f201-20130404.html">Roel&#39;s encounter on April fourth 2013. Generated Summary: Roel&#39;s encounter on April fourth 2013 = Encounter_Roel_20130404 (temp); finished; outpatient; 
+          <span title="Codes: {http://snomed.info/sct 11429006}">Consultation</span>; 
+          <span title="Codes: ">The patient had fever peaks over the last couple of days. He is worried about these peaks.</span>; 
+          <span title="Codes: {http://snomed.info/sct 17621005}">Normal</span>
+        </a>
+      </p>
+      <p>
+        <b>reason</b>: 
+        <a href="condition-example-f201-fever.html">fever. Generated Summary: ????; dateAsserted: 4-Apr 2013; 
+          <span title="Codes: {http://snomed.info/sct 386661006}">Fever</span>; 
+          <span title="Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category condition}">Problem</span>; confirmed; 
+          <span title="Codes: {http://snomed.info/sct 255604002}">Mild</span>; onset: 2-Apr 2013
+        </a>
+      </p>
+      <p>
+        <b>medication</b>: 
+        <a href="medication-example-f203-paracetamol.html">Paracetamol. Generated Summary: name: Paracetamol; 
+          <span title="Codes: {http://snomed.info/sct 387517004}">Paracetamol</span>; product
+        </a>
+      </p>
+      <h3>DosageInstructions</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Text</b>
+          </td>
+          <td>
+            <b>AdditionalInstructions</b>
+          </td>
+          <td>
+            <b>Timing[x]</b>
+          </td>
+          <td>
+            <b>AsNeeded[x]</b>
+          </td>
+          <td>
+            <b>Site</b>
+          </td>
+          <td>
+            <b>Route</b>
+          </td>
+          <td>
+            <b>Method</b>
+          </td>
+          <td>
+            <b>DoseQuantity</b>
+          </td>
+          <td>
+            <b>Rate</b>
+          </td>
+          <td>
+            <b>MaxDosePerPeriod</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Paracetamol 3xdaags 1000mg</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td>Paracetamol 500mg tablet 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;322236009&#39; = &#39;Paracetamol 500mg tablet&#39;, given as &#39;Paracetamol 500mg tablet&#39;})</span>
+          </td>
+          <td> </td>
+          <td> </td>
+          <td>3000 milligram
+            <span style="background: LightGoldenRodYellow "> (Details: SNOMED CT code 258684004 = &#39;milligram (qualifier value)&#39;)</span>/24 hours
+            <span style="background: LightGoldenRodYellow "> (Details: SNOMED CT code 258702006 = &#39;hour (qualifier value)&#39;)</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <dateWritten value="2013-04-04"/>
+  <status value="active"/>
+  <patient>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </patient>
+  <prescriber>
+    <reference value="Practitioner/f201"/>
+  </prescriber>
+  <encounter>
+    <reference value="Encounter/f201"/>
+    <display value="Roel&#39;s encounter on April fourth 2013"/>
+  </encounter>
+  <reasonResource>
+    <reference value="Condition/f201"/>
+    <display value="fever"/>
+  </reasonResource>
+  <medication>
+    <reference value="Medication/f203"/>
+    <display value="Paracetamol"/>
+  </medication>
+  <dosageInstruction>
+    <text value="Paracetamol 3xdaags 1000mg"/>
+    <method>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="322236009"/>
+        <display value="Paracetamol 500mg tablet"/>
+      </coding>
+    </method>
+    <maxDosePerPeriod>
+      <numerator>
+        <value value="3000"/>
+        <units value="milligram"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="258684004"/>
+      </numerator>
+      <denominator>
+        <value value="24"/>
+        <units value="hours"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="258702006"/>
+      </denominator>
+    </maxDosePerPeriod>
+  </dosageInstruction>
+</MedicationPrescription>

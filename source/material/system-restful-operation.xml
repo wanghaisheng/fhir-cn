@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>RestfulOperationSystem</h2>
+      <p>Operations supported by REST at the system level</p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include these codes as defined in http://hl7.org/fhir/restful-operation
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+            </tr>
+            <tr>
+              <td>transaction</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>search-system</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-system</td>
+              <td/>
+              <td/>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/system-restful-operation"/>
+  <name value="RestfulOperationSystem"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Operations supported by REST at the system level"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.895+08:00"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/restful-operation"/>
+      <code value="transaction"/>
+      <code value="search-system"/>
+      <code value="history-system"/>
+    </include>
+  </compose>
+</ValueSet>

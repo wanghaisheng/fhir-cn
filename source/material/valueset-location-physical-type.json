@@ -1,0 +1,56 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>LocationType</h2><p>This example value set defines a set of codes that can be used to indicate the physical form of the Location.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/location-physical-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>bu<a name=\"bu\"> </a></td><td>Building</td><td/></tr><tr><td>wi<a name=\"wi\"> </a></td><td>Wing</td><td/></tr><tr><td>co<a name=\"co\"> </a></td><td>Corridor</td><td/></tr><tr><td>ro<a name=\"ro\"> </a></td><td>Room</td><td/></tr><tr><td>ve<a name=\"ve\"> </a></td><td>Vehicle</td><td/></tr><tr><td>ho<a name=\"ho\"> </a></td><td>House</td><td/></tr><tr><td>ca<a name=\"ca\"> </a></td><td>Cabinet</td><td/></tr><tr><td>rd<a name=\"rd\"> </a></td><td>Road</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/location-physical-type",
+  "name": "LocationType",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate the physical form of the Location.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/location-physical-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "bu",
+        "display": "Building"
+      },
+      {
+        "code": "wi",
+        "display": "Wing"
+      },
+      {
+        "code": "co",
+        "display": "Corridor"
+      },
+      {
+        "code": "ro",
+        "display": "Room"
+      },
+      {
+        "code": "ve",
+        "display": "Vehicle"
+      },
+      {
+        "code": "ho",
+        "display": "House"
+      },
+      {
+        "code": "ca",
+        "display": "Cabinet"
+      },
+      {
+        "code": "rd",
+        "display": "Road"
+      }
+    ]
+  }
+}

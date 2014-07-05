@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f201-20130404.html">Generated Summary: Roel&#39;s encounter on April fourth 2013 = Encounter_Roel_20130404 (temp); finished; outpatient; 
+          <span title="Codes: {http://snomed.info/sct 11429006}">Consultation</span>; 
+          <span title="Codes: ">The patient had fever peaks over the last couple of days. He is worried about these peaks.</span>; 
+          <span title="Codes: {http://snomed.info/sct 17621005}">Normal</span>
+        </a>
+      </p>
+      <p>
+        <b>asserter</b>: 
+        <a href="practitioner-example-f201-ab.html">Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+          <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+          <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+        </a>
+      </p>
+      <p>
+        <b>dateAsserted</b>: 4-Apr 2013
+      </p>
+      <p>
+        <b>code</b>: Fever 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;386661006&#39; = &#39;Fever&#39;, given as &#39;Fever&#39;})</span>
+      </p>
+      <p>
+        <b>category</b>: Problem 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;55607006&#39; = &#39;Problem&#39;, given as &#39;Problem&#39;}; {http://hl7.org/fhir/condition-category code &#39;condition&#39; = &#39;condition&#39;, given as &#39;null&#39;})</span>
+      </p>
+      <p>
+        <b>status</b>: confirmed
+      </p>
+      <p>
+        <b>severity</b>: Mild 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;255604002&#39; = &#39;Mild&#39;, given as &#39;Mild&#39;})</span>
+      </p>
+      <p>
+        <b>onset</b>: 2-Apr 2013
+      </p>
+      <h3>Evidences</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>degrees C 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;258710007&#39; = &#39;degrees C&#39;, given as &#39;degrees C&#39;})</span>
+          </td>
+          <td>
+            <a href="observation-example-f202-temperature.html">Temperature. Generated Summary: 
+              <span title="Codes: {http://snomed.info/sct 415945006}, {http://loinc.org 8310-5}">Body temperature</span>; 39 degrees C; 
+              <span title="Codes: {http://hl7.org/fhir/v2/0078 H}">Above high normal</span>; issued: 4-Apr 2013 13:27; enteredInError; questionable; 
+              <span title="Codes: {http://snomed.info/sct 38266002}">Entire body as a whole</span>; 
+              <span title="Codes: {http://snomed.info/sct 89003005}">Oral temperature taking</span>; Roel; ????
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h3>Locations</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Entire body as a whole 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;38266002&#39; = &#39;Total body&#39;, given as &#39;Entire body as a whole&#39;})</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>RelatedItems</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Target</b>
+          </td>
+        </tr>
+        <tr>
+          <td>dueto</td>
+          <td> </td>
+          <td>
+            <a href="procedure-example-f201-tpf.html">TPF chemokuur. Generated Summary: 
+              <span title="Codes: {http://snomed.info/sct 367336001}">Chemotherapy</span>; 
+              <span title="Codes: {http://snomed.info/sct 272676008}">Sphenoid bone</span>; 
+              <span title="Codes: ">DiagnosticReport/f201</span>; date: 28-Jan 2013 13:31 --&gt; 28-Jan 2013 14:27; notes: Eerste neo-adjuvante TPF-kuur bij groot proces in sphenoid met intracraniale uitbreiding.
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>dueto</td>
+          <td> </td>
+          <td>
+            <a href="condition-example-f205-infection.html">bacterial infection. Generated Summary: ????; dateAsserted: 4-Apr 2013; 
+              <span title="Codes: {http://snomed.info/sct 87628006}">Bacterial infectious disease</span>; working
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f201"/>
+  </encounter>
+  <asserter>
+    <reference value="Practitioner/f201"/>
+  </asserter>
+  <dateAsserted value="2013-04-04"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="386661006"/>
+      <display value="Fever"/>
+    </coding>
+  </code>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="55607006"/>
+      <display value="Problem"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/condition-category"/>
+      <code value="condition"/>
+    </coding>
+  </category>
+  <status value="confirmed"/>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="255604002"/>
+      <display value="Mild"/>
+    </coding>
+  </severity>
+  <onsetDate value="2013-04-02"/>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258710007"/>
+        <display value="degrees C"/>
+      </coding>
+    </code>
+    <detail>
+      <reference value="Observation/f202"/>
+      <display value="Temperature"/>
+    </detail>
+  </evidence>
+  <location>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="38266002"/>
+        <display value="Entire body as a whole"/>
+      </coding>
+    </code>
+  </location>
+  <relatedItem>
+    <type value="due-to"/>
+    <target>
+      <reference value="Procedure/f201"/>
+      <display value="TPF chemokuur"/>
+    </target>
+  </relatedItem>
+  <relatedItem>
+    <type value="due-to"/>
+    <target>
+      <reference value="Condition/f205"/>
+      <display value="bacterial infection"/>
+    </target>
+  </relatedItem>
+</Condition>

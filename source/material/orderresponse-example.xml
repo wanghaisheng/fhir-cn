@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OrderResponse xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">Lab Report completed at 13:10 28-Dec 2012</div>
+  </text>
+  <request>
+    <reference value="Order/example"/>
+  </request>
+  <date value="2012-12-28T13:10:56+11:00"/>
+  <who>
+    <reference value="Organization/1832473e-2fe0-452d-abe9-3cdb9879522f"/>
+  </who>
+  <code value="complete"/>
+  <fulfillment>
+    <reference value="DiagnosticReport/101"/>
+  </fulfillment>
+</OrderResponse>

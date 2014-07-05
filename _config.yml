@@ -83,7 +83,8 @@ disqus_shortname:
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
 theme: lion
 exclude_generator:
-- home
+-  home
+- material
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:

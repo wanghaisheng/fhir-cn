@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">to do</div>
+  </text>
+  <url value="http://hl7.org/fhir/Profile/iso-21090"/>
+  <name value="ISO 21090 Data Type Extensions"/>
+  <publisher value="HL7"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://www.hl7.org"/>
+  </telecom>
+  <description value="Extra ISO 21090 features not included in data types because of core design policy"/>
+  <status value="draft"/>
+  <date value="2012-06-24"/>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <extensionDefn>
+    <code value="nullFlavor"/>
+    <display value="NI | OTH | NINF | PINF | UNK | ASKU | NAV | NASK | TRC | MSK | NA | QS"/>
+    <contextType value="datatype"/>
+    <context value="Any"/>
+    <element>
+      <path value="nullFlavor"/>
+      <definition>
+        <short value="NI | OTH | NINF | PINF | UNK | ASKU | NAV | NASK | TRC | MSK | NA | QS"/>
+        <formal value="If the value is not a proper value, indicates the reason."/>
+        <comments value="Considerable care must be used when using nullFlavor in this context of FHIR - more than any other concept, this is tied to the way v3 works, and FHIR is quite different. For instance, there is no notion of a &quot;proper value&quot; as opposed to any other value in FHIR. a NullFlavor should be understood to mean, &quot;why information is missing&quot;, and the nulFlavors OTH, NINF, PINF, and TRC should not be used."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <binding>
+          <name value="NullFlavor"/>
+          <isExtensible value="false"/>
+          <description value="A collection of codes specifying why a valid value is not present"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/null-flavor"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="v2"/>
+          <map value="n/a"/>
+        </mapping>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ANY.nullFlavor"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="name-qualifier"/>
+    <display value="AD | SP | BR | CL | IN | LS | MID | PFX | SFX"/>
+    <contextType value="datatype"/>
+    <context value="HumanName.part"/>
+    <element>
+      <path value="name-qualifier"/>
+      <definition>
+        <short value="AD | SP | BR | CL | IN | LS | MID | PFX | SFX"/>
+        <formal value="A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type."/>
+        <comments value="Used to indicate additional information about the name part and how it should be used."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <binding>
+          <name value="EntityNamePartQualifier"/>
+          <isExtensible value="false"/>
+          <description value="A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/name-part-qualifier"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ENXP.qualifier"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="uncertainty"/>
+    <display value="Standard Deviation (same units as the quantity)"/>
+    <contextType value="datatype"/>
+    <context value="Quantity"/>
+    <element>
+      <path value="uncertainty"/>
+      <definition>
+        <short value="Standard Deviation (same units as the quantity)"/>
+        <formal value="The primary measure of variance/uncertainty of the value (the square root of the sum of the squares of the differences between all data points and the mean)."/>
+        <comments value="standardDeviation has the same units as the quantity. It is used to normalize the data for computing the distribution function. Applications that cannot deal with probability distributions can still get an idea about the confidence level by looking at standardDeviation."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="decimal"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="PPD.standardDeviation"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="uncertaintyType"/>
+    <display value="Probability Distribution Type for uncertainty"/>
+    <contextType value="datatype"/>
+    <context value="Quantity"/>
+    <element>
+      <path value="uncertaintyType"/>
+      <definition>
+        <short value="Probability Distribution Type for uncertainty"/>
+        <formal value="A code specifying the type of probability distribution for the uncertainty."/>
+        <comments value="This is only meaningful if there is also an uncertainty extension. If there is and uncertainty extension with no type, this means  that the probability distribution type is unknown. In that case, the uncertainty has the meaning of an informal guess."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <binding>
+          <name value="ProbabilityDistributionType"/>
+          <isExtensible value="false"/>
+          <description value="Codes specifying the type of probability distribution"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/probability-distribution-type"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="PPD.distributionType"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-use"/>
+    <display value="BAD | CONF | HP | HV | DIR | PUB | PHYS | PST"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-use"/>
+      <definition>
+        <short value="BAD | CONF | HP | HV | DIR | PUB | PHYS | PST"/>
+        <formal value="Uses of Addresses - codes not defined as part of Address.use."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <binding>
+          <name value="PostalAddressUse"/>
+          <isExtensible value="false"/>
+          <description value="Uses of an address not included in Address.use"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/postal-address-use"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="AD.use"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-additionalLocator"/>
+    <display value="additionalLocator"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-additionalLocator"/>
+      <definition>
+        <short value="additionalLocator"/>
+        <formal value="This can be a unit designator, such as apartment number, suite number, or floor. There may be several unit designators in an address (e.g., &quot;3rd floor, Appt. 342&quot;). This can also be a designator pointing away from the location, rather than specifying a smaller location within some larger one (e.g., Dutch &quot;t.o.&quot; means &quot;opposite to&quot; for house boats located across the street facing houses)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=ADL]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-unitID"/>
+    <display value="unitID"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-unitID"/>
+      <definition>
+        <short value="unitID"/>
+        <formal value="The number or name of a specific unit contained within a building or complex, as assigned by that building or complex."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=UNID]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-unitType"/>
+    <display value="unitType"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-unitType"/>
+      <definition>
+        <short value="unitType"/>
+        <formal value="Indicates the type of specific unit contained within a building or complex. E.g. Appartment, Floor."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=UNIT]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-deliveryAddressLine"/>
+    <display value="deliveryAddressLine"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-deliveryAddressLine"/>
+      <definition>
+        <short value="deliveryAddressLine"/>
+        <formal value="A delivery address line is frequently used instead of breaking out delivery mode, delivery installation, etc. An address generally has only a delivery address line or a street address line, but not both."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DAL]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-deliveryInstallationType"/>
+    <display value="deliveryInstallationType"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-deliveryInstallationType"/>
+      <definition>
+        <short value="deliveryInstallationType"/>
+        <formal value="Indicates the type of delivery installation (the facility to which the mail will be delivered prior to final shipping via the delivery mode.) Example: post office, letter carrier depot, community mail center, station, etc."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DINST]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-deliveryInstallationArea"/>
+    <display value="deliveryInstallationArea"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-deliveryInstallationArea"/>
+      <definition>
+        <short value="deliveryInstallationArea"/>
+        <formal value="The location of the delivery installation, usually a town or city, and is only required if the area is different from the municipality. Area to which mail delivery service is provided from any postal facility or service such as an individual letter carrier, rural route, or postal route."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DINSTA]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-deliveryInstallationQualifier"/>
+    <display value="deliveryInstallationQualifier"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-deliveryInstallationQualifier"/>
+      <definition>
+        <short value="deliveryInstallationQualifier"/>
+        <formal value="A number, letter or name identifying a delivery installation. E.g., for Station A, the delivery installation qualifier would be &#39;A&#39;."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DINSTQ]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-deliveryMode"/>
+    <display value="deliveryMode"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-deliveryMode"/>
+      <definition>
+        <short value="deliveryMode"/>
+        <formal value="Indicates the type of service offered, method of delivery. For example: post office box, rural route, general delivery, etc."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DMOD]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-deliveryModeIdentifier"/>
+    <display value="deliveryModeIdentifier"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-deliveryModeIdentifier"/>
+      <definition>
+        <short value="deliveryModeIdentifier"/>
+        <formal value="Represents the routing information such as a letter carrier route number. It is the identifying number of the designator (the box number or rural route number)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DMODID]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-streetAddressLine"/>
+    <display value="streetAddressLine"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-streetAddressLine"/>
+      <definition>
+        <short value="streetAddressLine"/>
+        <formal value="Description: A street address line is frequently used instead of breaking out build number, street name, street type, etc. An address generally has only a delivery address line or a street address line, but not both."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=SAL]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-houseNumber"/>
+    <display value="houseNumber"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-houseNumber"/>
+      <definition>
+        <short value="houseNumber"/>
+        <formal value="The number of a building, house or lot alongside the street. Also known as &quot;primary street number&quot;. This does not number the street but rather the building."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=BNR]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-buildingNumberSuffix"/>
+    <display value="buildingNumberSuffix"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-buildingNumberSuffix"/>
+      <definition>
+        <short value="buildingNumberSuffix"/>
+        <formal value="Any alphabetic character, fraction or other text that may appear after the numeric portion of a building number."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=BNS]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-postBox"/>
+    <display value="postBox"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-postBox"/>
+      <definition>
+        <short value="postBox"/>
+        <formal value="A numbered box located in a post station."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=POB]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-houseNumberNumeric"/>
+    <display value="houseNumberNumeric"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-houseNumberNumeric"/>
+      <definition>
+        <short value="houseNumberNumeric"/>
+        <formal value="The numeric portion of a building number."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=BNN]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-streetName"/>
+    <display value="streetName"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-streetName"/>
+      <definition>
+        <short value="streetName"/>
+        <formal value="streetName."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=STR]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-streetNameBase"/>
+    <display value="streetNameBase"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-streetNameBase"/>
+      <definition>
+        <short value="streetNameBase"/>
+        <formal value="The base name of a roadway or artery recognized by a municipality (excluding street type and direction)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=STB]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-streetNameType"/>
+    <display value="streetNameType"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-streetNameType"/>
+      <definition>
+        <short value="streetNameType"/>
+        <formal value="The designation given to the street. (e.g. Street, Avenue, Crescent, etc.)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=STTYP]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-direction"/>
+    <display value="direction"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-direction"/>
+      <definition>
+        <short value="direction"/>
+        <formal value="Direction (e.g., N, S, W, E)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DIR]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-careOf"/>
+    <display value="careOf"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-careOf"/>
+      <definition>
+        <short value="careOf"/>
+        <formal value="The name of the party who will take receipt at the specified address, and will take on responsibility for ensuring delivery to the target recipient."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=CAR]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-censusTract"/>
+    <display value="censusTract"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-censusTract"/>
+      <definition>
+        <short value="censusTract"/>
+        <formal value="A geographic sub-unit delineated for demographic purposes."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=CEN]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-county"/>
+    <display value="county"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-county"/>
+      <definition>
+        <short value="county"/>
+        <formal value="A sub-unit of a state or province. (49 of the United States of America use the term &quot;county;&quot; Louisiana uses the term &quot;parish&quot;.)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=CPA]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-delimiter"/>
+    <display value="delimiter"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-delimiter"/>
+      <definition>
+        <short value="delimiter"/>
+        <formal value="Delimiters are printed without framing white space. If no value component is provided, the delimiter appears as a line break."/>
+        <comments value="This really has no rationale use in FHIR."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=DEL]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="address-part-precinct"/>
+    <display value="precinct"/>
+    <contextType value="datatype"/>
+    <context value="Address"/>
+    <element>
+      <path value="address-part-precinct"/>
+      <definition>
+        <short value="precinct"/>
+        <formal value="A subsection of a municipality."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ADXP[partType=PRE]"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="string-translation"/>
+    <display value="translation"/>
+    <contextType value="datatype"/>
+    <context value="string"/>
+    <element>
+      <path value="string-translation"/>
+      <definition>
+        <short value="translation"/>
+        <formal value="An expression of the original string in an alternate language."/>
+        <comments value="string-translation elements should not have string-translation extensions (i.e. all translations should be expressed as siblings, not as a translation hierarchy) to simplify processing."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ED.translation"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+  <extensionDefn>
+    <code value="language"/>
+    <display value="language"/>
+    <contextType value="datatype"/>
+    <context value="string"/>
+    <element>
+      <path value="language"/>
+      <definition>
+        <short value="language"/>
+        <formal value="The language in which the string is expressed."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <mustSupport value="false"/>
+        <isModifier value="false"/>
+        <binding>
+          <name value="Language"/>
+          <isExtensible value="false"/>
+          <description value="A human language"/>
+          <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="ED.language"/>
+        </mapping>
+      </definition>
+    </element>
+  </extensionDefn>
+</Profile>

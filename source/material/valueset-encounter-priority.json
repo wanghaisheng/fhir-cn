@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Diet</h2><p>This value set defines a set of codes that can be used to indicate the encounter priority as determined by triage.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/diet</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>imm<a name=\"imm\"> </a></td><td>Immediate</td><td>Within seconds</td></tr><tr><td>emg<a name=\"emg\"> </a></td><td>Emergency</td><td>Within 10 minutes</td></tr><tr><td>urg<a name=\"urg\"> </a></td><td>Urgent</td><td>Within 30 minutes</td></tr><tr><td>s-urg<a name=\"s-urg\"> </a></td><td>Semi-urgent</td><td>Within 60 minutes</td></tr><tr><td>no-urg<a name=\"no-urg\"> </a></td><td>Non-urgent</td><td>Within 120 minutes</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-priority",
+  "name": "Diet",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines a set of codes that can be used to indicate the encounter priority as determined by triage.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/diet",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "imm",
+        "display": "Immediate",
+        "definition": "Within seconds"
+      },
+      {
+        "code": "emg",
+        "display": "Emergency",
+        "definition": "Within 10 minutes"
+      },
+      {
+        "code": "urg",
+        "display": "Urgent",
+        "definition": "Within 30 minutes"
+      },
+      {
+        "code": "s-urg",
+        "display": "Semi-urgent",
+        "definition": "Within 60 minutes"
+      },
+      {
+        "code": "no-urg",
+        "display": "Non-urgent",
+        "definition": "Within 120 minutes"
+      }
+    ]
+  }
+}

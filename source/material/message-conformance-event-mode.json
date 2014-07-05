@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ConformanceEventMode</h2><p>The mode of a message conformance statement</p><p>This value set defines its own terms in the system http://hl7.org/fhir/message-conformance-event-mode</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>sender<a name=\"sender\"> </a></td><td/><td>The application sends requests and receives responses.</td></tr><tr><td>receiver<a name=\"receiver\"> </a></td><td/><td>The application receives requests and sends responses.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/message-conformance-event-mode",
+  "name": "ConformanceEventMode",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The mode of a message conformance statement",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.894+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/message-conformance-event-mode",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "sender",
+        "definition": "The application sends requests and receives responses."
+      },
+      {
+        "code": "receiver",
+        "definition": "The application receives requests and sends responses."
+      }
+    ]
+  }
+}

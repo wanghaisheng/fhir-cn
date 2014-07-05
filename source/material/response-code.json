@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ResponseType</h2><p>The kind of response to a message</p><p>This value set defines its own terms in the system http://hl7.org/fhir/response-code</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>ok<a name=\"ok\"> </a></td><td/><td>The message was accepted and processed without error.</td></tr><tr><td>transient-error<a name=\"transient-error\"> </a></td><td/><td>Some internal unexpected error occurred - wait and try again. Note - this is usually used for things like database unavailable, which may be expected to resolve, though human intervention may be required.</td></tr><tr><td>fatal-error<a name=\"fatal-error\"> </a></td><td/><td>The message was rejected because of some content in it. There is no point in re-sending without change. The response narrative SHALL describe what the issue is.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/response-code",
+  "name": "ResponseType",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The kind of response to a message",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.903+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/response-code",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "ok",
+        "definition": "The message was accepted and processed without error."
+      },
+      {
+        "code": "transient-error",
+        "definition": "Some internal unexpected error occurred - wait and try again. Note - this is usually used for things like database unavailable, which may be expected to resolve, though human intervention may be required."
+      },
+      {
+        "code": "fatal-error",
+        "definition": "The message was rejected because of some content in it. There is no point in re-sending without change. The response narrative SHALL describe what the issue is."
+      }
+    ]
+  }
+}

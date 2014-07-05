@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>NamespaceType</h2><p>Identifies the purpose of the namespace</p><p>This value set defines its own terms in the system http://hl7.org/fhir/namespace-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>codesystem<a name=\"codesystem\"> </a></td><td/><td>The namespace is used to define concepts and symbols to represent those concepts.  E.g. UCUM, LOINC, NDC code, local lab codes, etc.</td></tr><tr><td>identifier<a name=\"identifier\"> </a></td><td/><td>The namespace is used to manage identifiers (e.g. license numbers, order numbers, etc.).</td></tr><tr><td>root<a name=\"root\"> </a></td><td/><td>The namespace is used as the root for other identifiers and namespaces.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/namespace-type",
+  "name": "NamespaceType",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Identifies the purpose of the namespace",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.904+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/namespace-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "codesystem",
+        "definition": "The namespace is used to define concepts and symbols to represent those concepts.  E.g. UCUM, LOINC, NDC code, local lab codes, etc."
+      },
+      {
+        "code": "identifier",
+        "definition": "The namespace is used to manage identifiers (e.g. license numbers, order numbers, etc.)."
+      },
+      {
+        "code": "root",
+        "definition": "The namespace is used as the root for other identifiers and namespaces."
+      }
+    ]
+  }
+}

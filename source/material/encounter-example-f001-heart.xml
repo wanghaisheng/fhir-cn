@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: v1451 (official)
+      </p>
+      <p>
+        <b>status</b>: finished
+      </p>
+      <p>
+        <b>class</b>: outpatient
+      </p>
+      <p>
+        <b>type</b>: Patient-initiated encounter 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;270427003&#39; = &#39;Patient-initiated encounter&#39;, given as &#39;Patient-initiated encounter&#39;})</span>
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f001-pieter.html">P. van de Heuvel. Generated Summary: 738472983 (usual), ?? (usual); Pieter van de Heuvel ; 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 17-Nov 1944; 
+          <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>; multipleBirth; 
+          <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>; active
+        </a>
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Individual</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>
+            <a href="practitioner-example-f002-pv.html">P. Voigt. Generated Summary: 730291637 (official), 174BIP3JH438 (usual); Pieter Voigt (official); 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.4.642.1.24 M}">Male</span>; birthDate: 29-Apr 1979; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.000}">Care role</span>; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.011}">specialisation</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <b>length</b>: 140 min
+        <span style="background: LightGoldenRodYellow "> (Details: http://unitsofmeasure.org code min = &#39;min&#39;)</span>
+      </p>
+      <p>
+        <b>reason</b>: Heart valve replacement 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;34068001&#39; = &#39;Heart valve replacement&#39;, given as &#39;Heart valve replacement&#39;})</span>
+      </p>
+      <p>
+        <b>priority</b>: Non-urgent cardiological admission 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;310361003&#39; = &#39;Non-urgent cardiological admission&#39;, given as &#39;Non-urgent cardiological admission&#39;})</span>
+      </p>
+      <blockquote>
+        <p>
+          <b>hospitalization</b>
+        </p>
+        <p>
+          <b>preAdmissionIdentifier</b>: 93042 (official)
+        </p>
+        <p>
+          <b>admitSource</b>: Referral by physician 
+          <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;305956004&#39; = &#39;Referral by physician&#39;, given as &#39;Referral by physician&#39;})</span>
+        </p>
+        <p>
+          <b>period</b>: 26-Jun 2011 --&gt; 30-Jun 2011
+        </p>
+        <h3>Accomodations</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Bed</b>
+            </td>
+            <td>
+              <b>Period</b>
+            </td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td>26-Jun 2011 --&gt; 1-Jul 2011</td>
+          </tr>
+        </table>
+        <p>
+          <b>dischargeDisposition</b>: Discharge to home 
+          <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;306689006&#39; = &#39;Discharge to home&#39;, given as &#39;Discharge to home&#39;})</span>
+        </p>
+        <p>
+          <b>reAdmission</b>: false
+        </p>
+      </blockquote>
+      <p>
+        <b>serviceProvider</b>: 
+        <a href="organization-example-f001-burgers.html">Burgers University Medical Center. Generated Summary: 91654 (official), 17-0112278 (usual); name: Burgers University Medical Center; 
+          <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.1060 V6}, {http://hl7.org/fhir/organization-type prov}">University Medical Hospital</span>
+        </a>
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://www.amc.nl/zorgportal/identifiers/visits"/>
+    <value value="v1451"/>
+  </identifier>
+  <status value="finished"/>
+  <class value="outpatient"/>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="270427003"/>
+      <display value="Patient-initiated encounter"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <participant>
+    <individual>
+      <reference value="Practitioner/f002"/>
+      <display value="P. Voigt"/>
+    </individual>
+  </participant>
+  <length>
+    <value value="140"/>
+    <units value="min"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="min"/>
+  </length>
+  <reason>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="34068001"/>
+      <display value="Heart valve replacement"/>
+    </coding>
+  </reason>
+  <priority>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="310361003"/>
+      <display value="Non-urgent cardiological admission"/>
+    </coding>
+  </priority>
+  <hospitalization>
+    <preAdmissionIdentifier>
+      <use value="official"/>
+      <system value="http://www.amc.nl/zorgportal/identifiers/pre-admissions"/>
+      <value value="93042"/>
+    </preAdmissionIdentifier>
+    <admitSource>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="305956004"/>
+        <display value="Referral by physician"/>
+      </coding>
+    </admitSource>
+    <period>
+      <start value="2011-06-26"/>
+      <end value="2011-06-30"/>
+    </period>
+    <accomodation>
+      <period>
+        <start value="2011-06-26"/>
+        <end value="2011-07-01"/>
+      </period>
+    </accomodation>
+    <dischargeDisposition>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="306689006"/>
+        <display value="Discharge to home"/>
+      </coding>
+    </dischargeDisposition>
+    <reAdmission value="false"/>
+  </hospitalization>
+  <serviceProvider>
+    <reference value="Organization/f001"/>
+    <display value="Burgers University Medical Center"/>
+  </serviceProvider>
+</Encounter>

@@ -1,0 +1,69 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>AnswerFormat</h2><p>The expected format of an answer</p><p>This value set defines its own terms in the system http://hl7.org/fhir/answer-format</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>decimal<a name=\"decimal\"> </a></td><td/><td>Answer is a floating point number.</td></tr><tr><td>integer<a name=\"integer\"> </a></td><td/><td>Answer is an integer.</td></tr><tr><td>boolean<a name=\"boolean\"> </a></td><td/><td>Answer is a yes/no answer.</td></tr><tr><td>date<a name=\"date\"> </a></td><td/><td>Answer is a date.</td></tr><tr><td>string<a name=\"string\"> </a></td><td/><td>Answer is a short (few words to short sentence) free-text entry.</td></tr><tr><td>text<a name=\"text\"> </a></td><td/><td>Answer is a long (potentially multi-paragram) free-text entry.</td></tr><tr><td>dateTime<a name=\"dateTime\"> </a></td><td/><td>Answer is a date and time.</td></tr><tr><td>instant<a name=\"instant\"> </a></td><td/><td>Answer is a system timestamp.</td></tr><tr><td>choice<a name=\"choice\"> </a></td><td/><td>Answer is a choice from a list of options.</td></tr><tr><td>open-choice<a name=\"open-choice\"> </a></td><td/><td>Answer is a choice from a list of options or a free-text entry.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/answer-format",
+  "name": "AnswerFormat",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The expected format of an answer",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.902+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/answer-format",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "decimal",
+        "definition": "Answer is a floating point number."
+      },
+      {
+        "code": "integer",
+        "definition": "Answer is an integer."
+      },
+      {
+        "code": "boolean",
+        "definition": "Answer is a yes/no answer."
+      },
+      {
+        "code": "date",
+        "definition": "Answer is a date."
+      },
+      {
+        "code": "string",
+        "definition": "Answer is a short (few words to short sentence) free-text entry."
+      },
+      {
+        "code": "text",
+        "definition": "Answer is a long (potentially multi-paragram) free-text entry."
+      },
+      {
+        "code": "dateTime",
+        "definition": "Answer is a date and time."
+      },
+      {
+        "code": "instant",
+        "definition": "Answer is a system timestamp."
+      },
+      {
+        "code": "choice",
+        "definition": "Answer is a choice from a list of options."
+      },
+      {
+        "code": "open-choice",
+        "definition": "Answer is a choice from a list of options or a free-text entry."
+      }
+    ]
+  }
+}

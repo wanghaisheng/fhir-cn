@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SpecimenTreatmentProcedure</h2>
+      <p>The  technique that is used to perform the process or preserve the specimen</p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include all codes defined in 
+          <a href="v2/0373/index.html">http://hl7.org/fhir/v2/0373</a>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/specimen-treatment-procedure"/>
+  <name value="SpecimenTreatmentProcedure"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="The  technique that is used to perform the process or preserve the specimen"/>
+  <status value="draft"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/v2/0373"/>
+    </include>
+  </compose>
+</ValueSet>

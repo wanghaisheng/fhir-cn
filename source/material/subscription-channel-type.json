@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SubscriptionChannelType</h2><p>The type of method used to execute a subscription</p><p>This value set defines its own terms in the system http://hl7.org/fhir/subscription-channel-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>rest-hook<a name=\"rest-hook\"> </a></td><td/><td>The channel is executed by making a post to the URI. If a payload is included, the URL is interpreted as the service base, and an update (PUT) is made.</td></tr><tr><td>websocket<a name=\"websocket\"> </a></td><td/><td>The channel is executed by sending a packet across a web socket connection maintained by the client. The URL identifies the websocket, and the client binds to this URL.</td></tr><tr><td>email<a name=\"email\"> </a></td><td/><td>The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:).</td></tr><tr><td>sms<a name=\"sms\"> </a></td><td/><td>The channel is executed by sending an SMS message to the phone number identified in the URL (tel:).</td></tr><tr><td>message<a name=\"message\"> </a></td><td/><td>The channel Is executed by sending a message (e.g. a Bundle with a MessageHeader resource etc) to the application identified in the URI.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/subscription-channel-type",
+  "name": "SubscriptionChannelType",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The type of method used to execute a subscription",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.905+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/subscription-channel-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "rest-hook",
+        "definition": "The channel is executed by making a post to the URI. If a payload is included, the URL is interpreted as the service base, and an update (PUT) is made."
+      },
+      {
+        "code": "websocket",
+        "definition": "The channel is executed by sending a packet across a web socket connection maintained by the client. The URL identifies the websocket, and the client binds to this URL."
+      },
+      {
+        "code": "email",
+        "definition": "The channel is executed by sending an email to the email addressed in the URI (which must be a mailto:)."
+      },
+      {
+        "code": "sms",
+        "definition": "The channel is executed by sending an SMS message to the phone number identified in the URL (tel:)."
+      },
+      {
+        "code": "message",
+        "definition": "The channel Is executed by sending a message (e.g. a Bundle with a MessageHeader resource etc) to the application identified in the URI."
+      }
+    ]
+  }
+}

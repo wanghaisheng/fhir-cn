@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: CP2934 (official)
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f001-pieter.html">P. van de Heuvel. Generated Summary: 738472983 (usual), ?? (usual); Pieter van de Heuvel ; 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 17-Nov 1944; 
+          <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>; multipleBirth; 
+          <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>; active
+        </a>
+      </p>
+      <p>
+        <b>status</b>: completed
+      </p>
+      <p>
+        <b>period</b>: 6-Jul 2011 --&gt; 7-Jul 2013
+      </p>
+      <p>
+        <b>modified</b>: 7-Jul 2011 9:30
+      </p>
+      <p>
+        <b>concern</b>: 
+        <a href="condition-example-f201-fever.html">?????. Generated Summary: ????; dateAsserted: 4-Apr 2013; 
+          <span title="Codes: {http://snomed.info/sct 386661006}">Fever</span>; 
+          <span title="Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category condition}">Problem</span>; confirmed; 
+          <span title="Codes: {http://snomed.info/sct 255604002}">Mild</span>; onset: 2-Apr 2013
+        </a>
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Role</b>
+          </td>
+          <td>
+            <b>Member</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>
+            <a href="practitioner-example-f003-mv.html">M.I.M. Versteegh. Generated Summary: 846100293 (official), 243HID3RT938 (usual); Marc Versteegh (official); 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.4.642.1.24 M}">Male</span>; birthDate: 1-Jul 1963; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.000}">Care role</span>; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.011}">specialisation</span>; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.6.121 nl}">Dutch</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h3>Goals</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Description</b>
+          </td>
+          <td>
+            <b>Status</b>
+          </td>
+          <td>
+            <b>Notes</b>
+          </td>
+          <td>
+            <b>Concern</b>
+          </td>
+        </tr>
+        <tr>
+          <td>succesful surgery on lung of patient</td>
+          <td>achieved</td>
+          <td>goal accomplished with minor complications</td>
+          <td> </td>
+        </tr>
+      </table>
+      <blockquote>
+        <p>
+          <b>activity</b>
+        </p>
+        <p>
+          <b>status</b>: completed
+        </p>
+        <p>
+          <b>prohibited</b>: true
+        </p>
+        <h3>Simples</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Category</b>
+            </td>
+            <td>
+              <b>Code</b>
+            </td>
+            <td>
+              <b>Timing[x]</b>
+            </td>
+            <td>
+              <b>Location</b>
+            </td>
+            <td>
+              <b>Performer</b>
+            </td>
+            <td>
+              <b>Product</b>
+            </td>
+            <td>
+              <b>DailyAmount</b>
+            </td>
+            <td>
+              <b>Quantity</b>
+            </td>
+            <td>
+              <b>Details</b>
+            </td>
+          </tr>
+          <tr>
+            <td>procedure</td>
+            <td>Partial lobectomy of lung 
+              <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;359615001&#39; = &#39;Partial lobectomy of lung&#39;, given as &#39;Partial lobectomy of lung&#39;})</span>
+            </td>
+            <td>2011-07-07T09:30:10+01:00</td>
+            <td> </td>
+            <td>
+              <a href="practitioner-example-f003-mv.html">M.I.M. Versteegh. Generated Summary: 846100293 (official), 243HID3RT938 (usual); Marc Versteegh (official); 
+                <span title="Codes: {urn:oid:2.16.840.1.113883.4.642.1.24 M}">Male</span>; birthDate: 1-Jul 1963; 
+                <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.000}">Care role</span>; 
+                <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.011}">specialisation</span>; 
+                <span title="Codes: {urn:oid:2.16.840.1.113883.6.121 nl}">Dutch</span>
+              </a>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://www.bmc.nl/zorgportal/identifiers/careplans"/>
+    <value value="CP2934"/>
+  </identifier>
+  <patient>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </patient>
+  <status value="completed"/>
+  <period>
+    <start value="2011-07-06"/>
+    <end value="2013-07-07"/>
+  </period>
+  <modified value="2011-07-07T09:30:10+01:00"/>
+  <concern>
+    <reference value="Condition/f201"/>
+    <display value="?????"/>
+  </concern>
+  <participant>
+    <member>
+      <reference value="Practitioner/f003"/>
+      <display value="M.I.M. Versteegh"/>
+    </member>
+  </participant>
+  <goal>
+    <description value="succesful surgery on lung of patient"/>
+    <status value="achieved"/>
+    <notes value="goal accomplished with minor complications"/>
+  </goal>
+  <activity>
+    <status value="completed"/>
+    <prohibited value="true"/>
+    <simple>
+      <category value="procedure"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="359615001"/>
+          <display value="Partial lobectomy of lung"/>
+        </coding>
+      </code>
+      <timingString value="2011-07-07T09:30:10+01:00"/>
+      <performer>
+        <reference value="Practitioner/f003"/>
+        <display value="M.I.M. Versteegh"/>
+      </performer>
+    </simple>
+  </activity>
+</CarePlan>

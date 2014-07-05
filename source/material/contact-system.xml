@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ContactSystem</h2>
+      <p>Telecommunications form for contact</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/contact-system</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+          <td>
+            <b>
+              <a href="v2\0202\index.html">v2 Map (0202)</a>
+            </b>
+          </td>
+        </tr>
+        <tr>
+          <td>phone
+            <a name="phone"> </a>
+          </td>
+          <td/>
+          <td>The value is a telephone number used for voice calls. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0202\index.html#PH">PH</a>
+          </td>
+        </tr>
+        <tr>
+          <td>fax
+            <a name="fax"> </a>
+          </td>
+          <td/>
+          <td>The value is a fax machine. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0202\index.html#FX">FX</a>
+          </td>
+        </tr>
+        <tr>
+          <td>email
+            <a name="email"> </a>
+          </td>
+          <td/>
+          <td>The value is an email address.</td>
+          <td>
+            <span title="wider">&lt;</span>
+            <a href="v2\0202\index.html#Internet">Internet</a>
+            <i>(use mailto: protocol)</i>
+          </td>
+        </tr>
+        <tr>
+          <td>url
+            <a name="url"> </a>
+          </td>
+          <td/>
+          <td>The value is a url. This is intended for various personal contacts including blogs, Twitter, Facebook, etc. Do not use for email addresses.</td>
+          <td>
+            <span title="wider">&lt;</span>
+            <a href="v2\0202\index.html#Internet">Internet</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/contact-system"/>
+  <name value="ContactSystem"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Telecommunications form for contact"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.905+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/contact-system"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="phone"/>
+      <definition value="The value is a telephone number used for voice calls. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required."/>
+    </concept>
+    <concept>
+      <code value="fax"/>
+      <definition value="The value is a fax machine. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required."/>
+    </concept>
+    <concept>
+      <code value="email"/>
+      <definition value="The value is an email address."/>
+    </concept>
+    <concept>
+      <code value="url"/>
+      <definition value="The value is a url. This is intended for various personal contacts including blogs, Twitter, Facebook, etc. Do not use for email addresses."/>
+    </concept>
+  </define>
+</ValueSet>

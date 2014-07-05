@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>This value set includes all SNOMED CT codes relating to the qualifier &quot;Known&quot; (concepts with an is-a relationship with 36692007)</p>\n    </div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/condition-certainty",
+  "name": "Condition/Diagnosis Certainty",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Example value set for Condition/Problem/Diagnosis certainty",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "36692007"
+          }
+        ]
+      }
+    ]
+  }
+}

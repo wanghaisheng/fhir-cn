@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>AlertStatus</h2>
+      <p>Indicates whether this alert is active and needs to be displayed to a user, or whether it is no longer needed or entered in error</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/alert-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>active
+            <a name="active"> </a>
+          </td>
+          <td/>
+          <td>A current alert that should be displayed to a user. A system may use the category to determine which roles should view the alert.</td>
+        </tr>
+        <tr>
+          <td>inactive
+            <a name="inactive"> </a>
+          </td>
+          <td/>
+          <td>The alert does not need to be displayed any more.</td>
+        </tr>
+        <tr>
+          <td>entered in error
+            <a name="enteredinerror"> </a>
+          </td>
+          <td/>
+          <td>The alert was added in error, and should no longer be displayed.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/alert-status"/>
+  <name value="AlertStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Indicates whether this alert is active and needs to be displayed to a user, or whether it is no longer needed or entered in error"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.905+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/alert-status"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="active"/>
+      <definition value="A current alert that should be displayed to a user. A system may use the category to determine which roles should view the alert."/>
+    </concept>
+    <concept>
+      <code value="inactive"/>
+      <definition value="The alert does not need to be displayed any more."/>
+    </concept>
+    <concept>
+      <code value="entered in error"/>
+      <definition value="The alert was added in error, and should no longer be displayed."/>
+    </concept>
+  </define>
+</ValueSet>

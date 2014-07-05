@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SpecialArrangements</h2><p>This value set defines a set of codes that can be used to indicate the kinds     of special arrangements in place for a patients visit</p><p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-special-arrangements</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>wheel<a name=\"wheel\"> </a></td><td>Wheelchair</td><td/></tr><tr><td>stret<a name=\"stret\"> </a></td><td>Stretcher</td><td/></tr><tr><td>int<a name=\"int\"> </a></td><td>Interpreter</td><td/></tr><tr><td>att<a name=\"att\"> </a></td><td>Attendant</td><td/></tr><tr><td>dog<a name=\"dog\"> </a></td><td>Guide dog</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-special-arrangements",
+  "name": "SpecialArrangements",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines a set of codes that can be used to indicate the kinds     of special arrangements in place for a patients visit",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/encounter-special-arrangements",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "wheel",
+        "display": "Wheelchair"
+      },
+      {
+        "code": "stret",
+        "display": "Stretcher"
+      },
+      {
+        "code": "int",
+        "display": "Interpreter"
+      },
+      {
+        "code": "att",
+        "display": "Attendant"
+      },
+      {
+        "code": "dog",
+        "display": "Guide dog"
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DiagnosticOrderStatus</h2>
+      <p>The status of a diagnostic order</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/diagnostic-order-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>requested
+            <a name="requested"> </a>
+          </td>
+          <td/>
+          <td>The request has been placed.</td>
+        </tr>
+        <tr>
+          <td>received
+            <a name="received"> </a>
+          </td>
+          <td/>
+          <td>The receiving system has received the order, but not yet decided whether it will be performed.</td>
+        </tr>
+        <tr>
+          <td>accepted
+            <a name="accepted"> </a>
+          </td>
+          <td/>
+          <td>The receiving system has accepted the order, but work has not yet commenced.</td>
+        </tr>
+        <tr>
+          <td>in progress
+            <a name="inprogress"> </a>
+          </td>
+          <td/>
+          <td>The work to fulfill the order is happening.</td>
+        </tr>
+        <tr>
+          <td>review
+            <a name="review"> </a>
+          </td>
+          <td/>
+          <td>The work is complete, and the outcomes are being reviewed for approval.</td>
+        </tr>
+        <tr>
+          <td>completed
+            <a name="completed"> </a>
+          </td>
+          <td/>
+          <td>The work has been complete, the report(s) released, and no further work is planned.</td>
+        </tr>
+        <tr>
+          <td>suspended
+            <a name="suspended"> </a>
+          </td>
+          <td/>
+          <td>The request has been held by originating system/user request.</td>
+        </tr>
+        <tr>
+          <td>rejected
+            <a name="rejected"> </a>
+          </td>
+          <td/>
+          <td>The receiving system has declined to fulfill the request.</td>
+        </tr>
+        <tr>
+          <td>failed
+            <a name="failed"> </a>
+          </td>
+          <td/>
+          <td>The diagnostic investigation was attempted, but due to some procedural error, it could not be completed.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/diagnostic-order-status"/>
+  <name value="DiagnosticOrderStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The status of a diagnostic order"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.901+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/diagnostic-order-status"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="requested"/>
+      <definition value="The request has been placed."/>
+    </concept>
+    <concept>
+      <code value="received"/>
+      <definition value="The receiving system has received the order, but not yet decided whether it will be performed."/>
+    </concept>
+    <concept>
+      <code value="accepted"/>
+      <definition value="The receiving system has accepted the order, but work has not yet commenced."/>
+    </concept>
+    <concept>
+      <code value="in progress"/>
+      <definition value="The work to fulfill the order is happening."/>
+    </concept>
+    <concept>
+      <code value="review"/>
+      <definition value="The work is complete, and the outcomes are being reviewed for approval."/>
+    </concept>
+    <concept>
+      <code value="completed"/>
+      <definition value="The work has been complete, the report(s) released, and no further work is planned."/>
+    </concept>
+    <concept>
+      <code value="suspended"/>
+      <definition value="The request has been held by originating system/user request."/>
+    </concept>
+    <concept>
+      <code value="rejected"/>
+      <definition value="The receiving system has declined to fulfill the request."/>
+    </concept>
+    <concept>
+      <code value="failed"/>
+      <definition value="The diagnostic investigation was attempted, but due to some procedural error, it could not be completed."/>
+    </concept>
+  </define>
+</ValueSet>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Procedure xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f001-pieter.html">P. van de Heuvel. Generated Summary: 738472983 (usual), ?? (usual); Pieter van de Heuvel ; 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 17-Nov 1944; 
+          <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>; multipleBirth; 
+          <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>; active
+        </a>
+      </p>
+      <p>
+        <b>type</b>: Partial lobectomy of lung 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;359615001&#39; = &#39;Partial lobectomy of lung&#39;, given as &#39;Partial lobectomy of lung&#39;})</span>
+      </p>
+      <p>
+        <b>bodySite</b>: Lung structure 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;39607008&#39; = &#39;Lung&#39;, given as &#39;Lung structure&#39;})</span>
+      </p>
+      <p>
+        <b>indication</b>: Malignant tumor of lung 
+        <span style="background: LightGoldenRodYellow ">(Details )</span>
+      </p>
+      <h3>Performers</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Person</b>
+          </td>
+          <td>
+            <b>Role</b>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="practitioner-example-f003-mv.html">M.I.M. Versteegh. Generated Summary: 846100293 (official), 243HID3RT938 (usual); Marc Versteegh (official); 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.4.642.1.24 M}">Male</span>; birthDate: 1-Jul 1963; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.000}">Care role</span>; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.011}">specialisation</span>; 
+              <span title="Codes: {urn:oid:2.16.840.1.113883.6.121 nl}">Dutch</span>
+            </a>
+          </td>
+          <td>Care role 
+            <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.2.4.15.111 code &#39;01.000&#39; = &#39;01.000&#39;, given as &#39;Arts&#39;})</span>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <b>date</b>: 8-Mar 2013 9:0 --&gt; 8-Mar 2013 9:30
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f002-lung.html">Generated Summary: v3251 (official); finished; outpatient; 
+          <span title="Codes: {http://snomed.info/sct 270427003}">Patient-initiated encounter</span>; 140 min; 
+          <span title="Codes: {http://snomed.info/sct 34068001}">Partial lobectomy of lung</span>; 
+          <span title="Codes: {http://snomed.info/sct 103391001}">Urgent</span>
+        </a>
+      </p>
+      <p>
+        <b>outcome</b>: improved blood circulation
+      </p>
+      <p>
+        <b>report</b>: 
+        <a href="diagnosticreport-example-f001-bloodexam.html">Lab results blood test. Generated Summary: 
+          <span title="Codes: {http://loinc.org 58410-2}">Complete blood count (hemogram) panel - Blood by Automated count</span>; final_; issued: 15-May 2013 19:32; P. van den Heuvel; Burgers University Medical Centre; nr1239044 (official); 
+          <span title="Codes: {http://snomed.info/sct 252275004}, {http://hl7.org/fhir/v2/0074 HM}">Haematology test</span>; diagnostic: 2-Apr 2013; conclusion: Core lab
+        </a>
+      </p>
+      <p>
+        <b>followUp</b>: described in care plan
+      </p>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="359615001"/>
+      <display value="Partial lobectomy of lung"/>
+    </coding>
+  </type>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="39607008"/>
+      <display value="Lung structure"/>
+    </coding>
+  </bodySite>
+  <indication>
+    <text value="Malignant tumor of lung"/>
+  </indication>
+  <performer>
+    <person>
+      <reference value="Practitioner/f003"/>
+      <display value="M.I.M. Versteegh"/>
+    </person>
+    <role>
+      <coding>
+        <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+        <code value="01.000"/>
+        <display value="Arts"/>
+      </coding>
+      <text value="Care role"/>
+    </role>
+  </performer>
+  <date>
+    <start value="2013-03-08T09:00:10+01:00"/>
+    <end value="2013-03-08T09:30:10+01:00"/>
+  </date>
+  <encounter>
+    <reference value="Encounter/f002"/>
+  </encounter>
+  <outcome value="improved blood circulation"/>
+  <report>
+    <reference value="DiagnosticReport/f001"/>
+    <display value="Lab results blood test"/>
+  </report>
+  <followUp value="described in care plan"/>
+</Procedure>

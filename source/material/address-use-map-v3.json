@@ -1,0 +1,86 @@
+{
+  "resourceType": "ConceptMap",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>v3 map for AddressUse (http://hl7.org/fhir/cm/v3/address-use)</h2><p>Mapping from <a href=\"address-use.html\">http://hl7.org/fhir/vs/address-use</a> to <a href=\"v3/AddressUse/index.html\">http://hl7.org/fhir/v3/vs/AddressUse</a></p><p>Draft. Published on 2-Jul 2014 16:26 by HL7 (FHIR Project) (<a href=\"http://hl7.org/fhir\">http://hl7.org/fhir</a>, <a href=\"mailto:fhir@lists.hl7.org\">fhir@lists.hl7.org</a>). </p><p>v3 Map (AddressUse)</p><br/><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Equivalence</b></td><td><b>Destination Code</b></td></tr><tr><td>home</td><td>equal</td><td>H (home address)</td></tr><tr><td>work</td><td>equal</td><td>WP (work place)</td></tr><tr><td>temp</td><td>equal</td><td>TMP (temporary address)</td></tr><tr><td>old</td><td>narrower</td><td>OLD (no longer in use)</td></tr><tr><td>old</td><td>narrower</td><td>BAD (bad address)</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/cm/v3/address-use",
+  "name": "v3 map for AddressUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v3 Map (AddressUse)",
+  "status": "draft",
+  "date": "2014-07-02T16:26:24.144+08:00",
+  "sourceResource": {
+    "reference": "http://hl7.org/fhir/vs/address-use"
+  },
+  "targetResource": {
+    "reference": "http://hl7.org/fhir/v3/vs/AddressUse"
+  },
+  "element": [
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "home",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "H",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "work",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "WP",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "temp",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "TMP",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "old",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "OLD",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "codeSystem": "http://hl7.org/fhir/address-use",
+      "code": "old",
+      "map": [
+        {
+          "codeSystem": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "BAD",
+          "equivalence": "narrower"
+        }
+      ]
+    }
+  ]
+}

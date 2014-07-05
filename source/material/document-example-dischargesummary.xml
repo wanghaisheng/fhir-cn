@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Discharge Summary</title>
+  <id>urn:uuid:500bee81-d973-4afe-b592-d39fe71e38</id>
+  <updated>2013-05-28T22:12:21Z</updated>
+  <author>
+    <name>Dr Dave</name>
+  </author>
+  <category scheme="http://hl7.org/fhir/tag" term="http://hl7.org/fhir/tag/document"/>
+  <entry>
+    <title>Composition</title>
+    <id>urn:guid:180f219f-97a8-486d-99d9-ed631fe4fc57</id>
+    <updated>2013-05-28T22:12:21Z</updated>
+    <content type="text/xml">
+      <Composition xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>date</b>: 1-Feb 2013 12:30
+            </p>
+            <p>
+              <b>type</b>: Discharge Summary from Responsible Clinician 
+              <span style="background: LightGoldenRodYellow ">(Details : {www.loinc.org code &#39;28655-9&#39; = &#39;28655-9&#39;, given as &#39;null&#39;})</span>
+            </p>
+            <p>
+              <b>status</b>: final_
+            </p>
+            <p>
+              <b>confidentiality</b>: Normal (Details: www.nz.org code 1234-5 = &#39;1234-5&#39;, stated as &#39;Normal&#39;)
+            </p>
+            <p>
+              <b>author</b>: 
+              <a href="http://hl7connect.healthintersections.com.au/svc/fhir/Practitioner/example">Doctor Dave</a>
+            </p>
+          </div>
+        </text>
+        <date value="2013-02-01T12:30:02"/>
+        <type>
+          <coding>
+            <system value="www.loinc.org"/>
+            <code value="28655-9"/>
+          </coding>
+          <text value="Discharge Summary from Responsible Clinician"/>
+        </type>
+        <status value="final"/>
+        <confidentiality>
+          <system value="www.nz.org"/>
+          <code value="1234-5"/>
+          <display value="Normal"/>
+        </confidentiality>
+        <subject>
+          <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1"/>
+          <display value="Eve Everywoman"/>
+        </subject>
+        <author>
+          <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Practitioner/example"/>
+          <display value="Doctor Dave"/>
+        </author>
+        <section>
+          <title value="Encounter Information"/>
+          <content>
+            <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Encounter/example"/>
+          </content>
+        </section>
+        <section>
+          <title value="Reason for admission"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="46241-6"/>
+            </coding>
+          </code>
+          <content>
+            <reference value="urn:guid:d0dd51d3-3ab2-4c84-b697-a630c3e40e7a"/>
+          </content>
+        </section>
+        <section>
+          <title value="Medications on Discharge"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="10183-2"/>
+            </coding>
+          </code>
+          <content>
+            <reference value="urn:guid:673f8db5-0ffd-4395-9657-6da00420bbc1"/>
+          </content>
+        </section>
+        <section>
+          <title value="Known allergies"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48765-2"/>
+            </coding>
+          </code>
+          <content>
+            <reference value="urn:guid:68f86194-e6e1-4f65-b64a-5314256f8d7b"/>
+          </content>
+        </section>
+      </Composition>
+    </content>
+  </entry>
+  <entry>
+    <title>Written by Doctor Dave</title>
+    <id>http://hl7connect.healthintersections.com.au/svc/fhir/Practitioner/example</id>
+    <link href="http://hl7connect.healthintersections.com.au/svc/fhir/Practitioner/example/history/1" rel="self"/>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>68.151.217.168</name>
+    </author>
+    <published>2013-05-28T22:12:21Z</published>
+    <content type="text/xml">
+      <Practitioner xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+                        
+            <h5>Doctor dave</h5>
+                    
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>name</b>: Doctor Dave
+            </p>
+          </div>
+        </text>
+        <name>
+          <text value="Doctor Dave"/>
+        </name>
+      </Practitioner>
+    </content>
+  </entry>
+  <entry>
+    <title>About Eve Everywoman</title>
+    <id>http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1</id>
+    <link href="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1/history/10" rel="self"/>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>68.151.217.168</name>
+    </author>
+    <content type="text/xml">
+      <Patient xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+                        
+            <h5>Eve Everywoman</h5>
+                    
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>identifier</b>: ??
+            </p>
+            <p>
+              <b>name</b>: Eve Everywoman
+            </p>
+            <p>
+              <b>telecom</b>: ph: 555-555-2003(work)
+            </p>
+            <p>
+              <b>gender</b>: Female 
+              <span style="background: LightGoldenRodYellow ">(Details : {http://hl7.org/fhir/v3/AdministrativeGender code &#39;F&#39; = &#39;Female&#39;, given as &#39;Female&#39;})</span>
+            </p>
+            <p>
+              <b>birthDate</b>: 6-Jan 1955
+            </p>
+            <p>
+              <b>address</b>: 2222 Home Street (home)
+            </p>
+            <p>
+              <b>active</b>: true
+            </p>
+          </div>
+        </text>
+        <identifier>
+          <system value="nhi"/>
+        </identifier>
+        <name>
+          <text value="Eve Everywoman"/>
+          <family value="Everywoman1"/>
+          <given value="Eve"/>
+        </name>
+        <telecom>
+          <system value="phone"/>
+          <value value="555-555-2003"/>
+          <use value="work"/>
+        </telecom>
+        <gender>
+          <coding>
+            <system value="http://hl7.org/fhir/v3/AdministrativeGender"/>
+            <code value="F"/>
+            <display value="Female"/>
+          </coding>
+        </gender>
+        <birthDate value="1955-01-06"/>
+        <address>
+          <use value="home"/>
+          <line value="2222 Home Street"/>
+        </address>
+        <active value="true"/>
+      </Patient>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+                
+        <h5>Eve Everywoman</h5>
+            
+      </div>
+    </summary>
+  </entry>
+  <entry>
+    <title>Admission to Middlemore </title>
+    <id>http://hl7connect.healthintersections.com.au/svc/fhir/Encounter/example</id>
+    <link href="http://hl7connect.healthintersections.com.au/svc/fhir/Encounter/example/history/1" rel="self"/>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>68.151.217.168</name>
+    </author>
+    <content type="text/xml">
+      <Encounter xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"> Admitted to Orthopedics Service,
+                        Middlemore Hospital between Jan 20 and Feb ist 2013 
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>identifier</b>: S100
+            </p>
+            <p>
+              <b>status</b>: finished
+            </p>
+            <p>
+              <b>class</b>: inpatient
+            </p>
+            <p>
+              <b>type</b>: Orthopedic Admission 
+              <span style="background: LightGoldenRodYellow ">(Details )</span>
+            </p>
+            <p>
+              <b>subject</b>: 
+              <a href="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1">http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1</a>
+            </p>
+            <blockquote>
+              <p>
+                <b>hospitalization</b>
+              </p>
+              <p>
+                <b>period</b>: 20-Jan 2013 12:30 --&gt; 1-Feb 2013 12:30
+              </p>
+              <p>
+                <b>dischargeDisposition</b>: Discharged to care of GP 
+                <span style="background: LightGoldenRodYellow ">(Details )</span>
+              </p>
+            </blockquote>
+          </div>
+        </text>
+        <identifier>
+          <value value="S100"/>
+        </identifier>
+        <status value="finished"/>
+        <class value="inpatient"/>
+        <type>
+          <text value="Orthopedic Admission"/>
+        </type>
+        <subject>
+          <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1"/>
+        </subject>
+        <hospitalization>
+          <period>
+            <start value="2013-01-20T12:30:02"/>
+            <end value="2013-02-01T12:30:02"/>
+          </period>
+          <dischargeDisposition>
+            <text value="Discharged to care of GP"/>
+          </dischargeDisposition>
+        </hospitalization>
+      </Encounter>
+    </content>
+  </entry>
+  <entry>
+    <title>Admission Reason</title>
+    <id>urn:guid:d0dd51d3-3ab2-4c84-b697-a630c3e40e7a</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <Observation xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="additional"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"> Acute Asthmatic attack. Was wheezing
+                        for days prior to admission. 
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>name</b>: Reason for admission 
+              <span style="background: LightGoldenRodYellow ">(Details : {LOINC code &#39;46241-6&#39; = &#39;Hospital admission diagnosis Narrative - Reported&#39;, given as &#39;null&#39;})</span>
+            </p>
+            <p>
+              <b>value</b>: Acute Asthmatic attack. Was wheezing for days prior to admission.
+            </p>
+            <p>
+              <b>status</b>: final_
+            </p>
+            <p>
+              <b>reliability</b>: ok
+            </p>
+          </div>
+        </text>
+        <name>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="46241-6"/>
+          </coding>
+          <text value="Reason for admission"/>
+        </name>
+        <valueString value="Acute Asthmatic attack. Was wheezing for days prior to admission."/>
+        <status value="final"/>
+        <reliability value="ok"/>
+      </Observation>
+    </content>
+  </entry>
+  <entry>
+    <title>List of Medications</title>
+    <id>urn:guid:673f8db5-0ffd-4395-9657-6da00420bbc1</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <List xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="additional"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+                        
+            <table>
+                            
+              <thead>
+                                
+                <tr>
+                                    
+                  <td>Medication</td>
+                                    
+                  <td>Last Change</td>
+                                    
+                  <td>Last ChangeReason</td>
+                                
+                </tr>
+                            
+              </thead>
+                            
+              <tbody>
+                                
+                <tr>
+                                    
+                  <td>Theophylline 200mg BD after meals</td>
+                                    
+                  <td>continued</td>
+                                
+                </tr>
+                                
+                <tr>
+                                    
+                  <td>Ventolin Inhaler</td>
+                                    
+                  <td>stopped</td>
+                                    
+                  <td>Getting side effect of tremor</td>
+                                
+                </tr>
+                            
+              </tbody>
+
+                        
+            </table>
+                    
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>code</b>: Hospital discharge medications 
+              <span style="background: LightGoldenRodYellow ">(Details : {LOINC code &#39;10183-2&#39; = &#39;Hospital discharge medications Narrative&#39;, given as &#39;Hospital discharge medications&#39;})</span>
+            </p>
+            <p>
+              <b>mode</b>: working
+            </p>
+            <h3>Entries</h3>
+            <table class="grid">
+              <tr>
+                <td>
+                  <b>Flag</b>
+                </td>
+                <td>
+                  <b>Deleted</b>
+                </td>
+                <td>
+                  <b>Date</b>
+                </td>
+                <td>
+                  <b>Item</b>
+                </td>
+              </tr>
+              <tr>
+                <td>started 
+                  <span style="background: LightGoldenRodYellow ">(Details : {http://www.ithealthboard.health.nz/fhir/ValueSet/medicationStatus code &#39;started&#39; = &#39;started&#39;, given as &#39;null&#39;})</span>
+                </td>
+                <td> </td>
+                <td> </td>
+                <td>
+                  <a href="urn:guid:124a6916-5d84-4b8c-b250-10cefb8e6e86">urn:guid:124a6916-5d84-4b8c-b250-10cefb8e6e86</a>
+                </td>
+              </tr>
+              <tr>
+                <td>stopped 
+                  <span style="background: LightGoldenRodYellow ">(Details : {http://www.ithealthboard.health.nz/fhir/ValueSet/medicationStatus code &#39;stopped&#39; = &#39;stopped&#39;, given as &#39;null&#39;})</span>
+                </td>
+                <td>true</td>
+                <td> </td>
+                <td>
+                  <a href="http://hl7connect.healthintersections.com.au/svc/fhir/MedicationPrescription/1">use of Ventolin Inhaler was discontinued</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="10183-2"/>
+            <display value="Hospital discharge medications"/>
+          </coding>
+        </code>
+        <mode value="working"/>
+        <entry>
+          <flag>
+            <coding>
+              <system value="http://www.ithealthboard.health.nz/fhir/ValueSet/medicationStatus"/>
+              <code value="started"/>
+            </coding>
+          </flag>
+          <item>
+            <reference value="urn:guid:124a6916-5d84-4b8c-b250-10cefb8e6e86"/>
+          </item>
+        </entry>
+        <entry>
+          <flag>
+            <coding>
+              <system value="http://www.ithealthboard.health.nz/fhir/ValueSet/medicationStatus"/>
+              <code value="stopped"/>
+            </coding>
+          </flag>
+          <deleted value="true"/>
+          <item>
+            <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/MedicationPrescription/1"/>
+            <display value="use of Ventolin Inhaler was discontinued"/>
+          </item>
+        </entry>
+      </List>
+    </content>
+  </entry>
+  <entry>
+    <title>Medication #1</title>
+    <id>urn:guid:124a6916-5d84-4b8c-b250-10cefb8e6e86</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <MedicationPrescription xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+                        
+            <p>Theophylline 200mg twice a day</p>
+                    
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>patient</b>: 
+              <a href="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1">Peter Patient</a>
+            </p>
+            <p>
+              <b>prescriber</b>: 
+              <a href="practitioner-example.html">Peter Practitioner. Generated Summary: 23; Adam Careful ; 
+                <span title="Codes: {http://hl7.org/fhir/v2/0286 RP}">Referring Provider</span>; period: 1-Jan 2012 --&gt; 31-Mar 2012
+              </a>
+            </p>
+            <p>
+              <b>reason</b>: Management of Asthma 
+              <span style="background: LightGoldenRodYellow ">(Details )</span>
+            </p>
+            <p>
+              <b>medication</b>: 
+              <a href="medication-example.html">Theophylline 200mg BD. Generated Summary: name: Penicillin VK oral suspension 125mg/5ml; 
+                <span title="Codes: {http://snomed.info/sct 323418000}, {http://nehta.gov.au/amt/v2 22571011000036102}">Phenoxymethylpenicillin 125mg/5mL oral solution (product)</span>; product
+              </a>
+            </p>
+            <h3>DosageInstructions</h3>
+            <table class="grid">
+              <tr>
+                <td>
+                  <b>Text</b>
+                </td>
+                <td>
+                  <b>AdditionalInstructions</b>
+                </td>
+                <td>
+                  <b>Timing[x]</b>
+                </td>
+                <td>
+                  <b>AsNeeded[x]</b>
+                </td>
+                <td>
+                  <b>Site</b>
+                </td>
+                <td>
+                  <b>Route</b>
+                </td>
+                <td>
+                  <b>Method</b>
+                </td>
+                <td>
+                  <b>DoseQuantity</b>
+                </td>
+                <td>
+                  <b>Rate</b>
+                </td>
+                <td>
+                  <b>MaxDosePerPeriod</b>
+                </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td>Take with Food 
+                  <span style="background: LightGoldenRodYellow ">(Details )</span>
+                </td>
+                <td>2 per 1 days</td>
+                <td> </td>
+                <td> </td>
+                <td>oral administration of treatment 
+                  <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;394899003&#39; = &#39;Treatment administered orally&#39;, given as &#39;oral administration of treatment&#39;})</span>
+                </td>
+                <td> </td>
+                <td>1 tablet
+                  <span style="background: LightGoldenRodYellow "> (Details: http://unitsofmeasure.org code tbl = &#39;tbl&#39;)</span>
+                </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <contained>
+          <Medication id="med1">
+            <name value="Theophylline 200mg"/>
+            <code>
+              <coding>
+                <system value="http:/snomed.org"/>
+                <code value="66493003"/>
+              </coding>
+            </code>
+          </Medication>
+        </contained>
+        <patient>
+          <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1"/>
+          <display value="Peter Patient"/>
+        </patient>
+        <prescriber>
+          <reference value="Practitioner/example"/>
+          <display value="Peter Practitioner"/>
+        </prescriber>
+        <reasonCodeableConcept>
+          <text value="Management of Asthma"/>
+        </reasonCodeableConcept>
+        <medication>
+          <reference value="Medication/example"/>
+          <display value="Theophylline 200mg BD"/>
+        </medication>
+        <dosageInstruction>
+          <additionalInstructions>
+            <text value="Take with Food"/>
+          </additionalInstructions>
+          <timingSchedule>
+            <repeat>
+              <frequency value="2"/>
+              <duration value="1"/>
+              <units value="d"/>
+            </repeat>
+          </timingSchedule>
+          <route>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="394899003"/>
+              <display value="oral administration of treatment"/>
+            </coding>
+          </route>
+          <doseQuantity>
+            <value value="1"/>
+            <units value="tablet"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="tbl"/>
+          </doseQuantity>
+        </dosageInstruction>
+      </MedicationPrescription>
+    </content>
+  </entry>
+  <entry>
+    <title>List of Allergies</title>
+    <id>urn:guid:68f86194-e6e1-4f65-b64a-5314256f8d7b</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <List xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="additional"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+                        
+            <table>
+                            
+              <thead>
+                                
+                <tr>
+                                    
+                  <td>Allergen</td>
+                                    
+                  <td>Reaction</td>
+                                
+                </tr>
+                            
+              </thead>
+                            
+              <tbody>
+                                
+                <tr>
+                                    
+                  <td>Doxycycline</td>
+                                    
+                  <td>Hives</td>
+                                
+                </tr>
+                            
+              </tbody>
+
+                        
+            </table>
+                    
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>code</b>: Allergies and adverse reactions Document 
+              <span style="background: LightGoldenRodYellow ">(Details : {LOINC code &#39;48765-2&#39; = &#39;Allergies and adverse reactions Document&#39;, given as &#39;Allergies and adverse reactions Document&#39;})</span>
+            </p>
+            <p>
+              <b>mode</b>: working
+            </p>
+            <h3>Entries</h3>
+            <table class="grid">
+              <tr>
+                <td>
+                  <b>Flag</b>
+                </td>
+                <td>
+                  <b>Deleted</b>
+                </td>
+                <td>
+                  <b>Date</b>
+                </td>
+                <td>
+                  <b>Item</b>
+                </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td>
+                  <a href="urn:guid:47600e0f-b6b5-4308-84b5-5dec157f7637">urn:guid:47600e0f-b6b5-4308-84b5-5dec157f7637</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="48765-2"/>
+            <display value="Allergies and adverse reactions Document"/>
+          </coding>
+        </code>
+        <mode value="working"/>
+        <entry>
+          <item>
+            <reference value="urn:guid:47600e0f-b6b5-4308-84b5-5dec157f7637"/>
+          </item>
+        </entry>
+      </List>
+    </content>
+  </entry>
+  <entry>
+    <title>Allergy to Doxycycline</title>
+    <id>urn:guid:47600e0f-b6b5-4308-84b5-5dec157f7637</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <AllergyIntolerance xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">Sensitivity to Doxycycline :
+                        Hives
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>criticality</b>: fatal
+            </p>
+            <p>
+              <b>sensitivityType</b>: allergy
+            </p>
+            <p>
+              <b>recordedDate</b>: 17-Sep 2012
+            </p>
+            <p>
+              <b>status</b>: confirmed
+            </p>
+            <p>
+              <b>subject</b>: 
+              <a href="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1">Eve Everywoman</a>
+            </p>
+            <p>
+              <b>substance</b>: 
+              <a href="urn:guid:4c2d16c0-b102-486c-aa7c-b266ce98709f">Doxycycline</a>
+            </p>
+            <p>
+              <b>reaction</b>: 
+              <a href="urn:guid:25be7cdf-7055-40fa-80ac-defd531180dd">Hives</a>
+            </p>
+          </div>
+        </text>
+        <criticality value="fatal"/>
+        <sensitivityType value="allergy"/>
+        <recordedDate value="2012-09-17"/>
+        <status value="confirmed"/>
+        <subject>
+          <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1"/>
+          <display value="Eve Everywoman"/>
+        </subject>
+        <substance>
+          <reference value="urn:guid:4c2d16c0-b102-486c-aa7c-b266ce98709f"/>
+          <display value="Doxycycline"/>
+        </substance>
+        <reaction>
+          <reference value="urn:guid:25be7cdf-7055-40fa-80ac-defd531180dd"/>
+          <display value="Hives"/>
+        </reaction>
+      </AllergyIntolerance>
+    </content>
+  </entry>
+  <entry>
+    <title>Adverse Reaction</title>
+    <id>urn:guid:25be7cdf-7055-40fa-80ac-defd531180dd</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <AdverseReaction xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>subject</b>: 
+              <a href="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1">Eve Everywoman</a>
+            </p>
+            <p>
+              <b>didNotOccurFlag</b>: false
+            </p>
+            <h3>Symptoms</h3>
+            <table class="grid">
+              <tr>
+                <td>
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Severity</b>
+                </td>
+              </tr>
+              <tr>
+                <td>Hives 
+                  <span style="background: LightGoldenRodYellow ">(Details : {sys code &#39;xxx&#39; = &#39;xxx&#39;, given as &#39;Hives&#39;})</span>
+                </td>
+                <td> </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <subject>
+          <reference value="http://hl7connect.healthintersections.com.au/svc/fhir/Patient/d1"/>
+          <display value="Eve Everywoman"/>
+        </subject>
+        <didNotOccurFlag value="false"/>
+        <symptom>
+          <code>
+            <coding>
+              <system value="sys"/>
+              <code value="xxx"/>
+              <display value="Hives"/>
+            </coding>
+            <text value="Hives"/>
+          </code>
+        </symptom>
+      </AdverseReaction>
+    </content>
+  </entry>
+  <entry>
+    <title>Substance</title>
+    <id>urn:guid:4c2d16c0-b102-486c-aa7c-b266ce98709f</id>
+    <updated>2013-05-05T16:13:03Z</updated>
+    <author>
+      <name>Dr Dave</name>
+    </author>
+    <content type="text/xml">
+      <Substance xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">Doxycycline
+            <hr/>
+            <p>
+              <b>Generated Narrative with Details</b>
+            </p>
+            <p>
+              <b>type</b>: Doxycycline 
+              <span style="background: LightGoldenRodYellow ">(Details : {codesys code &#39;123445&#39; = &#39;123445&#39;, given as &#39;Doxycycline&#39;})</span>
+            </p>
+          </div>
+        </text>
+        <type>
+          <coding>
+            <system value="codesys"/>
+            <code value="123445"/>
+            <display value="Doxycycline"/>
+          </coding>
+        </type>
+      </Substance>
+    </content>
+  </entry>
+</feed>

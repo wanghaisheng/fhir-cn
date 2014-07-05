@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>MedicationPrescriptionStatus</h2>
+      <p>A code specifying the state of the prescribing event. Describes the lifecycle of the prescription.</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/medication-prescription-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>active
+            <a name="active"> </a>
+          </td>
+          <td/>
+          <td>The prescription is &#39;actionable&#39;, but not all actions that are implied by it have occurred yet.</td>
+        </tr>
+        <tr>
+          <td>on hold
+            <a name="onhold"> </a>
+          </td>
+          <td/>
+          <td>Actions implied by the prescription have been temporarily halted, but are expected to continue later.  May also be called &quot;suspended&quot;.</td>
+        </tr>
+        <tr>
+          <td>completed
+            <a name="completed"> </a>
+          </td>
+          <td/>
+          <td>All actions that are implied by the prescription have occurred (this will rarely be made explicit).</td>
+        </tr>
+        <tr>
+          <td>entered in error
+            <a name="enteredinerror"> </a>
+          </td>
+          <td/>
+          <td>The prescription was entered in error and therefore nullified.</td>
+        </tr>
+        <tr>
+          <td>stopped
+            <a name="stopped"> </a>
+          </td>
+          <td/>
+          <td>Actions implied by the prescription have been permanently halted, before all of them occurred.</td>
+        </tr>
+        <tr>
+          <td>superceded
+            <a name="superceded"> </a>
+          </td>
+          <td/>
+          <td>The prescription was replaced by a newer one, which encompasses all the information in the previous one.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/medication-prescription-status"/>
+  <name value="MedicationPrescriptionStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="A code specifying the state of the prescribing event. Describes the lifecycle of the prescription."/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.905+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/medication-prescription-status"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="active"/>
+      <definition value="The prescription is &#39;actionable&#39;, but not all actions that are implied by it have occurred yet."/>
+    </concept>
+    <concept>
+      <code value="on hold"/>
+      <definition value="Actions implied by the prescription have been temporarily halted, but are expected to continue later.  May also be called &quot;suspended&quot;."/>
+    </concept>
+    <concept>
+      <code value="completed"/>
+      <definition value="All actions that are implied by the prescription have occurred (this will rarely be made explicit)."/>
+    </concept>
+    <concept>
+      <code value="entered in error"/>
+      <definition value="The prescription was entered in error and therefore nullified."/>
+    </concept>
+    <concept>
+      <code value="stopped"/>
+      <definition value="Actions implied by the prescription have been permanently halted, before all of them occurred."/>
+    </concept>
+    <concept>
+      <code value="superceded"/>
+      <definition value="The prescription was replaced by a newer one, which encompasses all the information in the previous one."/>
+    </concept>
+  </define>
+</ValueSet>

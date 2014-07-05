@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="extensions"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>ImagingModality</h2>
+      <p>Type of acquired image data in the instance</p>
+      <p>
+        <b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association
+      </p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include these codes as defined in http://nema.org/dicom/dcid
+          <table>
+            <tr>
+              <td>
+                <b>Code</b>
+              </td>
+              <td>
+                <b>Display</b>
+              </td>
+              <td>
+                <b>Definition</b>
+              </td>
+              <td>
+                <b>Comments</b>
+              </td>
+            </tr>
+            <tr>
+              <td>AR</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>BMD</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>BDUS</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>EPS</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>CR</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>CT</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>DX</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>ECG</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>ES</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>XC</td>
+              <td/>
+              <td/>
+              <td>Note: Use this for general photography</td>
+            </tr>
+            <tr>
+              <td>GM</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>HD</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>IO</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>IVOCT</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>IVUS</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>KER</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>LEN</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>MR</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>MG</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>NM</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OAM</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OCT</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OPM</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OP</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OPR</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OPT</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>OPV</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>PX</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>PT</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>RF</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>RG</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>SM</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>SRF</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>US</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>VA</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>XA</td>
+              <td/>
+              <td/>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/imaging-modality"/>
+  <name value="ImagingModality"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Type of acquired image data in the instance"/>
+  <copyright value="These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.902+08:00"/>
+  <compose>
+    <include>
+      <system value="http://nema.org/dicom/dcid"/>
+      <code value="AR"/>
+      <code value="BMD"/>
+      <code value="BDUS"/>
+      <code value="EPS"/>
+      <code value="CR"/>
+      <code value="CT"/>
+      <code value="DX"/>
+      <code value="ECG"/>
+      <code value="ES"/>
+      <code value="XC">
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#comment">
+          <valueString value="Use this for general photography"/>
+        </extension>
+      </code>
+      <code value="GM"/>
+      <code value="HD"/>
+      <code value="IO"/>
+      <code value="IVOCT"/>
+      <code value="IVUS"/>
+      <code value="KER"/>
+      <code value="LEN"/>
+      <code value="MR"/>
+      <code value="MG"/>
+      <code value="NM"/>
+      <code value="OAM"/>
+      <code value="OCT"/>
+      <code value="OPM"/>
+      <code value="OP"/>
+      <code value="OPR"/>
+      <code value="OPT"/>
+      <code value="OPV"/>
+      <code value="PX"/>
+      <code value="PT"/>
+      <code value="RF"/>
+      <code value="RG"/>
+      <code value="SM"/>
+      <code value="SRF"/>
+      <code value="US"/>
+      <code value="VA"/>
+      <code value="XA"/>
+    </include>
+  </compose>
+</ValueSet>

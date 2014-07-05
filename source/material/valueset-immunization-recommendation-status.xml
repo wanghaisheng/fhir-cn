@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Immunization Recommendation Status Codes</h2>
+      <p>The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or          contains concepts to support the medication process, in particular the process and reasons for dispensing. This value set is provided as a suggestive example</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/immunization-recommendation-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>due
+            <a name="due"> </a>
+          </td>
+          <td>due</td>
+          <td>The patient is due for their next vaccination</td>
+        </tr>
+        <tr>
+          <td>overdue
+            <a name="overdue"> </a>
+          </td>
+          <td>overdue</td>
+          <td>The patient is considered overdue for their next vaccination</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/immunization-recommendation-status"/>
+  <name value="Immunization Recommendation Status Codes"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or          contains concepts to support the medication process, in particular the process and reasons for dispensing. This value set is provided as a suggestive example"/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/immunization-recommendation-status"/>
+    <concept>
+      <code value="due"/>
+      <display value="due"/>
+      <definition value="The patient is due for their next vaccination"/>
+    </concept>
+    <concept>
+      <code value="overdue"/>
+      <display value="overdue"/>
+      <definition value="The patient is considered overdue for their next vaccination"/>
+    </concept>
+  </define>
+</ValueSet>

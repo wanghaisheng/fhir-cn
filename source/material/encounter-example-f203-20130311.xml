@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: Roel&#39;s encounter on March eleventh 2013 = Encounter_Roel_20130311 (temp)
+      </p>
+      <p>
+        <b>status</b>: finished
+      </p>
+      <p>
+        <b>class</b>: inpatient
+      </p>
+      <p>
+        <b>type</b>: Inpatient stay for nine days 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;183807002&#39; = &#39;Inpatient stay 9 days&#39;, given as &#39;Inpatient stay for nine days&#39;})</span>
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Individual</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>
+            <a href="practitioner-example-f201-ab.html">Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+              <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+              <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+              <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <b>reason</b>: The patient seems to suffer from bilateral pneumonia and renal insufficiency, most likely due to chemotherapy. 
+        <span style="background: LightGoldenRodYellow ">(Details )</span>
+      </p>
+      <p>
+        <b>priority</b>: High priority 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;394849002&#39; = &#39;High priority&#39;, given as &#39;High priority&#39;})</span>
+      </p>
+      <blockquote>
+        <p>
+          <b>hospitalization</b>
+        </p>
+        <p>
+          <b>admitSource</b>: Clinical Oncology Department 
+          <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;309902002&#39; = &#39;Clinical oncology department&#39;, given as &#39;Clinical Oncology Department&#39;})</span>
+        </p>
+        <p>
+          <b>period</b>: 11-Mar 2013 --&gt; 20-Mar 2013
+        </p>
+        <p>
+          <b>diet</b>: Fluid balance regulation 
+          <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;276026009&#39; = &#39;Fluid management&#39;, given as &#39;Fluid balance regulation&#39;})</span>
+        </p>
+        <p>
+          <b>reAdmission</b>: false
+        </p>
+      </blockquote>
+      <p>
+        <b>serviceProvider</b>: 
+        <a href="organization-example-f201-aumc.html">Generated Summary: Zorginstelling naam = Artis University Medical Center (official); name: Artis University Medical Center (AUMC); 
+          <span title="Codes: {http://snomed.info/sct 405608006}, {urn:oid:2.16.840.1.113883.2.4.15.1060 V6}, {http://hl7.org/fhir/organization-type prov}">Academic Medical Center</span>; active
+        </a>
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="temp"/>
+    <label value="Roel&#39;s encounter on March eleventh 2013"/>
+    <value value="Encounter_Roel_20130311"/>
+  </identifier>
+  <status value="finished"/>
+  <class value="inpatient"/>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="183807002"/>
+      <display value="Inpatient stay for nine days"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <participant>
+    <individual>
+      <reference value="Practitioner/f201"/>
+    </individual>
+  </participant>
+  <reason>
+    <text value="The patient seems to suffer from bilateral pneumonia and renal insufficiency, most likely due to chemotherapy."/>
+  </reason>
+  <priority>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="394849002"/>
+      <display value="High priority"/>
+    </coding>
+  </priority>
+  <hospitalization>
+    <admitSource>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="309902002"/>
+        <display value="Clinical Oncology Department"/>
+      </coding>
+    </admitSource>
+    <period>
+      <start value="2013-03-11"/>
+      <end value="2013-03-20"/>
+    </period>
+    <diet>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="276026009"/>
+        <display value="Fluid balance regulation"/>
+      </coding>
+    </diet>
+    <reAdmission value="false"/>
+  </hospitalization>
+  <serviceProvider>
+    <reference value="Organization/f201"/>
+  </serviceProvider>
+</Encounter>

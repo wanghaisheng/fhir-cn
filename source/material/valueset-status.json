@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ValueSetStatus</h2><p>The lifecycle status of a Value Set or Concept Map</p><p>This value set defines its own terms in the system http://hl7.org/fhir/valueset-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>draft<a name=\"draft\"> </a></td><td/><td>This valueset is still under development.</td></tr><tr><td>active<a name=\"active\"> </a></td><td/><td>This valueset is ready for normal use.</td></tr><tr><td>retired<a name=\"retired\"> </a></td><td/><td>This valueset has been withdrawn or superceded and should no longer be used.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/valueset-status",
+  "name": "ValueSetStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The lifecycle status of a Value Set or Concept Map",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.906+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/valueset-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "draft",
+        "definition": "This valueset is still under development."
+      },
+      {
+        "code": "active",
+        "definition": "This valueset is ready for normal use."
+      },
+      {
+        "code": "retired",
+        "definition": "This valueset has been withdrawn or superceded and should no longer be used."
+      }
+    ]
+  }
+}

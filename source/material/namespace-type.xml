@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>NamespaceType</h2>
+      <p>Identifies the purpose of the namespace</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/namespace-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>codesystem
+            <a name="codesystem"> </a>
+          </td>
+          <td/>
+          <td>The namespace is used to define concepts and symbols to represent those concepts.  E.g. UCUM, LOINC, NDC code, local lab codes, etc.</td>
+        </tr>
+        <tr>
+          <td>identifier
+            <a name="identifier"> </a>
+          </td>
+          <td/>
+          <td>The namespace is used to manage identifiers (e.g. license numbers, order numbers, etc.).</td>
+        </tr>
+        <tr>
+          <td>root
+            <a name="root"> </a>
+          </td>
+          <td/>
+          <td>The namespace is used as the root for other identifiers and namespaces.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/namespace-type"/>
+  <name value="NamespaceType"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Identifies the purpose of the namespace"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.904+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/namespace-type"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="codesystem"/>
+      <definition value="The namespace is used to define concepts and symbols to represent those concepts.  E.g. UCUM, LOINC, NDC code, local lab codes, etc."/>
+    </concept>
+    <concept>
+      <code value="identifier"/>
+      <definition value="The namespace is used to manage identifiers (e.g. license numbers, order numbers, etc.)."/>
+    </concept>
+    <concept>
+      <code value="root"/>
+      <definition value="The namespace is used as the root for other identifiers and namespaces."/>
+    </concept>
+  </define>
+</ValueSet>

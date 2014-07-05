@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>CarePlanGoalStatus</h2><p>Indicates whether the goal has been met and is still being targeted</p><p>This value set defines its own terms in the system http://hl7.org/fhir/care-plan-goal-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in progress<a name=\"inprogress\"> </a></td><td/><td>The goal is being sought but has not yet been reached.  (Also applies if goal was reached in the past but there has been regression and goal is being sought again).</td></tr><tr><td>achieved<a name=\"achieved\"> </a></td><td/><td>The goal has been met and no further action is needed.</td></tr><tr><td>sustaining<a name=\"sustaining\"> </a></td><td/><td>The goal has been met, but ongoing activity is needed to sustain the goal objective.</td></tr><tr><td>cancelled<a name=\"cancelled\"> </a></td><td/><td>The goal is no longer being sought.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/care-plan-goal-status",
+  "name": "CarePlanGoalStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Indicates whether the goal has been met and is still being targeted",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.903+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/care-plan-goal-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "in progress",
+        "definition": "The goal is being sought but has not yet been reached.  (Also applies if goal was reached in the past but there has been regression and goal is being sought again)."
+      },
+      {
+        "code": "achieved",
+        "definition": "The goal has been met and no further action is needed."
+      },
+      {
+        "code": "sustaining",
+        "definition": "The goal has been met, but ongoing activity is needed to sustain the goal objective."
+      },
+      {
+        "code": "cancelled",
+        "definition": "The goal is no longer being sought."
+      }
+    ]
+  }
+}

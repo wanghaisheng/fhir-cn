@@ -1,0 +1,93 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div>to do</div>"
+  },
+  "url": "http://hl7.org/fhir/Profile/rendering-extensions",
+  "name": "Extensions for rendering data elements",
+  "publisher": "HL7 FHIR project",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "A set of extensions dealing with controlling how particular data elements are rendered when displayed.  Initially created for questionnaires, but potentially useable elsewhere.",
+  "status": "draft",
+  "date": "2014-04-23",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    }
+  ],
+  "extensionDefn": [
+    {
+      "code": "style",
+      "display": "Html style value",
+      "contextType": "datatype",
+      "context": [
+        "*"
+      ],
+      "element": [
+        {
+          "path": "style",
+          "definition": {
+            "short": "Html style value",
+            "formal": "Identifies how the specified element should be rendered when displayed.",
+            "comments": "This extension would be equivalent to setting the HTML \"style\" attribute on the root element for the element containing the extension.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "N/A"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "markup",
+      "display": "String equivalent with html markup",
+      "contextType": "datatype",
+      "context": [
+        "string"
+      ],
+      "element": [
+        {
+          "path": "markup",
+          "definition": {
+            "short": "String equivalent with html markup",
+            "formal": "This is an equivalent of the string on which the extension is sent, but includes additional xhtml markup, such as bold, italics, styles, tables, etc.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "ED can be XHTML content"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

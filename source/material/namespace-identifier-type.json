@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>NamespaceIdentifierType</h2><p>Identifies the style of unique identifier used to identify a namepace</p><p>This value set defines its own terms in the system http://hl7.org/fhir/namespace-identifier-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>oid<a name=\"oid\"> </a></td><td/><td>An ISO object identifier.  E.g. 1.2.3.4.5.</td></tr><tr><td>uuid<a name=\"uuid\"> </a></td><td/><td>A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11.</td></tr><tr><td>uri<a name=\"uri\"> </a></td><td/><td>A uniform resource identifier (ideally a URL - uniform resource locator).  E.g. http://unitsofmeasure.org.</td></tr><tr><td>other<a name=\"other\"> </a></td><td/><td>Some other type of unique identifier.  E.g HL7-assigned reserved string such as LN for LOINC.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/namespace-identifier-type",
+  "name": "NamespaceIdentifierType",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Identifies the style of unique identifier used to identify a namepace",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.895+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/namespace-identifier-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "oid",
+        "definition": "An ISO object identifier.  E.g. 1.2.3.4.5."
+      },
+      {
+        "code": "uuid",
+        "definition": "A universally unique identifier of the form a5afddf4-e880-459b-876e-e4591b0acc11."
+      },
+      {
+        "code": "uri",
+        "definition": "A uniform resource identifier (ideally a URL - uniform resource locator).  E.g. http://unitsofmeasure.org."
+      },
+      {
+        "code": "other",
+        "definition": "Some other type of unique identifier.  E.g HL7-assigned reserved string such as LN for LOINC."
+      }
+    ]
+  }
+}

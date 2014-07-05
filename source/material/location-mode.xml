@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>LocationMode</h2>
+      <p>Indicates whether a resource instance represents a specific location or a class of locations</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/location-mode</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>instance
+            <a name="instance"> </a>
+          </td>
+          <td/>
+          <td>The Location resource represents a specific instance of a Location.</td>
+        </tr>
+        <tr>
+          <td>kind
+            <a name="kind"> </a>
+          </td>
+          <td/>
+          <td>The Location represents a class of Locations.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/location-mode"/>
+  <name value="LocationMode"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Indicates whether a resource instance represents a specific location or a class of locations"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.905+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/location-mode"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="instance"/>
+      <definition value="The Location resource represents a specific instance of a Location."/>
+    </concept>
+    <concept>
+      <code value="kind"/>
+      <definition value="The Location represents a class of Locations."/>
+    </concept>
+  </define>
+</ValueSet>

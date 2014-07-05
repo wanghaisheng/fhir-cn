@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>HierarchicalRelationshipType</h2>
+      <p>Type indicating if this is a parent or child relationship</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/hierarchical-relationship-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>parent
+            <a name="parent"> </a>
+          </td>
+          <td>Parent</td>
+          <td>The target resource is the parent of the focal specimen resource.</td>
+        </tr>
+        <tr>
+          <td>child
+            <a name="child"> </a>
+          </td>
+          <td>Child</td>
+          <td>The target resource is the child of the focal specimen resource.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/hierarchical-relationship-type"/>
+  <name value="HierarchicalRelationshipType"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Type indicating if this is a parent or child relationship"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.896+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/hierarchical-relationship-type"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="parent"/>
+      <display value="Parent"/>
+      <definition value="The target resource is the parent of the focal specimen resource."/>
+    </concept>
+    <concept>
+      <code value="child"/>
+      <display value="Child"/>
+      <definition value="The target resource is the child of the focal specimen resource."/>
+    </concept>
+  </define>
+</ValueSet>

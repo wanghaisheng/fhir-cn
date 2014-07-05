@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>SpecialArrangements</h2>
+      <p>This value set defines a set of codes that can be used to indicate the kinds     of special arrangements in place for a patients visit</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-special-arrangements</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>wheel
+            <a name="wheel"> </a>
+          </td>
+          <td>Wheelchair</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>stret
+            <a name="stret"> </a>
+          </td>
+          <td>Stretcher</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>int
+            <a name="int"> </a>
+          </td>
+          <td>Interpreter</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>att
+            <a name="att"> </a>
+          </td>
+          <td>Attendant</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>dog
+            <a name="dog"> </a>
+          </td>
+          <td>Guide dog</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/encounter-special-arrangements"/>
+  <name value="SpecialArrangements"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="This value set defines a set of codes that can be used to indicate the kinds     of special arrangements in place for a patients visit"/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/encounter-special-arrangements"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="wheel"/>
+      <display value="Wheelchair"/>
+    </concept>
+    <concept>
+      <code value="stret"/>
+      <display value="Stretcher"/>
+    </concept>
+    <concept>
+      <code value="int"/>
+      <display value="Interpreter"/>
+    </concept>
+    <concept>
+      <code value="att"/>
+      <display value="Attendant"/>
+    </concept>
+    <concept>
+      <code value="dog"/>
+      <display value="Guide dog"/>
+    </concept>
+  </define>
+</ValueSet>

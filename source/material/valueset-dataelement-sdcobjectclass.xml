@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>DataElement SDC Object Class</h2>
+      <p>The allowed codes for identifying the ISO 11179 ObjectClass for a particular data element if intended for registration/use within the U.S. Structured Data Capture (SDC) project.</p>
+      <p>This value set includes codes defined in other code systems, using the following rules:</p>
+      <ul>
+        <li>Include all codes defined in http://snomed.info/sct</li>
+        <li>Include all codes defined in http://loinc.org</li>
+        <li>Include all codes defined in http://www.nlm.nih.gov/research/umls/rxnorm</li>
+      </ul>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/dataelement-sdcobjectclass"/>
+  <name value="DataElement SDC Object Class"/>
+  <publisher value="Office of the National Coordinator for Health IT"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://healthit.gov"/>
+  </telecom>
+  <description value="The allowed codes for identifying the ISO 11179 ObjectClass for a particular data element if intended for registration/use within the U.S. Structured Data Capture (SDC) project."/>
+  <status value="draft"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+    </include>
+    <include>
+      <system value="http://loinc.org"/>
+    </include>
+    <include>
+      <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+    </include>
+  </compose>
+</ValueSet>

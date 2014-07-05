@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>EncounterState</h2>
+      <p>Current state of the encounter</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-state</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>planned
+            <a name="planned"> </a>
+          </td>
+          <td/>
+          <td>The Encounter has not yet started.</td>
+        </tr>
+        <tr>
+          <td>in progress
+            <a name="inprogress"> </a>
+          </td>
+          <td/>
+          <td>The Encounter has begun and the patient is present / the practitioner and the patient are meeting.</td>
+        </tr>
+        <tr>
+          <td>onleave
+            <a name="onleave"> </a>
+          </td>
+          <td/>
+          <td>The Encounter has begun, but the patient is temporarily on leave.</td>
+        </tr>
+        <tr>
+          <td>finished
+            <a name="finished"> </a>
+          </td>
+          <td/>
+          <td>The Encounter has ended.</td>
+        </tr>
+        <tr>
+          <td>cancelled
+            <a name="cancelled"> </a>
+          </td>
+          <td/>
+          <td>The Encounter has ended before it has begun.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/encounter-state"/>
+  <name value="EncounterState"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="Current state of the encounter"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.902+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/encounter-state"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="planned"/>
+      <definition value="The Encounter has not yet started."/>
+    </concept>
+    <concept>
+      <code value="in progress"/>
+      <definition value="The Encounter has begun and the patient is present / the practitioner and the patient are meeting."/>
+    </concept>
+    <concept>
+      <code value="onleave"/>
+      <definition value="The Encounter has begun, but the patient is temporarily on leave."/>
+    </concept>
+    <concept>
+      <code value="finished"/>
+      <definition value="The Encounter has ended."/>
+    </concept>
+    <concept>
+      <code value="cancelled"/>
+      <definition value="The Encounter has ended before it has begun."/>
+    </concept>
+  </define>
+</ValueSet>

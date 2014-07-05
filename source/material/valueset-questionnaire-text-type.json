@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Questionnaire Text Type</h2><p>Codes that define types of additional text that may be associated with a Questionnaire group or question.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/questionnaire-text-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>instruction<a name=\"instruction\"> </a></td><td>instruction</td><td>The text provides instructions intended to be rendered with the element explaining how the content of the element is to be completed</td></tr><tr><td>security<a name=\"security\"> </a></td><td>security and privacy text</td><td>The text describes specific security and/or privacy considerations associated with the element.  E.g. retention rules, data access control expectations, etc.</td></tr><tr><td>help<a name=\"help\"> </a></td><td>help text</td><td>The content is intended for display if a user selects an icon or performs some other action seeking help about the element</td></tr><tr><td>tool-tip<a name=\"tool-tip\"> </a></td><td>tool tip</td><td>The content is intended for use in a fly-over or similar display mechanism - primarily intended for online form entry</td></tr><tr><td>trailing<a name=\"trailing\"> </a></td><td>trailing text</td><td>The text should be displayed after all of the other the content of the group or question</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/questionnaire-text-type",
+  "name": "Questionnaire Text Type",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Codes that define types of additional text that may be associated with a Questionnaire group or question.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/questionnaire-text-type",
+    "caseSensitive": false,
+    "concept": [
+      {
+        "code": "instruction",
+        "display": "instruction",
+        "definition": "The text provides instructions intended to be rendered with the element explaining how the content of the element is to be completed"
+      },
+      {
+        "code": "security",
+        "display": "security and privacy text",
+        "definition": "The text describes specific security and/or privacy considerations associated with the element.  E.g. retention rules, data access control expectations, etc."
+      },
+      {
+        "code": "help",
+        "display": "help text",
+        "definition": "The content is intended for display if a user selects an icon or performs some other action seeking help about the element"
+      },
+      {
+        "code": "tool-tip",
+        "display": "tool tip",
+        "definition": "The content is intended for use in a fly-over or similar display mechanism - primarily intended for online form entry"
+      },
+      {
+        "code": "trailing",
+        "display": "trailing text",
+        "definition": "The text should be displayed after all of the other the content of the group or question"
+      }
+    ]
+  }
+}

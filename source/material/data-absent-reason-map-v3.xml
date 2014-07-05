@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>v3 map for DataAbsentReason (http://hl7.org/fhir/cm/v3/data-absent-reason)</h2>
+      <p>Mapping from 
+        <a href="data-absent-reason.html">http://hl7.org/fhir/vs/data-absent-reason</a> to 
+        <a href="v3/NullFlavor/index.html">http://hl7.org/fhir/v3/vs/NullFlavor</a>
+      </p>
+      <p>Draft. Published on 2-Jul 2014 16:26 by HL7 (FHIR Project) (
+        <a href="http://hl7.org/fhir">http://hl7.org/fhir</a>, 
+        <a href="mailto:fhir@lists.hl7.org">fhir@lists.hl7.org</a>). 
+      </p>
+      <p>v3 Map (NullFlavor)</p>
+      <br/>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Source Code</b>
+          </td>
+          <td>
+            <b>Equivalence</b>
+          </td>
+          <td>
+            <b>Destination Code</b>
+          </td>
+        </tr>
+        <tr>
+          <td>unknown</td>
+          <td>equal</td>
+          <td>UNK (unknown)</td>
+        </tr>
+        <tr>
+          <td>asked</td>
+          <td>equal</td>
+          <td>ASKU (asked but unknown)</td>
+        </tr>
+        <tr>
+          <td>temp</td>
+          <td>equal</td>
+          <td>NAV (temporarily unavailable)</td>
+        </tr>
+        <tr>
+          <td>notasked</td>
+          <td>equal</td>
+          <td>NASK (not asked)</td>
+        </tr>
+        <tr>
+          <td>masked</td>
+          <td>equal</td>
+          <td>MSK (masked)</td>
+        </tr>
+        <tr>
+          <td>unsupported</td>
+          <td>wider</td>
+          <td>NA (not applicable)</td>
+        </tr>
+        <tr>
+          <td>error</td>
+          <td>wider</td>
+          <td>NA (not applicable)</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/cm/v3/data-absent-reason"/>
+  <name value="v3 map for DataAbsentReason"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="v3 Map (NullFlavor)"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:26:20.116+08:00"/>
+  <sourceResource>
+    <reference value="http://hl7.org/fhir/vs/data-absent-reason"/>
+  </sourceResource>
+  <targetResource>
+    <reference value="http://hl7.org/fhir/v3/vs/NullFlavor"/>
+  </targetResource>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="unknown"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="UNK"/>
+      <equivalence value="equal"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="asked"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="ASKU"/>
+      <equivalence value="equal"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="temp"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NAV"/>
+      <equivalence value="equal"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="notasked"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NASK"/>
+      <equivalence value="equal"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="masked"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="MSK"/>
+      <equivalence value="equal"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="unsupported"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NA"/>
+      <equivalence value="wider"/>
+    </map>
+  </element>
+  <element>
+    <codeSystem value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="error"/>
+    <map>
+      <codeSystem value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NA"/>
+      <equivalence value="wider"/>
+    </map>
+  </element>
+</ConceptMap>

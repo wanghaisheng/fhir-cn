@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: 118265112 (official), 523ASA1LK927 (usual)
+      </p>
+      <p>
+        <b>name</b>: Ronald Briet (official)
+      </p>
+      <p>
+        <b>telecom</b>: ph: 0205569273(work), r.briet@bmc.nl(work), fax: 0205664440(work)
+      </p>
+      <p>
+        <b>address</b>: Galapagosweg 91 Amsterdam 1105 AZ NLD (work)
+      </p>
+      <p>
+        <b>gender</b>: Male 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.4.642.1.24 code &#39;M&#39; = &#39;M&#39;, given as &#39;Male&#39;})</span>
+      </p>
+      <p>
+        <b>birthDate</b>: 4-Feb 1980
+      </p>
+      <p>
+        <b>organization</b>: 
+        <a href="organization-example-f001-burgers.html">BMC. Generated Summary: 91654 (official), 17-0112278 (usual); name: Burgers University Medical Center; 
+          <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.1060 V6}, {http://hl7.org/fhir/organization-type prov}">University Medical Hospital</span>
+        </a>
+      </p>
+      <p>
+        <b>role</b>: Care role 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.2.4.15.111 code &#39;01.000&#39; = &#39;01.000&#39;, given as &#39;Arts&#39;})</span>
+      </p>
+      <p>
+        <b>specialty</b>: specialisation 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.2.4.15.111 code &#39;01.018&#39; = &#39;01.018&#39;, given as &#39;Ear-, Nose and Throat&#39;})</span>
+      </p>
+      <p>
+        <b>communication</b>: Language 
+        <span style="background: LightGoldenRodYellow ">(Details : {urn:oid:2.16.840.1.113883.6.121 code &#39;nl&#39; = &#39;nl&#39;, given as &#39;Netherlands&#39;})</span>
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="urn:oid:2.16.528.1.1007.3.1"/>
+    <value value="118265112"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+    <value value="523ASA1LK927"/>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <family value="Briet"/>
+    <given value="Ronald"/>
+    <suffix value="MD"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="0205569273"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="r.briet@bmc.nl"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="0205664440"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="Galapagosweg 91"/>
+    <city value="Amsterdam"/>
+    <zip value="1105 AZ"/>
+    <country value="NLD"/>
+  </address>
+  <gender>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.4.642.1.24"/>
+      <code value="M"/>
+      <display value="Male"/>
+    </coding>
+  </gender>
+  <birthDate value="1980-02-04"/>
+  <organization>
+    <reference value="Organization/f001"/>
+    <display value="BMC"/>
+  </organization>
+  <role>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+      <code value="01.000"/>
+      <display value="Arts"/>
+    </coding>
+    <text value="Care role"/>
+  </role>
+  <specialty>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+      <code value="01.018"/>
+      <display value="Ear-, Nose and Throat"/>
+    </coding>
+    <text value="specialisation"/>
+  </specialty>
+  <communication>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.6.121"/>
+      <code value="nl"/>
+      <display value="Netherlands"/>
+    </coding>
+    <text value="Language"/>
+  </communication>
+</Practitioner>

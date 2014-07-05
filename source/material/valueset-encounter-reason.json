@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Encounter Reason Codes</h2><p>This examples value set defines the set of codes that can be used to indicate reasons for an encounter</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include codes from http://snomed.info/sct where concept  is-a  404684003</li><li>Include codes from http://snomed.info/sct where concept  is-a  71388002</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-reason",
+  "name": "Encounter Reason Codes",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This examples value set defines the set of codes that can be used to indicate reasons for an encounter",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "404684003"
+          }
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "71388002"
+          }
+        ]
+      }
+    ]
+  }
+}

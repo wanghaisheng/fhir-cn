@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SubscriptionStatus</h2><p>The status of a subscription</p><p>This value set defines its own terms in the system http://hl7.org/fhir/subscription-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>requested<a name=\"requested\"> </a></td><td/><td>The client has requested the subscription, and the server has not yet set it up.</td></tr><tr><td>active<a name=\"active\"> </a></td><td/><td>The subscription is active.</td></tr><tr><td>error<a name=\"error\"> </a></td><td/><td>The server has an error executing the notification.</td></tr><tr><td>off<a name=\"off\"> </a></td><td/><td>Too many errors have occurred or the subscription has expired.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/subscription-status",
+  "name": "SubscriptionStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The status of a subscription",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.901+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/subscription-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "requested",
+        "definition": "The client has requested the subscription, and the server has not yet set it up."
+      },
+      {
+        "code": "active",
+        "definition": "The subscription is active."
+      },
+      {
+        "code": "error",
+        "definition": "The server has an error executing the notification."
+      },
+      {
+        "code": "off",
+        "definition": "Too many errors have occurred or the subscription has expired."
+      }
+    ]
+  }
+}

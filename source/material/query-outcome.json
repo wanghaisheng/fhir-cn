@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>QueryOutcome</h2><p>The outcome of processing a query request</p><p>This value set defines its own terms in the system http://hl7.org/fhir/query-outcome</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>ok<a name=\"ok\"> </a></td><td/><td>The query was processed successfully.</td></tr><tr><td>limited<a name=\"limited\"> </a></td><td/><td>The query was processed successfully, but some additional limitations were added.</td></tr><tr><td>refused<a name=\"refused\"> </a></td><td/><td>The server refused to process the query.</td></tr><tr><td>error<a name=\"error\"> </a></td><td/><td>The server tried to process the query, but some error occurred.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/query-outcome",
+  "name": "QueryOutcome",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The outcome of processing a query request",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.903+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/query-outcome",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "ok",
+        "definition": "The query was processed successfully."
+      },
+      {
+        "code": "limited",
+        "definition": "The query was processed successfully, but some additional limitations were added."
+      },
+      {
+        "code": "refused",
+        "definition": "The server refused to process the query."
+      },
+      {
+        "code": "error",
+        "definition": "The server tried to process the query, but some error occurred."
+      }
+    ]
+  }
+}

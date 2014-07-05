@@ -1,0 +1,353 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div>to do</div>"
+  },
+  "url": "http://hl7.org/fhir/Profile/questionnaire-extensions",
+  "name": "Core extensions for Questionnaire",
+  "publisher": "HL7",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://www.hl7.org"
+    }
+  ],
+  "description": "Contains standard extensions for Questionnaire, amongst others for validation",
+  "status": "draft",
+  "date": "2013-07-04",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    }
+  ],
+  "extensionDefn": [
+    {
+      "code": "category",
+      "display": "What kind of questionnaire?",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire"
+      ],
+      "element": [
+        {
+          "path": "category",
+          "definition": {
+            "short": "What kind of questionnaire?",
+            "formal": "A code that identifies the questionnaire as falling into a particular group of like questionnaires.  E.g. \"Pediatric\", \"Admissions\", \"Research\", \"Demographic\", \"Opinion Survey\", etc.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "binding": {
+              "name": "QuestionnaireCategory",
+              "isExtensible": false,
+              "description": "Classifications for questionnaires.  Can include such concepts as \"intake form\", \"opinion survey\", \"clinical research questionnaire\", \"pediatric\", etc."
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./inboundRelationship[typeCode=SUBJ]/act[classCode=LIST, moodCode=EVN]/code"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "label",
+      "display": "E.g. \"1(a)\", \"2.5.3\"",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group",
+        "Questionnaire.group.group",
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "label",
+          "definition": {
+            "short": "E.g. \"1(a)\", \"2.5.3\"",
+            "formal": "A label for a particular group or question within the questionnaire.",
+            "comments": "These are generally unique within a questionnaire, though this is not guaranteed (some questionnaires may have multiple questions with the same label with logic to control which gets exposed).",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "Not supported"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "minOccurs",
+      "display": "Minimum repetitions",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group",
+        "Questionnaire.group.group",
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "minOccurs",
+          "definition": {
+            "short": "Minimum repetitions",
+            "formal": "The minimum number of times the group must appear or the minimum number of answers for a question - when greater than 1.",
+            "comments": "Default assumption for \"required\" elements is minOccurs=1.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "integer"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "N/A - MIF rather than RIM level"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "maxOccurs",
+      "display": "Maximum repetitions",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group",
+        "Questionnaire.group.group",
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "maxOccurs",
+          "definition": {
+            "short": "Maximum repetitions",
+            "formal": "The maximum number of times the group must appear or the minimum number of answers for a question - when greater than 1 and not unlimited.",
+            "comments": "Only relevant if the element has repeats=true and there's a need to constrain the number of allowed repetitions.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "integer"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "N/A - MIF rather than RIM level"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "hidden",
+      "display": "Don't display to user",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group",
+        "Questionnaire.group.group",
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "hidden",
+          "definition": {
+            "short": "Don't display to user",
+            "formal": "If true, indicates that the containing group or question should not be displayed to the user for data entry.",
+            "comments": "Some questionnaires may have questions that represent calculated values or internal \"fixed\" metadata.  These elements need to be included with the answers, but should not be displayed to the user.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "enableWhen",
+      "display": "Only allow data when:",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group",
+        "Questionnaire.group.group",
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "enableWhen",
+          "definition": {
+            "short": "Only allow data when:",
+            "formal": "If present, indicates that the group or question containing the extension should only be enabled (allow an answer to be present and, in most circumstances, even be visible to the user) when the specified condition is true.",
+            "comments": "Allows questionnaires to adapt based on answers to prior questions.  E.g. If physical gender is specified as a male, no need to capture pregnancy history.",
+            "min": 0,
+            "max": "*",
+            "mustSupport": false,
+            "isModifier": false
+          }
+        },
+        {
+          "path": "enableWhen.question",
+          "definition": {
+            "short": "Question that must be answered",
+            "formal": "The linkId for the question whose answer must be present in order for the \"enable\" to be triggered.",
+            "min": 1,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false
+          }
+        },
+        {
+          "path": "enableWhen.answer",
+          "definition": {
+            "short": "Value question must have",
+            "formal": "If present, then the specified question must match the specified answer for all components present in the enableWhen.answer.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "*"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "defaultValue",
+      "display": "Initial presumed answer for question",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "defaultValue",
+          "definition": {
+            "short": "Initial presumed answer for question",
+            "formal": "This is the value that should be pre-populated when rendering the questionnaire for user input.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "*"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "N/A - MIF rather than RIM level"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "defaultAsFixed",
+      "display": "Y",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "defaultAsFixed",
+          "definition": {
+            "short": "Y",
+            "formal": "Treat default as fixed value?.",
+            "comments": "If true, the default value is set as a fixed \"answer\" for the question.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "N/A - MIF rather than RIM level"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "code": "deReference",
+      "display": "Implemented CDE",
+      "contextType": "resource",
+      "context": [
+        "Questionnaire.group.question"
+      ],
+      "element": [
+        {
+          "path": "deReference",
+          "definition": {
+            "short": "Implemented CDE",
+            "formal": "A reference to the Data Element that corresponds to the question text and answer constraints for this question.",
+            "comments": "If a code applies to a question, that code should still be conveyed on the question, even if the same code is also referenced as a DataElement.code in the referenced data element.  This extension must not be used in place of specifying the Questionnaire.group.question.concept element.",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(DataElement)"
+              }
+            ],
+            "mustSupport": false,
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./outboundRelationship[typeCode=INST]/target[classCode=OBS, moodCode=DEFN]"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

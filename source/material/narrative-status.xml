@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>NarrativeStatus</h2>
+      <p>The status of a resource narrative</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/narrative-status</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>generated
+            <a name="generated"> </a>
+          </td>
+          <td/>
+          <td>The contents of the narrative are entirely generated from the structured data in the resource.</td>
+        </tr>
+        <tr>
+          <td>extensions
+            <a name="extensions"> </a>
+          </td>
+          <td/>
+          <td>The contents of the narrative are entirely generated from the structured data in the resource and some of the content is generated from extensions.</td>
+        </tr>
+        <tr>
+          <td>additional
+            <a name="additional"> </a>
+          </td>
+          <td/>
+          <td>The contents of the narrative contain additional information not found in the structured data.</td>
+        </tr>
+        <tr>
+          <td>empty
+            <a name="empty"> </a>
+          </td>
+          <td/>
+          <td>the contents of the narrative are some equivalent of &quot;No human-readable text provided for this resource&quot;.</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/narrative-status"/>
+  <name value="NarrativeStatus"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="The status of a resource narrative"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:22:59.896+08:00"/>
+  <define>
+    <system value="http://hl7.org/fhir/narrative-status"/>
+    <caseSensitive value="true"/>
+    <concept>
+      <code value="generated"/>
+      <definition value="The contents of the narrative are entirely generated from the structured data in the resource."/>
+    </concept>
+    <concept>
+      <code value="extensions"/>
+      <definition value="The contents of the narrative are entirely generated from the structured data in the resource and some of the content is generated from extensions."/>
+    </concept>
+    <concept>
+      <code value="additional"/>
+      <definition value="The contents of the narrative contain additional information not found in the structured data."/>
+    </concept>
+    <concept>
+      <code value="empty"/>
+      <definition value="the contents of the narrative are some equivalent of &quot;No human-readable text provided for this resource&quot;."/>
+    </concept>
+  </define>
+</ValueSet>

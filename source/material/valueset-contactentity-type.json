@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ContactEntityType</h2><p>This example value set defines a set of codes that can be used to indicate      the purpose for which you would contact a contact party.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/contactentity-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>BILL<a name=\"BILL\"> </a></td><td>Billing</td><td/></tr><tr><td>ADMIN<a name=\"ADMIN\"> </a></td><td>Administrative</td><td/></tr><tr><td>HR<a name=\"HR\"> </a></td><td>Human Resource</td><td/></tr><tr><td>PAYOR<a name=\"PAYOR\"> </a></td><td>Payor</td><td/></tr><tr><td>PATINF<a name=\"PATINF\"> </a></td><td>Patient</td><td>Generic information contact for patients</td></tr><tr><td>PRESS<a name=\"PRESS\"> </a></td><td>Press</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/contactentity-type",
+  "name": "ContactEntityType",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate      the purpose for which you would contact a contact party.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/contactentity-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "BILL",
+        "display": "Billing"
+      },
+      {
+        "code": "ADMIN",
+        "display": "Administrative"
+      },
+      {
+        "code": "HR",
+        "display": "Human Resource"
+      },
+      {
+        "code": "PAYOR",
+        "display": "Payor"
+      },
+      {
+        "code": "PATINF",
+        "display": "Patient",
+        "definition": "Generic information contact for patients"
+      },
+      {
+        "code": "PRESS",
+        "display": "Press"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>AnimalSpecies</h2><p>This example value set defines a set of codes that can be used to indicate species of animal patients.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/animal-species</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>canislf<a name=\"canislf\"> </a></td><td>Dog</td><td>Canis lupus familiaris</td></tr><tr><td>ovisa<a name=\"ovisa\"> </a></td><td>Sheep</td><td>Ovis aries</td></tr><tr><td>serinuscd<a name=\"serinuscd\"> </a></td><td>Domestic Canary</td><td>Serinus canaria domestica</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/animal-species",
+  "name": "AnimalSpecies",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate species of animal patients.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/animal-species",
+    "concept": [
+      {
+        "code": "canislf",
+        "display": "Dog",
+        "definition": "Canis lupus familiaris"
+      },
+      {
+        "code": "ovisa",
+        "display": "Sheep",
+        "definition": "Ovis aries"
+      },
+      {
+        "code": "serinuscd",
+        "display": "Domestic Canary",
+        "definition": "Serinus canaria domestica"
+      }
+    ]
+  }
+}

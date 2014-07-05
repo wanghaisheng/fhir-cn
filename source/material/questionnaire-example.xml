@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      
+      <pre>
+            Comorbidity? YES
+              Cardial Comorbidity? YES
+                Angina? YES
+                MI? NO
+              Vascular Comorbidity?
+                (no answers)
+              ...
+            Histopathology
+              Abdominal
+                pT category: 1a
+              ...
+          </pre>
+    
+    </div>
+  </text>
+  <contained>
+    <ValueSet id="yesno">
+      <name value="Example YesNo"/>
+      <description value="Captures simple yes-no"/>
+      <status value="active"/>
+      <define>
+        <system value="http://example.org/system/code/yesno"/>
+        <concept>
+          <code value="1"/>
+          <display value="Yes"/>
+        </concept>
+        <concept>
+          <code value="2"/>
+          <display value="No"/>
+        </concept>
+      </define>
+    </ValueSet>
+  </contained>
+  <status value="draft"/>
+  <date value="2012-01"/>
+  <group>
+    <title value="Cancer Quality Forum Questionnaire 2012"/>
+    <group>
+      <concept>
+        <system value="http://example.org/system/code/sections"/>
+        <code value="COMORBIDITY"/>
+      </concept>
+      <question>
+        <concept>
+          <system value="http://example.org/system/code/questions"/>
+          <code value="COMORB"/>
+        </concept>
+        <type value="choice"/>
+        <options>
+          <reference value="#yesno"/>
+        </options>
+        <group>
+          <concept>
+            <system value="http://example.org/system/code/sections"/>
+            <code value="CARDIAL"/>
+          </concept>
+          <question>
+            <concept>
+              <system value="http://example.org/system/code/questions"/>
+              <code value="COMORBCAR"/>
+            </concept>
+            <type value="choice"/>
+            <options>
+              <reference value="#yesno"/>
+            </options>
+          </question>
+          <question>
+            <concept>
+              <system value="http://example.org/system/code/questions"/>
+              <code value="COMCAR00"/>
+              <display value="Angina Pectoris"/>
+            </concept>
+            <concept>
+              <system value="http://snomed.info/sct"/>
+              <code value="194828000"/>
+              <display value="Angina (disorder)"/>
+            </concept>
+            <type value="choice"/>
+            <options>
+              <reference value="#yesno"/>
+            </options>
+          </question>
+          <question>
+            <concept>
+              <system value="http://snomed.info/sct"/>
+              <code value="22298006"/>
+              <display value="Myocardial infarction (disorder)"/>
+            </concept>
+            <type value="choice"/>
+            <options>
+              <reference value="#yesno"/>
+            </options>
+          </question>
+        </group>
+        <group>
+          <concept>
+            <system value="http://example.org/system/code/sections"/>
+            <code value="VASCULAR"/>
+          </concept>
+        </group>
+      </question>
+    </group>
+    <group>
+      <concept>
+        <system value="http://example.org/system/code/sections"/>
+        <code value="HISTOPATHOLOGY"/>
+      </concept>
+      <group>
+        <concept>
+          <system value="http://example.org/system/code/sections"/>
+          <code value="ABDOMINAL"/>
+        </concept>
+        <question>
+          <concept>
+            <system value="http://example.org/system/code/questions"/>
+            <code value="STADPT"/>
+            <display value="pT category"/>
+          </concept>
+        </question>
+      </group>
+    </group>
+  </group>
+</Questionnaire>

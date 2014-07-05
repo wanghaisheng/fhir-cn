@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f203-20130311.html">Roel&#39;s encounter on March eleventh. Generated Summary: Roel&#39;s encounter on March eleventh 2013 = Encounter_Roel_20130311 (temp); finished; inpatient; 
+          <span title="Codes: {http://snomed.info/sct 183807002}">Inpatient stay for nine days</span>; 
+          <span title="Codes: ">The patient seems to suffer from bilateral pneumonia and renal insufficiency, most likely due to chemotherapy.</span>; 
+          <span title="Codes: {http://snomed.info/sct 394849002}">High priority</span>
+        </a>
+      </p>
+      <p>
+        <b>asserter</b>: 
+        <a href="practitioner-example-f201-ab.html">Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+          <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+          <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+        </a>
+      </p>
+      <p>
+        <b>dateAsserted</b>: 11-Mar 2013
+      </p>
+      <p>
+        <b>code</b>: Bacterial sepsis 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;10001005&#39; = &#39;Bacterial sepsis&#39;, given as &#39;Bacterial sepsis&#39;})</span>
+      </p>
+      <p>
+        <b>category</b>: Problem 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;55607006&#39; = &#39;Problem&#39;, given as &#39;Problem&#39;}; {http://hl7.org/fhir/condition-category code &#39;finding&#39; = &#39;Finding&#39;, given as &#39;null&#39;})</span>
+      </p>
+      <p>
+        <b>status</b>: confirmed
+      </p>
+      <p>
+        <b>certainty</b>: Certain 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;17162000&#39; = &#39;Certain&#39;, given as &#39;Certain&#39;})</span>
+      </p>
+      <p>
+        <b>severity</b>: Moderate to severe 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;371924009&#39; = &#39;Moderate to severe&#39;, given as &#39;Moderate to severe&#39;})</span>
+      </p>
+      <p>
+        <b>onset</b>: 8-Mar 2013
+      </p>
+      <h3>Evidences</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>
+            <a href="diagnosticreport-example-f202-bloodculture.html">Diagnostic report for Roel&#39;s sepsis. Generated Summary: 
+              <span title="Codes: {http://snomed.info/sct 104177005}">Blood culture for bacteria, including anaerobic screen</span>; final_; issued: 11-Mar 2013 10:28; Roel; AUMC; 
+              <span title="Codes: {http://snomed.info/sct 15220000}, {http://hl7.org/fhir/v2/0074 LAB}">Laboratory test</span>; diagnostic: 11-Mar 2013 3:45; conclusion: Blood culture tested positive on staphylococcus aureus; 
+              <span title="Codes: {http://snomed.info/sct 428763004}">Bacteremia due to staphylococcus</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h3>Locations</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Pulmonary vascular structure 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;281158006&#39; = &#39;Pulmonary vascular structure&#39;, given as &#39;Pulmonary vascular structure&#39;})</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>RelatedItems</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Type</b>
+          </td>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Target</b>
+          </td>
+        </tr>
+        <tr>
+          <td>dueto</td>
+          <td> </td>
+          <td>
+            <a href="substance-example-f202-staphylococcus.html">Staphylococcus Aureus. Generated Summary: 
+              <span title="Codes: {http://snomed.info/sct 3092008}">Staphylococcus Aureus</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f203"/>
+    <display value="Roel&#39;s encounter on March eleventh"/>
+  </encounter>
+  <asserter>
+    <reference value="Practitioner/f201"/>
+  </asserter>
+  <dateAsserted value="2013-03-11"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="10001005"/>
+      <display value="Bacterial sepsis"/>
+    </coding>
+  </code>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="55607006"/>
+      <display value="Problem"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/condition-category"/>
+      <code value="finding"/>
+    </coding>
+  </category>
+  <status value="confirmed"/>
+  <certainty>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="17162000"/>
+      <display value="Certain"/>
+    </coding>
+  </certainty>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="371924009"/>
+      <display value="Moderate to severe"/>
+    </coding>
+  </severity>
+  <onsetDate value="2013-03-08"/>
+  <evidence>
+    <detail>
+      <reference value="DiagnosticReport/f202"/>
+      <display value="Diagnostic report for Roel&#39;s sepsis"/>
+    </detail>
+  </evidence>
+  <location>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="281158006"/>
+        <display value="Pulmonary vascular structure"/>
+      </coding>
+    </code>
+  </location>
+  <relatedItem>
+    <type value="due-to"/>
+    <target>
+      <reference value="Substance/f202"/>
+      <display value="Staphylococcus Aureus"/>
+    </target>
+  </relatedItem>
+</Condition>

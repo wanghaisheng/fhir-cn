@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f001-pieter.html">P. van de Heuvel. Generated Summary: 738472983 (usual), ?? (usual); Pieter van de Heuvel ; 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 17-Nov 1944; 
+          <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>; multipleBirth; 
+          <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>; active
+        </a>
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f002-lung.html">Generated Summary: v3251 (official); finished; outpatient; 
+          <span title="Codes: {http://snomed.info/sct 270427003}">Patient-initiated encounter</span>; 140 min; 
+          <span title="Codes: {http://snomed.info/sct 34068001}">Partial lobectomy of lung</span>; 
+          <span title="Codes: {http://snomed.info/sct 103391001}">Urgent</span>
+        </a>
+      </p>
+      <p>
+        <b>asserter</b>: 
+        <a href="patient-example-f001-pieter.html">P. van de Heuvel. Generated Summary: 738472983 (usual), ?? (usual); Pieter van de Heuvel ; 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 17-Nov 1944; 
+          <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>; multipleBirth; 
+          <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>; active
+        </a>
+      </p>
+      <p>
+        <b>dateAsserted</b>: 3-Jun 2012
+      </p>
+      <p>
+        <b>code</b>: NSCLC - Non-small cell lung cancer 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;254637007&#39; = &#39;Non-small cell lung cancer&#39;, given as &#39;NSCLC - Non-small cell lung cancer&#39;})</span>
+      </p>
+      <p>
+        <b>category</b>: diagnosis 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;439401001&#39; = &#39;Diagnosis&#39;, given as &#39;diagnosis&#39;})</span>
+      </p>
+      <p>
+        <b>status</b>: confirmed
+      </p>
+      <p>
+        <b>severity</b>: Severe 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;24484000&#39; = &#39;Severe&#39;, given as &#39;Severe&#39;})</span>
+      </p>
+      <p>
+        <b>onset</b>: 5-May 2011
+      </p>
+      <h3>Stages</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Summary</b>
+          </td>
+          <td>
+            <b>Assessment</b>
+          </td>
+        </tr>
+        <tr>
+          <td>stage II 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;258219007&#39; = &#39;Stage 2&#39;, given as &#39;stage II&#39;})</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Evidences</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>CT of thorax 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;169069000&#39; = &#39;Chest CT&#39;, given as &#39;CT of thorax&#39;})</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Locations</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Detail</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Thorax 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;51185008&#39; = &#39;Chest&#39;, given as &#39;Thorax&#39;})</span>
+          </td>
+          <td>lung</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f002"/>
+  </encounter>
+  <asserter>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </asserter>
+  <dateAsserted value="2012-06-03"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="254637007"/>
+      <display value="NSCLC - Non-small cell lung cancer"/>
+    </coding>
+  </code>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="439401001"/>
+      <display value="diagnosis"/>
+    </coding>
+  </category>
+  <status value="confirmed"/>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="24484000"/>
+      <display value="Severe"/>
+    </coding>
+  </severity>
+  <onsetDate value="2011-05-05"/>
+  <stage>
+    <summary>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258219007"/>
+        <display value="stage II"/>
+      </coding>
+    </summary>
+  </stage>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="169069000"/>
+        <display value="CT of thorax"/>
+      </coding>
+    </code>
+  </evidence>
+  <location>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="51185008"/>
+        <display value="Thorax"/>
+      </coding>
+    </code>
+    <detail value="lung"/>
+  </location>
+</Condition>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>OrganizationType</h2>
+      <p>This example value set defines a set of codes that can be used to indicate a type of organization.</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/organization-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>prov
+            <a name="prov"> </a>
+          </td>
+          <td>Healthcare Provider</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>dept
+            <a name="dept"> </a>
+          </td>
+          <td>Hospital Department</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>icu
+            <a name="icu"> </a>
+          </td>
+          <td>Intensive Care Unit</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>team
+            <a name="team"> </a>
+          </td>
+          <td>Organizational team</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>fed
+            <a name="fed"> </a>
+          </td>
+          <td>Federal Government</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>ins
+            <a name="ins"> </a>
+          </td>
+          <td>Insurance Company</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>edu
+            <a name="edu"> </a>
+          </td>
+          <td>Educational Institute</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>reli
+            <a name="reli"> </a>
+          </td>
+          <td>Religious Institution</td>
+          <td/>
+        </tr>
+        <tr>
+          <td>pharm
+            <a name="pharm"> </a>
+          </td>
+          <td>Pharmacy</td>
+          <td/>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/organization-type"/>
+  <name value="OrganizationType"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="This example value set defines a set of codes that can be used to indicate a type of organization."/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/organization-type"/>
+    <concept>
+      <code value="prov"/>
+      <display value="Healthcare Provider"/>
+    </concept>
+    <concept>
+      <code value="dept"/>
+      <display value="Hospital Department"/>
+    </concept>
+    <concept>
+      <code value="icu"/>
+      <display value="Intensive Care Unit"/>
+    </concept>
+    <concept>
+      <code value="team"/>
+      <display value="Organizational team"/>
+    </concept>
+    <concept>
+      <code value="fed"/>
+      <display value="Federal Government"/>
+    </concept>
+    <concept>
+      <code value="ins"/>
+      <display value="Insurance Company"/>
+    </concept>
+    <concept>
+      <code value="edu"/>
+      <display value="Educational Institute"/>
+    </concept>
+    <concept>
+      <code value="reli"/>
+      <display value="Religious Institution"/>
+    </concept>
+    <concept>
+      <code value="pharm"/>
+      <display value="Pharmacy"/>
+    </concept>
+  </define>
+</ValueSet>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Organization xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: Zorginstelling naam = Artis University Medical Center (official)
+      </p>
+      <p>
+        <b>name</b>: Artis University Medical Center (AUMC)
+      </p>
+      <p>
+        <b>type</b>: Academic Medical Center 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;405608006&#39; = &#39;Teaching hospital&#39;, given as &#39;Academic Medical Center&#39;}; {urn:oid:2.16.840.1.113883.2.4.15.1060 code &#39;V6&#39; = &#39;V6&#39;, given as &#39;University Medical Hospital&#39;}; {http://hl7.org/fhir/organization-type code &#39;prov&#39; = &#39;Healthcare Provider&#39;, given as &#39;Healthcare Provider&#39;})</span>
+      </p>
+      <p>
+        <b>telecom</b>: ph: +31715269111(work)
+      </p>
+      <p>
+        <b>address</b>: Walvisbaai 3 Den Helder 2333ZA NLD (work)
+      </p>
+      <h3>Contacts</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Purpose</b>
+          </td>
+          <td>
+            <b>Name</b>
+          </td>
+          <td>
+            <b>Telecom</b>
+          </td>
+          <td>
+            <b>Address</b>
+          </td>
+          <td>
+            <b>Gender</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>Professor Brand(official)</td>
+          <td>ph: +31715269702(work)</td>
+          <td>Walvisbaai 3 Gebouw 2 Den helder 2333ZA NLD </td>
+          <td> </td>
+        </tr>
+      </table>
+      <p>
+        <b>active</b>: true
+      </p>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <label value="Zorginstelling naam"/>
+    <system value="http://www.zorgkaartnederland.nl/"/>
+    <value value="Artis University Medical Center"/>
+  </identifier>
+  <name value="Artis University Medical Center (AUMC)"/>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="405608006"/>
+      <display value="Academic Medical Center"/>
+    </coding>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.1060"/>
+      <code value="V6"/>
+      <display value="University Medical Hospital"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/organization-type"/>
+      <code value="prov"/>
+      <display value="Healthcare Provider"/>
+    </coding>
+  </type>
+  <telecom>
+    <system value="phone"/>
+    <value value="+31715269111"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="Walvisbaai 3"/>
+    <city value="Den Helder"/>
+    <zip value="2333ZA"/>
+    <country value="NLD"/>
+  </address>
+  <contact>
+    <name>
+      <use value="official"/>
+      <text value="Professor Brand"/>
+      <family value="Brand"/>
+      <given value="Ronald"/>
+      <prefix value="Prof.Dr."/>
+    </name>
+    <telecom>
+      <system value="phone"/>
+      <value value="+31715269702"/>
+      <use value="work"/>
+    </telecom>
+    <address>
+      <line value="Walvisbaai 3"/>
+      <line value="Gebouw 2"/>
+      <city value="Den helder"/>
+      <zip value="2333ZA"/>
+      <country value="NLD"/>
+    </address>
+  </contact>
+  <active value="true"/>
+</Organization>

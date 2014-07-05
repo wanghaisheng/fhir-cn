@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>PractitionerSpecialty</h2><p>This example value set defines a set of codes that can be used to indicate the specialty of a Practitioner</p><p>This value set defines its own terms in the system http://hl7.org/fhir/practitioner-specialty</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>cardio<a name=\"cardio\"> </a></td><td>Cardiologist</td><td/></tr><tr><td>dent<a name=\"dent\"> </a></td><td>Dentist</td><td/></tr><tr><td>dietary<a name=\"dietary\"> </a></td><td>Dietary consultant</td><td/></tr><tr><td>midw<a name=\"midw\"> </a></td><td>Midwife</td><td/></tr><tr><td>sysarch<a name=\"sysarch\"> </a></td><td>Systems architect</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/practitioner-specialty",
+  "name": "PractitionerSpecialty",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate the specialty of a Practitioner",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/practitioner-specialty",
+    "concept": [
+      {
+        "code": "cardio",
+        "display": "Cardiologist"
+      },
+      {
+        "code": "dent",
+        "display": "Dentist"
+      },
+      {
+        "code": "dietary",
+        "display": "Dietary consultant"
+      },
+      {
+        "code": "midw",
+        "display": "Midwife"
+      },
+      {
+        "code": "sysarch",
+        "display": "Systems architect"
+      }
+    ]
+  }
+}

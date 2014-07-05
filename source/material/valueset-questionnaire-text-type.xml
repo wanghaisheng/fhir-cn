@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Questionnaire Text Type</h2>
+      <p>Codes that define types of additional text that may be associated with a Questionnaire group or question.</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/questionnaire-text-type</p>
+      <table>
+        <tr>
+          <td>
+            <b>Code</b>
+          </td>
+          <td>
+            <b>Display</b>
+          </td>
+          <td>
+            <b>Definition</b>
+          </td>
+        </tr>
+        <tr>
+          <td>instruction
+            <a name="instruction"> </a>
+          </td>
+          <td>instruction</td>
+          <td>The text provides instructions intended to be rendered with the element explaining how the content of the element is to be completed</td>
+        </tr>
+        <tr>
+          <td>security
+            <a name="security"> </a>
+          </td>
+          <td>security and privacy text</td>
+          <td>The text describes specific security and/or privacy considerations associated with the element.  E.g. retention rules, data access control expectations, etc.</td>
+        </tr>
+        <tr>
+          <td>help
+            <a name="help"> </a>
+          </td>
+          <td>help text</td>
+          <td>The content is intended for display if a user selects an icon or performs some other action seeking help about the element</td>
+        </tr>
+        <tr>
+          <td>tool-tip
+            <a name="tool-tip"> </a>
+          </td>
+          <td>tool tip</td>
+          <td>The content is intended for use in a fly-over or similar display mechanism - primarily intended for online form entry</td>
+        </tr>
+        <tr>
+          <td>trailing
+            <a name="trailing"> </a>
+          </td>
+          <td>trailing text</td>
+          <td>The text should be displayed after all of the other the content of the group or question</td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/vs/questionnaire-text-type"/>
+  <name value="Questionnaire Text Type"/>
+  <publisher value="FHIR Project team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="Codes that define types of additional text that may be associated with a Questionnaire group or question."/>
+  <status value="draft"/>
+  <define>
+    <system value="http://hl7.org/fhir/questionnaire-text-type"/>
+    <caseSensitive value="false"/>
+    <concept>
+      <code value="instruction"/>
+      <display value="instruction"/>
+      <definition value="The text provides instructions intended to be rendered with the element explaining how the content of the element is to be completed"/>
+    </concept>
+    <concept>
+      <code value="security"/>
+      <display value="security and privacy text"/>
+      <definition value="The text describes specific security and/or privacy considerations associated with the element.  E.g. retention rules, data access control expectations, etc."/>
+    </concept>
+    <concept>
+      <code value="help"/>
+      <display value="help text"/>
+      <definition value="The content is intended for display if a user selects an icon or performs some other action seeking help about the element"/>
+    </concept>
+    <concept>
+      <code value="tool-tip"/>
+      <display value="tool tip"/>
+      <definition value="The content is intended for use in a fly-over or similar display mechanism - primarily intended for online form entry"/>
+    </concept>
+    <concept>
+      <code value="trailing"/>
+      <display value="trailing text"/>
+      <definition value="The text should be displayed after all of the other the content of the group or question"/>
+    </concept>
+  </define>
+</ValueSet>

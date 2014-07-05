@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>status</b>: planned
+      </p>
+      <p>
+        <b>period</b>: 11-Mar 2013 --&gt; 13-Mar 2013
+      </p>
+      <p>
+        <b>modified</b>: 11-Mar 2013
+      </p>
+      <p>
+        <b>concern</b>: 
+        <a href="condition-example-f204-renal.html">Roel&#39;s renal insufficiency. Generated Summary: ????; dateAsserted: 11-Mar 2013; 
+          <span title="Codes: {http://snomed.info/sct 36225005}">Acute renal insufficiency specified as due to procedure</span>; 
+          <span title="Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category condition}">Problem</span>; working; 
+          <span title="Codes: {http://snomed.info/sct 24484000}">Severe</span>; onset: 11-Mar 2013; abatement: 20-Mar 2013
+        </a>
+      </p>
+      <h3>Participants</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Role</b>
+          </td>
+          <td>
+            <b>Member</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Review of care plan 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;425268008&#39; = &#39;Review of care plan&#39;, given as &#39;Review of care plan&#39;})</span>
+          </td>
+          <td>
+            <a href="practitioner-example-f201-ab.html">Dokter Bronsig. Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+              <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+              <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+              <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Carer 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;229774002&#39; = &#39;Carer&#39;, given as &#39;Carer&#39;})</span>
+          </td>
+          <td>
+            <a href="practitioner-example-f204-ce.html">Nurse Carla Espinosa. Generated Summary: UZI-nummer = 12345678904 (official); Carla Espinosa; 
+              <span title="Codes: {http://snomed.info/sct 248152002}">Female</span>; birthDate: 5-Nov 1967; 
+              <span title="Codes: {http://snomed.info/sct 224565004}">Renal nurse</span>; 
+              <span title="Codes: {http://snomed.info/sct 9632001}">Nursing procedure</span>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h3>Goals</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Description</b>
+          </td>
+          <td>
+            <b>Status</b>
+          </td>
+          <td>
+            <b>Notes</b>
+          </td>
+          <td>
+            <b>Concern</b>
+          </td>
+        </tr>
+        <tr>
+          <td>Re-established renal function with at least healthy nutrients.</td>
+          <td>achieved</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <blockquote>
+        <p>
+          <b>activity</b>
+        </p>
+        <p>
+          <b>status</b>: completed
+        </p>
+        <p>
+          <b>prohibited</b>: false
+        </p>
+        <h3>Simples</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Category</b>
+            </td>
+            <td>
+              <b>Code</b>
+            </td>
+            <td>
+              <b>Timing[x]</b>
+            </td>
+            <td>
+              <b>Location</b>
+            </td>
+            <td>
+              <b>Performer</b>
+            </td>
+            <td>
+              <b>Product</b>
+            </td>
+            <td>
+              <b>DailyAmount</b>
+            </td>
+            <td>
+              <b>Quantity</b>
+            </td>
+            <td>
+              <b>Details</b>
+            </td>
+          </tr>
+          <tr>
+            <td>diet</td>
+            <td>Potassium supplementation 
+              <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;284093001&#39; = &#39;Potassium supplementation&#39;, given as &#39;Potassium supplementation&#39;})</span>
+            </td>
+            <td>daily</td>
+            <td> </td>
+            <td> </td>
+            <td>
+              <a href="substance-example-f203-potassium.html">Potassium. Generated Summary: 
+                <span title="Codes: {http://snomed.info/sct 88480006}">Potassium</span>
+              </a>
+            </td>
+            <td>80 mmol
+              <span style="background: LightGoldenRodYellow "> (Details: SNOMED CT code 258718000 = &#39;millimole (qualifier value)&#39;)</span>
+            </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+      <blockquote>
+        <p>
+          <b>activity</b>
+        </p>
+        <p>
+          <b>status</b>: completed
+        </p>
+        <p>
+          <b>prohibited</b>: false
+        </p>
+        <h3>Simples</h3>
+        <table class="grid">
+          <tr>
+            <td>
+              <b>Category</b>
+            </td>
+            <td>
+              <b>Code</b>
+            </td>
+            <td>
+              <b>Timing[x]</b>
+            </td>
+            <td>
+              <b>Location</b>
+            </td>
+            <td>
+              <b>Performer</b>
+            </td>
+            <td>
+              <b>Product</b>
+            </td>
+            <td>
+              <b>DailyAmount</b>
+            </td>
+            <td>
+              <b>Quantity</b>
+            </td>
+            <td>
+              <b>Details</b>
+            </td>
+          </tr>
+          <tr>
+            <td>observation</td>
+            <td>Echography of kidney 
+              <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;306005&#39; = &#39;US kidneys&#39;, given as &#39;Echography of kidney&#39;})</span>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </table>
+      </blockquote>
+    </div>
+  </text>
+  <patient>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </patient>
+  <status value="planned"/>
+  <period>
+    <start value="2013-03-11"/>
+    <end value="2013-03-13"/>
+  </period>
+  <modified value="2013-03-11"/>
+  <concern>
+    <reference value="Condition/f204"/>
+    <display value="Roel&#39;s renal insufficiency"/>
+  </concern>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="425268008"/>
+        <display value="Review of care plan"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f201"/>
+      <display value="Dokter Bronsig"/>
+    </member>
+  </participant>
+  <participant>
+    <role>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="229774002"/>
+        <display value="Carer"/>
+      </coding>
+    </role>
+    <member>
+      <reference value="Practitioner/f204"/>
+      <display value="Nurse Carla Espinosa"/>
+    </member>
+  </participant>
+  <goal>
+    <description value="Re-established renal function with at least healthy nutrients."/>
+    <status value="achieved"/>
+  </goal>
+  <activity>
+    <status value="completed"/>
+    <prohibited value="false"/>
+    <simple>
+      <category value="diet"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="284093001"/>
+          <display value="Potassium supplementation"/>
+        </coding>
+      </code>
+      <timingString value="daily"/>
+      <product>
+        <reference value="Substance/f203"/>
+        <display value="Potassium"/>
+      </product>
+      <dailyAmount>
+        <value value="80"/>
+        <units value="mmol"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="258718000"/>
+      </dailyAmount>
+    </simple>
+  </activity>
+  <activity>
+    <status value="completed"/>
+    <prohibited value="false"/>
+    <simple>
+      <category value="observation"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="306005"/>
+          <display value="Echography of kidney"/>
+        </coding>
+      </code>
+    </simple>
+  </activity>
+</CarePlan>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<QuestionnaireAnswers xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>status</b>: completed
+      </p>
+      <p>
+        <b>subject</b>: 
+        <a href="patient-example-f201-roel.html">Roel. Generated Summary: BSN = 123456789 (official), BSN = 123456789 (official); Roel(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}, {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 13-Mar 1960; 
+          <span title="Codes: {http://snomed.info/sct 36629006}, {http://hl7.org/fhir/v3/MaritalStatus M}">Legally married</span>; 
+          <span title="Codes: {urn:std:iso:639-1 nl-NL}">Dutch</span>; active
+        </a>
+      </p>
+      <p>
+        <b>author</b>: 
+        <a href="practitioner-example-f201-ab.html">Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+          <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+          <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+        </a>
+      </p>
+      <p>
+        <b>authored</b>: 18-Jun 2013 0:0
+      </p>
+      <p>
+        <b>source</b>: 
+        <a href="practitioner-example-f201-ab.html">Generated Summary: UZI-nummer = 12345678901 (official); Dokter Bronsig(official); 
+          <span title="Codes: {http://snomed.info/sct 248153007}">Male</span>; birthDate: 24-Dec 1956; 
+          <span title="Codes: {http://snomed.info/sct 225304007}">Implementation of planned interventions</span>; 
+          <span title="Codes: {http://snomed.info/sct 310512001}">Medical oncologist</span>
+        </a>
+      </p>
+      <blockquote>
+        <p>
+          <b>group</b>
+        </p>
+        <blockquote>
+          <p>
+            <b>group</b>
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            <b>group</b>
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            <b>group</b>
+          </p>
+        </blockquote>
+      </blockquote>
+    </div>
+  </text>
+  <status value="completed"/>
+  <subject>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <author>
+    <reference value="Practitioner/f201"/>
+  </author>
+  <authored value="2013-06-18T00:00:00+01:00"/>
+  <source>
+    <reference value="Practitioner/f201"/>
+  </source>
+  <group>
+    <group>
+      <question>
+        <text value="Do you have allergies?"/>
+        <answer>
+          <valueString value="I am allergic to house dust"/>
+        </answer>
+      </question>
+    </group>
+    <group>
+      <title value="General questions"/>
+      <question>
+        <text value="What is your gender?"/>
+        <answer>
+          <valueString value="Male"/>
+        </answer>
+      </question>
+      <question>
+        <text value="What is your date of birth?"/>
+        <answer>
+          <valueDate value="1960-03-13"/>
+        </answer>
+      </question>
+      <question>
+        <text value="What is your country of birth?"/>
+        <answer>
+          <valueString value="The Netherlands"/>
+        </answer>
+      </question>
+      <question>
+        <text value="What is your marital status?"/>
+        <answer>
+          <valueString value="married"/>
+        </answer>
+      </question>
+    </group>
+    <group>
+      <title value="Intoxications"/>
+      <question>
+        <text value="Do you smoke?"/>
+        <answer>
+          <valueString value="No"/>
+        </answer>
+      </question>
+      <question>
+        <text value="Do you drink alchohol?"/>
+        <answer>
+          <valueString value="No, but I used to drink"/>
+        </answer>
+      </question>
+    </group>
+  </group>
+</QuestionnaireAnswers>

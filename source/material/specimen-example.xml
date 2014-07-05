@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Specimen xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">[Put rendering here]</div>
+  </text>
+  <contained>
+    <Substance id="hep">
+      <type>
+        <coding>
+          <system value="http://hl7.org/fhir/v3/EntityCode"/>
+          <code value="HEPL"/>
+        </coding>
+      </type>
+    </Substance>
+  </contained>
+  <identifier>
+    <system value="http://ehr.acme.org/identifiers/collections"/>
+    <value value="23234352356"/>
+  </identifier>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="122555007"/>
+      <display value="Venous blood specimen"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/example"/>
+    <display value="Peter Patient"/>
+  </subject>
+  <accessionIdentifier>
+    <system value="http://lab.acme.org/specimens/2011"/>
+    <value value="X352356"/>
+  </accessionIdentifier>
+  <receivedTime value="2011-03-04T07:03:00"/>
+  <collection>
+    <collector>
+      <reference value="Practitioner/example"/>
+    </collector>
+    <collectedDateTime value="2011-05-30T06:15:00"/>
+    <quantity>
+      <value value="10"/>
+      <units value="mL"/>
+    </quantity>
+    <method>
+      <coding>
+        <system value="http://hl7.org/fhir/v2/0488"/>
+        <code value="LNV"/>
+      </coding>
+    </method>
+  </collection>
+  <container>
+    <identifier>
+      <value value="48736-15394-75465"/>
+    </identifier>
+    <description value="Green Gel tube"/>
+    <type>
+      <text value="Vacutainer"/>
+    </type>
+    <capacity>
+      <value value="10"/>
+      <units value="mL"/>
+    </capacity>
+    <specimenQuantity>
+      <value value="10"/>
+      <units value="mL"/>
+    </specimenQuantity>
+    <additive>
+      <reference value="#hep"/>
+    </additive>
+  </container>
+</Specimen>

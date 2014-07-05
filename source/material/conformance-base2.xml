@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Conformance xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h2>Base FHIR Conformance Statement (Empty)</h2>
+      <p>This is the base conformance statement for FHIR. It represents a server that provides the none of the functionality defined by FHIR. It is provided to use as a template for system designers to build their own conformance statements from. A conformance profile has to contain something, so this contains a read of a Conformance Statement</p>
+      <table>
+        <tr>
+          <td>Mode</td>
+          <td>server</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>An empty conformance statement</td>
+        </tr>
+        <tr>
+          <td>Transaction</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>System History</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>System Search</td>
+          <td></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>
+            <b>Resource Type</b>
+          </th>
+          <th>
+            <b>Profile</b>
+          </th>
+          <th>
+            <b>Read</b>
+          </th>
+          <th>
+            <b>V-Read</b>
+          </th>
+          <th>
+            <b>Search</b>
+          </th>
+          <th>
+            <b>Update</b>
+          </th>
+          <th>
+            <b>Updates</b>
+          </th>
+          <th>
+            <b>Create</b>
+          </th>
+          <th>
+            <b>Delete</b>
+          </th>
+          <th>
+            <b>History</b>
+          </th>
+        </tr>
+        <tr>
+          <td>Conformance</td>
+          <td>y</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier value="http://hl7.org/fhir/conformance-base2"/>
+  <version value="0.2.1-2606"/>
+  <name value="Base FHIR Conformance Statement (Empty)"/>
+  <publisher value="FHIR Project Team"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <description value="This is the base conformance statement for FHIR. It represents a server that provides the none of the functionality defined by FHIR. It is provided to use as a template for system designers to build their own conformance statements from. A conformance profile has to contain something, so this contains a read of a Conformance Statement"/>
+  <status value="draft"/>
+  <date value="2014-07-02T16:21:45.837+08:00"/>
+  <fhirVersion value="0.2.1"/>
+  <acceptUnknown value="false"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="An empty conformance statement"/>
+    <resource>
+      <type value="Conformance"/>
+      <operation>
+        <code value="read"/>
+      </operation>
+    </resource>
+  </rest>
+</Conformance>

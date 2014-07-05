@@ -1,0 +1,57 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SearchParamType</h2><p>Data types allowed to be used for search parameters</p><p>This value set defines its own terms in the system http://hl7.org/fhir/search-param-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>number<a name=\"number\"> </a></td><td/><td>Search parameter SHALL be a number (a whole number, or a decimal).</td></tr><tr><td>date<a name=\"date\"> </a></td><td/><td>Search parameter is on a date/time. The date format is the standard XML format, though other formats may be supported.</td></tr><tr><td>string<a name=\"string\"> </a></td><td/><td>Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces.</td></tr><tr><td>token<a name=\"token\"> </a></td><td/><td>Search parameter on a coded element or identifier. May be used to search through the text, displayname, code and code/codesystem (for codes) and label, system and key (for identifier). Its value is either a string or a pair of namespace and value, separated by a &quot;|&quot;, depending on the modifier used.</td></tr><tr><td>reference<a name=\"reference\"> </a></td><td/><td>A reference to another resource.</td></tr><tr><td>composite<a name=\"composite\"> </a></td><td/><td>A composite search parameter that combines a search on two values together.</td></tr><tr><td>quantity<a name=\"quantity\"> </a></td><td/><td>A search parameter that searches on a quantity.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/search-param-type",
+  "name": "SearchParamType",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Data types allowed to be used for search parameters",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.900+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/search-param-type",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "number",
+        "definition": "Search parameter SHALL be a number (a whole number, or a decimal)."
+      },
+      {
+        "code": "date",
+        "definition": "Search parameter is on a date/time. The date format is the standard XML format, though other formats may be supported."
+      },
+      {
+        "code": "string",
+        "definition": "Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces."
+      },
+      {
+        "code": "token",
+        "definition": "Search parameter on a coded element or identifier. May be used to search through the text, displayname, code and code/codesystem (for codes) and label, system and key (for identifier). Its value is either a string or a pair of namespace and value, separated by a \"|\", depending on the modifier used."
+      },
+      {
+        "code": "reference",
+        "definition": "A reference to another resource."
+      },
+      {
+        "code": "composite",
+        "definition": "A composite search parameter that combines a search on two values together."
+      },
+      {
+        "code": "quantity",
+        "definition": "A search parameter that searches on a quantity."
+      }
+    ]
+  }
+}

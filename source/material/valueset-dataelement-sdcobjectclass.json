@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>DataElement SDC Object Class</h2><p>The allowed codes for identifying the ISO 11179 ObjectClass for a particular data element if intended for registration/use within the U.S. Structured Data Capture (SDC) project.</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include all codes defined in http://snomed.info/sct</li><li>Include all codes defined in http://loinc.org</li><li>Include all codes defined in http://www.nlm.nih.gov/research/umls/rxnorm</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/dataelement-sdcobjectclass",
+  "name": "DataElement SDC Object Class",
+  "publisher": "Office of the National Coordinator for Health IT",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://healthit.gov"
+    }
+  ],
+  "description": "The allowed codes for identifying the ISO 11179 ObjectClass for a particular data element if intended for registration/use within the U.S. Structured Data Capture (SDC) project.",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct"
+      },
+      {
+        "system": "http://loinc.org"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+      }
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n     <p><b>http://hl7.org/fhir/tools/extensions</b></p>\n     <p>Extensions defined by the build tools. These extensions are candidates for being elevated into the core.</p>\n     <table>\n      <tr>\n        <td><b>Code</b></td>\n        <td><b>Context</b></td>\n        <td><b>Type</b></td>\n        <td><b>Cardinality</b></td>\n        <td><b>Notes</b></td>\n      </tr>\n      <tr>\n        <td>comment</td>\n        <td>ValueSet.compose.include.code</td>\n        <td>string</td>\n        <td>0..1</td>\n        <td>This is used in various FHIR value sets to make comments on how particular codes are used when the formal definition is a little abstract or vague, but it's not clear whether it belongs in the actual value set resource</td>\n      </tr>\n      <tr>\n        <td>display</td>\n        <td>ValueSet.compose.include.code</td>\n        <td>string</td>\n        <td>0..1</td>\n        <td>An alternative display is used to tailor a code's description to a particular use case. Doing this is dangerous, because it's easy to introduce a different meaning for the code in this context, but it's also useful to make the display suitable for a particular kind of user in a particular kind of context</td>\n      </tr>\n      <tr>\n        <td>definition</td>\n        <td>ValueSet.compose.include.code</td>\n        <td>string</td>\n        <td>0..1</td>\n        <td>This is provided for when the source code system doesn't actually provide a definition (there are many such). Providing an definition for a code should not be done where the underlying code system provides a definition</td>\n      </tr>\n      <tr>\n        <td>deprecated</td>\n        <td>ValueSet.define.concept(.concept)</td>\n        <td>boolean</td>\n        <td>0..1</td>\n        <td>Whether the concept has been deprecated</td>\n      </tr>\n      <tr>\n        <td>subsumes</td>\n        <td>ValueSet.define.concept</td>\n        <td>code</td>\n        <td>0..*</td>\n        <td>Codes that this concept subsumes that have already been declared elsewhere</td>\n      </tr>\n      <tr>\n        <td>issue-source</td>\n        <td>OperationOutcome</td>\n        <td>string</td>\n        <td>0..1</td>\n        <td>Helps a user track down the source of the problem</td>\n      </tr>\n    </table>\n    </div>"
+  },
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "_id": "v1",
+      "name": "OperationOutcomeSource",
+      "description": "Where in the code - schema, schematron, or validator - an error message comes from",
+      "status": "draft",
+      "define": {
+        "system": "http://hl7.org/fhir/operation-outcome-source",
+        "caseSensitive": true,
+        "concept": [
+          {
+            "code": "ExampleValidator",
+            "display": "ExampleValidator",
+            "definition": "The error comes from the publication example validator (only in the build process)"
+          },
+          {
+            "code": "ProfileValidator",
+            "display": "ProfileValidator",
+            "definition": "The error comes from the code that checks that profiles are valid"
+          },
+          {
+            "code": "ResourceValidator",
+            "display": "ResourceValidator",
+            "definition": "The error comes from the code the validates the basic resource definitions"
+          },
+          {
+            "code": "InstanceValidator",
+            "display": "InstanceValidator",
+            "definition": "The error comes from code that checks instances against the base profiles and any additional identified profiles"
+          },
+          {
+            "code": "Schema",
+            "display": "Schema",
+            "definition": "The error comes from checking the instance against the schemas"
+          },
+          {
+            "code": "Schematron",
+            "display": "Schematron",
+            "definition": "The error comes from checking the instance against the invariants defined in the specification"
+          }
+        ]
+      }
+    }
+  ],
+  "url": "http://hl7.org/fhir/tools/Profile/extensions",
+  "name": "Extensions defined by the FHIR build tools",
+  "publisher": "FHIR Project Team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Extensions defined by the build tools. These extensions are candidates for being elevated into the core",
+  "status": "draft",
+  "date": "2013-07-07",
+  "extensionDefn": [
+    {
+      "code": "comment",
+      "display": "Comment",
+      "contextType": "resource",
+      "context": [
+        "ValueSet.compose.include.code",
+        "ValueSet.define.concept"
+      ],
+      "element": [
+        {
+          "path": "comment",
+          "definition": {
+            "short": "Comment about the use of this code in this context",
+            "formal": "A comment that explains how this code is used in this context (where the value set is expected to be used)",
+            "comments": "This is used in various FHIR value sets to make comments on how particular codes are used when the formal definition is a little abstract or vague, but it's not clear whether it belongs in the actual value set resource",
+            "requirements": "Too many codes have very abstract definitions, and the correct use or purpose of the code isn't sufficiently clear from the definition",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "display",
+      "display": "Display",
+      "contextType": "resource",
+      "context": [
+        "ValueSet.compose.include.code"
+      ],
+      "element": [
+        {
+          "path": "display",
+          "definition": {
+            "short": "A different display for this code",
+            "formal": "A different display to use when this code is used as part of this value set",
+            "comments": "An alternative display is used to tailor a code's description to a particular use case. Doing this is dangerous, because it's easy to introduce a different meaning for the code in this context, but it's also useful to make the display suitable for a particular kind of user in a particular kind of context",
+            "requirements": "Many codes have displays that are inappropriate in a particular context of use",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "definition",
+      "display": "Definition",
+      "contextType": "resource",
+      "context": [
+        "ValueSet.compose.include.code"
+      ],
+      "element": [
+        {
+          "path": "definition",
+          "definition": {
+            "short": "A definition for this code",
+            "formal": "A display name that describes the meaning of this code when used as part of this value set",
+            "comments": "This is provided for when the source code system doesn't actually provide a definition (there are many such). Providing an definition for a code should not be done where the underlying code system provides a definition",
+            "requirements": "Some code systems don't provide definitions (most enumeration types)",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "deprecated",
+      "display": "Dreprecated",
+      "contextType": "resource",
+      "context": [
+        "ValueSet.define.concept",
+        "ValueSet.define.concept.concept"
+      ],
+      "element": [
+        {
+          "path": "deprecated",
+          "definition": {
+            "short": "Whether the concept has been deprecated",
+            "formal": "Set to true of the concept has been deprecated (still can be used, but soon to be withdrawn)",
+            "requirements": "Some code systems deprecate codes",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    },
+    {
+      "code": "subsumes",
+      "display": "Subsumes",
+      "contextType": "resource",
+      "context": [
+        "ValueSet.define.concept"
+      ],
+      "element": [
+        {
+          "path": "subsumes",
+          "definition": {
+            "short": "Codes that this concept subsumes that have already been declared elsewhere",
+            "formal": "Refers to another code defined within the code system that is also subsumed by this code. I.e. This concept subsumes the referenced concept.  Because meaning is inferred from hierarchy as well as definition, the presence of this extension modifies the meaning of the extended concept.",
+            "requirements": "For when the code system being defined is poly-heirarchical",
+            "min": 0,
+            "max": "*",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true
+          }
+        }
+      ]
+    },
+    {
+      "code": "issue-source",
+      "display": "Source of Issue",
+      "contextType": "resource",
+      "context": [
+        "OperationOutcome"
+      ],
+      "element": [
+        {
+          "path": "issue-source",
+          "definition": {
+            "short": "Source of a validation message",
+            "formal": "Where in the code - schema, schematron, or validator - an error message comes from",
+            "comments": "Helps a user track down the source of the problem",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "OperationOutcomeSource",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "#v1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "display-hint",
+      "display": "Display Hint",
+      "contextType": "resource",
+      "context": [
+        "Profile.structure.element.definition"
+      ],
+      "element": [
+        {
+          "path": "display-hint",
+          "definition": {
+            "short": "Hinting information for the narrative generator",
+            "formal": "Hinting information for the narrative generator - a series of name: value; pairs",
+            "comments": "known names: default (default value - don't represent if this value)",
+            "requirements": "Subtle ways to improve the generated narrative",
+            "min": 0,
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SupplyDispenseStatus</h2><p>Status of the dispense</p><p>This value set defines its own terms in the system http://hl7.org/fhir/valueset-supply-dispense-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>in progress<a name=\"inprogress\"> </a></td><td>In Progress</td><td>Supply has been requested, but not dispensed.</td></tr><tr><td>dispensed<a name=\"dispensed\"> </a></td><td>Dispensed</td><td>Supply is part of a pharmacy order and has been dispensed.</td></tr><tr><td>abandoned<a name=\"abandoned\"> </a></td><td>Abandoned</td><td>Dispensing was not completed.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/valueset-supply-dispense-status",
+  "name": "SupplyDispenseStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Status of the dispense",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.894+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/valueset-supply-dispense-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "in progress",
+        "display": "In Progress",
+        "definition": "Supply has been requested, but not dispensed."
+      },
+      {
+        "code": "dispensed",
+        "display": "Dispensed",
+        "definition": "Supply is part of a pharmacy order and has been dispensed."
+      },
+      {
+        "code": "abandoned",
+        "display": "Abandoned",
+        "definition": "Dispensing was not completed."
+      }
+    ]
+  }
+}

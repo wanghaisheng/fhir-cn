@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>ConditionStatus</h2><p>The clinical status of the Condition or diagnosis</p><p>This value set defines its own terms in the system http://hl7.org/fhir/condition-status</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>provisional<a name=\"provisional\"> </a></td><td/><td>This is a tentative diagnosis - still a candidate that is under consideration.</td></tr><tr><td>working<a name=\"working\"> </a></td><td/><td>The patient is being treated on the basis that this is the condition, but it is still not confirmed.</td></tr><tr><td>confirmed<a name=\"confirmed\"> </a></td><td/><td>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</td></tr><tr><td>refuted<a name=\"refuted\"> </a></td><td/><td>This condition has been ruled out by diagnostic and clinical evidence.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/condition-status",
+  "name": "ConditionStatus",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The clinical status of the Condition or diagnosis",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.905+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/condition-status",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "provisional",
+        "definition": "This is a tentative diagnosis - still a candidate that is under consideration."
+      },
+      {
+        "code": "working",
+        "definition": "The patient is being treated on the basis that this is the condition, but it is still not confirmed."
+      },
+      {
+        "code": "confirmed",
+        "definition": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+      },
+      {
+        "code": "refuted",
+        "definition": "This condition has been ruled out by diagnostic and clinical evidence."
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Modality</h2><p>Type of data in the instance</p><p><b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include these codes as defined in http://nema.org/dicom/dcid<table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>AR</td><td/><td/></tr><tr><td>AU</td><td/><td/></tr><tr><td>BDUS</td><td/><td/></tr><tr><td>BI</td><td/><td/></tr><tr><td>BMD</td><td/><td/></tr><tr><td>CR</td><td/><td/></tr><tr><td>CT</td><td/><td/></tr><tr><td>DG</td><td/><td/></tr><tr><td>DX</td><td/><td/></tr><tr><td>ECG</td><td/><td/></tr><tr><td>EPS</td><td/><td/></tr><tr><td>ES</td><td/><td/></tr><tr><td>GM</td><td/><td/></tr><tr><td>HC</td><td/><td/></tr><tr><td>HD</td><td/><td/></tr><tr><td>IO</td><td/><td/></tr><tr><td>IVOCT</td><td/><td/></tr><tr><td>IVUS</td><td/><td/></tr><tr><td>KER</td><td/><td/></tr><tr><td>KO</td><td/><td/></tr><tr><td>LEN</td><td/><td/></tr><tr><td>LS</td><td/><td/></tr><tr><td>MG</td><td/><td/></tr><tr><td>MR</td><td/><td/></tr><tr><td>NM</td><td/><td/></tr><tr><td>OAM</td><td/><td/></tr><tr><td>OCT</td><td/><td/></tr><tr><td>OP</td><td/><td/></tr><tr><td>OPM</td><td/><td/></tr><tr><td>OPT</td><td/><td/></tr><tr><td>OPV</td><td/><td/></tr><tr><td>OT</td><td/><td/></tr><tr><td>PR</td><td/><td/></tr><tr><td>PT</td><td/><td/></tr><tr><td>PX</td><td/><td/></tr><tr><td>REG</td><td/><td/></tr><tr><td>RF</td><td/><td/></tr><tr><td>RG</td><td/><td/></tr><tr><td>RTDOSE</td><td/><td/></tr><tr><td>RTIMAGE</td><td/><td/></tr><tr><td>RTPLAN</td><td/><td/></tr><tr><td>RTRECORD</td><td/><td/></tr><tr><td>RTSTRUCT</td><td/><td/></tr><tr><td>SEG</td><td/><td/></tr><tr><td>SM</td><td/><td/></tr><tr><td>SMR</td><td/><td/></tr><tr><td>SR</td><td/><td/></tr><tr><td>SRF</td><td/><td/></tr><tr><td>TG</td><td/><td/></tr><tr><td>US</td><td/><td/></tr><tr><td>VA</td><td/><td/></tr><tr><td>XA</td><td/><td/></tr><tr><td>XC</td><td/><td/></tr></table></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/modality",
+  "name": "Modality",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Type of data in the instance",
+  "copyright": "These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.894+08:00",
+  "compose": {
+    "include": [
+      {
+        "system": "http://nema.org/dicom/dcid",
+        "code": [
+          "AR",
+          "AU",
+          "BDUS",
+          "BI",
+          "BMD",
+          "CR",
+          "CT",
+          "DG",
+          "DX",
+          "ECG",
+          "EPS",
+          "ES",
+          "GM",
+          "HC",
+          "HD",
+          "IO",
+          "IVOCT",
+          "IVUS",
+          "KER",
+          "KO",
+          "LEN",
+          "LS",
+          "MG",
+          "MR",
+          "NM",
+          "OAM",
+          "OCT",
+          "OP",
+          "OPM",
+          "OPT",
+          "OPV",
+          "OT",
+          "PR",
+          "PT",
+          "PX",
+          "REG",
+          "RF",
+          "RG",
+          "RTDOSE",
+          "RTIMAGE",
+          "RTPLAN",
+          "RTRECORD",
+          "RTSTRUCT",
+          "SEG",
+          "SM",
+          "SMR",
+          "SR",
+          "SRF",
+          "TG",
+          "US",
+          "VA",
+          "XA",
+          "XC"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>MedicationKind</h2><p>Whether the medication is a product or a package</p><p>This value set defines its own terms in the system http://hl7.org/fhir/medication-kind</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>product<a name=\"product\"> </a></td><td/><td>The medication is a product.</td></tr><tr><td>package<a name=\"package\"> </a></td><td/><td>The medication is a package - a contained group of one of more products.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/medication-kind",
+  "name": "MedicationKind",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Whether the medication is a product or a package",
+  "status": "draft",
+  "date": "2014-07-02T16:22:59.903+08:00",
+  "define": {
+    "system": "http://hl7.org/fhir/medication-kind",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "product",
+        "definition": "The medication is a product."
+      },
+      {
+        "code": "package",
+        "definition": "The medication is a package - a contained group of one of more products."
+      }
+    ]
+  }
+}

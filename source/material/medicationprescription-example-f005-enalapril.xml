@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationPrescription xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <b>Generated Narrative with Details</b>
+      </p>
+      <p>
+        <b>identifier</b>: order9823343 (official)
+      </p>
+      <p>
+        <b>dateWritten</b>: 1-May 2011
+      </p>
+      <p>
+        <b>status</b>: active
+      </p>
+      <p>
+        <b>patient</b>: 
+        <a href="patient-example-f001-pieter.html">P. van den Heuvel. Generated Summary: 738472983 (usual), ?? (usual); Pieter van de Heuvel ; 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender M}">Male</span>; birthDate: 17-Nov 1944; 
+          <span title="Codes: {http://hl7.org/fhir/v3/MaritalStatus M}">Getrouwd</span>; multipleBirth; 
+          <span title="Codes: {urn:ietf:bcp:47 nl}">Nederlands</span>; active
+        </a>
+      </p>
+      <p>
+        <b>prescriber</b>: 
+        <a href="practitioner-example-f007-sh.html">S.M. Heps. Generated Summary: 874635264 (official), 567IUI51C154 (usual); Simone Heps (official); 
+          <span title="Codes: {http://hl7.org/fhir/v3/AdministrativeGender F}">Female</span>; birthDate: 7-Nov 1971; 
+          <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.000}">Care role</span>; 
+          <span title="Codes: {urn:oid:2.16.840.1.113883.2.4.15.111 01.015}">specialisation</span>
+        </a>
+      </p>
+      <p>
+        <b>encounter</b>: 
+        <a href="encounter-example-f001-heart.html">encounter who leads to this priscription. Generated Summary: v1451 (official); finished; outpatient; 
+          <span title="Codes: {http://snomed.info/sct 270427003}">Patient-initiated encounter</span>; 140 min; 
+          <span title="Codes: {http://snomed.info/sct 34068001}">Heart valve replacement</span>; 
+          <span title="Codes: {http://snomed.info/sct 310361003}">Non-urgent cardiological admission</span>
+        </a>
+      </p>
+      <p>
+        <b>reason</b>: High blood pressure 
+        <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;38341003&#39; = &#39;Hyperpiesis&#39;, given as &#39;High blood pressure&#39;})</span>
+      </p>
+      <p>
+        <b>medication</b>: 
+        <a href="medication-example-f005-enalapril.html">prescribed medication. Generated Summary: name: Enalapril; 
+          <span title="Codes: {http://snomed.info/sct 318851002}">Enalapril maleate 5mg tablet</span>; isBrand; product
+        </a>
+      </p>
+      <h3>DosageInstructions</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Text</b>
+          </td>
+          <td>
+            <b>AdditionalInstructions</b>
+          </td>
+          <td>
+            <b>Timing[x]</b>
+          </td>
+          <td>
+            <b>AsNeeded[x]</b>
+          </td>
+          <td>
+            <b>Site</b>
+          </td>
+          <td>
+            <b>Route</b>
+          </td>
+          <td>
+            <b>Method</b>
+          </td>
+          <td>
+            <b>DoseQuantity</b>
+          </td>
+          <td>
+            <b>Rate</b>
+          </td>
+          <td>
+            <b>MaxDosePerPeriod</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td>Starting 1-May 2011 --&gt; (ongoing), Once per 1 days</td>
+          <td> </td>
+          <td>Entire oral cavity 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;181220002&#39; = &#39;Mouth&#39;, given as &#39;Entire oral cavity&#39;})</span>
+          </td>
+          <td>Administration of drug or medicament via oral route 
+            <span style="background: LightGoldenRodYellow ">(Details : {SNOMED CT code &#39;386359008&#39; = &#39;Medication administration: oral&#39;, given as &#39;Administration of drug or medicament via oral route&#39;})</span>
+          </td>
+          <td> </td>
+          <td>5 mg
+            <span style="background: LightGoldenRodYellow "> (Details: http://unitsofmeasure.org code mg = &#39;mg&#39;)</span>
+          </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </table>
+      <h3>Dispenses</h3>
+      <table class="grid">
+        <tr>
+          <td>
+            <b>Medication</b>
+          </td>
+          <td>
+            <b>ValidityPeriod</b>
+          </td>
+          <td>
+            <b>NumberOfRepeatsAllowed</b>
+          </td>
+          <td>
+            <b>Quantity</b>
+          </td>
+          <td>
+            <b>ExpectedSupplyDuration</b>
+          </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>1-May 2011 --&gt; (ongoing)</td>
+          <td> </td>
+          <td>28 46992007
+            <span style="background: LightGoldenRodYellow "> (Details: SNOMED CT code 46992007 = &#39;Pill (qualifier value)&#39;)</span>
+          </td>
+          <td> </td>
+        </tr>
+      </table>
+    </div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://www.bmc.nl/portal/prescriptions"/>
+    <value value="order9823343"/>
+  </identifier>
+  <dateWritten value="2011-05-01"/>
+  <status value="active"/>
+  <patient>
+    <reference value="Patient/f001"/>
+    <display value="P. van den Heuvel"/>
+  </patient>
+  <prescriber>
+    <reference value="Practitioner/f007"/>
+    <display value="S.M. Heps"/>
+  </prescriber>
+  <encounter>
+    <reference value="Encounter/f001"/>
+    <display value="encounter who leads to this priscription"/>
+  </encounter>
+  <reasonCodeableConcept>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="38341003"/>
+      <display value="High blood pressure"/>
+    </coding>
+  </reasonCodeableConcept>
+  <medication>
+    <reference value="Medication/f005"/>
+    <display value="prescribed medication"/>
+  </medication>
+  <dosageInstruction>
+    <timingSchedule>
+      <event>
+        <start value="2011-05-01"/>
+      </event>
+      <repeat>
+        <frequency value="1"/>
+        <duration value="1"/>
+        <units value="d"/>
+      </repeat>
+    </timingSchedule>
+    <site>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="181220002"/>
+        <display value="Entire oral cavity"/>
+      </coding>
+    </site>
+    <route>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="386359008"/>
+        <display value="Administration of drug or medicament via oral route"/>
+      </coding>
+    </route>
+    <doseQuantity>
+      <value value="5"/>
+      <units value="mg"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mg"/>
+    </doseQuantity>
+  </dosageInstruction>
+  <dispense>
+    <validityPeriod>
+      <start value="2011-05-01"/>
+    </validityPeriod>
+    <quantity>
+      <value value="28"/>
+      <system value="http://snomed.info/sct"/>
+      <code value="46992007"/>
+    </quantity>
+  </dispense>
+</MedicationPrescription>

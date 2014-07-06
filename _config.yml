@@ -84,7 +84,6 @@ disqus_shortname:
 theme: lion
 exclude_generator:
 -  home
-- material
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:

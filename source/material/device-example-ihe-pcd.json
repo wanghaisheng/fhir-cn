@@ -1,1 +1,0 @@
-{"resourceType":"Device","text":{"status":"generated","div":"<div>\n      \n      <p>Acme Patient Monitor</p>\n    \n    </div>"},"identifier":[{"label":"serialNumber","value":"AMID-123-456"}],"type":{"text":"Vital Signs Monitor"},"manufacturer":"Acme Devices, Inc","model":"A.1.1","lotNumber":"12345"}

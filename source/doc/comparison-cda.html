@@ -1,0 +1,267 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Relationship between FHIR and CDA - FHIR v0.2.1</title>
+
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="http://hl7.org/fhir" name="author"/>
+
+  <link rel="stylesheet" href="fhir.css"/>
+  <link rel="Prev" href="http://hl7.org/implement/standards/fhir/comparison-cda.html"/>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./assets/css/bootstrap-fhir.css"/>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="./assets/css/project.css"/>
+  <link rel="stylesheet" href="./assets/css/pygments-manni.css"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link sizes="144x144" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-144-precomposed.png"/>
+  <link sizes="114x114" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-114-precomposed.png"/>
+  <link sizes="72x72" rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-72-precomposed.png"/>
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png"/>
+  <link rel="shortcut icon" href="./assets/ico/favicon.png"/>
+
+</head>
+<body>
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir"><img alt="logo fhir" src="./assets/images/fhir-logo-www.png"/> </a>
+			<div id="hl7-status">
+				<b>Local Build (WONDERS_3109)</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org">
+					<img height="50" alt="visit the hl7 website" width="42" src="./assets/images/hl7-logo.png"/>
+				</a> 
+			</div>       	
+			  <!-- hl7-search -->
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		
+ 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+						<span class="icon-bar"> </span>
+					</button>
+					<a class="navbar-brand hidden" href="index.html">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
+              <li><a href="implementation.html">Implementation</a></li>
+              <li><a href="resourcelist.html">Resources</a></li>
+              <li><a href="clinical.html">Clinical</a></li>
+              <li><a href="administration.html">Administrative</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+				
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Documentation</a></li>        <li><a href="comparison.html">Comparison</a></li>        <li><b>CDA</b></li>          <!-- comparison-cda.html / page -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+
+<div class="col-9">
+
+<ul class="nav nav-tabs"><li><a href="comparison.html">Comparison Appendix</a></li><li><a href="comparison-v2.html">V2 Messaging</a></li><li><a href="comparison-v3.html">V3 (Messaging)</a></li><li class="active"><a href="#">CDA</a></li><li><a href="comparison-other.html">Other</a></li></ul>
+
+
+<h2><span class="sectioncount">1.9.3<a name="1.9.3"> </a></span> Clinical Document Architecture (CDA)</h2>
+<a name="cda"> </a>
+<p>
+CDA is HL7's most widely adopted V3 standard.  It provides both a standardized 
+header containing metadata about the document as well as the ability to convey 
+a wide variety of clinical content organized into various sections.  The document 
+content can be un-encoded, such as a PDF through to a fully encoded V3 instance.
+</p>
+<p>
+NOTE: While FHIR can be used to create <a href="documents.html">documents</a> using 
+the <a href="composition.html">Composition Resource</a>, FHIR can also be used to 
+exchange traditional CDA R2 documents making use of the <a href="documentreference.html">DocumentReference</a> 
+resource, and handling the CDA document itself as a binary attachment (as XDS does).
+</p>
+
+<h3><span class="sectioncount">1.9.3.1<a name="1.9.3.1"> </a></span> CDA Similarities and Differences</h3>
+<p>
+<b>Clinical document focus:</b> As its name implies, Clinical Document Architecture 
+is limited &quot;clinical&quot; use cases.  The CDA model does not support exchange of content 
+not deemed to have clinical relevance, such as financial information and is limited to 
+documents that deal with patients.  (In some cases, such as the HL7 Structured Product 
+Labeling standard, non-patient-specific CDA-like specifications are created to get 
+around this limitation.)  FHIR documents have no limitation on their content and can 
+have subjects other than patients.
+</p>
+<p>
+<b>Human readability approach:</b> CDA and FHIR both require that content be 
+human-readable and define specific rules for how the human readable text is presented.  
+One small difference is that in CDA, the human readable portion is defined for the 
+section, while for FHIR the text is on the resource the section points to.  However, 
+this produces no real difference in effect.  The other difference is that, for FHIR, 
+the human-readable aspect is not limited to the document - it's driven by the resource 
+itself.  This may result in slightly less flexibility in rendering approach if a document 
+is compiling existing resources.
+</p>
+<p>
+<b>Clinical Statement vs. resources:</b> In CDA, the &quot;content&quot; of the document is expressed 
+using a complex and extremely abstract model based on HL7's &quot;Clinical Statement&quot; project.  
+Its purpose is to allow implementers to express pretty much any clinical concept in any degree 
+of rigor and granularity.  (In practice, there are limitations built into the CDA model that 
+make the expression of certain clinical concepts challenging).  This model provides significant 
+power, but also presents challenges.  The first is that RIM modeling expertise is required in 
+order to express any particular piece of clinical information.  It isn't obvious how to 
+represent things like allergies or surgery or blood pressure &quot;out of the box&quot;.  Templates are 
+required to support interoperability.  The second is that common clinical concepts can be (and 
+frequently are) modeled differently in different circumstances.  With FHIR, all clinical (and 
+non-clinical) content in a message is handled by referencing existing resource definitions.  
+These resources make it clear how to represent common structures like allergies and blood 
+pressure &quot;out of the box&quot; and ensure that there's only one way for core content to be 
+represented.  It does however create the limitation that an appropriate resource must have 
+been defined in order to share content.  In the early stages of FHIR development, it may be 
+necessary to make use of the <a href="other.html">Other</a> resource if an appropriate standard 
+resource has not yet been defined.
+</p>
+<p>
+<b>Templates and Profiles:</b> As discussed above, CDA relies on the presence of templates in 
+order to understand the meaning of instances.  (While the meaning can theoretically be determined 
+by looking at RIM attributes and codes, the reality is that this is often not safe or sufficient.  
+As such, pretty much every CDA instance includes <i>templateId</i> attribute values scattered 
+throughout the instance to define meaning.  With FHIR, meaning is defined by the resource.  
+<a href="profile.html">Profiles</a> can be used to define extensions, but they never refine the 
+meaning of core elements.  While the profiles used in constructing a particular instance can be 
+declared within the instance via <a href="extras.html#tag">tags</a>.  However, such declaration 
+is not required.
+</p>
+<p>
+<b>Mark-up language:</b> CDA defines its own XML syntax for narrative content, loosely based on 
+HTML.  FHIR makes use of a constrained set of XHTML which is somewhat more expressive than the CDA 
+markup.  Conversions from FHIR to CDA will need to take these constraints into account (or 
+alternatively provide a fully rendered version of the document).
+</p>
+
+<h3><span class="sectioncount">1.9.3.2<a name="1.9.3.2"> </a></span> CDA Interoperability Considerations</h3>
+<p>CDA is a type of V3 specification.  Therefore, all <a href="comparison-v3.html#V3-interoperability">considerations</a> 
+that apply to V3 messaging also apply to CDA.  In addition, the following topics are specific to CDA 
+implementations.</p>
+<p>
+<b>What to map:</b> The right-hand side (clinical content) portion of the CDA model qualifies as an 
+abstract model <a href="comparison-v3.html#V3-abstractModels">as discussed above</a>.  While the CDA header can reasonably 
+be mapped to the HL7 <a href="composition.html">Composition</a> resource and related resources, mappings 
+between FHIR and CDA should be done at the template level rather than the CDA specification itself.
+</p>
+<p>
+<b>Human readable granularity:</b> With FHIR, narrative only exists for the resources at the root of 
+each section.  With CDA, narrative exists for each section.  Usually this means the narrative in CDA 
+and FHIR will correspond.  However, in some cases, a section will contain other sub-sections.  In CDA, 
+these &quot;container&quot; sections can have narrative.  In FHIR, they cannot.  Applications will need to have some 
+way of managing this if converting.
+</p>
+<p>
+<b>Discrete to human-readable linkages:</b> To ensure semantic traceability, both FHIR and CDA allow 
+establishing linkages between text in the narrative and specific discrete elements in the encoded part 
+of a document.  If converting between FHIR and CDA, these linkages need to be converted as well.  However, 
+this is complicated by the fact that the granularity at which linkages can occur is different between the 
+two specifications.  In CDA, linkages can only occur at the level of a section or one of a couple of the 
+entry types.  With FHIR, linkages can occur at any level at all, including individual data type components 
+or even portions of extensions.  Converting from CDA to FHIR will be straight-forward, however there will 
+be information loss when converting the other way.
+</p>
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>
+        &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606) generated on Wed, Jul 2, 2014 16:29+0800.   <!-- <a href="qa.html">QA Report</a> -->   <!-- achive note -->
+        <br/>
+        <span style="color: #FFFF77">
+        Links: <a href="dstu.html">What's a DSTU?</a> | 
+               <a href="history.html">Version History</a> | 
+               <a href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2Ffhir%2Fcomparison-cda.html&amp;doc2=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2FFHIR-Develop%2Fcomparison-cda.html">Compare to DSTU</a> | 
+               <a href="license.html">License</a> | 
+               <a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="./assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="./dist/js/bootstrap.min.js"> </script>
+<script src="./assets/js/respond.min.js"> </script>
+
+<script src="./assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+
+    
+    
+</body>
+</html>

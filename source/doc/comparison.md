@@ -8,7 +8,7 @@ categories: doc
 
  **比较**  >[V2消息](comparison-v2.html) >[V3消息](comparison-v3.html) > [CDA](comparison-cda.html) > [其他](comparison-other.html) 
 
-#1.9.0  附录: FHIR与其他HL7标准的关系
+###1.9.0  附录: FHIR与其他HL7标准的关系
 
 自1987年开始[Health Level Seven (HL7)](http://www.hl7.org) 就一直在开发卫生保健信息交换和相关的一些标准。在这些时间里，该组织已经开发了很多标准系列——很多在全球范围内用以实现卫生保健数据共享的自动化和改善病人的健康。FHIR是在毋须了解任何这些标准的背景下而开发的。然而，FHIR中继承了之前的一些经验，不论是对以往最佳实践的应用还是避免陷入之前的一些坑。   
 这部分介绍了FHIR与HL7其他一些标准系列的关系。之前有过HL7标准相关经验的和那些可能需要实现FHIR解决方案与其他HL7标准互操作性的人可能对此比较感兴趣。  

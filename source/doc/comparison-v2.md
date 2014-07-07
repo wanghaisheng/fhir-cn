@@ -6,7 +6,7 @@ categories: doc
   [首页](../home/index.html) >[文档](documentation.html) >>[比较](comparison.html) > **V2消息**	
 
 
- [比较](comparison.html) **V2消息** >[V3消息](comparison-v3.html) > [CDA](comparison-cda.html) > [其他](comparison-other.html) 
+ [比较](comparison.html) > **V2消息** >[V3消息](comparison-v3.html) > [CDA](comparison-cda.html) > [其他](comparison-other.html) 
 
 ###1.9.1  HL7 Version 2
 
@@ -43,79 +43,23 @@ Segments/区段可以组合成 可重复的/或者可选的集合，称之为"�
 **可选性 &amp; 规范:**  在国际标准的层面上，HL7 V2 和 FHIR都提供了相同程度上的灵活度 ，大多数数据元素是可选的，然而有两点不同。
 FHIR资源中对于哪些元素要包含在核心表中有更多限制——只有大多数系统支持的这类数据元。HL7 V2倾向于包含哪些旨在很少场景下会用到的数据元。FHIR 利用扩展来处理这些情况。V2和FHIR都提供了正式的机制来定义规范，也就是如何来使用标准的建议。 然而 V2的机制并没有得到广泛应用 .  FHIR [规范](../infra/profile.html)是方法论的一个基本组件，内置在工具包里，提高了应用的可能性。  
 
-#### 1.9.1.2  V2 Interoperability Considerations
+#### 1.9.1.2  V2互操作性的注意事项    
 
-**Mapping:** One of the biggest challenges with HL7 V2 interoperability is the variation of implementation.  
-Even when identical scenarios are being handled in similar business environments, the data elements supported 
-can vary and even the place where a given data element is placed in an instance can vary.  As a result, defining 
-consistent mapping rules between V2 and FHIR at an international or even regional level is not terribly realistic.  
-The FHIR mappings provided give a starting point for consideration, but mappings will generally need to be done 
-on an implementation by implementation basis.
+**映射:**  HL7 V2互操作性最大的难点在于实现的多样性。甚至是类似的业务环境中，同样场景的处理，所支持的数据元也有差异，某个数据元在数据实例中的位置也各不相同。因此，在国际层面或者区域层面上 ，定义出V2与FHIR之间一致性映射规则是不现实的。FHIR中的映射提供了一个起点，但具体的映射需要结合实现中的具体情况。   
+**扩展:**  尽管一些V2元素可以对应到FHIR的核心元素中来，但大多数是不能的。当FHIR核心模型不支持某个V2元素时，就需要扩展来共享此类信息。如果有必要的话，HL7可能会选择发布和维护专门针对FHIR核心模型中不支持的V2元素的扩展。 在定义本地扩展之前应先在FHIR扩展注册库中查询。如果时间允许的话，考虑联系相关的HL7工作组来定义那些需要却没有的额外的V2扩展。 如果时间不允许的话，应用程序可以现行自己定义扩展，但应考虑如果将来HL7定义了之后的技术迁移计划。对于Z区段而言，应当采用针对定义Z区段的某个系统的URI (如 http://acme.org/fhir/extensions/consent)而不是Z区段的名称 (如. http://hl7.org/ZAC).    
+**资源标识 :** V2消息常常会引用之前消息中已经存在的对象。当消息与FHIR之间进行转换时，这些引用应当指向资源的同一个URI。考虑到不是所有V2消息对象都有标识符，这可能存在一些问题。使用FHIR[transactions](http.html#transaction)是解决此类问题的一种方法.然而，这种方法在使用消息的环境中会产生哪些后果还有有得到验证。早期应用中，开发人员需要自行选择自己的策略。    
+** 引用和资源的合并 :**  V2消息实例可能会引用同一个对象很多次。比如，一个包含了患者用药史的消息可能会包含很多次对同一个医生、医院的引用。尽管在一些情况下，某个对象的数据应该是一样的，在某些情况下，这些信息可能是不同的。比如，在既往的记录中发送系统可能只发送了以往的电话号码，而新的记录则会包含现在的电话号码。另外，消息模式可能会允许消息的不同部分详细程度各异，或者发送系统在设计时可能只是发送消息的不同部分详细程度各异的信息(比如，给下医嘱的医生电话号码，而数据录入人员则不需要)。当要转换成FHIR时，对同一个对象的所有引用一般而言只有一个单独的资源标识符，在实例中也只会被引用一次，其中包含了所有的信息。这带来了两个问题：
 
-**Extensions:**<a name="V2-extensions"> </a>While some V2 elements will map to FHIR core, a large percentage 
-will not.  Where a V2 element is not supported by core, an extension will be needed to share the information.  
-Where there is interest, HL7 may choose to publish and maintain extensions for V2 elements that are not supported 
-as part of the core FHIR specification.  The FHIR extension registry   <!-- Todo: Link --> should be searched prior 
-to defining local extensions.  If time permits, the relevant HL7 WG should be contacted with a request to define 
-additional V2 extensions if needed ones are not present.  If time does not permit, applications can define their 
-own extensions, but should have a migration plan for if/when HL7 defines it later.  For Z-segments, URIs should 
-be defined to be specific to the system/environment that defined the Z-segment (e.g. http://acme.org/fhir/extensions/consent), 
-not based on the name of the Z-segment itself (given that Z-segments with the same name but different meaning may 
-exist) (e.g. http://hl7.org/ZAC).
+     1. 转换程序如何识别一个消息的两部分引用的是同一个对象？  尽管一些引用可能会有唯一标识符或者名称，我们可以确定是同一个对象，其他则不然——尽管可能组合一些属性也能确定。具体原则需要由开发人员来确定。    
+     2.  如果数据存在多个版本，应该使用哪个——或者应该发送不同历史记录id的多个版本？ (如果是后裔中清空，版本的顺序应该是怎样的？ 消息中的数据能否确定版本的顺序 (比如 assuming older order dates have &quot;older&quot;  demographics), 在entry的updated元素中应该指定日期来确定顺序，如果不能确定顺序，就很难将数据整合进一个资源中去或者表达多个资源的数据。   
 
-**Resource identification:**<a name="V2-identification"> </a>V2 messages will often reference objects that 
-have already been referred to in previous messages.  When converting the messages to FHIR, these references 
-will need to point to the same resource URI.  Given that not all V2 message objects have identifiers in the 
-message, this can be somewhat problematic.  An approach to handling this issue exists for FHIR [transactions](http.html#transaction).  
-However, the ramifications of using this approach in a messaging environment have not yet been resolved.  
-Implementers will need to explore their own strategies as part of early adoption.
+**可标识资源 vs. 内嵌资源 :**   每个 HL7 V2 消息能改对应到多个资源实例——通常是10个或者是100个资源实例。为了保持与V2消息模式的一致性，所有资源数据一般是作为FHIR消息的一部分来发送的，而不是向RESTFUL实现中作为引用来发送的。然而， 资源作为消息 [bundle](extras.html#bundle)的一部分，FHIR有2种传输方式: 既可以以“完整可标识”资源来发送(atom feed中的entry，包含了各自的标识，也可以作为单个transaction的对象)，或者是作为内嵌资源来发送，也就是说只是相对其他资源才是可标识的，自己本身是不能检索或者操作的。V2到FHIR的转换过程需要确定要完整的标识一个资源，哪些数据元必须出现。在一些情况下，在映射的时候就完成了这样的工作。举个例子，XCN包含了一个名称 (`|^Smith^John|`)所包含的信息不足以将其与其他的 John Smith进行区分, 因此需要内嵌资源，而 XCN `|12345^Smith^John|`就能做到,尽管还需要转换过程能够了解标识的范围和管理流程。  
 
-**Merging references and resources:**<a name="V2-merging"> </a> V2 message instances may well reference the 
-same &quot;object&quot; numerous times.  For example, a message containing a patient's medication history is likely to 
-include references to the same clinicians and clinics/hospitals many times.  While in some cases, the data 
-captured for a given object might be identical in all uses, in other cases the information might vary.  For 
-example, the sending system might convey historical phone numbers for old records and current phone numbers 
-for newer records.  Alternatively, the message design might allow expression of different amounts of detail 
-in different portions of the message or the sending application might simply be designed to convey different 
-amounts of detail in different portions of the message (e.g. conveying phone number for an ordering clinician, 
-but not for a data-entry clinician).  When converting to FHIR, all references to the same &quot;object&quot; will generally 
-have a single resource identifier and be referenced only once in the instance - with the complete set of 
-information needed/available.  This creates two challenges:
+**生成人可读的内容:**  FHIR要求每个资源都要有人可读的内容 [narrative](narrative.html) ，包含那些与人决策相关的所有信息.  当从V2转换成FHIR时，开发人员需要确定渲染消息中的哪些内容(可能需要医生的协助)以及如何生成这些内容。   
 
-1.  _How does the conversion software recognize when two portions of a message are referencing the same  object?_  While some references may have unique identifiers or names that are sufficient to confirm &quot;same object&quot;,  others may not - though some other combination of attributes may be sufficient.  The specific rules will need to  be determined by the implementer performing the conversion
-2.  _If multiple versions of data are present, what set of data should be used - or should multiple versions  be sent with distinct history ids?  (And if the latter, what is the 'order' of the versions?_  If the order  of the versions can be determined by data in the message (e.g. assuming older order dates have &quot;older&quot;  demographics), dates can be specified on the entry _updated_ element to indicate relative ordering.  If the ordering can't be determined, it will be difficult to merge the data into a single resource or  represent it using multiple resources.
+**空值和更新模式 :**  在HL7 V2里面, &quot;action&quot;编码能够确定特定区段中的信息是否要新增、更新或者删除。  Fields可以用 &quot;null&quot; (一组不包含其他字符的双引号) 来表示这个field可以被删除。 省略一个元素或者重复一个元素常常理解为”保持现有数据不变“。 这与FHIR中要求所有数据都是快照的方法不同， 系统要么需要内建逻辑来生成每个资源的完整快照，要么是引入扩展修饰符来提供类似V2的机制。 
 
-**Identified vs. Contained resources:**<a name="V2-contained"> </a> Each HL7 V2 message will map to 
-multiple resource instances - often 10s or even 100s of resource instances.  To maintain consistency 
-with the V2 messaging paradigm, all resource data will typically be sent over the wire as part of the 
-FHIR message rather than being sent by reference as would be typical in a RESTful implementation.  
-However, FHIR provides two different ways of communicating the resources as part of the message [bundle](extras.html#bundle): 
-they can either be sent as &quot;fully identified&quot; resources (direct entries in the atom feed with their 
-own identity, and able to be the subject of independent transactions), or they can be sent as [contained](references.html#contained) 
-resources, meaning they are only identified relative to another resources and cannot be retrieved or 
-otherwise manipulated on their own.  A V2 to FHIR conversion process will need to make the determination 
-of what data elements are or must be present, for a resource to be fully identified.  In some cases, the 
-determination will be done at the time of mapping.  In other cases, it may depend on the content of a 
-particular instance. As an example, an XCN containing just a name (`|^Smith^John|`) doesn't 
-contain enough information to identify the physician from any other John Smith, so will need to be 
-contained resource, whereas an XCN of `|12345^Smith^John|` generally does, though the conversion 
-process will need to be aware of the scope and management processes around the identifier.
 
-**Generating human-readable content:**<a name="V2-humanReadable"> </a> FHIR requires that every 
-resource have a human readable [narrative](narrative.html) that contains all information 
-relevant to human decision-making.  When converting from V2, developers (likely with guidance from 
-clinicians) will need to determine what information from the message should be rendered and how
-to generate this content.
-
-**Nulls and update modes:**<a name="V2-updateMode"> </a>In HL7 V2, &quot;action&quot; codes can determine 
-whether particular segments represent information to be added, updated or deleted.  Fields can be 
-populated with &quot;null&quot; (two consecutive double-quotes with no other characters) to note a field is 
-to be deleted.  An omitted element or repetition is generally interpreted as &quot;retain existing data 
-unchanged&quot;.  This contrasts with the FHIR approach of requiring all data to be present as a snapshot.  
-Systems will either need to build in logic to generate a full snapshot of each resource or will need 
-to introduce modifier extensions to allow similar behavior to V2.
-
-</div>
 
  &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
 链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		

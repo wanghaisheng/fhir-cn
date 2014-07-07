@@ -9,11 +9,11 @@ categories: home
 第一次? 先读一读 [总结](../doc/summary.html)，然后读一读[概述](../doc/overview.html)。 也可以读一下FHIR的 [许可协议](../doc/license.html)
 
 ##	**主要章节:**
-<table class="bare"> <tr> <td align="middle"><a href="../doc/documentation.htmll"><img height="128" width="128" src="../images/icon-documentation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[普通 &amp; 文档](../doc/documentation.html)</td>
-  <td align="middle"><a href="../impl/implementation.htmll"><img height="128" width="128" src="../images/icon-implementation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[实现 &amp; 交换](../impl/implementation.html)</td>
-  <td align="middle"><a href="../clin/clinical.htmll"><img height="128" width="128" src="../images/icon-clinical.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[临床资源](../clin/clinical.html)</td>
-  <td align="middle"><a href="../admin/administration.htmll"><img height="128" width="128" src="../images/icon-administration.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[管理资源](../admin/administration.html)</td>
-  <td align="middle"><a href="../infra/infrastructure.htmll"><img height="128" width="128" src="../images/icon-infrastructure.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[基础架构资源](../infra/infrastructure.html)</td></tr></table>
+<table class="bare"> <tr> <td align="middle"><a href="../doc/documentation.html"><img height="128" width="128" src="../images/icon-documentation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[普通 &amp; 文档](../doc/documentation.html)</td>
+  <td align="middle"><a href="../impl/implementation.html"><img height="128" width="128" src="../images/icon-implementation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[实现 &amp; 交换](../impl/implementation.html)</td>
+  <td align="middle"><a href="../clin/clinical.html"><img height="128" width="128" src="../images/icon-clinical.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[临床资源](../clin/clinical.html)</td>
+  <td align="middle"><a href="../admin/administration.html"><img height="128" width="128" src="../images/icon-administration.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[管理资源](../admin/administration.html)</td>
+  <td align="middle"><a href="../infra/infrastructure.html"><img height="128" width="128" src="../images/icon-infrastructure.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[基础架构资源](../infra/infrastructure.html)</td></tr></table>
 ##	**快速链接:**  
 ###  文档	
 *   [资源列表Resource List](../res/resourcelist.html)	  

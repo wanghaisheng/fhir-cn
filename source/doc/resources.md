@@ -1,42 +1,45 @@
-title: resources
-date: 2014-05-20 15:13:12
+title: 
+date: 
 categories: doc
 ---		
 
+[首页](../home/index.htmll) >[文档](documentation.htmll) > **资源定义**
+### 1.12.0 资源定义   
+该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．
 
-# 资源定义/Resource Definitions <span class="sectioncount">1.10.0<a name="1.10.0"> </a></span>
+一个资源，也就是一个实体　拥有如下特点：
 
-一个资源，也就是拥有如下特点的一个实体：A resource is an entity that:
+*   拥有一个可寻址的标识　　
+*   自身是该标准中所定义的某种资源类型　　
+*   包含诸多在资源定义中所描述的结构化数据项　　
+*   包含一种供人可读的对资源内容的XHTML的表达形式　
+*   可能随着时间而发生变化　　
 
-*   已知的标识信息可以寻址/has a known identity by which it can be addressed
-*   自身是该标准中所定义的某种资源类型/identifies itself as one of the resource types defined in this specification
-*   包含诸多在资源定义中所描述的结构化数据项contains a set of structured data items as described by the resource definition
-*   包含一种人可读的对资源内容的XHTML的表达形式contains a human readable XHTML representation of the content of the resource
-*   可能随着时间而变化may change over time
+资源有多种表达形式。如果能满足上述条件，依据标准中定义的规则，不管是XML还是JSON ，我们都认为是一个有效的资源，也允许其他的表达形式 ，但该标准中并未描述。　　
 
-资源有多种表达形式。如果能满足上述条件 依据标准中定义的规则 不管是XML还是JSON ，我们都认为是一个有效的资源，也允许其他的表达形式 但该标准中并未描述。Resources have multiple representations. A resource is valid if it meets the above rules, and is represented in 
-either XML or JSON according to the rules defined in this specification. Other representations are allowed, but 
-are not described by this specification.
+##### 1.12.0.0.1 定义　　
+<table class="grid"><tr> <td>资源</td> <td>存储或交换的数据实例</td> </tr><tr> <td>资源定义</td> <td>定义资源所包含的数据项</td> </tr> <tr> <td>规范</td> <td>本身可以关于某个应用场景的对数据项的额外描述，用一种特殊的资源[规范](../infra/profile.html)来表达．</td> </tr></table>   
 
-该标准中定义了一系列不同的资源类型，可以用它们来交换/存储数据，进而解决很多健康相关的问题 不管是临床上的还是行政管理上的。另外，标准中也定义了多种不同的资源交换的方式。This specification defines a series of different resource types that can be used to exchange and/or store data 
-in order to solve a wide range of healthcare related problems, both clinical and administrative. In addition,
-this specification defines several different ways of exchanging the resources.
+####1.12.0.1 资源的内容   
+所有资源都拥有如下数据项和属性，可能是可选的　也可能是强制存在的:
 
-<a name="content"> </a>
-
-## 资源内容/Contents of a Resource <span class="sectioncount">1.10.0.1<a name="1.10.0.1"> </a></span>
-
-所有资源都拥有如下特征:
-
-*   一些定义好的基础数据元。A base set of defined data elements
-*   扩展(可选的)——实现中会另外添加的一些数据元(参考 [&quot;Extensibility&quot;](extensibility.htm))Extensions (optional) - additional data elements added by implementations (see [&quot;Extensibility&quot;](extensibility.htm))
-*   人可读的资源内容的文本描述(参考 [&quot;Narrative&quot;](narrative.htm#Narrative))A human readable narrative description of the contents of the resource (see [&quot;Narrative&quot;](narrative.htm#Narrative))
-*   [所包含的资源](references.htm#contained) - 作为该资源一部分标识和事务相关的其他资源additional resources that are part of the identification and transaction space of this resource
-*   元数据——不是资源内容模型的一部分 但是是资源的一些重要信息。Metadata - important information about the resource that is not part of the content model of the resource
-*   标签——可能用来定义 如安全、工作流等额外动作的资源标签。Tags - labels affixed to the resources that may be used to define additional operational behaviour such as security, workflow, etc.
-
-所有其他资源都继承的基础资源的内容：The contents of the base resource from which all other resources derive are:
-
+*   针对某个类型的一些定义好的基础数据元。　　
+*   [Extensibility](extensibility.htm))——实现中会另外添加的一些数据元　　　
+*   [人可读的资源内容的文本描述](narrative.htm#Narrative)　　
+*   [内嵌资源](references.htm#contained) - 作为该资源标识和事务相关范围一部分的其他资源　　
+*   [元数据](resources.html#metadata)——不是资源内容模型的一部分 但是是资源的一些重要信息。　
+*   [标签](extras.html#tags)——可能用来定义 如安全性、工作流等额外动作的资源标签   
+每个资源都是从公用数据项开始的(对于这种格式的相关文档，参考[资源定义格式](formats.html))     
+<pre class="spec">&lt;<a title="A Resource Definition for FHIR" class="dict" href="#content"><b>[Name]</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;  
+ &lt;<a title="See Extensions" class="dict" href="extensibility.html"><b>extension</b></a>&gt;<font color="Gray">&lt;!-- <font color="brown"><b>0..*</b></font> </font> <font color="darkgreen"><a href="extensibility.html">Extension</a></font>   <a href="extensibility.html"><font color="navy">See Extensions</font></a> <font color="Gray"> --&gt;</font>&lt;/extension&gt;
+ &lt;<a title="See Extensions" class="dict" href="extensibility.html"><b>modifierExtension</b></a>&gt;<font color="Gray">&lt;!-- <font color="brown"><b>0..*</b></font> </font> <font color="darkgreen"><a href="extensibility.html">Extension</a></font>   <a href="extensibility.html"><font color="navy">See Extensions</font></a> <font color="Gray"> --&gt;</font>&lt;/modifierExtension&gt;
+ &lt;<a title="The base human language of the resource content. The value can be any valid value following BCP 47" class="dict" href="base-definitions.html#Resource.language"><b>language</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Human language of the content (BCP-47)</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Text summary of resource content, for human interpretation" class="dict" href="narrative.html#Narrative"><b>text</b></a>&gt;<font color="Gray">&lt;!--</font> <font color="brown"><b>0..1</b></font> <font color="darkgreen"><a href="narrative.html#Narrative">Narrative</a></font> <font color="navy">Text summary of resource content, for human interpretation</font><font color="Gray"> --&gt;</font>&lt;/text&gt;
+ &lt;<a title="See Contained Resources" class="dict" href="references.html#contained"><b>contained</b></a>&gt;<font color="Gray">&lt;!-- <font color="brown"><b>0..*</b></font> </font> <font color="darkgreen"><a href="references.html#contained">Resource</a></font>   <a href="references.html#contained"><font color="navy">Contained Resources</font></a> <font color="Gray"> --&gt;</font>&lt;/contained&gt;
+ <font color="Gray">&lt;!-- Defined Data Elements for Resource --&gt;</font>
+&lt;/[Name]&gt;
+</pre>
+<p>
 <pre class="spec">
 &lt;[**[Name]**](#content "A Resource Definition for FHIR") xmlns=&quot;http://hl7.org/fhir&quot;&gt;
  &lt;[**extension**](extensibility.htm "See Extensions")&gt;<font color="Gray">&lt;!-- <font color="brown">**0..***</font> </font> <font color="darkgreen">[Extensibility](extensibility.htm)</font>   [<font color="navy">参考扩展</font>](extensibility.htm) <font color="Gray"> --&gt;</font>&lt;/extension&gt;
@@ -46,7 +49,7 @@ this specification defines several different ways of exchanging the resources.
  <font color="Gray">&lt;!-- 资源中定义的数据元Defined Data Elements for Resource --&gt;</font>
 &lt;/[Name]&gt;
 </pre>
-
+```
 这些元素的出现顺序必须是这样子的。为了保证schema和UML衍生的代码定义的一致性，首先要考虑到的是所有资源都共同拥有的这些元素。 
 These elements must always appear in this order. These basic elements shared by all resources come first
 in order to support consistent definitions for schema and UML derived code. 
@@ -263,3 +266,6 @@ declare whether they will do so in their conformance statements using the _accep
 *   [叙述性文本/Narratives](narrative.htm)
 *   [格式：Formats:](formats.htm) [XML](xml.htm), [JSON](json.htm)*   [扩展Extensibility](extensibility.htm) ([Examples](extensibility-examples.htm))
 *   [正规定义Formal Definitions](base-definitions.htm)
+
+ &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
+链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		

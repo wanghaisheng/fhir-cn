@@ -96,4 +96,8 @@ binary资源可以包含任意内容,文本\图片\pdf zip压缩包等等.在RES
 
 *  [RESTful HTTP End-Point](../impl/http.html#binary)    
 *  [XML Bundle Representation](xml.html#binary)      
-*  [JSON Bundle Representation](json.html#binary)      
+*  [JSON Bundle Representation](json.html#binary)        
+
+
+ &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
+链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		

@@ -1,90 +1,66 @@
-title: references
-date: 2014-05-20 15:13:12
+title: 
+date: 
 categories: doc
 ---		
 
+[首页](../home/index.html) >[文档](documentation.html) >[资源定义](resources.html) > **引用**
 
-## 内部引用Internal References <span class="sectioncount">1.10.2<a name="1.10.2"> </a></span>
+### 1.12.3 资源的引用     
 
-资源内部的元素间相互引用有4种情况There are 4 cases where elements inside a resource reference each other:
+资源包含2种类型的引用:
+*  **内部引用**-一个资源内的不同元素间的引用     
+*  **外部引用**一个资源与其他资源组件的引用    
+#### 1.12.3.1 内部引用    
+资源内元素间相互引用有3种情况:
 
-*   [在CodeableConcept数据类型内部来表示主要编码](datatypes.htm#CodeableConcept)</Inside a [CodeableConcept data type to identify the primary encoding](datatypes.htm#CodeableConcept)
-*   叙述性文本中&lt;img src=&quot;&quot;/&gt; 的引用，引用资源中的一个图片。An &lt;img src=&quot;&quot;/&gt; reference in the narrative, referring to an image found in the resource
-*   结构化数据元与叙述性文本中的数据元之间Between elements in the narrative and structured data elements
-*   在ResourceReference和[contained resource](references.htm#contained)之间Between a ResourceReference and an [contained resource](references.htm#contained)
+**ResrouceReference和内嵌资源组件的引用**
+ResrouceReference引用的元素指的是内嵌资源的id,一个相对于该资源的不完整id.示例参考下面"内嵌资源" 
+**叙述性文本数据元素与结构化数据元素组件的引用**    
+通过基于id/idref的方法来实现,表示源数据元素与目的数据元素内容一致.xhtml元素与必须理解的数据元素之间的引用建立了一种"衍生自derived from"的关系,而所衍生出的内容指的是源数据元素的内容.注意这意味着有些引用可能是前向推理(对于这些元素的引用是随后在实例中定义的)    
+```
+<Patient xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>... <span idref="dob"/>30-11-1972</span>
+    </div>
+  </text>
+  <birthDate id="dob" value="1972-11-30" />
+```   
+**叙述性文本中的<img src="">的引用**    
+图片源可能是资源内可以找到的图片(比如一个内嵌的[Media](../infra/media.html)或[Binary](extras.html#binary)资源)
+```
+<Patient xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>... <img src="#pic1"/>. ....</p>
+    </div>
+  </text>
+  <contained>
+    <Binary id="pic1" contentType="image/gif">MEKH....SD/Z</Binary>
+  </contained>
+```   
+在这三种情况下,目标元素都有一个"id"属性,与资源内其他的id属性相较,应保持唯一值.这些id引用的为一些和范围只是在包含它们的资源内部.如果多个资源整合成一个单独的XML片段,诸如[atom feed](xml.html#atom),资源间可能会出现重复值.这应该由读取资源的应用程序负责管理."id"属性不属于任何命名空间.引用中的源数据元素应指向同一个资源内的某个属性.    
+#### 1.12.3.2 资源间的引用
+资源内部的许多已定义的元素都会引用其他资源.通过这些引用,这些资源能够整合成医疗保健的信息网络.  
+总是单向定义和标识引用-从源资源到目标资源.引用通过URL来标识,可能是绝对地址,也可能是相对地址.后面会继续讨论引用的解析.  
 
-这些引用是使用id/idref的方式来实现的，表示源数据元和目标数据元的内容一样。目标数据元有一个&quot;id&quot;属性，它的值在整个资源中必须是唯一的。&quot;id&quot;属性没有命名空间。源数据元引用必须指向同一个资源的属性(或者是同一数据类型 如CodeableConcept)
-These references are done using an id/idref based approach, where a source element indicates that it 
-has the same content as the target element. The target element has an attribute &quot;id&quot; which must 
-have a unique value within the resource with regard to any other id attributes. The &quot;id&quot; attribute is not in any namespace.
-The source element reference must refer to an attribute in the same resource (or, for a CodeableConcept, inside the
-same datatype). 
+逆向关系逻辑上也存在从目标资源到源资源的逆向关系,但是在资源中没有明确表示.浏览这些逆向关系需要一些外部的架构来追踪资源间的关系([REST API](../impl/http.html)提供了这样的一种架构,通过对引用搜索变量的命名来[搜索](../impl/http.html#search)逆向关系)
 
-<div class="example">
-<pre class="xml">
-  &lt;example&gt;
-    &lt;target id=&quot;a1&quot;&gt;
-      &lt;child&gt;...&lt;/child&gt;
-    &lt;/target&gt;
-    &lt;-- other stuff --&gt;
-    &lt;source idref=&quot;a1&quot;&gt;
-  &lt;/example&gt;
-</pre>
-</div>
+由于资源是单独处理的,不能认为资源间的关系是具有传递性的. 比如,[Conidition](../clin/condition.html)资源引用了一个[patient](../admin/patient.html)作为对象,关联了一个[procedure](../clin/procedure.html)作为原因,并没有自动化规则或者说言外之意procedure的对象也是这patient. 反而,procedure的对象必须在procedure资源内明确指出. 另外一种方式是对象的语境并没有继承,也不会随着与procedure的关系而传递.这里仅有的例外在于是内嵌资源的情况.注意,在实践当中,关系必须要描述一个合乎逻辑和条理分明的记录。,在condition和procedure的案例中,常常要求对象是同一个病人,
 
-在一个单独的资源中，这和xml：id/idref原理一样，但不同之处在于：id引用的范围和唯一性只存在于包含他们的资源内部。如果多个资源被整合成一个XML，如[atom feed](xml.htm#atom)，资源间可能会存在重复值。这时候就要靠读取资源的应用程序来管理。In a single resource, this works like xml:id/idref, but there is an important difference: the 
-uniqueness and resolution scope of these id references is within the resource that contains them. If multiple
-resources are combined into a single piece of XML, such as an [atom feed](xml.htm#atom), duplicate 
-values may occur between resources. This must be managed by applications reading the resources.
-
-注意所有xhtml元素和数据元之间的引用要建立一种&quot;derived from&quot; 的关系，衍生出的内容(无论是text还是数据)都指向源内容。注意这意味着一些引用可能是向前引用(指向一些可能在以后才会在实例中定义的元素)
-Note that all references between the xhtml elements and the data elements must be understood to 
-establish a &quot;derived from&quot; relationship, where the derived content (whether text or data) refers 
-to the source content.  Note that this means some references may be forward references (references to 
-elements defined later in the instance).
-
-<a name="ResourceReference"> </a>
-<a name="Resource"> </a>
-<a name="references"> </a>
-<a name="Identification"> </a>
-
-## 资源间的引用References between resources <span class="sectioncount">1.10.2<a name="1.10.2"> </a></span>
-
-资源中定义的元素包含了很多对其他资源的引用。这些资源共同构成了医疗信息。The defined elements in a resource includes many references to other resources. 
-The resources combine to build a web of information about healthcare. 
-
-引用总是单向定义的——从源资源到目标资源。在逻辑上存在从目标资源到源资源的反向关系，但在资源中并没有明确的表示。浏览这些反向关系需要一些外部机制来记录资源间的关系。
-References are always defined in one particular direction - from one resource (source) to another (target).
-The corresponding reverse relationship from the target to the source exists in a logical sense, but is 
-not represented explicitly in the resource. Navigating these reverse relationships requires some 
-external infrastructure to track the relationship between resources.
-
-由于资源是单独处理的，我们认为关系是不能够传递的。比如 [Condition](condition.htm)资源引用了一个[Patient](patient.htm)资源作为它的对象，作为病因，又与[Procedure](procedure.htm)资源关联起来，没有自动化的规则和明确方式说明手术的对象也是这个病人。反之，必须在procedure中确定对象。另外一种方式是声明对象的语境是不继承的，也没有顺延到与procedure的关系中。这种情况下唯一的另外就是contained resource。注意实际中，关系必须要描述一个合乎逻辑和条理分明的记录。
-Because resources are processed independently, relationships are not considered to be transitive. 
-For example, if a [Condition](condition.htm) resource references a particular 
-[Patient](patient.htm) as its subject, and it links to a [Procedure](procedure.htm)
-resource as its cause, there is no automatic rule or implication that the procedure 
-has the same patient as its subject. Instead, the subject of the procedure must be established 
-directly in the procedure itself. Another way to state this is that the context of the subject
-is not &quot;inherited&quot; and it does not &quot;conduct&quot; along the relationship to procedure. 
-The only exception to this in the case of contained resources (see below). Note that in
-practice, the relationships do need to describe a logical and coherent record.
-
-在资源中，引用是用类型type、引用reference和文字描述textdescription来表示的。引用最关键的属性是_reference_——资源是通过URL来标识和寻址的。实际的引用长得像如下：
-In a resource, 
-references are represented with a type, a reference, and a text description.
-The key property of the reference is the _reference_ - resources are identified and addressed by their URL.
-The actual reference looks like this (see [&quot;XML Format&quot;](formats.htm#syntax)
-for details of the way resource contents are described):
-
+在资源中，引用是用reference和文字描述来表示的。引用最关键的属性是 reference_——资源是通过URL来标识和寻址的。实际的引用长得像如下：
 <pre class="spec">
-&lt;[**[name]**](references-definitions.htm#ResourceReference "A reference from one resource to another.") xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from Element: [extension](extensibility.htm) --&gt;
- &lt;[**type**](references-definitions.htm#ResourceReference.type "The name of one of the resource types defined in this specification to identify the type of the resource being referenced.") value=&quot;[<span style="color: darkgreen">[code](datatypes.htm#code)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Must have a type if a reference is provided" style="color: deeppink">**0..1**</span> <span style="color: navy">[Resource Type](resource-types.htm)</span><span style="color: Gray"> --&gt;</span>
- &lt;[**reference**](references-definitions.htm#ResourceReference.reference "A reference to a location at which the other resource is found. The reference may a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with ") value=&quot;[<span style="color: darkgreen">[string](datatypes.htm#string)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Must have a type if a reference is provided" style="color: deeppink">**0..1**</span> <span style="color: navy">Relative, internal or absolute URL reference</span><span style="color: Gray"> --&gt;</span>
- &lt;[**display**](references-definitions.htm#ResourceReference.display "Plain text narrative that identifies the resource in addition to the resource reference.") value=&quot;[<span style="color: darkgreen">[string](datatypes.htm#string)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">Text alternative for the resource</span><span style="color: Gray"> --&gt;</span>
+&lt;<a title="A reference from one resource to another." class="dict" href="base-definitions.html#ResourceReference"><b>[name]</b></a> xmlns="http://hl7.org/fhir"&gt; 
+ &lt;!-- from Element: <a href="extensibility.html">extension</a> --&gt;
+ &lt;<a title="A reference to a location at which the other resource is found. The reference may a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." class="dict" href="base-definitions.html#ResourceReference.reference"><b>reference</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]"/&gt;<span style="color: Gray">&lt;!--</span>   <span style="color: brown"><b>0..1</b></span><span style="color: red">Relative, internal or absolute URL reference</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Plain text narrative that identifies the resource in addition to the resource reference." class="dict" href="base-definitions.html#ResourceReference.display"><b>display</b></a> value="[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]"/&gt;<span style="color: html">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: red">Text alternative for the resource</span><span style="color: Gray"> --&gt;</span>
 &lt;/[name]&gt;
 </pre>
+
+![](../material/resourceReference.png)
+
 
 ### 
 术语绑定Terminology Bindings

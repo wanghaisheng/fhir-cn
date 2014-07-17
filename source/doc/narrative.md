@@ -1,170 +1,129 @@
-title: narrative
-date: 2014-05-20 15:13:12
+title: 
+date:  
 categories: doc
 ---		
 
 
-## 叙述性文本 <span class="sectioncount">1.10.3<a name="1.10.3"> </a></span>
+#### 1.12.4.0 叙述性文本     
 
-每个资源可包含一个人可读的叙述性文本，其中包含了对资源的总结，可能用作表示资源中给人看的那部分内容。叙述性文本无需全部是结构化数据，但宜包含足够多的细节，人只是读取叙述性文本也能确保临床安全。资源定义可能定义那些内容宜在叙述性文本中表示以确保临床安全。Each resource may include a human readable narrative that contains a summary of the resource, 
-and may be used to represent the content of the resource to a human. The narrative need 
-not encode all the structured data, but SHOULD contain sufficient detail to make 
-it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define 
-what content should be represented in the narrative to ensure clinical safety.
+每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文本中应该表达那些内容以确保临床安全。     
 
-资源中的叙述性文本允许包含一些结构化数据中不存在的额外信息，如人可编辑的内容。这样的额外信息必须在资源定义的范围之内，尽管很常见，在叙述性文本中包含从其他引用的资源中抽取额外的描述信息。The narrative for a resource is allowed to contain additional information that is not in 
-the structured data, including human-edited content. Such additional information must be 
-in the scope of the definition of the resource, though it is common for the narrative to
-include additional descriptional information extracted from other referenced resources.
+资源总是宜包含叙述性文本,作为供人使用的备用. 然而,在一个严格管控的交换体系中,所有系统都共用一个数据模型, 额外的文字是不必要的,甚至会产生一些临床安全风险,叙述性文本可能会被省略. 开发人员在这样做之前应该谨慎考虑,因为这样做意味着这些资源只能够在有限的交换环境下才能被理解.在资源所定义的生命周期里面,封闭式的交换对象环境很可能就会变得开放. 另外,很多工作流步骤涉及了查找和组合资源,如果所涉及的资源没有自己的文本描述,这将变得更加困难或者繁琐. 
+注意,内嵌资源不应该包含自己的叙述性文本.
 
-既然资源始终宜包含叙述性文本，为此，在严格管理的交易系统中，所有系统都是一个通用数据模型，不需要额外的文本，甚至是一种临床安全风险，这时叙述性文本可被省略。然而，实现人员在这样做之前宜认真考虑，因为这意味着这些资源只有在有限的交易环境中才能被理解，在它们定义的资源的生命周期中 这样封闭的交易环节很有可能会开放。While resources SHOULD always contain narrative, so that to support human-consumption
-as a fall back, in a strictly managed trading systems where all systems share a common 
-data model, and additional text is unnecessary or even a clinical safety risk, the 
-narrative may be omitted. However implementers should consider carefully before 
-doing this, as it will mean that these resources can only be understood in the 
-limited trading environment, and closed trading partner environments are very likely 
-to open up during the lifetime of the resources they define.
 
-注意[内嵌](references.htm#contained)资源自身不应包含叙述性文本。 Note that [Contained](references.htm#contained) Resources SHALL NOT have a narrative 
-of their own.
-
-叙述性文本是一个xhtml的片段，也可包含图片：The narrative is an xhtml fragment that also includes images if appropriate:
-
+叙述性文本是一个xhtml的片段，有一个flag来标记它和数据之间的关系:
 <pre class="spec">
-&lt;[**[name]**](narrative-definitions.htm#Narrative "A human readable formatted text, including images.") xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from Element: [extension](extensibility.htm) --&gt;
- &lt;[**status**](narrative-definitions.htm#Narrative.status "The status of the narrative - whether it") value=&quot;[<span style="color: darkgreen">[code](datatypes.htm#code)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**1..1**</span> <span style="color: navy">[generated | extensions | additional](narrative-status.htm)</span><span style="color: Gray"> --&gt;</span>
- &lt;[**div**](narrative-definitions.htm#Narrative.div "The actual narrative content, a stripped down version of XHTML.") xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&lt; <span style="color: Gray">&lt;!--</span> <span style="color: navy">Limited xhtml content</span><span style="color: Gray">&lt; --&gt;</span> &lt;/div&gt;
-&lt;/[name]&gt;
+<<a title="A human-readable formatted text, including images." class="dict" href="base-definitions.html#Narrative"><b>[name]</b></a> xmlns=&quot;http://hl7.org/fhir&quot;> <span style="float: right"><a title="Documentation for this format" href="formats.html"></a></span>
+ <!-- from Element: <a href="extensibility.html">extension</a> -->
+ <<a title="The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data." class="dict" href="base-definitions.html#Narrative.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/><span style="color: Gray"><!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="narrative-status.html">generated | extensions | additional</a></span><span style="color: Gray"> --></span>
+ <<a title="The actual narrative content, a stripped down version of XHTML." class="dict" href="base-definitions.html#Narrative.div"><b title="The actual narrative content, a stripped down version of XHTML.">div</b></a> xmlns=&quot;http://www.w3.org/1999/xhtml&quot;> <span style="color: Gray"><!--</span> <span style="color: navy">Limited xhtml content</span><span style="color: Gray">< --></span> </div>
+</[name]>
 </pre>
 
-### 
-Terminology Bindings
- <span class="sectioncount">1.10.3.1<a name="1.10.3.1"> </a></span>
+![](../material/narrative.png)
+
+另一种定义:资源规范([XML](Narrative.profile.xml.html),[JSON](Narrative.profile.json.html))      
+
+##### 1.12.4.0.1 术语绑定    
+
 
 <table class="grid">
- <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
- <tr><td title="NarrativeStatus" valign="top">Narrative.status </td><td valign="top">The status of a resource narrative</td><td>[Fixed](terminologies.htm#code)</td><td valign="top">[http://hl7.org/fhir/narrative-status](narrative-status.htm)</td> </tr>
+ <tr><th>路径</th><th>定义</th><th>类型</th><th>参考</th></tr>
+ <tr><td title="NarrativeStatus" valign="top">Narrative.status </td><td valign="top">资源叙述性文本的状态 </td><td><a href="terminologies.html#code">[Fixed/固定的](terminologies.html#code)</a></td><td valign="top"><a href="narrative-status.html">http://hl7.org/fhir/narrative-status</a></td> </tr>
 </table>
+    
 
-_div_ 元素的内容是XHTML片段，仅包含HTML4.0标准中第7-11(除了第9章第4部分)章和第15章所介绍的基本html元素：<a> element、image或内部包含的style属性。XHTML内容不应包含head、body元素和外部的stylesheet引用、script、form、base/link/xlink、frame、iframe和object。div元素必须包含一些非空白内容。The contents of the _div_ element are an XHTML fragment containing only the basic html formatting elements described in 
-chapters 7-11 (except section 4 of chapter 9) and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href),
-images and internally contained style attributes. The XHTML content must not contain
-a head, a body element, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes,
-and objects. The div element must have some non-whitespace content.
-  <!-- Todo: Formally encode these constraints in schematron -->
 
-<div class="example">
-<pre class="xml" fragment="Narrative">
-  &lt;narrative&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;This is a simple 
-          example with only plain text&lt;/div&gt;
-  &lt;/narrative&gt;
+div元素的内容是XHTML片段，应该只包含HTML4.0标准中第7-11(除了第9章第4部分)章和第15章所介绍的基本html元素,    <a>   元素(要么是name,要么是href)、  images和内部包含的style属性。XHTML内容不应包含head、body元素和外部的stylesheet引用、废弃的元素、script、form、base/link/xlink、frame、iframe和object或事件event相关的属性(如onCLick).这是为了保证叙述性文本的内容能够包含在资源内部,不会存在处于激活状态的内容-因为这会引入一些安全问题和在从XHTML中抽取文本时潜在的安全问题.。
 
-   &lt;narrative&gt;
-   &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-     &lt;p&gt;
-       This is an &lt;i&gt;example&lt;/i&gt; with some &lt;b&gt;xhtml&lt;/b&gt; formatting.
-     &lt;/p&gt;
-   &lt;/div&gt;
-  &lt;/narrative&gt;
-</pre>
-</div>
+div元素必须包含一些非空格内容。    
+```
+ <narrative>
+    <div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>This is a simple 
+          example with only plain text</div>
+  </narrative>
+   
+   <narrative>
+   <div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>
+     <p>
+       This is an <i>example</i> with some <b>xhtml</b> formatting.
+     </p>
+   </div>
+  </narrative>
+```     
 
-div内容中的inner部分常常用在浏览器中的innerHTML属性中。为了简化处理，叙述性文本应编码，这样子第一个 &quot;&gt;&quot; 和最后一个&quot;&lt;&quot; 之间的内容就是&lt;div&gt;元素的字节内容。
-The inner portion of the div content is often used for the innerHTML property in a browser.
-In order to simplify processing, the narrative SHALL be encoded so that the character content
-between the first &quot;&gt;&quot; and the last &quot;&lt;&quot; characters is the content of the &lt;div&gt; element.
+div内容中的inner部分常常用在浏览器中的innerHTML属性中。为了简化此类处理，如果是用JSON表示叙述性文本,叙述性文本应编码，这样子第一个 &quot;>&quot; 和最后一个&quot;<&quot; 之间的内容就是<div>元素的字节内容,例如    
+```
+ "div": "<div>text</div>"
+```     
+上述例子是有效的,但下面这个则不是:     
 
-注意:XHTML是嵌在XML中的，因此不支持如_&amp;nbsp;_ or _&amp;copy;_等HTML entity。应该使用Unicode来替代。用_&amp;#160;_ 替换_&amp;nbsp;_。Note that the XHTML is contained in general XML, and so there is no support for HTML entities
-like _&amp;nbsp;_ or _&amp;copy;_ etc. Unicode characters should be used instead. Note that 
-_&amp;#160;_ substitutes for _&amp;nbsp;_. 
+```
+  "div": "<?xml ...><div>text</div>"
 
-叙述性文本的内容应采用<a href="base-definitions.htm#Resource.language">资源所使用的语言</a>，但并不期望HTML 类型的工具能理解资源中的_language_ 元素。鉴于此，&lt;div&gt; 元素中应使用lang属性(a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#the-lang-and-xml:lang-attributes">参考HTML5标准中使用语言的注意事项)The narrative content should be in the [language of the resource](base-definitions.htm#Resource.language), but 
-there is no reason to expect that HTML type tooling would understand the resource _language_ element. For this reason, 
-a lang attribute on the &lt;div&gt; should also be used (and see 
-[the note in the HTML 5 specification about use of language](http://www.w3.org/html/wg/drafts/html/master/dom.html#the-lang-and-xml:lang-attributes)).
+```     
 
-image源引用可能是资源内的一个局部/本地引用：The image source references may be a local reference within the resource:
 
-<pre class="xml">
-  &lt;img src=&quot;#a5&quot;/&gt;
-</pre>
+注意:XHTML是嵌在一般的XML中的，因此不支持如_&amp;nbsp;_ or _&amp;copy;_等HTML entity。应该使用Unicode字符来代替。用_&amp;#160;_ 替换_&amp;nbsp;.     
 
-这是对同一资源中某个元素的id属性的[内部引用](references.htm#idref) 。不管是&quot;[Attachment](datatypes.htm#Attachment)&quot;类型还是内嵌的[Binary](http.htm#binary)资源。This is an [internal reference](references.htm#idref) to an id attribute on an element in the same resource, 
-either an element of type &quot;[Attachment](datatypes.htm#Attachment)&quot;, or a contained [Binary](http.htm#binary) resource.
+叙述性文本的内容应采用[资源所使用的语言](base-definitions.htm#Resource.language)，但并强求HTML 类型的工具能理解资源中的language 元素。 鉴于此，
+&lt;div&gt;元素中宜使用lang属性([参考HTML5标准中使用语言的注意事项](http://www.w3.org/html/wg/drafts/html/master/dom.html#the-lang-and-xml:lang-attributes))       
 
-<div class="example">
-<pre class="xml">
-&lt;Patient xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;text&gt;
-    &lt;status value=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-      &lt;p&gt;... &lt;img src=&quot;#pic1&quot;/&gt;. ....&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/text&gt;
-  &lt;contained&gt;
-    &lt;Binary id=&quot;pic1&quot; contentType=&quot;image/gif&quot;&gt;MEKH....SD/Z&lt;/Binary&gt;
-  &lt;/contained&gt;
-</pre>
-</div>
 
-由于不能保证未内嵌在资源内的图片的可及性，当将资源展现给用户时，图片的来源是叙述性文本必要的一部分，应始终嵌套在attachment或内嵌资源里面。
-Since the availability of images that are not contained in the resource is not guaranteed, 
-when the resource is presented to a user, the source for any images that are an essential 
-part of the narrative should always be embedded in an attachment or a contained resource.
+image源引用可能是资源内的一个局部/本地引用：      
+```
+  <img src="#a5"/>
 
-<a name="css"/>
+```
 
-### XHTML样式化Styling the XHTML <span class="sectioncount">1.10.3.2<a name="1.10.3.2"> </a></span>
+这是对同一资源中某个元素的id属性的[内部引用](references.htm#idref) 。这个元素的类型要么是&quot;[Attachment](datatypes.htm#Attachment)&quot;类型,要么是内嵌的[Binary](http.htm#binary)资源。      
+```
+<Patient xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>... <img src="#pic1"/>. ....</p>
+    </div>
+  </text>
+  <contained>
+    <Binary id="pic1" contentType="image/gif">MEKH....SD/Z</Binary>
+  </contained>
+```
 
-叙述性文本中的XHTML片段可能使用标准方式的css、类和id以及内嵌的样式元素来样式化。当要将XHTML从资源中提取出来展示给用户时，可以给XHTML应用特定的css样式表来构建使用场景所需的展现形式。作者可能会固定内容的如下风格： XHTML fragment in the narrative may be styled using CSS in the normal fashion, using a mix of classes, ids 
-and in-line style elements. Specific CSS stylesheets will be applied to the XHTML when it is extracted from
-the resource to be displayed to a human to create the presentation desired in the context of use. Authors
-may fix the following styling aspects of the content:
+由于不能保证未内嵌在资源内的图片的可及性，当将资源展现给用户时，图片的来源作为叙述性文本必要的一部分，应始终嵌套在attachment里面或者是一个内嵌资源。     
+ 
+ 
 
-*   bold, italic, underline, strikethrough
-*   font color, family, and size
-*   background color, text alignment
-*   whitespace interpretation
-*   ordered list number format (since it may be referred to in text)
+##### 1.12.4.0.2  XHTML样式化     
 
-使用内置的style属性来规定这些样式属性。如果有类似的html元素存在，如&quot;i&quot;, or &quot;pre&quot; 可能会使用这些，但须注意HTML4中废弃了不少这样的元素，不能在叙述性文本的XHTML中使用(包括&quot;u&quot;, and &quot;font&quot;)。These style properties are specified in-line using the style attribute. If an equivalent 
-html element exists, such as &quot;i&quot;, or &quot;pre&quot;, it may be used instead, but note that some of these 
-elements are deprecated in HTML 4 and must not be used in Narrative XHTML (including &quot;u&quot;, and &quot;font&quot;).
+叙述性文本中的XHTML片段可能使用css来样式化,要么是内部的CSS,要么是外部的css。当使用外部css时,利用XHTML元素的class和id属性.当使用内部css时,直接利用XHTML元素的style属性.  为了最小化安全问题和可管理性,编辑系统不会直接指定CSS样式表.反而由展示资源的应用程序提供CSS样式表.这意味着渲染系统选择能够使用那种样式,编辑系统应提前使用. 编辑系统能改使用这些类,也就是说所有渲染系统都要支持:     
 
-渲染系统必须遵从在XHTML中规定的这些渲染风格，尽管允许恰当的解读(如在较暗的房间提供低对比度的展示和针对视觉障碍提供高对比度的展示)。Rendering systems are required to respect any of these rendering styles when they are specified in 
-the XHTML, though appropriate interpretation is allowed (e.g. a low-contrast display for dark 
-room contexts or a high-contrast display for the visually impaired may adjust colors accordingly). 
+<table> <tr> <td>bold</td> <td>Bold</td> <td>{ font-weight: bold }</td> </tr> <tr> <td>italics</td> <td>Italics Text</td> <td>{ font-style: italic }</td> </tr> <tr> <td>underline</td> <td>Underlined Text</td> <td>{ text-decoration: underline }</td> </tr> <tr> <td>strikethrough</td> <td>Strikethrough Text</td> <td>{ text-decoration: line-through }</td> </tr> <tr> <td>left</td> <td>Left Aligned</td> <td>{ text-align : left }</td> </tr> <tr> <td>right</td> <td>Right Aligned</td> <td>{ text-align : right }</td> </tr> <tr> <td>center</td> <td>Center Aligned</td> <td>{ text-align : center }</td> </tr> <tr> <td>justify</td> <td>Justified</td> <td>{ text-align : justify }</td> </tr> <tr> <td>border-left</td> <td>Border on the left</td> <td>{ border-left: 1px solid grey }</td> </tr> <tr> <td>border-right</td> <td>Border on the right</td> <td>{ border-right: 1px solid grey }</td> </tr> <tr> <td>border-top</td> <td>Border on the top</td> <td>{ border-top: 1px solid grey }</td> </tr> <tr> <td>border-bottom</td> <td>Border on the bottom</td> <td>{ border-bottom: 1px solid grey }</td> </tr> <tr> <td>arabic</td> <td>List is ordered using Arabic numerals: 1, 2, 3</td> <td>{ list-style-type: decimal }</td> </tr> <tr> <td>little-roman</td> <td>List is ordered using little Roman numerals: i, ii, iii</td> <td>{ list-style-type: lower-roman }</td> </tr> <tr> <td>big-roman</td> <td>List is ordered using big Roman numerals: I, II, III</td> <td>{ list-style-type: upper-roman }</td> </tr> <tr> <td>little-alpha</td> <td>List is ordered using little alpha characters: a, b, c</td> <td>{ list-style-type: lower-alpha }</td> </tr> <tr> <td>big-alpha</td> <td>List is ordered using big alpha characters: A, B, C</td> <td>{ list-style-type: upper-alpha }</td> </tr> <tr> <td>disc</td> <td>List bullets are simple solid discs</td> <td>{ list-style-type: disc }</td> </tr> <tr> <td>circle</td> <td>List bullets are hollow discs</td> <td>{ list-style-type : circle }</td> </tr> <tr> <td>square</td> <td>List bullets are solid squares</td> <td>{ list-style-type: square }</td> </tr></table>     
+注意:出于测试目的,这里有一个包含所有这些样式的[资源实例](../iinfra/other-example-narrative.xml.html).同时也有一个[XHTML格式的](narrative-example.html)和包含了所有这些样式的对应[标准样式表](fhir-runtime.css)      
 
-允许作者规定额外的在CSS标准中定义的样式和样式属性，但这些都是FHIR标准的扩展，渲染系统无需认可。然而要注意的是，有关样式的其他规定也适用于[documents](document.htm#css)中。
-Authors are allowed to specify additional styles and style properties as specified in the CSS specification,
-but these are extensions to this specification and renderers are not required to honor them. Note, however,
-the additional rules around styling that apply in the context of [documents](document.htm#css).
+编辑系统可能会参考其他的类型,但不能奢望它们总是可以支持的, 如果额外的类型对应安全的渲染很重要的话,交换双方的协议中应该作出要求.    
 
-注意：资源中的样式可采用FHIR标准样式表[http://hl7.org/implement/standards/fhir/fhir.css](http://hl7.org/implement/standards/fhir/fhir.css).已经定义的样式。鉴于没有直接提到该样式表，渲染系统可以保存自己的副本。在没有交易双方协议之下，管理系统不应依赖这些样式来正确地渲染临床内容。Note: styles in resources can make use of the styles defined in the standard FHIR stylesheet, which
-lives here: [http://hl7.org/implement/standards/fhir/fhir.css](http://hl7.org/implement/standards/fhir/fhir.css).
-Since this stylesheet is not referred to directly, rendering systems may take their own copy if they wish. 
-Authoring systems should not depend on these styles being supported in order to render clinical content correctly without
-trading partner agreement. 
+编辑系统也可能会通过style属性来使用外部的样式.这样做的优点在于不用依赖外部的解读,但是副作用在于渲染时导致内容更加难以管理,因此应用程序宜小心使用这种方法.编辑系统可能会固定内容的如下样式:      
 
-</div>
-<div class="col-3"><div class="itoc">
+*   bold, italic, underline, strikethrough     
+*   font color, family and size       
+*   background color, text alignment      
+*   whitespace interpretation       
+*   ordered list number format (since it may be referred to in text)      
+These style properties are specified in-line using the style attribute.   当style属性中制定了样式,渲染系统在渲染时宜遵守其中任意一种,尽管允许适当的演绎(比如暗室中低对比度的展示或者是为了视障人士而高对比度的展示,可以根据情况调整颜色).   
 
-On This Page:
+注意:允许渲染系统忽略或覆盖上面所述的任意内部/外部样式,但是宜小心谨慎以确保只能在合理的交易双方协议的情况下这么做,因为改变文本的展现方式可能会带来临床安全问题.    
 
-[Resource Definition](#root)
+编辑人员可能会指定CSS标准中所规定的额外的样式或样式的属性, 但是这些都是对该标准的扩展,渲染人员毋须遵循.在没有这些额外的样式特征的情况下宜保证查看叙述性文本是安全的.    
+注意:对于[文档](../impl/documents.html#css)的展现有一些额外的规则.        
 
-[Narrative](#Narrative)
+##### 1.12.4.0.3  临床安全考虑     
+卫生保健记录常常有着长时间保留的法律和业务需求(甚至于一个世纪).  跨设备之间不一致的展现方式会带来很高的风险.尽管叙述性文本中允许使用如上所述的标准XHTML和CSS,鼓励在开发中尽量保持简单.即使交换双方协议限制了某个系统的现行需求.经验显式这些协议总归会随着时间而越来越宽泛.       
+特别是:    
+*  多层的复杂展现要求精心测试xhtml div和span元素以及样式的对应,其中包括了嵌套的表格,可能有一些图片,也会导致很难保持渲染一致性.开发中宜避免这些问题.     
+*  如bolding, italics and color等样式的使用不宜作为传达含义或语义的唯一方式,但是宜与其他FHIR资源一道来确保一致的 长久的互操作性.   
 
-[Internal References](#idref)
 
-[JSON](#json)
 
-[Atom (Bundle)](#atom)
 
-[JSON (Bundle)](#json-bundles)
-
-[Schema](#schema)
-
-</div></div>

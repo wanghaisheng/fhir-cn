@@ -3,7 +3,7 @@ date:
 categories: doc
 ---		
 
-
+[首页](../home/index.html) >[文档](documentation.html) >[资源定义](resources.html) > **叙述性文本**
 #### 1.12.4.0 叙述性文本     
 
 每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文本中应该表达那些内容以确保临床安全。     
@@ -126,4 +126,5 @@ These style properties are specified in-line using the style attribute.   当sty
 
 
 
-
+ &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
+链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)      

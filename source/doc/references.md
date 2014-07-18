@@ -141,28 +141,29 @@ The same example in JSON:
 }
 ```     
  备注:内嵌资源仍然是一个引用,而不是直接对所引用元素的內联(比如上面的"custodian"),这样做是为了能够保证采用单一的方式来解析资源引用.尽管直接包含似乎会更简单些,当同样的内嵌资源引用不止一次时仍然会需要支持内在引用.最终,这样做会导致语法上的可选项.对于使用XPath处理资源的用户而言,如下的XPath能够解析内在引用:       
- ```       
+ ```        
  ancestor::f:*[not(parent::f:*)]/f:contained/*[@id=substring-after(current()/f:reference/@value, '#')]      
  ```          
  对于内嵌资源的使用和解释要注意以下几点:       
 *  　内嵌资源和父资源拥有同样的内部id解析空间           
 * 　 内嵌资源不应包含另外的内嵌资源         
 *  　内嵌资源不宜包含任何叙述性文本         
-* 　 內联资源同样继承了父资源的语境.比如,如果父资源包含一个"subject",        
- 内嵌资源也同样拥有一个subject元素,但是并没有指明任何subject,处理程序可能会推理出二个subject是一样的.注意,然而,这些推理只是针对特定的场合.比如,并没有规则说明subject元素的含义在父资源和子资源中是一致的.          
+* 　 內联资源同样继承了父资源的语境.比如,如果父资源包含一个"subject",          
+
+ 内嵌资源也同样拥有一个subject元素,但是并没有指明任何subject,处理程序可能会推理出二个subject是一样的.注意,然而,这些推理只是针对特定的场合.比如,并没有规则说明subject元素的含义在父资源和子资源中是一致的.           
  #### 1.12.3.4 解析bundle中的资源引用       
  在处理bundle时,当遇到一个[资源引用](references.html#Resource),应用程序宜总是先在bundle中检索资源.          
  ##### 1.12.3.4.1 绝对引用       
- ```
+ ```     
    <institution>
     <reference value="http://example.org/Organization/23" />
   </institution>
   <institution>
     <reference value="http://example.org/Organization/ex/history/2" />
   </institution>
-  ```
-  这样应用程序宜查找bundle中的每个entry,看看entry.id或者entry.link与reference url匹配:
-  ```
+  ```     
+  这样应用程序宜查找bundle中的每个entry,看看entry.id或者entry.link与reference url匹配:      
+  ```     
      .. feed ..
   <entry>
     .. 
@@ -187,10 +188,10 @@ The same example in JSON:
     </content>
     xxx feed xxx
 
-```
-在第二种情况下,匹配到资源的一个特定版本.应用程序宜核对entry.id和entry.link两项-只有其中之一能改匹配.如果资源引用不能够解析到bundle内部,应用程序宜能够通过提供的URL直接获取资源.如果不能的话,就必须使用其他方法来找到资源.     
+```     
+在第二种情况下,匹配到资源的一个特定版本.应用程序宜核对entry.id和entry.link两项-只有其中之一能改匹配.如果资源引用不能够解析到bundle内部,应用程序宜能够通过提供的URL直接获取资源.如果不能的话,就必须使用其他方法来找到资源.      
 
-注意 内部引用与其是literal URL,倒不如是URI,典型范例是[cid:URI在事务中的使用](../impl/http.html#transaction)       
+注意 内部引用与其是literal URL,倒不如是URI,典型范例是[cid:URI在事务中的使用](../impl/http.html#transaction)         
 ##### 1.12.3.4.2 相对引用       
 如果资源引用是一个相对URL,使用同样的基本原则:先尝试在bundle内部解析引用,然后再外面找.然而,在这些开始之前,首先要将相对URL转换成绝对URL,要实现这个,必须要指导逻辑上的服务根URL.这个值位于feed本身的叫"fhir-base"的link元素中      
 ```     

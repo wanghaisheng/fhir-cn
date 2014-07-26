@@ -100,12 +100,3 @@ of the [HL7 Work Groups](http://www.hl7.org/Special/committees/index.cfm) to sub
 			<div class="inner-wrapper">
 
         &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606) generated on Wed, Jul 2, 2014 16:29+0800.   <!-- [QA Report](qa.html) -->   <!-- achive note -->
-
-        <span style="color: #FFFF77">
-        Links: [What's a DSTU?](dstu.html) | 
-               [Version History](history.html) | 
-               [Compare to DSTU](http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2Ffhir%2Fadministration.html&amp;doc2=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2FFHIR-Develop%2Fadministration.html) | 
-               [License](license.html) | 
-               [Propose a change](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677)   
-        </span>
-        

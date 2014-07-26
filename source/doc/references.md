@@ -74,8 +74,11 @@ ResrouceReference引用的元素指的是内嵌资源的id,一个相对于该资
 *   URL总是大小写敏感的.   
 *   如果存在的话,display一般上和所引用资源的Resource.text的内容是不等同的.它的目的在于确定引用的是什么,而非完整的描述它.    
 
+
 >约束  
+>              
 >*  **INV-1**:如果资源是內联的(xpath: not(starts-with(f:reference/@value, '#')) or exists(ancestor::a:content/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, '#')]|/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, '#')])),则必须有一个局部引用    
+
 
 在一个restful FHIR服务器上通过"context"元素对病人"034AB16"的相对引用:
 ```

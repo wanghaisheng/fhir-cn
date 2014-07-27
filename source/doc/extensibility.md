@@ -5,8 +5,15 @@ categories: doc
 
 [首页](../home/index.html) >[文档](documentation.html) >[资源定义](resources.html) >**扩展**       
 
+这部分:
 
-#### 1.12.6.0  扩展
+[Extensibility](#root)
+
+[isModifier](#isModifier)
+
+[Defining Extensions](#definition)   
+
+#### 1.12.6.0  扩展        
 
 同时请参考扩展[示例](extensibility-examples.html).                     
 
@@ -165,32 +172,20 @@ JSON格式:
 处理资源中数据的实现应该能够理解使用扩展时扩展所带来的影响.如果处理资源内容的应用程序无法识别modifierExtension,且应用程序要处理它所扩展元素的内容,应用程序应该要么拒绝处理数据,要么对数据相关的操作或者是从数据处理中所得到的结果输出发出警示,以告知使用者它并没有充分理解原始信息.             
 
 
-Implementations are not required to &quot;support&quot; the extension in any meaningful way - they 
-may achieve this understanding by rejecting instances that contain this extension. Alternatively,
-implementations may be able to be sure, due to their implementation environment, that such extensions
-will never occur. However applications SHOULD always check for extensions irrespective of this.
+并不要求开发中以任何有意义的方式&quot;support&quot;扩展-它们可以拒绝这些包含扩展的实例,也能够理解.另外,开发中可能会根据开发环境,确定不会使用这些扩展.然而,不管怎样,应用程序都宜对扩展进行检查核对.     
 
-Note that processing the data of a resource typically means
-copying or filtering data out of a resource for use in another 
-context (display to a human, decision support, exchange in another 
-format where not all information is included, or storing it for this kind of use).
-Servers and background processes that simply move whole resources around unchanged 
-are not &quot;processing the data of the resource&quot;, and therefore these applications 
-are not required to check for unknown extensions. 
+需要注意的是资源中数据的处理一般而言意味着将资源中的数据复制或过滤出来用以其他的场合(展示给人看,决策支持,以另一种格式对部分信息进行交换,为了其他用途而存储).的如果服务器和后台处理过程只是将整个资源进行转移,资源本身未发生变化也就不是"对资源数据的处理",因此这类程序不需要核对哪些未知的扩展.             
 
-### <span class="sectioncount">1.12.6.0.2.1<a name="1.12.6.0.2.1"> </a></span> Summary: Conformance Rules for Modifier Extensions
 
-*   A modifierExtension SHALL only modify the element which it contains and/or its children
-*   It SHALL always be safe to show the narrative to humans; any modifier extension SHALL be represented in the narrative.
-*   Applications SHALL always check for modifierExtensions when processing the data from any element that may carry one. If a modifierExtension they do not understand is found, the application SHALL either refuse to process the resource or affected element, or provide an appropriate warning to its users
+######  1.12.6.0.2.1 总结:扩展修饰符的一致性规则            
 
-### <span class="sectioncount">1.12.6.0.2.2<a name="1.12.6.0.2.2"> </a></span> Example
+*    modifierExtension应只修饰它所包含和或它的子元素              
+*    对于将叙述性文本展示给人看,modifierExtension总是应该保持安全性,任何扩展修饰符都应该展现在叙述性文本当中                         
+*   当要处理包含扩展修饰符的元素中的数据时,应用程序总是应核对 modifierExtension,如果发现了不能理解的 modifierExtension,应用程序应要么拒绝处理该资源或受影响的元素,要么给用户提供警告.                   
 
-<div class="example">
+######  1.12.6.0.2.2  范例
 
-Example: Because of a lack of clinical consensus, there's no element on [Procedure](procedure.html) 
-for any expression of certainty around the expression of the Allergy/Intolerance. Some systems mark their entries 
-as &quot;unlikely&quot; or &quot;probable&quot;. Applications are allowed to extend a resource with data like this: 
+范例:由于临床上缺乏共识,[Procedure](procedure.html) 中并没有任何表示 Allergy/Intolerance的元素,一些系统中将entry标记为&quot;unlikely&quot; or &quot;probable&quot;.允许应用程序对资源进行如下扩展.            
 
 <pre class="xml">
 &lt;AllergyIntolerance&gt;
@@ -204,35 +199,16 @@ as &quot;unlikely&quot; or &quot;probable&quot;. Applications are allowed to ext
   &lt;/modifierExtension&gt;
   &lt;!-- .. text etc... --&gt;
 &lt;/AllergyIntolerance&gt;
-</pre>
-</div>
+</pre>                      
 
-When an application understands this extension, it means that some developer
-has provided appropriate instructions for what to do with the data contained 
-in it. Note that there is no obligation that the application do anything at
-all with the data - it can ignore it if that is safe in its own context,
-though this would not usually be the case.
+当应用程序能够理解该扩展,也就是说开发人员能够正确处理它所包含的数据.注意,应用程序如何处理都没有责任-尽管不总是这样子,如果在这样的场景下是安全的,应用程序可以无视扩展,          
 
-When an application that doesn't understand this extension tries
-to process this resource, it is required to either refuse to process 
-the resource (or containing element), or provide an appropriate warning to its users. Either
-of these courses of action is potentially difficult. One option is to 
-download the profile that defines the extension (from the given URL), 
-find the name of the extension, and then use the name to display
-the extension to the user. An error message could look something like
-this:
+当不能理解扩展的应用程序试图处理该资源时,要求应用程序要么拒绝处理该资源,要么给用户发出警告.这两种操作的过程都可能极为复杂.其中一种选择是(从提供的URL中)下载定义该扩展的规范,找到扩展名称,然后在展示扩展内容时使用扩展名称,错误信息应该如下:              
+![](../material/modifier-extension-warning.png)                     
 
-![](modifier-extension-warning.png)
+注意资源的叙述性文本应包含此类限定性信息,因此将它们作为资源内容的一种表达展现给用户是安全的.警告对话框可以进一步让用户选择是否查看原始的叙述性文本.                    
 
-Note that the narrative of the resource SHALL contain this qualifying 
-information, so it is safe to show this to the user as an expression 
-of the resource's content. A warning dialog box could be extended to
-offer the user the choice to see the original narrative. 
-
-<div class="example">
-
-Here is an example showing a statement that a particular surgeon did
-not perform an operation:
+如下的例子是对某个特殊的手术中并未进行某项操作的声明:                   
 
 <pre class="xml">
 &lt;Procedure xmlns=&quot;http://hl7.org/fhir&quot;&gt;
@@ -253,21 +229,14 @@ not perform an operation:
   &lt;/performer&gt;
   &lt;!-- ...data... --&gt;
 &lt;/Procedure&gt;
-</pre>
-</div>
+</pre>                    
 
-In this case, if an application is not reading the performers of the operation at all,
-the fact that one of the performers has a modifierExtension is irrelevant and the 
-application is free to ignore it. 
+在这种情况下,如果应用程序并没有读取操作人员/performer的信息,某个操作人员有一个modifierExtension的事实就显得无关紧要,应用程序完全可以忽略它.          
 
-### <span class="sectioncount">1.12.6.0.2.3<a name="1.12.6.0.2.3"> </a></span> Special Case: Missing data
 
-In some cases, implementers may find that they do not have appropriate data for an
-element with minimum cardinality = 1. In this case, the element must be present, but 
-unless the resource or a profile on it has made the actual value of the primitive 
-data type mandatory, it is possible to provide an extension that explains why the 
-primitive value is not present:
+######  1.12.6.0.2.3  特殊情况:数据丢失         
 
+在某些情况下,开发人员可能找不到某个最小基数为1的元素数据,这时候,整个元素必须出现,但是除非资源本身或者规范中说明了该元素的基础数据类型的值是强制出现的,我们可以提供一个扩展来解释为什么该基础数据类型值并不存在.        
 <pre class="xml">
 &lt;uri&gt;
   &lt;extension url=&quot;http://hl7.org/fhir/Profile/general-extensions#data-absent-reason&quot;&gt;
@@ -276,185 +245,86 @@ primitive value is not present:
 &lt;/uri&gt;
 </pre>
 
-In this example, instead of a value, a [data missing code](general-extensions.html) is provided. Note that 
-it is not required that this particular extension be used. This extension 
-is **not** a modifier extension, because the primitive data type has no
-value. 
+这个例子中,较之value,我们提供了一个[data missing code](general-extensions.html).注意并不要求使用此类扩展,这个扩展并不是扩展修饰符,因为基础数据类型并没有value.       
 
-It is not valid to create a fictional piece of data for the primitive value,
-and then to add an extension indicating that the data has been constructed
-to meet the data rules. This would be both a bad idea, and also a modifier
-extension, which is not allowed on data types. 
 
-<a name="exchange"> </a>
+给基础数据类型值创建虚拟数据是无效的,然后添加一个扩展来说明这些数据是用来满足数据 规则的.这种想法是很糟糕的,同时这些数据类型中是不允许扩展修饰符存在的.         
 
-## <span class="sectioncount">1.12.6.0.3<a name="1.12.6.0.3"> </a></span> Exchanging Extensions
 
-Extensions are a way of allowing local requirements to be reflected in a resource using
-a common information based approach so that all systems can confidently process them 
-using the same tools. However, when it comes to processing the information, applications
-will be constrained in their ability to handle extensions by the degree to which they 
-are informed about them. 
 
-While the structured definition of an extension should always be available (see below for 
-details), the mere availability of a definition does not automatically mean that applications
-know how to handle them correctly - generally, human decisions are required to made around
-how the data extensions contain should be handled, along with the implicit obligations 
-that around the information. 
+#####  1.12.6.0.3 扩展的交换     
 
-For this reason, local requirements that manifest as extensions are an obstacle to 
-integration. The more the requirements are shared (i.e. regional or national scale),
-the less impact they will have. The consistent representation, definition and registration of 
-extensions that this specification defines cannot resolve that problem - it only provides a framework 
-within which such local variations can be handled more easily. 
+扩展是一种能够在资源中使用同一个信息模型体现本地需求的方法,因此所有系统都能够用同样的工具安全的处理它们.然而,当要处理此类信息时,应用程序能够处理的程度受限于别人告知它们的程度.            
+ 
 
-When it comes to deploying applications that support local requirements, situations
-will very likely arise where different applications
-exchanging information with each other are supporting different sets of extensions.
-This specification makes some basic rules that are intended to make management
-of these situations easier, but they cannot resolve them.
+当扩展的结构化定义总是能够获取时,仅仅是能够自动的获取定义并不意味着应用程序知道如何正确的处理它们-一般而言,如何处理扩展数据需要人来决定,           
 
-*   When exchanging resources, systems SHOULD retain unknown extensions when they are capable of doing so (just as they SHOULD retain core elements when they are capable of doing so)
-*   If a system modifies a resource it SHOULD remove any extensions that it does not understand from themodified element and its descendants, because it cannot know whether the modifications it has mademight invalidate the value of the unknown extension
-*   Systems that drop existing elements are considered to be &quot;processing the resource&quot;
-*   A system SHALL not modify a resource or element that contains &quot;modifier&quot; extensions it doesn't understand
-*   Applications SHOULD ignore extensions that they do not recognize if they are not &quot;modifier&quot; extensions
-*   Systems that do not accept unknown extensions SHALL declare so in their Conformance resource instances
+鉴于此,作为扩展出现的本地化需求是集成的障碍.共有的需求越多(区域层面或国家层面上),它们产生的影响就越小.该标准中所定义的对扩展统一的表达,定义和注册并不能解决这个问题-只是提供了一种此类变化能够更加任意处理的框架而已.            
 
-The degree to which a system can retain unknown extensions is a function of the type of system
-it is: a general purpose FHIR server, or a middleware engine would be expected to retain 
-all extensions, while an application that manages patient registration through a user 
-interface can only retain extensions to the degree that the information in them is part of the
-set managed by the user. Other applications will fall somewhere between these two extremes.
 
-### <span class="sectioncount">1.12.6.0.3.1<a name="1.12.6.0.3.1"> </a></span> Summary: Handling extensions
+当部署了支持本地化需求的应用程序时,支持不同扩展的应用程序间交换信息时就会出现一些问题.该标准中包含了一些基本规则使得针对这些问题的处理变得相对任意,但并没有完全解决它们.              
+*   当交换资源时,系统宜尽其所能的保留未知扩展 (正如它们宜尽其所能的保留核心元素 )                 
+*   如果系统对一个资源进行了修饰/限定,它宜移除所修饰元素及其祖先中中无法理解的任意扩展,因为它所作出的限定是否会使得未知扩展值无效.       
+*   减少现有元素的系统被视为是&quot;对资源的处理&quot;
+*   系统不应限定包含它所不能理解的 &quot;扩展修饰符&quot; 的资源或元素      
+*   如果不是 &quot;扩展修饰符&quot; ,系统无法识别时宜忽略,       
+*   不能接受未知扩展的系统应在它们的一致性资源中进行声明.                
 
-Use the following rules as a guideline for handling resources:
+系统保留未知扩展的程度是不同类型系统的一个功能:通用目的的FHIR服务器,或者中间件引擎,期望能够保留所有扩展;而通过人机交互界面管理患者注册的应用程序,只能保留用户所设置的信息某个部分的哪些扩展.其他系统则处理这2种极端之间.           
 
-*   When writing extensions, make sure they are defined and published
-*   When reading, navigating through or searching on elements that can have modifier extensions, check whether there are any
-*   When reading elements, ignore other extensions, unless you want to read a particular extension
-*   Retain extensions whenever you can 
 
-<a name="define"/>
+######  1.12.6.0.3.1 总结:对扩展的处理           
 
-## <span class="sectioncount">1.12.6.0.4<a name="1.12.6.0.4"> </a></span> Defining Extensions
+处理资源时采用如下规则作为指南:                  
 
-Extensions may be defined by any project or jurisdiction, up to and including international standards organizations such as HL7 itself.  Extensions are defined and published
-as part of a [Resource Profile](profile.html). Extensions are always defined against some particular context - the type of element 
-that they may be used to extend. The following are possible contexts for an extension:
+*   写扩展时需确保事先已经定义好和已发布             
+*   读扩展时,先核对一些可能存在扩展修饰符的元素,是否存在扩展修饰符.                
+*   读元素时,除非想读取某个扩展,忽略其他的扩展.                    
+*   尽你所能保留扩展                                
 
-<table class="codes">
- <tr><th>Context type</th><th>Context format</th><th>Examples</th></tr>
- <tr><td>A particular element (including the root) in a single resource</td><td>The element path for that element</td><td>Profile.resource.element; Person</td></tr>
- <tr><td>A particular element (including the root) in a particular data type</td><td>The data type name for primitive types or the element path for complex data types</td><td>Address.part.value; string</td></tr>
- <tr><td>A particular context in one of the mapped reference models</td><td>The name of the reference model followed by the mapping path</td><td>RIM: Act[moodCode=&quot;EVN&quot;]</td></tr>
- <tr><td>Another extension</td><td>The profile uri of the extension followed by the extension code</td><td>http://myextensions.org#someExtension</td></tr>
- <tr><td>A set of some combination of the above</td><td>As above, separated by ';'</td><td>Address; Contact</td></tr>
-</table>
 
-In addition, an extension definition might apply additional constraints with
-regards to particular element values of the target that make its use appropriate.
-Extensions SHALL only be used on a target for which they are defined.
+##### 1.12.6.0.4  扩展的定义          
+任意项目,区域,甚至于像HL7这样的国际化标准组织都可以定义扩展,扩展是由[Resource Profile](profile.html)一部分来定义和发布的.扩展可以用于以下场景:          
+<table class="codes"> <tr><th>Context type</th><th>Context format</th><th>Examples</th></tr> <tr><td>某个资源的某个元素(包括根元素)</td><td>该元素的元素路径</td><td>Profile.resource.element; Person</td></tr><tr><td>某个数据类型的某个元素(包括根元素)</td><td>基本数据类型的名称或者是复杂数据类型的元素路径</td><td>Address.part.value; string</td></tr> <tr><td>所对应的参考模型的某个场景 </td><td>映射路径所对应的参考模型名称</td><td>RIM: Act[moodCode=&quot;EVN&quot;]</td></tr> <tr><td>其他扩展</td><td>extension code之后的extension的规范uri</td><td>http://myextensions.org#someExtension</td></tr> <tr><td>上述几种的组合</td><td>如上所述,由 ';'分隔</td><td>Address;Contact</td></tr></table>
 
-Each extension is defined using the following fields:
+另外,扩展定义可能会对如何恰当的将某个元素值作为目标进行额外的约束.扩展只能用在它所定义的目标上.                       
 
-<table class="codes">
- <tr><td>Field</td><td>Required?</td><td>Path in Profile (from Profile.extensionDefn)</td><td>Description</td></tr>
- <tr><td>Code</td><td>Required</td><td>.code</td><td>The name that is used as a code in a resource to identify this extension - unique in the context of the defining profile</td></tr>
- <tr><td>Context</td><td>Required</td><td>.contextType and .context</td><td>The context of this extension. See above. The context has two parts: a type, and a path which supplies the details</td></tr>
- <tr><td>Short Definition</td><td>Required</td><td>.definition.short</td><td>A brief description of the extension used in the XML descriptions when the extension is referenced in a profile</td></tr>
- <tr><td>Definition</td><td>Required</td><td>.definition.formal</td><td>A formal statement of the meaning of the content of the field</td></tr>
- <tr><td>Requirements</td><td>Optional</td><td>.definition.requirements</td><td>Identifies the reason the extension is needed</td></tr>
- <tr><td>Comments</td><td>Optional</td><td>.definition.comments</td><td>Additional other information about the extension, including information such as use notes</td></tr>
- <tr><td>Cardinality</td><td>Required</td><td>.definition.min / .definition.max</td><td>The cardinality of this extension.
- Specifying a minimum cardinality of 1 means that if the source system declares that it conforms to an extension that declares a type including this extension, this extension must be included in the resource.  Cardinality can be constrained but not loosened in profiles that reference this extension</td></tr>
- <tr><td>Type</td><td>Required</td><td>.definition.type</td><td>The type(s) of the extension. This SHALL be a valid FHIR data type as described above, or empty, if the extension will contain other extensions</td></tr>
- <tr><td>XPaths</td><td>Optional</td><td>.definition.constraint</td><td>One or more XPath statements that SHALL evaluate to true when the extension is used</td></tr>
- <tr><td>Is Modifier</td><td>Required</td><td>.definition.isModifier</td><td>Whether the extension changes the meaning or interpretation of the element containing the extension (or any descendant of that element). Extensions defined as IsModifier=true are always represented in _modifierExtension_ elements, and extensions defined as IsModifier=false are always represented in _Extension_ elements</td></tr>
- <tr><td>RIM Mapping</td><td>Conditional</td><td>.definition.mapping...</td><td>The formal mapping from this extension to the RIM. Required for HL7-defined extensions that apply to resources with RIM mappings, but optional in other contexts</td></tr>
- <tr><td>v2 Mapping</td><td>Optional</td><td>.definition.mapping...</td><td>Mapping to a v2 segment/field/etc., if desired and appropriate. </td></tr>
- <tr><td>Binding</td><td>Conditional</td><td>.definition.binding</td><td>For the types CodeableConcept and Coding. See [Terminologies](terminologies.html)</td></tr>
-</table>
+每个扩展是由如下字段定义的:                             
+<table class="codes"> <tr><td>字段名称</td><td>是否必要?</td><td>规范中的路径 (from Profile.extensionDefn)</td><td>描述</td></tr> <tr><td>Code</td><td>Required</td><td>.code</td><td>The name that is used as a code in a resource to identify this extension - unique in the context of the defining profile</td></tr> <tr><td>Context</td><td>Required</td><td>.contextType and .context</td><td>The context of this extension. See above. The context has two parts: a type, and a path which supplies the details</td></tr><tr><td>Short Definition</td><td>Required</td><td>.definition.short</td><td>A brief description of the extension used in the XML descriptions when the extension is referenced in a profile</td></tr> <tr><td>Definition</td><td>Required</td><td>.definition.formal</td><td>A formal statement of the meaning of the content of the field</td></tr> <tr><td>Requirements</td><td>Optional</td><td>.definition.requirements</td><td>Identifies the reason the extension is needed</td></tr> <tr><td>Comments</td><td>Optional</td><td>.definition.comments</td><td>Additional other information about the extension, including information such as use notes</td></tr> <tr><td>Cardinality</td><td>Required</td><td>.definition.min / .definition.max</td><td>The cardinality of this extension. Specifying a minimum cardinality of 1 means that if the source system declares that it conforms to an extension that declares a type including this extension, this extension must be included in the resource.  Cardinality can be constrained but not loosened in profiles that reference this extension</td></tr> <tr><td>Type</td><td>Required</td><td>.definition.type</td><td>The type(s) of the extension. This SHALL be a valid FHIR data type as described above, or empty, if the extension will contain other extensions</td></tr> <tr><td>XPaths</td><td>Optional</td><td>.definition.constraint</td><td>One or more XPath statements that SHALL evaluate to true when the extension is used</td></tr> <tr><td>Is Modifier</td><td>Required</td><td>.definition.isModifier</td><td>Whether the extension changes the meaning or interpretation of the element containing the extension (or any descendant of that element). Extensions defined as IsModifier=true are always represented in _modifierExtension_ elements, and extensions defined as IsModifier=false are always represented in _Extension_ elements</td></tr> <tr><td>RIM Mapping</td><td>Conditional</td><td>.definition.mapping...</td><td>The formal mapping from this extension to the RIM. Required for HL7-defined extensions that apply to resources with RIM mappings, but optional in other contexts</td></tr> <tr><td>v2 Mapping</td><td>Optional</td><td>.definition.mapping...</td><td>Mapping to a v2 segment/field/etc., if desired and appropriate. </td></tr> <tr><td>Binding</td><td>Conditional</td><td>.definition.binding</td><td>For the types CodeableConcept and Coding. See [Terminologies](terminologies.html)</td></tr></table>
 
-Notes:
+备注:               
+*   不要求Mappings是计算机可读的.  (i.e. executable logic). 也可以有与其他标准的Mappings                 
 
-*   Mappings are not required to be computable (i.e. executable logic). Mappings to other specifications can also be provided.
+无论何时,包含扩展的资源进行交换时,都必须实现给共享资源的干系人提供扩展的定义. 每个扩展都有一个uri,引用了资源规范格式的对扩展的定义来源.定义的来源宜是字面引用,诸如http:url,指向一个节点,能够响应定义的内容-最好是支持资源规范或者逻辑引用的 [FHIR RESTful server](http.html)-比如国家标准.                
 
-Whenever resources containing extensions are exchanged, the definitions of the extensions SHALL be available to all the parties that share the resources.
-Each extension contains a URI that references the source of the definitions as a Resource Profile. The source SHOULD be a literal reference, such as an
-http: url that refers to an end-point that responds with the contents of the definitions - preferably a [FHIR RESTful server](http.html)
-supporting the Resources Profile, or a logical reference (e.g. using a urn:) - for instance, to a national published
-standard.
+#####  1.12.6.0.5 扩展的管理            
 
-<a name="definition"> </a>
+和为资源定义了基本元素一样,HL7也发布了扩展.HL7发布了一些数据定义作为扩展,而不是作为资源的基本元素,这是为了能够保持资源基本结构的简洁性和简单性,能够让开发人员免于应付它们面临的所有功能.注意HL7并没有定义扩展修饰符-如果HL7发布了会影响其他元素的扩展,那它也就是资源本身的一部分,因为每个人都不得不理解这个扩展.                  
 
-## <span class="sectioncount">1.12.6.0.5<a name="1.12.6.0.5"> </a></span> Control of extensions
+在扩展在实例中使用之前,必须提前发布.HL7维护着两个扩展注册库,鼓励用户在这里注册它们的扩展.但对此不作要求.唯一需要的是扩展的发布能够让所有使用该扩展的人都能够获取它.因此,比方说,在一家机构使用了某个扩展,扩展的定义可以放在机构的局域网内.然而,鉴于资源自身会到处流转,最好是使用HL7或者公开可访问的扩展注册库.           
 
-As well as defining the base element structure for resources, HL7 also publishes extensions. HL7 publishes data definitions
-as extensions rather than as part of the base resource structure in order to keep the base
-resource structure simple and concise, and to allow implementers not to engage with an entire world's
-worth of functionality up front. Note that HL7 does not define &quot;modifier&quot; extensions - if
-HL7 publishes an element that modifies the meaning of other elements, it will be part of the resource
-content itself, since everyone has to understand the extension anyway.
 
-Before extensions can be used in instances, they SHALL be published. HL7 maintains two
-extension registries and users are encouraged to register their extensions there. But
-this is not required. All that is required is that the extension is published in a
-context that is available for users of the extension. So, for example, if a particular
-extension is used within a single institution, the definition of the extension
-can be placed on the institution's intranet. However since, by their nature, resources
-tend to travel well, it's always better to use the HL7 or other publicly accessible extension registries.
+HL7的两个扩展注册库,第一个是通过HL7批准的扩展, 也就是由HL7部分社区通过一个评审过程批准的哪些扩展.另外一个是作为服务提供给社区的,任何人都可以在其中注册扩展.           
 
-HL7 provides two extension registries. The first is for HL7 approved extensions. These
-have been approved by an appropriate part of the HL7 community following a review process,
-and have formal standing. The other registry is provided as a service to the community,
-and anyone can register an extension on it.
+<table class="codes"> <tr><th>Registry</th><th>Search</th><th>Submit</th></tr> <tr><td>HL7 Approved</td><td>[TBD]</td><td>[TBD]</td></tr> <tr><td>Community</td><td>[TBD]</td><td>[TBD]</td></tr> <tr><td>Interim</td><td>[http://hl7connect.healthintersections.com.au/svc/fhir/profile/search](http://hl7connect.healthintersections.com.au/svc/fhir/profile/search)</td><td>[http://hl7connect.healthintersections.com.au/svc/fhir/profile/upload](http://hl7connect.healthintersections.com.au/svc/fhir/profile/upload)</td></tr></table>
 
-<table class="codes">
- <tr><th>Registry</th><th>Search</th><th>Submit</th></tr>
- <tr><td>HL7 Approved</td><td>[TBD]</td><td>[TBD]</td></tr>
- <tr><td>Community</td><td>[TBD]</td><td>[TBD]</td></tr>
- <tr><td>Interim</td><td>[http://hl7connect.healthintersections.com.au/svc/fhir/profile/search](http://hl7connect.healthintersections.com.au/svc/fhir/profile/search)</td>
- <td>[http://hl7connect.healthintersections.com.au/svc/fhir/profile/upload](http://hl7connect.healthintersections.com.au/svc/fhir/profile/upload)</td></tr>
-</table>
+定义扩展的HL7规范可能和资源内容一道进行投票,成为FHIR标准的一部分,也可能单独发布,作为单独标准的一部分.当HL7将扩展作为FHIR标准一部分发布时,所有实例中出现这些数据时都必须使用这些扩展.为了实现最大程度的互操作性,应用程序宜使用其他HL7定义的已发布的扩展来表达类似的数据. 如果引用了定义扩展的规范,那么声称遵循该规范的实现中应使用规范定义的扩展来表达系统的数据元素.
 
-HL7 profiles defining extensions may be balloted alongside resource content as part of the FHIR specification or may
-be published as part of separate specifications.
-When HL7  publishes extensions as part of the FHIR specification, these extensions SHALL
-be used for this data whenever the data is represented in instances. Applications SHOULD use other
-HL7-defined extensions published to represent equivalent data in the interest of maximum interoperability.
-If referencing a profile that defines extensions, implementations declaring conformance with the profile SHALL
-use the profile-defined and imported extensions when conveying equivalent data elements.
+为了最小化开发人员的复杂度,一旦资源成为正式版,HL7并不会故意拔高HL7批准的扩展的内容,使其在后续的资源版本中成为核心资源的内容.                      
 
-To minimize complexity for implementers, HL7 will not elevate content defined in an HL7-approved extension to
-be content defined in a core resource in future versions of the resource once that resource is normative.
+在一些情况下,HL7工作组或其他可能会发布一个规范,它的目的只是在于定义哪些开发人员在某些特殊场景下需要的扩展.比如在V2区段或者V3模型映射过程中需要的扩展.              
 
-In some cases, an HL7 work group or other body may publish a profile whose sole
-purpose is to define extensions expected to be needed by implementers in a particular context.  E.g. extensions needed
-to map a particular set of v2 segments or a v3 model.
 
-Implementations are encouraged to share their extensions with HL7 and register them with the HL7 extension registry. The domain committees will work
-to elevate the extensions into HL7 published extensions or, if adopted by a broad enough portion of the implementer community, the into the base resource structure itself.
+鼓励开发人员与HL7分享它们的扩展,在扩展注册库中进行注册.领域委员会会进行筛选,使之成为HL7批准的扩展,或者在更大范围的社区内应用,抑或是成为资源基本结构的一部分.
+
 
   <!-- Todo: point to actual registry once it's up and running -->
 
-To avoid interoperability issues, extensions SHALL NOT change their definition once published.  (Small clarifications to descriptions
-that do not affect interoperability are permitted.)  Rather than modifying an existing extension, a new extension should be introduced.
-Revisions to an extension may extend the set of contexts in which the extension apply but may not remove or constrain any context previously listed
+为了避免互操作性的问题,一旦发布之后,不应对扩展的定义进行修改.与其限定/修饰已有的扩展,不如引入新的扩展.对扩展的修订可能会放宽扩展的应用场景,但可能不会移除,约束之前已经有的一些场景.      
 
   <!-- Todo: Figure out how to manage "deprecating" extensions and pointing at their new versions -->
 
-</div>
-<div class="col-3"><div class="itoc">
 
-On This Page:
-
-[Extensibility](#root)
-
-[isModifier](#isModifier)
-
-[Defining Extensions](#definition)
 
  &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
 链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)      

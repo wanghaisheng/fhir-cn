@@ -4,8 +4,8 @@ categories: home
 ---
 
 **首页**	
-# 0  欢迎来到FHIR&reg; 
-
+# 0  欢迎来到FHIR&reg;       
+翻译之前，倍感忐忑，英语中总是有一些术语、词汇无法准确的和中文对应起来，这里我整理了一份列表，希望能够通过不断完善，形成一份FHIR标准中涉及的词汇的约定俗成的叫法[术语的汉译](../doc/common-terms-in-Chinese.html)             
 第一次? 先读一读 [总结](../doc/summary.html)，然后读一读[概述](../doc/overview.html)。 也可以读一下FHIR的 [许可协议](../doc/license.html)
 
 ##	**主要章节:**

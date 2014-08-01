@@ -1,0 +1,274 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'hexo',
+1 verbose cli   '-g' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.29
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose cache add [ 'hexo', null ]
+6 verbose cache add name=undefined spec="hexo" args=["hexo",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'hexo',
+7 verbose parsed url   path: 'hexo',
+7 verbose parsed url   href: 'hexo' }
+8 silly lockFile 3f1a2efe-hexo hexo
+9 verbose lock hexo C:\Users\pph\AppData\Roaming\npm-cache\3f1a2efe-hexo.lock
+10 silly lockFile 3f1a2efe-hexo hexo
+11 silly lockFile 3f1a2efe-hexo hexo
+12 verbose addNamed [ 'hexo', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile c225e5a0-hexo hexo@
+15 verbose lock hexo@ C:\Users\pph\AppData\Roaming\npm-cache\c225e5a0-hexo.lock
+16 silly addNameRange { name: 'hexo', range: '*', hasData: false }
+17 verbose request where is /hexo
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 081633ec42a0225d
+20 verbose url raw /hexo
+21 verbose url resolving [ 'https://registry.npmjs.org/', './hexo' ]
+22 verbose url resolved https://registry.npmjs.org/hexo
+23 verbose request where is https://registry.npmjs.org/hexo
+24 info trying registry request attempt 1 at 13:43:55
+25 http GET https://registry.npmjs.org/hexo
+26 http 200 https://registry.npmjs.org/hexo
+27 silly registry.get cb [ 200,
+27 silly registry.get   { date: 'Fri, 25 Jul 2014 05:43:56 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     etag: '"DX8CCVOQV8HEH8R24NP1NBP21"',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=60',
+27 silly registry.get     'content-length': '127536',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '1463',
+27 silly registry.get     'x-served-by': 'cache-hk93-HKG',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1406267036.039051,VS0,VE698',
+27 silly registry.get     vary: 'Accept',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 silly addNameRange number 2 { name: 'hexo', range: '*', hasData: true }
+29 silly addNameRange versions [ 'hexo',
+29 silly addNameRange   [ '0.0.1',
+29 silly addNameRange     '0.0.2',
+29 silly addNameRange     '0.0.3',
+29 silly addNameRange     '0.0.4',
+29 silly addNameRange     '0.0.5',
+29 silly addNameRange     '0.0.6',
+29 silly addNameRange     '0.1.0',
+29 silly addNameRange     '0.1.1',
+29 silly addNameRange     '0.1.2',
+29 silly addNameRange     '0.1.3',
+29 silly addNameRange     '0.1.4',
+29 silly addNameRange     '0.1.5',
+29 silly addNameRange     '0.1.6',
+29 silly addNameRange     '0.1.7',
+29 silly addNameRange     '0.1.8',
+29 silly addNameRange     '0.1.9',
+29 silly addNameRange     '0.1.10',
+29 silly addNameRange     '0.1.11',
+29 silly addNameRange     '0.2.0',
+29 silly addNameRange     '0.2.1',
+29 silly addNameRange     '0.3.0',
+29 silly addNameRange     '0.3.1',
+29 silly addNameRange     '0.3.2',
+29 silly addNameRange     '0.4.0',
+29 silly addNameRange     '0.4.1',
+29 silly addNameRange     '0.4.2',
+29 silly addNameRange     '0.4.3',
+29 silly addNameRange     '0.4.4',
+29 silly addNameRange     '0.4.5',
+29 silly addNameRange     '0.5.0',
+29 silly addNameRange     '0.5.1',
+29 silly addNameRange     '0.5.2',
+29 silly addNameRange     '0.5.3',
+29 silly addNameRange     '0.5.4',
+29 silly addNameRange     '0.5.5',
+29 silly addNameRange     '0.5.6',
+29 silly addNameRange     '0.5.7',
+29 silly addNameRange     '0.5.8',
+29 silly addNameRange     '0.5.9',
+29 silly addNameRange     '0.5.10',
+29 silly addNameRange     '0.5.11',
+29 silly addNameRange     '0.5.12',
+29 silly addNameRange     '1.0.0',
+29 silly addNameRange     '1.0.1',
+29 silly addNameRange     '1.0.2',
+29 silly addNameRange     '1.0.3',
+29 silly addNameRange     '1.0.4',
+29 silly addNameRange     '1.0.5',
+29 silly addNameRange     '1.0.6',
+29 silly addNameRange     '1.0.7',
+29 silly addNameRange     '1.0.8',
+29 silly addNameRange     '1.0.9',
+29 silly addNameRange     '1.1.0',
+29 silly addNameRange     '1.1.1',
+29 silly addNameRange     '1.1.2',
+29 silly addNameRange     '1.1.3',
+29 silly addNameRange     '1.1.4',
+29 silly addNameRange     '1.2.0',
+29 silly addNameRange     '1.2.1',
+29 silly addNameRange     '1.2.2',
+29 silly addNameRange     '1.2.3',
+29 silly addNameRange     '1.2.4',
+29 silly addNameRange     '2.0.0-beta2',
+29 silly addNameRange     '2.0.0-rc1',
+29 silly addNameRange     '2.0.0-rc2',
+29 silly addNameRange     '2.0.0-beta1',
+29 silly addNameRange     '2.0.0-rc3',
+29 silly addNameRange     '2.0.0',
+29 silly addNameRange     '2.0.1',
+29 silly addNameRange     '2.0.2',
+29 silly addNameRange     '2.0.3',
+29 silly addNameRange     '2.0.4',
+29 silly addNameRange     '2.0.5',
+29 silly addNameRange     '2.0.6',
+29 silly addNameRange     '2.0.7',
+29 silly addNameRange     '2.1.0',
+29 silly addNameRange     '2.1.1',
+29 silly addNameRange     '2.2.0',
+29 silly addNameRange     '2.2.1',
+29 silly addNameRange     '2.3.0',
+29 silly addNameRange     '2.4.0',
+29 silly addNameRange     '2.4.1',
+29 silly addNameRange     '2.4.2',
+29 silly addNameRange     '2.4.3',
+29 silly addNameRange     '2.4.4',
+29 silly addNameRange     '2.4.5',
+29 silly addNameRange     '2.5.1',
+29 silly addNameRange     '2.5.2',
+29 silly addNameRange     '2.5.3',
+29 silly addNameRange     '2.5.4',
+29 silly addNameRange     '2.5.5',
+29 silly addNameRange     '2.5.6',
+29 silly addNameRange     '2.5.7',
+29 silly addNameRange     '2.6.0',
+29 silly addNameRange     '2.6.1',
+29 silly addNameRange     '2.6.2',
+29 silly addNameRange     '2.6.3',
+29 silly addNameRange     '2.7.0',
+29 silly addNameRange     '2.7.1',
+29 silly addNameRange     '2.8.0',
+29 silly addNameRange     '2.8.1' ] ]
+30 verbose addNamed [ 'hexo', '2.8.1' ]
+31 verbose addNamed [ '2.8.1', '2.8.1' ]
+32 silly lockFile ee7e1e2c-hexo-2-8-1 hexo@2.8.1
+33 verbose lock hexo@2.8.1 C:\Users\pph\AppData\Roaming\npm-cache\ee7e1e2c-hexo-2-8-1.lock
+34 silly lockFile cd443638-ry-npmjs-org-hexo-hexo-2-8-1-tgz https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz
+35 verbose lock https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz C:\Users\pph\AppData\Roaming\npm-cache\cd443638-ry-npmjs-org-hexo-hexo-2-8-1-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz',
+36 verbose addRemoteTarball   '9281a0ddf90aa8e417f0193b714b0e9d3ccea3c0' ]
+37 info retry fetch attempt 1 at 13:44:04
+38 verbose fetch to= C:\Users\pph\AppData\Local\Temp\npm-7796-jx0pVX8k\registry.npmjs.org\hexo\-\hexo-2.8.1.tgz
+39 http GET https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz
+40 http 200 https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz
+41 silly lockFile cd443638-ry-npmjs-org-hexo-hexo-2-8-1-tgz https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz
+42 silly lockFile cd443638-ry-npmjs-org-hexo-hexo-2-8-1-tgz https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz
+43 silly lockFile ee7e1e2c-hexo-2-8-1 hexo@2.8.1
+44 silly lockFile ee7e1e2c-hexo-2-8-1 hexo@2.8.1
+45 silly lockFile c225e5a0-hexo hexo@
+46 silly lockFile c225e5a0-hexo hexo@
+47 silly resolved [ { name: 'hexo',
+47 silly resolved     version: '2.8.1',
+47 silly resolved     description: 'A fast, simple & powerful blog framework, powered by Node.js.',
+47 silly resolved     main: 'lib/hexo',
+47 silly resolved     bin: { hexo: './bin/hexo' },
+47 silly resolved     scripts: { test: 'gulp test' },
+47 silly resolved     directories: { lib: './lib', bin: './bin' },
+47 silly resolved     engines: { node: '>= 0.10.0' },
+47 silly resolved     repository: { type: 'git', url: 'git://github.com/hexojs/hexo.git' },
+47 silly resolved     bugs: { url: 'https://github.com/hexojs/hexo/issues' },
+47 silly resolved     homepage: 'http://hexo.io/',
+47 silly resolved     keywords: [ 'website', 'blog', 'cms', 'framework', 'hexo' ],
+47 silly resolved     author:
+47 silly resolved      { name: 'Tommy Chen',
+47 silly resolved        email: 'tommy351@gmail.com',
+47 silly resolved        url: 'http://zespia.tw' },
+47 silly resolved     license: 'MIT',
+47 silly resolved     dependencies:
+47 silly resolved      { async: '^0.9.0',
+47 silly resolved        moment: '^2.7.0',
+47 silly resolved        colors: '0.6.2',
+47 silly resolved        'highlight.js': '8.1.0',
+47 silly resolved        lodash: '^2.4.1',
+47 silly resolved        swig: '1.4.1',
+47 silly resolved        'graceful-fs': '^3.0.2',
+47 silly resolved        warehouse: '0.2.2',
+47 silly resolved        'sprintf-js': '0.0.7',
+47 silly resolved        chokidar: '0.8.2',
+47 silly resolved        minimist: '0.2.0',
+47 silly resolved        pangunode: '0.0.6',
+47 silly resolved        cheerio: '0.17.0',
+47 silly resolved        connect: '3.x',
+47 silly resolved        'serve-static': '^1.2.0',
+47 silly resolved        morgan: '^1.1.1',
+47 silly resolved        compression: '^1.0.3',
+47 silly resolved        mime: '^1.2.11',
+47 silly resolved        'hexo-front-matter': '0.0.4',
+47 silly resolved        'js-yaml': '^3.1.0',
+47 silly resolved        'strip-indent': '^0.1.3' },
+47 silly resolved     devDependencies:
+47 silly resolved      { mocha: '^1.20.1',
+47 silly resolved        chai: '^1.9.1',
+47 silly resolved        gulp: '^3.6.2',
+47 silly resolved        'gulp-jshint': '^1.5.5',
+47 silly resolved        'gulp-mocha': '^0.5.1',
+47 silly resolved        'jshint-stylish': '^0.4.0' },
+47 silly resolved     _id: 'hexo@2.8.1',
+47 silly resolved     dist:
+47 silly resolved      { shasum: '9281a0ddf90aa8e417f0193b714b0e9d3ccea3c0',
+47 silly resolved        tarball: 'http://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz' },
+47 silly resolved     _from: 'hexo@',
+47 silly resolved     _npmVersion: '1.4.3',
+47 silly resolved     _npmUser: { name: 'tommy351', email: 'tommy351@gmail.com' },
+47 silly resolved     maintainers: [ [Object] ],
+47 silly resolved     _shasum: '9281a0ddf90aa8e417f0193b714b0e9d3ccea3c0',
+47 silly resolved     _resolved: 'https://registry.npmjs.org/hexo/-/hexo-2.8.1.tgz' } ]
+48 info install hexo@2.8.1 into C:\Program Files\nodejs
+49 info installOne hexo@2.8.1
+50 verbose node_modules\hexo unbuild
+51 verbose tar unpack C:\Users\pph\AppData\Roaming\npm-cache\hexo\2.8.1\package.tgz
+52 silly lockFile ee8d68cf-m-Files-nodejs-node-modules-hexo tar://C:\Program Files\nodejs\node_modules\hexo
+53 verbose lock tar://C:\Program Files\nodejs\node_modules\hexo C:\Users\pph\AppData\Roaming\npm-cache\ee8d68cf-m-Files-nodejs-node-modules-hexo.lock
+54 silly lockFile a5c47863-npm-cache-hexo-2-8-1-package-tgz tar://C:\Users\pph\AppData\Roaming\npm-cache\hexo\2.8.1\package.tgz
+55 verbose lock tar://C:\Users\pph\AppData\Roaming\npm-cache\hexo\2.8.1\package.tgz C:\Users\pph\AppData\Roaming\npm-cache\a5c47863-npm-cache-hexo-2-8-1-package-tgz.lock
+56 silly gunzTarPerm modes [ '777', '666' ]
+57 error Error: EPERM, mkdir 'C:\Program Files\nodejs\node_modules\hexo'
+57 error  { [Error: EPERM, mkdir 'C:\Program Files\nodejs\node_modules\hexo']
+57 error   errno: 50,
+57 error   code: 'EPERM',
+57 error   path: 'C:\\Program Files\\nodejs\\node_modules\\hexo',
+57 error   fstream_type: 'Directory',
+57 error   fstream_path: 'C:\\Program Files\\nodejs\\node_modules\\hexo',
+57 error   fstream_class: 'DirWriter',
+57 error   fstream_stack:
+57 error    [ 'C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\fstream\\lib\\dir-writer.js:36:23',
+57 error      'C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\mkdirp\\index.js:37:53',
+57 error      'Object.oncomplete (fs.js:107:15)' ] }
+58 error Please try running this command again as root/Administrator.
+59 error System Windows_NT 6.1.7601
+60 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "hexo" "-g"
+61 error cwd C:\Users\pph\Documents\GitHub\fhir-cn
+62 error node -v v0.10.29
+63 error npm -v 1.4.21
+64 error path C:\Program Files\nodejs\node_modules\hexo
+65 error fstream_path C:\Program Files\nodejs\node_modules\hexo
+66 error fstream_type Directory
+67 error fstream_class DirWriter
+68 error code EPERM
+69 error errno 50
+70 error stack Error: EPERM, mkdir 'C:\Program Files\nodejs\node_modules\hexo'
+71 error fstream_stack C:\Program Files\nodejs\node_modules\npm\node_modules\fstream\lib\dir-writer.js:36:23
+71 error fstream_stack C:\Program Files\nodejs\node_modules\npm\node_modules\mkdirp\index.js:37:53
+71 error fstream_stack Object.oncomplete (fs.js:107:15)
+72 verbose exit [ 50, true ]

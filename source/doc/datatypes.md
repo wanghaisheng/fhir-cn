@@ -5,9 +5,9 @@ categories: doc
 
 [首页](../home/index.html) >[文档](documentation.html) >**数据类型**        
 
- [Data Types](#)  >  [Examples](datatypes-examples.html) > [Formal Definitions](datatypes-definitions.html) > [Mappings](datatypes-mappings.html)             
+ [数据类型](#)  >  [实例](datatypes-examples.html) > [正式定义](datatypes-definitions.html) > [映射](datatypes-mappings.html)             
 
-On This Page:
+本页内容:
 
 [基本数据类型](#primitive)
 
@@ -15,7 +15,7 @@ On This Page:
 
 [其他类型](#other)
 
-### 1.13.0  Data Types
+### 1.13.0  数据类型
 
 FHIR标准为资源中的数据元素定义了一系列的数据类型.数据类型分两大类:从XML Schema导入的简单/基础数据类型,和复杂数据类型,主要是可复用的元素集合.这部门介绍数据类型.参考 [数据类型实例](datatypes-examples.html), [数据类型正规定义](datatypes-definitions.html) 和 [数据类型的对应关系](datatypes-mappings.html).
 
@@ -34,127 +34,73 @@ FHIR标准为资源中的数据元素定义了一系列的数据类型.数据类
 下表中对标准中所用到的基本数据类型和对它们的约束进行了总结, 它们也可以有[扩展](extensibility.html).基本数据类型的value属性和 [W3C Schema (1.0) 标准 第二部分](http://www.w3.org/TR/xmlschema-2/)中定义的值域相同,尽管大多数情况下,以加粗的字体来表示该标准所规定的额外约束.                 
 <a name="boolean"> </a><a name="integer"> </a><a name="decimal"> </a><a name="base64Binary"> </a><a name="base64binary"> </a><a name="instant"> </a><a name="string"> </a><a name="uri"> </a><a name="date"> </a><a name="dateTime"> </a><a name="time"> </a><table class="list"> <tr>   <td colspan="3">**基本数据类型**</td> </tr><tr>   <th>FHIR中的名称</th><th>Schema中的类型</th><th>定义</th> </tr> <tr>   <td>boolean</td><td>xs:boolean</td><td>值要么是true要么是flase  (**0和1是无效值**)</td></tr> <tr>   <td>integer</td><td>xs:int</td><td>有符号的32位整数(更大的值 选用decimal)</td> </tr> <tr>   <td>decimal</td><td>xs:decimal</td><td>随机数.实际中不要选用IEEE的浮点数类型,选用内置精度的真正的decimal(如JAVA中的BigDecimal).**Decimals may not use exponents**</td> </tr> <tr>   <td>base64Binary</td><td>xs:base64Binary</td><td>base64 编码的字节流 ([RFC 4648](http://tools.ietf.org/html/rfc4648))</td> </tr> <tr>   <td>instant</td><td>xs:dateTime</td><td>某个时间点- **至少要知道秒,总是包括时区**.    注意: 这个类型适合系统时间,不适合人的时间 (参考date和dateTime).</td> </tr> <tr>   <td>string</td><td>xs:string</td><td> 一个Unicode字符序列 **字符串大小不应该超过 1MB **</td> </tr> <tr>   <td>uri</td><td>xs:anyURI</td><td>唯一的资源标识符引用,可以是绝对或相对引用,可能会包含可选的标识符片段([RFC 3986](http://tools.ietf.org/html/rfc3986))</td> </tr>
  <tr><td>date</td><td>xs:date, xs:gYearMonth, xs:gYear的组合</td><td>人们交流时用到的日期或者日期的一部分(如只是年份或者年份加上月份)  **不包含时区 **. Dates值应该是有效值,date是w3c schema 中 date, gYearMonth,  and gYear的组合 正则表达式为: -?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1]))?)?</td></tr> <tr><td>dateTime</td><td>xs:dateTime, xs:date, xs:gYearMonth, xs:gYear的组合</td><td>人们交流时用到的日期,日期-时间或者部分日期(如只是年份或者年份加上月份) 如果指定了小时和分钟,应该要有时区值.可以有秒 也可以没有.日期值应该是有效值.
- If hours and minutes are specified, a time zone SHALL be populated. Seconds may be provided but may also be ignored. Dates SHALL be valid dates. **The time &quot;24:00&quot; is not allowed** dateTime is a union of the w3c schema types dateTime, date, gYearMonth, gYear  regex: -?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?)?)?)? </td></tr> <tr><td>time</td><td>xs:time</td><td>A time during the day, with no date specified (can be converted to a [Duration](#Duration) since midnght. Seconds may be provided but may also be ignored. **The time &quot;24:00&quot; is not allowed, and neither is a time zone**  regex: ([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?  <!-- these regex tested using http://www.regexr.com/ -->
- </td>  </tr> <tr><td colspan="3">_Note: not all restrictions imposed on the date/time types can be expressed using regular expressions, so these regexes allow a broader set of values than are actually valid_</td></tr><tr><td colspan="3"/></tr> <tr>   <td colspan="3">**Simple Restrictions** <a name="patterns"/><a name="code"> </a><a name="oid"> </a><a name="uuid"> </a><a name="id"> </a></td> </tr> <tr>   <th>FHIR Name</th><th>Base FHIR Type</th><th>Description</th> </tr> <tr><td>code</td><td>string</td><td>Indicates that the value is taken from a set of controlled strings defined elsewhere (see [Using codes](terminologies.html) for further discussion). Technically, a code is restricted to string which has at least one character and no leading or trailing whitespace, and where there is no whitespace other than single spaces in the contents regex: [^\s]+([\s]+[^\s]+)*</td></tr><tr><td>oid</td><td>uri</td><td>An OID represented as a URI ([RFC 3001](http://www.ietf.org/rfc/rfc3001.txt)): urn:oid:1.2.3.4.5</td></tr> <tr><td>uuid</td><td>uri</td><td>A UUID, represented as a URI ([RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)): urn:uuid:a5afddf4-e880-459b-876e-e4591b0acc11. Note the RFC comments about case: UUID values SHALL be represented in lower case, but systems SHOULD interpret them case insensitively</td></tr><tr><td>id</td><td>string</td><td>A whole number in the range 0 to 2^64-1 (optionally represented in hex), a uuid, an oid, or any other combination of lowercase letters, numerals, &quot;-&quot; and &quot;.&quot;, with a length limit of 36 characters regex: [a-z0-9\-\.]{1,36}</td></tr></table>
+. **&quot;24:00&quot; 形式的时间是不允许的** dateTime是W3C schema中 dateTime, date, gYearMonth, gYear数据类型的组合. regex: -?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?)?)?)? </td></tr> <tr><td>time</td><td>xs:time</td><td>某天内的某个时间点没 但没有规定是哪天. (可以转换成午夜之后的 [Duration](#Duration) 可以有秒,也可以没有. **不允许&quot;24:00&quot;形式的时间,不允许时区的出现**  regex: ([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?  <!-- these regex tested using http://www.regexr.com/ -->
+ </td>  </tr> <tr><td colspan="3">注意:并非对于date/time数据类型的所有约束都可以用正则表达式来表示,因此其实这些正则表达式的取值要比真正的有效值范围要广一些</td></tr><tr><td colspan="3"/></tr> <tr>   <td colspan="3">**简单约束** <a name="patterns"/><a name="code"> </a><a name="oid"> </a><a name="uuid"> </a><a name="id"> </a></td> </tr> <tr>   <th>FHIR 中的名称</th><th>基本的FHIR数据类型</th><th>描述</th> </tr> <tr><td>code</td><td>string</td><td>表示取值来自其他地方所定义的可控的字符串集合 (更多信息请参考 [编码的使用](terminologies.html) ). 技术上来讲,code是至少包含一个字符的字符串,前后都没有空格, and where there is no whitespace other than single spaces in the contents 正则表达式: [^\s]+([\s]+[^\s]+)*</td></tr><tr><td>oid</td><td>uri</td><td>用URI([RFC 3001](http://www.ietf.org/rfc/rfc3001.txt))来表示OID: urn:oid:1.2.3.4.5</td></tr> <tr><td>uuid</td><td>uri</td><td>用URI([RFC 4122](http://www.ietf.org/rfc/rfc4122.txt))来表示UUID: urn:uuid:a5afddf4-e880-459b-876e-e4591b0acc11. 注意 RFC 批注中要求说UUID的值必须是小写的,系统可以根据情况来处理</td></tr><tr><td>id</td><td>string</td><td>范围在 0 to 2^64-1 之间的数字(可以是十六进制的),  uuid,  oid, 或任意小写字母的组合, 数字, &quot;-&quot; 和 &quot;.&quot;, 长度限制为36位.正则表达式为: [a-z0-9\-\.]{1,36}</td></tr></table>
 
-In addition to having a value as described above, these primitive data types can also have an identity (e.g. xml:id), 
-and they may have [extensions](extensibility.html) like any other element in a resource. Note that the 
-value option is optional and might not be present, following the [standard rules for all elements](formats.html#element-rules).
-For instance, a primitive element might have no value, and include a [data-absent-reason extension](general-extensions.html#data-absent-reason) instead.
+除了上述的值以外,这些基本数据类型也可以有标识(如xml:id),也可能和资源中的其他元素一样会有[扩展](extensibility.html) 注意 value字段是可选的,可以不存在,这里遵循[所有元素的标准规则](formats.html#element-rules).
+比如,基本数据类型的元素可能没有valu字段,取而代之的会存在一个 [数据缺失原因的扩展data-absent-reason extension](general-extensions.html#data-absent-reason) .                
 
-In XML, these types are represented as XML Elements with the value of the type in the value attribute. 
-The name of the element is defined where the type is used. The XML elements may have an [id attribute](references.html#idref), and child elements named &quot;extension&quot;. 
-According to XML schema, leading and trailing whitespace in the value attribute is ignored for the types 
-boolean, integer, decimal, base64Binary, instant, uri, date, dateTime, oid, and uri. Note that this means that the 
-schema aware XML libraries give different attribute values to non schema aware libraries when reading the 
-XML instances. For this reason, the value attribute for these types SHOULD not have leading and trailing spaces.
-String values should only have leading and trailing spaces if they are part of the content of the value. 
+在XML中,这些数据类型表示成XML元素,在value属性中用数据类型的值来表示.元素的名称用数据类型来定义.XML元素可能会有一个 [id 属性](references.html#idref), 和&quot;extension&quot;子元素. 按照XML schema,会忽略数据类型boolean, integer, decimal, base64Binary, instant, uri, date, dateTime, oid, and uri的值中包含的前置和后置的空格.注意这意味着对于XML实例而言,schema aware 和non schema aware 的XML库会存在不同的属性值.鉴于此,这些数据类型的valuse属性的值不应该包含前置或后置的空格.String 的值只有在前置或后置空格本身是值的一部分时才能存在.     
 
-In JSON, these types are represented as simple properties of the object that contains them. The name of the property is defined where the type is used.
-The types still have an id property, and extensions. How these are represented is described in the [JSON format](json.html). Whitespace
-is always significant in JSON. Primitive types other than string SHALL NOT have leading or trailing whitespace.
-
+在 JSON中,这些类型用包含它们的对象的简单属性来表示.属性的名称用数据类型来定义.数据类型也会有id属性和extension.在[JSON format](json.html)中描述了如何表示.JSON中空格总是很重要的.除了string之外的基本数据类型不应该包含前置或后置空格.
 * * *
 
 <a name="Types"/>
 
-## <span class="sectioncount">1.13.0.2<a name="1.13.0.2"> </a></span> Complex Types
+#### 1.13.0.2 复杂数据类型                          
 
-These types are represented as XML Elements with child elements with the name of the defined elements of the type. The name of the element is defined where the type is used. 
-Any of the XML elements may have an [id attribute](references.html#idref). In JSON, the data type is represented by an object with properties named the same as the
-XML elements. The JSON representation is almost exactly the same, so only the first [example](datatypes-examples.html#Attachment) has an additional JSON representation.
+这些数据类型用包含子元素的XML元素来表示,子元素的名称用基本数据类型来定义.
+任意XML元素都可能有 [id attribute](references.html#idref).  JSON中,这些数据类型是用对象来表示的,属性的名称和XML元素的名称一样.JSON表达格式几乎是一样的,因此只有第一个[例子](datatypes-examples.html#Attachment) 给出了JSON的表达格式.
 
-Complex data types may be &quot;profiled&quot;. A [profile](profile.html) makes 
-a set of rules about which elements SHALL have values, and what the possible 
-values are.
+复杂数据类型可以用 &quot;被规范&quot;.  [规范](profile.html)中是对元素应该取什么值,哪些元素应该取值的约束.  
 
-**UML Diagrams of the Data types**
-![](../material/)     
-![](../material/)
-
-
+**复杂数据类型的UML图**
+![](../material/complex-types.png)     
 
 <a name="Attachment"/>
 <a name="attachment"/>
 
-## <span class="sectioncount">1.13.0.3<a name="1.13.0.3"> </a></span> 
-Attachment
+#### 1.13.0.3  Attachment
 
-See also [Examples](datatypes-examples.html#Attachment), [Formal Definitions](datatypes-definitions.html#Attachment) and [Mappings](datatypes-mappings.html#Attachment).
+参考[实例](datatypes-examples.html#Attachment), [正式定义](datatypes-definitions.html#Attachment) and [映射](datatypes-mappings.html#Attachment).
 
-This type is for containing or referencing attachments - additional data content defined in other 
-formats. The most common use of this type is to include images or reports in 
-some report format such as PDF. However it can be used for any 
-data that has a mime type. 
+该数据类型针对的是包含或引用附件的情况-一些用其他格式定义的数据内容.最常用的情况是包含图片或诸如PDF等格式的报告.然而可以用来表示任何拥有MIME类型的数据.
+```
+<[name](datatypes-definitions.html#Attachment "For referring to data content defined in other formats.") xmlns="http://hl7.org/fhir"> doco
+ <!-- from Element: extension -->
+ <contentType value="[code]"/><!-- 1..1 Mime type of the content, with charset etc. -->
+ <language value="[code]"/><!-- 0..1 Human language of the content (BCP-47) -->
+ <data value="[base64Binary]"/><!-- 0..1 Data inline, base64ed -->
+ <url value="[uri]"/><!-- 0..1 Uri where the data can be found -->
+ <size value="[integer]"/><!-- 0..1 Number of bytes of content (if url provided) -->
+ <hash value="[base64Binary]"/><!-- 0..1 Hash of the data (sha-1, base64ed ) -->
+ <title value="[string]"/><!-- 0..1 Label to display in place of the data -->
+</[name]>
+```
+![](../material/attachment.png)     
 
-<pre class="spec">
-&lt;[**[name]**](datatypes-definitions.html#Attachment "For referring to data content defined in other formats.") xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right">[![doco](help.png)](formats.html "Documentation for this format")</span>
- &lt;!-- from Element: [extension](extensibility.html) --&gt;
- &lt;[**contentType**](datatypes-definitions.html#Attachment.contentType "Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.") value=&quot;[<span style="color: darkgreen">[code](datatypes.html#code)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**1..1**</span> <span style="color: navy">[Mime type of the content, with charset etc.](http://www.rfc-editor.org/bcp/bcp13.txt.html)</span><span style="color: Gray"> --&gt;</span>
- &lt;[**language**](datatypes-definitions.html#Attachment.language "The human language of the content. The value can be any valid value according to BCP 47.") value=&quot;[<span style="color: darkgreen">[code](datatypes.html#code)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">[Human language of the content (BCP-47)](http://tools.ietf.org/html/bcp47.html)</span><span style="color: Gray"> --&gt;</span>
- &lt;[**data**](datatypes-definitions.html#Attachment.data "The actual data of the attachment - a sequence of bytes. In XML, represented using base64.") value=&quot;[<span style="color: darkgreen">[base64Binary](datatypes.html#base64Binary)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">Data inline, base64ed</span><span style="color: Gray"> --&gt;</span>
- &lt;[**url**](datatypes-definitions.html#Attachment.url "An alternative location where the data can be accessed.") value=&quot;[<span style="color: darkgreen">[uri](datatypes.html#uri)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">Uri where the data can be found</span><span style="color: Gray"> --&gt;</span>
- &lt;[**size**](datatypes-definitions.html#Attachment.size "The number of bytes of data that make up this attachment.") value=&quot;[<span style="color: darkgreen">[integer](datatypes.html#integer)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">Number of bytes of content (if url provided)</span><span style="color: Gray"> --&gt;</span>
- &lt;[**hash**](datatypes-definitions.html#Attachment.hash "The calculated hash of the data using SHA-1. Represented using base64.") value=&quot;[<span style="color: darkgreen">[base64Binary](datatypes.html#base64Binary)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">Hash of the data (sha-1, base64ed )</span><span style="color: Gray"> --&gt;</span>
- &lt;[**title**](datatypes-definitions.html#Attachment.title "A label or set of text to display in place of the data.") value=&quot;[<span style="color: darkgreen">[string](datatypes.html#string)</span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown">**0..1**</span> <span style="color: navy">Label to display in place of the data</span><span style="color: Gray"> --&gt;</span>
-&lt;/[name]&gt;
-</pre>
+其他定义: 资源规范 ([XML](Attachment.profile.xml.html), [JSON](Attachment.profile.json.html))
 
-<table style="border: 0px; font-size: 11px; font-family: verdana; vertical-align: top;" cellpadding="0" border="0" cellspacing="0"><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Name</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Card.</th><th style="width: 100px" class="heirarchy">Type</th><th style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Description &amp; Constraints</th></tr><tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="heirarchy">![.](tbl_spacer.png)![.](icon_element.gif) [Attachment](datatype-definitions.html#Attachment "For referring to data content defined in other formats.")<a name="Attachment"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Element</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Content in a format defined elsewhere</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin.png)![.](icon_primitive.png) [contentType](datatype-definitions.html#Attachment.contentType "Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.")<a name="Attachment.contentType"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">1..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[code](datatypes.html#code)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Mime type of the content, with charset etc.
-[MimeType](http://www.rfc-editor.org/bcp/bcp13.txt "The mime type of an attachment") ([Required](terminologies.html#code "One of the the defined codes must be used"))</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin.png)![.](icon_primitive.png) [language](datatype-definitions.html#Attachment.language "The human language of the content. The value can be any valid value according to BCP 47.")<a name="Attachment.language"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[code](datatypes.html#code)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Human language of the content (BCP-47)
-[Language](http://tools.ietf.org/html/bcp47 "A human language") ([Required](terminologies.html#code "One of the the defined codes must be used"))</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin.png)![.](icon_primitive.png) [data](datatype-definitions.html#Attachment.data "The actual data of the attachment - a sequence of bytes. In XML, represented using base64.")<a name="Attachment.data"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[base64Binary](datatypes.html#base64Binary)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Data inline, base64ed</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin.png)![.](icon_primitive.png) [url](datatype-definitions.html#Attachment.url "An alternative location where the data can be accessed.")<a name="Attachment.url"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[uri](datatypes.html#uri)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Uri where the data can be found</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin.png)![.](icon_primitive.png) [size](datatype-definitions.html#Attachment.size "The number of bytes of data that make up this attachment.")<a name="Attachment.size"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[integer](datatypes.html#integer)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Number of bytes of content (if url provided)</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin.png)![.](icon_primitive.png) [hash](datatype-definitions.html#Attachment.hash "The calculated hash of the data using SHA-1. Represented using base64.")<a name="Attachment.hash"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[base64Binary](datatypes.html#base64Binary)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Hash of the data (sha-1, base64ed )</td></tr>
-<tr style="border: 0px; padding:0px; vertical-align: top; background-color: white;"><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="heirarchy">![.](tbl_spacer.png)![.](tbl_vjoin_end.png)![.](icon_primitive.png) [title](datatype-definitions.html#Attachment.title "A label or set of text to display in place of the data.")<a name="Attachment.title"> </a></td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">0..1</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">[string](datatypes.html#string)</td><td style="vertical-align: top; text-align : left; padding:0px 4px 0px 4px" class="heirarchy">Label to display in place of the data</td></tr>
-</table>Alternate definitions: Resource Profile ([XML](Attachment.profile.xml.html), [JSON](Attachment.profile.json.html))
+#####  1.13.0.3.1 术语绑定                 
+<table class="grid"> <tr><th>路径</th><th>定义</th><th>数据类型</th><th>参考</th></tr> <tr><td title="MimeType" valign="top">Attachment.contentType </td><td valign="top">attachment的 mime类型</td><td>[Incomplete](terminologies.html#incomplete)</td><td valign="top">[BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)](http://www.rfc-editor.org/bcp/bcp13.txt)</td> </tr> <tr><td title="Language" valign="top">Attachment.language </td><td valign="top">人类使用的语言</td><td>[Incomplete](terminologies.html#incomplete)</td><td valign="top">[IETF language tag](http://tools.ietf.org/html/bcp47)</td> </tr></table>
 
-### <span class="sectioncount">1.13.0.3.1<a name="1.13.0.3.1"> </a></span> 
-Terminology Bindings
+ _contentType_ 元素总是应赋值.它包含了编码信息和其他的一些mime类型的扩展.如果其中没有编码信息,也就是说没有定义正确的操作,尽管一些mime类型 可能会定义默认的编码集或者可以通过对内容的解读来确定正确的编码集.
+Attachment的实际内容是用_data_ 元素或者URL引用来提供的.如果两者皆有的话,URL指向的内容应该和data中的内容一样,决不能指向和data中不同的内容(比方说,reference是存在版本的). URL的reference应该指向一个地址,该地址可以获取实际的数据,一些URI诸如cid能够满足这样的要求.如果URL是一个相对引用的话,应该用和 [resource reference](references.html#references)一样的方式来解读.
 
-<table class="grid">
- <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr>
- <tr><td title="MimeType" valign="top">Attachment.contentType </td><td valign="top">The mime type of an attachment</td><td>[Incomplete](terminologies.html#incomplete)</td><td valign="top">[BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)](http://www.rfc-editor.org/bcp/bcp13.txt)</td> </tr>
- <tr><td title="Language" valign="top">Attachment.language </td><td valign="top">A human language</td><td>[Incomplete](terminologies.html#incomplete)</td><td valign="top">[IETF language tag](http://tools.ietf.org/html/bcp47)</td> </tr>
-</table>
+包含了 _hash_,这样系统就可以确认URL所返回的内容未经修改.
 
-The _contentType_ element SHALL always be populated. It can include charset information 
-and other mime type extensions as appropriate. If there is no character set in the _contentType_
-then the correct course of action is undefined, though some media types may define a default
-character set and/or the correct character set may be able to be determined by inspection of the content.
+在很多使用Attachment的情况下,基数设为1.正确的使用重复次数可以在不同的mime类型和语言中传递同样的内容.应该在资源中可重复元素/引用该类型的扩展定义中提供对重复元素含义的指导意见
 
-The actual content of the 
-Attachment can be conveyed directly using the _data_ element
-or a _URL_ reference can be provided. If both are provided, the reference SHALL 
-point to the same content as found in the data. The reference can never be reused to point to
-some different data (i.e. the reference is version specific). The
-_URL_ reference SHALL point to a location that resolves to actual data; some
-URIs such as cid: meet this requirement. If the URL is a relative reference, it is interpreted
-in the same way as a [resource reference](references.html#references).
+ 描述attachment中所使用语言的language元素取值使用 [BCP 47中定义的编码](http://tools.ietf.org/html/bcp47).
 
-The _hash_ is included so that applications can verify that the content returned by the URL has not changed. 
+>  **约束**
 
-In many cases where Attachment is used, the cardinality is &gt;1. A valid use of repeats is to convey the same content in different mime types and languages.
-Guidance on the meaning of repeating elements SHALL be provided in the definition of the repeating resource element or extension that references this type.
-The language element describes the language of the attachment using the [codes defined in BCP 47](http://tools.ietf.org/html/bcp47).
+>  如果data URL都不存在的话,应当理解成对于所声明的原因 ,没有特定mime类型和或语言的内容.
+>
+> 在使用的场景中可以常常会对能够使用的attachment的类型作出规定(也就是mime的类型).
 
-<div class="use">
 
-**Constraints**
-
-If neither _data_ nor a _URL_ 
-is provided, the value should be understood as an assertion that no content for 
-the specified _mimeType_ and/or _language_ is available for the reason stated.
-
-The context of use may frequently make rules about the kind of attachment
-(and therefore, the kind of mime types) that can be used.
-
-</div>
-
-Attachment is used in the following places: [Media](media.html), [Practitioner](practitioner.html), [SecurityPrincipal](securityprincipal.html), [DiagnosticReport](diagnosticreport.html), [Observation](observation.html), [RelatedPerson](relatedperson.html) and [Patient](patient.html)
+在这些地方会用到Attachment: [Media](media.html), [Practitioner](practitioner.html), [SecurityPrincipal](securityprincipal.html), [DiagnosticReport](diagnosticreport.html), [Observation](observation.html), [RelatedPerson](relatedperson.html) and [Patient](patient.html)
 
 <a name="Coding"> </a>
 <a name="coding"> </a>

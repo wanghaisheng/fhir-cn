@@ -1,19 +1,16 @@
-title: 文档
+title: 文档索引
 date: 
 categories: doc
 ---
 
-## FHIR 文档索引 <span class="sectioncount">1.0<a name="1.0"> </a></span>
+## 1.0 FHIR 文档索引 
 
-该页是FHIR文档的索引。除了文档之外，也有一些实现指南和资源列表。
+该页是对FHIR文档的索引。除了文档之外，也有一些实现指南和资源列表。
 
-<table width="100%">
- <tr>
- <td>
 
 **管理**
 
-文档指南.
+文档指南/背景信息.
 
 *   [完整目录](toc.html)
 *   [许可协议和法律术语](license.html)
@@ -29,33 +26,39 @@ categories: doc
 
 *   [一页纸总结(Glossy)](summary.html)
 *   [简介和 Roadmap](overview.html)
-*   附录：
-     *	[与其他HL7标准的对比](comparison.html)   	
-     *	[未来的挑战所带来的变化](change.html)   
-     *       [FHIR与EHR的适用性](ehr-fm.html)
+*   [FHIR 时间线](overview.html)
+*   [版本间的兼容性](compatibility.html)
 
 
 **资源**
 
 资源的基本定义.
 
-*   [资源定义](resources.html)  
-*   [标签、组合、分隔符](extras.html)  
+*   [基础资源](resource.html)  
+*   [资源定义](resources.html)(已废弃)  
+*   [一致性规则](conformance-rules.html)  
+*   [compartments](extras.html)  
 *   [资源间的引用](references.html)  
-*   [文本](narrative.html)  
-*   [格式:](formats.html) [XML](xml.html), [JSON](json.html)    
+*   [叙述性文本](narrative.html)  
 *   [扩展性](extensibility.html) ([Examples](extensibility-examples.html))  
-*   [正规定义](base-definitions.html)  
-
+*   [格式:](formats.html) [XML](xml.html), [JSON](json.html)    
+*   [资源的bundle](../infra/bundle.html)  
+*   [二进制数据的传输](../infra/binary.html)  
+*   [数据类型](datatypes.html) 
+*   基础架构类类型:
+	*     [领域资源](domainresource.html) 
+	*     [元素](element.html) 
+	*     [核心元素](backboneelement.html) 
+	*     [元素定义](elementdefinition.html) 
 
 **数据类型**
 
 FHIR中用到的通用类型.
 
-*   [定义](datatypes.html)  
-*   [实例](datatypes-examples.html)  
-*   [正规定义](datatypes-definitions.html)  
-*   [映射/对应](datatypes-mappings.html)  
+*   [定义](datatypes.html)(已废弃)  
+*   [实例](datatypes-examples.html)(已废弃)    
+*   [正规定义](datatypes-definitions.html)(已废弃)    
+*   [映射/对应](datatypes-mappings.html)(已废弃)    
 
 * * *
 
@@ -63,11 +66,19 @@ FHIR中用到的通用类型.
 
 如何使用编码、系统、值集和已知系统的注册  
 
-*   [简介和概述](terminologies.html)  
+*   [如何在资源中使用编码](terminologies.html)  
 *   [已定义的系统列表](terminologies-systems.html)  
-*   [绑定列表](terminologies-bindings.html)  
-*   [字典/编码系统列表](terminologies-codes.html)  
 *   [值集列表](terminologies-valuesets.html)  
-*   [V2表格列表](terminologies-v2.html)  
+*   [V2 表格列表](terminologies-v2.html)  
 *   [V3 Code System / Value set 列表](terminologies-v3.html)  
-*   参见 [Value Set 资源](valueset.html)  
+*   [字典映射](terminologies-conceptmaps.html)  
+*   [术语服务](terminology-service.html)  
+*   参考 [Value Set 资源](../infra/valueset.html)  和[ConceptMap 资源](../infra/conceptmap.html)    
+*   [绑定列表](terminologies-bindings.html)  (已废弃)    
+*   [字典/编码系统列表](terminologies-codes.html)  (已废弃)    
+
+**附录**    
+
+*	[与其他HL7标准的对比](comparison.html)   	
+*	[未来的挑战所带来的变化](change.html)   
+*   [FHIR 与 EHR 的适用性](ehr-fm.html)

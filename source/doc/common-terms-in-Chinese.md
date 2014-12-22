@@ -50,8 +50,10 @@ properties—— 属性
 control ——基数     
 Invariants ——保持不变      
 inline—— 內联       
- Requirements ——应用场景      
-
+ Requirements ——应用场景        
+DomainResource ——领域资源     
+conceptmaps ——字典映射		
+     
 
 &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
 链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		

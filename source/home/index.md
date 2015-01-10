@@ -4,18 +4,18 @@ categories: home
 ---
 
 **首页**	
-# 0  欢迎来到 FHIR&reg;       
-翻译之前，倍感忐忑，英语中总是有一些术语、词汇无法准确理解,其中一部分也没有办法和现有的中文概念对应起来，这里我整理了一份列表，希望能够通过不断完善，形成一份 FHIR 标准中涉及的词汇的约定俗成的叫法[常见术语的汉译](../doc/common-terms-in-Chinese.html)             
-初次接触 FHIR? 先读一读 [总结](../doc/summary.html)， [开发者指南](../doc/overview-dev.html)，或者临床应用简介(todo)，然后读一读[概述](../doc/overview.html)。 也可以读一下　FHIR　的 [许可协议](../doc/license.html)
+# 0  欢迎来到 FHIR&reg;的世界       
+翻译之前，倍感忐忑，英语中总是有一些术语、词汇无法准确理解,其中一部分也没有办法和现有的中文概念对应起来，这里我整理了一份列表，希望能够通过不断完善，形成一份 `FHIR` 标准中涉及的词汇的约定俗成的叫法[常见术语的汉译](../doc/common-terms-in-Chinese.html)，翻译过程中并非按照原文逐字逐句，适当的做了增删改，但均文中做出了说明。中文的排版参考了[中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)            
+初次接触 `FHIR` 的话? 先读一读 [总结](../doc/summary.html)， [开发者指南](../doc/overview-dev.html)，或者临床应用简介(todo)，然后读一读[概述](../doc/overview.html)。 也可以读一下 `FHIR` 的 [许可协议](../doc/license.html)
 > This ballot is a “For comment” draft of the material that will be part of the scope of the second DSTU release (currently slated for ballot in April/May 2015). It is not a fully polished release and not all content should be considered at the “ready to implement” level. The purpose of this ballot is to give the implementer community a sense of the content that will be included in the second DSTU. This includes revisions to DSTU content (some of them significant) as well as additions to functionality and new resources.
 
-This release should be considered “feature complete” in that it is unlikely that any significant new capabilities or resources will be introduced between this publication and the DSTU ballot. However, additional changes are very likely as work groups continue to clear the backlog of change requests and continue their review and polishing of content. While any sort of feedback is welcomed, balloters are encouraged to focus on substantive concerns with the specification rather than spending too much energy on reporting spelling, grammatical or other similar issues. These will be addressed as part of the quality process leading up to the DSTU ballot in May.
+> This release should be considered “feature complete” in that it is unlikely that any significant new capabilities or resources will be introduced between this publication and the DSTU ballot. However, additional changes are very likely as work groups continue to clear the backlog of change requests and continue their review and polishing of content. While any sort of feedback is welcomed, balloters are encouraged to focus on substantive concerns with the specification rather than spending too much energy on reporting spelling, grammatical or other similar issues. These will be addressed as part of the quality process leading up to the DSTU ballot in May.
 
-This draft content will serve as the basis for FHIR Connectathons in Jan-Feb 2015, including FHIR Connectathon 8.
+> This draft content will serve as the basis for FHIR Connectathons in Jan-Feb 2015, including FHIR Connectathon 8.
 
 
 ##	**主要章节:**
-<table class="bare"> <tr> <td align="middle"><a href="../doc/documentation.html"><img height="128" width="128" src="../images/icon-documentation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[基础 &amp; 文档](../doc/documentation.html)</td>
+<table class="bare"> <tr> <td align="middle"><a href="../doc/documentation.html"><img height="128" width="128" src="../images/icon-documentation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[基础文档](../doc/documentation.html)</td>
   <td align="middle"><a href="../impl/implementation.html"><img height="128" width="128" src="../images/icon-implementation.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[实现与 &amp; 交换](../impl/implementation.html)</td>
   <td align="middle"><a href="../clin/clinical.html"><img height="128" width="128" src="../images/icon-clinical.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[临床类资源](../clin/clinical.html)</td>
   <td align="middle"><a href="../admin/administration.html"><img height="128" width="128" src="../images/icon-administration.png"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[管理类资源](../admin/administration.html)</td>

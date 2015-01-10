@@ -13,9 +13,9 @@ categories: doc
 文档指南/背景信息.
 
 *   [完整目录](toc.html)
-*   [许可协议和法律术语](license.html)
+*   [许可协议和法律条款](license.html)
 *   [社区 &amp; 参与制作人员](credits.html)
-*   [版本历史记录](history.html)
+*   [版本更新记录](history.html)
 *   [尚未解决的问题](todo.html)
 
 * * *
@@ -25,8 +25,8 @@ categories: doc
 背景和教程信息
 
 *   [一页纸总结(Glossy)](summary.html)
-*   [简介和 Roadmap](overview.html)
-*   [FHIR 时间线](overview.html)
+*   [简介和路线图](overview.html)
+*   [FHIR 时间线](timelines.html)
 *   [版本间的兼容性](compatibility.html)
 
 

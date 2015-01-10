@@ -3,37 +3,29 @@ date:
 categories: doc
 ---
 
-## <span class="sectioncount">1.9.1<a name="1.9.1"> </a></span> FHIR Overview - Developers
+  [首页](../home/index.html) >[文档](documentation.html) > **面向开发人员的简介**	
 
-FHIR (Fast Health Interoperability Resources) is designed to 
-enable the information exchange that supports the provision
-of healthcare in a wide variety of processes. The specification
-builds on and adapts standard industry RESTful practices
-to enable the provision of integrated healthcare across a 
-wide range of teams.
+## 1.9.1 FHIR Overview - Developers
 
-The intended scope of FHIR is broad, covering human and veterinary,
-clinical care, public health, clinical trials, administration and
-financial aspects.  The standard is intended for global use in a wide
-variety of architectures and scenarios.
+FHIR (Fast Health Interoperability Resources)旨在数据交换，能够支撑医疗领域的多种流程。该标准基于Restful的最佳实践，能够实现跨团队的医疗系统的集成。 
 
-### <span class="sectioncount">1.9.1.1<a name="1.9.1.1"> </a></span> Framework
+FHIR 所支持的范围很广泛，包括人、兽医、临床、公共卫生、临床试验、管理和财务等方面。全球通用且支持多种架构和场景。
 
-FHIR is based on &quot;Resources&quot; which are the common building block
-for all exchanges.  Each resource has the following [common features](resources.html):
+### 1.9.1.1 框架
 
-*   A URL that identifies it
-*   Common metadata
-*   A [human-readable XHTML summary](narrative.html)
-*   A set of defined common data elements
-*   An [extensibility framework](extensibility.html) to support variation in healthcare
+FHIR 是基于 `资源`这一通用组件.  每个资源都有如下 [通用特征](resources.html):
 
-Resources are represented as either [XML](xml.html) or [JSON](json.html). There are currently 99 
-different [resource types defined](resourcelist.html) in the FHIR specification. 
+*   用URL来标识   
+*   通用的元数据 
+*   [供人可读的XHTML概述](narrative.html)
+*   通用的数据元集合
+*   [扩展的框架](extensibility.html)以支持医疗中的多样性
 
-### <span class="sectioncount">1.9.1.2<a name="1.9.1.2"> </a></span> Example Patient
+资源要么是 [XML](xml.html) ，要么是 [JSON](json.html)格式的. 目前已经定义了99种[资源类型](resourcelist.html)
 
-This is an example of how a [patient](patient.html) is represented as a FHIR object in JSON. XML encoding is also defined in the specification.
+### 1.9.1.2  Patient实例
+
+如何用JSON来表示[patient](patient.html)。 标准中也定义了XML的表达方式。
 
 <div class="example">
 <pre class="json linecounter">
@@ -84,21 +76,19 @@ This is an example of how a [patient](patient.html) is represented as a FHIR obj
 </pre>
 </div>
 
-Each resource consists of:  
+每个资源包括如下内容:  
 
-*   **resourceType** (line 2) - Required: FHIR defines many different types of resources. See [the full index](resourcelist.html)
-*   **id** (line 3) - The id of the resource. Always present when a resource is exchanged, except during the create operation (below)
-*   **meta** (lines 4 - 7) - Usually Present: [Common use/context data to all resources](resources.html#meta) and managed by the infrastructure. Missing if there is no metadata
-*   **text** (lines 12 - 17) - Recommended: XHTML that provides a [human readable representation](narrative.html) for the resource
-*   **extension** (lines 12 - 17) - Optional: [Extensions](extensibility.html) defined by the extensibility framework
-*   **data** (lines 18 - 43) - Optional: data elements defined for each type of resource
+*   **resourceType** (line 2) - 必须要有: FHIR 中定义了多种资源类型，详细列表请查看[the full index](resourcelist.html)
+*   **id** (line 3) - 资源自身的id(而非资源中数据的ID 相当于资源在数据库中的主键). 一般而言都是要有的，除了在新建时之外。
+*   **meta** (lines 4 - 7) - 通常要由 : [所有资源都会有的属性(这里和其他地方对元数据的定义略有偏差，参考https://github.com/memect/hao/issues/296)](resources.html#meta)受基础架构控制. 如果没有元数据可以为空
+*   **text** (lines 12 - 17) - 推荐使用: XHTML 包含了资源中 [供人可读的部分](narrative.html) 
+*   **extension** (lines 12 - 17) - 可选: [Extensions](extensibility.html)由扩展框架所定义
+*   **data** (lines 18 - 43) - 可选: 每种资源所定义的数据项。
 
-Note that though this specification always shows the JSON properties in the order they are defined, many JSON libraries order properties by other criteria.
+备注 尽管标准中总是以所定义的顺序来显示JSON中数据的顺序，但很多JSON库有其他排序标准。
+### 1.9.1.3 交互
 
-### <span class="sectioncount">1.9.1.3<a name="1.9.1.3"> </a></span> Interactions
-
-For manipulation of resources, FHIR provides a [REST API](http.html) with a
-rich but simple set of interactions:
+为了操作数据，FHIR 定义了[REST API](http.html):
 
 *   [Create](http.html#create) = POST https://example.com/path/{resourceType}
 *   [Read](http.html#read) = GET https://example.com/path/{resourceType}/{id}
@@ -109,22 +99,18 @@ rich but simple set of interactions:
 *   [Transaction](http.html#transaction) = POST https://example.com/path/
 *   [Operation](operations.html) = GET https://example.com/path/{resourceType}/{id}/${opname}
 
-The FHIR specification describes other kinds of exchanges beyond this simple RESTful API, 
-including exchange of groups of resources as [Documents](documents.html), 
-[Messages](messaging.html), and by using other kinds of [services](services.html). 
+除了RESTful API之外,FHIR 中还定义了其他的数据交换方式，包括 [文档](documents.html), 
+[消息](messaging.html)和其他类型的[服务](services.html). 
 
-### <span class="sectioncount">1.9.1.4<a name="1.9.1.4"> </a></span> Managing Variability
+### 1.9.1.4 对多样性的管理
 
-One feature of the healthcare industry is that there is a wide variation
-between different jurisdictions and sections of the industry, and no 
-central authority to impose common business practices. Because of this, 
-the FHIR specification defines a [common extension framework](extensibility.html), and defines
-[a framework for managing variability](profiling.html).
+医疗行业的一大特点就是不同地区和细分行业都存在很大的差异性,并不存在一个集中式的权威机构来定义通用的行业规范。鉴于此, 
+FHIR 中定义了[通用扩展框架](extensibility.html)和
+[管理多样性的框架](profiling.html).
 
-### <span class="sectioncount">1.9.1.5<a name="1.9.1.5"> </a></span> Creating a resource
+### 1.9.1.5 新增资源
 
-To [create a resource](http.html#create), send an HTTP POST request to the resource's respective end
-point. In the example below we see the creation of a Patient.
+为了[新增资源](http.html#create), 需要发送一个 HTTP 的 POST 请求到某个资源节点(也就是某个URL).如下所示
 
 <div class="example">
 <pre class="http linecounter">
@@ -141,21 +127,17 @@ point. In the example below we see the creation of a Patient.
 </pre>
 </div>
 
-Submit a new patient to the server, and ask it to store the patient with an id of its own choice. Notes:
+向服务器提交一条患者记录, 服务器可以根据自己的情况分配ID来存储该患者记录。备注：
 
-*   **/Patient** (line 1) - the manager for all patients - use the name of the type of resource
-*   **Authorization** (line 2) - see [Security for FHIR](security.html)
-*   **Accept, Content-Type** (lines 3-4) - the content type for all FHIR resources as represented in JSON (or application/xml+fhir for the XML version). FHIR resources are always represented in UTF-8
-*   **id** (line 9) - No id for a resource that is being created - the server will assign one
-*   Resource Content, lines 8+ - There's no meta property at this point. The rest of the resource is the same content as above
+*   **/Patient** (line 1) - 处理所有患者的节点- 这里使用资源类型的名称
+*   **Authorization** (line 2) - 参考 [Security for FHIR](security.html)
+*   **Accept, Content-Type** (lines 3-4) - 如果资源的数据是JSON格式，content type需要设置成这样application/json+fhir (XML的话设置成 application/xml+fhir). 数据的编码始终是UTF-8
+*   **id** (line 9) - 待新建的记录中并没有id，由服务器来分配   
+*   Resource Content, lines 8+ - 这时候也没有任何元数据。资源的其他部分同上述示例  
 
-### <span class="sectioncount">1.9.1.6<a name="1.9.1.6"> </a></span> Create Response
+### 1.9.1.6 新增资源的响应 
 
-A response contains an HTTP code 201 to indicate that the
-Resource has been created successfully. A location header 
-indicates where the resource can be fetched in subsequent requests.
-The server may choose to return an [OperationOutcome](operationoutcome.html) resource, but is not required to
-do so. 
+响应中包含HTTP 201，表示服务器已经成功新建该条记录。location header 属性中包含了访问该资源的URL。响应中亦可包含[OperationOutcome](operationoutcome.html) 资源来表达处理的一些细节,并不做硬性要求。
 
 <div class="example">
 <pre class="http linecounter">
@@ -183,7 +165,7 @@ Notes:
 *   **Location** (line 6) - the id the server assigned to the resource. The id in the url must match the id in the resource when it is subsequently returned
 *   **operationOutcome** (line 9) - OperationOutcome resources in this context have no id or meta element (they have no managed identity)
 
-#### <span class="sectioncount">1.9.1.6.1<a name="1.9.1.6.1"> </a></span> Error response
+#### 1.9.1.6.1 Error response
 
 For a variety of reasons, servers may need to return an error. Clients should be alert to 
 authentication related responses, but FHIR content related errors should be returned using an 
@@ -212,7 +194,7 @@ Notes:
 
 *   The server can return additional structured information using the details of the [OperationOutcome](operationoutcome.html)
 
-### <span class="sectioncount">1.9.1.7<a name="1.9.1.7"> </a></span> Read Request
+### 1.9.1.7 Read Request
 
 [Reading a resource](http.html#read) is done by sending HTTP GET requests to the desired Resource
 end point, as in this example. 
@@ -232,7 +214,7 @@ Notes:
 *   **_format=xml** (line 1) - this is another method for clients to indicate the desired response format, in addition to using the accept header, and is useful for clients that don't have access to the HTTP Headers (e.g. XSLT transforms) (see [Mime Types](http.html#mimetypes)
 *   **cache control** (line 4) - Concurrency control is important, though FHIR itself says nothing about it - see [http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) or [https://www.mnot.net/cache_docs/](https://www.mnot.net/cache_docs/)
 
-### <span class="sectioncount">1.9.1.8<a name="1.9.1.8"> </a></span> Read Response
+### 1.9.1.8 Read Response
 
 The response to a GET contains the Resource. 
 
@@ -263,7 +245,7 @@ Notes:
 *   Note that servers are not required to support versioning, but are strongly encouraged to do so
 *   **lastUpdated** (line 12) - if present, this must match the value in the HTTP header
 
-### <span class="sectioncount">1.9.1.9<a name="1.9.1.9"> </a></span> Search Request
+### 1.9.1.9 Search Request
 
 In addition to getting single known resources it is possible to find resources by 
 [searching the resource end point](http.html#search) with a [set of 
@@ -287,7 +269,7 @@ https://example.com/base/MedicationPrescription?patient=347
 
 returns all the prescriptions for the patient created above.
 
-### <span class="sectioncount">1.9.1.10<a name="1.9.1.10"> </a></span> Search Response
+### 1.9.1.10 Search Response
 
 The response to a search request is a [bundle](extras.html#bundle): list of matching resources with some metadata:
 
@@ -337,7 +319,7 @@ Notes:
 *   **item** (line 23) - The actual resources in this set of results
 *   In addition, the search operation is also able to [return additional related resources](search.html#include) as well
 
-### <span class="sectioncount">1.9.1.11<a name="1.9.1.11"> </a></span> Update Request
+### 1.9.1.11 Update Request
 
 The client sends the server a new version of the resource to replace the exist version.
 
@@ -370,7 +352,7 @@ Notes:
 *   **meta.lastUpdated** (line 10) - This value is ignored, and will be updated by the server
 *   **resource content** (line 14) - Not shown here, the same as Patient above
 
-### <span class="sectioncount">1.9.1.12<a name="1.9.1.12"> </a></span> Update Response
+### 1.9.1.12 Update Response
 
 The response to an update request has metadata / status, and optionally an OperationOutcome:
 
@@ -396,7 +378,7 @@ Notes:
 
 *   **ETag** (line 5) - This is the versionId of the new version
 
-### <span class="sectioncount">1.9.1.13<a name="1.9.1.13"> </a></span> Base Resource Content
+### 1.9.1.13 Base Resource Content
 
 Here is an example that shows all the information found in all resources, fully populated:
 
@@ -436,18 +418,7 @@ Implementers notes:
 *   **implicitRules** (lines 16) - indicates that there is a [custom agreement](profiling.html#agreement) about how the resources are used that must be understood in order to safely process the resource. Use of this is discouraged because it restricts sharing, but sometimes necessary
 *   **language** (lines 17) - The [base language of the resource](narrative.html#language). The resource is allowed to have content from other languages; this is just the base, but should be the main language of the resource
 
-</div>
 
-				</div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
+&copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
+  链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)
 
-    </div>  <!-- /segment-content -->
-
-	<div id="segment-footer" class="segment">  <!-- segment-footer -->
-		<div class="container">  <!-- container -->
-			<div class="inner-wrapper">
-				<p>
-        © HL7.org 2011+. FHIR DSTU (v0.4.0-3900) generated on Sat, Dec 20, 2014 22:38+0000.   <!-- [QA Report](qa.html) -->   <!-- achive note -->
-
-        <span style="color: #FFFF77">

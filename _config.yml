@@ -82,7 +82,7 @@ sitemap:
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: lion
+theme: lion  
 exclude_generator: 
 -  home
 # Deployment

@@ -43,7 +43,7 @@ categories: doc
 
 [1.11](change.html) 未来的挑战所带来的变化
 
-[1.12](ehr-fm.html) EHR FM map
+[1.12](ehr-fm.html) FHIR与EHR功能模型对应表
 
 [1.13](encounter.html) Encounter
 

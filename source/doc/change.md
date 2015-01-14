@@ -6,7 +6,7 @@ categories: doc
   [首页](../home/index.html) >[文档](documentation.html) > **未来的挑战**	
 
 
-##1.10	附录： 信息学在被动式医疗向主动式医疗转变中的作用 
+##1.11	附录： 信息学在被动式医疗向主动式医疗转变中的作用 
 
 正值医疗IT技术开始转变医疗卫生领域之时，我们提出了FHIR标准。这部分内容描述了一部分这种转变的原理，进一步说明一下FHIR出现的大背景。  
 
@@ -48,6 +48,5 @@ categories: doc
 这部分是 [Michael Legg](mailto:michael.legg@mlanda.com.au)在维护。	
 
 
-
-&copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
-链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		
+&copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
+  链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)

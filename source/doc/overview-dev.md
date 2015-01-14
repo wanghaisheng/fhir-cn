@@ -3,7 +3,7 @@ date:
 categories: doc
 ---
 
-  [首页](../home/index.html) >[文档](documentation.html) > **面向开发人员的简介**	
+  [首页](../home/index.html) >[文档](documentation.html) > **开发者指南**	
 
 ## 1.9.1 FHIR Overview - Developers
 
@@ -160,17 +160,15 @@ FHIR 中定义了[通用扩展框架](extensibility.html)和
 
 Notes:
 
-*   **HTTP/1.1 201** (line 1) - the operation was successful. Note that HTTP/1.1 is strongly recommended but not required
+*   **HTTP/1.1 201** (line 1) - 操作成功. Note that HTTP/1.1 is strongly recommended but not required
 *   **ETag** (line 5) - used in the [version aware update](http.html#update) pattern
 *   **Location** (line 6) - the id the server assigned to the resource. The id in the url must match the id in the resource when it is subsequently returned
 *   **operationOutcome** (line 9) - OperationOutcome resources in this context have no id or meta element (they have no managed identity)
 
 #### 1.9.1.6.1 Error response
 
-For a variety of reasons, servers may need to return an error. Clients should be alert to 
-authentication related responses, but FHIR content related errors should be returned using an 
-appropriate HTTP status code, with an [OperationOutcome](operationoutcome.html) resource to provide additional information.
-Here is an example of a server rejecting a resource because of server defined business rules:
+出于多种原因，服务器会返回一个错误信息，FHIR  内容相关的一些错误信息以HTTP 状态码加一个[OperationOutcome](operationoutcome.html)来表达.
+如下是一个不满足服务器端业务规则时的返回信息:
 
 <div class="example">
 <pre class="http linecounter">
@@ -183,7 +181,7 @@ Here is an example of a server rejecting a resource because of server defined bu
 `  "resourceType": "OperationOutcome",`
 `  "text": {`
 `    "status": "generated",`
-`    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">MRN conflict`
+`    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">MRN冲突`
 `   - the MRN 123456 is already assigned to a different patient</div>"`
 `  },`
 `}`
@@ -192,12 +190,11 @@ Here is an example of a server rejecting a resource because of server defined bu
 
 Notes:
 
-*   The server can return additional structured information using the details of the [OperationOutcome](operationoutcome.html)
+*   服务器可通过[OperationOutcome](operationoutcome.html)来表达更为详细的错误信息
 
 ### 1.9.1.7 Read Request
 
-[Reading a resource](http.html#read) is done by sending HTTP GET requests to the desired Resource
-end point, as in this example. 
+[读取资源内容](http.html#read)是通过HTTP GET请求来实现的. 
 
 <div class="example">
 <pre class="http linecounter">
@@ -210,13 +207,13 @@ end point, as in this example.
 
 Notes:
 
-*   **347** (line 1) - The id of the resource that is being fetched
-*   **_format=xml** (line 1) - this is another method for clients to indicate the desired response format, in addition to using the accept header, and is useful for clients that don't have access to the HTTP Headers (e.g. XSLT transforms) (see [Mime Types](http.html#mimetypes)
-*   **cache control** (line 4) - Concurrency control is important, though FHIR itself says nothing about it - see [http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) or [https://www.mnot.net/cache_docs/](https://www.mnot.net/cache_docs/)
+*   **347** (line 1) - 要访问资源的id
+*   **_format=xml** (line 1) - 希望返回的数据格式，这种方式适合于客户端无法访问HTTP 头信息的情况，例如XSLT转换时，也可以通过HTTP 头中的accept字段来指定(see [Mime Types](http.html#mimetypes)
+*   **cache control** (line 4) - 如何控制并发是很重要的，但FHIR中并未做出规定,更多信息请参考[http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) 或者 [https://www.mnot.net/cache_docs/](https://www.mnot.net/cache_docs/)
 
 ### 1.9.1.8 Read Response
 
-The response to a GET contains the Resource. 
+读取单个资源内容GET请求的响应是单独的一个资源. 
 
 <div class="example">
 <pre class="http linecounter">
@@ -240,17 +237,14 @@ The response to a GET contains the Resource.
 
 Notes:
 
-*   **id** (line 8) - The id of the resource. This must match the id in the read request
-*   **versionId** (line 11) - The current version id of the resource. Best practice is that this value matches the ETag (see [version aware update](http.html#update)), but clients must never assume this. Note that some servers do not track the version of the resource
-*   Note that servers are not required to support versioning, but are strongly encouraged to do so
-*   **lastUpdated** (line 12) - if present, this must match the value in the HTTP header
+*   **id** (line 8) - 资源的id，与请求中的id一致 
+*   **versionId** (line 11) - 该资源的最新版本. 最佳实践中要求该值与 ETag值匹配 (see [version aware update](http.html#update)), 对于客户端而言，不能认为二者总是匹配的.  一部分服务器并不记录资源的版本信息。
+*   尽管建议服务器能够保留版本信息，但不做强制性要求
+*   **lastUpdated** (line 12) - 如果存在该字段，字段值应与HTTP header中的值保持一致
 
 ### 1.9.1.9 Search Request
 
-In addition to getting single known resources it is possible to find resources by 
-[searching the resource end point](http.html#search) with a [set of 
-criteria](search.html) describing the set of resources that should be retrieved and their order. The
-general pattern is:
+除了读取单个资源内容之外，也可以通过[查询参数和变量](search.html) [查询资源内容](http.html#search)，形式一般如下:
 
 <div class="example">
 <pre class="http">
@@ -267,11 +261,11 @@ https://example.com/base/MedicationPrescription?patient=347
 </pre>
 </div>
 
-returns all the prescriptions for the patient created above.
+会返回该患者的所有处方信息.
 
 ### 1.9.1.10 Search Response
 
-The response to a search request is a [bundle](extras.html#bundle): list of matching resources with some metadata:
+查询请求返回的对象是一个[bundle](extras.html#bundle): 如未明确要求，只返回满足查询参数要求的资源元数据:
 
 <div class="example">
 <pre class="json linecounter">
@@ -311,17 +305,17 @@ The response to a search request is a [bundle](extras.html#bundle): list of matc
 Notes:
 
 *   **resourceType** (line 7) - &quot;SearchResults&quot; is the name for a bundle returned from a search
-*   **id** (line 3) - An identifier assigned to this particular bundle. The server should assign a unique id to this bundle that it will not be re-used. Note that in some bundles - though not search results - this must be [globally unique](extras.html#bundle-unique)
+*   **id** (line 3) -服务器为该次查询响应bundle的唯一标识. 有些情况下要求该id满足 [ 全球唯一](extras.html#bundle-unique)
 *   **meta.lastUpdated** (line 10) - This should match the HTTP header, and should be the date the search was executed, or more recent, depending on how the [server handles ongoing updates](search.html#currency). The lastUpdated data SHALL be the same or more recent than the most recent resource in the results
-*   **base** (line 12) - The base URL for any relative [references](references.html) in the resources. The server SHOULD provide this value
-*   **total** (line 13) - The total number of matches in the search results. Not the number of matches in this particular bundle, which may be a [paged view into the results](http.html#search)
+*   **base** (line 12) - 返回的内容中所有[资源引用](references.html) 相对地址的根地址。
+*   **total** (line 13) - 满足查询条件的记录数量. 这里的数量指的是总数，而非仅该bundle中所包含的数量，详情查看 [可以对结果进行分页查询](http.html#search)
 *   **link** (line 14) - A set of named links that give related contexts to this bundle. Names defined in this specification: [first](http.html#search), [prev](http.html#search), [next](http.html#search), [last](http.html#search), [self](http.html#search)
-*   **item** (line 23) - The actual resources in this set of results
-*   In addition, the search operation is also able to [return additional related resources](search.html#include) as well
+*   **item** (line 23) - 用来表达满足查询条件的实际资源的元数据信息
+*   如果加上include标签，可以强制要求服务器在返回结果中包含资源的内容，详情请参阅[return additional related resources](search.html#include)
 
 ### 1.9.1.11 Update Request
 
-The client sends the server a new version of the resource to replace the exist version.
+客户端用新版本的资源记录替换服务器中的老版本.
 
 <div class="example">
 <pre class="http linecounter">
@@ -346,15 +340,15 @@ The client sends the server a new version of the resource to replace the exist v
 
 Notes:
 
-*   **resourceType** (line 1) - &quot;Patient&quot; in the url must match the resource type in the resource (line 9)
-*   **resource id** (line 1, &quot;347&quot;) - This must match the id in the resource (line 9)
-*   **If-Match** (line 6) - if this is provided, it must match the value in meta.versionId (line 12), and the server must check the version integrity, or return 412 if it doesn't support versions
+*   **resourceType** (line 1) - &quot;Patient&quot; URL请求中的资源类型必须与提交的数据中的资源类型保持一致 (line 9)
+*   **resource id** (line 1, &quot;347&quot;) - URL中的资源id必须与提交的数据中id值保持一致(line 9)
+*   **If-Match** (line 6) - 如果存在该字段，必须与资源内容中的meta.versionId值保持一致 (line 12), 服务器必须核实版本的完整性，如果不支持版本则返回412状态码
 *   **meta.lastUpdated** (line 10) - This value is ignored, and will be updated by the server
-*   **resource content** (line 14) - Not shown here, the same as Patient above
+*   **resource content** (line 14) - 这里省略了资源内容
 
 ### 1.9.1.12 Update Response
 
-The response to an update request has metadata / status, and optionally an OperationOutcome:
+更新请求的响应包括了元数据、状态和OperationOutcome(可选):
 
 <div class="example">
 <pre class="http linecounter">
@@ -380,7 +374,7 @@ Notes:
 
 ### 1.9.1.13 Base Resource Content
 
-Here is an example that shows all the information found in all resources, fully populated:
+所有资源都会包含的基础信息:
 
 <div class="example">
 <pre class="json linecounter">
@@ -408,15 +402,15 @@ Here is an example that shows all the information found in all resources, fully 
 
 Implementers notes:  
 
-*   **resourceType** (line 2) - always found in every resource. In XML, this is the name of the root element for the resource
-*   **id** (line 3) - defined when the resource is created, and never changed. Only missing when the resource is first created
-*   **meta.versionId** (line 5) - changes each time any resource contents change (except for the last 3 elements in meta)
-*   **meta.lastUpdated** (line 6) - Changes when the versionId changes. Systems that don't support versions usually don't track lastUpdated either
-*   **meta.profile** (line 7) - An assertion that the content conforms to a profile. See [Extending and Restricting Resources](profiling.html#resources) for further discussion. Can be changed as profiles and value sets change or the system rechecks conformance
-*   **meta.security** (lines 8 - 11) - [Security labels](securitylabels.html) applied to this resource. These tags connect resources in specific ways to the overall security policy and infrastructure. Security tags can be updated when the resource changes, or whenever the security sub-system chooses to
-*   **meta.tag** (lines 12 - 15) - [Tags](extras.html) applied to this resource. Tags are used to relate resources to process and workflow. Applications are not required to consider the tags when interpreting the meaning of a resource. Tags can be [updated](http.html#tags) without changing the resource version
-*   **implicitRules** (lines 16) - indicates that there is a [custom agreement](profiling.html#agreement) about how the resources are used that must be understood in order to safely process the resource. Use of this is discouraged because it restricts sharing, but sometimes necessary
-*   **language** (lines 17) - The [base language of the resource](narrative.html#language). The resource is allowed to have content from other languages; this is just the base, but should be the main language of the resource
+*   **resourceType** (line 2) - 每个资源都会资源类型的字段. XML的话也就是根节点
+*   **id** (line 3) - 在资源新建之时分配后不再变化.只有在初次创建该资源时才没有该字段
+*   **meta.versionId** (line 5) - 当资源内容(除了meta.security、meta.profile、meta.tag三个之外)发生变更时该值随之变化 
+*   **meta.lastUpdated** (line 6) - 随versionId的变化而变化. 如果服务器不维护版本信息，则不用记录该字段
+*   **meta.profile** (line 7) - 表示资源的内容是否遵循某个规范(比方说满足阿里健康的开放API的要求或者说满足卫计委共享文档中的要求). 更多信息请参考 [Extending and Restricting Resources](profiling.html#resources). 当规范、值集本身发生变动时可以更改该字段的值
+*   **meta.security** (lines 8 - 11) - [安全类标签](securitylabels.html). 该标签将资源与某些安全策略、基础架构策略联系起来。该字段的值可随资源内容的变动而变动,或者随安全体系的控制。
+*   **meta.tag** (lines 12 - 15) - [其他类型的标签](extras.html). 如需将资源与特定的工作流程关联起来可以使用此类标签.在解读资源内容时无需考虑此类标签的值 。对此类标签值的更新不会影响资源内容版本的变化 [updated](http.html#tags) (这里好像是说 可以不变更资源的版本就修改tag标签的值 还是说tag值的修改压根就不影响资源版本 其他的security和profile tag三个字段是否都适用呢？待考证)
+*   **implicitRules** (lines 16) - 如何准确安全的处理资源内容而在发送接收双方达成的[协议](profiling.html#agreement). 由于使用了该字段就意味着其他系统要使用其中的数据可能会出现解读错误的情况，限制了数据的重复利用，故不推荐适用该字段
+*   **language** (lines 17) -  [资源内容所采用的表达语言](narrative.html#language). 当前，资源内容中亦可包含其他语言的内容; 该字段表示的是资源的主要语言。
 
 
 &copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 

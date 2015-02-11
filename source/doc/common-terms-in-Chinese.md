@@ -20,6 +20,7 @@ Compartments——无最佳表达 维持英文
 conceptmaps ——字典映射		
 Conformance Packages——保持原文
 Conformance Statement——一致性声明      
+conformance rules——一致性规则    
 Contained Resources——内嵌资源     
 Context conduction ——语境传递     
 control ——基数     
@@ -28,6 +29,7 @@ Design by constraint ——保持原文
 DomainResource ——领域资源     
 
 electronic health record ——电子健康档案     
+Extensibility——扩展
 
 Field Field——保持原文     
 
@@ -59,6 +61,7 @@ Primitive Types ——基本数据类型
 profile——规范       
 properties—— 属性     
 
+Reference——引用
 Requirements ——应用场景        
 Resolving references to Resources——resolve的翻译 解决/解析？    
 Roadmap——路线图       

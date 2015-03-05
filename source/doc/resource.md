@@ -3,16 +3,18 @@ date:
 categories: doc
 ---
 
-[首页](../home/index.htmll) >[文档](documentation.htmll) > **Base Resource**
+[首页](../home/index.html) >[文档](documentation.html) > **Base Resource**
 
 *   [Content](#)
-*   [Detailed Descriptions](resource-definitions.html)
+*   [示例](resource-examples.html)
+*   [详细描述](resource-definitions.html)
+*   [对应关系](resource-mappings.html)
+*   [规范](resource-packages.html)
 *   [Operations](resource-operations.html)
+#  1.12.1 Base Resource Definitions
 
-#  1.13.1 Base Resource Definitions
 
-
-## 1.13.1.1 范围和用途
+## 1.12.1.1 范围和用途
 
 该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．
 
@@ -31,7 +33,7 @@ categories: doc
 
 
 
-## 1.13.1.2 Boundaries and Relationships
+## 1.12.1.2 边界和关系
 
 所有资源都拥有如下数据项和属性，可能是可选的　也可能是强制存在的:
 
@@ -45,7 +47,7 @@ categories: doc
 备注: there is documentation for the [Structure](formats.html), [UML](formats.html#uml), [XML](xml.html), and [JSON](json.html) representations. 
 
 
-## 1.13.1.3 Resource Content
+## 1.12.1.3 Resource Content
 
 *   [Structure]()
 	![](../material/resource-structure.png)
@@ -59,12 +61,12 @@ categories: doc
 
 
 
-### 1.13.1.3.1 Terminology Bindings
+### 1.12.1.3.1 Terminology Bindings
 
 <table class="grid"> <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr> <tr><td title="Language" valign="top">Resource.language </td><td valign="top">语言</td><td>[Fixed](terminologies.html#code)</td><td valign="top">[IETF language tag](http://tools.ietf.org/html/bcp47)  <!-- g --></td> </tr></table>
 
 
-### 1.13.1.3.2  Resource 标识
+### 1.12.1.3.2  Resource 标识
 
 每个资源都有一个字段&quot;id&quot; ，其中包含了存储该资源的服务器为其分配的一个逻辑标识符。除了即将在服务器上完成新增的资源(服务器会 通过([create interaction](http.html#create))为其分配标识符)之外，其他资源都是拥有已知的逻辑标识符的。在同一个服务器中，同一类型的资源范围内逻辑标识符是唯一的。一旦分配好了标识符将永不更改，即使在其他地方该资源的副本可能不会保留原来的标识。
 
@@ -73,7 +75,7 @@ categories: doc
 逻辑标识符是大小写敏感的，外部系统不必也无需确定其内部结构. An id SHALL always be represented in the same way in 
 resource references and URLs. Ids可以是36字符长，包含任意的大小写ASCII 字母, 数字, &quot;-&quot; and &quot;.&quot;. 
 
-### 1.13.1.3.3  Resource Metadata资源元数据
+### 1.12.1.3.3  Resource Metadata资源元数据
 
 每个资源都有一个字段"meta"，数据类型为"Meta",其中包含了一系列元数据，有技术相关的，也有与工作流相关的。所有元数据项都是可选的，在一些实现中可以要求某些为必选项。
 
@@ -95,7 +97,7 @@ resource references and URLs. Ids可以是36字符长，包含任意的大小写
  Meta is used in the following places: [Resource](resource.html)
 <a name="implicitRules"> </a>
 
-###  1.13.1.3.4  Implicit Rules隐含的规则
+###  1.12.1.3.4  Implicit Rules隐含的规则
 
 在资源形成之后，如何使用资源的[约定custom agreement](profiling.html#agreement)，而且在处理资源内容时必须理解这些规则.
 
@@ -109,7 +111,7 @@ resource content.(这大段在说什么)
 
 
 
-### 1.13.1.3.5  Language
+### 1.12.1.3.5  Language
 
 每个资源都有一个language元素、字段，用于指定资源内容主体上是采用何种语言[采用BCP 47中的编码](http://tools.ietf.org/html/bcp47).
 该字段主要是为了提高索引和访问的效率。并不存在默认语言，但可以从语境中推断出来。并非所有资源内容都必须是规定的语言所表达的。
@@ -118,19 +120,19 @@ resource content.(这大段在说什么)
 叙述性文本中的html language tag .资源中的language 标签主要是用在规定从资源中数据所生成的其他格式的表示方式中使用的语言 
 
 
-### 1.13.1.3.6 Tags, Profiles, and Security Labels
+### 1.12.1.3.6 Tags, Profiles, and Security Labels
 
 这三个元数据属性虽是资源的一部分，但不会用来储存那些解读资源内时必须理解的信息。它们的作用仅仅是控制资源的访问和发现，将资源内容与工作流程、技术流程联系起来。
 
 
-#### 1.13.1.3.6.1  Tags标签
+#### 1.12.1.3.6.1  Tags标签
 
 标签用于将额外的操作性信息与资源关联起来，包括工作流管理。标签的典型应用是维护一个待评估的资源列表。
 
 在通用型标签当中， [concept](datatypes.html#coding) 可以引用某个医疗术语、医疗字典，包括了标准本身所定义的，HL7定义的和其他如SNOMED CT LOINC等。也可以是自定义的。
 
 
-#### 1.13.1.3.6.2 Profile Tags
+#### 1.12.1.3.6.2 Profile Tags
 
 该标签表示资源内容遵循某个 [规范](profile.html),也就是说遵循该规范中定义的什么内容可以放在资源中规则，term的值就是所引用的规范资源的URL
 
@@ -147,11 +149,11 @@ Profile Tags标签适用于这样的场景——客户端或资源的构建方�
 
 Profile Tags用于查找遵循某类规范的资源的一种方法，而非是资源内容含义的声明
 
-#### 1.13.1.3.6.3 Security Labels
+#### 1.12.1.3.6.3 Security Labels
 
 安全性标签用于在资源中提供一些与安全相关的元数据。详情请参考[Security Labels](security-labels.html).
 
-### 1.13.1.3.7 Further Information
+### 1.12.1.3.7 Further Information
 
 *   [Conformance Rules](conformance-rules.html)
 *   [Resource Definitions](resources.html)
@@ -163,7 +165,7 @@ Profile Tags用于查找遵循某类规范的资源的一种方法，而非是�
 
 <a name="search"> </a>
 
-## 1.13.1.4 Search Parameters
+## 1.12.1.4 Search Parameters
 
 该资源可用的通用查询变量. 更多查询相关信息请参考 [Searching](search.html) for more information about searching in REST, messaging, and services.
 

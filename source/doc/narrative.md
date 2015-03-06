@@ -4,35 +4,38 @@ categories: doc
 ---		
 
 [首页](../home/index.html) >[文档](documentation.html) >[资源定义](resources.html) > **叙述性文本**
-#### 1.12.4.0 叙述性文本     
+
+*   [叙述性文本](#)
+*   [示例](narrative-examples.html)
+*   [详细描述](narrative-definitions.html)
+
+###  1.17.0 叙述性文本     
 
 每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文本中应该表达那些内容以确保临床安全。     
+
+资源的叙述性文本上允许包含一些结构化数据中所没有的额外信息，包括人为编辑的内容。这些信息应该在资源定义的范畴之内，叙述性文本中包含从其他所引用的资源中抽取部分额外的描述性信息是很正常的。
 
 资源总是宜包含叙述性文本,作为供人使用的备用. 然而,在一个严格管控的交换体系中,所有系统都共用一个数据模型, 额外的文字是不必要的,甚至会产生一些临床安全风险,叙述性文本可能会被省略. 开发人员在这样做之前应该谨慎考虑,因为这样做意味着这些资源只能够在有限的交换环境下才能被理解.在资源所定义的生命周期里面,封闭式的交换对象环境很可能就会变得开放. 另外,很多工作流步骤涉及了查找和组合资源,如果所涉及的资源没有自己的文本描述,这将变得更加困难或者繁琐. 
 注意,内嵌资源不应该包含自己的叙述性文本.
 
 
 叙述性文本是一个xhtml的片段，有一个flag来标记它和数据之间的关系:
-<pre class="spec">
-<<a title="A human-readable formatted text, including images." class="dict" href="base-definitions.html#Narrative"><b>[name]</b></a> xmlns=&quot;http://hl7.org/fhir&quot;> <span style="float: right"><a title="Documentation for this format" href="formats.html"></a></span>
- <!-- from Element: <a href="extensibility.html">extension</a> -->
- <<a title="The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data." class="dict" href="base-definitions.html#Narrative.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/><span style="color: Gray"><!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="narrative-status.html">generated | extensions | additional</a></span><span style="color: Gray"> --></span>
- <<a title="The actual narrative content, a stripped down version of XHTML." class="dict" href="base-definitions.html#Narrative.div"><b title="The actual narrative content, a stripped down version of XHTML.">div</b></a> xmlns=&quot;http://www.w3.org/1999/xhtml&quot;> <span style="color: Gray"><!--</span> <span style="color: navy">Limited xhtml content</span><span style="color: Gray">< --></span> </div>
-</[name]>
-</pre>
 
-![](../material/narrative.png)
+Structure
+![](../material/narrative-structure.png)
 
-另一种定义:资源规范([XML](Narrative.profile.xml.html),[JSON](Narrative.profile.json.html))      
+UML
+![](../material/narrative-uml.png)
 
-##### 1.12.4.0.1 术语绑定    
+XML
+![](../material/narrative-xml.png)
+
+JSON
+![](../material/narrative-json.png)
 
 
-<table class="grid">
- <tr><th>路径</th><th>定义</th><th>类型</th><th>参考</th></tr>
- <tr><td title="NarrativeStatus" valign="top">Narrative.status </td><td valign="top">资源叙述性文本的状态 </td><td><a href="terminologies.html#code">[Fixed/固定的](terminologies.html#code)</a></td><td valign="top"><a href="narrative-status.html">http://hl7.org/fhir/narrative-status</a></td> </tr>
-</table>
-    
+
+
 
 
 div元素的内容是XHTML片段，应该只包含HTML4.0标准中第7-11(除了第9章第4部分)章和第15章所介绍的基本html元素,    <a>   元素(要么是name,要么是href)、  images和内部包含的style属性。XHTML内容不应包含head、body元素和外部的stylesheet引用、废弃的元素、script、form、base/link/xlink、frame、iframe和object或事件event相关的属性(如onCLick).这是为了保证叙述性文本的内容能够包含在资源内部,不会存在处于激活状态的内容-因为这会引入一些安全问题和在从XHTML中抽取文本时潜在的安全问题.。
@@ -43,7 +46,6 @@ div元素必须包含一些非空格内容。
     <div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>This is a simple 
           example with only plain text</div>
   </narrative>
-   
    <narrative>
    <div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;>
      <p>
@@ -54,15 +56,13 @@ div元素必须包含一些非空格内容。
 ```     
 
 div内容中的inner部分常常用在浏览器中的innerHTML属性中。为了简化此类处理，如果是用JSON表示叙述性文本,叙述性文本应编码，这样子第一个 &quot;>&quot; 和最后一个&quot;<&quot; 之间的内容就是<div>元素的字节内容,例如    
+	
 ```
  "div": "<div>text</div>"
+ 
 ```     
 上述例子是有效的,但下面这个则不是:     
-
-```
-  "div": "<?xml ...><div>text</div>"
-
-```     
+![](../material/narrative-illegal-div.png)
 
 
 注意:XHTML是嵌在一般的XML中的，因此不支持如_&amp;nbsp;_ or _&amp;copy;_等HTML entity。应该使用Unicode字符来代替。用_&amp;#160;_ 替换_&amp;nbsp;.     
@@ -71,6 +71,7 @@ div内容中的inner部分常常用在浏览器中的innerHTML属性中。为了
 &lt;div&gt;元素中宜使用lang属性([参考HTML5标准中使用语言的注意事项](http://www.w3.org/html/wg/drafts/html/master/dom.html#the-lang-and-xml:lang-attributes))       
 
 
+#### 1.17.0.1 图片引用
 image源引用可能是资源内的一个局部/本地引用：      
 ```
   <img src="#a5"/>
@@ -91,11 +92,17 @@ image源引用可能是资源内的一个局部/本地引用：
   </contained>
 ```
 
-由于不能保证未内嵌在资源内的图片的可及性，当将资源展现给用户时，图片的来源作为叙述性文本必要的一部分，应始终嵌套在attachment里面或者是一个内嵌资源。     
- 
+叙述性文本和资源数据之间的引用都是通过XML 的id/idref属性来实现的。在JSON之中，id属性和XML的id属性用法一样。
+
+The "id" attribute SHALL have a unique value within the resource with regard to any other id attributes: the uniqueness and resolution scope of these id references is within the resource that contains them. Contained resources are included in the id uniqueness scope of the resource that contains them. 
+
+
+If multiple resources are combined into a single piece document, such as an bundle, duplicate values of the id attribute may occur between resources. This SHALL be managed by applications reading the resources.
+
+Since that are not contained in the resource cannot be guaranteed to be be available when the resource is presented to a user, the source for any images that are an essential part of the narrative SHOULD always be embedded as a data: url, in an attachment or a contained resource.  
  
 
-##### 1.12.4.0.2  XHTML样式化     
+#### 1.17.0.2  XHTML样式化     
 
 叙述性文本中的XHTML片段可能使用css来样式化,要么是内部的CSS,要么是外部的css。当使用外部css时,利用XHTML元素的class和id属性.当使用内部css时,直接利用XHTML元素的style属性.  为了最小化安全问题和可管理性,编辑系统不会直接指定CSS样式表.反而由展示资源的应用程序提供CSS样式表.这意味着渲染系统选择能够使用那种样式,编辑系统应提前使用. 编辑系统能改使用这些类,也就是说所有渲染系统都要支持:     
 
@@ -118,7 +125,7 @@ These style properties are specified in-line using the style attribute.   当sty
 编辑人员可能会指定CSS标准中所规定的额外的样式或样式的属性, 但是这些都是对该标准的扩展,渲染人员毋须遵循.在没有这些额外的样式特征的情况下宜保证查看叙述性文本是安全的.    
 注意:对于[文档](../impl/documents.html#css)的展现有一些额外的规则.        
 
-##### 1.12.4.0.3  临床安全考虑     
+#### 1.17.0.3  临床安全考虑     
 卫生保健记录常常有着长时间保留的法律和业务需求(甚至于一个世纪).  跨设备之间不一致的展现方式会带来很高的风险.尽管叙述性文本中允许使用如上所述的标准XHTML和CSS,鼓励在开发中尽量保持简单.即使交换双方协议限制了某个系统的现行需求.经验显式这些协议总归会随着时间而越来越宽泛.       
 特别是:    
 *  多层的复杂展现要求精心测试xhtml div和span元素以及样式的对应,其中包括了嵌套的表格,可能有一些图片,也会导致很难保持渲染一致性.开发中宜避免这些问题.     

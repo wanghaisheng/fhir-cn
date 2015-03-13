@@ -49,5 +49,5 @@ FHIR以完全不同的方式来处理这个问题。只有大多数系统需要�
 5、**额外的考虑因素:**  大多数FHIR与V2之间互操作性要考虑的注意事项适用于FHIR与V3之间。特别是 : [扩展](comparison-v2.html#V2-extensions), [独立 vs. 内嵌资源 resources](comparison-v2.html#V2-contained), [资源标识](comparison-v2.html#V2-identification), [引用和资源的合并](comparison-v2.html#V2-merging) 以及 [生成人可读的内容](comparison-v2.html#V2-humanReadable).
 
 &copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
-  链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)
+  链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)
 

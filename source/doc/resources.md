@@ -3,7 +3,7 @@ date:
 categories: doc
 ---		
 
-[首页](../home/index.htmll) >[文档](documentation.htmll) > **资源定义**
+[首页](../home/index.html) >[文档](documentation.html) > **资源定义**
 ### 1.12.0 资源定义   
 该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．
 
@@ -90,8 +90,8 @@ The metadata properties are key aspects of a resource and how it behaves　出�
 *   [叙述性文本](narrative.html)    
 *   [格式:](formats.html) [XML](xml.html), [JSON](json.html)     
 *   [扩展](extensibility.html)    
-*   [实例](extensibility-examples.html)    
+*   [示例](extensibility-examples.html)    
 *   [正式定义](base-definitions.html)     
 
  &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
-链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.htmll) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.htmll) | [许可协议](http://hl7.org/implement/standards/fhir/license.htmll) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		
+链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 		

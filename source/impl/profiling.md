@@ -8,41 +8,31 @@ categories: impl
 *   [Profiling FHIR](#)
 *   [Examples](profiling-examples.html)
 
-## <span class="sectioncount">2.11.0<a name="2.11.0"> </a></span> Profiling FHIR
+##  2.11.0  Profiling FHIR FHIR的定制与本地化
 
-The base FHIR specification (this specification) describes a set of base resources, frameworks
-and APIs that are used in many different contexts in healthcare. However there is wide 
-between jurisdictions and across the healthcare eco-system around 
-practices, requirements, regulations, education and what actions are feasible 
-and/or beneficial.
+FHIR标准本身描述了一系列可用于医疗领域多个场景下的基础资源、框架和API。但是不同的生态圈和地区的医学实践、法律和教育程度又存在巨大差异，鉴于此，我们需要根据具体的需求对FHIR标准进一步进行定制和本地化。
+一般而言，在定制与本地化过程中需要规定:
 
-For this reason, the FHIR specification is a &quot;platform specification&quot; - it creates
-a common platform or foundation on which a variety of different solutions are implemented. 
-As a consequence, this specification requires further adaptation to particular
-contexts of use. Typically, these adaptations specify:
+*   规定资源中需要那些元素/字段，需要添加哪些额外的仍不存在的字段；
+*   规定使用哪些API以及如何使用；
+*   规定特定的元素中使用哪些术语字典；
+*   描述具体的元素与实际需求(数据库表字段)的对应关系
 
-*   Rules about which resource elements are or are not used, and what additional elements are added that are not part of the base specification
-*   Rules about which API features are used, and how
-*   Rules about which terminologies and used in particular elements
-*   Descriptions of how the Resource elements and API features map to local requirements
 
-Note that because of the nature of the healthcare eco-system, there may be multiple 
-overlapping set of adaptations - by healthcare domain, by country, by institution, and/or by vendor/implementation. 
+鉴于医疗自身的特殊性，不同的业务领域、国家、机构或者是供应商、具体的产品、项目的定制与本地化会存在一些重叠的部分。
 
-Typically, adaptations (either actual implementations or specifications - sometimes called &quot;Implementation Guides&quot;)
-both restrict and extend APIs, resources and terminologies. FHIR provides a set of resources that 
-represent the decisions that have been made, and allows implementers to build useful services from them. These
-resources are known as the conformance resources. These comformance resources allow implementers to:
+一般而言，我们在实施规范中定义了如何限制和扩展API，资源以及术语字典。这些约束和限制以及扩展可以通过一些称之为一致性资源来表达。
+开发人员能够从这些一致性资源中获得下列信息:
 
-*   Indicate that [some API calls](http.html) are not used for a particular use , and provide additional details about how the API calls are used ([Conformance](conformance.html) Resource)
-*   Add additional [operations](operations.html) or [search parameters](search.html) not in the base specification   (using the [OperationDefinition](operationdefinition.html) resource or the [SearchParameter](searchparameter.html) Resource
-*   Identify specific elements in resources that are not used ([Profile](profile.html) Resource)
-*   Describe how existing elements in resources are used (Profile resource)
-*   Define new elements that are used resources or data types (Profile resource)
-*   Mix custom and standard terminologies and choose which codes from these to use for a particular use (Profile and [Value Set](valueset.html) Resources)
-*   Map between local and standard terminologies or content models ([Concept Map](conceptmap.html) Resource)
-*   Register system namespaces for identifiers and terminologies ([NamingSystem](namingsystem.html) Resource)
-*   Describe and register specific Data Elements that are used across systems in a Data Dictionary ([DataElement](dataelement.html) Resource)
+*   确定某些API的调用不适用与某个场景，以及调用API的详细信息Indicate that [some API calls](http.html) are not used for a particular use , and provide additional details about how the API calls are used ([Conformance](conformance.html) Resource)
+*  定义了哪些新的操作和查询变量。 Add additional [operations](operations.html) or [search parameters](search.html) not in the base specification   (using the [OperationDefinition](operationdefinition.html) resource or the [SearchParameter](searchparameter.html) Resource
+*   确定某个资源中没有用到哪些字段Identify specific elements in resources that are not used ([Profile](profile.html) Resource)
+*   描述如何使用资源中已有的字段Describe how existing elements in resources are used (Profile resource)
+*   定义在资源或数据类型中用到的新字段Define new elements that are used resources or data types (Profile resource)
+*   确定本地术语和标化术语的具体应用Mix custom and standard terminologies and choose which codes from these to use for a particular use (Profile and [Value Set](valueset.html) Resources)
+*   本地术语和标化术语的映射 Map between local and standard terminologies or content models ([Concept Map](conceptmap.html) Resource)
+*   系统命名空间的注册，术语字典的注册 Register system namespaces for identifiers and terminologies ([NamingSystem](namingsystem.html) Resource)
+*   数据字典的描述和注册 Describe and register specific Data Elements that are used across systems in a Data Dictionary ([DataElement](dataelement.html) Resource)
 
 These need to be used following the policies discussed below, and also 
 following the basic concepts for extension that are described in [&quot;Extensibility&quot;](extensibility.html). 
@@ -50,84 +40,53 @@ For implementer convenience, the specification itself publishes its base definit
 
 <a name="api"> </a>
 
-### <span class="sectioncount">2.11.0.1<a name="2.11.0.1"> </a></span> Extending and Restricting the API
+###  2.11.0.1  API的扩展和约束 Extending and Restricting the API
 
-A conformance resource lists the REST interactions (read, update, search, etc) that a server provides or that a client uses, along with 
-some supporting information for each. It can also be used to define a set of desired behavior (e.g. as part of a specification or
-a Request for Proposal).  The only interaction that servers are required to support is the [Conformance](http.html#conformance)
-interaction itself - to retrieve the server's conformance statement. Beyond that, servers and clients support and use whichever
-API calls are relevant to their use case.
+一致性资源中罗列了服务器中可用的REST交互(read, update, search增删改查等)，其中，用于查询服务器支持哪些交互的交互接口([Conformance](http.html#conformance))是必须存在的.除此之外，客户端和服务器根据所需选择API实现即可。
 
-In addition to the operations that FHIR provides, servers may provide additional 
-operations that are not part of the FHIR specification. Implementers can safely do this 
-by appending a custom operation name prefixed with '$' to an existing FHIR URL, as the [Operations
-framework](operations.html) does. The Conformance resource supports defining what OperationDefinitions make use of particular
-names on an end point.  If services are defined that are not declared using OperationDefinition, it may be
-appropriate to use longer names, reducing the chance of collision (and confusion) with services declared by
-other interfaces.  The base specification will never define operation names with a &quot;.&quot; in them, so 
-implementers are recommended to use some appropriate prefix for their names (such as &quot;ihe.someService&quot;)
-to reduce the likelihood of name conflicts. 
 
-Implementations are encouraged, but not required, to define operations using the standard
-FHIR operations framework - that is, to declare the operations using the OperationDefinition
-resource, but some operations may involve formats that can't be described that way. 
+除了FHIR已经定义好的操作之外，服务器亦可定义新的操作，只需给自定义的操作名称加上前缀“$”即可，The Conformance resource supports defining what OperationDefinitions make use of particular names on an end point。如果没有使用OperationDefinition来声明已经定义哈的服务，使用较长的名称是比较好的，可用降低服务名称与其他接口冲突的可能性。鉴于FHIR标准中所定义的操作名称中不可能存在"."，我们可以使用“.”来定义自己的名称 诸如"ihe.someService"
 
-Implementations are also able to extend the FHIR API using additional content types. 
-For instance, it might be useful to [read](http.html#read) or [update](http.html#update) 
-the appointment resources using a vCard based format. vCard defines its own mime type, and these additional mime types can 
-safely be used in addition to those defined in this specification.
+建议使用FHIR operations framework来定义操作，也就是说使用OperationDefinition资源来声明所定义的操作，但有些操作可能涉及一些无法这样描述的格式。
 
-<a name="resources"> </a>
+我们也可以通过额外的content-type来扩展FHIR的API,使用vCard格式来庚子年或读取appointment资源的数据是很不错的。vCard中定义了自己的mime type。
 
-### <span class="sectioncount">2.11.0.2<a name="2.11.0.2"> </a></span> Extending and Restricting Resources
+###  2.11.0.2  约束和扩展资源 Extending and Restricting Resources
 
-Extending and restricted resources is done with a &quot;Profile&quot; resource, which is a statement of rules about 
-how the elements in a resource are used, and where extensions are used in a resource. 
+可以通过 &quot;StructureDefinition&quot; 资源来约束和扩展某个具体的资源, &quot;StructureDefinition&quot; 中描述了如何使用资源中的字段、元素，在那些地方使用扩展
 
-### <span class="sectioncount">2.11.0.3<a name="2.11.0.3"> </a></span> Limitations of Use
+###  2.11.0.3  Limitations of Use
+StructureDefinition 应遵循以下原则:
 
-What profiles can do is limited in some respects:
+*   StructureDefinition 不能破坏原始标准的已有规则(比如，某个元素的基数为1..1，则不能改为0..1 或1..*) 
+*   StructureDefinition 中不能规定元素的默认值或含义  
+*   StructureDefinition 不能为元素规定具体的名称 
+*   在不知道StructureDefinition 的前提下应该能够安全的处理资源中的数据 
 
-*   Profiles cannot break the rules established in the base specification (e.g. if the element cardinality is 1..1 in the base specification, a profile cannot say it is 0..1, or 1..*)
-*   Profiles cannot specify default values or meanings for elements
-*   Profiles cannot give more specific names to elements
-*   It must be safe to process a resource without knowing of the profile
-
-The consequence of this is that if a profile mandates extended behavior that cannot 
-be ignored, it must also mandate the use of a [modifier extension](extensibility.html#modifiers). 
+如果StructureDefinition 中规定某个扩展的动作不能忽略，必须同时使用[modifier extension](extensibility.html#modifiers). 
 Another way of saying this is that knowledge must be explicit in
 the instance, not implicit in the profile. 
 
-As an example, if a profile wished to describe that a [Procedure](procedure.html)
-resource was being negated (e.g. asserting that it never happened), it could not simply say 
-in the profile itself that this is what the resource means; instead, the profile must 
-say that the resource must have an extension that represents this knowledge. 
+举例说明，如果StructureDefinition中想要描述 [Procedure](procedure.html)资源将被否定(也就是说该手术从未发生)，不能只是在StructureDefinition 中说明，相反，必须在StructureDefinition 规定 该资源要有一个扩展，这个扩展能够表达这样的信息。
 
-There is the facility to mark resources that they can only be safely understood by 
-a process that is aware of and understands a set of published rules. For more information,
-see [Restricted Understanding of Resources](resources.html#ruleset).
+也有一种机制可以保证资源在了解和理解了一系列的规则之后才能够安全理解。具体请参考 [Restricted Understanding of Resources](resources.html#ruleset).
 
-### <span class="sectioncount">2.11.0.4<a name="2.11.0.4"> </a></span> Using Profiles
+###  2.11.0.4  Using Structure Definitions
 
-A profile specifies a set of restrictions on the content of a FHIR resource or data type. 
-Profiles are identified by their canonical URL, which should be the URL at which they 
-are published. The following kinds of statements can be made about how an element is used:
+Structure Definitions 中描述了某个FHIR资源或数据类型的约束、限制。某个Structure Definitions是通过具体的URL来确定的，:
 
-*   Restricting the cardinality of the element. e.g. the base might allow 0..*, and a particular application might support 1..2
-*   Ruling out use of an element by setting its maximum cardinality to 0
-*   Restricting the contents of an element to a single fixed value
-*   Making additional invariants on the content of nested elements within the resource (expressed as XPath statements)
-*   Restricting the types for an element that allows multiple types
+*   限制元素的基数 比如原来是0..* 可以限制成1..2
+*   通过将基数的上限设为0来排除某个元素的使用 
+*   限制某个元素值为某个固定值
+*   对资源内的嵌套元素进行约束(XPath表达式)
+*   限制支持多类型的元素的类型 
 *   Requiring a typed element or the target of a resource reference to conform to another structure profile (declared in the same profile, or elsewhere)
-*   Specifying a binding to a different terminology value set (see below)
-*   Providing alternative definitions and examples for the elements defined in a Resource to explain how they are used in the context of the Profile
-*   Providing more specific or additional mappings (e.g. to v2 or v3) for the resource when used in a particular context
-*   Declaring that one or more elements in the profile must be 'supported' (see below)
+*   指定其他的术语字典 值集
+*   为了描述某个元素在具体场景下的使用提供另外的定义和示例
+*   提供具体的映射关系 v2 v3或其他 
+*   规定Structure Definitions中必须支持的一到多个元素
 
-All of these changed definitions SHALL be restrictions that are consistent with the 
-rules defined in the base resource in the FHIR Specification. Note that some of 
-these restrictions can be enforced by tooling (and are by the FHIR tooling), but 
-others (e.g. alignment of changes to descriptive text) cannot be automatically enforced.
+
 
 A profile contains a linear list of element declarations. The inherent 
 nested structure of the elements is derived from the _path_ value of each element. 

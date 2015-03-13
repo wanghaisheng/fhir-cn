@@ -56,7 +56,7 @@ categories: doc
 FHIR中用到的通用类型.
 
 *   [定义](datatypes.html)(已废弃)  
-*   [实例](datatypes-examples.html)(已废弃)    
+*   [示例](datatypes-examples.html)(已废弃)    
 *   [正规定义](datatypes-definitions.html)(已废弃)    
 *   [映射/对应](datatypes-mappings.html)(已废弃)    
 

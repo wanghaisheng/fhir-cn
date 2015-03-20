@@ -1,7 +1,9 @@
-title: 文档索引
+title: 
 date: 
 categories: doc
----
+---		
+
+  [首页](../home/index.html) > **文档**	
 
 ## 1.0 FHIR 文档索引 
 
@@ -72,10 +74,9 @@ FHIR中用到的通用类型.
 *   [V2 表格列表](terminologies-v2.html)  
 *   [V3 Code System / Value set 列表](terminologies-v3.html)  
 *   [字典映射](terminologies-conceptmaps.html)  
-*   [术语服务](terminology-service.html)  
+*   [术语服务](terminologies-service.html)  
 *   参考 [Value Set 资源](../infra/valueset.html)  和[ConceptMap 资源](../infra/conceptmap.html)    
-*   [绑定列表](terminologies-bindings.html)  (已废弃)    
-*   [字典/编码系统列表](terminologies-codes.html)  (已废弃)    
+ 
 
 **附录**    
 

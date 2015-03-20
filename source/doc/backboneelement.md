@@ -140,29 +140,5 @@ to do
 
 </div>
 
-				</div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
 
-    </div>  <!-- /segment-content -->
-
-	<div id="segment-footer" class="segment">  <!-- segment-footer -->
-		<div class="container">  <!-- container -->
-			<div class="inner-wrapper">
-
-        © HL7.org 2011+. FHIR DSTU (v0.4.0-3900) generated on Sat, Dec 20, 2014 22:38+0000.   <!-- [QA Report](qa.html) -->   <!-- achive note -->
-
-        <span style="color: #FFFF77">
-        Links: [What's a DSTU?](timelines.html) | 
-               [Version History](history.html) | 
-               [Compare to DSTU](http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2Ffhir%2Fbackboneelement.html&amp;doc2=http%3A%2F%2Fhl7-fhir.github.io%2F%2Fbackboneelement.html) | 
-               [![CC0](cc0.png)](license.html) | 
-               [Propose a change](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677)   
-        </span>
-
-			</div>  <!-- /inner-wrapper -->
-		</div>  <!-- /container -->
-	</div>  <!-- /segment-footer -->
-  <!-- disqus thread -->
-  <!-- disqus -->
   <!-- end disqus -->        

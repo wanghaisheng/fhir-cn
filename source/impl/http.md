@@ -1,29 +1,37 @@
-title:  
+title: 
 date:  
 categories: impl
 ---
 
-## <span class="sectioncount">2.1<a name="2.1"> </a></span> RESTful API
+  [首页](../home/index.html) > [实现](implementation.html) >**Restful API**	
 
-Each resource type has the same set of interactions defined that can be used to manage the resources 
-in a highly granular fashion. Applications claiming conformance to this framework
-claim to be conformant to &quot;RESTful FHIR&quot;.
 
-Note that in this RESTful framework, transactions are performed directly on the server resource using an 
-HTTP request/response. The API does not directly address authentication, authorization, and audit
-collection - for further information, see the [Security Page](security.html).
+本页内容:
+
+  
+
+*   [RESTful API](#)
+*   [示例](datatypes-examples.html)
+*   [详细描述](datatypes-definitions.html)
+*   [映射](datatypes-mappings.html)
+
+###   2.1.0 RESTful API
+
+每种资源类型都定义了同样类型的交互，以一种高度模块化的方式来管理资源内容。 Applications claiming conformance to this framework claim to be conformant to &quot;RESTful FHIR&quot;.
+
+需要注意的是在Restful 框架中，使用 HTTP 请求和响应来对服务器中的资源进行直接操作.该API 中并没有直接规定认证、授权和审计的问题-更多详情请参考[Security Page](security.html).
 
 The API describes the FHIR resources as a set of operations (known as &quot;interactions&quot;) on resources where individual
-resource instances are managed in collections by their type. Servers can choose which of 
+resource instances are managed in collections by their type. Servers can choose which of
 these interactions are made available and which resource types they support. Servers SHALL
-provide a [conformance statement](conformance.html) that specifies what interactions and 
+provide a [conformance statement](conformance.html) that specifies what interactions and
 resources are supported.
 
 The following logical interactions are defined:
 
 <a name="interactions"> </a>
 <a name="operations"> </a>
-<table class="list"> 
+<table class="list">
   <tr><td>**Instance Level Interactions**</td><td/></tr>
   <tr><td>[read](#read)</td><td>Read the current state of the resource</td></tr>
   <tr><td>[vread](#vread)</td><td>Read the state of a specific version of the resource</td></tr>
@@ -34,7 +42,6 @@ The following logical interactions are defined:
   <tr><td>[create](#create)</td><td>Create a new resource with a server assigned id</td></tr>
   <tr><td>[search](#search)</td><td>Search the resource type based on some filter criteria</td></tr>
   <tr><td>[history](#history)</td><td>Retrieve the update history for a particular resource type</td></tr>
-  <tr><td>[validate](#validate)</td><td>Check that the content would be acceptable as an update</td></tr>
   <tr><td colspan="2">**Whole System Interactions**</td></tr>
   <tr><td>[conformance](#conformance)</td><td>Get a conformance statement for the system</td></tr>
   <tr><td>[transaction](#transaction)</td><td>Update, create or delete a set of resources as a single transaction</td></tr>
@@ -42,14 +49,15 @@ The following logical interactions are defined:
   <tr><td>[search](#search)</td><td>Search across all resource types based on some filter criteria</td></tr>
 </table>
 
-In addition to these operations, there is a [Mailbox](messaging.html#mailbox) and [Document](documents.html#bundle) endpoint.
+In addition to these interactions, there is an [operations framework](operations.html), which include endpoints
+for [validation](operation-resource-validate.html), [messaging](messaging.html#mailbox) and [Documents](documents.html#bundle).
 
 **Style Guide**
 
-URL operations on this pages are defined like this:
+The interactions on this page are defined like this:
 
 <pre>
-  OPERATION [base]/[type]/[id] {?_format=[mime-type]}
+  VERB [base]/[type]/[id] {?_format=[mime-type]}
 </pre>
 
 *   The first word is the HTTP verb used for the operation
@@ -58,29 +66,33 @@ URL operations on this pages are defined like this:
         *   **base**: The [Service Root URL](#root)
     *   **mime-type**: The [Mime Type](#mime-type)
     *   **type**: The name of a resource type (e.g. &quot;Patient&quot;)
-    *   **id**: The [Logical Id](resources.html#metadata) of a resource
-    *   **vid**: The [Version Id](resources.html#metadata) of a resource
+    *   **id**: The [Logical Id](resource.html#id) of a resource
+    *   **vid**: The [Version Id](resource.html#metadata) of a resource
     *   **compartment**: The name of a [compartment](extras.html#compartment)
     *   **parameters**: URL parameters as defined for the particular operation
 *   Content surrounded by {} is optional
+
+Implementations constructing URLs using these patterns SHOULD conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A)
+which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
+
 <a name="root"> </a>
 <a name="general"> </a>
 
-### <span class="sectioncount">2.1.1<a name="2.1.1"> </a></span> Service Root URL
+### <span class="sectioncount">2.1.0.1<a name="2.1.0.1"> </a></span> Service Root URL
 
-The Service Root URL is the address where all of the 
-resources defined by this interface are found. The Service 
-Root URL takes the form of 
+The Service Root URL is the address where all of the
+resources defined by this interface are found. The Service
+Root URL takes the form of
 
 <pre>
 http(s)://server{/path}
 </pre>
 
-The path portion is optional, and does not include a trailing slash. Each 
+The path portion is optional, and does not include a trailing slash. Each
 resource type defined in this specification has a manager (or &quot;entity set&quot;)
 that lives at the address &quot;/[type]&quot; where the
-&quot;type&quot; is the name of the resource type. 
-For instance, the resource manager for the type 
+&quot;type&quot; is the name of the resource type.
+For instance, the resource manager for the type
 &quot;Patient&quot; will live at:
 
 <pre>
@@ -88,113 +100,179 @@ https://server/path/Patient
 </pre>
 
 All the logical interactions are defined relative to the service root
-URL. This means that if the address of any one FHIR resource on a system 
-is known, the address of other resources may be determined. 
+URL. This means that if the address of any one FHIR resource on a system
+is known, the address of other resources may be determined.
 
 Note: All URLs (and ids that form part of the URL) defined by this specification are case sensitive.
 
-Note that a server may use a path of the form &quot;http://server/...[xx]...&quot; where the [xx] is some variable 
-portion that identifies a particular instantiation of the FHIR API. Typically, the variable id 
-identifies a patient or a user, and the underlying information is completely compartmented 
-by the logical identity associated with [xx]. In this case, the FHIR API presents a 
-patient or user centric view of a record, where authentication/authorization is 
+Note that a server may use a path of the form &quot;http://server/...[xx]...&quot; where the [xx] is some variable
+portion that identifies a particular instantiation of the FHIR API. Typically, the variable id
+identifies a patient or a user, and the underlying information is completely compartmented
+by the logical identity associated with [xx]. In this case, the FHIR API presents a
+patient or user centric view of a record, where authentication/authorization is
 explicitly granted to the URL, on the grounds that some identifiable user is associated
-with the logical identity. It is not necessary to explicitly embed the patient id in the 
-URL - see [Compartments](extras.html#compartments) for an alternative approach.
+with the logical identity. It is not necessary to explicitly embed the patient id in the
+URL - implementations can associate an FHIR end-point with a particular patient or 
+provider by using an OAuth login. See [Compartments](extras.html#compartments) for the logical underpinning.
 
-### <span class="sectioncount">2.1.2<a name="2.1.2"> </a></span> Resource Metadata and Versioning
+### <span class="sectioncount">2.1.0.2<a name="2.1.0.2"> </a></span> Resource Metadata and Versioning
 
-Each resource has an associated set of [resource metadata elements](resources.html#metadata). These map to the http request and response using the following fields:
+Each resource has an associated set of [resource metadata elements](resource.html#metadata). These map to the http request and response using the following fields:
 
 <table class="grid">
   <tr><th>Metadata Item</th><th>Where found in HTTP</th></tr>
-  <tr><td>[Logical Id](resources.html#metadata)</td><td>The Id is represented explicitly in the URL</td></tr>
-  <tr><td>[Version Id](resources.html#metadata)</td><td>The Version Id is represented by the full canonical URL in the content-location header (see [vread](#vread) below). 
-     The Version Id may also be represented in the http ETag, but the use of ETag is not needed by this specification</td></tr>
-  <tr><td>Last Modified Date</td><td>HTTP Last-Modified header</td></tr>
+  <tr><td>[Logical Id (.id)](resource.html#id)</td><td>The Id is represented explicitly in the URL</td></tr>
+  <tr><td>[Version Id (.meta.versionId)](resource.html#metadata)</td><td>The Version Id is represented in the `ETag` header. It SHOULD also be returned
+    as a full canonical URL in the Content-Location header (see [vread](#vread) below)</td></tr>
+  <tr><td>Last modified (.meta.lastUpdated)</td><td>HTTP Last-Modified header</td></tr>
 </table>
 
-### <span class="sectioncount">2.1.3<a name="2.1.3"> </a></span> Security
+Note that the Version Id is considered a &quot;weak&quot; ETag and `ETag` headers
+	should be prefixed with &quot;W/&quot; and enclosed in quotes, for example:
 
-<p>
-Using HTTPS is optional, but all production exchange of healthcare data SHOULD use SSL and additional security as appropriate. See [HTTP Security](security.html#http) for further information.
+<pre>
+ETag: W/&quot;3141&quot;
+</pre>
 
-Note: to support browser-based client applications, recommend that servers SHOULD implement [cross-origin resource sharing](http://enable-cors.org/) for the operations documented here.  
+### <span class="sectioncount">2.1.0.3<a name="2.1.0.3"> </a></span> Security
 
-### <span class="sectioncount">2.1.4<a name="2.1.4"> </a></span> HTTP Status Codes
+Using HTTPS is optional, but all production exchange of healthcare data SHOULD use SSL and 
+additional security as appropriate. See [HTTP Security](security.html#http) for further information.
 
-This specification makes rules about the use of specific HTTP status codes 
-in particular circumstances where the status codes SHALL map to particular 
-states correctly, and only where the correct status code is not obvious. 
+The choice of whether to return 403 or 404 depends upon the specific situation and specific 
+local policies, regulations, and laws. The decision of which error to use will include consideration 
+of whether disclosure of the existence of relevant records is considered an acceptable 
+disclosure of PI or  a prohibited disclosure of PI.
+
+Note: to support browser-based client applications, recommend that servers SHOULD implement [cross-origin resource sharing](http://enable-cors.org/) for the operations documented here.
+
+### <span class="sectioncount">2.1.0.4<a name="2.1.0.4"> </a></span> HTTP Status Codes
+
+This specification makes rules about the use of specific HTTP status codes
+in particular circumstances where the status codes SHALL map to particular
+states correctly, and only where the correct status code is not obvious.
 Other HTTP status codes may be used for other states as appropriate, and this particularly
-includes various authentication related status codes and redirects. 
-Authentication redirects should not be interpreted to change the location 
-of the resource itself (a common web programming error). 
+includes various authentication related status codes and redirects.
+Authentication redirects should not be interpreted to change the location
+of the resource itself (a common web programming error).
 
 FHIR defines an [OperationOutcome resource](operationoutcome.html) that can be used to convey specific detailed
 processable error information. For a few combinations of interactions and specific
-return codes, an OperationOutcome is required to be returned as the content of the response. 
-The OperationOutcome may be returned with any HTTP 4xx or 5xx response, but is not required - many of 
+return codes, an OperationOutcomeis required to be returned as the content of the response.
+The OperationOutcome may be returned with any HTTP 4xx or 5xx response, but is not required - many of
 these errors may be generated by generic server frameworks underlying a FHIR server.
+
+<a name="return"> </a>
+
+### <span class="sectioncount">2.1.0.5<a name="2.1.0.5"> </a></span> Managing Return Content
+
+In the interests of managing band-width, this specification allows clients
+to specify what kind of content to return.
+
+#### <span class="sectioncount">2.1.0.5.1<a name="2.1.0.5.1"> </a></span> conditional read
+
+Clients may use the `If-Modified-Since`, or `If-None-Match` HTTP header on a `read` request.
+If so, they MUST accept either a 304 Not Modified as a valid status code on the response (which means that the
+content is unchanged since that date) or full content (either the content has not changed,
+or the server does not support conditional request).
+
+Servers can return 304 Not Modified where content is unchanged since the
+`If-Modified-Since` date-time or the `If-None-Match` ETag specified or they can
+return the full content as normal. This optimisation is relevant in reducing bandwidth for caching purposes and servers are encouraged but
+not required to support this.
+
+#### <span class="sectioncount">2.1.0.5.2<a name="2.1.0.5.2"> </a></span> create/update/transaction
+
+These operations are performed using `POST`,`PUT` and `POST` respectively, and
+it may be appropriate for a server to return either only a status
+code, or also return the entire resource that is the outcome of the
+create or update (which may be different to that provided by the
+client). In the case of transactions this means returning a Bundle with just the `Bundle.entry.transactionResponse`,
+not the `Bundle.entry.resource`.
+
+The client can indicate whether the entire resource is
+returned using the [HTTP
+return preference](https://tools.ietf.org/html/rfc7240#section-4.2):
+
+<pre>
+Prefer: return=minimal
+Prefer: return=representation
+</pre>
+
+The first of these two asks to return no body (or an operation outcome). The
+second asks to return the full resource. Servers SHOULD honour this header.
+In the absence of the header, servers may chose whether to return the
+full resource or not.
 
 <a name="mime-type"> </a>
 
-### <span class="sectioncount">2.1.5<a name="2.1.5"> </a></span> Content Types and encodings
+### <span class="sectioncount">2.1.0.6<a name="2.1.0.6"> </a></span> Content Types and encodings
 
-The formal MIME-type for FHIR resources is application/xml+fhir or application/json+fhir.
+The formal MIME-type for FHIR resources is `application/xml+fhir` or `application/json+fhir`.
 The correct mime type SHALL be used by clients and servers:
 
-<table class="grid">
-<tr><th/><th>xml</th><th>json</th></tr>
-<tr><td>Resource</td><td>application/xml+fhir</td><td>application/json+fhir</td></tr>
-<tr><td>Bundle</td><td>application/atom+xml</td><td>application/json+fhir</td></tr>
-<tr><td>TagList</td><td>application/xml+fhir</td><td>application/json+fhir</td></tr>
-</table>
+*   XML: **application/xml+fhir**
+*   JSON: **application/json+fhir**
 
 Servers SHALL support server-driven content negotiation
-as described in [section 12](http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html#sec12) 
+as described in [section 12](http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html#sec12)
 of the HTTP specification.
 
-However in order to support various implementation limitations, servers SHOULD 
-support the optional &quot;_format&quot; parameter to specify alternative response formats by their MIME-types.
-This parameter allows a client to override the header value when it is unable to set it correctly 
+However in order to support various implementation limitations, servers SHOULD
+support the optional `_format` parameter to specify alternative response formats by their MIME-types.
+This parameter allows a client to override the header value when it is unable to set it correctly
 due to internal limitations.
-For the _format parameter, the values &quot;xml&quot;, &quot;text/xml&quot;, &quot;application/xml&quot;, and &quot;application/xml+fhir&quot; SHALL be interpreted to mean
+For the `_format` parameter, the values &quot;xml&quot;, &quot;text/xml&quot;, &quot;application/xml&quot;, and &quot;application/xml+fhir&quot; SHALL be interpreted to mean
 the normative XML format defined by FHIR and &quot;json&quot;, &quot;application/json&quot; and &quot;application/json+fhir&quot; SHALL be interpreted to mean the
 informative JSON format.
 
 FHIR uses UTF-8 for all request and response bodies. Since the HTTP specification (section 3.7.1)
 defines a default character encoding of ISO-8859-1, requests and responses SHALL explicitly set
-the character encoding to UTF-8 using the 'charset' parameter of the MIME-type in the Content-Type header. 
-Requests MAY also specify this charset parameter in the Accept header and/or use the Accept-Charset header.
+the character encoding to UTF-8 using the `charset` parameter of the MIME-type in the `Content-Type` header.
+Requests MAY also specify this `charset` parameter in the `Accept` header and/or use the `Accept-Charset` header.
+
+<a name="versioning"> </a>
+
+### <span class="sectioncount">2.1.0.7<a name="2.1.0.7"> </a></span> Support for Versions
+
+Servers that support this API SHOULD provide full version support - that is, populate and track
+versionId correctly, support `vread`, and implement [version aware updates](#versionaware).
+Supporting versions like this allows for related systems to track the correct version of information,
+and to keep integrity in clinical records. However, many current operational systems do not
+do this, and cannot easily be re-engineered to do so.
+
+For this reason, Servers are allowed to not provide versioning support: this API does not enforce
+that they are supported. Clients may elect to only interact with servers that do provide full
+versioning support. Systems declare their support for versioning
+in their [conformance statement](conformance-definitions.html#Conformance.rest.resource.noVersion).
 
 <a name="read"> </a>
 
-### <span class="sectioncount">2.1.6<a name="2.1.6"> </a></span> read
+### <span class="sectioncount">2.1.0.8<a name="2.1.0.8"> </a></span> read
 
-The read interaction accesses the current contents of a resource. The interaction
-is performed by an HTTP GET command as shown:
+The `read` interaction accesses the current contents of a resource. The interaction
+is performed by an HTTP `GET` command as shown:
 
 <pre>
   GET [base]/[type]/[id] {?_format=[mime-type]}
 </pre>
 
 This returns a single instance with the content specified for the resource type.
-This url may be accessed by a browser. The possible values for the 
-[Logical Id](resources.html#metadata) (id) itself are described in the [id type](datatypes.html#id).
-Servers are required to return a content-location header with the response which is the full version 
-specific url (see vread below) and a Last-Modified header.
-<p>
-Note: Unknown resources and deleted resources are treated differently on a read: A GET for a deleted 
-resource returns a 410 status code, whereas a GET for an unknown resource returns 404. Systems that do 
+This url may be accessed by a browser. The possible values for the
+[Logical Id](resource.html#id) (id) itself are described in the [id type](datatypes.html#id).
+The returned resource SHALL have an `id` element with a value that is the [id].
+Servers SHOULD return an `ETag` header with the versionId and a `Content-Location` header with the response which is the full version
+specific url (see vread below) and a `Last-Modified` header.
+
+Note: Unknown resources and deleted resources are treated differently on a read: A `GET` for a deleted
+resource returns a 410 status code, whereas a `GET` for an unknown resource returns 404. Systems that do
 not track deleted records will treat deleted records as an unknown resource.
 
-</p>
 <a name="vread"> </a>
 
-### <span class="sectioncount">2.1.7<a name="2.1.7"> </a></span> vread
+### <span class="sectioncount">2.1.0.9<a name="2.1.0.9"> </a></span> vread
 
-The vread interaction preforms a version specific read of the resource. The interaction
+The `vread` interaction preforms a version specific read of the resource. The interaction
 is performed by an HTTP GET command as shown:
 
 <pre>
@@ -202,114 +280,232 @@ is performed by an HTTP GET command as shown:
 </pre>
 
 This returns a single instance with the content specified for the resource type for that
-version of the resource. 
-  <!-- this - what does it mean?
-Servers may return a content-location header with the response which is the url 
-requested and a Last-Modified header. -->
+version of the resource.
+The returned resource SHALL have an `id` element with a value that is the [id], and a `meta.versionId`
+element with a value of [vid]. Servers SHOULD return an `ETag` header with the versionId and a `Content-Location` header with the response which is the full version
+specific url (see vread below) and a `Last-Modified` header.
 
-The [Version Id](resources.html#metadata) (vid) is an opaque identifier that conforms to the same [format requirements](datatypes.html#id) as 
-a [Logical Id](resources.html#metadata). The id may have been found by performing a history interaction (see below), by recording the 
-version id from a content location returned from a read or from a version specific reference in a 
-content model. If the version referred to is actually one where the resource was deleted, the 
+The [Version Id](resource.html#metadata) (vid) is an opaque identifier that conforms to the same [format requirements](datatypes.html#id) as
+a [Logical Id](resource.html#id). The id may have been found by performing a history interaction (see below), by recording the
+version id from a content location returned from a read or from a version specific reference in a
+content model. If the version referred to is actually one where the resource was deleted, the
 server should return a 410 status code.
 
-Servers are encouraged to support a version specific retrieval of the current version of the 
+Servers are encouraged to support a version specific retrieval of the current version of the
 resource even if they are do not provide access to previous versions. If a request
 is made for a previous version of a resource, and the server does not support accessing
-previous versions, it should return a 405 Method Not Allowed error.
+previous versions, it should return a 404 Not Found error, with an operation outcome
+explaining that history is not supported for the underlying resource type.
 
 <a name="update"> </a>
 
-### <span class="sectioncount">2.1.8<a name="2.1.8"> </a></span> update
+### <span class="sectioncount">2.1.0.10<a name="2.1.0.10"> </a></span> update
 
-The update interaction creates a new current version for an existing resource or 
-creates a new resource if no resource already exists for the given id. 
-The update interaction is performed by an HTTP PUT command as shown:
+The `update` interaction creates a new current version for an existing resource or
+creates an initial version if no resource already exists for the given id.
+The `update` interaction is performed by an HTTP `PUT` command as shown:
 
 <pre>
   PUT [base]/[type]/[id] {?_format=[mime-type]}
 </pre>
 
-If the interaction is successful, the server SHALL return either a 200 OK if the resource was updated, or a 201 Created if the resource was created,
-with a Last-Modified header, and a Location and Content-Location header that refers to the specific version created by the 
-update interaction. The server MAY send an OperationOutcome resource with hints and warnings about the resource; if one is sent it SHALL not include any errors.
+The request body SHALL be a [Resource](resource.html) with an id element that has an identical value to the [id] in the URL.
+If the request body includes a [meta](resource.html#meta), the server SHALL
+ignore the existing `versionId` and `lastUpdated` values.
+The server SHALL populate the `meta.versionId` and `meta.lastUpdated`
+with the new correct values.
+Servers are allowed to review and alter the other metadata values, but SHOULD refrain
+from doing so (see [metadata description](resource.html#meta)  for further information).
 
-Servers are permitted to reject update interactions because of integrity concerns or business 
-rules implemented on the server, and return HTTP status codes accordingly (usually 422). 
 A server SHOULD accept the resource as submitted when accepts the update, and return the same
-content when it is subsequently read. However systems may not be able to do this; see 
-the note on [transactional integrity](#transactional-integrity) for discussion. 
+content when it is subsequently read. However systems may not be able to do this; see
+the note on [transactional integrity](#transactional-integrity) for discussion.
 
-In particular, servers may choose to implement version-aware updates, where the only updates that are 
-accepted quote the current version of the resource. In this case, the client must submit the currently 
-correct version specific URL in the Content-Location in the PUT request. If the value is missing, 
-the server SHALL return a 412 Preconditions failed response. Clients SHOULD submit a proper Content-Location 
-header and SHALL correctly understand a 409 response as an update conflict.
+If the interaction is successful, the server SHALL return either a 200 OK HTTP status code if the resource was updated, or a 201 Created status code if the resource was created,
+with a `Last-Modified` header, and an `ETag` header which contains the new `versionId` of the resource. A `Content-Location` header
+that refers to the specific version created by the update interaction SHOULD also be returned. If the resource was created (i.e. the interaction resulted in a 201 Created), the server SHOULD
+return a `Location` header.
+
+The server MAY include a response body containing an [OperationOutcome](operationoutcome.html)
+resource with hints and warnings about the resource; if one is sent it SHALL not include any errors.
+
+#### <span class="sectioncount">2.1.0.10.1<a name="2.1.0.10.1"> </a></span> Conditional updates
+
+The conditional update operation allows a client to update an existing resource based on some identification criteria,
+rather than by  [logical id](resource.html#meta). To accomplish this, the client issues a `PUT` as shown:
+
+<pre>
+  PUT [base]/[type]/?[search parameters]
+</pre>
+
+When the server processes this update, it performs a search using its standard
+[search facilities](search.html) for the resource type, with the goal of resolving a single logical id for this request. The action it takes depends
+on how many matches are found:
+
+*   **No matches**: The server performs a [create](#create) operation
+*   **One Match**: The server performs the update against the matching resource
+*   **Multiple matches**: The server returns a 412 Precondition Failed error indicating the the client's criteria were not selective enough
+
+This variant can be used to allow a stateless client (such as an interface engine) to submit
+updated results to a server, without having to remember the logical ids that the server has assigned.
+For example, a client updating the status of a lab result from &quot;preliminary&quot; to &quot;final&quot;
+might submit the finalized result using `PUT /Observation?identifier=http://my-lab-system|123`
+
+#### <span class="sectioncount">2.1.0.10.2<a name="2.1.0.10.2"> </a></span> Rejecting Updates
+
+Servers are permitted to reject update interactions because of integrity concerns or other business
+returning HTTP status codes accordingly (usually a 422).
 
 Common HTTP Status codes returned on FHIR-related errors (in addition to normal HTTP errors related to security, header and content type negotiation issues):
 
-*   **400 Bad Request** - resource could not be parsed or failed basic FHIR validation rules
-*   **404 Not Found** - resource type not supported, or not a FHIR end point
+*   **400 Bad Request** - resource could not be parsed or failed basic FHIR validation rules (or multiple matches were found for*   **404 Not Found** - resource type not supported, or not a FHIR end point
 *   **405 Method Not allowed** - the resource did not exist prior to the update, and the serer does not allow client defined ids
 *   **409/412** - version conflict management - see above
 *   **422 Unprocessable Entity** - the proposed resource violated applicable FHIR profiles or server business rules. This should be accompanied by an [OperationOutcome](operationoutcome.html) resource providing additional detail
 
 Note: Servers MAY choose to preserve XML comments, instructions, and formatting or JSON whitespace when accepting updates, but are not required to do so. The impact of this on digital signatures may need to be considered.
 
+For additional information on how systems may behave when processing updates, refer to the [Create and Update Behavior](updates.html) page.
+
+<a name="versionaware"> </a>
+<a name="concurrency"> </a>
+
+### <span class="sectioncount">2.1.0.11<a name="2.1.0.11"> </a></span> Managing Resource Contention
+
+[Lost Updates](http://www.w3.org/1999/04/Editing/), where two clients update the same
+resource, and the second overwrites the updates of the first, can be prevented using a combination
+of the [ETag](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19) and
+[If-Match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.24) header.
+
+To support this usage, servers SHOULD always return an `ETag` header with each resource:
+
+<pre class="http">
+HTTP 200 OK
+Date: Sat, 09 Feb 2013 16:09:50 GMT
+Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT
+ETag: W/&quot;23&quot;
+Content-Type: application/json+fhir
+</pre>
+
+if provided, the value of the ETag SHALL match the value of the version id for the resource. Servers
+are allowed to generate the version id in whatever fashion that they wish, so long
+as they are valid according to the [id](datatypes.html#id) data type,
+and are unique within the address space of all versions of the same resource.
+When resources are returned as part of a bundle, there is no ETag, and the
+versionId of the resources is used directly.
+
+If the client wishes to request a version aware update, it submits the request with an
+`If-Match` header that quotes the ETag from the server:
+
+<pre class="http">
+PUT /Patient/347 HTTP/1.1
+If-Match: W/&quot;23&quot;
+</pre>
+
+If the version id given in the `If-Match` header does not match, the server returns a
+412 Pre-condition failed status code instead of updating the resource.
+
+Servers can require that clients provide an `If-Match` header by returning 412 Pre-condition failed
+status codes when no `If-Match` header is found.
+
 <a name="delete"> </a>
 
-### <span class="sectioncount">2.1.9<a name="2.1.9"> </a></span> delete
+### <span class="sectioncount">2.1.0.12<a name="2.1.0.12"> </a></span> delete
 
-The delete interaction removes an existing resource. The interaction
+The `delete` interaction removes an existing resource. The interaction
 is performed by an HTTP DELETE command as shown:
 
 <pre>
-  DELETE [base]/[type]/[id] 
+  DELETE [base]/[type]/[id]
 </pre>
 
-A delete interaction means that [non-version specific reads](#read) of a resource 
-return a 410 error and that the resource is no longer found through search interactions. Upon successful
-deletion the server should return 204 (No Content). The server MAY send an OperationOutcome resource with hints and warnings about the deletion; if one is sent it SHALL not include any errors.
+A delete interaction means that subsequent [non-version specific reads](#read) of a resource
+return a 410 HTTP status code and that the resource is no longer found through [search](#search)
+interactions. Upon successful deletion, or if the resource does not exist at all, the server should return
+204 (No Content), or 200 OK status code, with an [OperationOutcome](operationoutcome.html)
+resource containing hints and warnings about the deletion; if one is sent it SHALL not include any errors.
 
-If the server refuses to delete resources of that type on principle, then it should return the status code 
-405 method not allowed. If the server refuses to delete a resource because of reasons specific 
-to that resource, such as referential integrity, it should return the status code 409 Conflict.
-If the resource cannot be deleted because it does not exist on the server, the server SHALL return 404 (Not found).
-Performing this interaction on a resource that is already deleted has no effect, and should return 204.
-Resources that have been deleted may subsequently be brought back to life by PUTting an update to them 
-subsequent to the deletion. 
+Whether to support delete at all, or for a particular resource type or a particular instance is at the 
+discretion of the server based on the business rules that apply in its context.  
+If the server refuses to delete resources of that type as a blanket policy, then it should return the 405
+Method not allowed status code. If the server refuses to delete a resource because of reasons specific
+to that resource, such as referential integrity, it should return the 409 Conflict status code.
+Performing this interaction on a resource that is already deleted has no effect, and the server should return a 204 or 200 response.
+Resources that have been deleted may be &quot;brought back to life&quot; by a subsequent [update](#href) interaction using an HTTP `PUT`.
 
 Many resources have a status element that overlaps with the idea of deletion. Each resource type
-defines what the semantics of the deletion interactions are. If no documentation is provided, the 
+defines what the semantics of the deletion interactions are. If no documentation is provided, the
 deletion interaction should be understood as deleting the record of the resource, with nothing
 about the state of the real-world corresponding resource implied.
 
+For servers that maintain a version history, the `delete` operation does not remove a resource's version history. From a version history respect,
+deleting a resource is the equivalent of creating a special kind of history entry that has
+no content and is marked as deleted.
+
+#### <span class="sectioncount">2.1.0.12.1<a name="2.1.0.12.1"> </a></span> Conditional deletes
+
+The conditional delete operation allows a client to update an existing resource based on some identification criteria,
+rather than by  [logical id](resource.html#meta). To accomplish this, the client issues an HTTP DELETE as shown:
+
+<pre>
+  DELETE [base]/[type]/?[search parameters]
+</pre>
+
+When the server processes this update, it performs a search as specified using the standard
+[search facilities](search.html) for the resource type. The action it takes depends
+on how many matches are found:
+
+*   **No matches**: The server returns 404 (Not found)
+*   **One Match**: The server performs an ordinary `delete` on the matching resource
+*   **Multiple matches**: The server returns a 412 Precondition Failed error indicating the the client's criteria were not selective enough
+
+This variant can be used to allow a stateless client (such as an interface engine) to delete
+a resource on a  server, without having to remember the logical ids that the server has assigned.
+For example, a client deleting a lab atomic result might delete the resource using `DELETE /Observation?identifier=http://my-lab-system|123`.
+
 <a name="create"> </a>
 
-### <span class="sectioncount">2.1.10<a name="2.1.10"> </a></span> create
+### <span class="sectioncount">2.1.0.13<a name="2.1.0.13"> </a></span> create
 
-The create interaction creates a new resource in a server assigned location. If the client 
-wishes to have control over the id of a newly submitted resource, it should use the update 
-interaction instead. The create interaction is performed by an HTTP POST command as shown:
+The `create` interaction creates a new resource in a server-assigned location. If the client
+wishes to have control over the id of a newly submitted resource, it should use the [update](#update)
+interaction instead. The `create` interaction is performed by an HTTP `POST` command as shown:
 
 <pre>
   POST [base]/[type] {?_format=[mime-type]}
 </pre>
 
-The server returns a 201 Created, along with 
-a Location header which contains the new [Logical Id](resources.html#metadata) and [Version Id](resources.html#metadata) of the created resource:
+The request body SHALL be a FHIR Resource without an id element (this is the
+only case where a resource exists without an id element).
+If the request body includes a [meta](resource.html#meta), the server SHALL
+ignore the existing `versionId` and `lastUpdated` values.
+The server SHALL populate the `meta.versionId` and `meta.lastUpdated`
+with the new correct values.
+Servers are allowed to review and alter the other metadata values, but SHOULD refrain
+from doing so (see [metadata description](resource.html#meta)  for further information).
+
+A server SHOULD accept the resource as submitted when it accepts the create, and return the same
+content when it is subsequently read. However some systems may not be able to do this; see
+the note on [transactional integrity](#transactional-integrity) for discussion.
+
+The server returns a 201 Created HTTP status code, and SHOULD also return a `Location` header which
+contains the new [Logical Id](resource.html#metadata) and [Version Id](resource.html#metadata) of
+the created resource version:
 
 <pre>
   Location: [base]/[type]/[id]/_history/[vid]
 </pre>
 
-Where [id] and [vid] are the newly created id and version id for the resource. The server MAY send an OperationOutcome resource with hints and warnings about the resource; if one is sent it SHALL not include any errors.
+where [id] and [vid] are the newly created id and version id for the resource version.
 
-When the payload data is incorrect and cannot be used to create a new resource, the server returns a 400 Bad Request.
+Servers SHOULD return an `ETag` header with the versionId and a `Content-Location` header with the response which is the full version
+specific url (see vread below) and a `Last-Modified` header.
+The server MAY include a response body containing an [OperationOutcome](operationoutcome.html) resource with hints and warnings about
+the resource; if one is sent it SHALL not include any errors.
 
-A server SHOULD accept the resource as submitted when accepts the create, and return the same
-content when it is subsequently read. However systems may not be able to do this; see 
-the note on [transactional integrity](#transactional-integrity) for discussion. 
+When the resource syntax or data is incorrect or invalid, and cannot be used to create a new resource, the server returns a 400 Bad Request HTTP status code.
+When the server rejects the content of the resource because of business rules, the server returns a 422 Unprocessible Entity error HTTP status code.
+In either case, the server SHOULD include a response body containing an [OperationOutcome](operationoutcome.html) with detailed error messages describing the reason for the error.
 
 Common HTTP Status codes returned on FHIR-related errors (in addition to normal HTTP errors related to security, header and content type negotiation issues):
 
@@ -319,87 +515,96 @@ Common HTTP Status codes returned on FHIR-related errors (in addition to normal 
 
 Note: Servers MAY choose to preserve XML comments, instructions, and formatting or JSON whitespace when accepting creates, but are not required to do so. The impact of this on digital signatures may need to be considered.
 
+For additional information on how systems may behave when processing updates, refer to the [Create and Update Behavior](updates.html) page.
+
+#### <span class="sectioncount">2.1.0.13.1<a name="2.1.0.13.1"> </a></span> Conditional create
+
+The conditional `create` operation allows a client to create a new resource only if some equivalent resource
+does not already exist on the server. The client defines what equivalence means in this case by supplying
+a FHIR search query in an `If-None-Exist` header as shown:
+
+<pre>
+  If-None-Exist: base/[type]?[search parameters]
+</pre>
+
+When the server processes this update, it performs a search as specified using its standard
+[search facilities](search.html) for the resource type. The action it takes depends
+on how many matches are found:
+
+*   **No matches**: The server processes the create as above
+*   **One Match**: The server ignore the post and returns 200 OK
+*   **Multiple matches**: The server returns a 412 Precondition Failed error indicating the the client's criteria were not selective enough
+
+This variant can be used to avoid the risk of two clients
+creating duplicate resources for the same record. For example, a client posting a new lab result might specify
+`If-None-Exist: /Observation?identifier=http://my-lab-system|123` to ensure it is does not create a duplicate record.
+
 <a name="search"> </a>
 
-### <span class="sectioncount">2.1.11<a name="2.1.11"> </a></span> search
+### <span class="sectioncount">2.1.0.14<a name="2.1.0.14"> </a></span> search
 
-This interaction searches a set of resources based on some filter criteria. The interaction can be performed by several different HTTP commands. 
-To search all resources at once:
-
-<pre>
-  GET [base]?[parameters] {&amp;_format=[mime-type]}
-</pre>
-
-To search a single resource type:
+This interaction searches a set of resources based on some filter criteria. The interaction can be performed by several different HTTP commands.
 
 <pre>
-  GET [base]/[type]?[parameters] {&amp;_format=[mime-type]}
-  GET [base]/[type]/_search?[parameters] {&amp;_format=[mime-type]}
+  GET [base]/[type]{?[parameters]{&amp;_format=[mime-type]}}
 </pre>
 
-To search a [compartment](extras.html#compartments):
+This searches all resources of a particular type using the criteria represented in the parameters. 
+
+Because of the way that some user agents and proxies treat `GET` and `POST` requests, in addition
+to the get based search method above, servers that support _search_ SHALL also support a `POST` based search:
 
 <pre>
-  GET [base]/[compartment]/[id]/?[parameters]  {&amp;_format=[mime-type]}
-  GET [base]/[compartment]/[id]/[type]?[parameters]  {&amp;_format=[mime-type]}
+POST  [base]/[type]/_search{?[parameters]{&amp;_format=[mime-type]}}
 </pre>
 
-Because of the way that some user agents treat GET and POST requests, POST submissions to /_search 
-are also allowed with exactly the same semantics as the equivalent GET command.
-All these search interactions take a series of parameters that are a series of name'='value pairs 
-encoded in the URL (or as an x-multi-part-form submission for a POST).
-(See [W3C HTML forms](http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type)). 
-Searches are processed as specified for the [Search/Query handling mechanism](search.html). 
+This has exactly the same semantics as the equivalent `GET` command. All these search interactions take a series of parameters that
+are a series of name'='value pairs encoded in the URL (or as an `application/x-www-form-urlencoded` submission for a `POST`).
+(See [W3C HTML forms](http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type)).
+Searches are processed as specified for the [Search handling mechanism](search.html).
 
 If the search fails, the return value is a status code 4xx or 5xx with an [OperationOutcome](operationoutcome.html).
-If the search succeeds, the return content is an [Bundle](extras.html#bundle) containing the results of the search as a list of resources
-in a defined order. The result list can be long, so servers may use paging. If they do, they SHALL use the method described 
-in [RFC 5005 (Feed Paging and Archiving)](https://tools.ietf.org/html/rfc5005) (also [see below](#paging)) for breaking the 
-list into pages if appropriate. The server MAY also return an OperationOutcome resource with additional information about the search; if one is sent it SHALL not include any errors.
+If the search succeeds, the return content is a [Bundle](extras.html#bundle) with
+[type](bundle-definitions.html#Bundle.type) = `searchset` containing the results of the search as a list of resources
+in a defined order. The result list can be long, so servers may use paging. If they do, they SHALL use the method [described below](#paging)
+(adapted from [RFC 5005 (Feed Paging and Archiving](https://tools.ietf.org/html/rfc5005)) for breaking the
+list into pages if appropriate. The server MAY also return an OperationOutcome resource with additional information about the search;
+if one is sent it SHALL not include any errors, and it shall be marked with an [entry
+mode](search-entry-mode.html) of `include`.
 
-<a name="validate"> </a>
-<a name="validation"> </a>
+#### <span class="sectioncount">2.1.0.14.1<a name="2.1.0.14.1"> </a></span> Variant Searches
 
-### <span class="sectioncount">2.1.12<a name="2.1.12"> </a></span> validate
-
-The validate interaction checks whether the attached content would be acceptable as an 
-update to an existing resource. The interaction is performed by an HTTP POST command as shown:
+To search a [compartment](extras.html#compartments), either all possible resources, or for a particular resource type, respectively:
 
 <pre>
-  POST [base]/[type]/_validate{/[id]}
+  GET [base]/[Compartment]/[id]/{*?[parameters]{&amp;_format=[mime-type]}}
+  GET [base]/[Compartment]/[id]/[type]{?[parameters]{&amp;_format=[mime-type]}}
 </pre>
 
-The content is first checked against the general specification and against the conformance 
-profile that applies to the application. Then, if the optional [id] section is 
-also provided, the resource is considered as a proposed update to the specific resource, 
-and additional instance specific rules such as referential integrity 
-and update logic (including version control) are applied as well. 
+For example, to retrieve all the observation resources for a particular LOINC code associated with a particular encounter:
 
-The client can ask the server to validate against a particular resource by attaching
-a [profile tag](extras.html#tags) to the resource. This is an assertion that 
-the resource conforms to the specified profile(s), and the server can check this. 
+<pre>
+  GET [base]/Encounter/23423445/Observation?code=2951-2  {&amp;_format=[mime-type]}
+</pre>
 
-How much checking to perform as part of the validation operation is at the 
-discretion of the server. The server SHALL check all the things it requires
-of the resource as part of it's normal operations, and MAY choose to validate
-the resource against the schema and schematron provided as part of this
-specification, and/or other profiles, including the one specified by the 
-client.
+Note that there are a specific operations defined to support fetching [an entire patient record](patient-operations.html#everything)
+or [all record for an encounter](encounter-operations.html#everything).
 
-The return content has one of the following values:
+Finally, it's possible to search all resources at once:
 
-*   **400 Bad Request** - resource could not be parsed or had some basic FHIR validation error
-*   **200 OK** - resource passed all validation rules
-*   **422 Unprocessable Entity** - the resource was valid, but as a proposed update, it violates applicable FHIR profiles or server business rules
+<pre>
+  GET [base]?[parameters]{&amp;_format=[mime-type]}
+</pre>
 
-Unless the result is 200 OK, the response SHALL include an [OperationOutcome](operationoutcome.html) resource that lists the issues found on validation.
+When searching all resources at once, only the parameters defined for all resources 
+can be used.
 
 <a name="conformance"> </a>
 
-### <span class="sectioncount">2.1.13<a name="2.1.13"> </a></span> conformance
+### <span class="sectioncount">2.1.0.15<a name="2.1.0.15"> </a></span> conformance
 
-The conformance interaction retrieves the server's conformance statement that defines how it supports resources. 
-The interaction is performed by an HTTP OPTIONS or a GET command as shown:
+The conformance interaction retrieves the server's conformance statement that defines how it supports resources.
+The interaction is performed by an HTTP OPTIONS or a `GET` command as shown:
 
 <pre>
   GET [base]/metadata {?_format=[mime-type]}
@@ -407,132 +612,126 @@ The interaction is performed by an HTTP OPTIONS or a GET command as shown:
 </pre>
 
 Applications SHALL return a [Conformance Resource](conformance.html) that specifies which resource types and interactions are supported
-for the GET command, and SHOULD do so for the OPTIONS command. If a 404 Unknown is returned from the GET, FHIR is not supported on the 
-nominated service url. The GET command is defined because not all client libraries are able to perform an OPTIONS command. 
-A Content-Location header SHALL be returned with the conformance resource. The value of the header SHALL change if the 
-conformance statement itself changes. The URI provided in the header MAY be a literal location where this version of the
-conformance statement is (and will continue to be) available. Additional parameters that are required to be returned with 
-the OPTIONS command are defined in the [OMG hData RESTful Transport](#hdata) specification. 
+for the `GET` command, and SHOULD do so for the `OPTIONS` command. If a 404 Unknown is returned from the GET, FHIR is not supported on the
+nominated service url. The `GET` command is defined because not all client libraries are able to perform an `OPTIONS` command.
+An `ETag` header SHALL be returned with the conformance resource. The value of the header SHALL change if the
+conformance statement itself changes. In addition, a `Content-Location` header with a literal location where this version of the
+conformance statement is (and will continue to be) available MAY be returned. Additional parameters that are required to be returned with
+the `OPTIONS` command are defined in the [OMG hData RESTful Transport](#hdata) specification.
 
-In addition to this conformance operation, a server may also choose to provide the 
-standard set of interactions (read, search, create, update) defined on this page 
-for the [Conformance Resource](conformance.html) end-point. 
+The Conformance statement returned typically has an arbitrary id, and no meta element, though it is not prohibited.
+
+In addition to this conformance operation, a server may also choose to provide the
+standard set of interactions (`read`, `search`, `create`, `update`) defined on this page
+for the [Conformance Resource](conformance.html) end point.
 This is different to the conformance operation:
 
 <table class="grid">
  <tr><td>conformance operation</td><td>returns a conformance statement describes the server's current operational functionality</td></tr>
- <tr><td>Conformance end-point</td><td>manages a repository of conformance statements (e.g. the HL7 conformance statement registry)</td></tr>
+ <tr><td>Conformance end point</td><td>manages a repository of conformance statements (e.g. the HL7 conformance statement registry)</td></tr>
 </table>
 
-All servers are required to support the conformance operation, but servers may choose whether they wish to support the conformance end-point, just like any other end-point.
+All servers are required to support the conformance operation, but servers may choose whether they wish to support the conformance end-point, just like any other end point.
 
 <a name="transaction"> </a>
 
-### <span class="sectioncount">2.1.14<a name="2.1.14"> </a></span> transaction
+### <span class="sectioncount">2.1.0.16<a name="2.1.0.16"> </a></span> transaction
 
-The transaction interaction submits a set of resources to be updated, created or deleted on the server. 
-This interaction allows multiple resources to be updated/created in a single transaction on a single server. Multiple 
-resources of the same or different types may be submitted, and they may be a mix of new and existing resources. 
+The transaction interaction submits a set of actions to perform on a server as a single atomic action.
+Multiple actions on multiple resources of the same or different types may be submitted, and they may be a mix of other operations defined on this page (e.g. read, search, create, update, delete, etc).
 
 This is especially useful where one would otherwise need multiple interactions, possibly
-leading to loss of referential integrity (e.g. when storing a Provenance resource and its 
-corresponding target resource), or, on document repositories, a document index entry and its
-accompanying document.
+with a risk of loss of referential integrity if a later interaction fails (e.g. when storing
+a Provenance resource and its corresponding target resource, or, on document repositories, a
+document index entry and its accompanying document).
 
-The transaction interaction is performed by an HTTP POST command as shown:
+The transaction interaction is performed by an HTTP `POST` command as shown:
 
 <pre>
   POST [base] {?_format=[mime-type]}
 </pre>
 
-The content of the post submission is a resource bundle. The resources in the bundle are each processed separately
-as if they were an individual [create](#create), [update](#update) or 
-[delete](#delete), along with the normal processing for each 
-(such as tracking tags, verification and version aware updates, subject to
-the note on [transactional integrity](#transactional-integrity)). 
-Servers SHALL either accept all resources and return a 200 OK, along with a 
-response bundle, or reject all resources and return an HTTP 400 or 500 type 
+The content of the post submission is a [Bundle](bundle.html) with type set to `transaction`.
+Each entry carries a `transaction` ([Bundle.entry.transaction](bundle-definitions.html#Bundle.entry.transaction))
+that provides the HTTP details of the operation in order to inform the system processing the transaction
+what to do for the entry. If the HTTP operation is a `PUT` or `POST`, then the entry SHALL contain a resource for the body of the operation.
+The resources in the bundle are each processed separately as if they were an individual
+operation as otherwise described on this page, or for [Extended
+Operations](operations.html). The operations are subject to the the normal processing for each,
+including the [meta element](resource.html#meta), verification and version aware updates,
+and [transactional integrity](#transactional-integrity).
+
+Servers SHALL either accept all actions and return a 200 OK, along with a
+response bundle (see below), or reject all resources and return an HTTP 400 or 500 type
 response. It is not an error if the submitted bundle has no resources in it.
-The outcome of the processing the transaction SHALL not depend on the order 
-of the resources in the transaction. Note that this means that a resource can 
-only appear in a transaction once, and since bundles may have the same 
-resource more than once or other order dependencies (e.g. update lists), some
-kinds of bundles may not be able to be used in a transaction.
+The outcome of the processing the transaction SHALL not depend on the order
+of the resources in the transaction. A resource can only appear in a transaction
+once (by identity).
 
-When a bundle is submitted in a transaction interaction, all the resources have an identity specified
-in the bundle. If the identity of the resource matches an existing or possible resource location 
-on the server, the server should treat this entry as an [update interaction](#update) 
-(i.e. PUT to the given resource). If the identity is not one that the server recognizes as a resource location it can use, the 
-server should treat the interaction as a [create interaction](#create) (i.e. POST to 
-the given resource type URL), and create a new identity for the submitted resource. Note that the client SHALL provide
-an identity in the bundle entry.id, but may also provide a version specific identity the
-atom &quot;self&quot; link, and may refer to this for version specific references. Deleted resources are those marked 
-using the method described for [XML](xml.html#atom-deleted) or 
-[JSON](json.html#json-bundle-delete).
+**Processing Bundle Entries**
 
-A transaction may include references from one resource to another in the bundle, which may 
-include circular references where resources refer to each other. If the server assigns 
-a new identity to any resource in the bundle, it SHALL also update any references to that 
-resource in the same bundle as they are processed. References to resources that are not 
-part of the bundle are left untouched. If a resource in the bundle carries a version-specific 
-id (using its self-link), any version-specific references to it SHALL also be updated.
-Servers SHALL be replace all matching links in the bundle, whether they are found in the resource ids, 
+Because of the rules that a transaction is atomic, that all operations pass or fail
+together, and that order of the entries doesn't matter, there is a particular order in which to process the operations:
+
+1.  Process any `POST` operations
+2.  Process any `PUT` operations
+3.  Process any `DELETE` operations
+4.  Process any `GET` operations
+
+If any resource identities (including resolved identities from conditional update/delete) overlap in steps 1-3, then the transaction SHALL fail.
+
+A transaction may include references from one resource to another in the bundle, including
+circular references where resources refer to each other. If the server assigns
+a new id to any resource in the bundle as part of the processing rules above,
+it SHALL also update any references to that resource in the same bundle as they
+are processed. References to resources that are not
+part of the bundle are left untouched. Version-specific references should remain
+as version-specific references after the references have been updated.
+Servers SHALL be replace all matching links in the bundle, whether they are found in the resource ids,
 resource references, url elements, or &lt;a href=&quot;&quot; &amp; &lt;img src=&quot;&quot; in the narrative.
 
-A client may assign temporary ids to new resources and then refer to
-them from other places in the transaction. When the client intends a resource 
-to have a transient identity that the server must replace, it should use a cid: 
-url on the resource - that is, a url with the scheme 
-&quot;cid:&quot; [per RFC 2392](http://tools.ietf.org/html/rfc2392). 
-Servers SHALL replace these temporary ids when processing the transaction. 
+<a name="transaction-response"> </a>
 
-In order to allow the client to know how newly created resources are now identified for future 
-reference, the server SHALL return a bundle that contains one entry for each resource in the 
-transaction, with the following properties:
+#### <span class="sectioncount">2.1.0.16.1<a name="2.1.0.16.1"> </a></span> Transaction Response
 
-*   The server assigned id in entry.id
-*   If [vread](#vread) is supported, the specific version reference in a &quot;self&quot; link on the entry
-*   The client assigned id in a &quot;alternate&quot; link on the entry
-*   entry.content and entry.summary are not required
+In order to allow the client to know the outcomes of processing the entry, and the identities
+assigned to the resources by the server, the server SHALL return a [Bundle](extras.html#bundle) with
+[type](bundle-definitions.html#Bundle.type) set to `transaction-response` that contains one entry for each entry in the
+transaction, in the same order, with the outcome of processing the entry.
 
-The server MAY also return an OperationOutcome resource with additional information about the transaction; if one is sent it SHALL not include any errors if the transaction was successful.
+Each entry element SHALL contain a `transactionResponse` element which
+details the outcome of processing the entry - the HTTP status code, and the location
+and `ETag` header values, which are used for identifying and versioning the resources.
+In addition, a resource may be included in the entry.
 
-The application constructing a bundle may not be sure whether a particular resource will already exist
-at the time that the transaction is executed; this is typically the case with reference resources such 
-as patient and provider. In this case, the bundle should contain a candidate resource with
-a cid: identifier, and an additional search parameter using an Atom link:
+<a name="other-bundles"> </a>
 
-<pre>
- &lt;link href=&quot;http://localhost/Patient?[parameters]&quot; rel=&quot;search&quot;/&gt;
-</pre>
+#### <span class="sectioncount">2.1.0.16.2<a name="2.1.0.16.2"> </a></span> Accepting Other bundle types
 
-A search link with a root of http://localhost means to search the local resource store for 
-a match as specified in the parameters (which must conform to the servers capability for 
-searching as specified in its conformance statement). If the search returns no matches, 
-the server process the resource normally. If the search returns one match, the server
-uses this matching resource instead, and ignores the submitted resource. If more than
-one resource is found, the transaction SHALL be rejected.
+A server may choose to accept bundle types other than `transaction` as transactions.
 
-If the server that is processing the transaction requires version aware updates, 
-the client may need to reference what is the server's current version of
-the resource, which is now the client's previous version:
+Bundles of type `history` inherently have the same structure as a transaction, and
+can be treated as one, so servers SHOULD accept a history bundle - this makes it
+possible to replicate data from one server to another easily. Not, however, that
+existing transaction boundaries are not represented in a history list, and
+a resource may occur more than once in a history list, so
+servers processing history bundles must have some strategy to manage this.
 
-<pre>
- &lt;link href=&quot;[base]/Patient/34/history/31&quot; rel=&quot;predecessor-version&quot;/&gt;
-</pre>
-
-A server SHOULD accept &quot;http://localhost&quot; in place of the [base] to ease
-processing where the host name may be unknown (e.g. where proxies are involved).
-The predecessor-version is treated as if it were the content-location header
-on an update interaction.
+For other bundle types, should the server choose to accept them, there will be
+no `transaction` element (note that every entry will have a resource).
+In this case, the server treats the entry as either a create or an update operation,
+depending on whether it recognises the identity of the resource - if the identity
+of the resource refers to a valid location on the server, it should treat it
+as an update to that location. Note: this option allows a client to delegate
+the matching process to the server.
 
 <a name="history"> </a>
 
-### <span class="sectioncount">2.1.15<a name="2.1.15"> </a></span> history
+### <span class="sectioncount">2.1.0.17<a name="2.1.0.17"> </a></span> history
 
-The history interaction retrieves the history of either a particular resource, all resources of 
+The history interaction retrieves the history of either a particular resource, all resources of
 a given type, or all resources supported by the system. These three variations of the history
-interaction are performed by HTTP Get command as shown:
+interaction are performed by HTTP `GET` command as shown:
 
 <pre>
   GET [base]/[type]/[id]/_history{?[parameters]&amp;_format=[mime-type]}
@@ -540,104 +739,63 @@ interaction are performed by HTTP Get command as shown:
   GET [base]/_history{?[parameters]&amp;_format=[mime-type]}
 </pre>
 
-The return content is a [Bundle](extras.html#bundle) containing the specified version history, 
-sorted with oldest versions last, and including deleted resources, represented as described in bundles 
-using the method described for [XML](xml.html#atom-deleted) or 
-[JSON](json.html#json-bundle-delete). In addition to the standard _format
-parameter, the parameters may also include:
+The return content is a [Bundle](extras.html#bundle) with
+[type](bundle-definitions.html#Bundle.type) set to `history` containing the specified version history,
+sorted with oldest versions last, and including deleted resources.
+Each entry SHALL contain a `transaction`, and, if the `entry.transaction.method` is a `PUT` or a `POST`, a resource.
+The entry SHALL contain the resource state at the conclusion of the operation.
+
+The operations [create](#create), [update](#update), and [delete](#delete)
+create history entries. Other operations do not (note that these operations may produce side-effects
+such as new AuditEvent resources; these are represented as create operations in their own right).
+
+A create operation is represented in a history operation in the following way:
+
+<pre class="xml">
+  &lt;entry&gt;
+    &lt;resource&gt;
+      &lt;Patient&gt;
+        &lt;!-- the id of the created resource --&gt;
+        &lt;id value=&quot;23424&quot;/&gt;
+        &lt;!-- snip --&gt;
+      &lt;/Patient&gt;
+    &lt;/resource&gt;
+    &lt;transaction&gt;
+      &lt;!-- POST: this was a create --&gt;
+      &lt;method value=&quot;POST&quot;/&gt;
+      &lt;url value=&quot;Patient&quot;/&gt;
+    &lt;/transaction&gt;
+  &lt;/entry&gt;
+</pre>
+
+Note that conditional creates, updates and deletes are converted to direct
+updates and deletes in a history list.
+
+In addition to the standard `_format` parameter, the parameters to this interaction may also include:
 
 <table class="list">
   <tr><td>_count : [integer](datatypes.html#integer)</td><td>single</td><td>Number of return records requested. The server is not bound to return the number requested, but cannot return more</td></tr>
   <tr><td>_since : [instant](datatypes.html#integer)</td><td>single</td><td>Only include resource versions that were created at or after the given instant in time</td></tr>
 </table>
 
-The history list can be restricted to a limited period by specifying a _since parameter which contains a full date time with time zone. 
-Servers SHALL ensure that if a client uses the feed.updated date from the last response they received as 
-the value of the _since parameter, no versions will be missed. Clients should be aware that due to timing imprecision, 
-they may receive notifications of a resource update on the boundary instant more than once. Servers are 
-not required to support a precision finer than by second. 
+The history list can be restricted to a limited period by specifying a `_since` parameter which contains a full date time with time zone.
+Clients should be aware that due to timing imprecision, they may receive notifications of a resource update on the boundary instant more than once. Servers are
+not required to support a precision finer than by second.
 
-The updates list can be long, so servers may use paging. If they do, they SHALL use the method described 
-in [RFC 5005 (Feed Paging and Archiving)](https://tools.ietf.org/html/rfc5005) (also [see Paging](#paging)) for breaking the 
-list into pages if appropriate.
+The updates list can be long, so servers may use paging. If they do, they SHALL use the method [described
+below](#paging) for breaking the list into pages if appropriate, and maintain the specified _count across pages.
 
-The history interaction is suitable for use with internet pub/sub systems based on rss/atom, 
-including services such as [Feedly](http://www.feedly.com), allowing humans to easily subscribe to notifications
-of updates to a resource (this is usually appropriate for low volume high knowledge resources like
-profiles). In addition, the history interaction can be used to set up a subscription from one system
-to another, so that resources are synchronized between them. Systems receiving such feeds and planning
-on enforcing resource integrity should note that [transaction](#transaction) boundaries 
-are not reflected in the history list.
-
- <a name="tags"> </a>
-
-### <span class="sectioncount">2.1.16<a name="2.1.16"> </a></span> Tag Operations
-
-[Tags](extras.html#tags) are attached to resources to define operational behavior. When resources are exchanged directly use HTTP on the read, vread, create and update interactions, the 
-http header &quot;Category&quot; is used, following the method described for [Web Categories](http://tools.ietf.org/html/draft-johnston-http-category-header-02).
-
-<pre>
- <a name="tags"> </a> Category: [Tag Term]; scheme=&quot;[Tag Scheme]&quot;; label=&quot;[Tag label]&quot;(, ...)
-</pre>
-
-The label portion is optional. Note that label may come before scheme. 
-Although Category is described as a repeating header, many implementations 
-require unique header names, so multiple tags are representing using the one header.
-
-<table class="grid">
- <tr><td>**Interaction**</td><td>**Tag Actions**</td></tr>
- <tr><td>read/vread</td><td>The server returns all tags associated with the resource in the headers</td></tr>
- <tr><td>create</td><td>The server stores all the tags provided in the headers</td></tr>
- <tr><td>update</td><td>The server stores all the tags provided in the headers, and keeps any tags already associated with the resource</td></tr>
-</table>
-
-In the other interactions, the resources are wrapped in bundles, where tags are represented in the entry.category element
-and servers populate these completely or process these as part of a transaction submission.
-
-The following operations provide specific support for tags: <a name="tag-ops"> </a>
-
-<table class="grid">
- <tr><td width="50%">**HTTP Command**</td><td valign="center">**description**</td></tr>
- <tr><td><pre>GET [base]/_tags</pre></td><td valign="center">get a list of all tags</td></tr>
- <tr><td><pre>GET [base]/[type]/_tags</pre></td><td valign="center">get a list of all tags used for the nominated resource type</td></tr>
- <tr><td><pre>GET [base]/[type]/[id]/_tags</pre></td><td valign="center">get a list of all tags affixed to the nominated resource. This duplicates the HTTP header entries</td></tr>
- <tr><td><pre>GET [base]/[type]/[id]/_history/[vid]/_tags</pre></td><td valign="center">get a list of all tags affixed to the nominated version of the resource. This duplicates the HTTP header entries</td></tr>
- <tr><td><pre>POST [base]/[type]/[id]/_tags</pre></td><td valign="center">Affix tags in the list to the nominated resource</td></tr>
- <tr><td><pre>POST [base]/[type]/[id]/_history/[vid]/_tags</pre></td><td valign="center">Affix tags in the list to the nominated version of the resource</td></tr>
- <tr><td><pre>POST [base]/[type]/[id]/_tags/_delete</pre></td><td valign="center">Remove all tags in the provided list from the list of tags for the nominated resource</td></tr>
- <tr><td><pre>POST [base]/[type]/[id]/_history/[vid]/_tags/_delete</pre></td><td valign="center">Remove tags in the provided list from the list of tags for the nominated version of the resource</td></tr>
-</table>  
-
-The tags of an old version can still be changed. Note that changing the tags on a resource does not create a new version of the resource. A tag list 
-is represented like this in XML and JSON:
-
-<pre class="spec">
-&lt;taglist xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right">[![doco](help.png)](formats.html "Documentation for this format")</span>
-    <span style="color:Gray;">&lt;!-- </span><span style="color:navy;">Tags in the list (<span style="color: brown;">**0..***</span>): </span> <span style="color: Gray"> --&gt; </span>
-    &lt;category term=&quot;<span style="color:navy;">[Tag URI]</span>&quot; label=&quot;<span style="color:navy;">[Tag Label]</span>&quot; scheme=&quot;http://hl7.org/fhir/tag&quot;&gt; 
-&lt;/taglist&gt;
-</pre>
-
-<pre class="json">
-{
-  &quot;resourceType&quot; : &quot;TagList&quot;,
-  &quot;category&quot; : [{
-      &quot;term&quot; : &quot;[Tag URI]&quot;,S
-      &quot;label&quot; : &quot;[Tag Label]&quot;,
-      &quot;scheme&quot; : &quot;http://hl7.org/fhir/tag&quot;
-    }]
-}
-</pre>
-
-Note that &quot;resourceType&quot; is used for consistency even though a tag list is not a FHIR &quot;resource&quot;.
+The history interaction can be used to set up a subscription from one system
+to another, so that resources are synchronized between them. Refer to the [Subscription resource](subscription.html)
+for an alternate means of system synchronization.
 
 <a name="transactional-integrity"> </a>
 
-### <span class="sectioncount">2.1.17<a name="2.1.17"> </a></span> Transactional Integrity
+### <span class="sectioncount">2.1.0.18<a name="2.1.0.18"> </a></span> Transactional Integrity
 
-When processing [create](#create) and [update](#update) 
-operations, a FHIR server is not obliged to accept the entire resource as it 
-is; when the resource is retrieved through a [read](#read) operation 
+When processing [create](#create) and [update](#update)
+operations, a FHIR server is not obliged to accept the entire resource as it
+is; when the resource is retrieved through a [read](#read) operation
 subsequently, the resource may be different. The difference may arise for
 several reasons:
 
@@ -645,159 +803,119 @@ several reasons:
 *   The server applied business rules and altered the content
 *   The server does not fully support all the features or possible values of the resource
 
-Note that there is no general purpose method to make merging with existing content or 
+Note that there is no general purpose method to make merging with existing content or
 altering the content by business rules safe or predictable - what is possible,
 safe and/or required is highly context dependent. These kind of behaviors may
-be driven by security considerations. With regard incomplete support, Clients can consult the server's
-base conformance statement profile references to determine which features or 
+be driven by security considerations. With regard to incomplete support, Clients can consult the server's
+base conformance statement profile references to determine which features or
 values the server does not support.
 
-To the degree that the server alters the resource for any of 
-the 3 reasons above, the FHIR server will create implementation 
-consequences for the eco-system that it is part of, which will 
-need to be managed (i.e. it will cost more). For this reason, 
-servers SHOULD change the resource as little as possible. 
-However due to the variability that exists within healthcare, 
+To the degree that the server alters the resource for any of
+the 3 reasons above, the FHIR server will create implementation
+consequences for the eco-system that it is part of, which will
+need to be managed (i.e. it will cost more). For this reason,
+servers SHOULD change the resource as little as possible.
+However due to the variability that exists within healthcare,
 this specification allows that servers MAY alter the resource on
-create/update. 
+create/update.
 
-Similarly, to the degree that an implementation context makes special 
+Similarly, to the degree that an implementation context makes special
 rules about merging content or altering the content, that context will
-become more expensive to maintain. 
+become more expensive to maintain.
 
-Although these rules are stated with regard to servers, a similar 
-concept applies to clients - to the degree that different client 
-systems interacting with the server do not support the same feature 
-set, the clients and/or the server will be forced to implement custom 
-logic to prevent information from being lost or corrupted. 
+Although these rules are stated with regard to servers, a similar
+concept applies to clients - to the degree that different client
+systems interacting with the server do not support the same feature
+set, the clients and/or the server will be forced to implement custom
+logic to prevent information from being lost or corrupted.
 
-Some of these problems can be mitigated by following a pattern 
+Some of these problems can be mitigated by following a pattern
 built on top of version-aware updates. In this pattern:
 
 *   The server provides a [read](#read) operation for any resource it accepts [update](#update) operations on
 *   Before updating, the client [reads](#read) the latest version of the resource
 *   The client applies the changes it wants to the resource, leaving other information intact (note the [extension related rules](extensibility.html#exchange) around this)
-*   The client writes the result back as an [update](#update) operation, and is able to handle a 409 response (usually by trying again)
+*   The client writes the result back as an [update](#update) operation, and is able to handle a 409 or 412 response (usually by trying again)
 
 If clients follow this pattern, then information from other systems
 that they do not understand will be maintained through the update.
 
-Note that it's possible for a server to choose to maintain the 
+Note that it's possible for a server to choose to maintain the
 information that would be lost, but there is no defined way for
 a server to determine whether the client omitted the information
-because it wasn't supported (perhaps in this case) or whether it 
-wishes to delete the information. 
+because it wasn't supported (perhaps in this case) or whether it
+wishes to delete the information.
 
-#### <span class="sectioncount">2.1.17.1<a name="2.1.17.1"> </a></span> Conformance
+#### <span class="sectioncount">2.1.0.18.1<a name="2.1.0.18.1"> </a></span> Conformance
 
-Both client and server systems SHOULD clearly document how transaction 
+Both client and server systems SHOULD clearly document how transaction
 integrity is handled.
 
-DSTU TODO: how? 
-
-<a name="binary"> </a>
-
-### <span class="sectioncount">2.1.18<a name="2.1.18"> </a></span> Binary Support
-
-FHIR servers can choose to support [Binary Resources](extras.html#binary)
-at the end point [base]/Binary. The binary end-point accepts
-any kind of content, such as images and other media, documents (CDA, 
-PDF, Word etc.), plain text, XML or anything else, and stores the 
-content as is, along with the content type provided by the HTTP headers. 
-
-Binary resources function with the same interactions as described
-above, except that there is no support for the search interaction. 
-The _format  parameter has no meaning when used with binary 
-resources: they are always represented using their original content type.
-
-Note that on GET, POST, and PUT operations, the http content-type
-header is the mime type of the binary resource, and the HTTP body is
-the resource in it's binary form. (The [XML](xml.html#binary) 
-and [JSON](json.html#binary) Bundle Representations for binary 
-resources are only used in bundles). 
-
-<div class="example">
-
-Here is the request and response to a read operation on a CDA document:
-
-<pre>
-GET /[path]/Binary/4 HTTP/1.1
-Host: [server]
-Accept: */*
-
-HTTP/1.1 200 OK
-Content-Type: text/xml
-Access-Control-Allow-Origin: *
-Last-Modified: Thu, 24 Oct 2013 00:41:55 +0000
-Content-Location: http://[server]/[path]/Binary/4/_history/1
-
-&lt;ClinicalDocument xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
-  xmlns=&quot;urn:hl7-org:v3&quot;xmlns:cda=&quot;urn:hl7-org:v3&quot;&gt;
-...  [snip] ...
-&lt;/ClinicalDocument&gt;
-</pre>
-
-</div>
+DSTU TODO: how?
 
 <a name="paging"> </a>
 
-### <span class="sectioncount">2.1.19<a name="2.1.19"> </a></span> Paging
+### <span class="sectioncount">2.1.0.19<a name="2.1.0.19"> </a></span> Paging
 
 If servers provide paging for the results of a [search](#search) or [history](#history) interaction,
-they SHALL conform to the method described in [RFC 5005 (Feed 
-Paging and Archiving)](https://tools.ietf.org/html/rfc5005) for sending continuation links to the client when returning a bundle
+they SHALL conform to this method (adapted from [RFC 5005 (Feed
+Paging and Archiving)](https://tools.ietf.org/html/rfc5005) for sending continuation links to the client when returning a [Bundle](bundle.html)
 (e.g. with history and search). If the server does not do this, there is no way to continue paging.
 
 This example shows the third page of a search result:
 
 <pre class="xml">
-&lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
-  &lt;title&gt;Search Page 3&lt;/title&gt;
-  &lt;!-- This Search. url starts with base search, and adds the effective 
-    parameters, and additional parameters for search state. All searches 
-    SHALL return this value.    
+&lt;Bundle xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;!-- snip metadata --&gt;
+  &lt;!-- This Search. url starts with base search, and adds the effective
+    parameters, and additional parameters for search state. All searches
+    SHALL return this value.
 
-	  In this case, the search continuation method is that the server 
+	  In this case, the search continuation method is that the server
     maintains a state, with page references into the stateful list.
 	--&gt;
-  &lt;link rel=&quot;self&quot; href=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=3&quot;/&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;self&quot;&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=3&quot;/&gt;
+  &lt;/link&gt;
+  &lt;!-- 4 links for navigation in the search. All of these are optional, but recommended --&gt;
 
-  &lt;!-- 4 links for navigation in the search. All of these are optional, but recommended --&gt;  
-  &lt;link rel=&quot;first&quot; href=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=1&quot;/&gt;
-  &lt;link rel=&quot;previous&quot; href=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=2&quot;/&gt;
-  &lt;link rel=&quot;next&quot; href=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=4&quot;/&gt;
-  &lt;link rel=&quot;last&quot; href=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=26&quot;/&gt;
-  &lt;updated&gt;2003-12-13T18:30:02Z&lt;/updated&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;first&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=1&quot;/&gt;
+  &lt;/link&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;previous&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=2&quot;/&gt;
+  &lt;/link&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;next&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=4&quot;/&gt;
+  &lt;/link&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;last&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=26&quot;/&gt;
+  &lt;/link&gt;
 
-  &lt;!-- the rest of the search results... --&gt;  
-&lt;/feed&gt;
+  &lt;!-- then the search results... --&gt;
+&lt;/Bundle&gt;
 </pre>
 
-The server need not use a stateful paging method as shown in this example - it is at 
-the discretion of the server how to best ensure that the continuation retains 
+The server need not use a stateful paging method as shown in this example - it is at
+the discretion of the server how to best ensure that the continuation retains
 integrity in the context of ongoing changes to the resources. An alternative approach
-is to use version specific references to the records on the boundaries, but this is 
+is to use version specific references to the records on the boundaries, but this is
 subject to continuity failures when records are updated.
 
 A server MAY inform the client of the total number of resources returned by the interaction for which the results are paged
-using  the totalResults element from the [
-OpenSearch specification](http://www.opensearch.org/Specifications/OpenSearch/1.1):
+using  the [Bundle.total](bundle-definitions.html#Bundle.total).
 
-<pre class="xml">
-&lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;
-  &lt;title&gt;e.g. Search Page 3&lt;/title&gt;
-  &lt;os:totalResults xmlns:os=&quot;http://a9.com/-/spec/opensearch/1.1/&quot;&gt;1432&lt;/os:totalResults&gt;
-
-  &lt;!-- the rest of the search/history results... --&gt;  
-&lt;/feed&gt;
-</pre>
-
-Note that for search, where _include can be used to return additional related resources, the total number 
+Note that for search, where _include can be used to return additional related resources, the total number
 of resources in the feed may exceed the number indicated in totalResults.
 
-### <span class="sectioncount">2.1.20<a name="2.1.20"> </a></span> Intermediaries
+### <span class="sectioncount">2.1.0.20<a name="2.1.0.20"> </a></span> Intermediaries
 
-The HTTP protocol may be routed through an HTTP proxy such as 
+The HTTP protocol may be routed through an HTTP proxy such as
 squid. Such proxies are transparent to the applications, though
 implementers should be alert to the effects of caching, particularly
 including the risk of receiving stale content. See the [HTTP specification](http://tools.ietf.org/html/rfc2616#page-74)
@@ -806,11 +924,11 @@ for further detail
 Interface engines may also be placed between the consumer and
 the provider. These differ from proxies because they actively
 alter the content and/or destination of the HTTP exchange and are
-not bound the rules that apply to HTTP proxies. Such agents are allowed, 
+not bound the rules that apply to HTTP proxies. Such agents are allowed,
 but SHALL mark the http header to assist with troubleshooting.
 
 Any agent that modifies an HTTP request or Response content other
-than under the rules for HTTP proxies SHALL add a stamp to the HTTP 
+than under the rules for HTTP proxies SHALL add a stamp to the HTTP
 headers like this:
 
 <pre>
@@ -821,135 +939,80 @@ headers like this:
 The identity SHALL be a single token defined by the administrator of the agent
 that will sufficiently identify the agent in the context of use. The header
 SHALL specify the agent's purpose in modifying the content. End point systems SHALL
-not use this header for any purpose. Its aim is to assist with 
+not use this header for any purpose. Its aim is to assist with
 system troubleshooting.
 
 <a name="hdata"> </a>
 
-### <span class="sectioncount">2.1.21<a name="2.1.21"> </a></span> OMG hData RESTful Transport
+### <span class="sectioncount">2.1.0.21<a name="2.1.0.21"> </a></span> OMG hData RESTful Transport
 
-This RESTful specification described here is based on the [OMG Health RESTful specification](http://www.omg.org) (specific reference to be provided when this is published). 
+This RESTful specification described here is based on the [OMG Health RESTful specification](http://www.omg.org) (specific reference to be provided when this is published).
 In this regard, FHIR functions as a Record Format Profile as described in that specification. Note the following significant factors to be aware of:
 
-*   FHIR maps the hData sections to resource types, and hData documents to resource instances. There are no subsections, and client systems are not able to create new sections, though [compartments](extras.html#compartments) behave somewhat like sections
-*   Because clients cannot submit new sections (POST to service URL), POST to the service URL has been re-used for [the transaction interaction](#transaction) (difference under review)
+*   FHIR maps the hData sections to resource types, and hData documents to resource instances. There are no subsections, and client systems are not able to create new sections,
+ though [compartments](extras.html#compartments) behave somewhat like sections
+*   Because clients cannot submit new sections (`POST` to service URL), `POST` to the service URL has been re-used for [the transaction
+ interaction](#transaction) (difference under review)
 *   FHIR does not (yet) define a root document. When defined, it will contain information about what the FHIR server has done (as opposed to a conformance statement, which describes what it is capable of doing)
-*   Note that this specification does not repeat the rules in the hData RESTful Transport concerning the OPTIONS command on the service URL, but these rules (extra headers etc.) still apply
+*   Note that this specification does not repeat the rules in the hData RESTful Transport concerning the `OPTIONS` command on the service URL, but these rules (extra headers etc.) still apply
 
 <a name="summary"> </a>
 
-### <span class="sectioncount">2.1.22<a name="2.1.22"> </a></span> Summary
+### <span class="sectioncount">2.1.0.22<a name="2.1.0.22"> </a></span> Summary
 
 These tables present a summary of the interactions described here.
 
-<table class="grid">
-<tr><th>Interaction</th><th>Path</th><th colspan="5">Request</th></tr>
-<tr><th colspan="2"/>                                     <th>Verb</th>         <th>Content-Type</th> <th>Body</th>     <th>Accept</th> <th>Content-Location</th></tr>
-<tr><td>read</td>       <td>/[type]/[id]</td>                <td>GET</td>          <td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>vread</td>      <td>/[type]/[id]/_history/[vid]</td> <td>GET</td>          <td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>conformance</td><td>/ or /metadata</td>               <td>OPTIONS / GET</td><td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>update</td>     <td>/[type]/[id]</td>                <td>PUT</td>          <td>R</td>            <td>Resource</td> <td>N/A</td>      <td>O or R</td></tr>
-<tr><td>create</td>     <td>/[type]</td>           		      <td>POST</td>         <td>R</td>            <td>Resource</td> <td>N/A</td>      <td>N/A</td></tr>
-<tr><td>transaction</td><td>/</td>                            <td>POST</td>         <td>R</td>            <td>Bundle</td>   <td>O</td>      <td>N/A</td></tr>
-<tr><td>delete</td>     <td>/[type]/[id]</td>                <td>DELETE</td>       <td>N/A</td>          <td>N/A</td>      <td>N/A</td>    <td>N/A</td></tr>
-<tr><td>search</td>     <td>/[type]/_search? or /[type]?</td>    <td>GET</td>          <td>N/A</td>         <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>search-all</td>	<td>/</td>                   		  <td>GET</td>          <td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>validate</td>   <td>/[type]/_validate{/[id]}</td>       <td>POST</td>         <td>R</td>            <td>Resource</td> <td>O</td>      <td>N/A</td></tr>
-<tr><td>history</td>	<td>/[type]/[id]/_history</td> 		  <td>GET</td>          <td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>history-type</td><td>/[type]/_history</td> 		  	  <td>GET</td>          <td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>history-all</td><td>/_history</td> 		  			  <td>GET</td>          <td>N/A</td>          <td>N/A</td>      <td>O</td>      <td>N/A</td></tr>
-<tr><td>tags-all</td>	<td>/_tags</td><td>GET</td><td>N/A</td><td>N/A</td><td>O</td><td>N/A</td></tr>
-<tr><td>tags-type</td>	<td>/[type]/_tags</td><td>GET</td><td>N/A</td><td>N/A</td><td>O</td><td>N/A</td></tr>
-<tr><td rowspan="2">tags</td><td rowspan="2">/[type]/[id]/_tags</td><td>GET</td><td>N/A</td><td>N/A</td><td>O</td><td>N/A</td></tr>
-<tr><td>POST</td><td>R</td><td>TagList</td><td>N/A</td><td>N/A</td></tr>
-<tr><td>tags-delete</td>	<td>/[type]/[id]/_tags/_delete</td><td>POST</td><td>R</td><td>TagList</td><td>N/A</td><td>N/A</td></tr>
-<tr><td rowspan="2">tags-version</td><td rowspan="2">/[type]/[id]/_history/[vid]/_tags</td><td>GET</td><td>N/A</td><td>N/A</td><td>O</td><td>N/A</td></tr>
-<tr><td>POST</td><td>R</td><td>TagList</td><td>N/A</td><td>N/A</td></tr>
-<tr><td>tags-version-delete</td>	<td>/[type]/[id]/_history/[vid]/_tags/_delete</td><td>POST</td><td>R</td><td>TagList</td><td>N/A</td><td>N/A</td></tr>
-<tr><td rowspan="2">mailbox</td>
-<td>/Mailbox (Message)</td><td>POST</td><td>R</td><td>Bundle</td><td>R</td><td>N/A</td></tr>
-<tr><td>/Mailbox (Document)</td><td>POST</td><td>R</td><td>Bundle</td><td>N/A</td><td>N/A</td></tr>
-<tr><td>document</td>	<td>/Document</td><td>POST</td><td>R</td><td>Bundle</td><td>N/A</td><td>N/A</td></tr>
-</table>
-
-Note: N/A = not present, R = Required, O = optional.
+Note that _all_ requests may include an optional `Accept` header to indicate the format used for the response (this is even true for `DELETE` since an OperationOutcome may be returned).
 
 <table class="grid">
-<tr><th>Interaction</th><th colspan="5">Response</th></tr>
-<tr><th colspan="1"/> <th>Content-Type</th> <th>Body</th>               <th>Location</th> <th>Content-Location</th> <th>Status Codes</th></tr>
-<tr><td>read</td>         <td>R</td>            <td>Resource</td>           <td>N/A</td>      <td>R</td>                <td>200, 404, 410</td></tr>
-<tr><td>vread</td>        <td>R</td>            <td>Resource</td>           <td>N/A</td>      <td>O</td>                <td>200, 404, 405</td></tr>
-<tr><td>conformance</td>  <td>R</td>            <td>Conformance</td>        <td>N/A</td>      <td>O</td>                <td>200, 404</td></tr>
-<tr><td>update</td>       <td>N/A</td>            <td>N/A</td>           <td>N/A</td>      <td>R</td>                <td>200, 201, 400, 404, 405, 409, 412, 422</td></tr>
-<tr><td>create</td>       <td>N/A</td>            <td>N/A</td>           <td>R</td>        <td>O</td>                <td>201, 400, 404, 405, 422</td></tr>
-<tr><td>transaction</td>  <td>R</td>            <td>Bundle</td>             <td>N/A</td>      <td>N/A</td>              <td>200, 400, 404, 405, 409, 412, 422</td></tr>
-<tr><td>delete</td>       <td>N/A</td>          <td>N/A</td>                <td>N/A</td>      <td>N/A</td>              <td>204, 405, 404</td></tr>
-<tr><td>search</td>       <td>R</td>            <td>Bundle</td>             <td>N/A</td>      <td>N/A</td>              <td>200, 403</td></tr>
-<tr><td>search-all</td>   <td>R</td>            <td>Bundle</td>             <td>N/A</td>      <td>N/A</td>              <td>200, 403</td></tr>
-<tr><td>validate</td>     <td>N/A or R</td>     <td>N/A or OperationOutcome</td> <td>N/A</td>      <td>N/A</td>              <td>400</td></tr>
-<tr><td>history</td>   	  <td>R</td>            <td>Bundle</td>             <td>N/A</td>      <td>N/A</td>              <td>200</td></tr>
-<tr><td>history-type</td> <td>R</td>            <td>Bundle</td>             <td>N/A</td>      <td>N/A</td>              <td>200</td></tr>
-<tr><td>history-all</td>  <td>R</td>            <td>Bundle</td>             <td>N/A</td>      <td>N/A</td>              <td>200</td></tr>
-<tr><td>tags-all</td><td>R</td><td>TagList</td><td>N/A</td><td>N/A</td><td>200</td></tr>
-<tr><td>tags-type</td><td>R</td><td>TagList</td><td>N/A</td><td>N/A</td><td>200</td></tr><tr><td rowspan="2">tags</td><td>R (GET)</td><td>TagList</td><td>N/A</td><td>N
-/A</td><td>200, 404, 410</td></tr>
-<tr><td>N/A (POST)</td><td>N/A</td><td>N/A</td><td>N/A</td><td>204</td></tr>
-<tr><td>tags-delete</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>204</td></tr>
-<tr><td rowspan="2">tags-version</td><td>R (GET)</td><td>TagList</td><td>N/A</td><td>N/A</td><td>200, 404</td></tr>
-<tr><td>N/A (POST)</td><td>N/A</td><td>N/A</td><td>N/A</td><td>204</td></tr>
-<tr><td>tags-version-delete</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>204</td></tr>
-<tr><td rowspan="2">mailbox</td>
-	<td>R (Message)</td><td>Bundle</td><td>N/A</td><td>N/A</td><td>200</td></tr>
-<tr><td>N/A (Document)</td><td>N/A</td><td>N/A</td><td>N/A</td><td>204</td></tr>
-<tr><td>document</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>200</td></tr>
+<tr><th>Interaction</th>                <th>Path</th><th colspan="5">Request</th></tr>
+<tr><th colspan="2"/>                                                       <th>Verb</th>           <th>Content-Type</th>   <th>Body</th>     <th>Prefer</th>         <th>Conditional</th></tr>
+<tr><td>read</td>                       <td>/[type]/[id]</td>                   <td>GET</td>            <td>N/A</td>            <td>N/A</td>      <td>N/A</td>     		  <td>O: ETag, If-Modified-Since, If-None-Match</td></tr>
+<tr><td>vread</td>                      <td>/[type]/[id]/_history/[vid]</td>    <td>GET</td>            <td>N/A</td>            <td>N/A</td>      <td>N/A</td>         	<td>N/A</td></tr>
+<tr><td>update</td>                     <td>/[type]/[id]</td>                   <td>PUT</td>            <td>R</td>              <td>Resource</td> <td>O</td>         	<td>O: If-Match</td></tr>
+<tr><td>delete</td>                     <td>/[type]/[id]</td>                   <td>DELETE</td>         <td>N/A</td>            <td>N/A</td>      <td>N/A</td>	         <td>N/A</td></tr>
+<tr><td>create</td>                     <td>/[type]</td>                        <td>POST</td>           <td>R</td>              <td>Resource</td> <td>O</td>         <td>O: If-None-Exist</td></tr>
+<tr><td rowspan="2">search</td>         <td>/[type]?</td>                       <td>GET</td>            <td>N/A</td>            <td>N/A</td>	  <td>N/A</td>			<td>N/A</td></tr>
+<tr>                                    <td>/[type]/_search?</td>               <td>POST</td>           <td>application/x-www-form-urlencoded</td>         <td>form data</td> <td>N/A</td>  <td>N/A</td></tr>
+<tr><td rowspan="2">search-all</td>     <td>/_search? or /?</td>                <td>GET</td>            <td>N/A</td>            <td>N/A</td>              <td>N/A</td>  <td>N/A</td></tr>
+<tr>                                    <td>/_search?</td>			            <td>POST</td>           <td>application/x-www-form-urlencoded</td>         <td>form data</td> <td>N/A</td> <td>N/A</td></tr>
+<tr><td>conformance</td>                <td>/ or /metadata</td>                 <td>OPTIONS or GET</td>  <td>N/A</td>           <td>N/A</td>	   <td>N/A</td>			   	<td>N/A</td></tr>
+<tr><td>transaction</td>                <td>/</td>                              <td>POST</td>           <td>R</td>              <td>Bundle</td>    <td>O</td>        <td>N/A</td></tr>
+<tr><td>history</td>                    <td>/[type]/[id]/_history</td>          <td>GET</td>            <td>N/A</td>            <td>N/A</td>       <td>N/A</td>         <td>N/A</td></tr>
+<tr><td>history-type</td>               <td>/[type]/_history</td>               <td>GET</td>            <td>N/A</td>            <td>N/A</td>       <td>N/A</td>         <td>N/A</td></tr>
+<tr><td>history-all</td>                <td>/_history</td>                      <td>GET</td>            <td>N/A</td>            <td>N/A</td>       <td>N/A</td>         <td>N/A</td></tr>
+<tr><td rowspan="3">(operation)</td>    <td rowspan="3">/$[name], /[type]/$[name]
+										or /[type]/[id]/$[name]</td> 		  	<td>POST</td>           <td>R</td>         		<td>Parameters</td><td>N/A</td>			<td>N/A</td></tr>
+																		<tr>    <td>GET</td>           	<td>N/A</td>         	<td>N/A</td> 	   <td>N/A</td>  		<td>N/A</td></tr>
+																		<tr>    <td>POST</td>          	<td>application/x-www-form-urlencoded</td>         	<td>form data</td> 	   <td>N/A</td>  		<td>N/A</td></tr>
 </table>
 
-Note: this table lists the status codes described here, but other status codes are possible as described by the HTTP specification. 
+Notes: 
+
+*   N/A = not present, R = Required, O = optional
+*   For operations defined on all resources, including direct access to the meta element, see [Resource Operations](resource-operations.html)
+
+<table class="grid">
+<tr><th>Interaction</th><th colspan="6">Response</th></tr>
+<tr><th colspan="1"/>   <th>Content-Type</th> <th>Body</th>               <th>Location</th> 	<th>Content-Location</th> <th>Versioning</th> 					<th>Status Codes</th></tr>
+<tr><td>read</td>           <td>R</td>            <td>R: Resource</td>           <td>N/A</td>      	<td>R</td>                <td>R: ETag, Last-Modified</td>		<td>200, 404, 410</td></tr>
+<tr><td>vread</td>          <td>R</td>            <td>R: Resource</td>           <td>N/A</td>      	<td>R</td>                <td>R: ETag, Last-Modified</td>		<td>200, 404</td></tr>
+<tr><td>update</td>         <td>R if body</td>    <td>O: Resource (Prefer)</td>                  <td>R on create</td>	<td>R</td>                <td>R: ETag, Last-Modified</td>		<td>200, 201, 400, 404, 405, 409, 412, 422</td></tr>
+<tr><td>delete</td>         <td>R if body</td><td>O: OperationOutcome</td>  <td>N/A</td>      	<td>N/A</td>              <td>N/A</td>							<td>200, 204, 404, 405, 409, 412</td></tr>
+<tr><td>create</td>         <td>R if body</td>    <td>O : Resource (Prefer)</td>                <td>R</td>			<td>R</td>               <td>R: ETag, Last-Modified</td>		<td>201, 400, 404, 405, 422</td></tr>
+<tr><td>search</td>         <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>      	<td>N/A</td>              <td>N/A</td>							<td>200, 403?</td></tr>
+<tr><td>search-all</td>     <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>      	<td>N/A</td>              <td>N/A</td>							<td>200, 403?</td></tr>
+<tr><td>conformance</td>    <td>R</td>            <td>R: Conformance</td>        <td>N/A</td>      	<td>O</td>                <td>N/A</td>							<td>200, 404</td></tr>
+<tr><td>transaction</td>    <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>      	<td>N/A</td>              <td>N/A</td>							<td>200, 400, 404, 405, 409, 412, 422</td></tr>
+<tr><td>history</td>        <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>     		<td>N/A</td>              <td>N/A</td>							<td>200</td></tr>
+<tr><td>history-type</td>   <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>      	<td>N/A</td>              <td>N/A</td>							<td>200</td></tr>
+<tr><td>history-all</td>    <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>      	<td>N/A</td>              <td>N/A</td>							<td>200</td></tr>
+<tr><td>(operation)</td>   	<td>R</td> 			  <td>R: Parameters/Resource</td><td>N/A</td>    	<td>N/A</td>			  <td>N/A</td>							<td>200</td></tr>
+</table>
+
+Note: this table lists the status codes described here, but other status codes are possible as described by the HTTP specification.
 Additional codes that are likely a server errors and various codes associated with authentication protocols.
 
-</div>
 
-<div class="col-3"><div class="itoc">
-
-On This Page:
-
-[Interactions](#interactions)
-
-[Tag Operations](#tags)
-
-[Binary Support](#binary)
-
-[Paging](#paging)
-
-[hData Information](#hdata)
-
-[Summary](#summary)
-
-</div></div>
-
-				</div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
-
-    </div>  <!-- /segment-content -->
-
-	<div id="segment-footer" class="segment">  <!-- segment-footer -->
-		<div class="container">  <!-- container -->
-			<div class="inner-wrapper">
-
-        &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606) generated on Wed, Jul 2, 2014 16:29+0800.   <!-- [QA Report](qa.html) -->   <!-- achive note -->
-
-        <span style="color: #FFFF77">
-        Links: [What's a DSTU?](dstu.html) | 
-               [Version History](history.html) | 
-               [Compare to DSTU](http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2Ffhir%2Fhttp.html&amp;doc2=http%3A%2F%2Fhl7.org%2Fimplement%2Fstandards%2FFHIR-Develop%2Fhttp.html) | 
-               [License](license.html) | 
-               [Propose a change](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677)   
-        </span>
-
-			</div>  <!-- /inner-wrapper -->
-		</div>  <!-- /container -->
-	</div>  <!-- /segment-footer -->
-  <!-- disqus thread -->
-  <!-- disqus -->
-  <!-- end disqus -->        
+ &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
+链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 	

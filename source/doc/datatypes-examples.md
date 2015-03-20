@@ -3,7 +3,7 @@ date:
 categories: doc
 ---
 
-[首页](../home/index.html) >[文档](documentation.html) >**数据类型**        
+[首页](../home/index.html) >[文档](documentation.html) >[数据类型](datatypes.html)> **数据类型的示例**        
 
 本页内容:
 

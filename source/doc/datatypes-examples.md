@@ -5,10 +5,7 @@ categories: doc
 
 [首页](../home/index.html) >[文档](documentation.html) >**数据类型**        
 
-
 本页内容:
-
-  
 
 *   [数据类型](datatypes.html)
 *   [示例](datatypes-examples.html)
@@ -24,367 +21,402 @@ categories: doc
 
 ```
 <active value="true" />
-```
-  
-负整数：  
 
+```
+
+负整数：  
 
 ```
 <score value="-14" />
+
 ```
 
 高精度的小数：
 
-
 ```
 <pi value="3.14159265358979323846264338327950288419716939937510" />
+
 ```
 
 base64编码的字节流：
 
-
 ```
 <data value="/9j/4...KAP//Z" /> <!-- covers many lines -->
+
 ```
 
 unicode编码的字符串：
 
-
 ```
 <caption value="Noodles are called ?? in Chinese" />
+
 ```
 
-A uri that points to a website:
-<pre class="xml" fragment="uri">&lt;reference value=&quot;http://hl7.org/fhir&quot; /&gt;</pre>
+表示网站地址的uri:
 
-A uri that is a urn:
-<pre class="xml" fragment="uri">&lt;id value=&quot;urn:isbn:0451450523&quot; /&gt;</pre>
+```
 
-A date of birth:
-<pre class="xml" fragment="date">&lt;date value=&quot;1951-06-04&quot; /&gt;</pre>
+<reference value="http://hl7.org/fhir" />
 
-An approximate date of birth:
-<pre class="xml" fragment="date">&lt;date value=&quot;1951-06&quot; /&gt;</pre>
+```
 
-The instant a document was created, including time zone:
-<pre class="xml" fragment="instant">&lt;instant value=&quot;2013-06-08T10:57:34+01:00&quot; /&gt;</pre>
+urn格式的uri:
 
-The instant a document was created, expressed in UTC, with milliseconds:
-<pre class="xml" fragment="instant">&lt;instant value=&quot;2013-06-08T09:57:34.2112Z&quot; /&gt;</pre>
+```
 
-2:35pm in the afternoon:
-<pre class="xml" fragment="time">&lt;time value=&quot;14:35&quot; /&gt;</pre>
-</div>
+<id value="urn:isbn:0451450523" />
 
-<a name="strings"/>
+```
 
+出生日期:
 
-### <span class="sectioncount">1.17.1.2<a name="1.17.1.2"> </a></span> String Patterns
+```
 
-<div class="example">
+<date value="1951-06-04" />
+```
 
-A uri that is the root oid of HL7:
-<pre class="xml" fragment="oid">&lt;root value=&quot;urn:oid:2.16.840.1.113883&quot; /&gt;</pre>
+出生年月:
 
-A uri that is a uuid:
-<pre class="xml" fragment="uuid">&lt;id value=&quot;urn:uuid:a5afddf4-e880-459b-876e-e4591b0acc11&quot; /&gt;</pre>
+```
+
+<date value="1951-06" />
+
+```
+
+临床文档创建的时间，包括时区:
+
+```
+
+<instant value="2013-06-08T10:57:34+01:00" />
+
+```
+
+精确到毫秒的UTC格式的临床文档创建时间:
+
+```
+
+<instant value="2013-06-08T09:57:34.2112Z" />
+
+```
+
+下午2点35分:
+
+```
+
+<time value="14:35" />
+
+```
+
+#### 1.17.1.2  String Patterns
+
+表示HL7的根oid的uri：
+
+```
+<root value="urn:oid:2.16.840.1.113883" />
+```
+uuid格式的uri:
+
+```
+
+<id value="urn:uuid:a5afddf4-e880-459b-876e-e4591b0acc11" />
+
+```
 
 A code:
-<pre class="xml" fragment="code">&lt;code value=&quot;acq4+acq5&quot; /&gt;</pre>
+```
 
-A code with single internal space:
-<pre class="xml" fragment="code">&lt;code value=&quot;Question 4b&quot; /&gt;</pre>
+<code value="acq4+acq5" />
+```
+带单空格的code:
+```
 
-A numeric id:
-<pre class="xml" fragment="code">&lt;id value=&quot;314&quot; /&gt;</pre>
+<code value="Question 4b" />
+```
+数字型id:
+```
 
-An alphanumeric id:
-<pre class="xml" fragment="code">&lt;id value=&quot;alpha-gamma-14&quot; /&gt;</pre>
-</div>
+<id value="314" />
+```
+字母型id:
+```
 
-<a name="Attachment"/>
-<a name="attachment"/>
+<id value="alpha-gamma-14" />
+```
 
-### <span class="sectioncount">1.17.1.3<a name="1.17.1.3"> </a></span> 
-Attachment
+
+#### 1.17.1.3 Attachment
 
 See also [Base Definition](datatypes.html#Attachment), [Detailed Descriptions](datatypes-definitions.html#Attachment) and [Mappings](datatypes-mappings.html#Attachment).
 
-<div class="example">
+PDF文档:
 
-A PDF document:
+```
+  <document>
+    <contentType value="application/pdf" />
+    <language value="en" />
+    <data value="/9j/4...KAP//Z" /> <!-- covers many lines -->
+    <title value="Definition of Procedure" />
+  </document>
 
-<pre class="xml" fragment="Attachment">
-  &lt;document&gt;
-    &lt;contentType value=&quot;application/pdf&quot; /&gt;
-    &lt;language value=&quot;en&quot; /&gt;
-    &lt;data value=&quot;/9j/4...KAP//Z&quot; /&gt; &lt;!-- covers many lines --&gt;
-    &lt;title value=&quot;Definition of Procedure&quot; /&gt;
-  &lt;/document&gt;
-</pre>
-<pre class="json">
+```
+
+```
+
   document : {
-    contentType :  { value : &quot;application/pdf&quot; },
-    language : { value : &quot;en&quot; },
-    data :  { value : &quot;/9j/4...KAP//Z&quot;},
-    title :  { value : &quot;Definition of Procedure&quot; }
+    contentType :  { value : "application/pdf" },
+    language : { value : "en" },
+    data :  { value : "/9j/4...KAP//Z"},
+    title :  { value : "Definition of Procedure" }
   }
-</pre>
 
-Since the JSON examples have the same structure as the XML, only XML is shown for the rest of the examples.
+```
 
-A reference to a DICOM image via WADO:
+WADO协议的DICOM图像:
 
-<pre class="xml" fragment="Attachment">
-  &lt;image&gt;
-    &lt;contentType value=&quot;application/dicom&quot; /&gt;
-    &lt;url value=&quot;http://10.1.2.3:1000/wado?requestType=WADO&amp;amp;wado_details...&quot; /&gt;
-    &lt;hash value=&quot;EQH/..AgME&quot; /&gt;
-  &lt;/image&gt;
-</pre>
-</div>
+```
+  <image>
+    <contentType value="application/dicom" />
+    <url value="http://10.1.2.3:1000/wado?requestType=WADO&amp;wado_details..." />
+    <hash value="EQH/..AgME" />
+  </image>
+```
 
 <a name="Identifier"/>
 <a name="identifier"/>
 
-### <span class="sectioncount">1.17.1.4<a name="1.17.1.4"> </a></span> 
-Identifier
+#### 1.17.1.4 Identifier
 
 See also [Base Definition](datatypes.html#Identifier), [Detailed Descriptions](datatypes-definitions.html#Identifier) and [Mappings](datatypes-mappings.html#Identifier).
 
-<div class="example">
 
 **Examples**
 
-A primary key from an application table (an OID in the space allocated by HL7
-to some organization to further sub-allocate):
+系统主键:
 
-<pre class="xml" fragment="Identifier">
-  &lt;identifier&gt;
-    &lt;use value=&quot;official&quot; /&gt;
-    &lt;system value=&quot;urn:oid:2.16.840.1.113883.16.4.3.2.5&quot; /&gt;
-    &lt;value value=&quot;123&quot; /&gt;
-  &lt;/identifier&gt;
-</pre>
+```
+  <identifier>
+    <use value="official" />
+    <system value="urn:oid:2.16.840.1.113883.16.4.3.2.5" />
+    <value value="123" />
+  </identifier>
+````
 
-A patient identifier defined by a hospital:
+院内的病人编号:
 
-<pre class="xml" fragment="Identifier">
-  &lt;identifier&gt;
-    &lt;use value=&quot;official&quot; /&gt;
-    &lt;system value=&quot;http://www.acmehosp.com/patients&quot; /&gt;
-    &lt;value value=&quot;44552&quot; /&gt;
-    &lt;period&gt;
-      &lt;start value=&quot;2003-05-03&quot; /&gt;
-    &lt;/period&gt;
-  &lt;/identifier&gt;
-</pre>
+```
+  <identifier>
+    <use value="official" />
+    <system value="http://www.acmehosp.com/patients" />
+    <value value="44552" />
+    <period>
+      <start value="2003-05-03" />
+    </period>
+  </identifier>
+````
 
 In this case, the period is used to track when the identifier was first assigned to the patient.
 
-An identifier that refers to a patient FHIR resource on a particular system:
+FHIR服务器中的患者标识:
 
-<pre class="xml" fragment="Identifier">
-  &lt;identifier&gt;
-   &lt;system value=&quot;urn:ietf:rfc:3986&quot; /&gt;
-   &lt;value value=&quot;http://pas-server/xxx/Patient/443556&quot; /&gt;
-  &lt;/identifier&gt;
-</pre>
-
+```
+  <identifier>
+   <system value="urn:ietf:rfc:3986" />
+   <value value="http://pas-server/xxx/Patient/443556" />
+  </identifier>
+```
 This is not a resource reference - it's a logical reference by the patient identifier.
 
 A UUID:
 
-<pre class="xml" fragment="Identifier">
-  &lt;identifier&gt;
-    &lt;use value=&quot;temp&quot; /&gt;
-    &lt;system value=&quot;urn:ietf:rfc:3986&quot; /&gt;
-    &lt;value value=&quot;urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162&quot; /&gt;
-  &lt;/identifier&gt;
-</pre>
+```
+  <identifier>
+    <use value="temp" />
+    <system value="urn:ietf:rfc:3986" />
+    <value value="urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162" />
+  </identifier>
+````
 
 UUIDs are often used for temporary identifiers, though this is not necessary.
 
 A US SSN:
 
-<pre class="xml" fragment="Identifier">
-  &lt;identifier&gt;
-    &lt;use value=&quot;usual&quot; /&gt;
-    &lt;label value=&quot;SSN&quot; /&gt;
-    &lt;system value=&quot;http://hl7.org/fhir/sid/us-ssn&quot; /&gt;
-    &lt;value value=&quot;000111111&quot; /&gt;
-  &lt;/identifier&gt;
-</pre>
+```
+  <identifier>
+    <use value="usual" />
+    <label value="SSN" />
+    <system value="http://hl7.org/fhir/sid/us-ssn" />
+    <value value="000111111" />
+  </identifier>
+````
 
 Notes:
 
 *   US SSNs are often presented like this: 000-11-1111, the dashes are for presentation and should be removed, as specified in the [definition of ssn-us](terminologies-systems.html#identifiersystems)
 *   The use of &quot;usual&quot; means that this institution prefers to use SSN when identifying the patient
+(如果医院使用身份证号来标识患者 是否也是usual;如果院内有自己唯一的主索引，身份证号是用usual还是official)
 
-A medical record number assigned on 5-July 2009:
+表单编号或病案号:
 
-<pre class="xml" fragment="Identifier">
-  &lt;identifier&gt;
-    &lt;use value=&quot;usual&quot; /&gt;
-    &lt;label value=&quot;MRN&quot; /&gt;
-    &lt;system value=&quot;urn:oid:0.1.2.3.4.5.6.7&quot; /&gt;
-    &lt;value value=&quot;2356&quot; /&gt;
-    &lt;period&gt;
-      &lt;start value=&quot;2009-07-05&quot; /&gt;
-    &lt;/period&gt;
-  &lt;/identifier&gt;
-</pre>
-</div>
+```
+  <identifier>
+    <use value="usual" />
+    <label value="MRN" />
+    <system value="urn:oid:0.1.2.3.4.5.6.7" />
+    <value value="2356" />
+    <period>
+      <start value="2009-07-05" />
+    </period>
+  </identifier>
 
+````
 <a name="Coding"/>
 <a name="coding"/>
 
-### <span class="sectioncount">1.17.1.5<a name="1.17.1.5"> </a></span> Coding
+#### 1.17.1.5 Coding
 
 See also [Base Definition](datatypes.html#Coding), [Detailed Descriptions](datatypes-definitions.html#Coding) and [Mappings](datatypes-mappings.html#Coding).
 
-<div class="example">
 
 **Examples**
 
-A simple code for headache, in ICD-10:
+头痛的ICD-10编码:
 
-<pre class="xml" fragment="Coding">
-  &lt;code&gt;
-    &lt;system value=&quot;http://hl7.org/fhir/sid/icd-10&quot; /&gt;
-    &lt;code value=&quot;G44.1&quot; /&gt;
-  &lt;/code&gt;
-</pre>
+```
+  <code>
+    <system value="http://hl7.org/fhir/sid/icd-10" />
+    <code value="G44.1" />
+  </code>
+
+````
 
 A SNOMED CT expression:
 
-<pre class="xml" fragment="Coding">
-  &lt;problem&gt;
-    &lt;system value=&quot;http://snomed.info/sct&quot; /&gt;
-    &lt;code value=&quot;128045006:{363698007=56459004}&quot; /&gt;
-  &lt;/problem&gt;
-</pre>
-</div>
+````
+  <problem>
+    <system value="http://snomed.info/sct" />
+    <code value="128045006:{363698007=56459004}" />
+  </problem>
 
+````
 <a name="CodeableConcept"/>
 <a name="codeableconcept"/>
 
-### <span class="sectioncount">1.17.1.6<a name="1.17.1.6"> </a></span> 
-CodeableConcept
+#### 1.17.1.6 CodeableConcept
 
 See also [Base Definition](datatypes.html#CodeableConcept), [Detailed Descriptions](datatypes-definitions.html#CodeableConcept) and [Mappings](datatypes-mappings.html#CodeableConcept).
 
-<div class="example">
 
 **Examples**
 
-A simple code for headache initially coded in SNOMED CT (by picking the SNOMED CT code from a pick-list), and then translated to ICD-10:
+SNOMED-CT编码的头痛，转换成ICD-10编码:
 
-<pre class="xml" fragment="CodeableConcept">
-  &lt;concept&gt;
-    &lt;coding&gt;
-      &lt;system value=&quot;http://hl7.org/fhir/sid/icd-10&quot; /&gt;
-      &lt;code value=&quot;R51&quot; /&gt;
-    &lt;/coding&gt;
-    &lt;coding&gt;
-      &lt;system value=&quot;http://snomed.info/sct&quot; /&gt;
-      &lt;code value=&quot;25064002&quot; /&gt;
-      &lt;display value=&quot;Headache&quot; /&gt;
-      &lt;primary value=&quot;true&quot; /&gt;
-    &lt;/coding&gt;
-    &lt;text value=&quot;general headache&quot; /&gt;
-  &lt;/concept&gt;
-</pre>
+```
+  <concept>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10" />
+      <code value="R51" />
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="25064002" />
+      <display value="Headache" />
+      <primary value="true" />
+    </coding>
+    <text value="general headache" />
+  </concept>
+````
 
-A concept represented in an institution's local coding systems for unit for which no UCUM equivalent exists:
+本地编码的剂型单位，UCUM中找不到对应编码:
 
-<pre class="xml" fragment="CodeableConcept">
-  &lt;unit&gt;
-    &lt;coding&gt;
-      &lt;system value=&quot;urn:oid:2.16.840.1.113883.19.5.2&quot; /&gt;
-      &lt;code value=&quot;tab&quot; /&gt;
-      &lt;display value=&quot;Tablet&quot; /&gt;
-    &lt;/coding&gt;
-    &lt;coding&gt;
-      &lt;system value=&quot;http://unitsofmeasure.org&quot; /&gt;
-    &lt;/coding&gt;
-  &lt;/unit&gt;
-</pre>
+```
+  <unit>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.19.5.2" />
+      <code value="tab" />
+      <display value="Tablet" />
+    </coding>
+    <coding>
+      <system value="http://unitsofmeasure.org" />
+    </coding>
+  </unit>
 
-A SNOMED CT expression:
+```
 
-<pre class="xml" fragment="CodeableConcept">
-  &lt;diagnosis&gt;
-    &lt;coding&gt;
-      &lt;system value=&quot;http://snomed.info/sct&quot; /&gt;
-      &lt;code value=&quot;128045006:{363698007=56459004}&quot; /&gt;
-    &lt;/coding&gt;
-    &lt;text value=&quot;Cellulitis of the foot&quot; /&gt;
-  &lt;/diagnosis&gt;
-</pre>
 
-In this case, there is no display element, because no display is defined for SNOMED CT expressions.
+A SNOMED CT expression(由于该SNOMED-CT表达式不存在display，所以没有display元素):
+
+```
+  <diagnosis>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="128045006:{363698007=56459004}" />
+    </coding>
+    <text value="Cellulitis of the foot" />
+  </diagnosis>
+
+````
+
 
 Using the valueset:
 
 The results on a urinalysis strip:
 
-<pre class="xml" fragment="Coding">
-  &lt;valueCoding&gt;
-    &lt;system value=&quot;http://example.org/codes/simple-grades&quot; /&gt;
-    &lt;code value=&quot;+&quot; /&gt;
-    &lt;valueSet&gt;
-      &lt;reference url=&quot;ValueSet/simple-grades&quot; /&gt;
-    &lt;/valueSet&gt;
-  &lt;/valueCoding&gt;
-</pre>
+```
+  <valueCoding>
+    <system value="http://example.org/codes/simple-grades" />
+    <code value="+" />
+    <valueSet>
+      <reference url="ValueSet/simple-grades" />
+    </valueSet>
+  </valueCoding>
 
-And where the value set would be something like this:
+````
 
-<pre>
-  &lt;ValueSet xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-    &lt;text&gt;
-      &lt;status value=&quot;generated&quot;/&gt;
-      &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-        &lt;p&gt;Possible Clinistix codes: neg, trace, +, ++, and +++&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/text&gt;
-    &lt;identifier value=&quot;http://hl7.org/fhir/vs/clinistix&quot;/&gt;
-    &lt;name value=&quot;Codes for Clinistix&quot;/&gt;
-    &lt;publisher value=&quot;HL7&quot;/&gt;
-    &lt;telecom&gt;
-      &lt;system value=&quot;url&quot;/&gt;
-      &lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;
-    &lt;/telecom&gt;
-    &lt;description value=&quot;Clinistix Codes&quot;/&gt;
-    &lt;status value=&quot;draft&quot;/&gt;
-    &lt;experimental value=&quot;true&quot;/&gt;
-    &lt;date value=&quot;2013-10-01&quot;/&gt;
-    &lt;define&gt;
-      &lt;system value=&quot;http://hl7.org/fhir/clinistix&quot;/&gt;
-      &lt;caseSensitive value=&quot;false&quot;/&gt;
-      &lt;concept&gt;
-        &lt;code value=&quot;neg&quot;/&gt;
-      &lt;/concept&gt;
-      &lt;concept&gt;
-        &lt;code value=&quot;trace&quot;/&gt;
-      &lt;/concept&gt;
-      &lt;concept&gt;
-        &lt;code value=&quot;+&quot;/&gt;
-      &lt;/concept&gt;
-      &lt;concept&gt;
-        &lt;code value=&quot;+&quot;/&gt;
-      &lt;/concept&gt;
-      &lt;concept&gt;
-        &lt;code value=&quot;++&quot;/&gt;
-      &lt;/concept&gt;
-      &lt;concept&gt;
-        &lt;code value=&quot;+++&quot;/&gt;
-      &lt;/concept&gt;
-    &lt;/define&gt;
-  &lt;/ValueSet&gt;
-</pre>
-</div>
+具体定义编码的value set如下所示:
+
+```
+  <ValueSet xmlns="http://hl7.org/fhir">
+    <text>
+      <status value="generated"/>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Possible Clinistix codes: neg, trace, +, ++, and +++</p>
+      </div>
+    </text>
+    <identifier value="http://hl7.org/fhir/vs/clinistix"/>
+    <name value="Codes for Clinistix"/>
+    <publisher value="HL7"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <description value="Clinistix Codes"/>
+    <status value="draft"/>
+    <experimental value="true"/>
+    <date value="2013-10-01"/>
+    <define>
+      <system value="http://hl7.org/fhir/clinistix"/>
+      <caseSensitive value="false"/>
+      <concept>
+        <code value="neg"/>
+      </concept>
+      <concept>
+        <code value="trace"/>
+      </concept>
+      <concept>
+        <code value="+"/>
+      </concept>
+      <concept>
+        <code value="+"/>
+      </concept>
+      <concept>
+        <code value="++"/>
+      </concept>
+      <concept>
+        <code value="+++"/>
+      </concept>
+    </define>
+  </ValueSet>
+```
 <a name="Quantity"/>
 <a name="quantity"/>
 <a name="age"/>
@@ -393,212 +425,207 @@ And where the value set would be something like this:
 <a name="count"/>
 <a name="money"/>
 
-### <span class="sectioncount">1.17.1.7<a name="1.17.1.7"> </a></span> 
-Quantity
+#### 1.17.1.7 Quantity
 
 See also [Base Definition](datatypes.html#Quantity), [Detailed Descriptions](datatypes-definitions.html#Quantity) and [Mappings](datatypes-mappings.html#Quantity).
 
-<div class="example">
 
 **Examples**
 
 A duration:
 
-<pre class="xml" fragment="Quantity">
-  &lt;time&gt;
-    &lt;value value=&quot;25&quot; /&gt;
-    &lt;units value=&quot;sec&quot; /&gt;
-    &lt;system value=&quot;http://unitsofmeasure.org&quot; /&gt;
-    &lt;code value=&quot;s&quot; /&gt;
-  &lt;/time&gt;
-</pre>
+```
+  <time>
+    <value value="25" />
+    <units value="sec" />
+    <system value="http://unitsofmeasure.org" />
+    <code value="s" />
+  </time>
+````
 
-A concentration where the value was out of range:
+浓度超出范围:
 
-<pre class="xml" fragment="Quantity">
-  &lt;result&gt;
-    &lt;value value=&quot;40000&quot; /&gt;
-    &lt;comparator value=&quot;&amp;gt;&quot; /&gt;
-    &lt;units value=&quot;mcg/L&quot; /&gt;
-    &lt;system value=&quot;http://unitsofmeasure.org&quot; /&gt;
-    &lt;code value=&quot;ug&quot; /&gt;
-  &lt;/result&gt;
-</pre>
+```
+  <result>
+    <value value="40000" />
+    <comparator value="&gt;" />
+    <units value="mcg/L" />
+    <system value="http://unitsofmeasure.org" />
+    <code value="ug" />
+  </result>
+````
 
-An amount of prescribed medication:
+处方药的数量:
 
-<pre class="xml" fragment="Quantity">
-  &lt;dose&gt;
-    &lt;value value=&quot;3&quot; /&gt;
-    &lt;units value=&quot;capsules&quot; /&gt;
-    &lt;system value=&quot;http://snomed.info/sct&quot; /&gt;
-    &lt;code value=&quot;385049006&quot; /&gt;
-  &lt;/dose&gt;
-</pre>
+```
+  <dose>
+    <value value="3" />
+    <units value="capsules" />
+    <system value="http://snomed.info/sct" />
+    <code value="385049006" />
+  </dose>
 
+````
 A price (coded using currency codes defined in ISO 4217):
 
-<pre class="xml" fragment="Quantity">
-  &lt;cost&gt;
-    &lt;value value=&quot;25.45&quot; /&gt;
-    &lt;units value=&quot;US$&quot; /&gt;
-    &lt;system value=&quot;urn:std:iso:4217&quot; /&gt;
-    &lt;code value=&quot;USD&quot; /&gt;
-  &lt;/cost&gt;
-</pre>
-</div>
+```
+  <cost>
+    <value value="25.45" />
+    <units value="US$" />
+    <system value="urn:std:iso:4217" />
+    <code value="USD" />
+  </cost>
+
+````
 
 <a name="Range"/>
 <a name="range"/>
 
-### <span class="sectioncount">1.17.1.8<a name="1.17.1.8"> </a></span> 
-Range
+#### 1.17.1.8 Range
 
 See also [Base Definition](datatypes.html#Range), [Detailed Descriptions](datatypes-definitions.html#Range) and [Mappings](datatypes-mappings.html#Range).
 
-<div class="example">
 
 **Examples**
 
 Range of Quantity (distance):
 
-<pre class="xml" fragment="Range">
-  &lt;estimate&gt;
-   &lt;low&gt;
-     &lt;value value=&quot;1.6&quot; /&gt;
-     &lt;units value=&quot;m&quot; /&gt;
-   &lt;/low&gt;
-   &lt;high&gt;
-     &lt;value value=&quot;1.9&quot; /&gt;
-     &lt;units value=&quot;m&quot; /&gt;
-   &lt;/high&gt;
-  &lt;/estimate&gt;
-</pre>
-</div>
+```
+  <estimate>
+   <low>
+     <value value="1.6" />
+     <units value="m" />
+   </low>
+   <high>
+     <value value="1.9" />
+     <units value="m" />
+   </high>
+  </estimate>
+````
 <a name="Ratio"/>
 <a name="ratio"/>
 
-### <span class="sectioncount">1.17.1.9<a name="1.17.1.9"> </a></span> 
-Ratio
+#### 1.17.1.9  Ratio
 
 See also [Base Definition](datatypes.html#Ratio), [Detailed Descriptions](datatypes-definitions.html#Ratio) and [Mappings](datatypes-mappings.html#Ratio).
 
-<div class="example">
+
 
 **Examples**
 
-Titer (Ratio of integer:integer)
+滴速 (Ratio of integer:integer)
 
-<pre class="xml" fragment="Ratio">
-  &lt;result&gt;
-   &lt;numerator&gt;
-     &lt;value value=&quot;1&quot; /&gt;
-   &lt;/numerator&gt;
-   &lt;denominator&gt;
-     &lt;value value=&quot;128&quot; /&gt;
-   &lt;/denominator&gt;
-  &lt;/result&gt;
-</pre>
+```
+  <result>
+   <numerator>
+     <value value="1" />
+   </numerator>
+   <denominator>
+     <value value="128" />
+   </denominator>
+  </result>
 
-Unit cost (Ratio of
+````
+
+单位成本(Ratio of
 Money:Quantity):
 
-<pre class="xml" fragment="Ratio">
-  &lt;charge&gt;
-   &lt;numerator&gt;
-     &lt;value value=&quot;103.50&quot; /&gt;
-     &lt;units value=&quot;US$&quot; /&gt;
-     &lt;code value=&quot;USD&quot; /&gt;
-     &lt;system value=&quot;urn:std:iso:4217&quot; /&gt;
-   &lt;/numerator&gt;
-   &lt;denominator&gt;
-     &lt;value value=&quot;1&quot; /&gt;
-     &lt;units value=&quot;day&quot; /&gt;
-     &lt;code value=&quot;day&quot; /&gt;
-     &lt;system value=&quot;http://unitsofmeasure.org&quot; /&gt;
-   &lt;/denominator&gt;
-  &lt;/charge&gt;
-</pre>
-</div>
+```
+
+
+  <charge>
+   <numerator>
+     <value value="103.50" />
+     <units value="US$" />
+     <code value="USD" />
+     <system value="urn:std:iso:4217" />
+   </numerator>
+   <denominator>
+     <value value="1" />
+     <units value="day" />
+     <code value="day" />
+     <system value="http://unitsofmeasure.org" />
+   </denominator>
+  </charge>
+
+````
 <a name="Period"/>
 <a name="period"/>
 
-### <span class="sectioncount">1.17.1.10<a name="1.17.1.10"> </a></span> 
-Period
+#### 1.17.1.10 Period
 
 See also [Base Definition](datatypes.html#Period), [Detailed Descriptions](datatypes-definitions.html#Period) and [Mappings](datatypes-mappings.html#Period).
 
-<div class="example">
+
 
 **Examples**
 
-23rd May 2011 to 27th May, including 27th May:
+2011年5月23到27 包括27号:
 
-<pre class="xml" fragment="Period">
-  &lt;coverage&gt;
-   &lt;start value=&quot;2011-05-23&quot; /&gt;
-   &lt;end value=&quot;2011-05-27&quot; /&gt;
-  &lt;/coverage&gt;
-</pre>
-</div>
+```
+  <coverage>
+   <start value="2011-05-23" />
+   <end value="2011-05-27" />
+  </coverage>
+
+````
 
 <a name="SampledData"/>
 <a name="sampleddata"/>
 
-### <span class="sectioncount">1.17.1.11<a name="1.17.1.11"> </a></span> 
-SampledData
+#### 1.17.1.11 SampledData
 
 See also [Base Definition](datatypes.html#SampledData), [Detailed Descriptions](datatypes-definitions.html#SampledData) and [Mappings](datatypes-mappings.html#SampledData).
 
-<div class="example">
+
 
 **Example**
 
-The output from an EKG device:
+EKG设备的输出:
 
-<pre class="xml" fragment="SampledData">
- &lt;sampledData&gt;
-  &lt;origin&gt;
-   &lt;value value=&quot;0&quot;/&gt;
-   &lt;units value=&quot;μV&quot;/&gt;
-   &lt;system value=&quot;http://unitsofmeasure.org&quot;/&gt;
-   &lt;code value=&quot;uV&quot;/&gt;
-  &lt;/origin&gt;
-  &lt;period value=&quot;2&quot;/&gt;
-  &lt;factor value=&quot;2.5&quot;/&gt;
-  &lt;dimensions value=&quot;1&quot;/&gt;
-  &lt;data value=&quot;-4 -13 -18 -18 -18 -17 -16 -16 -16 -16 -16 -17 -18 -18 -18 ....&quot;/&gt;
- &lt;/sampledData&gt;
-</pre>
-</div>
+```
+ <sampledData>
+  <origin>
+   <value value="0"/>
+   <units value="μV"/>
+   <system value="http://unitsofmeasure.org"/>
+   <code value="uV"/>
+  </origin>
+  <period value="2"/>
+  <factor value="2.5"/>
+  <dimensions value="1"/>
+  <data value="-4 -13 -18 -18 -18 -17 -16 -16 -16 -16 -16 -17 -18 -18 -18 ...."/>
+ </sampledData>
+````
 <a name="HumanName"/>
 <a name="humanname"/>
 
-### <span class="sectioncount">1.17.1.12<a name="1.17.1.12"> </a></span> 
-HumanName
+#### 1.17.1.12 HumanName
 
 See also [Base Definition](datatypes.html#HumanName), [Detailed Descriptions](datatypes-definitions.html#HumanName) and [Mappings](datatypes-mappings.html#HumanName).
 
-<div class="example">
+
 
 A Simple example
 
-<pre class="xml" fragment="HumanName">
-&lt;name&gt;
-  &lt;family value=&quot;Everyman&quot; /&gt;
-  &lt;given value=&quot;Adam&quot; /&gt;
-  &lt;given value=&quot;A.&quot; /&gt;
-&lt;/name&gt;
-</pre>
+```
+<name>
+  <family value="Everyman" />
+  <given value="Adam" />
+  <given value="A." />
+</name>
+
+````
 
 Composite names
 
-<pre class="xml" fragment="HumanName">
-&lt;name&gt;
-  &lt;family value=&quot;Contrata&quot; /&gt;
-  &lt;given value=&quot;Mary Jane&quot; /&gt;
-&lt;/name&gt;
-</pre>
+```
+<name>
+  <family value="Contrata" />
+  <given value="Mary Jane" />
+</name>
+
+````
 
 These cases can be quite ambiguous - is &quot;Mary Jane&quot; one name, or two? Different systems,
 and data enterers may treat this differently, and the person themselves may not know.
@@ -637,7 +664,7 @@ This same pattern is often encountered with immigrants, who retain their real na
 </pre>
 </div>
 
-<div class="example">
+
 
 Karen van Hentenryck is of Dutch origin, and the &quot;van&quot; is a voorvoegsel.
 
@@ -661,7 +688,7 @@ so that this becomes &quot;van Hentenryck&quot;.
 
 </div>
 
-<div class="example">
+
 
 Complex example from Germany: Dr.phil. Regina Johanna Maria Gräfin Hochheim-Weilenfels, NCFSA. This example shows extensive use of
 multiple given names, prefixes, suffixes, for academic degrees, nobility titles, and professional designations.
@@ -695,7 +722,7 @@ This example makes use of the ISO 21090 extensions to carry the rare ISO 21090 q
 
 </div>
 
-<div class="example">
+
 
 Japanese example in the three forms: ideographic (Kanji), syllabic (Hiragana) and alphabetic (Romaji).
 
@@ -718,7 +745,7 @@ The three forms are differentiated by the character subset each contains.
 
 </div>
 
-<div class="example">
+
 
 Russian example in the two forms: cyrillic, and latin:
 
@@ -740,7 +767,7 @@ the domestic and foreign names respectively. The two forms are differentiated by
 
 </div>
 
-<div class="example">
+
 
 Scandinavian example: Erikson is the family name. Jan Erik are the given names, and Östlund the family name of the mother, which is taken as a Mellannamn.
 
@@ -996,7 +1023,7 @@ Address
 
 See also [Base Definition](datatypes.html#Address), [Detailed Descriptions](datatypes-definitions.html#Address) and [Mappings](datatypes-mappings.html#Address).
 
-<div class="example">
+
 
 **Example**
 
@@ -1048,12 +1075,11 @@ A Postal address - i.e. an address that it doesn't make sense to try and visit.
 <a name="ContactPoint"/>
 <a name="contactpoint"/>
 
-### <span class="sectioncount">1.17.1.14<a name="1.17.1.14"> </a></span> 
-ContactPoint
+#### 1.17.1.14 ContactPoint
 
 See also [Base Definition](datatypes.html#ContactPoint), [Detailed Descriptions](datatypes-definitions.html#ContactPoint) and [Mappings](datatypes-mappings.html#ContactPoint).
 
-<div class="example">
+
 
 **Example**
 
@@ -1068,64 +1094,66 @@ Home phone number:
 </pre>
 </div>
 
+如果是微信二维码的话，如何标识：
 <a name="Timing"/>
 <a name="timing"/>
 
-### <span class="sectioncount">1.17.1.15<a name="1.17.1.15"> </a></span> 
-Timing
+#### 1.17.1.15  Timing
 
 See also [Base Definition](datatypes.html#Timing), [Detailed Descriptions](datatypes-definitions.html#Timing) and [Mappings](datatypes-mappings.html#Timing).
 
-<div class="example">
+
 
 **Example**
 
-A series of appointments for radiotherapy:
+预约了一个疗程的放疗？:
 
-<pre class="xml" fragment="Timing">
-  &lt;schedule&gt;
-    &lt;event&gt;
-      &lt;start value=&quot;2012-01-07T09:00:00+10:00&quot; /&gt;
-      &lt;end value=&quot;2012-01-07T13:00:00+10:00&quot; /&gt;
-    &lt;/event&gt;
-    &lt;event&gt;
-      &lt;start value=&quot;2012-01-14T09:00:00+10:00&quot; /&gt;
-      &lt;end value=&quot;2012-01-14T13:00:00+10:00&quot; /&gt;
-    &lt;/event&gt;
-    &lt;event&gt;
-      &lt;start value=&quot;2012-01-22T11:00:00+10:00&quot; /&gt;
-      &lt;end value=&quot;2012-01-22T15:00:00+10:00&quot; /&gt;
-    &lt;/event&gt;
-  &lt;/schedule&gt;
-</pre>
+```
+  <schedule>
+    <event>
+      <start value="2012-01-07T09:00:00+10:00" />
+      <end value="2012-01-07T13:00:00+10:00" />
+    </event>
+    <event>
+      <start value="2012-01-14T09:00:00+10:00" />
+      <end value="2012-01-14T13:00:00+10:00" />
+    </event>
+    <event>
+      <start value="2012-01-22T11:00:00+10:00" />
+      <end value="2012-01-22T15:00:00+10:00" />
+    </event>
+  </schedule>
+````
 
-BID (twice a day) (no start or end specified):
+一天两次BID (twice a day) (no start or end specified):
 
-<pre class="xml" fragment="Timing">
-  &lt;schedule&gt;
-   &lt;repeat&gt;
-     &lt;frequency value=&quot;2&quot; /&gt;
-     &lt;duration value=&quot;1&quot; /&gt;
-     &lt;units value=&quot;d&quot; /&gt;
-   &lt;/repeat&gt;
-  &lt;/schedule&gt;
-</pre>
+```
+  <schedule>
+   <repeat>
+     <frequency value="2" />
+     <duration value="1" />
+     <units value="d" />
+   </repeat>
+  </schedule>
 
+````
+
+早饭前半小时，从2011年12月23开始连续十天
 1/2 an hour before breakfast for 10 days from 23-Dec 2011:
 
-<pre class="xml" fragment="Timing">
-  &lt;schedule&gt;
-    &lt;event&gt;
-      &lt;start value=&quot;2011-12-23&quot; /&gt;
-    &lt;/event&gt;
-    &lt;repeat&gt;
-      &lt;when value=&quot;ACM&quot; /&gt;
-      &lt;duration value=&quot;30&quot; /&gt;
-      &lt;units value=&quot;min&quot; /&gt;
-      &lt;end value=&quot;2012-01-02&quot; /&gt;
-    &lt;/repeat&gt;
-  &lt;/schedule&gt;
-</pre>
+```
+  <schedule>
+    <event>
+      <start value="2011-12-23" />
+    </event>
+    <repeat>
+      <when value="ACM" />
+      <duration value="30" />
+      <units value="min" />
+      <end value="2012-01-02" />
+    </repeat>
+  </schedule>
+````
 
 Note that the end date is inclusive like the high date of a Period.
 
@@ -1139,7 +1167,7 @@ Signature
 
 See also [Base Definition](datatypes.html#Signature), [Detailed Descriptions](datatypes-definitions.html#Signature) and [Mappings](datatypes-mappings.html#Signature).
 
-<div class="example">
+
 
 **Example**
 
@@ -1154,6 +1182,6 @@ todo
 </div>
 
 </div>
-  
+
 &copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
 链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	  

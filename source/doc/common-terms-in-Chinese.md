@@ -14,6 +14,8 @@ backboneelement——核心元素
 bundle——无最佳表达 维持英文      
 
 Cardinality ——基数    
+care plan——护理计划
+
 Clinical Resources ——临床类资源     
 clinical statement ——临床声明       
 Compartments——无最佳表达 维持英文      

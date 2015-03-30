@@ -88,6 +88,6 @@ exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy: 
-  type: github
-  repo: https://github.com/wanghaisheng/fhir-cn.git
-  branch: gh-pages
+  type: git
+  repo:
+    github: https://github.com/wanghaisheng/fhir-cn.git,gh-pages

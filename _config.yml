@@ -91,3 +91,4 @@ deploy:
   type: git
   repo:
     github: https://github.com/wanghaisheng/fhir-cn.git,gh-pages
+    gitcafe: https://gitcafe.com/wanghaisheng/fhir-cn.git,gitcafe-pages

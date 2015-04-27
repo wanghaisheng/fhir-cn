@@ -28,5 +28,5 @@ Arden Syntax是定义临床决策支持规则的一种语言。这些规则根�
  Virtual Medical Record是由HL7还在开发的一种标准草案，也是围绕着临床决策支持领域。它定义了临床决策支持规则所对应的逻辑医疗记录。目前，这个模型是由VMR构建的一种自定义模型。然而，决策支持工作组正在评估在后续版本中使用FHIR作为数据结构的可能性。        
  
 
-&copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
+&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)

@@ -39,5 +39,5 @@ CDA是V3标准的一种。因此，所有[V3中的注意事项](comparison-v3.ht
 3、**叙述性文本与特定元素间的关联:**  为了保证语义上的可追踪性，FHIR和CDA都允许在叙述性文本和文档中可编码部分特定的离散元素组件建立关联。如果FHIR与CDA之间进行转换，也需要转换这些链接。然而，这是很复杂的，事实上，两个标准关联的粒度是不同的。 在CDA中，关联只能存在于章节的层面上或者是一组条目的层面上。对于FHIR，关联可以存在于任何层面上，包括单独的数据类型组件或者甚至是扩展的一部分。从CDA到FHIR的转换是单向的，然而，反向转换总会有信息损耗。  
 
 
-&copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
+&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)

@@ -13,7 +13,6 @@
     "hexo-deployer-rsync": "0.0.2",
     "hexo-generator-archive": "^0.1.1",
     "hexo-generator-category": "^0.1.1",
-    "hexo-generator-feed": "^1.0.1",
     "hexo-generator-index": "^0.1.0",
     "hexo-generator-sitemap": "^1.0.1",
     "hexo-generator-tag": "^0.1.0",

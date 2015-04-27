@@ -6,7 +6,7 @@ categories: doc
   [首页](../home/index.html) >[文档](documentation.html) > **总结**	
 
 
-#1.7  HL7 FHIR简介  
+#1.6  HL7 FHIR简介  
 
 [获取PDF格式的该文档](../material/fhir-summary.pdf)
 
@@ -16,7 +16,7 @@ FHIR 的解决方案是基于一些称之为“资源”的模块化组件的.  
 
 FHIR适用于多种场景– 智能手机APP、云平台上的通信、基于EHR的数据共享、大型医疗机构内服务器间通信和其他。
 
-##1.7.1    FHIR好在哪里  
+##1.6.1    FHIR好在哪里  
 
 FHIR在现有标准基础上做了很多改进:  
 
@@ -31,7 +31,7 @@ FHIR在现有标准基础上做了很多改进:
 *   提供一种开发人员易于使用的人可读的格式wire format
 *   基于本体的分析 并提供一个映射以确保正确性
 
-##1.7.2 可扩展性      
+##1.6.2 可扩展性      
 
 卫生保健标准的一个核心挑战在于如何应对多样的卫生保健流程带来的多样性。随着时间的推移，越来越来的字段和可选性会添加到规范当中，最终增加了实现的复杂度和成本。另外一种则是依赖自定义扩展的方式，但这种也会给实现带来诸多问题。  
 
@@ -39,7 +39,7 @@ FHIR通过定义一个扩展和本地化已有资源的简单框架来解决这�
 
 另外，每个资源都会有一部分供人可读的文本表示，用 html 来表达，作为保证临床安全的一种备选方案。对于很多采用基于简单文本或文档方式的诸多系统中复杂的临床信息， 这点尤为重要。
 
-##1.7.3  资源示例: Patient   
+##1.6.3  资源示例: Patient   
 
 该示例展示了一个资源有哪些关键部分: 一个本地扩展，一个供人可读的html的表示和标准所定义的数据内容.
 
@@ -47,7 +47,7 @@ FHIR通过定义一个扩展和本地化已有资源的简单框架来解决这�
 
 FHIR 中有针对诸如病人、医务人员、医疗机构和设备的管理性概念的资源，也有很多涵盖了疾病、用药、诊断、护理计划和财务等临床概念的资源  
 
-##1.7.4 The FHIR 开发过程   
+##1.6.4  FHIR 开发过程   
 
 FHIR 已经发布了试行版。在试行期间，HL7 积极地关注着各种实现方案以期能够持续不断对其进行完善，能够响应不同的需求。鉴于FHIR提供的诸多优点，很多地方已经开始试运行.   
 照这样子发展，HL7 FHIR极有可能在2015年成为正式标准。
@@ -56,5 +56,5 @@ FHIR 已经发布了试行版。在试行期间，HL7 积极地关注着各种�
 [Twitter](https://twitter.com/search?q=%23FHIR)
 
 
-&copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
+&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)	

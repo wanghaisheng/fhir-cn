@@ -1,14 +1,14 @@
-title: 
+title:
 date:  
 categories: impl
 ---
 
-  [首页](../home/index.html) > [实现](implementation.html) >**Restful API**	
+  [首页](../home/index.html) > [实现](implementation.html) >**Restful API**
 
 
 本页内容:
 
-  
+
 
 *   [RESTful API](#)
 *   [示例](datatypes-examples.html)
@@ -17,102 +17,91 @@ categories: impl
 
 ###   2.1.0 RESTful API
 
-每种资源类型都定义了同样类型的交互，以一种高度模块化的方式来管理资源内容。 Applications claiming conformance to this framework claim to be conformant to &quot;RESTful FHIR&quot;.
+每种资源类型都定义了同样类型的交互/方法，可以一种高度模块化的方式来管理资源内容。 遵循这个框架也就是说遵循&quot;RESTful FHIR&quot;.
 
 需要注意的是在Restful 框架中，使用 HTTP 请求和响应来对服务器中的资源进行直接操作.该API 中并没有直接规定认证、授权和审计的问题-更多详情请参考[Security Page](security.html).
 
-The API describes the FHIR resources as a set of operations (known as &quot;interactions&quot;) on resources where individual
-resource instances are managed in collections by their type. Servers can choose which of
-these interactions are made available and which resource types they support. Servers SHALL
-provide a [conformance statement](conformance.html) that specifies what interactions and
-resources are supported.
+这些API定义了FHIR资源的一些方法，也叫做交互，单个资源的实例是以类型的集合来管理的。FHIR服务器可以选择实现其中的一些方法并且支持那些资源类型。FHIR服务器
+应该提供一个[符合性声明](conformance.html)的文件来描述它支持那些资源和交互。
 
-The following logical interactions are defined:
+定义了下列方法/交互:
 
 <a name="interactions"> </a>
 <a name="operations"> </a>
 <table class="list">
-  <tr><td>**Instance Level Interactions**</td><td/></tr>
-  <tr><td>[read](#read)</td><td>Read the current state of the resource</td></tr>
-  <tr><td>[vread](#vread)</td><td>Read the state of a specific version of the resource</td></tr>
-  <tr><td>[update](#update)</td><td>Update an existing resource by its id (or create it if it is new)</td></tr>
-  <tr><td>[delete](#delete)</td><td>Delete a resource</td></tr>
-  <tr><td>[history](#history)</td><td>Retrieve the update history for a particular resource</td></tr>
-  <tr><td colspan="2">**Type Level Interactions**</td></tr>
-  <tr><td>[create](#create)</td><td>Create a new resource with a server assigned id</td></tr>
-  <tr><td>[search](#search)</td><td>Search the resource type based on some filter criteria</td></tr>
-  <tr><td>[history](#history)</td><td>Retrieve the update history for a particular resource type</td></tr>
-  <tr><td colspan="2">**Whole System Interactions**</td></tr>
-  <tr><td>[conformance](#conformance)</td><td>Get a conformance statement for the system</td></tr>
-  <tr><td>[transaction](#transaction)</td><td>Update, create or delete a set of resources as a single transaction</td></tr>
-  <tr><td>[history](#history)</td><td>Retrieve the update history for all resources</td></tr>
-  <tr><td>[search](#search)</td><td>Search across all resource types based on some filter criteria</td></tr>
+  <tr><td>**实例层面的交互**</td><td/></tr>
+  <tr><td>[read](#read)</td><td>读取资源的最新内容</td></tr>
+  <tr><td>[vread](#vread)</td><td>读取某个版本的资源内容</td></tr>
+  <tr><td>[update](#update)</td><td>更新资源内容</td></tr>
+  <tr><td>[delete](#delete)</td><td>删除资源内容</td></tr>
+  <tr><td>[history](#history)</td><td>获取某个资源的版本变更记录</td></tr>
+  <tr><td colspan="2">**资源类型层面的交互**</td></tr>
+  <tr><td>[create](#create)</td><td>新增一条资源记录</td></tr>
+  <tr><td>[search](#search)</td><td>根据过滤条件查询某种资源类型</td></tr>
+  <tr><td>[history](#history)</td><td>获取某种类型资源的版本变更记录</td></tr>
+  <tr><td colspan="2">**系统层面的交互**</td></tr>
+  <tr><td>[conformance](#conformance)</td><td>获取系统的符合性声明</td></tr>
+  <tr><td>[transaction](#transaction)</td><td>以单个事务形式来批量新增、修改和删除资源</td></tr>
+  <tr><td>[history](#history)</td><td>获取所有资源类型所有资源实例的版本变更记录</td></tr>
+  <tr><td>[search](#search)</td><td>根据一些过滤条件在所有资源类型中进行查找</td></tr>
 </table>
 
-In addition to these interactions, there is an [operations framework](operations.html), which include endpoints
-for [validation](operation-resource-validate.html), [messaging](messaging.html#mailbox) and [Documents](documents.html#bundle).
+除了上述交互之外， 还有[operations framework](operations.html),其中包括了[validation](operation-resource-validate.html), [messaging](messaging.html#mailbox) 和 [Documents](documents.html#bundle).
 
-**Style Guide**
+**样式说明**
+这部分定义的交互形式如下:
 
-The interactions on this page are defined like this:
-
-<pre>
+```
   VERB [base]/[type]/[id] {?_format=[mime-type]}
-</pre>
+```
 
-*   The first word is the HTTP verb used for the operation
-*   Content surrounded by [] is mandatory, and will be replaced the string literal identified. Possible insertion values:
+*   第一个指的是HTTP的POST/PUT/GET等动词
+*   [] 中的内容是必须要存在的，可以使用相应的字符来替换。示例:
 
-        *   **base**: The [Service Root URL](#root)
-    *   **mime-type**: The [Mime Type](#mime-type)
-    *   **type**: The name of a resource type (e.g. &quot;Patient&quot;)
-    *   **id**: The [Logical Id](resource.html#id) of a resource
-    *   **vid**: The [Version Id](resource.html#metadata) of a resource
-    *   **compartment**: The name of a [compartment](extras.html#compartment)
-    *   **parameters**: URL parameters as defined for the particular operation
-*   Content surrounded by {} is optional
+    *   **base**:  [Service Root URL](#root)
+    *   **mime-type**:  [Mime Type](#mime-type)
+    *   **type**: 资源类型的名称 (e.g. &quot;Patient&quot;)
+    *   **id**:  资源的[逻辑标识Id](resource.html#id)
+    *   **vid**: 资源的[版本标识 Id](resource.html#metadata)
+    *   **compartment**: [compartment](extras.html#compartment)的名称
+    *   **parameters**:某种方法中所定义的url参数
+*   {}中的内容是可选项
 
-Implementations constructing URLs using these patterns SHOULD conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A)
+开发中所生成的URLs应符合 [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A)
+的要求，其中一些字符需要进行URL编码
 which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
 <a name="root"> </a>
 <a name="general"> </a>
 
-### <span class="sectioncount">2.1.0.1<a name="2.1.0.1"> </a></span> Service Root URL
+####  2.1.0.1 服务根路径
 
-The Service Root URL is the address where all of the
-resources defined by this interface are found. The Service
-Root URL takes the form of
+所有资源都能够在服务的根路径中找到. 服务根路径的格式是：
 
-<pre>
+```
 http(s)://server{/path}
-</pre>
+```
+path这部分是可选的，并且不包含拖尾斜杠。每种资源类型的管理节点在&quot;/[type]&quot;
+&quot;type&quot; 也就是资源类型的名称.比如
+&quot;Patient&quot; 就形如:
 
-The path portion is optional, and does not include a trailing slash. Each
-resource type defined in this specification has a manager (or &quot;entity set&quot;)
-that lives at the address &quot;/[type]&quot; where the
-&quot;type&quot; is the name of the resource type.
-For instance, the resource manager for the type
-&quot;Patient&quot; will live at:
-
-<pre>
+```
 https://server/path/Patient
-</pre>
+```
 
-All the logical interactions are defined relative to the service root
-URL. This means that if the address of any one FHIR resource on a system
-is known, the address of other resources may be determined.
+所有的交互都是相对服务根路径来定义的。也就是说当你知道系统中任何一个资源的路径，也就可以推断出其他资源的地址。
 
-Note: All URLs (and ids that form part of the URL) defined by this specification are case sensitive.
+注意：所有URL都是大小写敏感的。
 
-Note that a server may use a path of the form &quot;http://server/...[xx]...&quot; where the [xx] is some variable
-portion that identifies a particular instantiation of the FHIR API. Typically, the variable id
+注意：服务器可能会使用这种 &quot;http://server/...[xx]...&quot;形式的path，这里的[xx] 指的是一个可变的部分，
+用于表示一个特殊的FHIR API。一般而言，
+is some variable. Typically, the variable id
 identifies a patient or a user, and the underlying information is completely compartmented
 by the logical identity associated with [xx]. In this case, the FHIR API presents a
 patient or user centric view of a record, where authentication/authorization is
 explicitly granted to the URL, on the grounds that some identifiable user is associated
 with the logical identity. It is not necessary to explicitly embed the patient id in the
-URL - implementations can associate an FHIR end-point with a particular patient or 
+URL - implementations can associate an FHIR end-point with a particular patient or
 provider by using an OAuth login. See [Compartments](extras.html#compartments) for the logical underpinning.
 
 ### <span class="sectioncount">2.1.0.2<a name="2.1.0.2"> </a></span> Resource Metadata and Versioning
@@ -136,12 +125,12 @@ ETag: W/&quot;3141&quot;
 
 ### <span class="sectioncount">2.1.0.3<a name="2.1.0.3"> </a></span> Security
 
-Using HTTPS is optional, but all production exchange of healthcare data SHOULD use SSL and 
+Using HTTPS is optional, but all production exchange of healthcare data SHOULD use SSL and
 additional security as appropriate. See [HTTP Security](security.html#http) for further information.
 
-The choice of whether to return 403 or 404 depends upon the specific situation and specific 
-local policies, regulations, and laws. The decision of which error to use will include consideration 
-of whether disclosure of the existence of relevant records is considered an acceptable 
+The choice of whether to return 403 or 404 depends upon the specific situation and specific
+local policies, regulations, and laws. The decision of which error to use will include consideration
+of whether disclosure of the existence of relevant records is considered an acceptable
 disclosure of PI or  a prohibited disclosure of PI.
 
 Note: to support browser-based client applications, recommend that servers SHOULD implement [cross-origin resource sharing](http://enable-cors.org/) for the operations documented here.
@@ -425,7 +414,7 @@ interactions. Upon successful deletion, or if the resource does not exist at all
 204 (No Content), or 200 OK status code, with an [OperationOutcome](operationoutcome.html)
 resource containing hints and warnings about the deletion; if one is sent it SHALL not include any errors.
 
-Whether to support delete at all, or for a particular resource type or a particular instance is at the 
+Whether to support delete at all, or for a particular resource type or a particular instance is at the
 discretion of the server based on the business rules that apply in its context.  
 If the server refuses to delete resources of that type as a blanket policy, then it should return the 405
 Method not allowed status code. If the server refuses to delete a resource because of reasons specific
@@ -549,7 +538,7 @@ This interaction searches a set of resources based on some filter criteria. The 
   GET [base]/[type]{?[parameters]{&amp;_format=[mime-type]}}
 </pre>
 
-This searches all resources of a particular type using the criteria represented in the parameters. 
+This searches all resources of a particular type using the criteria represented in the parameters.
 
 Because of the way that some user agents and proxies treat `GET` and `POST` requests, in addition
 to the get based search method above, servers that support _search_ SHALL also support a `POST` based search:
@@ -596,7 +585,7 @@ Finally, it's possible to search all resources at once:
   GET [base]?[parameters]{&amp;_format=[mime-type]}
 </pre>
 
-When searching all resources at once, only the parameters defined for all resources 
+When searching all resources at once, only the parameters defined for all resources
 can be used.
 
 <a name="conformance"> </a>
@@ -987,7 +976,7 @@ Note that _all_ requests may include an optional `Accept` header to indicate the
 																		<tr>    <td>POST</td>          	<td>application/x-www-form-urlencoded</td>         	<td>form data</td> 	   <td>N/A</td>  		<td>N/A</td></tr>
 </table>
 
-Notes: 
+Notes:
 
 *   N/A = not present, R = Required, O = optional
 *   For operations defined on all resources, including direct access to the meta element, see [Resource Operations](resource-operations.html)
@@ -1014,5 +1003,5 @@ Note: this table lists the status codes described here, but other status codes a
 Additional codes that are likely a server errors and various codes associated with authentication protocols.
 
 
- &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 . 
-链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 	 	
+ &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .
+链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)

@@ -28,6 +28,8 @@ categories: doc
 
 *   [一页纸总结(Glossy)](summary.html)
 *   [简介和路线图](overview.html)
+*   [开发人员指南](overview-dev.html) 
+*   [医务人员指南](overview-clinical.html) 
 *   [FHIR 时间线](timelines.html)
 *   [版本间的兼容性](compatibility.html)
 
@@ -37,15 +39,13 @@ categories: doc
 资源的基本定义.
 
 *   [基础资源](resource.html)  
-*   [资源定义](resources.html)(已废弃)  
 *   [一致性规则](conformance-rules.html)  
-*   [compartments](extras.html)  
+*   [生命周期](lifecycle.html)  
 *   [资源间的引用](references.html)  
+*   [基于Compartments的数据获取](extras.html)  
 *   [叙述性文本](narrative.html)  
 *   [扩展性](extensibility.html) ([Examples](extensibility-examples.html))  
 *   [格式:](formats.html) [XML](xml.html), [JSON](json.html)    
-*   [资源的bundle](../infra/bundle.html)  
-*   [二进制数据的传输](../infra/binary.html)  
 *   [数据类型](datatypes.html) 
 *   基础架构类类型:
 	*     [领域资源](domainresource.html) 
@@ -53,16 +53,6 @@ categories: doc
 	*     [核心元素](backboneelement.html) 
 	*     [元素定义](elementdefinition.html) 
 
-**数据类型**
-
-FHIR中用到的通用类型.
-
-*   [定义](datatypes.html)(已废弃)  
-*   [示例](datatypes-examples.html)(已废弃)    
-*   [正规定义](datatypes-definitions.html)(已废弃)    
-*   [映射/对应](datatypes-mappings.html)(已废弃)    
-
-* * *
 
 **术语使用**
 
@@ -81,5 +71,5 @@ FHIR中用到的通用类型.
 **附录**    
 
 *	[与其他HL7标准的对比](comparison.html)   	
-*	[未来的挑战所带来的变化](change.html)   
 *   [FHIR 与 EHR 的适用性](ehr-fm.html)
+*	[未来的挑战所带来的变化](change.html)   

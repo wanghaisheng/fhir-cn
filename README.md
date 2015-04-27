@@ -3,13 +3,13 @@ fhir-cn
 
 FHIR中文版    
 the Chinese translation of FHIR   
-版本：DSTU R2 ballot   http://hl7.org/fhir/2015May
+版本：DSTU R2 ballot   http://hl7.org/fhir/2015May          
 [demo请查看](http://wanghaisheng.github.io/fhir-cn/home/index.html)	
 ##环境配置
 1.prerequirement  
 *  nodejs 
 *  npm 
-*  hexo  
+*  hexo3.0   
 2.theme的安装  
 ```
 git clone https://github.com/wanghaisheng/hexo-theme-lion.git themes/lion   
@@ -18,8 +18,8 @@ git clone https://github.com/wanghaisheng/hexo-theme-lion.git themes/lion
 ```
 npm install 
 hexo clean
-hexo g
-hexo s
+hexo generate
+hexo server
 ```  
 
 

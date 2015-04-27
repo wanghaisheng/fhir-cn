@@ -27,5 +27,5 @@ categories: doc
 *   FHIR能够满足之前的HL7互操作性标准(V2, V3 和CDA)的所有需求。在很多案例中，它还有易于实现互操作性的优势。因此，未来FHIR可能会逐步替代其中一些或所有标准。然而，至于市场作出这样的转变时间上有多快还不是很明朗。 极有可能的是在很长的一段时间内这些标准将共存。HL7承诺只要HL7会员需要现有的标准，它们就会一直维护下去。
  
 
-&copy; HL7.org 2011+. FHIR DSTU (v0.4.0-3900) 构建于2014  12月20号 2014 22:38+0000 星期六 . 
+&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 		

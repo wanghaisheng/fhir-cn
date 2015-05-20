@@ -94,668 +94,512 @@ https://server/path/Patient
 注意：所有URL都是大小写敏感的。
 
 注意：服务器可能会使用这种 &quot;http://server/...[xx]...&quot;形式的path，这里的[xx] 指的是一个可变的部分，
-用于表示一个特殊的FHIR API。一般而言，
-is some variable. Typically, the variable id
-identifies a patient or a user, and the underlying information is completely compartmented
-by the logical identity associated with [xx]. In this case, the FHIR API presents a
-patient or user centric view of a record, where authentication/authorization is
-explicitly granted to the URL, on the grounds that some identifiable user is associated
-with the logical identity. It is not necessary to explicitly embed the patient id in the
-URL - implementations can associate an FHIR end-point with a particular patient or
-provider by using an OAuth login. See [Compartments](extras.html#compartments) for the logical underpinning.
+用于表示某个具体的FHIR API的实现。一般而言，id能够标识患者或者用户， the underlying information is completely compartmented by the logical identity associated with [xx]。这样的话，FHIR API 提供了一个患者/用户为中心的病历视图，授权/认证信息是显式的赋予URL的，由于这样的原因，某些可标识的用户是于逻辑标识相关联的
+显式的将患者id放在URL中并不是必须的，系统实现时可以利用OAuth 登录将患者或医疗机构与某个FHIR endpoint联系起来。具体参考 [Compartments](extras.html#compartments) for the logical underpinning.
 
-### <span class="sectioncount">2.1.0.2<a name="2.1.0.2"> </a></span> Resource Metadata and Versioning
 
-Each resource has an associated set of [resource metadata elements](resource.html#metadata). These map to the http request and response using the following fields:
+Identity
+
+系统常常要通过比较2个URL来确定是否指向同一个URL。鉴于此，因遵循如下规则:
+
+* URL中查询的部分应忽略，也就是?之后的内容
+* The comparison of the document portion of the URL (i.e. not the server/port) is case sensitive
+* http: and https: 是可以互换的，且指的是同一个对象
+* 如果指定了端口，端口必须一致否则是不同对象，只有端口对于服务器来讲是有意义的情况下才应该显式的体现
+
+比如: http://myserver,com/patient/1 和 https://myserver.com/patient/1 是一样的, 而 http://myserver.com:80/patient/1 和前面两个都不一样
+
+
+Note: the identity comparison for protocols other than http/https is undefined.
+
+#### 2.1.0.2 Resource Metadata and Versioning
+
+每个资源都有一些[资源的元数据字段](resource.html#metadata). 这些字段与http 请求和响应的字段对应如下：
 
 <table class="grid">
   <tr><th>Metadata Item</th><th>Where found in HTTP</th></tr>
-  <tr><td>[Logical Id (.id)](resource.html#id)</td><td>The Id is represented explicitly in the URL</td></tr>
-  <tr><td>[Version Id (.meta.versionId)](resource.html#metadata)</td><td>The Version Id is represented in the `ETag` header. It SHOULD also be returned
-    as a full canonical URL in the Content-Location header (see [vread](#vread) below)</td></tr>
+  <tr><td>[Logical Id (.id)](resource.html#id)</td><td> Id显式的包含在URL里面 </td></tr>
+  <tr><td>[Version Id (.meta.versionId)](resource.html#metadata)</td><td>Version Id可以用`ETag` header表示. Content-Location 中表示的是一个完整的URL (see [vread](#vread) below)</td></tr>
   <tr><td>Last modified (.meta.lastUpdated)</td><td>HTTP Last-Modified header</td></tr>
 </table>
 
-Note that the Version Id is considered a &quot;weak&quot; ETag and `ETag` headers
-	should be prefixed with &quot;W/&quot; and enclosed in quotes, for example:
+需要注意的是Version Id是弱&quot;weak&quot; ETag ， `ETag` headers
+	的值是以 &quot;W/&quot; 为前缀的，值是用引号引起来的，比如:
 
 <pre>
 ETag: W/&quot;3141&quot;
 </pre>
 
-### <span class="sectioncount">2.1.0.3<a name="2.1.0.3"> </a></span> Security
+####  2.1.0.3  安全Security
 
-Using HTTPS is optional, but all production exchange of healthcare data SHOULD use SSL and
-additional security as appropriate. See [HTTP Security](security.html#http) for further information.
+HTTPS 的使用是可选项，但任何生产环境下的医疗数据的交换与共享都应该使用SSL和其他的安全措施。详情请参考 [HTTP Security](security.html#http)
 
-The choice of whether to return 403 or 404 depends upon the specific situation and specific
-local policies, regulations, and laws. The decision of which error to use will include consideration
-of whether disclosure of the existence of relevant records is considered an acceptable
-disclosure of PI or  a prohibited disclosure of PI.
+至于说到底是返回403还是404取决于具体的情况和具体的本地策略、法规和法律。选择哪个错误码需要考虑相应的病历的公开是否是正当的PI信息的公开还是说是禁止的PI的公开。
 
-Note: to support browser-based client applications, recommend that servers SHOULD implement [cross-origin resource sharing](http://enable-cors.org/) for the operations documented here.
 
-### <span class="sectioncount">2.1.0.4<a name="2.1.0.4"> </a></span> HTTP Status Codes
+注意: 为了支持基于浏览器的客户端系统，建议服务端实现 [cross-origin resource sharing](http://enable-cors.org/)
 
-This specification makes rules about the use of specific HTTP status codes
-in particular circumstances where the status codes SHALL map to particular
-states correctly, and only where the correct status code is not obvious.
-Other HTTP status codes may be used for other states as appropriate, and this particularly
-includes various authentication related status codes and redirects.
-Authentication redirects should not be interpreted to change the location
-of the resource itself (a common web programming error).
+#### 2.1.0.4 HTTP Status Codes
 
-FHIR defines an [OperationOutcome resource](operationoutcome.html) that can be used to convey specific detailed
-processable error information. For a few combinations of interactions and specific
-return codes, an OperationOutcomeis required to be returned as the content of the response.
-The OperationOutcome may be returned with any HTTP 4xx or 5xx response, but is not required - many of
-these errors may be generated by generic server frameworks underlying a FHIR server.
+该标准规定了特殊的HTTP status codes状态码的使用，状态码必须与某种状态相对应，只有不明确正确的状态码的时候，才可以使用其他合适的状态码，尤其是涉及授权认证和重定向的状态码
+认证重定向不应该被当做资源本身位置的变更。
 
-<a name="return"> </a>
+FHIR 中定义了[OperationOutcome resource](operationoutcome.html) 来表示某些具体的处理错误信息。对于某些交互/接口和某些状态码，必须在响应中返回
+OperationOutcome。HTTP 4XX或5xx状态码可能会返回OperationOutcome，但不强制规定，通用的服务端框架可能会产生很多此类错误。
 
-### <span class="sectioncount">2.1.0.5<a name="2.1.0.5"> </a></span> Managing Return Content
+#### 2.1.0.5  管理响应中返回的内容
 
-In the interests of managing band-width, this specification allows clients
-to specify what kind of content to return.
+处于“带宽”的考虑，spec允许客户端规定返回哪些内容
 
-#### <span class="sectioncount">2.1.0.5.1<a name="2.1.0.5.1"> </a></span> conditional read
+##### 2.1.0.5.1 条件读取 conditional read
 
-Clients may use the `If-Modified-Since`, or `If-None-Match` HTTP header on a `read` request.
-If so, they MUST accept either a 304 Not Modified as a valid status code on the response (which means that the
-content is unchanged since that date) or full content (either the content has not changed,
-or the server does not support conditional request).
+客户端可以在 `read` 请求中使用`If-Modified-Since`, 或 `If-None-Match` HTTP 头参数。如果这样的话，客户端必须接受状态码304表示未变更或完整的内容(要么是内容未变化，要么是不支持条件读取)作为响应。
 
-Servers can return 304 Not Modified where content is unchanged since the
-`If-Modified-Since` date-time or the `If-None-Match` ETag specified or they can
-return the full content as normal. This optimisation is relevant in reducing bandwidth for caching purposes and servers are encouraged but
-not required to support this.
+服务器可以根据指定的`If-Modified-Since` date-time or the `If-None-Match` ETag 来返回304表示内容未发生变更，或者正常的 返回整个资源内容
+。这种优化在出于缓存的目的而减少带宽时是有意义的，鼓励服务器这样做但不做强制性规定
 
-#### <span class="sectioncount">2.1.0.5.2<a name="2.1.0.5.2"> </a></span> create/update/transaction
 
-These operations are performed using `POST`,`PUT` and `POST` respectively, and
-it may be appropriate for a server to return either only a status
-code, or also return the entire resource that is the outcome of the
-create or update (which may be different to that provided by the
-client). In the case of transactions this means returning a Bundle with just the `Bundle.entry.transactionResponse`,
-not the `Bundle.entry.resource`.
+##### 2.1.0.5.2 create/update/transaction
 
-The client can indicate whether the entire resource is
-returned using the [HTTP
-return preference](https://tools.ietf.org/html/rfc7240#section-4.2):
+增、改、和批量操作是通过`POST`,`PUT` and `POST` 来实现的，对于服务器而言，要么只返回一个状态码，要么返回新增或更改之后的完整内容。对于批量操作而言
+，要返回一个有`Bundle.entry.transactionResponse`字段的Bundle，而不是有`Bundle.entry.resource`字段的Bundle。
+
+客户端可以用 [HTTP
+return preference](https://tools.ietf.org/html/rfc7240#section-4.2)头参数来表示是否想要返回完整的资源内容:
 
 <pre>
 Prefer: return=minimal
 Prefer: return=representation
 </pre>
 
-The first of these two asks to return no body (or an operation outcome). The
-second asks to return the full resource. Servers SHOULD honour this header.
-In the absence of the header, servers may chose whether to return the
-full resource or not.
+第一个指的是只要状态码. 第二个指的是要返回完整内容.服务器应该能支持该头参数。
+如果不存在该头参数,服务器可根据实际情况自行处理。
 
 <a name="mime-type"> </a>
 
-### <span class="sectioncount">2.1.0.6<a name="2.1.0.6"> </a></span> Content Types and encodings
+#### 2.1.0.6   Content Types and encodings
 
-The formal MIME-type for FHIR resources is `application/xml+fhir` or `application/json+fhir`.
-The correct mime type SHALL be used by clients and servers:
+FHIR 资源的正式MIME-type 是`application/xml+fhir` 或 `application/json+fhir`.
+客户端和服务器必须使用的MIME-type是:
 
 *   XML: **application/xml+fhir**
 *   JSON: **application/json+fhir**
 
-Servers SHALL support server-driven content negotiation
-as described in [section 12](http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html#sec12)
-of the HTTP specification.
+服务器必须支持 [HTTP specification 标准中section 12的服务端内容协商](http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html#sec12)
+但为了支持不同的系统实现，服务器应该支持可选项`_format` 参数来规定响应的格式。`_format` 能够让客户端在客户端没法正确设置头参数的值时使用format参数覆盖头参数
+的值。`_format` 参数的值可以是&quot;xml&quot;, &quot;text/xml&quot;, &quot;application/xml&quot;, 和 &quot;application/xml+fhir&quot; &quot;json&quot;, &quot;application/json&quot; and &quot;application/json+fhir&quot; 不管是哪个都应该能转换成正式的MIME-type。
 
-However in order to support various implementation limitations, servers SHOULD
-support the optional `_format` parameter to specify alternative response formats by their MIME-types.
-This parameter allows a client to override the header value when it is unable to set it correctly
-due to internal limitations.
-For the `_format` parameter, the values &quot;xml&quot;, &quot;text/xml&quot;, &quot;application/xml&quot;, and &quot;application/xml+fhir&quot; SHALL be interpreted to mean
-the normative XML format defined by FHIR and &quot;json&quot;, &quot;application/json&quot; and &quot;application/json+fhir&quot; SHALL be interpreted to mean the
-informative JSON format.
-
-FHIR uses UTF-8 for all request and response bodies. Since the HTTP specification (section 3.7.1)
-defines a default character encoding of ISO-8859-1, requests and responses SHALL explicitly set
-the character encoding to UTF-8 using the `charset` parameter of the MIME-type in the `Content-Type` header.
-Requests MAY also specify this `charset` parameter in the `Accept` header and/or use the `Accept-Charset` header.
+HTTP 请求和响应的体都使用的是UTF-8.由于HTTP标准 (section 3.7.1)定义了默认的字符编码为ISO-8859-1, 请求和响应中应在`Content-Type`头参数中
+使用`charset`参数明确的规定字符编码。请求中也可以在`Accept` header and/or use the `Accept-Charset` header中使用`charset`参数来规定字符编码
 
 <a name="versioning"> </a>
 
-### <span class="sectioncount">2.1.0.7<a name="2.1.0.7"> </a></span> Support for Versions
+#### 2.1.0.7  对版本的支持
 
-Servers that support this API SHOULD provide full version support - that is, populate and track
-versionId correctly, support `vread`, and implement [version aware updates](#versionaware).
-Supporting versions like this allows for related systems to track the correct version of information,
-and to keep integrity in clinical records. However, many current operational systems do not
-do this, and cannot easily be re-engineered to do so.
+支持FHIR的服务器应该提供对完整版本的支持，也就是说正确的给versionId赋值，记录versionId的变化，支持`vread`, 实现 [version aware updates](#versionaware).
+对版本的支持能够让相关的系统记录正确版本的信息，保证病历中信息的完整性。然而，现在的大多数系统是不支持版本的，要这么做是很困难的。
 
-For this reason, Servers are allowed to not provide versioning support: this API does not enforce
-that they are supported. Clients may elect to only interact with servers that do provide full
-versioning support. Systems declare their support for versioning
-in their [conformance statement](conformance-definitions.html#Conformance.rest.resource.noVersion).
+鉴于此，允许服务器不支持版本:FHIR 并不强迫必须支持版本。客户端可以选择那些提供完整版本支持的服务器进行交互。系统在[conformance statement](conformance-definitions.html#Conformance.rest.resource.noVersion)中记录是否支持版本.
 
 <a name="read"> </a>
 
-### <span class="sectioncount">2.1.0.8<a name="2.1.0.8"> </a></span> read
+#### 2.1.0.8 read
 
-The `read` interaction accesses the current contents of a resource. The interaction
-is performed by an HTTP `GET` command as shown:
+`read` interaction读取操作获取资源当前最新的资源内容。使用HTTP `GET` :
 
-<pre>
+```
   GET [base]/[type]/[id] {?_format=[mime-type]}
-</pre>
+```
 
-This returns a single instance with the content specified for the resource type.
-This url may be accessed by a browser. The possible values for the
-[Logical Id](resource.html#id) (id) itself are described in the [id type](datatypes.html#id).
-The returned resource SHALL have an `id` element with a value that is the [id].
-Servers SHOULD return an `ETag` header with the versionId and a `Content-Location` header with the response which is the full version
-specific url (see vread below) and a `Last-Modified` header.
+该接口返回的是一个某种资源类型的实例。可通过浏览器访问该url.
+[Logical Id](resource.html#id) (id) 值的介绍在 [id type](datatypes.html#id).
+返回的资源内容中应该包含 `id`字段，且值是[id].
+服务器应该返回`ETag` 头参数，值为 versionId、`Content-Location` 头参数，值为完整的url和`Last-Modified` 头参数.
 
-Note: Unknown resources and deleted resources are treated differently on a read: A `GET` for a deleted
-resource returns a 410 status code, whereas a `GET` for an unknown resource returns 404. Systems that do
-not track deleted records will treat deleted records as an unknown resource.
+注意: 在读取时未知的资源和已删除资源的处理是不一样的: 已删除资源返回的是410状态码，而未知的资源返回的是404。不记录已删除记录的系统
+将已删除记录视为未知资源。
 
 <a name="vread"> </a>
 
-### <span class="sectioncount">2.1.0.9<a name="2.1.0.9"> </a></span> vread
+#### 2.1.0.9  vread
 
-The `vread` interaction preforms a version specific read of the resource. The interaction
-is performed by an HTTP GET command as shown:
+`vread`  interaction特定版本读取操作获取资源某个版本的资源内容。使用HTTP GET:
 
-<pre>
+```
   GET [base]/[type]/[id]/_history/[vid] {?_format=[mime-type]}
-</pre>
+```
 
-This returns a single instance with the content specified for the resource type for that
-version of the resource.
-The returned resource SHALL have an `id` element with a value that is the [id], and a `meta.versionId`
-element with a value of [vid]. Servers SHOULD return an `ETag` header with the versionId and a `Content-Location` header with the response which is the full version
-specific url (see vread below) and a `Last-Modified` header.
+该方法返回的是指定的资源类型的某个特定版本的资源实例。返回在资源内容必须包含`id` 字段，值为[id],包含`meta.versionId`头参数，值为[vid].
+服务器应返回`ETag` 头参数，值为versionId ，返回`Content-Location` 头参数，值为包含版本的完整url，返回`Last-Modified` 头参数.
 
-The [Version Id](resource.html#metadata) (vid) is an opaque identifier that conforms to the same [format requirements](datatypes.html#id) as
-a [Logical Id](resource.html#id). The id may have been found by performing a history interaction (see below), by recording the
-version id from a content location returned from a read or from a version specific reference in a
-content model. If the version referred to is actually one where the resource was deleted, the
-server should return a 410 status code.
+ [Version Id](resource.html#metadata) (vid)是版本标识符，和[Logical Id](resource.html#id)一样遵循 [format requirements](datatypes.html#id) 。可以通过history方法获取id，通过read方法返回的内容中的content location中的version id，或者
+ 来自某个内容模型的针对版本的某个引用。如果规定的这个版本正好是被删除的资源，服务器应该返回410的状态码.
 
-Servers are encouraged to support a version specific retrieval of the current version of the
-resource even if they are do not provide access to previous versions. If a request
-is made for a previous version of a resource, and the server does not support accessing
-previous versions, it should return a 404 Not Found error, with an operation outcome
-explaining that history is not supported for the underlying resource type.
+即使服务器不支持读取既往版本的资源内容，也鼓励服务器支持针对某个版本的当前版本的资源内容的获取。如果请求中访问的是之前版本的资源，服务器不支持访问之前版本
+，应该返回404 未找到的状态码，同时用operation outcome来解释当前资源类型不支持history操作.
 
 <a name="update"> </a>
 
-### <span class="sectioncount">2.1.0.10<a name="2.1.0.10"> </a></span> update
+#### 2.1.0.10  update
 
-The `update` interaction creates a new current version for an existing resource or
-creates an initial version if no resource already exists for the given id.
-The `update` interaction is performed by an HTTP `PUT` command as shown:
-
-<pre>
+`update` interaction 新增一个已有资源的最新版本或者创建一个对应id不存在资源的初始版本.使用HTTP `PUT`:
+```
   PUT [base]/[type]/[id] {?_format=[mime-type]}
-</pre>
+```
+请求的体是一个 [Resource](resource.html) ，其中id字段的值与url中的[id]一致.
+如果资源内容中包含了 [meta](resource.html#meta), 服务器应该忽略提交的资源中的`versionId` 和 `lastUpdated` 的值.
+服务器必须给`meta.versionId` and `meta.lastUpdated`字段赋值.也允许服务器审查和更改其他metadata的值，但不推荐这样做(see [metadata description](resource.html#meta)  for further information).
 
-The request body SHALL be a [Resource](resource.html) with an id element that has an identical value to the [id] in the URL.
-If the request body includes a [meta](resource.html#meta), the server SHALL
-ignore the existing `versionId` and `lastUpdated` values.
-The server SHALL populate the `meta.versionId` and `meta.lastUpdated`
-with the new correct values.
-Servers are allowed to review and alter the other metadata values, but SHOULD refrain
-from doing so (see [metadata description](resource.html#meta)  for further information).
+当服务器接受了更新时，服务器应该接受提交的资源，后续读取时应该返回同样的内容。然而，系统可能会不支持，具体讨论请参考[transactional integrity](#transactional-integrity) for.
 
-A server SHOULD accept the resource as submitted when accepts the update, and return the same
-content when it is subsequently read. However systems may not be able to do this; see
-the note on [transactional integrity](#transactional-integrity) for discussion.
+如果更新成功，如果是更新的话，服务器必须返回200状态码, 如果是新增的话，必须返回201状态码,
+以及 `Last-Modified` 头参数, 和  `ETag` 头参数(包含新的资源`versionId`)
+。服务器应该返回 `Content-Location` header，其中包含了更新操作得到的具体版本。如果是新增资源的话，服务器应该返回`Location` 头参数.
 
-If the interaction is successful, the server SHALL return either a 200 OK HTTP status code if the resource was updated, or a 201 Created status code if the resource was created,
-with a `Last-Modified` header, and an `ETag` header which contains the new `versionId` of the resource. A `Content-Location` header
-that refers to the specific version created by the update interaction SHOULD also be returned. If the resource was created (i.e. the interaction resulted in a 201 Created), the server SHOULD
-return a `Location` header.
+服务器响应的body可包含[OperationOutcome](operationoutcome.html)资源来表示资源内容处理中的hints和警告，其中不应包含任何错误信息.
 
-The server MAY include a response body containing an [OperationOutcome](operationoutcome.html)
-resource with hints and warnings about the resource; if one is sent it SHALL not include any errors.
+##### 2.1.0.10.1  条件更新Conditional updates
 
-#### <span class="sectioncount">2.1.0.10.1<a name="2.1.0.10.1"> </a></span> Conditional updates
-
-The conditional update operation allows a client to update an existing resource based on some identification criteria,
-rather than by  [logical id](resource.html#meta). To accomplish this, the client issues a `PUT` as shown:
-
-<pre>
+条件更新能够让客户端根据某些标识条件而非逻辑标识[logical id](resource.html#meta)来更新现有的资源。使用 `PUT` :
+```
   PUT [base]/[type]/?[search parameters]
-</pre>
+```
+当服务器处理条件更新时,先使用标准的[search facilities](search.html) 来查询特定的资源类型，力图找到一个单独的逻辑id。后续的处理动作取决于查询得到的结果数目:
 
-When the server processes this update, it performs a search using its standard
-[search facilities](search.html) for the resource type, with the goal of resolving a single logical id for this request. The action it takes depends
-on how many matches are found:
+*   **未找到匹配项**: 服务器完成新增操作[create](#create) operation
+*   **找到一个匹配项**: 服务器对找到的资源进行更新操作
+*   **找到多个匹配项**: 服务器返回412状态码，预设条件错误表示客户端的条件不够精确
 
-*   **No matches**: The server performs a [create](#create) operation
-*   **One Match**: The server performs the update against the matching resource
-*   **Multiple matches**: The server returns a 412 Precondition Failed error indicating the the client's criteria were not selective enough
+这个方法/接口能够让无状态的客户端提交更新后的结果给服务器，无需担心服务器分配的逻辑标识。比如客户端将实验室结果的状态从&quot;preliminary&quot;更改为
+&quot;final&quot;，可以使用`PUT /Observation?identifier=http://my-lab-system|123`提交更新后的结果。
 
-This variant can be used to allow a stateless client (such as an interface engine) to submit
-updated results to a server, without having to remember the logical ids that the server has assigned.
-For example, a client updating the status of a lab result from &quot;preliminary&quot; to &quot;final&quot;
-might submit the finalized result using `PUT /Observation?identifier=http://my-lab-system|123`
+##### 2.1.0.10.2 拒绝更新操作 Rejecting Updates
 
-#### <span class="sectioncount">2.1.0.10.2<a name="2.1.0.10.2"> </a></span> Rejecting Updates
+允许服务器依据完整性或其他业务考虑拒绝更新操作，视具体情况返回HTTP 状态码(大多数是422).
 
-Servers are permitted to reject update interactions because of integrity concerns or other business
-returning HTTP status codes accordingly (usually a 422).
+表达与FHIR有关错误的常用HTTP 状态码(除了与一般的安全、请求头参数以及content type协商问题相关的错误码之外)如下:
 
-Common HTTP Status codes returned on FHIR-related errors (in addition to normal HTTP errors related to security, header and content type negotiation issues):
+*   **400 错误的请求** - 无法解析资源内容或未通过FHIR 的校验规则
+*   **404 未找到** - 不支持的资源类型，或者错误的FHIR endpoint节点
+*   **405 不允许的方法** - 此更新操作之前资源内容不存在，服务器不允许客户端自定义id
+*   **409/412** - 资源内容版本冲突
+*   **422 无法处理的实体** - 提交的资源内容违反了FHIR 规范中或者服务器业务规则的要求。与此同时应返回[OperationOutcome](operationoutcome.html)
+表示详细的错误信息
 
-*   **400 Bad Request** - resource could not be parsed or failed basic FHIR validation rules (or multiple matches were found for*   **404 Not Found** - resource type not supported, or not a FHIR end point
-*   **405 Method Not allowed** - the resource did not exist prior to the update, and the serer does not allow client defined ids
-*   **409/412** - version conflict management - see above
-*   **422 Unprocessable Entity** - the proposed resource violated applicable FHIR profiles or server business rules. This should be accompanied by an [OperationOutcome](operationoutcome.html) resource providing additional detail
-
-Note: Servers MAY choose to preserve XML comments, instructions, and formatting or JSON whitespace when accepting updates, but are not required to do so. The impact of this on digital signatures may need to be considered.
-
-For additional information on how systems may behave when processing updates, refer to the [Create and Update Behavior](updates.html) page.
+注意：在接受更新操作时，服务器可能会保留XML中的批注、指令，格式相关的内容，JSON中的空格，但不做强制要求。可能需要考虑这些内容对数字签名的影响。
+对于其他系统该如何处理更新操作，请参考 [Create and Update Behavior](updates.html)
 
 <a name="versionaware"> </a>
 <a name="concurrency"> </a>
 
-### <span class="sectioncount">2.1.0.11<a name="2.1.0.11"> </a></span> Managing Resource Contention
+#### 2.1.0.11 资源内容的管理
 
-[Lost Updates](http://www.w3.org/1999/04/Editing/), where two clients update the same
-resource, and the second overwrites the updates of the first, can be prevented using a combination
-of the [ETag](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19) and
-[If-Match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.24) header.
+[Lost Updates](http://www.w3.org/1999/04/Editing/)，当两个客户端同时更新同一个资源，第二个客户端的操作会覆盖第一个客户端的更新，但这
+可以通过[ETag](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19) 和
+[If-Match](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.24) HTTP 头参数组合使用来避免.
 
-To support this usage, servers SHOULD always return an `ETag` header with each resource:
+为了能够支持此类用途，服务器在返回每一个资源内容时都应包括一个`ETag` 头参数。
 
-<pre class="http">
+```
 HTTP 200 OK
 Date: Sat, 09 Feb 2013 16:09:50 GMT
 Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT
 ETag: W/&quot;23&quot;
 Content-Type: application/json+fhir
-</pre>
+```
 
-if provided, the value of the ETag SHALL match the value of the version id for the resource. Servers
-are allowed to generate the version id in whatever fashion that they wish, so long
-as they are valid according to the [id](datatypes.html#id) data type,
-and are unique within the address space of all versions of the same resource.
-When resources are returned as part of a bundle, there is no ETag, and the
-versionId of the resources is used directly.
+如果HTTP 响应中包含了Etag参数，其值必须与资源的版本标识相一致。服务器可以按照自己的方式来生成资源的版本标识，只要能够满足[id](datatypes.html#id) data type,
+且在统一资源的所有版本的寻址空间内保持唯一性即可。当资源内容以bundle的一部分返回的情况下，不会存在ETag，直接使用版本的vernsionId即可。
 
-If the client wishes to request a version aware update, it submits the request with an
-`If-Match` header that quotes the ETag from the server:
+如果客户端想要发送一次针对版本的更新操作，只需要在请求的HTTP头参数中包含`If-Match`，其值引用服务器中返回的ETag的值即可:
 
-<pre class="http">
+```
 PUT /Patient/347 HTTP/1.1
 If-Match: W/&quot;23&quot;
-</pre>
+```
 
-If the version id given in the `If-Match` header does not match, the server returns a
-412 Pre-condition failed status code instead of updating the resource.
+如果版本标识与`If-Match`头参数中的不一致，服务器返回412 未满足预设条件的状态码，而非直接更新资源内容。
 
-Servers can require that clients provide an `If-Match` header by returning 412 Pre-condition failed
-status codes when no `If-Match` header is found.
+如果服务器要求客户端在请求中包含头参数`If-Match`，但实际请求中并没有包含头参数`If-Match`，服务器可返回412 未满足预设条件的状态码。
 
 <a name="delete"> </a>
 
-### <span class="sectioncount">2.1.0.12<a name="2.1.0.12"> </a></span> delete
+#### 2.1.0.12  delete
 
-The `delete` interaction removes an existing resource. The interaction
-is performed by an HTTP DELETE command as shown:
+ `delete` interaction 移除已经存在的资源内容。该交互使用 HTTP DELETE 方法:
 
-<pre>
+```
   DELETE [base]/[type]/[id]
-</pre>
+```
+delete交互意味着之后的对资源内容的[非指定版本的读取操作](#read)将会得到410 状态码，而且 [查询操作](#search)也再也找不到该资源。
+删除成功之后或资源内容压根不存在，服务器应该返回状态码204(无内容)或者200 OK,同时包含[OperationOutcome](operationoutcome.html)
+资源来表示删除操作的一些提示或提醒内容，如果包含了[OperationOutcome](operationoutcome.html)，其中不应该包含任何错误信息。
 
-A delete interaction means that subsequent [non-version specific reads](#read) of a resource
-return a 410 HTTP status code and that the resource is no longer found through [search](#search)
-interactions. Upon successful deletion, or if the resource does not exist at all, the server should return
-204 (No Content), or 200 OK status code, with an [OperationOutcome](operationoutcome.html)
-resource containing hints and warnings about the deletion; if one is sent it SHALL not include any errors.
+无论服务器支持删除操作与否，或是支持对某个资源类型或某个资源实例的删除操作与否，都取决于服务器具体使用场景下的自身的业务规则。
+如果服务器拒绝删除某类资源，应返回状态码405 不允许使用的方法。如果由于一些针对某个具体资源的原因如参考完整性，服务器拒绝删除该资源，应返回状态码
+409 冲突。对一个已经删除过的资源再次执行该操作不会产生任何效果，服务器应返回204或200状态码。已删除的资源可以通过后续的 [更新操作](#href)恢复。
 
-Whether to support delete at all, or for a particular resource type or a particular instance is at the
-discretion of the server based on the business rules that apply in its context.  
-If the server refuses to delete resources of that type as a blanket policy, then it should return the 405
-Method not allowed status code. If the server refuses to delete a resource because of reasons specific
-to that resource, such as referential integrity, it should return the 409 Conflict status code.
-Performing this interaction on a resource that is already deleted has no effect, and the server should return a 204 or 200 response.
-Resources that have been deleted may be &quot;brought back to life&quot; by a subsequent [update](#href) interaction using an HTTP `PUT`.
+很多资源中会包含status字段，会与删除的作用有一些重叠。每种资源类型都会定义删除操作具体的语义。如果没有提供额外的说明文档，删除操作应该视为删除资源的记录，
+并非对资源所表示的现实世界中的资源状态有任何影响。
 
-Many resources have a status element that overlaps with the idea of deletion. Each resource type
-defines what the semantics of the deletion interactions are. If no documentation is provided, the
-deletion interaction should be understood as deleting the record of the resource, with nothing
-about the state of the real-world corresponding resource implied.
+对于那些会维护版本记录的服务器而言，删除操作并不会移除资源的版本记录，从版本记录的角度而言，删除资源相当于新增一个版本记录，数据内容为空，且标记为已删除状态。
 
-For servers that maintain a version history, the `delete` operation does not remove a resource's version history. From a version history respect,
-deleting a resource is the equivalent of creating a special kind of history entry that has
-no content and is marked as deleted.
 
-#### <span class="sectioncount">2.1.0.12.1<a name="2.1.0.12.1"> </a></span> Conditional deletes
+##### 2.1.0.12.1 条件删除 Conditional deletes
 
-The conditional delete operation allows a client to update an existing resource based on some identification criteria,
-rather than by  [logical id](resource.html#meta). To accomplish this, the client issues an HTTP DELETE as shown:
-
-<pre>
+条件删除操作允许客户端根据一些标识条件而非资源id逻辑标识来删除已有资源。客户端发起如下的HTTP请求：
+```
   DELETE [base]/[type]/?[search parameters]
-</pre>
+```
+服务器在处理此类删除时，首先利用提交的查询参数使用[查询机制](search.html)进行资源的查询. 后续的处理动作依赖于查询到的结果数量：
 
-When the server processes this update, it performs a search as specified using the standard
-[search facilities](search.html) for the resource type. The action it takes depends
-on how many matches are found:
+*   **无匹配项**: 服务器返回状态码404(未找到待删除资源)
+*   **一个匹配项**: 服务器对匹配到的资源进行普通的删除操作
+*   **多个匹配项**: 服务器返回状态码412，未满足预设条件，表示客户端提交的 查询条件不足以确定唯一的待删除资源
 
-*   **No matches**: The server returns 404 (Not found)
-*   **One Match**: The server performs an ordinary `delete` on the matching resource
-*   **Multiple matches**: The server returns a 412 Precondition Failed error indicating the the client's criteria were not selective enough
-
-This variant can be used to allow a stateless client (such as an interface engine) to delete
-a resource on a  server, without having to remember the logical ids that the server has assigned.
-For example, a client deleting a lab atomic result might delete the resource using `DELETE /Observation?identifier=http://my-lab-system|123`.
+这个操作可以用在无状态的客户端(比如接口引擎)在不知道服务器分配的资源逻辑标识的情况下来删除服务器上的一个资源。比如，客户端要删除一个实验室检验结果，
+可以使用请求 `DELETE /Observation?identifier=http://my-lab-system|123`.
 
 <a name="create"> </a>
 
-### <span class="sectioncount">2.1.0.13<a name="2.1.0.13"> </a></span> create
+#### 2.1.0.13  create
 
-The `create` interaction creates a new resource in a server-assigned location. If the client
-wishes to have control over the id of a newly submitted resource, it should use the [update](#update)
-interaction instead. The `create` interaction is performed by an HTTP `POST` command as shown:
 
-<pre>
+新增/创建 交互/操作会在服务器分配的位置新增/创建一个新的资源 。如果客户端想要控制新提交资源的逻辑标识，应该使用[更新操作](#update)。
+创建操作使用的是HTTP `POST`方法:
+
+```
   POST [base]/[type] {?_format=[mime-type]}
-</pre>
+```
 
-The request body SHALL be a FHIR Resource without an id element (this is the
-only case where a resource exists without an id element).
-If the request body includes a [meta](resource.html#meta), the server SHALL
-ignore the existing `versionId` and `lastUpdated` values.
-The server SHALL populate the `meta.versionId` and `meta.lastUpdated`
-with the new correct values.
-Servers are allowed to review and alter the other metadata values, but SHOULD refrain
-from doing so (see [metadata description](resource.html#meta)  for further information).
+HTTP 请求的体应该是一个不包括id字段的FHIR 资源(这里是否应该不做要求，由服务器直接覆盖即可)，
+如果提交的数据中包含了[meta](resource.html#meta)字段,服务区应该忽略其中存在的 `versionId` and `lastUpdated` 的值.
+服务器应该为`meta.versionId` and `meta.lastUpdated`字段分配新的值.允许服务器改变meta中的其他字段的值，但应避免此类操作 (更多信息请参考 [metadata description](resource.html#meta)).
 
-A server SHOULD accept the resource as submitted when it accepts the create, and return the same
-content when it is subsequently read. However some systems may not be able to do this; see
-the note on [transactional integrity](#transactional-integrity) for discussion.
+在完成新增的时候，服务器应该接受所提交的资源，返回随后读取操作返回的一样的内容，但一些系统可能不支持这样，参考[transactional integrity](#transactional-integrity) for 中的讨论.
 
-The server returns a 201 Created HTTP status code, and SHOULD also return a `Location` header which
-contains the new [Logical Id](resource.html#metadata) and [Version Id](resource.html#metadata) of
-the created resource version:
-
-<pre>
+完成新增操作之后，服务器应返回状态码201，同时也应返回头参数`Location` ，其值中包含服务器为资源分配的[Logical Id](resource.html#metadata)
+ 和新增资源的[Version Id](resource.html#metadata):
+```
   Location: [base]/[type]/[id]/_history/[vid]
-</pre>
+```
+其中[id] and [vid]为新增的资源的id逻辑标识和版本标识
 
-where [id] and [vid] are the newly created id and version id for the resource version.
+服务器应返回`ETag` 头参数，值为版本标识 vernsionId和`Content-Location` 头参数，值为包括版本编号的完整url，以及`Last-Modified` 头参数
 
-Servers SHOULD return an `ETag` header with the versionId and a `Content-Location` header with the response which is the full version
-specific url (see vread below) and a `Last-Modified` header.
-The server MAY include a response body containing an [OperationOutcome](operationoutcome.html) resource with hints and warnings about
-the resource; if one is sent it SHALL not include any errors.
+服务器可以返回[OperationOutcome](operationoutcome.html) 资源来包括有关资源内容的提示和提醒，但不能包括任何错误信息.
 
-When the resource syntax or data is incorrect or invalid, and cannot be used to create a new resource, the server returns a 400 Bad Request HTTP status code.
-When the server rejects the content of the resource because of business rules, the server returns a 422 Unprocessible Entity error HTTP status code.
-In either case, the server SHOULD include a response body containing an [OperationOutcome](operationoutcome.html) with detailed error messages describing the reason for the error.
+当资源的语法或数据不正确，或不能够用来创建新的资源，服务器应返回状态码400 错误请求。
 
-Common HTTP Status codes returned on FHIR-related errors (in addition to normal HTTP errors related to security, header and content type negotiation issues):
+如果是由于业务规则，服务器拒绝了资源内容，应返回状态码422 表示无法处理的实体。
 
-*   **400 Bad Request** - resource could not be parsed or failed basic FHIR validation rules
-*   **404 Not Found** - resource type not supported, or not a FHIR end point
-*   **422 Unprocessable Entity** - the proposed resource violated applicable FHIR profiles or server business rules. This should be accompanied by an [OperationOutcome](operationoutcome.html) resource providing additional detail
+不管是那种不成功的情况，服务器都应返回 [OperationOutcome](operationoutcome.html)资源来表示操作失败的详细错误信息.
 
-Note: Servers MAY choose to preserve XML comments, instructions, and formatting or JSON whitespace when accepting creates, but are not required to do so. The impact of this on digital signatures may need to be considered.
+与FHIR相关的常见HTTP 状态码(除了那些安全、头参数、content type协商相关的状态码之外)有：
 
-For additional information on how systems may behave when processing updates, refer to the [Create and Update Behavior](updates.html) page.
+*   **400 错误的请求** - 无法解析资源内容或资源内容不满足基本的FHIR校验条件
+*   **404 未找到资源** - 不支持的资源类型或无效的FHIR 节点
+*   **422 无法处理的实体** - 提交的资源内容违反了FHIR 规范或业务规则。同时应该有一个[OperationOutcome](operationoutcome.html)来提供详细的错误信息
 
-#### <span class="sectioncount">2.1.0.13.1<a name="2.1.0.13.1"> </a></span> Conditional create
 
-The conditional `create` operation allows a client to create a new resource only if some equivalent resource
-does not already exist on the server. The client defines what equivalence means in this case by supplying
-a FHIR search query in an `If-None-Exist` header as shown:
+注意：在接受更新操作时，服务器可能会保留XML中的批注、指令，格式相关的内容，JSON中的空格，但不做强制要求。可能需要考虑这些内容对数字签名的影响。
+对于其他系统该如何处理更新操作，请参考 [Create and Update Behavior](updates.html)
 
-<pre>
+##### 2.1.0.13.1 条件新增  Conditional create
+
+条件新增操作使得客户端只有在一些等效的资源不存在与服务器上的时候才进行新增。在这种情况下，客户端通过在`If-None-Exist` 头参数中包含查询参数来定义
+等效的含义：
+```
   If-None-Exist: base/[type]?[search parameters]
-</pre>
+```
 
-When the server processes this update, it performs a search as specified using its standard
-[search facilities](search.html) for the resource type. The action it takes depends
-on how many matches are found:
 
-*   **No matches**: The server processes the create as above
-*   **One Match**: The server ignore the post and returns 200 OK
-*   **Multiple matches**: The server returns a 412 Precondition Failed error indicating the the client's criteria were not selective enough
+服务器在处理此类新增时，首先利用提交的查询参数使用[查询机制](search.html)进行资源的查询. 后续的处理动作依赖于查询到的结果数量：
 
-This variant can be used to avoid the risk of two clients
-creating duplicate resources for the same record. For example, a client posting a new lab result might specify
-`If-None-Exist: /Observation?identifier=http://my-lab-system|123` to ensure it is does not create a duplicate record.
+*   **无匹配项**: 服务器进行正常的新增操作
+*   **一个匹配项**: 服务器无视提交的数据返回200状态码
+*   **多个匹配项**: 服务器返回状态码412，未满足预设条件，表示客户端提交的 查询条件不足以确定唯一的待删除资源
+
+该操作可以用来避免两个客户端对同样的记录新增两条重复的资源。比如客户端新增实验室检验结果时可以使用
+`If-None-Exist: /Observation?identifier=http://my-lab-system|123` 来确保它不会重复新增一条记录
 
 <a name="search"> </a>
 
-### <span class="sectioncount">2.1.0.14<a name="2.1.0.14"> </a></span> search
+#### 2.1.0.14 查询 search
 
-This interaction searches a set of resources based on some filter criteria. The interaction can be performed by several different HTTP commands.
-
-<pre>
+该操作根据一些过滤条件来查询资源。使用不同的HTTP 方法.
+```
   GET [base]/[type]{?[parameters]{&amp;_format=[mime-type]}}
-</pre>
+```
 
-This searches all resources of a particular type using the criteria represented in the parameters.
-
-Because of the way that some user agents and proxies treat `GET` and `POST` requests, in addition
-to the get based search method above, servers that support _search_ SHALL also support a `POST` based search:
-
-<pre>
+通过查询参数中的条件来查询/搜索某种类型的所有资源
+由于用户代理和代理处理`GET` and `POST`请求的方式，除了基于get的查询方法之外，支持_search 的服务器也应支持基于'POST'的查询:
+```
 POST  [base]/[type]/_search{?[parameters]{&amp;_format=[mime-type]}}
-</pre>
+```
 
-This has exactly the same semantics as the equivalent `GET` command. All these search interactions take a series of parameters that
-are a series of name'='value pairs encoded in the URL (or as an `application/x-www-form-urlencoded` submission for a `POST`).
-(See [W3C HTML forms](http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type)).
-Searches are processed as specified for the [Search handling mechanism](search.html).
+这种方法和 `GET` 方法的效果一样.所有查询交互都使用形如参数名称'='参数值的查询参数，要么是在URL 中，要么是`application/x-www-form-urlencoded`的body
+(参考 [W3C HTML forms](http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type)).
+查询的处理在[查询处理机制Search handling mechanism](search.html)中进行了说明.
 
-If the search fails, the return value is a status code 4xx or 5xx with an [OperationOutcome](operationoutcome.html).
-If the search succeeds, the return content is a [Bundle](extras.html#bundle) with
-[type](bundle-definitions.html#Bundle.type) = `searchset` containing the results of the search as a list of resources
-in a defined order. The result list can be long, so servers may use paging. If they do, they SHALL use the method [described below](#paging)
-(adapted from [RFC 5005 (Feed Paging and Archiving](https://tools.ietf.org/html/rfc5005)) for breaking the
-list into pages if appropriate. The server MAY also return an OperationOutcome resource with additional information about the search;
-if one is sent it SHALL not include any errors, and it shall be marked with an [entry
-mode](search-entry-mode.html) of `include`.
+如果查询失败，返回的状态码为4xx或5xx，同时有一个[OperationOutcome](operationoutcome.html)。
+如果查询成功，返回的结果是一个[type](bundle-definitions.html#Bundle.type) = `searchset` 的[Bundle](extras.html#bundle) 资源，其中包含了满足查询条件的所有资源，按特定的顺序排序。返回的结果列表可能会很长，服务器可以使用分页机制。如果要使用分页机制，应该使用下面所描述的
+[described below](#paging)
+(adapted from [RFC 5005 (Feed Paging and Archiving](https://tools.ietf.org/html/rfc5005))来将较长的列表拆成不同的页里面
+服务器也可以返回 OperationOutcome 资源来表达查询操作的其他一些额外信息，且不能包含任何错误信息，且[entry
+mode](search-entry-mode.html) 值为`include`.
 
-#### <span class="sectioncount">2.1.0.14.1<a name="2.1.0.14.1"> </a></span> Variant Searches
+##### 2.1.0.14.1  其他形式的查询 Variant Searches
 
-To search a [compartment](extras.html#compartments), either all possible resources, or for a particular resource type, respectively:
+要查询一个[compartment](extras.html#compartments),不论是所有可能的资源还是某种类型的资源：
 
-<pre>
+```
   GET [base]/[Compartment]/[id]/{*?[parameters]{&amp;_format=[mime-type]}}
   GET [base]/[Compartment]/[id]/[type]{?[parameters]{&amp;_format=[mime-type]}}
-</pre>
+```
+比如，要查询与某次encounter就诊相关的类型为某个LOINC编码的所有观察项：
 
-For example, to retrieve all the observation resources for a particular LOINC code associated with a particular encounter:
-
-<pre>
+```
   GET [base]/Encounter/23423445/Observation?code=2951-2  {&amp;_format=[mime-type]}
-</pre>
+```
+注意：特别的定义了一种操作来[获取患者的所有病历](patient-operations.html#everything)或
+ [某次就诊的所有病历](encounter-operations.html#everything).
 
-Note that there are a specific operations defined to support fetching [an entire patient record](patient-operations.html#everything)
-or [all record for an encounter](encounter-operations.html#everything).
+也可能一次性查询所有的资源:
 
-Finally, it's possible to search all resources at once:
-
-<pre>
+```
   GET [base]?[parameters]{&amp;_format=[mime-type]}
-</pre>
 
-When searching all resources at once, only the parameters defined for all resources
-can be used.
+```
+在一次性查询所有资源时，只能使用那些所有资源都支持的查询参数
 
 <a name="conformance"> </a>
 
-### <span class="sectioncount">2.1.0.15<a name="2.1.0.15"> </a></span> conformance
+#### 2.1.0.15  conformance
 
-The conformance interaction retrieves the server's conformance statement that defines how it supports resources.
-The interaction is performed by an HTTP OPTIONS or a `GET` command as shown:
+符合性声明操作获取服务器的符合性声明，也就是服务器支持那些资源和操作的定义。使用 HTTP OPTIONS 或`GET` 方法:
 
-<pre>
+```
   GET [base]/metadata {?_format=[mime-type]}
   OPTIONS [base] {?_format=[mime-type]}
-</pre>
+```
 
-Applications SHALL return a [Conformance Resource](conformance.html) that specifies which resource types and interactions are supported
-for the `GET` command, and SHOULD do so for the `OPTIONS` command. If a 404 Unknown is returned from the GET, FHIR is not supported on the
-nominated service url. The `GET` command is defined because not all client libraries are able to perform an `OPTIONS` command.
-An `ETag` header SHALL be returned with the conformance resource. The value of the header SHALL change if the
-conformance statement itself changes. In addition, a `Content-Location` header with a literal location where this version of the
-conformance statement is (and will continue to be) available MAY be returned. Additional parameters that are required to be returned with
-the `OPTIONS` command are defined in the [OMG hData RESTful Transport](#hdata) specification.
+对于上述两种方法，服务器应该返回一个[符合性声明 Conformance Resource](conformance.html)资源来表达服务器支持那些资源和交互。
+如果返回了状态码404，也就是说服务器不支持FHIR。由于一些客户端库不支持`OPTIONS` 才定义了`GET` 方法。
+返回符合性声明资源时应该也返回`ETag` 参数，其值随着符合性声明资源内容本身的变化而变化。也可以返回`Content-Location`头参数，其值为当前版本的
+符合性声明资源的完整URL。[OMG hData RESTful Transport](#hdata)规范中还定义了一些`OPTIONS`方法应返回的额外参数。
 
-The Conformance statement returned typically has an arbitrary id, and no meta element, though it is not prohibited.
+返回的符合性声明资源一般都会有一个逻辑标识，不会有meta字段，但也不做限制。
 
-In addition to this conformance operation, a server may also choose to provide the
-standard set of interactions (`read`, `search`, `create`, `update`) defined on this page
-for the [Conformance Resource](conformance.html) end point.
-This is different to the conformance operation:
+除了此符合性声明操作之外，服务器可以选择本节中所定义的获取、查询、更新和新增[Conformance Resource](conformance.html) 节点的操作.
+与符合性声明操作的不同之处在于:
 
 <table class="grid">
- <tr><td>conformance operation</td><td>returns a conformance statement describes the server's current operational functionality</td></tr>
- <tr><td>Conformance end point</td><td>manages a repository of conformance statements (e.g. the HL7 conformance statement registry)</td></tr>
+ <tr><td>符合性声明操作conformance operation</td><td>返回描述当前服务器功能的符合性声明</td></tr>
+ <tr><td>符合性声明节点Conformance end point</td><td>管理符合性资源的注册库(e.g. the HL7 conformance statement registry)</td></tr>
 </table>
-
-All servers are required to support the conformance operation, but servers may choose whether they wish to support the conformance end-point, just like any other end point.
+要求所有服务器都支持符合性声明操作，但服务器可以选择是否支持符合性节点。
 
 <a name="transaction"> </a>
 
-### <span class="sectioncount">2.1.0.16<a name="2.1.0.16"> </a></span> transaction
+#### 2.1.0.16 事务 transaction
 
-The transaction interaction submits a set of actions to perform on a server as a single atomic action.
-Multiple actions on multiple resources of the same or different types may be submitted, and they may be a mix of other operations defined on this page (e.g. read, search, create, update, delete, etc).
+事务交互 transaction interaction 在单个原子性的动作中提交多个需要服务器完成的动作。可以提交同样类型或不同类型的多个资源的多个操作，也可以是相互混合在一起的(
+如获取、查询、新增、更新或删除等 read, search, create, update, delete, etc).
 
-This is especially useful where one would otherwise need multiple interactions, possibly
-with a risk of loss of referential integrity if a later interaction fails (e.g. when storing
-a Provenance resource and its corresponding target resource, or, on document repositories, a
-document index entry and its accompanying document).
+尤其是在需要多个交互，如果某个交互失败就可能存在无法保证参考完整性的风险的情况下，特别适用(比如，在存储Provenance资源和对应的目标资源时，或
+对于文档仓库而言，文档索引和文档本身).
 
-The transaction interaction is performed by an HTTP `POST` command as shown:
+该操作是使用HTTP `POST` 方法的:
 
-<pre>
+```
   POST [base] {?_format=[mime-type]}
-</pre>
 
-The content of the post submission is a [Bundle](bundle.html) with type set to `transaction`.
-Each entry carries a `transaction` ([Bundle.entry.transaction](bundle-definitions.html#Bundle.entry.transaction))
-that provides the HTTP details of the operation in order to inform the system processing the transaction
-what to do for the entry. If the HTTP operation is a `PUT` or `POST`, then the entry SHALL contain a resource for the body of the operation.
-The resources in the bundle are each processed separately as if they were an individual
-operation as otherwise described on this page, or for [Extended
-Operations](operations.html). The operations are subject to the the normal processing for each,
-including the [meta element](resource.html#meta), verification and version aware updates,
-and [transactional integrity](#transactional-integrity).
+```
 
-Servers SHALL either accept all actions and return a 200 OK, along with a
-response bundle (see below), or reject all resources and return an HTTP 400 or 500 type
-response. It is not an error if the submitted bundle has no resources in it.
-The outcome of the processing the transaction SHALL not depend on the order
-of the resources in the transaction. A resource can only appear in a transaction
-once (by identity).
+Post所提交的内容是一个[Bundle](bundle.html)资源， bundle的类型为(Bundle.type字段值为)`transaction`.每个entry都包含了操作的具体信息，
+可以告诉处理该事务(transaction)的服务器如何处理该entry。如果其中HTTP 操作为`PUT` or `POST`, entry中应该包含该操作所需要的资源内容。
+就像一个个单独的资源一样，bundle中的资源是分别按照本章中或是 [Extended
+Operations](operations.html)中介绍的操作/交互来处理的。包括 [meta element](resource.html#meta),
+verification and version aware updates,
+and [transactional integrity](#transactional-integrity)，每个资源都是.**The operations are subject to the the normal processing for each(待考证)**
 
-**Processing Bundle Entries**
+服务器要么接受所有操作，返回状态码 200 OK和一个bundle；要么拒绝所有资源，返回状态码400 或500.如果提交的bundle中并不包含任何资源，这不应
+视为错误。事务的处理结果不应依赖于bundle中资源的顺序。单个资源在transaction的bundle中只能出现一次。
 
-Because of the rules that a transaction is atomic, that all operations pass or fail
-together, and that order of the entries doesn't matter, there is a particular order in which to process the operations:
+**Bundle entry的处理**
+由于事务是原子性的，所有操作要么都成功，要么都失败，且entry的顺序是没有影响的，处理该操作的顺序为:
 
-1.  Process any `POST` operations
-2.  Process any `PUT` operations
-3.  Process any `DELETE` operations
-4.  Process any `GET` operations
+1.  处理所有的`POST` 操作
+2.  处理所有的`PUT` 操作
+3.  处理所有的`DELETE` 操作
+4.  处理所有的`GET` 操作
 
-If any resource identities (including resolved identities from conditional update/delete) overlap in steps 1-3, then the transaction SHALL fail.
+在上述的步骤1-3中，如果有任何资源标识重复了，事务就应该失败。
 
-A transaction may include references from one resource to another in the bundle, including
-circular references where resources refer to each other. If the server assigns
-a new id to any resource in the bundle as part of the processing rules above,
-it SHALL also update any references to that resource in the same bundle as they
-are processed. References to resources that are not
-part of the bundle are left untouched. Version-specific references should remain
-as version-specific references after the references have been updated.
-Servers SHALL be replace all matching links in the bundle, whether they are found in the resource ids,
-resource references, url elements, or &lt;a href=&quot;&quot; &amp; &lt;img src=&quot;&quot; in the narrative.
+事务的bundle中的资源可能会存在相互引用，包括循环引用的情况。如果在上面的处理过程中，服务器为bundle的任一资源分配了新的id，服务器应该也同时更新bundle中对该资源的引用。
+不是bundle中引用该资源的资源则先不管他。如果是针对版本的引用，在引用更新之后，应该仍然是针对版本的引用。不论是出现在资源id、资源引用，
+url类型的字段、叙述性文本中的 &lt;a href=&quot;&quot; &amp; &lt;img src=&quot;&quot;，服务器都应该替换bundle中所有匹配的link.
 
 <a name="transaction-response"> </a>
 
-#### <span class="sectioncount">2.1.0.16.1<a name="2.1.0.16.1"> </a></span> Transaction Response
+##### 2.1.0.16.1 事务响应 Transaction Response
 
-In order to allow the client to know the outcomes of processing the entry, and the identities
-assigned to the resources by the server, the server SHALL return a [Bundle](extras.html#bundle) with
-[type](bundle-definitions.html#Bundle.type) set to `transaction-response` that contains one entry for each entry in the
-transaction, in the same order, with the outcome of processing the entry.
+为了让客户端知道entry处理的结果，确定服务器分配给资源的标识，服务器应返回一个
+[type](bundle-definitions.html#Bundle.type) 类型为`transaction-response` 的[Bundle](extras.html#bundle)资源，按照提交时一样的顺序，其中包含了每一个entry和处理的结果。
 
-Each entry element SHALL contain a `transactionResponse` element which
-details the outcome of processing the entry - the HTTP status code, and the location
-and `ETag` header values, which are used for identifying and versioning the resources.
-In addition, a resource may be included in the entry.
+每个entry字段应包含`transactionResponse` ，用来表示entry的具体处理结果——HTTP 状态码、location和'ETag'头参数(用来表示资源的id和版本)，
+除此之外，entry也可能会包括资源本身.
 
 <a name="other-bundles"> </a>
 
-#### <span class="sectioncount">2.1.0.16.2<a name="2.1.0.16.2"> </a></span> Accepting Other bundle types
+###### 2.1.0.16.2  接受其他类型的bundle Accepting Other bundle types
 
-A server may choose to accept bundle types other than `transaction` as transactions.
+服务器可以选择支持除了类型是transaction之外的bundle作为事务。
 
-Bundles of type `history` inherently have the same structure as a transaction, and
-can be treated as one, so servers SHOULD accept a history bundle - this makes it
-possible to replicate data from one server to another easily. Not, however, that
-existing transaction boundaries are not represented in a history list, and
-a resource may occur more than once in a history list, so
-servers processing history bundles must have some strategy to manage this.
+类型为`history`的Bundle本身和类型是transaction的Bundle结构一样，服务器应该支持history bundle，这也从一个服务器复制数据到另一个服务器上就
+会很容易。但在history list中无法表示已有的translation的边界，在history list中同一个资源可能会出现不止一次，服务器应该存在一些处理该问题的策略。
 
-For other bundle types, should the server choose to accept them, there will be
-no `transaction` element (note that every entry will have a resource).
-In this case, the server treats the entry as either a create or an update operation,
-depending on whether it recognises the identity of the resource - if the identity
-of the resource refers to a valid location on the server, it should treat it
-as an update to that location. Note: this option allows a client to delegate
-the matching process to the server.
+对于类型为其他的Bundle，服务器也可以选择支持，这些Bundle中不存在'transaction'字段 ，这时候，服务器处理entry时要么是新增要么是更新操作，
+取决于服务器是否能够识别出资源的标识——如果资源的标识存在于服务器中，应该当做更新操作。注意：这样的话，客户端就把匹配过程转移给服务器。
 
 <a name="history"> </a>
 
-### <span class="sectioncount">2.1.0.17<a name="2.1.0.17"> </a></span> history
+#### 2.1.0.17   history
 
-The history interaction retrieves the history of either a particular resource, all resources of
-a given type, or all resources supported by the system. These three variations of the history
-interaction are performed by HTTP `GET` command as shown:
+history 交互 获取单个资源、某类资源所有实例或服务器上所有按的变更记录。此三类history交互 使用的是HTTP `GET` 方法
 
-<pre>
+```
   GET [base]/[type]/[id]/_history{?[parameters]&amp;_format=[mime-type]}
   GET [base]/[type]/_history{?[parameters]&amp;_format=[mime-type]}
   GET [base]/_history{?[parameters]&amp;_format=[mime-type]}
-</pre>
+```
 
-The return content is a [Bundle](extras.html#bundle) with
-[type](bundle-definitions.html#Bundle.type) set to `history` containing the specified version history,
-sorted with oldest versions last, and including deleted resources.
-Each entry SHALL contain a `transaction`, and, if the `entry.transaction.method` is a `PUT` or a `POST`, a resource.
-The entry SHALL contain the resource state at the conclusion of the operation.
+返回的是[类型](bundle-definitions.html#Bundle.type)为`history` 的[Bundle](extras.html#bundle)包含了资源的版本变更记录，按时间先后顺序排列，
+其中也包含了被删除资源。
+每个entry都包含`transaction`元素,如果`entry.transaction.method` 值为`PUT` 或`POST`, a resource(这里需要在gforge上问一下  把句子补全).
+entry应包含操作完成之后的资源状态。
 
-The operations [create](#create), [update](#update), and [delete](#delete)
-create history entries. Other operations do not (note that these operations may produce side-effects
-such as new AuditEvent resources; these are represented as create operations in their own right).
+[create](#create), [update](#update), 和 [delete](#delete)会产生资源变更记录的entry。其他操作则不会(此类操作可能会产生诸如AuditEvent的资源； these are represented as create operations in their own right)
 
-A create operation is represented in a history operation in the following way:
+history operation中的新增操作如下所示:
 
-<pre class="xml">
-  &lt;entry&gt;
-    &lt;resource&gt;
-      &lt;Patient&gt;
-        &lt;!-- the id of the created resource --&gt;
-        &lt;id value=&quot;23424&quot;/&gt;
-        &lt;!-- snip --&gt;
-      &lt;/Patient&gt;
-    &lt;/resource&gt;
-    &lt;transaction&gt;
-      &lt;!-- POST: this was a create --&gt;
-      &lt;method value=&quot;POST&quot;/&gt;
-      &lt;url value=&quot;Patient&quot;/&gt;
-    &lt;/transaction&gt;
-  &lt;/entry&gt;
-</pre>
+```
+<entry>
+  <resource>
+    <Patient>
+      <!-- the id of the created resource -->
+      <id value="23424"/>
+      <!-- snip -->
+    </Patient>
+  </resource>
+  <transaction>
+    <!-- POST: this was a create -->
+    <method value="POST"/>
+    <url value="Patient"/>
+  </transaction>
+</entry>
+```
 
 Note that conditional creates, updates and deletes are converted to direct
 updates and deletes in a history list.

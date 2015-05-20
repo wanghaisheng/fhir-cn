@@ -21,7 +21,7 @@ clinical statement ——临床声明
 Compartments——无最佳表达 维持英文
 conceptmaps ——字典映射
 Conformance Packages——保持原文
-Conformance Statement——一致性声明 修改成符合性声明        
+Conformance Statement——一致性声明 修改成符合性声明
 conformance rules——一致性规则
 Contained Resources——内嵌资源
 Context conduction ——语境传递
@@ -77,7 +77,7 @@ wrappers—— 封装层
 
 value set ——值集
 V2 Segment ——区段
-
+version aware update —— 针对版本的更新
 
 
 

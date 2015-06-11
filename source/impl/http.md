@@ -601,85 +601,61 @@ history operation中的新增操作如下所示:
 </entry>
 ```
 
-Note that conditional creates, updates and deletes are converted to direct
-updates and deletes in a history list.
+注意：条件新增、条件更新和条件删除都转换成对现有的历史版本资源列表中资源的直接更新和删除(. in a history list, there's never an instruction about creating an unidentified resource; it's transformed to a record of creating one that is identified 也就是说在history返回的资源历史版本列表中，
+由于条件新增、条件更新和条件删除操作产生的版本都记录为更新或删除操作)。
 
-In addition to the standard `_format` parameter, the parameters to this interaction may also include:
+除了\`_format`参数以外，history交互还包括如下参数:
 
 <table class="list">
-  <tr><td>_count : [integer](datatypes.html#integer)</td><td>single</td><td>Number of return records requested. The server is not bound to return the number requested, but cannot return more</td></tr>
-  <tr><td>_since : [instant](datatypes.html#integer)</td><td>single</td><td>Only include resource versions that were created at or after the given instant in time</td></tr>
+  <tr><td>_count : [integer](datatypes.html#integer)</td><td>single</td><td>请求中规定应返回的记录条数。不要求服务器必须返回指定的条数，但不能超过这个数字</td></tr>
+  <tr><td>_since : [instant](datatypes.html#integer)</td><td>single</td><td>只返回该时间点及以后所创建的资源版本实例</td></tr>
 </table>
 
-The history list can be restricted to a limited period by specifying a `_since` parameter which contains a full date time with time zone.
-Clients should be aware that due to timing imprecision, they may receive notifications of a resource update on the boundary instant more than once. Servers are
-not required to support a precision finer than by second.
+使用带有时区的完整日期时间类型的`_since`参数可以限定只返回一段时间段内的历史版本资源列表，
+对于客户端而言，由于时间精度的问题，可能会收到不止一次在边界时间点资源内容发生更新的通知。不强求服务器支持比秒更高的精度。
 
-The updates list can be long, so servers may use paging. If they do, they SHALL use the method [described
-below](#paging) for breaking the list into pages if appropriate, and maintain the specified _count across pages.
+历史版本的资源列表可能会很长，服务器可以使用分页。要用到分页的话，必须使用下面章节所描述的方法来进行分页，使用`_count_`来限定每页中条目的数量。
 
-The history interaction can be used to set up a subscription from one system
-to another, so that resources are synchronized between them. Refer to the [Subscription resource](subscription.html)
-for an alternate means of system synchronization.
+history 交互可以用于一个系统对另一个系统的订阅，这样系统间的资源内容就可以保持同步。系统间同步的另一种方式请参考[Subscription resource](subscription.html).
 
 <a name="transactional-integrity"> </a>
 
-### <span class="sectioncount">2.1.0.18<a name="2.1.0.18"> </a></span> Transactional Integrity
+####  2.1.0.18  事务的完备性
 
-When processing [create](#create) and [update](#update)
-operations, a FHIR server is not obliged to accept the entire resource as it
-is; when the resource is retrieved through a [read](#read) operation
-subsequently, the resource may be different. The difference may arise for
-several reasons:
+在处理 [create](#create) and [update](#update)操作时，不要求服务器完全接受提交的资源；随后如果使用[read](#read)
+操作获取资源时，所获取的资源与提交的资源可能是不一样的。不同之处可以是由于以下原因：
 
-*   The server merged updated content with existing content
-*   The server applied business rules and altered the content
-*   The server does not fully support all the features or possible values of the resource
+*   服务器把提交的内容与已存在的内容进行合并
+*   服务器使用业务规则，改变了内容
+*   服务器不支持资源的所有内容或允许值
 
-Note that there is no general purpose method to make merging with existing content or
-altering the content by business rules safe or predictable - what is possible,
-safe and/or required is highly context dependent. These kind of behaviors may
-be driven by security considerations. With regard to incomplete support, Clients can consult the server's
-base conformance statement profile references to determine which features or
-values the server does not support.
+注意，并没有通用的方法来安全或可预测地实现与现有内容的合并或根据业务规则来变更内容——what is possible,
+safe and/or required is highly context dependent。这类操作可能受安全方面的因素所驱动。考虑到支持的不全面，客户端可以获取服务器的
+基本的符合性声明来确定服务器不支持哪些特性或取值。
 
-To the degree that the server alters the resource for any of
-the 3 reasons above, the FHIR server will create implementation
-consequences for the eco-system that it is part of, which will
-need to be managed (i.e. it will cost more). For this reason,
-servers SHOULD change the resource as little as possible.
-However due to the variability that exists within healthcare,
-this specification allows that servers MAY alter the resource on
-create/update.
 
-Similarly, to the degree that an implementation context makes special
-rules about merging content or altering the content, that context will
-become more expensive to maintain.
+根据出于上面所述的三种理由对资源内容变更的程度，FHIR服务器给它所从属的生态系统所造成的后果是需要管理的。鉴于这样的原因，服务器宜尽可能少的对资源内容进行变更，。
+但是由于医疗本身的多样性，FHIR 标准允许服务器在新增、更新时对资源内容进行变更。
 
-Although these rules are stated with regard to servers, a similar
-concept applies to clients - to the degree that different client
-systems interacting with the server do not support the same feature
-set, the clients and/or the server will be forced to implement custom
-logic to prevent information from being lost or corrupted.
+类似的，系统实现时有些应用场景需要有一些合并内容、变更内容的特殊规则，这些应用场景的维护成本会很高。
 
-Some of these problems can be mitigated by following a pattern
-built on top of version-aware updates. In this pattern:
 
-*   The server provides a [read](#read) operation for any resource it accepts [update](#update) operations on
-*   Before updating, the client [reads](#read) the latest version of the resource
-*   The client applies the changes it wants to the resource, leaving other information intact (note the [extension related rules](extensibility.html#exchange) around this)
-*   The client writes the result back as an [update](#update) operation, and is able to handle a 409 or 412 response (usually by trying again)
+尽管我们说这些规则是针对服务器的，对于客户端而言也有类似的概念——根据与服务器交互的不同客户端不支持同样特性/功能的程度，客户端/服务器被迫要实现一些
+定制的业务逻辑以避免信息的丢失或受损。
 
-If clients follow this pattern, then information from other systems
-that they do not understand will be maintained through the update.
+通过遵循基于版本的更新模式，可以减少一些此类问题，在这种模式中：
 
-Note that it's possible for a server to choose to maintain the
-information that would be lost, but there is no defined way for
-a server to determine whether the client omitted the information
-because it wasn't supported (perhaps in this case) or whether it
-wishes to delete the information.
+*   服务器对于它所支持[update](#update)操作的资源都要支持[read](#read)操作
+*   在更新之前，客户端先通过[reads](#read) 操作获取资源最新版本的内容
+*   客户端根据自己的需要对自己内容进行变更，保持其他内容完整即可(note the [extension related rules](extensibility.html#exchange) around this)
+*   客户端调用[update](#update) 操作,将变更后的内容提及给服务器，客户端要能够处理 409 412的http 响应
 
-#### <span class="sectioncount">2.1.0.18.1<a name="2.1.0.18.1"> </a></span> Conformance
+如果客户端遵循的是这种模式，对于不能够理解的那些来自其他系统的信息，通过更新操作就可以维护起来.
+
+要注意服务器也可能选择维护那些可能会丢失的信息，但服务器没有明确的方法来确定客户端到底是因为不支持此类信息而省略了相应内容还是说客户端想要删除此类信息。
+
+
+#####  2.1.0.18.1  Conformance
 
 Both client and server systems SHOULD clearly document how transaction
 integrity is handled.

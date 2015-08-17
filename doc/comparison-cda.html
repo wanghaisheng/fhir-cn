@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt;&amp;gt;比较 &amp;gt; CDA    
+ 比较 &amp;gt;V2消息&amp;gt; V3&amp;gt;CDA &amp;gt;其他 
+1.10.3  Clinical Document Architecture (CDA)CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，也可以是全编码的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-cda.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt;&amp;gt;比较 &amp;gt; CDA    
+ 比较 &amp;gt;V2消息&amp;gt; V3&amp;gt;CDA &amp;gt;其他 
+1.10.3  Clinical Document Architecture (CDA)CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，也可以是全编码的">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt;&amp;gt;比较 &amp;gt; CDA    
+ 比较 &amp;gt;V2消息&amp;gt; V3&amp;gt;CDA &amp;gt;其他 
+1.10.3  Clinical Document Architecture (CDA)CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，也可以是全编码的">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p>  <a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;&gt;<a href="comparison.html">比较</a> &gt; <strong>CDA</strong>    </p>
+<p> <a href="comparison.html">比较</a> &gt;<a href="comparison-v2.html">V2消息</a>&gt; <a href="comparison-v3.html">V3</a>&gt;<strong>CDA</strong> &gt;<a href="comparison-other.html">其他</a> </p>
+<h3 id="1-10-3_Clinical_Document_Architecture_(CDA)">1.10.3  Clinical Document Architecture (CDA)</h3><p>CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，也可以是全编码的如V3实例。  需要注意的是：在FHIR中可以用Composition Resource](../infra/composition.html)来构建 <a href="../impl/documents.html">文档</a> ，也能够用<a href="../infra/documentreference.html">DocumentReference</a> 来传输传统的CDA R2文档.</p>
+<h4 id="1-10-3-1_与CDA的异同">1.10.3.1 与CDA的异同</h4><p>1、<strong>临床文档的关注点:</strong>  正如它的名称所暗示，临床文档架构仅限于“临床”的场景。CDA模型不支持那些与临床无关的内容的交换，诸如财务信息，所处理的文档也只是和病人相关的哪些。(在一些情况下，诸如HL7结构化产品标签标准——不是针对病人的类似CDA标准，就是为了解决此类局限性的)。FHIR文档在内容上没有限制，对象可以是病人之外的其他。 </p>
+<p>2、<strong>人可读的方式:</strong> CDA 和 FHIR都要求内容是可以供人读的，定义了这些文本如何展现的规则。一点细微的差异在于在CDA里面，供人读的部分是为章节所定义的，而FHIR中为章节所归属的资源所定义的。然而，从效果上来看上并没产生什么实际的差异。另外一点不同在于，对于FHIR而言，供人可读的特性不局限于文档—— 是受资源自身影响的，如果一份文档引用了现有的资源，这样可能会导致在渲染方式可能会有那么一些不太灵活。  </p>
+<p>3、<strong>临床声明 vs. 资源:</strong> 在CDA中In CDA,  文档 &quot;内容&quot; 是通过一个基于HL7 &quot;临床声明&quot;项目的高度复杂和极其抽象的模型来表达的。它的目的在于使得开发人员能够在任意的粒度和严密性上表达任意的临床概念。(实际上，CDA模型有一些内在的局限性，导致要表达某些临床概念就很困难) 。这个模型很强大，也存在一些挑战。首先需要精通RIM建模才能给够表达任意的临床信息。<br> 如何非常好的表达像过敏、手术、血压等是不那么明显。要支持互操作性 必须要用到模板。其次就是不同情况下通用的临床概念的模型各异。在FHIR里面，消息中所有临床(非临床)内容都通过引用现有资源定义来处理。这些资源使得FHIR能够很好的表达像过敏、血压等通用结构 , 确保核心内容只有一种唯一的表达方式。然而 它的局限性在于为了共享内容必须定义好一个恰当的资源。在开发FHIR的初级阶段，如果还没有定义好一个合适的资源，<a href="other.html">Other</a> 资源可能是最好的选择。   </p>
+<p>4、<strong>模板和规范 :</strong> 如上所述，为了理解实例的含义，CDA必须依赖于模板的存在。(理论上而言，查看RIM的属性和编码就能确定含义，事实是这通常是不安全的或者不足够的，因此，基本上每个CDA实例里面到处都会包含templateId属性来定义含义)。 在FHIR中，含义是通过资源来定义的。<br>可以用 <a href="../infra/profile.html">Profiles</a>来定义扩展，但它永远不能重新定义核心元素的含义。尽管当使用规范来构建一个特殊实例的时候，可以在实例中使用<a href="extras.html#tag">tags</a>.来声明此规范。 但这种声明并不是必须存在的。   </p>
+<p>5、<strong>标记语言:</strong> CDA为叙述性文本定义了自己的XML语法，基本上是基于XHTML，某种程度上，XHTML比HTML表达能力要强一些。 FHIR使用了XHTML的一个约束集，它比CDA中的标记语言 FHIR makes u表达能力更强。 从FHIR转换成CDA需要考虑这些约束(或者提供一份完整的已渲染过的文档版本)  </p>
+<h4 id="1-10-3-2_基于CDA实现互操作性需要考虑的因素">1.10.3.2 基于CDA实现互操作性需要考虑的因素</h4><p>CDA是V3标准的一种。因此，所有<a href="comparison-v3.html#V3-interoperability">V3中的注意事项</a>适用于V3消息的也同样适用于CDA。另外，以下的部分只是针对CDA的实现。   </p>
+<p>1、<strong>映射哪些内容:</strong>CDA模型右边的一部分(临床内容)是<a href="comparison-v3.html#V3-abstractModels">上述的一种抽象模型</a>.  尽管CDA头可以对应到FHIR的 <a href="composition.html">Composition</a> 和相关资源，FHIR与CDA的对应应该是在模板层面上而不是CDA标准自身上。  </p>
+<p>2、<strong>人可读部分的粒度:</strong>  对于FHIR而言，叙述性文本只存在于每个章节根部的资源里面，对于CDA而言，叙述性文本存在于每个章节。通常这意味着CDA和FHIR中的叙述性文本是相一致的。 然而，在一些情况下，一个章节会包含一些子章节。CDA中这些嵌套的章节也可以有叙述性文本.在FHIR里面，它们就不能有叙述性文本。 在转换的时候，应用程序需要一些其他的管理办法。     </p>
+<p>3、<strong>叙述性文本与特定元素间的关联:</strong>  为了保证语义上的可追踪性，FHIR和CDA都允许在叙述性文本和文档中可编码部分特定的离散元素组件建立关联。如果FHIR与CDA之间进行转换，也需要转换这些链接。然而，这是很复杂的，事实上，两个标准关联的粒度是不同的。 在CDA中，关联只能存在于章节的层面上或者是一组条目的层面上。对于FHIR，关联可以存在于任何层面上，包括单独的数据类型组件或者甚至是扩展的一部分。从CDA到FHIR的转换是单向的，然而，反向转换总会有信息损耗。  </p>
+<p>&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100.<br>  链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a></p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

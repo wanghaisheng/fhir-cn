@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; JSON
+1.18.2 用JSON格式表示资源 　　　尽管在描述FHIR资源时使用的XML语言，但是该标准也定义了资源的JSON表达方式．JSON格式与标准XML格式很相近，互相转换很容易，因此Xpath的查询可以很容易的映射到对JSON结构的查询，这种格式的正式的mime-type是 application/json+fhir.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/json.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; JSON
+1.18.2 用JSON格式表示资源 　　　尽管在描述FHIR资源时使用的XML语言，但是该标准也定义了资源的JSON表达方式．JSON格式与标准XML格式很相近，互相转换很容易，因此Xpath的查询可以很容易的映射到对JSON结构的查询，这种格式的正式的mime-type是 application/json+fhir.">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; JSON
+1.18.2 用JSON格式表示资源 　　　尽管在描述FHIR资源时使用的XML语言，但是该标准也定义了资源的JSON表达方式．JSON格式与标准XML格式很相近，互相转换很容易，因此Xpath的查询可以很容易的映射到对JSON结构的查询，这种格式的正式的mime-type是 application/json+fhir.">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;<a href="resources.html">资源定义</a> &gt; <strong>JSON</strong></p>
+<h4 id="1-18-2_用JSON格式表示资源">1.18.2 用JSON格式表示资源 　　　</h4><p>尽管在描述FHIR资源时使用的XML语言，但是该标准也定义了资源的JSON表达方式．<br>JSON格式与标准XML格式很相近，互相转换很容易，因此Xpath的查询可以很容易的映射到对JSON结构的查询，这种格式的正式的mime-type是 application/json+fhir.           </p>
+<p>允许客户端自由选择是实现XML还是JSON格式。服务器应该支持XML，可以选择是否支持JSON。注意如果支持的话应该在 <a href="conformance.html">Conformance Statement</a>中声明它们所支持的格式有哪些.<br>JSON表达方式与XML表达方式的关系：        </p>
+<ul>
+<li>JSON对象元素的名称和XML的元素属性名称是一样的，包括可以重复的元素。元素的名称是大小写敏感的。         </li>
+<li>如同XML一样，JSON 属性永远不能为空值，如果为空则必须省略该元素。      </li>
+<li>JSON中空格并不是资源内容的一部分。应用程序处理资源时可能会保留空格，但对比不作要求。注意数字签名可以会依赖于空格。<br>二者之间的差异在于：     </li>
+<li>JSON格式中没有命名空间一说。       </li>
+<li>JSON中资源类型的表达完全不一样。      </li>
+<li>JSON中属性的顺序不是那么重要，尽管必须维护数组中元素的顺序。        </li>
+<li>JSON中没有属性VS元素的标记，因此属性是以完全不同的方式来处理的  (xml:id, value)     </li>
+<li>JSON中有数组array，可以用来表示重复元素。注意当某个项可能会重复时使用array数组，即使在某个数据实例中并没有重复出现。        </li>
+<li><a href="narrative.html">Narrative</a>数据类型中的 XHTML &lt;div&gt; 元素用XHTML的 单个转移字符串来表示，这样做是为了避免JSON中混合内容的问题等等，XHTML 仍然遵循 <a href="narrative.html">the Narrative</a>中所描述的规则。       </li>
+<li>There is no inherent support in JSON for a comment syntax. As a convention, content that would be comments in an XML representation is represented in a property with the name “fhir_comments”, which is an array of strings, which can appear on any JSON object. This is heavily used in example instances, e.g. in this specification, but not usually used in production systems (and production systems may choose to reject resources with comments in them)</li>
+</ul>
+<p>这些差异，尤其是重复元素的整个，都是不可避免的，也就是说通用的XML到JSON的转换不能正确的处理这些。 <a href="downloads.html#refimpl">reference platforms</a>中提供了 XML &lt;–&gt; JSON的转换功能，其中整合了一些FHIR相关的特性。<br> The formal mime type for this format is application/json+fhir. </p>
+<h5 id="1-18-2-1重复元素的JSON表达方式">1.18.2.1重复元素的JSON表达方式</h5><p>一个元素的最大基数为x..*,则该元素在实例中可能会出现不止一次。在XML中只需要重复XML元素多次即可。JSON中，我们是通过array数组来实现的。注意：             </p>
+<ul>
+<li>数组的名称是单一的——这点和XML一样。      </li>
+<li>即使没有重复，可能会重复的一个项目也是用array来表示的，这样不管怎样，处理该元素的方式总是不变，      <pre class="xml">
+&lt;<b>coding</b>&gt;
+  &lt;<b>system</b> value=&quot;http://snomed.info/sct&quot;/&gt;
+  &lt;<b>code</b> value=&quot;104934005&quot;/&gt;
+&lt;/<b>coding</b>/&gt;
+&lt;<b>coding</b>&gt;
+  &lt;<b>system</b> value=&quot;http://loinc.org&quot;/&gt;
+  &lt;<b>code</b> value=&quot;2947-0&quot;/&gt;
+&lt;/<b>coding</b>/&gt;
+</pre>
+
+</li>
+</ul>
+<p>对应的JSON格式：    </p>
+<pre class="json">
+ &quot;coding&quot;: [
+   {
+     &quot;system&quot; : &quot;http://snomed.info/sct&quot;,
+     &quot;code&quot; : &quot;104934005&quot;
+   },
+   {
+     &quot;system&quot; : &quot;http://loinc.org&quot;,
+     &quot;code&quot; : &quot;2947-0&quot;
+   }
+ ]
+</pre>
+
+<h5 id="1-18-2-2_基本数据类型元素的JSON表达">1.18.2.2 基本数据类型元素的JSON表达</h5><p>FHIR元素值为基本数据类型的表达分为两类：      </p>
+<ul>
+<li>元素名称为 JSON属性名称，数据类型是JSON的number、boolean和string类型。        </li>
+<li>JSON属性名称是元素名称前加上  &quot;_&quot; 表示它包含的是xml:id和或扩展的值。    </li>
+</ul>
+<p>FHIR  <a href="datatypes.html#integer">integer</a> 和 <a href="datatypes.html#decimal">decimal</a> 数据类型对应成JSON的number，   FHIR  <a href="datatypes.html#boolean">boolean</a><br>对应成JSON的 boolean,其他所有数据类型都被看作JSON string。一般而言空格是很重要的<br>(i.e.非字符串类型不存在前置后置空格 ).    </p>
+<pre class="xml">
+ &lt;<b>code</b> value=&quot;abc&quot;/&gt; &lt;!-- code --&gt;
+ &lt;<b>date</b> value=&quot;1972-11-30&quot;/&gt; &lt;!-- dateTime --&gt;
+ &lt;<b>deceased</b> value=&quot;false&quot; /&gt; &lt;!-- boolean --&gt;
+ &lt;<b>count</b> value=&quot;23&quot; /&gt;  &lt;!-- integer --&gt;
+</pre>
+
+<p>对应的JSON格式：    </p>
+<pre class="json">
+ &quot;code&quot; : &quot;abc&quot;,
+ &quot;date&quot; : &quot;1972-11-30&quot;,
+ &quot;deceased&quot; : false,
+ &quot;count&quot; : 23
+</pre>
+
+<blockquote>
+<p>当在实现中使用  JavaScript 的JSON.parse() 时的解析其和，牢记一点，JavaScript本来只支持一种数字型数据类型——浮点数<br>这会使得FHIR number的精度下降，你可能会需要使用定制解析其和big number库<br>(比如. 可以考虑<a href="https://github.com/jtobey/javascript-bignum" target="_blank" rel="external">https://github.com/jtobey/javascript-bignum</a>)</p>
+</blockquote>
+<p>如果值存在id属性或者扩展，该采用如下的表达方式：      </p>
+<pre class="xml">
+ &lt;**dob** id=&quot;314159&quot; value=&quot;1970-03-30&quot; &gt;
+   &lt;extension url=&quot;http://example.org/fhir/extensions#text&quot;&gt;
+     &lt;valueString value=&quot;Easter 1970&quot;/&gt;     
+   &lt;/extension&gt;
+ &lt;/**dob**&gt;
+</pre>
+
+<p>对应的JSON格式为：    </p>
+<pre class="json">
+ &quot;dob&quot;: &quot;1972-11-30&quot;,
+ &quot;_dob&quot;: { 
+   &quot;id&quot;: &quot;314159&quot;, 
+   &quot;extension&quot;: [{
+      &quot;url&quot; : &quot;http://example.org/fhir/extensions#text&quot;,
+      &quot;valueString&quot; : &quot;Easter 1970&quot;
+   }]
+ }
+</pre>
+
+<p>注意: 如果基本数据类型只有id属性或扩展，但是没有value，只需要渲染带 &quot;_&quot;的属性即可。<br>当基本数据类型元素可能会重复时，使用两个数组来表达。JSON null值用来保证id和或扩展与第一个数组的对应值一致,如下例所示：      </p>
+<pre class="xml">
+ &lt;<b>code</b> value=&quot;au&quot;/&gt;
+ &lt;<b>code</b> value=&quot;nz&quot;&gt;
+   &lt;extension url=&quot;http://hl7.org/fhir/Profile/tools-extensions#display&quot;&gt;
+     &lt;valueString value=&quot;New Zealand a.k.a Kiwiland&quot;/&gt;     
+   &lt;/extension&gt;
+ &lt;/<b>code</b>&gt;
+</pre>
+
+<p>对应的JSON格式为： </p>
+<pre class="json">
+ &quot;code&quot;: [ &quot;au&quot;, &quot;nz&quot; ],
+ &quot;_code&quot;: [ 
+   null, 
+   { &quot;extension&quot;: [{
+      &quot;url&quot; : &quot;http://example.org/fhir/extensions#text&quot;,
+      &quot;valueString&quot; : &quot;New Zealand a.k.a Kiwiland&quot;
+   }] }
+  ]
+ }
+</pre>
+
+<p>注意: 当某个重复元素没有value时，在第一个数组中用null来表示。当一个元素有value，但是没有id或扩展时，第二个数组的该元素位置为null。     </p>
+<blockquote>
+<p>设计上的考虑: 基本数据类型的表达被这样分为两类是为了简化没有id和扩展的简单基本数据类型的表达。这样做使得id属性和扩展的表达显得特别丑陋，但这两种情况在基本数据类型中其实是很少用到的。          </p>
+</blockquote>
+<h5 id="1-18-2-3_元素、复杂数据类型的JSON表达">1.18.2.3 元素、复杂数据类型的JSON表达</h5><p>用JSON对象来表示元素和<a href="datatypes.html">复杂的数据类型</a> ，包含了不同数据类型的每个元素的member。composite有id属性，将其以处理基础数据类型中所描述的方式转换为JSON的member值。如下：     </p>
+ <pre class="xml">
+&lt;person&gt;
+  &lt;text&gt;
+    &lt;status value=&quot;generated&quot; /&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;
+  &lt;/text&gt;
+  &lt;name&gt;
+    &lt;use value=&quot;official&quot; /&gt;  
+    &lt;given value=&quot;Karen&quot; /&gt;
+    &lt;family id=&quot;a2&quot; value=&quot;Van&quot; /&gt;
+  &lt;/name&gt;
+&lt;/person&gt;
+</pre>
+
+<p>对应的JSON格式为：    </p>
+<pre class="json">
+{
+  &quot;person&quot; : {
+    &quot;name&quot; : [{
+      &quot;use&quot; : &quot;official&quot; ,
+      &quot;given&quot; : [ &quot;Karen&quot; ],
+      &quot;family&quot; : [ &quot;Van&quot; ]
+      &quot;_family&quot; : [ {&quot;id&quot; : &quot;a2&quot;} ]
+     }],
+    &quot;text&quot; : {
+      &quot;status&quot; : &quot;generated&quot; ,
+      &quot;div&quot; : &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;&quot;
+    }
+}
+</pre>
+
+<p>需要注意的是：    </p>
+<ul>
+<li>given 和 family都是可重复的XML元素，因此它们被当作数组处理，无论它们有没有重复。    </li>
+<li>在’name’的family部分中,  如上所述，在_family表达了’id’      </li>
+<li>‘div’ 元素中的XHTML内容，也就是Narrative  ‘text’ 元素，是在value属性中用转义字符来表示的。 xhtml根元素必须是xhtml命名空间的 &lt;div&gt;   </li>
+</ul>
+<h5 id="1-18-2-4_资源的JSON表达">1.18.2.4  资源的JSON表达</h5><p>资源就是一个JSON对象，其中&quot;resourceType&quot; 属性告诉解析器该资源的类型：     </p>
+<pre class="json">
+{
+  &quot;resourceType&quot; : &quot;Patient&quot;,
+  &quot;text&quot; : {
+    &quot;status&quot; : &quot;generated&quot; ,
+    &quot;div&quot; : &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;&quot;
+  }
+  etc...
+}
+</pre>
+
+<p>注意解析器不能认为resourceType总是第一个出现。     </p>
+<blockquote>
+<p><strong>设计时的考虑</strong>: 对于很多JSON-&gt;对象序列化工具 都存在这个问题，设定resourceType总是第一个出现，包括了 <a href="http://james.newtonking.com/json" target="_blank" rel="external">Json.NET</a>. 然而，一些JSON生成器并不能让编辑应用程序控制属性值的顺序，因此这些实现就不能互相操作，鉴于此，JSON中指出属性值是一组无序的name/value对，标准中也不能对属性的出现次序作出要求，尽管开发任意可能会选择固定属性的顺序，如果能够实现的话。</p>
+</blockquote>
+<p>这里有一个 <a href="json-edge-cases.json">示例文件</a> ，包含了多种边缘情况，用以测试JSON解析器。           </p>
+<h6 id="1-18-2-5-3_签名">1.18.2.5.3 签名</h6><p>todo</p>
+<p> &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a>      </p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

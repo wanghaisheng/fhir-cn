@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2.9  Using Resources with ServicesThough FHIR Resources are primarily designed with for the RESTful HTTP-based implementation,it is not necessary to use a RESTful interface when exchanging the resourc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/services.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="2.9  Using Resources with ServicesThough FHIR Resources are primarily designed with for the RESTful HTTP-based implementation,it is not necessary to use a RESTful interface when exchanging the resourc">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="2.9  Using Resources with ServicesThough FHIR Resources are primarily designed with for the RESTful HTTP-based implementation,it is not necessary to use a RESTful interface when exchanging the resourc">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a name="SOA"> </a><br><a name="soa"> </a></p>
+<h2 id="2-9_Using_Resources_with_Services"><span class="sectioncount">2.9<a name="2.9"> </a></span> Using Resources with Services</h2><p>Though FHIR Resources are primarily designed with for the <a href="http.html">RESTful HTTP-based implementation</a>,<br>it is not necessary to use a RESTful interface when exchanging the resources; one way that they can be exchanged<br>is in the context of services. Service Oriented Architecture (SOA) is an architecture pattern using services to encapsulate and provide discreet pieces of application functionality to each other. Services communicate<br>by invoking public interfaces and exchanging information (as parameters and outputs) in accordance to a<br>well-defined service contract. </p>
+<p>FHIR resources or <a href="extras.html#bundle">bundles</a> may be used as the parameters or outputs of service interfaces.</p>
+<p>Generally, the definition of particular services is a domain or context specific task, and it is anticipated<br>that this would be done as separate specifications that make use of the underlying facilities defined<br>in this specification. Services defined like this are able to build on the common underlying platform<br>features defined in this specification such as REST or messaging, and add specific interactions where<br>appropriate. Alternatively, the service interfaces can build an entirely separate implementation.<br>At this time, FHIR does not define any specific service interfaces as part of the specification,<br>though alignment with service interface definitions provided by the<br><a href="http://hssp.wikispaces.com/" target="_blank" rel="external">HL7 SOA work group</a> will be considered if<br>there is sufficient interest in this.</p>
+<blockquote>
+<p><strong>DSTU Notice</strong>: The RESTful interface is a profile on the existing <a href="http://hssp-rlus.wikispaces.com/RLUS_FAQ" target="_blank" rel="external">HL7/OMG HSSP<br>RLUS specification</a> (see <a href="http.html#hdata">comments on the RESTful specification</a>).<br>If there is interest, HL7 could define a SOAP equivalent to this. The main interest<br>in this would be to provide a common technical base for other SOAP based services.</p>
+</blockquote>
+<p>When implementing exchange of resources using a service-based approach, there are two<br>aspects to keep in mind:</p>
+<ul>
+<li>Technical requirements when exchanging resources</li>
+<li>FHIR architectural issues to consider when using services</li>
+</ul>
+<p>Both these impact on how services should manage exchanging resources in their design<br>and implementation.</p>
+<p><a name="tech"> </a></p>
+<h2 id="2-9_Technical_Requirements"><span class="sectioncount">2.9<a name="2.9"> </a></span> Technical Requirements</h2><p>Resources are designed so the package that is &quot;the resource&quot; consists of data (the content inside the resource,<br>and metadata - additional fields that are actually stored and exchanged outside the resource). In the<br>RESTful context, these fields are part of the HTTP header, and their functionality is integrated into<br>the HTTP exchange. When the resources are used with a service, this data must either be exchanged with<br>the resource, or the functionality they provide replaced in some way.</p>
+<p>A key question in this regard is whether the resources that are exchanged across a service interface<br>need to also be handled in a RESTful context around the service. For example, a decision support<br>provider service might receive a collection of resources on which a decision is required, and<br>use an internal RESTful service to store and access them. In this case, it would need to take<br>the resources out of the service context, and use them in a RESTful context, and generally the<br>service would expect to see duplicate resources over time, where versions must be managed<br>correctly. If the resources to be exchanged over services are also to<br>be exchanged with REST, the metadata will be required.</p>
+<p><strong>Resource Identity</strong></p>
+<p>All resources have a single identity (the full URL), and a logical id which may be maintained<br>as the resource moves from server to server (see <a href="managing.html">&quot;Managing Resource Identity&quot;</a> for further<br>discussion). Since this identity is used by any reference to the resource, it must be exchanged<br>with the resource so that references from other resources to the one being exchanged can<br>still be resolved.</p>
+<p>Related to this, resources are modular units that refer to each other. Although<br>resources stand-alone and are each processed independently, it’s rarely possible<br>to use a resource to achieve some clinical or business goal without retrieving the<br>other referenced resources. Any use of resources in a service environment needs to<br>address how these references can be resolved. This can be achieved by delegating<br>the reference resolution to a RESTful framework, by ensuring that all the relevant<br>resources are contained in the service call, or by making some service based arrangement<br>by which additional resources can be retrieved.</p>
+<p>Services that exchange resources SHALL maintain resource identity.</p>
+<p><strong>Resource Version</strong></p>
+<p>Resources have two metadata elements relating to versioning: &quot;Version Id&quot; and &quot;Last Modified Date&quot;.<br>Because of data/time resolution issues, systems implementing concurrency solutions are<br>strongly recommended to depend on the version id; the Last Modified Date is provided to<br>inform human users about information currency. </p>
+<p>Services typically assume that the information in the service calls is the latest<br>information. As a consequence, explicit version tracking is often not part of a<br>service call. However if the resources in the service call then need to be used<br>in a RESTful fashion, explicitly tracking the version and last modified date<br>will make this subsequent usage much more efficient.</p>
+<p>Services that exchange resources SHOULD include version information when the resources are exchanged.</p>
+<p><strong>Capability Statement</strong></p>
+<p>When using <a href="http.html">RESTful exchange</a>, <a href="messaging.html">messaging</a>, and <a href="documents.html">document based</a><br>exchange, the <a href="conformance.html">conformance statement</a> allows authoring and reading<br>applications to describe how they use a resource. The conformance statement supports trading partner<br>negotiation from specification time through to run-time discovery. The conformance statement doesn’t<br>provide any equivalent way to make declarations about services, though this might be added in<br>the future if common requirements emerge. Services are expected to make appropriate arrangements<br>around discovery and compatibility, though it is expected that these will vary considerably. </p>
+<p>Services that exchange resources MAY choose to provide support for describing and<br>changing descriptions of service implementations.</p>
+<p><a name="architecture"> </a></p>
+<h2 id="2-9_Architectural_Considerations"><span class="sectioncount">2.9<a name="2.9"> </a></span> Architectural Considerations</h2><p>FHIR Resources are designed to make use in a wide variety of contexts. In particular,<br>FHIR resources are required to be suitable for use in a REST environment. This means<br>that there are number of design requirements and choices that impact on how suitable<br>resources are for use with services. </p>
+<p>If service use was the only consideration, different decisions would be made, and<br>resources would be more suitable for use with services. However this would curtail<br>their usefulness and reusability in other contexts. </p>
+<p><strong>Resource References</strong></p>
+<p>The most obvious impact is that resources <a href="references.html">refer to each other using full URL<br>based references</a>, and there are a number of rules around how these references are<br>resolved. In the context of a service, this means that the references between modules<br>carry this extra weight of choice and obligation, even when it might not be necessary.</p>
+<p><strong>Explicit State</strong></p>
+<p>All resources represent the various states of the record and real world entities involved<br>in a transaction explicitly. This is necessary for use in RESTful and document contexts,<br>where there is no explicit transaction. Service interactions are typically associated with<br>implicit semantics - a request to change the status of a particular resource to something<br>else, for example. The fact that resources carry this state explicitly as well as the<br>transaction fixing state implicitly creates duplication between the two, and this will<br>need to be managed.</p>
+<p><strong>Modularity</strong></p>
+<p>The modularity of resources - which resources are defined, and why - is driven by<br>a wide set of considerations around how they are used. Resources are a platform on<br>which a set of business/clinical services of various kinds are provided. Accordingly, the resources<br>are defined for general use, and they can be expected to be less suitable for a<br>particular service than custom defined structures. The pay back is wider re-use<br>of the information that the service deals with.</p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="?.?  Inter-version Compatibility 
+?.?  Inter-version Compatibility
+The following rules will apply to resources, profiles and other content within the specificationonce those portions of the specificat">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/compatibility.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="?.?  Inter-version Compatibility 
+?.?  Inter-version Compatibility
+The following rules will apply to resources, profiles and other content within the specificationonce those portions of the specificat">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="?.?  Inter-version Compatibility 
+?.?  Inter-version Compatibility
+The following rules will apply to resources, profiles and other content within the specificationonce those portions of the specificat">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <h2 id="?-?_Inter-version_Compatibility"><span class="sectioncount">?.?<a name="?.?"> </a></span> Inter-version Compatibility</h2><p><a name="version"> </a></p>
+<h2 id="?-?_Inter-version_Compatibility-1"><span class="sectioncount">?.?<a name="?.?"> </a></span> Inter-version Compatibility</h2><blockquote>
+<p>The following rules will apply to resources, profiles and other content within the specification<br>once those portions of the specification reach <a href="timeline.html#normative">full normative status</a>.<br>These rules ensure that implementations may exercise FHIR interfaces and process the content<br>of FHIR resources safely while exchanging data between applications using different<br>versions of FHIR.</p>
+<p>During the period of trial use of the specification (and once normative status is reached for elements that<br>remain at draft or trial use status), changes may occur based on issues identified during early implementation of the<br>specification.  These changes do not need to adhere to the rules listed below.</p>
+</blockquote>
+<h3 id="?-?-1_Version_identification"><span class="sectioncount">?.?.1<a name="?.?.1"> </a></span> Version identification</h3><p>There is no explicit version marker in the resource content.  FHIR adheres to the DICOM approach to versioning where<br>content can safely be processed by instances independent of version.  When dealing with<br>DSTU-level content, applications may wish to use <a href="resource.html#tags">resource tags</a> to help<br>manage this during the period of trial use.</p>
+<p>The conformance layer (<a href="conformance.html">Conformance</a> and <a href="profile.html">Profile</a>)<br>has mandatory properties declaring the FHIR specification version, and these may be used to determine<br>which version of FHIR an implementation is using to aid in validation.</p>
+<h3 id="?-?-2_Change_frequency"><span class="sectioncount">?.?.2<a name="?.?.2"> </a></span> Change frequency</h3><p>New versions of the FHIR specification will be produced regularly in accordance with the<br><a href="timelines.html">FHIR publication timeline</a>.  New versions of the specification will include<br>additional draft and trial use content as well as promotion of previous trial use content to normative.<br>Once content reaches normative, changes are expected to be infrequent.  This is for two reasons:</p>
+<ol>
+<li>The core specification focuses on those capabilities expected to be supported by most systems.  For<br>new capabilities to be introduced, it would need to be reflective of an overall change in the world-wide<br>healthcare implementation environment.</li>
+<li>If the implementation community has already consolidated around a standard approach to solving a<br>FHIR implementation issue (e.g. using a particular extension), FHIR will not introduce confusion into<br>the implementation community by defining a conflicting mechanism for solving that problem in the core<br>specification.</li>
+</ol>
+<h3 id="?-?-3_Forward_compatible_behavior"><span class="sectioncount">?.?.3<a name="?.?.3"> </a></span> Forward compatible behavior</h3><p>In a typical scenario, mixed versions may need to exist, so applications SHOULD ignore elements<br>that they do not recognize unless they are modifierExtensions.<br>However, in a healthcare context, many application vendors are unwilling to<br>consider this approach because of concerns about clinical risk or<br>technical limitations in their software (e.g. schema based processing).<br>Applications are not required to ignore unknown elements, but SHALL<br>declare whether they will do so in their <a href="conformance.html">conformance statements</a>.</p>
+<p>Unrecognized search criteria SHALL always be ignored.  (Search criteria supported in a query<br>are echoed as part of the search response so there is no risk in ignoring unexpected search<br>criteria.)</p>
+<p>Attempts to perform HTTP operations on unexpected URLs SHOULD be responded to with an appropriate<br>error code.    <!-- TODO: Grahame - should this be more explicit? --></p>
+  <!-- Todo - behavior for operations -->
+<h3 id="?-?-4_Permitted_changes_for_normative_content"><span class="sectioncount">?.?.4<a name="?.?.4"> </a></span> Permitted changes for normative content</h3><table><br>  <tbody><br>    <tr><br>      <th>Category</th><th>Allowed changes</th><br>    </tr><br>    <tr><br>      <td>Elements</td><br>      <td><br>      Once normative, subsequent versions of<br>      this specification may introduce new elements and/or content (e.g. XML attributes, etc.)<br>      at any point in the bundle, resource and/or data type structures.  However, the names, path<br>      and meaning of previously existing data elements will not be changed.<br>      This includes no change to resource names and no changes to names assigned to slices and<br>      other elements within profiles.<br>      </td><br>    </tr><br>    <tr><br>      <td>Cardinality</td><br>      <td><br>      Minimum element cardinalities will not be changed.  Upper cardinality may change from 1 to <em> only in circumstances<br>      where all elements except for the first repetition can be safely ignored.  (This may mean that an order is<br>      assigned to the repeating items or that there is no preference as to which element is retained.)  Systems should<br>      follow the rules above for unexpected elements.<br>      </em></td><br>    </tr><br>    <tr><br>      <td>Descriptions</td><br>      <td><br>      Descriptive information about a resource - short labels, definitions, usage notes, aliases, examples, rationale,<br>      mappings, etc. may be<br>      updated or revised to provide additional clarity or guidance, but not in such a manner as to invalidate a<br>      reasonable interpretation of the previously documented use of an element.  (This does not preclude fixing<br>      obvious errors.)<br>      </td><br>    </tr><br>    <tr><br>      <td>Value Sets</td><br>      <td><br><br>        The definition of any value set that is marked as &quot;immutable&quot; will never change.  The expansions for<br>        immutable value sets may still change if no &quot;stable date&quot; is declared and the value set does not<br>        restrict code system and/or value set references to specific versions if the referenced code system(s)<br>        or value set(s) change.<br><br>        For non-immutable value sets:
+
+   Value sets with an enumerated list of codes and having a ‘fixed’ binding may have additional codes introduced but will never have codes removed.<br><em>   Value sets making use of filters may have filters loosened or tightened to accommodate changes to<br>          underlying code systems.  StableDates and referenced code system and value set versions may be adjusted<br>          to point to newer versions.
+</em>   Definitions and display values for codes may change, but only in a manner that would not change          the reasonable interpretation of data captured using the previous definitions or names.<br><em>   Abstract codes may be made concrete.  Concrete codes will not be made abstract.<br><br>        For both immutable and non-immutable value sets, additional designations may be declared.<br><br>      </em></td><br>    </tr><br>    <tr><br>      <td>Terminology Bindings</td><br>      <td><br>      Fixed bindings will remain fixed and will continue to point to the same value set.  If the reference is<br>      version-specific, it will not change.<br>      Example bindings and Incomplete bindings may change to point to distinct value sets.  Example bindings<br>      may be replaced with Incomplete bindings.<br>      </td><br>    </tr><br>    <tr><br>      <td>Data Types</td><br>      <td><br>      Data types will not be removed or changed.  New data types may be introduced.  Types declared on existing elements will not be removed or changed.<br>      Additional data types may be added to elements which are already expressed as a choice of data types only if those elements are optional (minimum cardinality = 0).<br>      </td><br>    </tr><br>    <tr><br>      <td>Value Constraints</td><br>      <td><br>      Data types will not be added, removed or changed.  Invariants, regular expressions, fixed values and patterns will not be added, removed or changed.<br>      </td><br>    </tr><br>    <tr><br>      <td>Flags</td><br>      <td><br>        The <em>Is Modifier</em> and <em>Is Summary</em> flags will not be changed.  The <em>Must Support</em> flag may be changed to true, but will not be removed.<br>      </td><br>    </tr><br>    <tr><br>      <td>Slicing</td><br>      <td><br>      Slicing rules and aggregation characteristics will not be changed.<br>      </td><br>    </tr><br>    <tr><br>      <td>Search Criteria</td><br>      <td>Search criteria may be added but not removed or renamed.  Existing criteria will not have their type or path changed or<br>      have their description altered in any way that would invalidate the reasonable behavior of existing systems (with the exception of<br>      correcting obvious errors).</td><br>    </tr><br>    <tr><br>      <td>Operations</td><br>      <td><br>      New operations may be defined but operations may not be removed or renamed.  Existing parameters will not be removed or renamed, nor may their type<br>      or lower cardinality be changed.  Upper cardinality may be changed from 1 to .  (Systems should ignore unexpected repetitions.)<br>      Additional optional parameters may be introduced.<br>      </td><br>    </tr><br>    <tr><br>      <td>Restful interface</td><br>      <td><br>      Existing endpoints will not be renamed or removed, nor have their expected behavior changed in a manner that would cause reasonable systems designed<br>      against prior versions to be non-interoperable.  Additional endpoints may be introduced.<br>      </td><br>    </tr><br>    <tr><br>      <td>Profiles and extension definitions</td><br>      <td><br>      Profile structure, extension definitions and search criteria definitions will not be removed or have their<br>      URIs changed.  New profile structures, extension definitions and search criteria definitions may be<br>      introduced.  Profiles may have their statuses changed to &quot;retired&quot;.  Profiles referenced by data elements<br>      for structures or data types may be replaced<br>      with a reference to a distinct profile that is &quot;compatible&quot; with the previously referenced profile according<br>      to these forward and backward compatibility rules.<br>      </td><br>    </tr><br>  </tbody><br></table>
+
+<p>Additional discussion on inter-versioning issues can be found here:<br><a href="http://wiki.hl7.org/index.php?title=FHIR_interversion_compatibility" title="FHIR_interversion_compatibility" target="_blank" rel="external">http://wiki.hl7.org/index.php?title=FHIR_interversion_compatibility</a>.</p>
+<p></p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

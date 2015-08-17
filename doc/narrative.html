@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title:date:  
+categories: doc首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; 叙述性文本
+
+叙述性文本
+示例
+详细描述
+
+1.17.0 叙述性文本每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/narrative.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="title:date:  
+categories: doc首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; 叙述性文本
+
+叙述性文本
+示例
+详细描述
+
+1.17.0 叙述性文本每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/narrative-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/narrative-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/narrative-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/narrative-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/#a5">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/#pic1">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="title:date:  
+categories: doc首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; 叙述性文本
+
+叙述性文本
+示例
+详细描述
+
+1.17.0 叙述性文本每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p>title:<br>date:  </p>
+<h2 id="categories:_doc">categories: doc</h2><p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;<a href="resources.html">资源定义</a> &gt; <strong>叙述性文本</strong></p>
+<ul>
+<li><a href="#">叙述性文本</a></li>
+<li><a href="narrative-examples.html">示例</a></li>
+<li><a href="narrative-definitions.html">详细描述</a></li>
+</ul>
+<h3 id="1-17-0_叙述性文本">1.17.0 叙述性文本</h3><p>每个资源可包含一个供人可读的叙述性文本，其中包含了对资源的总结摘要，可用作把资源的内容展示给人看。如果存在叙述性文本,除了资源内的结构化数据，叙述性文本应该包含全部的内容，所必须的临床和业务信息. 资源定义可能会定义在叙述性文本中应该表达那些内容以确保临床安全。     </p>
+<p>资源的叙述性文本上允许包含一些结构化数据中所没有的额外信息，包括人为编辑的内容。这些信息应该在资源定义的范畴之内，叙述性文本中包含从其他所引用的资源中抽取部分额外的描述性信息是很正常的。</p>
+<p>资源总是宜包含叙述性文本,作为供人使用的备用. 然而,在一个严格管控的交换体系中,所有系统都共用一个数据模型, 额外的文字是不必要的,甚至会产生一些临床安全风险,叙述性文本可能会被省略. 开发人员在这样做之前应该谨慎考虑,因为这样做意味着这些资源只能够在有限的交换环境下才能被理解.在资源所定义的生命周期里面,封闭式的交换对象环境很可能就会变得开放. 另外,很多工作流步骤涉及了查找和组合资源,如果所涉及的资源没有自己的文本描述,这将变得更加困难或者繁琐.<br>注意,内嵌资源不应该包含自己的叙述性文本.</p>
+<p>叙述性文本是一个xhtml的片段，有一个flag来标记它和数据之间的关系:</p>
+<p>Structure<br><img src="../material/narrative-structure.png" alt=""></p>
+<p>UML<br><img src="../material/narrative-uml.png" alt=""></p>
+<p>XML<br><img src="../material/narrative-xml.png" alt=""></p>
+<p>JSON<br><img src="../material/narrative-json.png" alt=""></p>
+<p>div元素的内容是XHTML片段，应该只包含HTML4.0标准中第7-11(除了第9章第4部分)章和第15章所介绍的基本html元素,    <a>   元素(要么是name,要么是href)、  images和内部包含的style属性。XHTML内容不应包含head、body元素和外部的stylesheet引用、废弃的元素、script、form、base/link/xlink、frame、iframe和object或事件event相关的属性(如onCLick).这是为了保证叙述性文本的内容能够包含在资源内部,不会存在处于激活状态的内容-因为这会引入一些安全问题和在从XHTML中抽取文本时潜在的安全问题.。</a></p>
+<p>div元素必须包含一些非空格内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#60;narrative&#62;&#10;    &#60;div xmlns=&#38;quot;http://www.w3.org/1999/xhtml&#38;quot;&#62;This is a simple &#10;          example with only plain text&#60;/div&#62;&#10;  &#60;/narrative&#62;&#10;   &#60;narrative&#62;&#10;   &#60;div xmlns=&#38;quot;http://www.w3.org/1999/xhtml&#38;quot;&#62;&#10;     &#60;p&#62;&#10;       This is an &#60;i&#62;example&#60;/i&#62; with some &#60;b&#62;xhtml&#60;/b&#62; formatting.&#10;     &#60;/p&#62;&#10;   &#60;/div&#62;&#10;  &#60;/narrative&#62;&#10;```     &#10;&#10;div&#20869;&#23481;&#20013;&#30340;inner&#37096;&#20998;&#24120;&#24120;&#29992;&#22312;&#27983;&#35272;&#22120;&#20013;&#30340;innerHTML&#23646;&#24615;&#20013;&#12290;&#20026;&#20102;&#31616;&#21270;&#27492;&#31867;&#22788;&#29702;&#65292;&#22914;&#26524;&#26159;&#29992;JSON&#34920;&#31034;&#21465;&#36848;&#24615;&#25991;&#26412;,&#21465;&#36848;&#24615;&#25991;&#26412;&#24212;&#32534;&#30721;&#65292;&#36825;&#26679;&#23376;&#31532;&#19968;&#20010; &#38;quot;&#62;&#38;quot; &#21644;&#26368;&#21518;&#19968;&#20010;&#38;quot;&#60;&#38;quot; &#20043;&#38388;&#30340;&#20869;&#23481;&#23601;&#26159;&#60;div&#62;&#20803;&#32032;&#30340;&#23383;&#33410;&#20869;&#23481;,&#20363;&#22914;</span><br></pre></td></tr></table></figure></p>
+<p> “div”: “<div>text</div>“</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#19978;&#36848;&#20363;&#23376;&#26159;&#26377;&#25928;&#30340;,&#20294;&#19979;&#38754;&#36825;&#20010;&#21017;&#19981;&#26159;:     &#10;![](../material/narrative-illegal-div.png)&#10;&#10;&#10;&#27880;&#24847;:XHTML&#26159;&#23884;&#22312;&#19968;&#33324;&#30340;XML&#20013;&#30340;&#65292;&#22240;&#27492;&#19981;&#25903;&#25345;&#22914;_&#38;amp;nbsp;_ or _&#38;amp;copy;_&#31561;HTML entity&#12290;&#24212;&#35813;&#20351;&#29992;Unicode&#23383;&#31526;&#26469;&#20195;&#26367;&#12290;&#29992;_&#38;amp;#160;_ &#26367;&#25442;_&#38;amp;nbsp;.     &#10;&#10;&#21465;&#36848;&#24615;&#25991;&#26412;&#30340;&#20869;&#23481;&#24212;&#37319;&#29992;[&#36164;&#28304;&#25152;&#20351;&#29992;&#30340;&#35821;&#35328;](base-definitions.htm#Resource.language)&#65292;&#20294;&#24182;&#24378;&#27714;HTML &#31867;&#22411;&#30340;&#24037;&#20855;&#33021;&#29702;&#35299;&#36164;&#28304;&#20013;&#30340;language &#20803;&#32032;&#12290; &#37492;&#20110;&#27492;&#65292;&#10;&#38;lt;div&#38;gt;&#20803;&#32032;&#20013;&#23452;&#20351;&#29992;lang&#23646;&#24615;([&#21442;&#32771;HTML5&#26631;&#20934;&#20013;&#20351;&#29992;&#35821;&#35328;&#30340;&#27880;&#24847;&#20107;&#39033;](http://www.w3.org/html/wg/drafts/html/master/dom.html#the-lang-and-xml:lang-attributes))       &#10;&#10;&#10;#### 1.17.0.1 &#22270;&#29255;&#24341;&#29992;&#10;image&#28304;&#24341;&#29992;&#21487;&#33021;&#26159;&#36164;&#28304;&#20869;&#30340;&#19968;&#20010;&#23616;&#37096;/&#26412;&#22320;&#24341;&#29992;&#65306;</span><br></pre></td></tr></table></figure>
+<p>  <img src="#a5"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#36825;&#26159;&#23545;&#21516;&#19968;&#36164;&#28304;&#20013;&#26576;&#20010;&#20803;&#32032;&#30340;id&#23646;&#24615;&#30340;[&#20869;&#37096;&#24341;&#29992;](references.htm#idref) &#12290;&#36825;&#20010;&#20803;&#32032;&#30340;&#31867;&#22411;&#35201;&#20040;&#26159;&#38;quot;[Attachment](datatypes.htm#Attachment)&#38;quot;&#31867;&#22411;,&#35201;&#20040;&#26159;&#20869;&#23884;&#30340;[Binary](http.htm#binary)&#36164;&#28304;&#12290;</span><br></pre></td></tr></table></figure>
+<p><patient xmlns="http://hl7.org/fhir"><br>  <text><br>    <status value="generated"><br>    <div xmlns="http://www.w3.org/1999/xhtml"><br>      <p>… <img src="#pic1">. ….</p><br>    </div><br>  </status></text><br>  <contained><br>    <binary id="pic1" contenttype="image/gif">MEKH….SD/Z</binary><br>  </contained><br>```</patient></p>
+<p>叙述性文本和资源数据之间的引用都是通过XML 的id/idref属性来实现的。在JSON之中，id属性和XML的id属性用法一样。</p>
+<p>The “id” attribute SHALL have a unique value within the resource with regard to any other id attributes: the uniqueness and resolution scope of these id references is within the resource that contains them. Contained resources are included in the id uniqueness scope of the resource that contains them. </p>
+<p>If multiple resources are combined into a single piece document, such as an bundle, duplicate values of the id attribute may occur between resources. This SHALL be managed by applications reading the resources.</p>
+<p>Since that are not contained in the resource cannot be guaranteed to be be available when the resource is presented to a user, the source for any images that are an essential part of the narrative SHOULD always be embedded as a data: url, in an attachment or a contained resource.  </p>
+<h4 id="1-17-0-2_XHTML样式化">1.17.0.2  XHTML样式化</h4><p>叙述性文本中的XHTML片段可能使用css来样式化,要么是内部的CSS,要么是外部的css。当使用外部css时,利用XHTML元素的class和id属性.当使用内部css时,直接利用XHTML元素的style属性.  为了最小化安全问题和可管理性,编辑系统不会直接指定CSS样式表.反而由展示资源的应用程序提供CSS样式表.这意味着渲染系统选择能够使用那种样式,编辑系统应提前使用. 编辑系统能改使用这些类,也就是说所有渲染系统都要支持:     </p>
+<p><table> <tr> <td>bold</td> <td>Bold</td> <td>{ font-weight: bold }</td> </tr> <tr> <td>italics</td> <td>Italics Text</td> <td>{ font-style: italic }</td> </tr> <tr> <td>underline</td> <td>Underlined Text</td> <td>{ text-decoration: underline }</td> </tr> <tr> <td>strikethrough</td> <td>Strikethrough Text</td> <td>{ text-decoration: line-through }</td> </tr> <tr> <td>left</td> <td>Left Aligned</td> <td>{ text-align : left }</td> </tr> <tr> <td>right</td> <td>Right Aligned</td> <td>{ text-align : right }</td> </tr> <tr> <td>center</td> <td>Center Aligned</td> <td>{ text-align : center }</td> </tr> <tr> <td>justify</td> <td>Justified</td> <td>{ text-align : justify }</td> </tr> <tr> <td>border-left</td> <td>Border on the left</td> <td>{ border-left: 1px solid grey }</td> </tr> <tr> <td>border-right</td> <td>Border on the right</td> <td>{ border-right: 1px solid grey }</td> </tr> <tr> <td>border-top</td> <td>Border on the top</td> <td>{ border-top: 1px solid grey }</td> </tr> <tr> <td>border-bottom</td> <td>Border on the bottom</td> <td>{ border-bottom: 1px solid grey }</td> </tr> <tr> <td>arabic</td> <td>List is ordered using Arabic numerals: 1, 2, 3</td> <td>{ list-style-type: decimal }</td> </tr> <tr> <td>little-roman</td> <td>List is ordered using little Roman numerals: i, ii, iii</td> <td>{ list-style-type: lower-roman }</td> </tr> <tr> <td>big-roman</td> <td>List is ordered using big Roman numerals: I, II, III</td> <td>{ list-style-type: upper-roman }</td> </tr> <tr> <td>little-alpha</td> <td>List is ordered using little alpha characters: a, b, c</td> <td>{ list-style-type: lower-alpha }</td> </tr> <tr> <td>big-alpha</td> <td>List is ordered using big alpha characters: A, B, C</td> <td>{ list-style-type: upper-alpha }</td> </tr> <tr> <td>disc</td> <td>List bullets are simple solid discs</td> <td>{ list-style-type: disc }</td> </tr> <tr> <td>circle</td> <td>List bullets are hollow discs</td> <td>{ list-style-type : circle }</td> </tr> <tr> <td>square</td> <td>List bullets are solid squares</td> <td>{ list-style-type: square }</td> </tr></table><br>注意:出于测试目的,这里有一个包含所有这些样式的<a href="../iinfra/other-example-narrative.xml.html">资源实例</a>.同时也有一个<a href="narrative-example.html">XHTML格式的</a>和包含了所有这些样式的对应<a href="fhir-runtime.css">标准样式表</a>      </p>
+<p>编辑系统可能会参考其他的类型,但不能奢望它们总是可以支持的, 如果额外的类型对应安全的渲染很重要的话,交换双方的协议中应该作出要求.    </p>
+<p>编辑系统也可能会通过style属性来使用外部的样式.这样做的优点在于不用依赖外部的解读,但是副作用在于渲染时导致内容更加难以管理,因此应用程序宜小心使用这种方法.编辑系统可能会固定内容的如下样式:      </p>
+<ul>
+<li>bold, italic, underline, strikethrough     </li>
+<li>font color, family and size       </li>
+<li>background color, text alignment      </li>
+<li>whitespace interpretation       </li>
+<li>ordered list number format (since it may be referred to in text)<br>These style properties are specified in-line using the style attribute.   当style属性中制定了样式,渲染系统在渲染时宜遵守其中任意一种,尽管允许适当的演绎(比如暗室中低对比度的展示或者是为了视障人士而高对比度的展示,可以根据情况调整颜色).   </li>
+</ul>
+<p>注意:允许渲染系统忽略或覆盖上面所述的任意内部/外部样式,但是宜小心谨慎以确保只能在合理的交易双方协议的情况下这么做,因为改变文本的展现方式可能会带来临床安全问题.    </p>
+<p>编辑人员可能会指定CSS标准中所规定的额外的样式或样式的属性, 但是这些都是对该标准的扩展,渲染人员毋须遵循.在没有这些额外的样式特征的情况下宜保证查看叙述性文本是安全的.<br>注意:对于<a href="../impl/documents.html#css">文档</a>的展现有一些额外的规则.        </p>
+<h4 id="1-17-0-3_临床安全考虑">1.17.0.3  临床安全考虑</h4><p>卫生保健记录常常有着长时间保留的法律和业务需求(甚至于一个世纪).  跨设备之间不一致的展现方式会带来很高的风险.尽管叙述性文本中允许使用如上所述的标准XHTML和CSS,鼓励在开发中尽量保持简单.即使交换双方协议限制了某个系统的现行需求.经验显式这些协议总归会随着时间而越来越宽泛.<br>特别是:    </p>
+<ul>
+<li>多层的复杂展现要求精心测试xhtml div和span元素以及样式的对应,其中包括了嵌套的表格,可能有一些图片,也会导致很难保持渲染一致性.开发中宜避免这些问题.     </li>
+<li>如bolding, italics and color等样式的使用不宜作为传达含义或语义的唯一方式,但是宜与其他FHIR资源一道来确保一致的 长久的互操作性.   </li>
+</ul>
+<p> &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a>      </p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

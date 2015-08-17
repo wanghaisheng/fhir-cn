@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt;扩展＞样例      
+
+Content
+示例
+详细描述
+扩展的注册库
+
+1.12.6.1 扩展的样例　　为了使用扩展，要走三个步骤：　　　　
+
+定义扩展　　　
+注册扩展　　　　
+在实例中使用扩展　　　　　　　　　　　　　
+
+这部分就是对这三个步骤的演示．
+1.12.6.1.1 共享病历的病人授权　　　　基本的patient资源不包含与患者授权相关的信">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extensibility-examples.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt;扩展＞样例      
+
+Content
+示例
+详细描述
+扩展的注册库
+
+1.12.6.1 扩展的样例　　为了使用扩展，要走三个步骤：　　　　
+
+定义扩展　　　
+注册扩展　　　　
+在实例中使用扩展　　　　　　　　　　　　　
+
+这部分就是对这三个步骤的演示．
+1.12.6.1.1 共享病历的病人授权　　　　基本的patient资源不包含与患者授权相关的信">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt;扩展＞样例      
+
+Content
+示例
+详细描述
+扩展的注册库
+
+1.12.6.1 扩展的样例　　为了使用扩展，要走三个步骤：　　　　
+
+定义扩展　　　
+注册扩展　　　　
+在实例中使用扩展　　　　　　　　　　　　　
+
+这部分就是对这三个步骤的演示．
+1.12.6.1.1 共享病历的病人授权　　　　基本的patient资源不包含与患者授权相关的信">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;<a href="resources.html">资源定义</a> &gt;<a href="extensibility.html">扩展</a>＞<strong>样例</strong>      </p>
+<ul>
+<li><a href="extensibility.html">Content</a></li>
+<li><a href="extensibility-examples.html">示例</a></li>
+<li><a href="extensibility-definitions.html">详细描述</a></li>
+<li><a href="extensibility-registry.html">扩展的注册库</a></li>
+</ul>
+<h4 id="1-12-6-1_扩展的样例">1.12.6.1 扩展的样例　　</h4><p>为了使用扩展，要走三个步骤：　　　　</p>
+<ol>
+<li>定义扩展　　　</li>
+<li>注册扩展　　　　</li>
+<li>在实例中使用扩展　　　　　　　　　　　　　</li>
+</ol>
+<p>这部分就是对这三个步骤的演示．</p>
+<h5 id="1-12-6-1-1_共享病历的病人授权">1.12.6.1.1 共享病历的病人授权　　　　</h5><p>基本的patient资源不包含与患者授权相关的信息，和或患者登记时有关授权策略的详细信息．PHR的社交网络供应商可能需要追踪病人与此PHR供应商之间建立起关系的策略，并通过FHIR api与合作伙伴进行共享．如果需要的话，他们可以扩展patient资源来表达患者的使用协议．注意也有其他解决此问题的方法，但这样已经足够用来演示扩展的流程．　　　　　　　　
+　</p>
+<p>鉴于这个例子的目的，我们假设患者在注册时就已经同意了参与其中的策略，当供应商要更改它们的策略时，它们要征询患者是否同意最新的参与细节．每种参与协议都用一个URI来标识，对于每种不同的策略协定，patient资源中都会包含那些患者同意策略对应的uri．　　　　</p>
+<p>#######  1.12.6.1.1.1  定义扩展　　　　　　　　　</p>
+<p>对于每个扩展，所要做的第一件事就是完成<a href="extensibility.html#define">扩展的定义属性</a>:      </p>
+<table class="codes"> <tr><td>Code</td><td>&quot;参与协议&quot;</td></tr><tr><td>Context</td><td>该扩展用在patient资源之中</td></tr> <tr><td>Short Defn</td><td>用户协议/策略</td></tr> <tr><td>Definition</td><td>患者所同意的用户协议的URI</td></tr> <tr><td>Comments</td><td>URI是对协议文本的字面引用</td></tr> <tr><td>Cardinality</td><td>1..* (患者至少要选择一种协议)</td></tr><tr><td>Type</td><td>uri</td></tr> <tr><td>XPaths</td><td>无</td></tr> <tr><td>is Modifier</td><td>No (用户协议的内容不影响对患者相关数据的解读,尽管可能会影响系统与患者交互的方式)</td></tr> <tr><td>Binding</td><td>(无绑定 - 非可编码值)</td></tr></table>       
+
+<h6 id="1-12-6-1-1-2_编写扩展的定义">1.12.6.1.1.2  编写扩展的定义</h6><p>通过下表,我们可以得到一个规范.      </p>
+<p>This is all then represented formally in a profile. 一些规范不需要包含对资源的约束声明,取而代之的是,它们会包含扩展声明和相应的绑定.这种情况下,一个规范如下所示:    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;StructureDefinition xmlns=&#34;http://hl7.org/fhir&#34;&#62;&#10;  &#60;url value=&#34;http://example.org/fhir/StructureDefinition/participation-agreement&#34; /&#62;&#10;  &#60;name value=&#34;Example Extension Definition&#34; /&#62;&#10;  &#60;!-- snip other metadata --&#62;&#10;  &#60;type value=&#34;extension&#34; /&#62;&#10;  &#60;contextType value=&#34;resource&#34; /&#62;&#10;  &#60;context value=&#34;Patient&#34; /&#62;&#10;  &#60;differential&#62;&#10;    &#60;element&#62;&#10;    &#60;path value=&#34;Extension.value&#34;/&#62;&#10;    &#60;short value=&#34;Agreed agreement/policy&#34; /&#62;&#10;    &#60;definition value=&#34;A URI that identifies a participation agreement/policy &#10;      to which the patient has agreed&#34; /&#62;&#10;    &#60;comments value=&#34;URI is a literal reference to agreement text (html). &#10;      Systems SHALL conform to the policies as indicated. &#10;      For further information, see the partnership agreement...&#34; /&#62;&#10;    &#60;min value=&#34;1&#34; /&#62;&#10;    &#60;max value=&#34;*&#34; /&#62;&#10;    &#60;type&#62;&#10;       &#60;code value=&#34;uri&#34; /&#62;&#10;    &#60;/type&#62;&#10;    &#60;mustSupport value=&#34;true&#34; /&#62;&#10;    &#60;isModifier value=&#34;false&#34; /&#62;&#10;    &#60;/element&#62;&#10;  &#60;/differential&#62;&#10;&#60;/StructureDefinition&#62;&#10;&#10;`</span><br></pre></td></tr></table></figure>
+<p>注意 通常你可能是用一些工具来生成规范的.上面的例子是手工编写的.     </p>
+<h6 id="1-12-6-1-1-3_注册扩展">1.12.6.1.1.3 注册扩展</h6><p>把上面定义扩展的规范放在web中去.首选的话,放置在一个FHIR规范的节点上,最好是放在HL7的规范注册库中(还没有实现)             </p>
+<p>在这个例子中,我们假设它已经上传到PHR供应商自己的网站<a href="http://example.org/phr/documents/fhir/extensions.上去了" target="_blank" rel="external">http://example.org/phr/documents/fhir/extensions.上去了</a>.           </p>
+<h6 id="1-12-6-1-1-4_在实例中使用扩展">1.12.6.1.1.4  在实例中使用扩展</h6><p>要想在实例中使用扩展,扩展需放在资源的根元素之后.注意扩展的url指向所注册的网址, with the id of the extension as a fragment identifier.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;&#60;Patient xmlns=&#34;http://hl7.org/fhir&#34;&#62;&#10;  &#60;extension url=&#34;http://example.org/phr/documents/fhir/extensions#participation-agreement&#34; &#62;&#10;    &#60;valueUri value=&#34;http://example.org/phr/documents/patient/general/v1&#34; /&#62;&#10;  &#60;/extension&#62;&#10;    &#10;&#60;/Patient&#62;&#10;&#10;&#10;`</span><br></pre></td></tr></table></figure></p>
+<h6 id="1-12-6-1-1-5_将扩展添加到Patient_StructureDefinition">1.12.6.1.1.5 将扩展添加到Patient StructureDefinition</h6><p>上面的规范定义中只是简单的定义了 &quot;参与协议&quot;这个扩展,告诉我们这个扩展可以在patient中使用,但是上面的规范内并没有说服务器实际上是在使用整个扩展.对于PHR供应商而言,通过patientStructureDefinition来声明所有patient资源都在使用这个扩展.    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;StructureDefinition xmlns=&#34;http://hl7.org/fhir&#34;&#62;&#10;  &#60;name value=&#34;iso-21090&#34; /&#62;&#10;  &#60;!-- snip other metadata, narrative --&#62;&#10;  &#60;differential&#62;&#10;&#10;    &#60;!-- first, the patient root element &#10;      - can be copy/paste from the base patient profile --&#62;    &#10;    &#60;element&#62;&#10;      &#60;path value=&#34;Patient&#34;/&#62;&#10;      &#60;!-- snip definition --&#62;&#10;    &#60;/element&#62;&#10;    &#10;    &#60;!-- now, the general definition for extensions&#10;      - can be copy/paste from the base patient profile,&#10;      with changes for slicing  --&#62;&#10;    &#60;element&#62;&#10;      &#60;path value=&#34;Patient.extension&#34;/&#62;&#10;      &#60;name value=&#34;base extension&#34;/&#62;&#10;      &#60;!-- we&#39;re going to slice the extension element, and &#10;        one of the extensions is one we have defined --&#62;&#10;      &#60;slicing&#62;&#10;        &#60;!-- extension is always sliced on url --&#62;&#10;        &#60;discriminator value=&#34;url&#34;/&#62; &#10;        &#60;!-- we don&#39;t care what the order of any extensions is --&#62;&#10;        &#60;ordered value=&#34;false&#34;/&#62;&#10;        &#60;!-- Other extensions are allowed in addition to this one --&#62;&#10;        &#60;rules value=&#34;open&#34;/&#62;&#10;      &#60;/slicing&#62;&#10;      &#60;!-- snip definition --&#62;&#10;    &#60;/element&#62;&#10;    &#10;    &#60;!-- now, the slice that contains our extension --&#62;    &#10;    &#60;element&#62;&#10;      &#60;path value=&#34;Patient.extension&#34;/&#62;&#10;      &#60;!-- clone information from the extension definition. &#10;        duplicative, but this duplication makes it over all simpler --&#62;&#10;      &#60;short value=&#34;Agreed agreement/policy&#34;/&#62;&#10;      &#60;definition value=&#34;A URI that identifies a participation agreement/policy &#10;      to which the patient has agreed&#34;/&#62;&#10;      &#60;!--  min has to be 1, since the extension itself has min = 1 --&#62;&#10;      &#60;min value=&#34;1&#34;/&#62;&#10;      &#60;max value=&#34;*&#34;/&#62;&#10;      &#60;type&#62;&#10;        &#60;!-- obviously it has to be an extension --&#62;&#10;        &#60;code value=&#34;Extension&#34;/&#62;&#10;        &#60;!-- and here is the link to the extension definition:&#10;          this extension has to conform to the rules laid down in its definition --&#62;&#10;        &#60;profile value=&#34;http://example.org/phr/documents/fhir/extensions#participation-agreement&#34;/&#62;&#10;      &#60;/type&#62;&#10;      &#60;isModifier value=&#34;false&#34;/&#62;&#10;    &#60;/element&#62;&#10;    &#10;  &#60;!-- snip the rest of the profile --&#62;&#10;&#10;  &#60;/differential&#62;&#10;&#60;/StructureDefinition&#62;&#10;`</span><br></pre></td></tr></table></figure>
+<p>注意 - 这一步是可选的 .               </p>
+<h5 id="1-12-6-1-2_患者姓名的组成部分">1.12.6.1.2   患者姓名的组成部分</h5><p>ISO 21090 (Healthcare Data Types)定义一个概念&quot;姓名组成部分修饰符&quot; ,其中包含描述某个姓名组成部分如何使用的信息.在实际应用中,除了极少的场景,很少使用这个字段.按照<a href="extensibility.html">FHIR设计原则</a>,在核心的name数据类型中并没有包含这个字段,可以将其作为扩展.                 </p>
+<p>实际应用中,像ISO 21090中类似的这种情况,HL7提供了常用扩展,是在<a href="">这里</a>定义的.                 </p>
+<h6 id="1-12-6-1-2-1_定义扩展">1.12.6.1.2.1 定义扩展</h6><p>对于每个扩展，所要做的第一件事就是完成<a href="extensibility.html#define">扩展的定义属性</a>:      </p>
+<table class="codes"> <tr><td>Code</td><td>&quot;姓名修饰符&quot;</td></tr><tr><td>Context</td><td>该扩展可以用在任何出现HumanName.part的地方 </td></tr> <tr><td>Short Defn</td><td>(可选编码) LS | AC | NB | PR | HON | BR | AD | SP | MID | CL | IN</td></tr> <tr><td>Definition</td><td>除了主要的姓名组成部分之外,每个编码代表姓名组成部分的某个子类.</td></tr> <tr><td>Comments</td><td>用来表达姓名组成部分的额外信息,以及如何使用它们</td></tr> <tr><td>Cardinality</td><td>0..* (该字段总是可选的,如果需要的话可以使用一到多个)</td></tr> <tr><td>Type</td><td>code</td></tr> <tr><td>XPaths</td><td>N/A</td></tr> <tr><td>Is Modifier</td><td>否 (修饰符不会更改姓或者名的内容)</td></tr> <tr><td>RIM Mapping</td><td>ENXP.qualifier</td></tr> <tr><td>v2 Mapping</td><td>N/A</td></tr> <tr><td>Binding</td><td>与 <a href="http://www.hl7.org/v3ballot/html/infrastructure/vocabulary/EntityNamePartQualifierR2.html" target="_blank" rel="external">EntityNamePartQualifierR2 in ISO 21090</a> 的子集绑定</td></tr></table>
+
+<p>在这种场景下,并非需要所有的EntityNamePartQualifierR2编码,因为前缀,后缀很明显是姓名的组成部分.与其引用EntityNamePartQualifierR2的OID (2.16.840.1.113883.5.1122), 我们枚举出需要用的编码,只有在规范中定义好了可以使用的编码才允许使用&quot;code&quot; 数据类型.编码如下表 (完整定义请参考<a href="http://www.hl7.org/v3ballot/html/infrastructure/vocabulary/EntityNamePartQualifierR2.html" target="_blank" rel="external">EntityNamePartQualifierR2</a>):</p>
+<table class="codes"><tr><td>LS</td><td>Legal status </td><td>For organizations a suffix…</td></tr><tr><td>AC</td><td>Academic</td><td>Indicates that a prefix like &quot;D…</td></tr><tr><td>NB</td><td>Nobility</td><td>In Europe and Asia, there are s…</td></tr><tr><td>PR</td><td>Professional</td><td>Primarily in the British Im…</td></tr><tr><td>HON</td><td>Honorific</td><td>An honorific such as ‘The Rig…</td></tr><tr><td>BR</td><td>Birth</td><td>A name that a person was given at …</td></tr><tr><td>AD</td><td>Acquired</td><td>A name part a person acquired. …</td></tr><tr><td>SP</td><td>Spouse</td><td>The name assumed from the partner…</td></tr><tr><td>MID</td><td>Middle Name</td><td>Indicates that the name par…</td></tr><tr><td>CL</td><td>Call me</td><td>Callme is used to indicate which…</td></tr><tr><td>IN</td><td>Initial</td><td>Indicates that a name part is ju…</td></tr></table>
+
+<p>This is all then represented formally in a profile. 一些规范不需要包含对资源的约束声明,取而代之的是,它们会包含扩展声明和相应的绑定.这种情况下,一个规范如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;StructureDefinition xmlns=&#34;http://hl7.org/fhir&#34;&#62;&#10;  &#60;url value=&#34;http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier&#34; /&#62;&#10;  &#60;name value=&#34;iso-21090&#34; /&#62;&#10;  &#60;!-- snip other metadata, including definition of RIM Mapping --&#62;&#10;  &#60;type value=&#34;extension&#34; /&#62;&#10;  &#60;contextType value=&#34;datatype&#34; /&#62;&#10;  &#60;context value=&#34;HumanName.given&#34; /&#62;&#10;  &#60;context value=&#34;HumanName.prefix&#34; /&#62;&#10;  &#60;context value=&#34;HumanName.family&#34; /&#62;&#10;  &#60;context value=&#34;HumanName.suffix&#34; /&#62;&#10;  &#60;differential&#62;&#10;    &#60;element&#62;&#10;      &#60;path value=&#34;Extension.value&#34;/&#62;&#10;      &#60;short value=&#34;LS | AC | NB | PR | HON | BR | AD | SP | MID | CL | IN&#34; /&#62;&#10;      &#60;definition value=&#34;A set of codes each of which specifies a certain subcategory&#10;          of the name part in addition to the main name part type&#34; /&#62;&#10;      &#60;comments value=&#34;Used to indicate additional information about the&#10;             name part and how it should be used&#34; /&#62;&#10;      &#60;min value=&#34;0&#34; /&#62;&#10;      &#60;max value=&#34;*&#34; /&#62;&#10;      &#60;type&#62;&#10;         &#60;code value=&#34;code&#34; /&#62;&#10;      &#60;/type&#62;&#10;      &#60;mustSupport value=&#34;false&#34; /&#62;&#10;      &#60;isModifier value=&#34;false&#34; /&#62;&#10;      &#60;binding&#62;&#10;        &#60;name value=&#34;EntityNamePartQualifier&#34; /&#62;&#10;        &#60;strength value=&#34;required&#34; /&#62;&#10;        &#60;description value=&#34;A set of codes each of which specifies a certain subcategory&#10;            of the name part in addition to the main name part type&#34; /&#62;&#10;        &#60;referenceReference&#62;&#10;          &#60;reference value=&#34;ValueSet/name-part-qualifier&#34; /&#62;&#10;        &#60;/referenceReference&#62;&#10;      &#60;/binding&#62;&#10;      &#60;mapping&#62;&#10;         &#60;identity value=&#34;RIM&#34; /&#62;&#10;         &#60;map value=&#34;ENXP.qualifier&#34; /&#62;&#10;      &#60;/mapping&#62;&#10;    &#60;/element&#62;&#10;  &#60;/differential&#62;&#10;&#60;/StructureDefinition&#62;&#10;&#10;`</span><br></pre></td></tr></table></figure></p>
+<p>注意 通常你可能是用一些工具来生成规范的.上面的例子是手工编写的.        </p>
+<h6 id="1-12-6-1-2-2_注册扩展">1.12.6.1.2.2  注册扩展</h6><p>在这个例子中,在<a href="http://hl7.org/fhir/Profile/iso-21090?_format=text/html" target="_blank" rel="external">http://hl7.org/fhir/Profile/iso-21090</a>中注册.用到扩展时,url的值就是这个网址.              </p>
+<h6 id="1-12-6-1-2-3_在实例中使用扩展">1.12.6.1.2.3 在实例中使用扩展</h6><p>想要使用这个扩展,就要将扩展嵌套在它所想要扩展的属性中.<br>注意扩展的URL对应的注册地址,with the id of the extension as a fragment identifier.       </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;name&#62;&#10;  &#60;use value=&#34;official&#34; /&#62;&#10;  &#60;given value=&#34;&#214;stlund&#34;&#62;&#10;     &#60;extension url=&#34;http://hl7.org/fhir/StructureDefinition/iso-21090#name-qualifier&#34; &#62;&#10;        &#60;valueCode value=&#34;MID&#34; /&#62;&#10;     &#60;/extension&#62;&#10;  &#60;/given&#62;&#10;&#60;/name&#62;&#10;`</span><br></pre></td></tr></table></figure>
+<p>This particular example is a Scandinavian mellannamn.<br><a href="datatypes-examples.html">更多实例请参考</a>.</p>
+<p> &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a>      </p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

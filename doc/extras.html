@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title:date:   
+categories: doc首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; 标签、bunlde和Compartments
+1.12.2.0  标签、bunlde和Compartments1.12.2.0.1 标签除了资源的基本内容和元数据之外，每个资源都会有0到多个”标签”。这些标签能够用来将额外的操作信息与资源关联起来，包括确定bundle，工作流管理和声称遵循某">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extras.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="title:date:   
+categories: doc首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; 标签、bunlde和Compartments
+1.12.2.0  标签、bunlde和Compartments1.12.2.0.1 标签除了资源的基本内容和元数据之外，每个资源都会有0到多个”标签”。这些标签能够用来将额外的操作信息与资源关联起来，包括确定bundle，工作流管理和声称遵循某">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="title:date:   
+categories: doc首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt; 标签、bunlde和Compartments
+1.12.2.0  标签、bunlde和Compartments1.12.2.0.1 标签除了资源的基本内容和元数据之外，每个资源都会有0到多个”标签”。这些标签能够用来将额外的操作信息与资源关联起来，包括确定bundle，工作流管理和声称遵循某">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p>title:<br>date:   </p>
+<h2 id="categories:_doc">categories: doc</h2><p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;<a href="resources.html">资源定义</a> &gt; <strong>标签、bunlde和Compartments</strong></p>
+<h4 id="1-12-2-0_标签、bunlde和Compartments">1.12.2.0  标签、bunlde和Compartments</h4><h5 id="1-12-2-0-1_标签">1.12.2.0.1 标签</h5><p>除了资源的基本内容和元数据之外，每个资源都会有0到多个”标签”。这些标签能够用来将额外的操作信息与资源关联起来，包括确定bundle，工作流管理和声称遵循某个<a href="../infra/profile.html">规范</a>的资源 . 标签是资源的一部分 与资源一起进行交换。标签从未用来保存那些在解释资源内容时所需的信息。它们的作用仅限于寻找资源、控制对资源的访问和将资源与技术上的/临床上的工作流程联系起来    </p>
+<p>每个标签都有3个属性：<br> <a href="http://hl7.org/fhir/tag" target="_blank" rel="external">http://hl7.org/fhir/tag</a>   </p>
+<table class="grid"> <tr><td>Scheme : uri</td><td>确定标签类型的uri</td></tr> <tr><td>Term : uri</td><td>定义标签含义的绝对地址uri</td></tr> <tr><td>Label : string</td><td>(可选的)在面向用户的终端应用程序中给标签一个供人可读的标记</td></tr></table>
+
+<p>定义了的tag scheme如下：    </p>
+<table class="grid"> <tr><td><a href="http://hl7.org/fhir/tag" target="_blank" rel="external">http://hl7.org/fhir/tag</a></td><td>通用型标签</td></tr> <tr><td><a href="http://hl7.org/fhir/tag/profile" target="_blank" rel="external">http://hl7.org/fhir/tag/profile</a></td><td>规范型标签-表明该资源遵循这个规范 </td></tr> <tr><td><a href="http://hl7.org/fhir/tag/security" target="_blank" rel="external">http://hl7.org/fhir/tag/security</a></td><td><a href="../impl/security.html#labels">安全型标签</a></td></tr></table>     
+
+<h6 id="1-12-2-0-1-1_通用型标签">1.12.2.0.1.1    通用型标签</h6><p>在一个通用型标签中，Term可能是引用某个卫生保健词汇，包括该标准中定义的一些，也包括诸如像HL7 V2/V3/CDA LONIC SNOMED CT等术语。或者，term可能是由本地实现所定义的。直接指向标签描述的字面引用(尤其是HTML页面里)要比字符引用要好一些，但并不是必须这样做。<br>如果终端用户应用程序能够提供给用户根据自己的目的任意向资源添加文本标签的功能，应用程序能够通过给根URL&quot;<a href="http://hl7.org/fhir/tag/text/&quot;后加上URL编码的标签来自动构建一个term。当处理资源的应用程序发现这样的URL，很自然地它们知道这只是一个纯文本的标签，不具任何含义。" target="_blank" rel="external">http://hl7.org/fhir/tag/text/&quot;后加上URL编码的标签来自动构建一个term。当处理资源的应用程序发现这样的URL，很自然地它们知道这只是一个纯文本的标签，不具任何含义。</a>   </p>
+<p><strong>  已知的通用型标签 </strong><br>下表总结了标准中已经定义了的这类标签：</p>
+<table class="grid"> <tr> <td><b>Term/术语</b></td> <td><b>语境</b></td> <td><b>描述</b></td></tr> <tr> <td><a href="http://hl7.org/fhir/tag/document" target="_blank" rel="external">http://hl7.org/fhir/tag/document</a></td> <td>A bundle (feed.category)</td> <td>这个bundle <a href="../impl/documents.html">表示一份文档</a></td></tr> <tr> <td><a href="http://hl7.org/fhir/tag/message" target="_blank" rel="external">http://hl7.org/fhir/tag/message</a></td> <td>A bundle (feed.category)</td> <td>这个bundle 表示<a href="../impl/messaging.html">一条消息</a></td></tr></table>
+
+
+<h6 id="1-12-2-0-1-2_规范型标签">1.12.2.0.1.2 规范型标签</h6><p>一个规范型标签标识一个资源遵循某个<a href="../infra/profile.html">规范</a>,也就是资源中允许出现什么内容的规则集合。 在一个规范型标签里面，term就是引用规范资源的URL。  </p>
+<p>简单的通过对规范的测试就可以确定资源是否遵循某个规范(<a href="../impl/downloads.html">校验工具</a>提供了多种测试功能).然而，在一些情况下 要想简单的校验资源是否遵循一个规范是不现实的：</p>
+<ul>
+<li>服务器检索资源集合，试图找到那些遵循某个规范的资源   </li>
+<li>在校验资源时 有可个规范可供选择<br>另外，校验根据需要客户端以一种方式告知它想根据哪个规范来校验资源。   </li>
+</ul>
+<p>规范型标签可以用于多个应用场景——客户端/资源构建器可以给资源打上标签，表明其遵循某个规范。资源的服务器/接收方可以选择相信这个断言，亦或是定位规范来校验整个资源。<br>注意：一个资源可以同时遵循多个规范。一个没有标签的资源可以遵循一个规范，当然，也可以谎称自己遵循某个规范。鉴于此，处理资源的应用程序在处理资源时，总是应该根据资源的内容，要么直接相信规范型标签，要么对其进行校验。规范型标签提供了一种找到资源所遵循规范的方法，而不是资源内容的声明。<br>标签在该标准中其他部分的引用：    </p>
+<ul>
+<li>Tags 用作 <a href="../impl/security-labels.html">安全型标签</a></li>
+<li><a href="xml.html#tags">XML</a> 和 <a href="json.html#tags">JSON</a>格式的Bundle/Feed</li>
+<li>在 <a href="../impl/http.html#tags">HTTP interface</a>, 和 <a href="../impl/http.html#tag-ops">tag operations</a>, 和 the <a href="../impl/http.html#validation">Validation operation</a>    </li>
+<li><a href="../impl/search.html#tags">通过标签寻找资源 </a></li>
+<li>规范中的声明 <a href="../infra/conformance.html#tags">Conformance Statements</a></li>
+<li><a href="../impl/security.html#labels">安全型标签</a></li>
+</ul>
+<h5 id="1-12-2-0-2_Compartments">1.12.2.0.2 Compartments</h5><p>每个资源可能属于一到多个逻辑compartments。一个compartment 也就是拥有共同属性的资源的一种逻辑分类。compartment有2种主要的作用：    </p>
+<ul>
+<li>提供快速查找一些相关联的资源的获取机制的功能</li>
+<li>为将访问控制快速应用到资源中提供定义的基础        </li>
+</ul>
+<p>Compartments定义了中描述了Compartment的实例如何命名和确定，系统如何知道资源是否归属于Compartments。如下是该标准中的一些Compartment列表：</p>
+<table class="grid"> <tr><td><strong>名称</strong></td><td><strong>标题</strong></td><td><strong>描述</strong></td><td><strong>标识</strong></td><td><strong>成员</strong></td></tr> <tr><td><a href="compartment-patient.htm">patient</a></td><td>Patient</td><td>与某个患者相关的资源集合</td><td>每个患者资源有一个patient compartment的实例，compartment的标识与患者是一样的。当一个患者与另一个关联起来的时候，所有与被关联的患者相关的记录都归属于关联对象的compartment.</td><td>patient compartment包含了所有资源中对象是某个患者的资源和那些在患者compartment中直接关联起来的资源</td></tr></table>
+
+<p>使用compartment的例子：使用如下URL来获取病人病情的列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [baseurl]/patient/@[id]/condition</span><br></pre></td></tr></table></figure></p>
+<p>更多详细信息参见 <a href="http.htm#search">查询操作</a>.作为一个检索相关的操作，分配给compartment的资源仅是哪些基于已经目前版本中涉及到的任意资源。<br>注意：内嵌资源不能用来单独形成一个病人compartment。   </p>
+<p>可能会像这样，很明确的使用compartment，也可能是隐式的。比如 如果FHIR服务器提供病人记录的视图，获得授权的用户授权使用FHIR Restful API可能只能访问那些与之身份标识逻辑上相关联的compartment实例中的记录。 无论是显式还是隐式的使用compartment，服务器都需要做一些安排，保证客户端能够访问的病人资源没有直接关联到一些资源(比如用药)<br>注意资源可能横跨多种逻辑类型，或多种逻辑类型之间互相关联。如<a href="../clin/diagnosticreport.html">诊断学报告</a>中存在一个对象，但它所引用的 <a href="../clin/observation.html">观察</a>针对的是另一个对象，或者它所引用的<a href="../infra/list.html">列表项</a>针对的是多个不同对象。这样的一些交叉关联可能是由多种原因引起的，如：</p>
+<ul>
+<li>对象的记录是互相关联的-器官移植、产期护理、家庭治疗等等情况</li>
+<li>工作列表中涉及多个病人/医务人员的工作流管理</li>
+</ul>
+<p>鉴于FHIR应用场景的多样性，compartment中并没有定义如何来处理之间的相互关联。系统可能会拒绝资源，从多个compartments中移除资源，，或将资源都置于每个compartments中，或者以其他方式来处理   </p>
+<h5 id="1-12-2-0-3_Resource_Bundles">1.12.2.0.3 Resource Bundles</h5><p>对资源的一个常见操作就是收集多个资源，将其整合成一个单独的实例，赋予一定的语境。在FHIR中把这称之为资源bundling。大多数情况下，资源Bundles并不只是对一些资源的引用和一些元数据，而是包含它们的整个内容。资源Bundles适用于多种情境，如：    </p>
+<ul>
+<li>返回满足服务器某个操作某些条件的资源集合(参考<a href="../impl/http.html#search">RESTFUL 查询</a>)       </li>
+<li>返回作为某个服务器history操作的资源版本集合 (参考<a href="../impl/http.html#history">版本历史</a>)      </li>
+<li>消息事务中将资源及和作为消息的一部分来交换(参考<a href="../impl/messaging.html">消息</a>)   </li>
+<li>得到一个自包含的资源集合作为交换和持久化的单位来满足临床上的完整性如临床文档(参考<a href="../impl/documents.html">文档</a>)    </li>
+<li>存储资源集合<br>bundled 资源的内容应该包括标识符(url)和更新日期，资源集合，每个资源都要有上述的一些元数据。同时，bundle和每个资源都要有一些有名称的链接，可能会有表示该bundle用途的额外的<a href="extras.html#tags">标签</a><br>读取资源bundle的应用程序应该能够通过资源bundle中的标识，在通过<a href="references.html#atom-refs">利用资源自身的url访问资源之前</a>，应该给总是通过标识先查找资源(在将相对URL转换为绝对URL之后).</li>
+</ul>
+<p>在XML中，是用<a href="xml.html#atom">atom feed</a>来标识bundle的 在JSON中，定义了一种<a href="json.html#bundle">自定义格式</a>   </p>
+<h5 id="1-12-2-0-4_Binary_resources_二进制资源">1.12.2.0.4 Binary resources 二进制资源</h5><p>There are situations where it is useful or required to handle pure binary content using the same framework as other resources. Typically, this is when the binary content is referred to from other FHIR Resources. Using the same framework means that the existing servers, security arrangements, code libraries etc. can handle additional related content. Typically, Binary resources are used for handling content such as:   </p>
+<ul>
+<li>CDA 文档如XDS</li>
+<li>PDF文档</li>
+<li>图像(优先使用Media资源来处理图片,如果内容已经是binary就不能这么做)</li>
+</ul>
+<p>binary资源可以包含任意内容,文本\图片\pdf zip压缩包等等.在REST接口中,可以使用这些资源的原始格式,也可以用XML/JSON格式来标识,比如当把这些资源包含进一个bundle里面时(直接包含进feed要比引用来的方便)</p>
+<p>参考文献:</p>
+<ul>
+<li><a href="../impl/http.html#binary">RESTful HTTP End-Point</a>    </li>
+<li><a href="xml.html#binary">XML Bundle Representation</a>      </li>
+<li><a href="json.html#binary">JSON Bundle Representation</a>        </li>
+</ul>
+<p> &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a>              </p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

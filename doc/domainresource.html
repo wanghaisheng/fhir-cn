@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt; 领域资源 Resource
+
+Content
+示例
+详细描述
+对应关系
+规范
+
+1.12.2 DomainResource 资源1.12.2.1 范围和用途该资源用于在基础资源中添加对文本、内嵌资源和扩展的支持。作为一个抽象资源，该资源不会直接存在，存在的只能是它的子类。更多信息请参考
+
+text: 参考资源中的叙述性文本
+contained:参考嵌套资源
+exten">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/domainresource.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt; 领域资源 Resource
+
+Content
+示例
+详细描述
+对应关系
+规范
+
+1.12.2 DomainResource 资源1.12.2.1 范围和用途该资源用于在基础资源中添加对文本、内嵌资源和扩展的支持。作为一个抽象资源，该资源不会直接存在，存在的只能是它的子类。更多信息请参考
+
+text: 参考资源中的叙述性文本
+contained:参考嵌套资源
+exten">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/domainresource-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/domainresource-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/domainresource-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/domainresource-json.png">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt; 领域资源 Resource
+
+Content
+示例
+详细描述
+对应关系
+规范
+
+1.12.2 DomainResource 资源1.12.2.1 范围和用途该资源用于在基础资源中添加对文本、内嵌资源和扩展的支持。作为一个抽象资源，该资源不会直接存在，存在的只能是它的子类。更多信息请参考
+
+text: 参考资源中的叙述性文本
+contained:参考嵌套资源
+exten">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt; <strong>领域资源 Resource</strong></p>
+<ul>
+<li><a href="#">Content</a></li>
+<li><a href="domainresource-examples.html">示例</a></li>
+<li><a href="domainresource-definitions.html">详细描述</a></li>
+<li><a href="domainresource-mappings.html">对应关系</a></li>
+<li><a href="domainresource-packages.html">规范</a></li>
+</ul>
+<h1 id="1-12-2_DomainResource_资源">1.12.2 DomainResource 资源</h1><h2 id="1-12-2-1_范围和用途">1.12.2.1 范围和用途</h2><p>该资源用于在基础资源中添加对文本、内嵌资源和扩展的支持。作为一个抽象资源，该资源不会直接存在，存在的只能是它的子类。<br>更多信息请参考</p>
+<ul>
+<li>text: 参考<a href="narrative.html">资源中的叙述性文本</a></li>
+<li>contained:参考<a href="references.html#contained">嵌套资源</a></li>
+<li>extension modifierExtension: 参考<a href="extensibility.html">扩展</a></li>
+</ul>
+<h2 id="1-12-2-2_范围和关系">1.12.2.2 范围和关系</h2><p>该资源继承了base 资源，<a href=",./res/resourcelist.html">资源列表</a>中除了Bundle和Binary之外都继承了该资源。</p>
+<h2 id="1-12-2-3_资源内容">1.12.2.3 资源内容</h2><p>结构：<br><img src="../material/domainresource-structure.png" alt=""></p>
+<p>UML：<br><img src="../material/domainresource-uml.png" alt=""></p>
+<p>XML：<br><img src="../material/domainresource-xml.png" alt=""></p>
+<p>JSON：<br><img src="../material/domainresource-json.png" alt=""></p>
+<h3 id="1-12-2-3-1_约束条件">1.12.2.3.1 约束条件</h3><ul>
+<li>dom-1：如果资源被嵌套在某个资源之中，它不应包含任何叙述性文本(xpath: not(parent::f:contained and f:text))</li>
+<li>dom-2:如果资源被嵌套在某个资源之中，它不应再嵌套资源 (xpath: not(parent::f:contained and f:contained))</li>
+<li>dom-3:如果资源被嵌套在某个资源之中，在资源的其他地方要引用被嵌套资源。 (xpath: not(exists(for $id in f:contained/<em>/@id return $id[not(ancestor::f:contained/parent::</em>/descendant::f:reference/@value=concat(‘#’, $id))])))<h2 id="1-12-2-4_查询变量">1.12.2.4 查询变量</h2>该资源并未定义任何通用 查询变量。<br>如果要查询扩展，需要为扩展定义一个查询变量。其他查询变量的命名采用资源中内容的化名，一些情况下，查询参数的名称与元素名称一样，但并不都是。对于扩展的查询也是这样，先定义一个通过URL来标识value扩展的名称，查询时即可根据扩展的值来进行过滤。</li>
+</ul>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

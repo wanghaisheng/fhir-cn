@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="5.0  Administrative Resources&amp;lt;table class=&quot;bare&quot;&amp;gt;
+    &amp;lt;tr&amp;gt;&amp;lt;td colspan=&quot;3&quot;&amp;gt;
+
+
+Attribution Track individuals and organizations involved in the provision of healthcare
+
+&amp;lt;tr&amp;gt;&amp;lt;td">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/admin/administration.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="5.0  Administrative Resources&amp;lt;table class=&quot;bare&quot;&amp;gt;
+    &amp;lt;tr&amp;gt;&amp;lt;td colspan=&quot;3&quot;&amp;gt;
+
+
+Attribution Track individuals and organizations involved in the provision of healthcare
+
+&amp;lt;tr&amp;gt;&amp;lt;td">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="5.0  Administrative Resources&amp;lt;table class=&quot;bare&quot;&amp;gt;
+    &amp;lt;tr&amp;gt;&amp;lt;td colspan=&quot;3&quot;&amp;gt;
+
+
+Attribution Track individuals and organizations involved in the provision of healthcare
+
+&amp;lt;tr&amp;gt;&amp;lt;td">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <h2 id="5-0_Administrative_Resources"><span class="sectioncount">5.0<a name="5.0"> </a></span> Administrative Resources</h2><pre><code>&lt;<span class="tag">table</span> class=<span class="string">"bare"</span>&gt;
+    &lt;tr&gt;&lt;<span class="tag">td</span> colspan=<span class="string">"3"</span>&gt;
+</code></pre><hr>
+<p></p>
+<tr><th colspan="3">Attribution<a name="attribution"> </a></th></tr><br><tr><td colspan="3">Track individuals and organizations involved in the provision of healthcare</td></tr>
+
+<pre><code>&lt;tr&gt;&lt;td&gt;**Name**&lt;/td&gt;&lt;td&gt;**Aliases**&lt;/td&gt;&lt;td&gt;**Description**&lt;/td&gt;&lt;/tr&gt;
+&lt;tr bgcolor=<span class="string">"#EFEFEF"</span>&gt;&lt;td&gt;<span class="comment">[Patient]</span>(patient.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Demographics and other administrative information about a <span class="keyword">person</span> or <span class="keyword">animal</span> receiving care or other health-related services.&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr bgcolor=<span class="string">"#FFFFFF"</span>&gt;&lt;td&gt;<span class="comment">[RelatedPerson]</span>(relatedperson.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Information about a <span class="keyword">person</span> that <span class="keyword">is</span> involved in the care for a patient, but who <span class="keyword">is</span> not the target <span class="keyword">of</span> healthcare, nor has a formal responsibility in the care process.&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr bgcolor=<span class="string">"#EFEFEF"</span>&gt;&lt;td&gt;<span class="comment">[Practitioner]</span>(practitioner.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A <span class="keyword">person</span> who <span class="keyword">is</span> directly or indirectly involved in the provisioning <span class="keyword">of</span> healthcare.&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr bgcolor=<span class="string">"#FFFFFF"</span>&gt;&lt;td&gt;<span class="comment">[Organization]</span>(organization.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;A formally or informally recognized grouping <span class="keyword">of</span> people or organizations formed for the purpose <span class="keyword">of</span> achieving some form <span class="keyword">of</span> collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr&gt;&lt;td colspan=<span class="string">"3"</span>&gt;
+</code></pre><hr>
+<p></p>
+<tr><th colspan="3">Resources<a name="resources"> </a></th></tr><br><tr><td colspan="3">Track general support resources used when healthcare is provided</td></tr>
+
+<pre><code><span class="variable">&lt;tr&gt;</span><span class="variable">&lt;td&gt;</span><span class="keyword">*</span><span class="keyword">*</span>Name<span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span><span class="keyword">*</span><span class="keyword">*</span>Aliases<span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span><span class="keyword">*</span><span class="keyword">*</span>Description<span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+<span class="variable">&lt;tr bgcolor="#EFEFEF"&gt;</span><span class="variable">&lt;td&gt;</span>[Device](device.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#FFFFFF"&gt;</span><span class="variable">&lt;td&gt;</span>[Location](location.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#EFEFEF"&gt;</span><span class="variable">&lt;td&gt;</span>[Substance](substance.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>A homogeneous material with a definite composition.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#FFFFFF"&gt;</span><span class="variable">&lt;td&gt;</span>[Group](group.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn't an Organization.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr&gt;</span><span class="variable">&lt;td colspan="3"&gt;</span>
+</code></pre><hr>
+<p></p>
+<tr><th colspan="3">Workflow Management<a name="workflowmanagement"> </a></th></tr><br><tr><td colspan="3">Support for the processes involved in healthcare</td></tr>
+
+<pre><code><span class="variable">&lt;tr&gt;</span><span class="variable">&lt;td&gt;</span><span class="keyword">*</span><span class="keyword">*</span>Name<span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span><span class="keyword">*</span><span class="keyword">*</span>Aliases<span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span><span class="keyword">*</span><span class="keyword">*</span>Description<span class="keyword">*</span><span class="keyword">*</span><span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+<span class="variable">&lt;tr bgcolor="#EFEFEF"&gt;</span><span class="variable">&lt;td&gt;</span>[Encounter](encounter.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span>Visit<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#FFFFFF"&gt;</span><span class="variable">&lt;td&gt;</span>[Alert](alert.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>Prospective warnings of potential issues when providing care to the patient.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#EFEFEF"&gt;</span><span class="variable">&lt;td&gt;</span>[Supply](supply.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>A supply - a  request for something, and provision of what is supplied.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#FFFFFF"&gt;</span><span class="variable">&lt;td&gt;</span>[Order](order.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span>Request<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td&gt;</span>A request to perform an action.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr bgcolor="#EFEFEF"&gt;</span><span class="variable">&lt;td&gt;</span>[OrderResponse](orderresponse.html)<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;td/&gt;</span><span class="variable">&lt;td&gt;</span>A response to an order.<span class="variable">&lt;/td&gt;</span><span class="variable">&lt;/tr&gt;</span>
+
+<span class="variable">&lt;tr&gt;</span><span class="variable">&lt;td colspan="3"&gt;</span>
+</code></pre><hr>
+<p></p>
+<tr><th colspan="3">Scheduling<a name="scheduling"> </a></th></tr><br><tr><td colspan="3">Creation and management of appointments between practitioners, providers, locations and devices (and optionally others) within slots within a schedule.</td></tr>
+
+<pre><code>    &lt;tr&gt;&lt;td colspan=<span class="string">"3"</span>&gt;
+_
+    _Note:_ These resources do not currently target an organization's internal clinical appointment scheduling.
+    This <span class="keyword">kind</span> <span class="keyword">of</span> scheduling often includes highly complex negotiations and interactions with system priorities.
+
+    The PA work-group would appreciate any assistance in updating them to support these types <span class="keyword">of</span> appointments.
+_
+</code></pre><p><br>        <tr><td><strong>Name</strong></td><td><strong>Aliases</strong></td><td><strong>Description</strong></td></tr><br>        <tr bgcolor="#EFEFEF"><td><a href="appointment.html">Appointment</a></td><td></td><td>(informative) A scheduled appointment for a patient and/or practitioner(s) where a service may take place.</td></tr></p>
+<pre><code>    &lt;<span class="tag">tr</span> bgcolor=<span class="string">"#FFFFFF"</span>&gt;&lt;td&gt;[AppointmentResponse](appointmentresponse.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;(informative) A response to <span class="tag">a</span> scheduled appointment <span class="keyword">for</span> <span class="tag">a</span> patient and/or <span class="function"><span class="title">practitioner</span><span class="params">(s)</span></span>.&lt;/td&gt;&lt;/tr&gt;
+
+    &lt;<span class="tag">tr</span> bgcolor=<span class="string">"#EFEFEF"</span>&gt;&lt;td&gt;[Availability](availability.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;(informative) A container <span class="keyword">for</span> <span class="function"><span class="title">slot</span><span class="params">(s)</span></span> of <span class="tag">time</span> that may be available <span class="keyword">for</span> booking appointments.&lt;/td&gt;&lt;/tr&gt;
+
+    &lt;<span class="tag">tr</span> bgcolor=<span class="string">"#FFFFFF"</span>&gt;&lt;td&gt;[Slot](slot.html)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;(informative) A slot of <span class="tag">time</span> on <span class="tag">a</span> schedule that may be available <span class="keyword">for</span> booking appointments.&lt;/td&gt;&lt;/tr&gt;
+
+&lt;/table&gt;
+</code></pre><p>Additional Resources will be added in the future. A list of hypothesized resources can be found on the<br><a href="http://wiki.hl7.org/index.php?title=FHIR_Resource_Types" title="FHIR_Resource_Types" target="_blank" rel="external">HL7 wiki</a>.  Feel free to add any you think are missing or engage with one<br>of the <a href="http://www.hl7.org/Special/committees/index.cfm" target="_blank" rel="external">HL7 Work Groups</a> to submit a<br><a href="http://wiki.hl7.org/index.php?title=Category:FHIR_Resource_Proposal" title="Category:FHIR_Resource_Proposal" target="_blank" rel="external">proposal</a> to define a resource of particular interest.</p>
+<p></p>
+<pre><code>            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /inner-wrapper --&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /row --&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /container --&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /segment-content --&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"segment-footer"</span> <span class="attribute">class</span>=<span class="value">"segment"</span>&gt;</span>  <span class="comment">&lt;!-- segment-footer --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>  <span class="comment">&lt;!-- container --&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"inner-wrapper"</span>&gt;</span>
+
+    &amp;copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606) generated on Wed, Jul 2, 2014 16:29+0800.   <span class="comment">&lt;!-- [QA Report](qa.html) --&gt;</span>   <span class="comment">&lt;!-- achive note --&gt;</span>
+</code></pre>
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

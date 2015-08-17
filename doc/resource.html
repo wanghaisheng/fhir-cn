@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt; Base Resource
+
+Content
+示例
+详细描述
+对应关系
+规范
+Operations1.12.1 Base Resource Definitions
+
+1.12.1.1 范围和用途该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt; Base Resource
+
+Content
+示例
+详细描述
+对应关系
+规范
+Operations1.12.1 Base Resource Definitions
+
+1.12.1.1 范围和用途该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-UML.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-XML.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-JSON.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-meta-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-meta-UML.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-meta-XML.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/resource-meta-JSON.png">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt; Base Resource
+
+Content
+示例
+详细描述
+对应关系
+规范
+Operations1.12.1 Base Resource Definitions
+
+1.12.1.1 范围和用途该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt; <strong>Base Resource</strong></p>
+<ul>
+<li><a href="#">Content</a></li>
+<li><a href="resource-examples.html">示例</a></li>
+<li><a href="resource-definitions.html">详细描述</a></li>
+<li><a href="resource-mappings.html">对应关系</a></li>
+<li><a href="resource-packages.html">规范</a></li>
+<li><a href="resource-operations.html">Operations</a><h1 id="1-12-1_Base_Resource_Definitions">1.12.1 Base Resource Definitions</h1></li>
+</ul>
+<h2 id="1-12-1-1_范围和用途">1.12.1.1 范围和用途</h2><p>该标准中定义了一系列不同类型的资源，可以用来交换或存储数据，以此来解决很多卫生保健领域相关的问题，不论是行政管理上的还是临床上的．另外，该标准还定义了很多交换资源的不同方法．</p>
+<p>一个资源，也就是一个实体　拥有如下特点：</p>
+<ul>
+<li>拥有一个可寻址的标识　　</li>
+<li>自身是该标准中所定义的某种资源类型　　</li>
+<li>包含诸多在资源定义中所描述的结构化数据项　　</li>
+<li>包含一种供人可读的对资源内容的XHTML的表达形式　</li>
+<li>可能随着时间而发生变化　　</li>
+</ul>
+<p>资源有多种表达形式。如果能满足上述条件，依据标准中定义的规则，不管是XML还是JSON ，我们都认为是一个有效的资源，也允许其他的表达形式 ，但该标准中并未描述。　　</p>
+<p>资源可以有多种表达格式. 如果能够满足上述规则，同时满足标准中所定义的<a href="xml.html">XML</a>或 <a href="json.html">JSON</a>中的规则， 可认为该资源是有效的。</p>
+<h2 id="1-12-1-2_边界和关系">1.12.1.2 边界和关系</h2><p>所有资源都拥有如下数据项和属性，可能是可选的　也可能是强制存在的:</p>
+<ul>
+<li>一个标识</li>
+<li>元数据</li>
+<li>所采用的主要语言</li>
+<li>对&quot;隐含规则Implicit Rules&quot;的引用</li>
+</ul>
+<p>绝大多数资源都是从 <a href="domainresource.html">Domain Resources</a>衍生出来的 - 它们也可以包含文本、内嵌式资源、扩展以及针对某个领域的特殊的一些数据项。 有一类特殊的用于对资源进行groups/lists的资源叫<a href="bundle.html">Bundle</a> . </p>
+<p>备注: there is documentation for the <a href="formats.html">Structure</a>, <a href="formats.html#uml">UML</a>, <a href="xml.html">XML</a>, and <a href="json.html">JSON</a> representations. </p>
+<h2 id="1-12-1-3_Resource_Content">1.12.1.3 Resource Content</h2><ul>
+<li><a href="">Structure</a><br><img src="../material/resource-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/resource-UML.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/resource-XML.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/resource-JSON.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<h3 id="1-12-1-3-1_Terminology_Bindings">1.12.1.3.1 Terminology Bindings</h3><table class="grid"> <tr><th>Path</th><th>Definition</th><th>Type</th><th>Reference</th></tr> <tr><td title="Language" valign="top">Resource.language </td><td valign="top">语言</td><td><a href="terminologies.html#code">Fixed</a></td><td valign="top"><a href="http://tools.ietf.org/html/bcp47" target="_blank" rel="external">IETF language tag</a>  <!-- g --></td> </tr></table>
+
+
+<h3 id="1-12-1-3-2_Resource_标识">1.12.1.3.2  Resource 标识</h3><p>每个资源都有一个字段&quot;id&quot; ，其中包含了存储该资源的服务器为其分配的一个逻辑标识符。除了即将在服务器上完成新增的资源(服务器会 通过(<a href="http.html#create">create interaction</a>)为其分配标识符)之外，其他资源都是拥有已知的逻辑标识符的。在同一个服务器中，同一类型的资源范围内逻辑标识符是唯一的。一旦分配好了标识符将永不更改，即使在其他地方该资源的副本可能不会保留原来的标识。</p>
+<p>一个完整的标识是由服务器地址、资源类型和逻辑标识符三部分形成的绝对URL地址， <a href="http://test.fhir.org/rest/Patient/123" target="_blank" rel="external">http://test.fhir.org/rest/Patient/123</a> (123就是逻辑标识符). 备注不应认为资源标识总是能够指向一个服务器，可能由于服务器暂时无法访问，或者是由于政策原因，防火墙原因无法访问，或者该主机本身就不存在。资源是通过标识相互引用的。引用中的标识可以是相对或绝对地址 (更多细节请参考 <a href="references.html">Resource References</a>).从一个服务器中复制和移动资源到另一台服务器中意味着要为资源重新分配标识符，<a href="managing.html">更多信息请参考 资源标识的管理</a>.</p>
+<p>逻辑标识符是大小写敏感的，外部系统不必也无需确定其内部结构. An id SHALL always be represented in the same way in<br>resource references and URLs. Ids可以是36字符长，包含任意的大小写ASCII 字母, 数字, &quot;-&quot; and &quot;.&quot;. </p>
+<h3 id="1-12-1-3-3_Resource_Metadata资源元数据">1.12.1.3.3  Resource Metadata资源元数据</h3><p>每个资源都有一个字段”meta”，数据类型为”Meta”,其中包含了一系列元数据，有技术相关的，也有与工作流相关的。所有元数据项都是可选的，在一些实现中可以要求某些为必选项。</p>
+<table class="grid"><tr>    <th>Metadata Item</th>    <th>Type</th>    <th>Usage</th>  </tr>  <tr>    <td>versionId (0..1)</td>    <td><a href="datatypes.html#id">id</a></td>    <td>随资源内容的变更而变化. 可在<a href="references.html#Resource">resource reference</a>中使用.可用于确保某次更新是对资源最新版本的变更。版本号可以是全球唯一，也可以是逻辑标识符范围内的唯一，常常是递增的序列号，UUID或任何其他方式产生的。服务器最好能够支持版本号，但不做强制性要求.</td>  </tr>  <tr>   <td>lastUpdated (0..1)</td> <td><a href="datatypes.html#instant">instant</a></td>   <td>如果要给该字段赋值，随资源内容的变更而变化, 可以用在系统或人为判断资源内容是否是最新的。     Note that <a href="http.html#update">version aware updates</a> do not use this element(使用etags)</td>  </tr>  <tr>   <td>profile (0..<em>)</em></td> <td><a href="datatypes.html#uri">uri</a></td>   <td>表示资源内容遵循某个profile规范的要求. 更多信息请参考 <a href="profiling.html#resources">Extending and Restricting Resources</a>。随profile和value set的变化或随系统重新核实一致性而变化</td>  </tr>  <tr>   <td>security (0..)</td>   <td><a href="datatypes.html#Coding">Coding</a></td>   <td>能够运用到资源中的<a href="security-labels.html">Security labels</a>。通过这些标签，将资源内容与某些特定的安全策略联系起来。安全标签可随资源内容的变化而变化，也可由安全体系来决定是否变化 Security tags can be updated when the resource changes, or whenever the security sub-system chooses to</td>  </tr>  <tr>   <td>tag (0..*)</td>   <td><a href="datatypes.html#Coding">Coding</a></td><td>运用到该资源的<a href="extras.html">Tags</a>。标签是用于将资源与流程、工作流程关联起来。在解读资源的含义时无需考虑标签内容 </td>  </tr></table>
+
+
+
+<ul>
+<li><a href="">Structure</a><br><img src="../material/resource-meta-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/resource-meta-UML.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/resource-meta-XML.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/resource-meta-JSON.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p> Meta is used in the following places: <a href="resource.html">Resource</a><br><a name="implicitRules"> </a></p>
+<h3 id="1-12-1-3-4_Implicit_Rules隐含的规则">1.12.1.3.4  Implicit Rules隐含的规则</h3><p>在资源形成之后，如何使用资源的<a href="profiling.html#agreement">约定custom agreement</a>，而且在处理资源内容时必须理解这些规则.</p>
+<p>如果遵循这样的一些协议也就限制了资源内容只能被一小撮合作机构是引用。长远来看会影响数据的可用性，应尽可能避免这种情况。但现实情况是现有的医疗系统是高度碎片化的，还没有到那种以同一种可交换的方式来定义、采集和交换数据的程度</p>
+<p>注意的是大多数资源在构建时都会遵循一些自定义的协议，Note that resources are almost always constructed following some custom agreement.<br>Best practice is that such agreements make all knowledge about the content<br>of the resource explicit; if custom agreements do this, and declare their extensions<br>as required, then it is not necessary to understand the agreement when processing the<br>resource content.(这大段在说什么)</p>
+<h3 id="1-12-1-3-5_Language">1.12.1.3.5  Language</h3><p>每个资源都有一个language元素、字段，用于指定资源内容主体上是采用何种语言<a href="http://tools.ietf.org/html/bcp47" target="_blank" rel="external">采用BCP 47中的编码</a>.<br>该字段主要是为了提高索引和访问的效率。并不存在默认语言，但可以从语境中推断出来。并非所有资源内容都必须是规定的语言所表达的。</p>
+<p>如果规定了该字段的值，在 <a href="narrative.html#Narrative">叙述性文本</a>中也应该进行规定. 在处理叙述性文本内容时使用<br>叙述性文本中的html language tag .资源中的language 标签主要是用在规定从资源中数据所生成的其他格式的表示方式中使用的语言 </p>
+<h3 id="1-12-1-3-6_Tags,_Profiles,_and_Security_Labels">1.12.1.3.6 Tags, Profiles, and Security Labels</h3><p>这三个元数据属性虽是资源的一部分，但不会用来储存那些解读资源内时必须理解的信息。它们的作用仅仅是控制资源的访问和发现，将资源内容与工作流程、技术流程联系起来。</p>
+<h4 id="1-12-1-3-6-1_Tags标签">1.12.1.3.6.1  Tags标签</h4><p>标签用于将额外的操作性信息与资源关联起来，包括工作流管理。标签的典型应用是维护一个待评估的资源列表。</p>
+<p>在通用型标签当中， <a href="datatypes.html#coding">concept</a> 可以引用某个医疗术语、医疗字典，包括了标准本身所定义的，HL7定义的和其他如SNOMED CT LOINC等。也可以是自定义的。</p>
+<h4 id="1-12-1-3-6-2_Profile_Tags">1.12.1.3.6.2 Profile Tags</h4><p>该标签表示资源内容遵循某个 <a href="profile.html">规范</a>,也就是说遵循该规范中定义的什么内容可以放在资源中规则，term的值就是所引用的规范资源的URL</p>
+<p>根据规范即可对资源内容完成校验，确定资源时是否满足规范中的要求 ( <a href="downloads.html">validation tools</a><br>提供了这样的功能).<br>然而某些情况下要完成资源内容 的校验不是那么现实:</p>
+<ul>
+<li>服务器要从很多个资源中检索出满足某个规范中的其中一个</li>
+<li>接收方有很多个规范不知道拿哪个来校验资源 </li>
+</ul>
+<p>Profile Tags标签适用于这样的场景——客户端或资源的构建方可以在资源上打上标签，表示资源遵循某个规范的要求。服务器/接收方可以根据该标签的值进行选择，或者根据该标签的值来选择校验资源内容所需的规范。</p>
+<p>备注: 单个资源可同时遵循多个规范的要求。 遵循某个规范的资源可以不打上遵循该规范的标签，也可以在不遵循某个规范的情况下声称遵循某个规范.鉴于此，处理资源内容的应用程序应根据资源内容来处理资源，根据规范来对资源内容做出校验，而非轻信该标签的值。在大多数交互协议中会对何时何地打上那类标签，进行哪类校验做出规定。 </p>
+<p>Profile Tags用于查找遵循某类规范的资源的一种方法，而非是资源内容含义的声明</p>
+<h4 id="1-12-1-3-6-3_Security_Labels">1.12.1.3.6.3 Security Labels</h4><p>安全性标签用于在资源中提供一些与安全相关的元数据。详情请参考<a href="security-labels.html">Security Labels</a>.</p>
+<h3 id="1-12-1-3-7_Further_Information">1.12.1.3.7 Further Information</h3><ul>
+<li><a href="conformance-rules.html">Conformance Rules</a></li>
+<li><a href="resources.html">Resource Definitions</a></li>
+<li><a href="references.html">References between Resources</a></li>
+<li><a href="narrative.html">Narratives</a></li>
+<li><a href="formats.html">Formats:</a> <a href="xml.html">XML</a>, <a href="json.html">JSON</a>*   <a href="extensibility.html">Extensibility</a> (<a href="extensibility-examples.html">Examples</a>)</li>
+<li><a href="resource-definitions.html">Detailed Descriptions</a></li>
+<li><a href="compatibility.html">Inter-version Compatibility</a></li>
+</ul>
+<p><a name="search"> </a></p>
+<h2 id="1-12-1-4_Search_Parameters">1.12.1.4 Search Parameters</h2><p>该资源可用的通用查询变量. 更多查询相关信息请参考 <a href="search.html">Searching</a> for more information about searching in REST, messaging, and services.</p>
+<table class="list"><tr><td><strong>Name</strong></td><td><strong>Type</strong></td><td><strong>Description</strong></td><td><strong>Paths</strong></td></tr><tr><td>_id</td><td><a href="search.html#token">token</a></td><td>Logical id of this artefact</td><td>Resource.id</td></tr><tr><td>_language</td><td><a href="search.html#token">token</a></td><td>Language of the resource content</td><td>Resource.language</td></tr><tr><td>_lastUpdated</td><td><a href="search.html#date">date</a></td><td>When the resource version last changed</td><td>Resource.meta.lastUpdated</td></tr><tr><td>_profile</td><td><a href="search.html#token">token</a></td><td>Profiles this resource claims to conform to</td><td>Resource.meta.profile</td></tr><tr><td>_security</td><td><a href="search.html#token">token</a></td><td>Security Labels applied to this resource</td><td>Resource.meta.security</td></tr><tr><td>_tag</td><td><a href="search.html#token">token</a></td><td>Tags applied</td><td>Resource.meta.tag</td></tr></table>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

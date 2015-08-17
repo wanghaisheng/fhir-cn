@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt;正规定义       
+1.12.7 资源定义-正规定义1.12.7.1 Resource Resource基数1..1 InvariantsDefined on this elementInv-1: 如果资源内嵌在其他资源之中,它不应该包含任何叙述性文本 (xpath: not(parent::f:contained and f:text))Inv-">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/base-definitions.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt;正规定义       
+1.12.7 资源定义-正规定义1.12.7.1 Resource Resource基数1..1 InvariantsDefined on this elementInv-1: 如果资源内嵌在其他资源之中,它不应该包含任何叙述性文本 (xpath: not(parent::f:contained and f:text))Inv-">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt;资源定义 &amp;gt;正规定义       
+1.12.7 资源定义-正规定义1.12.7.1 Resource Resource基数1..1 InvariantsDefined on this elementInv-1: 如果资源内嵌在其他资源之中,它不应该包含任何叙述性文本 (xpath: not(parent::f:contained and f:text))Inv-">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;<a href="resources.html">资源定义</a> &gt;<strong>正规定义</strong>       </p>
+<h3 id="1-12-7_资源定义-正规定义">1.12.7 资源定义-正规定义</h3><h4 id="1-12-7-1_Resource">1.12.7.1 Resource</h4><table class="dict"><tr><td colspan="2" class="structure"><a name="Resource"> </a><strong>Resource</strong></td></tr><tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr> <tr><td>Invariants</td><td><strong>Defined on this element</strong><br><strong>Inv-1</strong>: 如果资源内嵌在其他资源之中,它不应该包含任何叙述性文本 (xpath: not(parent::f:contained and f:text))<br><strong>Inv-2</strong>:如果资源内嵌在其他资源之中,它不应该包含内嵌资源(xpath: not(parent::f:contained and f:contained))<br><strong>Inv-3</strong>: 如果资源内嵌在其他资源之中,应在另外的资源中引用它 (xpath: exists(for $id in f:contained/<em>/@id return $id[not(descendant::f:reference/@value=concat(‘#’, $id))]))</em></td></tr>  <tr><td colspan="2" class="structure"><a name="Resource.extension"> </a><strong>Resource.extension</strong></td></tr>  <tr><td>定义</td><td>可以用来表示不属于资源基础定义一部分的额外信息.为了使得扩展安全可控,有一套严格的扩展定义和使用管理机制.尽管允许开发人员自定义扩展,扩展定义应满足一系列要求.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="extensibility.html#Extension">Extension</a></td></tr>  <tr><td>别名</td><td>extensions; user content</td></tr>  <tr><td>备注</td><td>无论是机构层面还是区域层面定义的扩展,任何系统,项目或标准都能够使用这些扩展.正是利用扩展才使得FHIR标准保持简单化. </td></tr>  <tr><td colspan="2" class="structure"><a name="Resource.modifierExtension"> </a><strong>Resource.modifierExtension</strong></td></tr>  <tr><td>定义</td><td>可以用来表示不属于资源基础定义一部分的额外信息,修饰包含它的元素含义通常,用来表示否定或者限定.为了使得扩展安全可控,有一套严格的扩展定义和使用管理机制.尽管允许开发人员自定义扩展,扩展定义应满足一系列要求.要求系统在处理资源时检查扩展修饰符.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..<em></em></td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="extensibility.html#Extension">扩展</a></td></tr>  <tr><td>别名</td><td>extensions; user content</td></tr>  <tr><td>备注</td><td>无论是机构层面还是区域层面定义的扩展,任何系统,项目或标准都能够使用这些扩展.正是利用扩展才使得FHIR标准保持简单化.</td></tr>  <tr><td colspan="2" class="structure"><a name="Resource.language"> </a><strong>Resource.language</strong></td></tr>  <tr><td>定义</td><td>资源所使用的主体语言. </td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="datatypes.html#code">code</a></td></tr>  <tr><td>备注</td><td>用以支持索引和访问 (典型的,从文本到语音的转换会用到 language tag).  叙述性文本中html language tag 也适用于叙述性文本.资源中的language tag 可以用作规定从数据中生成的其他展现方式所使用的语言.<br>并非所有内容都要使用这种语言,不宜认为Resource.language会自动应用到叙述性文本当中.如果规定了语言,也宜在html的div元素中作出规定(参考HTML5中有关xml:lang 和  html lang 属性关系的信息).</td></tr>  <tr><td colspan="2" class="structure"><a name="Resource.text"> </a><strong>Resource.text</strong></td></tr>  <tr><td>定义</td><td>供人读的叙述性文本,包含了资源的摘要信息,可以用来表示资源的内容.叙述性文本毋须包含所有结构化数据,但至少要包含足够的信息,人如果只是看这些叙述性文本,要能够确保 &quot;临床安全&quot; 资源定义中可能会定义应该在叙述性文本中包含哪些内容才能够确保临床安全 .</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="narrative.html">Narrative</a></td></tr>  <tr><td>别名</td><td>narrative; html; xhtml; display</td></tr>  <tr><td>备注</td><td>内嵌的资源不包含叙述性文本.非内嵌的资源宜包含叙述性文本</td></tr>  <tr><td>Invariants</td><td><strong>对该元素的影响</strong><br><strong>Inv-1</strong>: 如果资源内嵌在其他资源之中,它不应该包含任何叙述性文本 (xpath: not(parent::f:contained and f:text))</td></tr>  <tr><td colspan="2" class="structure"><a name="Resource.contained"> </a><strong>Resource.contained</strong></td></tr>  <tr><td>定义</td><td>脱离了包含它们的资源 无法单独存在的资源 - 没有单独的标识,也没有单独的事务范围.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="references.html#Resource">Resource</a></td></tr>  <tr><td>别名</td><td>inline resources; anonymous resources; contained resources</td></tr>  <tr><td>备注</td><td>当内容能够标识的时候 不允许这样使用,因为一旦丢失了标识信息,要想重新恢复是非常困难的</td></tr></table>
+
+<h4 id="1-12-7-2_ResourceReference">1.12.7.2 ResourceReference</h4><table class="dict">  <tr><td colspan="2" class="structure"><a name="ResourceReference"> </a><strong>ResourceReference</strong></td></tr>  <tr><td>资源</td><td>一个资源对另一个资源的引用.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr>  <tr><td>Invariants</td><td><strong>该元素中所定义的</strong><br><strong>Inv-1</strong>: 如果资源是內联的,应包含一个本地引用.(xpath: not(starts-with(f:reference/@value, ‘#’)) or exists(ancestor::a:content/f:<em>/f:contained/f:</em>[@id=substring-after(current()/f:reference/@value, ‘#’)]|/f:<em>/f:contained/f:</em>[@id=substring-after(current()/f:reference/@value, ‘#’)]))</td></tr>  <tr><td colspan="2" class="structure"><a name="ResourceReference.reference"> </a><strong>ResourceReference.reference</strong></td></tr>  <tr><td>定义</td><td>对一个location的引用,可以通过location定位其他的资源.可以是相对引用,也就是相对于服务的根URL,或者是指向能够找到资源location的绝对引用.引用可以是存在不同版本的.如果不是指向FHIR Restful服务器的引用,宜认为是针对某个版本的.内部的局部引用指向内嵌式资源.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="datatypes.html#string">string</a></td></tr>  <tr><td>备注</td><td>采用绝对URL是一种稳定的可扩展的方式,适合于云端/web应用,而相对/逻辑引用是一种灵活的方式更适合于封闭的系统. .<br>尽管是首选,绝对URL毋须指向 FHIR RESTful 服务器.如果url满足&quot;/[type]/@[id]&quot; 的结构,可以认为它指向的就是 FHIR RESTful 服务器.</td></tr>  <tr><td>Invariants</td><td><strong>对该元素的影响</strong><br><strong>Inv-1</strong>: 如果资源是內联的,应包含一个本地引用.(xpath: not(starts-with(f:reference/@value, ‘#’)) or exists(ancestor::a:content/f:<em>/f:contained/f:</em>[@id=substring-after(current()/f:reference/@value, ‘#’)]|/f:<em>/f:contained/f:</em>[@id=substring-after(current()/f:reference/@value, ‘#’)]))</td></tr>  <tr><td colspan="2" class="structure"><a name="ResourceReference.display"> </a><strong>ResourceReference.display</strong></td></tr>  <tr><td>定义</td><td>Plain text narrative that identifies the resource in addition to the resource reference.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="datatypes.html#string">string</a></td></tr>  <tr><td>备注</td><td>一般而言,它与所引用资源的Resource.text不同.它的目的在于表示引用的是什么,而非完整的描述资源.</td></tr></table>
+
+<h4 id="1-12-7-3_Narrative">1.12.7.3  Narrative</h4><table class="dict">  <tr><td colspan="2" class="structure"><a name="Narrative"> </a><strong>Narrative</strong></td></tr>  <tr><td>定义</td><td>供人可读的格式化文本,包括图片.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr>  <tr><td colspan="2" class="structure"><a name="Narrative.status"> </a><strong>Narrative.status</strong></td></tr>  <tr><td>定义</td><td>叙述性文本的状态-完全是生成的还是是由人编写的,它可能包含额外的一些数据.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr>  <tr><td><a href="terminologies.html">绑定</a></td><td>NarrativeStatus: Unstated: <a href="narrative-status.html">http://hl7.org/fhir/narrative-status</a> (The status of a resource narrative)</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="datatypes.html#code">code</a></td></tr>  <tr><td colspan="2" class="structure"><a name="Narrative.div"> </a><strong>Narrative.div</strong></td></tr>  <tr><td>定义</td><td>叙述性文本实际的内容,简化版的XHTML.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="narrative.html#xhtml">xhtml</a></td></tr>  <tr><td>备注</td><td>html 元素的内容就是一部分包含了在7-11和15最基本格式化元素element元素的内容就是一部分XHTML,包含了在HTML4.0标准第7-11和15章中所描述的最基本格式化元素, &lt;a&gt; 元素 (要么是 name 要么是 href), images和内嵌式的 stylesheets.  XHTML内容可能不包含head, a body, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes and objects.</td></tr>  <tr><td>Invariants</td><td><strong>该元素中所定义的</strong><br><strong>Inv-1</strong>: 叙述性文本应只包含HTML4.0标准第7-11章(除了第9章第四部分)和第15章中所描述的基本的html格式化元素, &lt;a&gt; elements (either name or href), images 和内嵌式样式表属性 (xpath: not(descendant-or-self::<em>[not(local-name(.)=(‘a’, ‘abbr’, ‘acronym’, ‘b’, ‘big’, ‘blockquote’, ‘br’, ‘caption’, ‘cite’, ‘code’, ‘colgroup’, ‘dd’, ‘dfn’, ‘div’, ‘dl’, ‘dt’, ‘em’, ‘h1’, ‘h2’, ‘h3’, ‘h4’, ‘h5’, ‘h6’, ‘hr’, ‘i’, ‘li’, ‘ol’, ‘p’, ‘pre’, ‘q’, ‘samp’, ‘small’, ‘span’, ‘strong’, ‘table’, ‘tbody’, ‘td’, ‘tfoot’, ‘th’, ‘thead’, ‘tr’, ‘tt’, ‘ul’, ‘var’))]))<br><strong>Inv-2</strong>: 叙述性文本应包含非空格内容 (xpath: descendant::text()[normalize-space(.)!=’’] or descendant::html:img[@src])<br><strong>Inv-3</strong>: 叙述性文本应只包含HTML4.0标准第7-11章(除了第9章第四部分)和第15章中所描述的基本的html格式化属性, &lt;a&gt; 元素 (either name or href), images和内嵌式样式表属性 (xpath: not(descendant-or-self::</em>/@*[not(name(.)=(‘abbr’, ‘accesskey’, ‘align’, ‘alt’, ‘axis’, ‘bgcolor’, ‘border’, ‘cellhalign’, ‘cellpadding’, ‘cellspacing’, ‘cellvalign’, ‘char’, ‘charoff’, ‘charset’, ‘cite’, ‘class’, ‘colspan’, ‘compact’, ‘coords’, ‘dir’, ‘frame’, ‘headers’, ‘height’, ‘href’, ‘hreflang’, ‘hspace’, ‘id’, ‘lang’, ‘longdesc’, ‘name’, ‘nowrap’, ‘rel’, ‘rev’, ‘rowspan’, ‘rules’, ‘scope’, ‘shape’, ‘span’, ‘src’, ‘start’, ‘style’, ‘summary’, ‘tabindex’, ‘title’, ‘type’, ‘valign’, ‘value’, ‘vspace’, ‘width’))]))</td></tr></table>      
+
+<h4 id="1-12-7-4_Extension">1.12.7.4   Extension</h4><table class="dict">  <tr><td colspan="2" class="structure"><a name="Extension"> </a><strong>Extension</strong></td></tr>  <tr><td>定义</td><td>可选的扩展元素 - 所有资源中都存在.</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr>  <tr><td>应用场景</td><td><br>以结构化的方式来添加扩展使得FHIR保持简化.  </td></tr>  <tr><td colspan="2" class="structure"><a name="Extension.url"> </a><strong>Extension.url</strong></td></tr>  <tr><td>定义</td><td> extension code 定义的来源- 逻辑名称或者是URL </td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>1..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="datatypes.html#uri">uri</a></td></tr> <tr><td>备注</td><td>定义可能直接指向计算机化的或者是供人可读的 extensibility codes定义,或者可能是其他标准中所声明的一个逻辑URI, 这是定义扩展的资源规范的理想情况,#后面跟的就是扩展的code</td></tr>  <tr><td colspan="2" class="structure"><a name="Extension.value_x_"> </a><strong>Extension.value[x]</strong></td></tr>  <tr><td>定义</td><td>扩展的取值 - 可能是一个资源或者是某个经过约束的数据类型 (参考标准中的 Extensibility).</td></tr>  <tr><td><a href="conformance-rules.html#conformance">基数</a></td><td>0..1</td></tr>  <tr><td><a href="datatypes.html">数据类型</a></td><td><a href="datatypes.html#open">*</a></td></tr></table>
+
+
+<p> &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a>      </p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/summary.html</loc>
+    <lastmod>2015-08-17T07:52:58.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/overview-dev.html</loc>
+    <lastmod>2015-08-17T07:52:50.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/overview.html</loc>
+    <lastmod>2015-08-17T07:52:42.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/overview-clinical.html</loc>
+    <lastmod>2015-08-17T07:49:39.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/documentation.html</loc>
+    <lastmod>2015-08-17T04:40:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-examples.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/conformance.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/conceptmap.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/bundle.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/binary.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/usecases.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/support.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/services.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/security.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/search.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/profiling.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/operations.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/messaging.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/implementation.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/iglist.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/http.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/downloads.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/documents.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/home/index.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/xml.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/todo.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/toc.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/timelines.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/test.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies-valuesets.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies-v3.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies-v2.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies-systems.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies-service.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/terminologies-conceptmaps.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/res/resourcelist.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resources.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-packages.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-operations.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-mappings.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/overview-dev.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-definitions.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/references.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/valueset.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/profile.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/messageheader.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/narrative.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/license.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/json.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/history.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/formats.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extras.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extensibility.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extensibility-registry.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extensibility-examples.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/extensibility-definitions.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/elementdefinition.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/element.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/ehr-fm.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/domainresource.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/domainresource-definitions.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/infrastructure.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/datatypes.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/datatypes-mappings.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/datatypes-examples.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/datatypes-definitions.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/credits.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/conformance-rules.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/compatibility.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-v3.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-v2.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-other.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-cda.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/common-terms-in-Chinese.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/change.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/base-definitions.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/backboneelement.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/clin/patient.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/clin/diagnosticreport.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/clin/clinical.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/clin/careplan.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/admin/administration.html</loc>
+    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
+  </url>
+  
+</urlset>

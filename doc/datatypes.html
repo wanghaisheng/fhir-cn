@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt;数据类型        
+本页内容:
+
+数据类型
+示例
+详细描述
+映射1.13.0  数据类型
+
+FHIR标准为资源中的数据元素定义了一系列的数据类型.数据类型分两大类:从XML Schema导入的简单/基础数据类型,和复杂数据类型,主要是可复用的元素集合.这部门介绍数据类型.更多信息请参考 数据类型实例, 数据类型正规定义 和 数据类型的对应关系.
+
+这些数据类型可以">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/datatypes.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt;数据类型        
+本页内容:
+
+数据类型
+示例
+详细描述
+映射1.13.0  数据类型
+
+FHIR标准为资源中的数据元素定义了一系列的数据类型.数据类型分两大类:从XML Schema导入的简单/基础数据类型,和复杂数据类型,主要是可复用的元素集合.这部门介绍数据类型.更多信息请参考 数据类型实例, 数据类型正规定义 和 数据类型的对应关系.
+
+这些数据类型可以">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/datatypes.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/primitivetypes.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/complex-types.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/attachment-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/attachment-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/attachment-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/attachment-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/coding-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/quantity-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/quantity-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/quantity-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/quantity-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/range-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/range-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/range-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/range-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/ratio-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/ratio-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/ratio-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/ratio-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/period-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/period-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/period-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/period-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/sampledData-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/sampledData-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/sampledData-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/sampledData-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/identifier-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/identifier-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/identifier-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/identifier-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/humanName-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/humanName-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/humanName-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/humanName-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/address-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/address-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/address-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/address-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/contactPoint-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/contactPoint-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/contactPoint-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/contactPoint-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/timing-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/timing-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/timing-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/timing-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/signature-structure.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/signature-uml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/signature-xml.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/signature-json.png">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/other-types.png">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt;数据类型        
+本页内容:
+
+数据类型
+示例
+详细描述
+映射1.13.0  数据类型
+
+FHIR标准为资源中的数据元素定义了一系列的数据类型.数据类型分两大类:从XML Schema导入的简单/基础数据类型,和复杂数据类型,主要是可复用的元素集合.这部门介绍数据类型.更多信息请参考 数据类型实例, 数据类型正规定义 和 数据类型的对应关系.
+
+这些数据类型可以">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt;<strong>数据类型</strong>        </p>
+<p>本页内容:</p>
+<ul>
+<li><a href="#">数据类型</a></li>
+<li><a href="datatypes-examples.html">示例</a></li>
+<li><a href="datatypes-definitions.html">详细描述</a></li>
+<li><a href="datatypes-mappings.html">映射</a><h3 id="1-13-0_数据类型">1.13.0  数据类型</h3></li>
+</ul>
+<p>FHIR标准为资源中的数据元素定义了一系列的数据类型.数据类型分两大类:从XML Schema导入的简单/基础数据类型,和复杂数据类型,主要是可复用的元素集合.这部门介绍数据类型.更多信息请参考 <a href="datatypes-examples.html">数据类型实例</a>, <a href="datatypes-definitions.html">数据类型正规定义</a> 和 <a href="datatypes-mappings.html">数据类型的对应关系</a>.</p>
+<p><img src="../material/datatypes.png" alt=""></p>
+<p>这些数据类型可以在 <a href="../material/fhir-base.xsd">W3C Schema</a>找到.</p>
+<p><a name="primitive"></a></p>
+<h4 id="1-13-0-1_基本数据类型">1.13.0.1 基本数据类型</h4><p><img src="../material/primitivetypes.png" alt=""></p>
+<p><a name="imports"> </a></p>
+<p>下表中对标准中所用到的基本数据类型和对它们的约束进行了总结.基本数据类型也就是说它们只有value属性，没有子元素(但和其他数据类型一样，它们可以有扩展)                </p>
+<table class="list"><br> <tr><br>   <td colspan="3"><strong>Primitive Types</strong></td><br> </tr><br> <tr><br>   <th>FHIR Name</th><br>   <th>Value Domain</th><br>   <th>XML Representation</th><br>   <th>JSON representation</th><br> </tr><br> <tr><br>   <td>boolean</td><br>   <td>true | false</td><br>   <td>xs:boolean, 值可以为true或者false（0和1是无效的值）</td><br>   <td>JSON boolean (true or false)</td><br> </tr><br> <tr><br>   <td>integer</td><br>   <td>32位整数（对于更大的值，使用decimal）</td><br>   <td>xs:int</td><br>   <td>JSON number</td><br> </tr><br> <tr><br>   <td>string</td><br>   <td>Unicode编码的字符序列</td><br>   <td>xs:string</td><br>   <td>JSON String</td><br> </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid">字符串大小不超过1MB</td><br> </tr><br> <tr><br>   <td>decimal</td><br>   <td>带小数点的有理数。<br></td><br>   <td>xs:decimal, except that <strong>decimals may not use exponents</strong></td><br>   <td>A JSON number, but without exponents</td><br> </tr><br> <tr><br>   <td>uri</td><br>   <td>统一资源标识符(<a href="http://tools.ietf.org/html/rfc3986" target="_blank" rel="external">RFC 3986</a>)</td><br>    <td>xs:anyURI</td><br>   <td>A JSON string - a URI</td><br> </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid">它可以是绝对的或相对的，也可能是一个可选的片段标识符（R </td><br> </tr><br> <tr><br>   <td>base64Binary</td><br>   <td>base64((<a href="http://tools.ietf.org/html/rfc4648" target="_blank" rel="external">RFC 4648</a>))编码的字节流 </td><br>   <td>xs:base64Binary</td><br>   <td>A JSON string - base64 content</td><br> </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid"><em>Todo: is it possible to impose an upper absolute limit on a base64Binary (for denial of service reasons, like on string)</em></td><br> </tr><br> <tr><br>   <td>instant</td><br>   <td>一个时间的瞬间 - <strong>至少要到秒，总是会包括一个时区</strong></td><br>   <td>xs:dateTime</td><br>   <td>A JSON string - an xs:dateTime</td><br> </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid">备注: 该类型作系统时间之用，非人用时间(参考下面的 date and dateTime ).</td><br> </tr><br> <tr><br>   <td>date</td><br>   <td>在人们交流时时使用的日期，日期时间或部分日期（比如年或年+月）。<strong>不能存在时区</strong>。日期应该是有效日期</td><br>   <td>union of xs:date, xs:gYearMonth, xs:gYear</td><br>   <td>A JSON string - a union of xs:date, xs:gYearMonth, xs:gYear</td><br>  </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid">Regex: -?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1]))?)?</td><br> </tr><br> <tr><br>   <td>dateTime</td><br>   <td>在人们交流时时使用的日期，日期时间或部分日期（比如年或年+月）。如果指定小时和分钟，通常应该加上时区。可以加上秒，也可以不加。日期应该是有效日期. <strong>不允许如&quot;24:00&quot;的出现</strong></td><br>   <td>union of xs:dateTime, xs:date, xs:gYearMonth, xs:gYear</td><br>   <td>A JSON string - a union of xs:dateTime, xs:date, xs:gYearMonth, xs:gYear</td><br>  </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid">Regex: -?[0-9]{4}(-(0[1-9]|1[0-2])(-(0[0-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5]<a href="\.[0-9]+">0-9</a>?(Z|(+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?)?)?)?</td><br> </tr><br> <tr><br>   <td>time</td><br>   <td>一天内的某个时间，没有指定日期（可以转化成自午夜算起的Duration数据类型）。秒可以加上也可以不加上。<strong>不允许出现如“24:00”或是包含时区</strong></td><br>   <td>xs:time</td><br>   <td>A JSON string - an xs:time</td><br>  </tr><br> <tr><br>   <td style="border-top: 0px silver solid"><br>   </td><td colspan="3" style="border-top: 0px silver solid">Regex: ([01][0-9]|2[0-3]):[0-5][0-9]:[0-5]<a href="\.[0-9]+">0-9</a>?</td><br> </tr><br></table>
+
+<p>备注:</p>
+<ul>
+<li>对于上面提到的数据类型，除了需要转义字符不同之外，XML和JSON的表达方式都是一样的(in XML, you escape the &amp; &lt; &gt;, in Json you escape \t\r\n etc)。</li>
+<li>正则表达式所能表达的允许值范围比实际的要大，还需要一些额外的校验手段</li>
+<li><p>decimal值的精度是很重要的：</p>
+<ul>
+<li>比如0.010和0.01是两个不同的值</li>
+<li>在开发中应该按照原始值中的精度来处理decimal的值</li>
+<li>在使用GMP或者Java 的BigDecimal时会遇到这问题，因为它们之中精度是随意设的，或者采用一个64位的浮点值加上一个表示精度的字段</li>
+<li>对于值的大小没有特别的限制，因为此类值在医疗中是特别罕见的。可能会在<a href="location.html">Location</a> coordinates中用到。</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-17-0-1-1_XML和JSON_表达格式">1.17.0.1.1 XML和JSON 表达格式</h5><p>如上所述,这些基本数据类型是由value属性，内部标识(如xml:id),和<a href="extensibility.html">扩展</a>组合而成.XML中value是字段的属性，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#60;count value=&#34;2&#34;/&#62;&#10;`</span><br></pre></td></tr></table></figure>
+<p>JSON中value是一个property<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#34;count&#34; : 2&#10;`</span><br></pre></td></tr></table></figure></p>
+<p>至于说内部标识和扩展是如何在XML和JSON中表示的请参考<a href="xml.html">XML</a><a href="json.html">JSON</a>.如果value没有值，在数据实例中可以不出现，也就是说XML中不会有value属性，JSON property也不会存在。</p>
+<p>按照XML schema,会忽略数据类型boolean, integer, decimal, base64Binary, instant, uri, date, dateTime, oid, and uri的value值中包含的前置和后置的空格.注意这意味着对于XML实例而言,schema aware 和non schema aware 的XML库会存在不同的属性值.鉴于此,这些数据类型的value属性的值不应该包含前置或后置的空格.只有在前置或后置空格本身是值的一部分时，String 的值中才能存在空格.     </p>
+<p>JSON中空格总是很重要的.除了string之外的基本数据类型不应该包含前置或后置空格.</p>
+<h5 id="1-17-0-1-2_简单数据类型">1.17.0.1.2  简单数据类型</h5><p>除了基本数据类型之外，也有一些简单的数据类型，它们对基本数据类型做了一些限制和约束。</p>
+<table class="list"><br> <tr><br>   <th>FHIR Name</th><th>Base FHIR Type</th><th>Description</th><br> </tr><br> <tr><td>code</td><td>string</td><td>在某处所定义的一些可控字符串中抽出的一个值。技术上来讲，表示code的字符串至少一个字符，不包括前置后置的空格，且其内容中不能出现连续的空格符 regex: [^\s]+([\s]+[^\s]+)*</td></tr><br><br> <tr><td>oid</td><td>uri</td><td>用URI（(<a href="http://www.ietf.org/rfc/rfc3001.txt" target="_blank" rel="external">RFC 3001</a>)）表示的OID，如: urn:oid:1.2.3.4.5. </td></tr><br>  <!-- <tr><td>uuid</td><td>uri</td><td>A UUID, represented as a URI ([RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)): urn:uuid:a5afddf4-e880-459b-876e-e4591b0acc11. Note the RFC comments about case: UUID values SHALL be represented in lower case, but systems SHOULD interpret them case insensitively</td></tr> --><br> <tr><td>id</td><td>string</td><td>任意大写或小写ASCII字母的组合（’A’..’Z’, 和’a’..’z’,数字(‘0’..’9’), ‘-‘ 和 ‘.’,限制在64位字符长度<br>以内。可能是一个整数，一个无前缀的OID, UUID或者满足这些约束条件的任何其他标识模式。） Id是大小写敏感的。UUIDs必须用小写字母。注意：这个版本格式通常使用<a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=38610" target="_blank" rel="external">ISO 18232</a>,标识符格式，也可以使用除ISO18232以外不区分大小写的<br>标识符格式  regex: [A-Za-z0-9-.]{1,64}</td></tr><br></table>
+
+<h4 id="1-13-0-2_复杂数据类型">1.13.0.2 复杂数据类型</h4><p>这些数据类型用包含子元素的XML元素来表示,子元素的名称用基本数据类型来定义.<br>任意XML元素都可能有 <a href="references.html#idref">id attribute</a>.  JSON中,这些数据类型是用包含properties的和XML元素名称一样的对象来表示的.JSON表达格式几乎和XML是一样的,因此只有第一个<a href="datatypes-examples.html#Attachment">例子</a> 给出了JSON的表达格式.</p>
+<p>复杂数据类型可以用 &quot;被规范&quot;.  <a href="structuredefinition.html">structuredefinition</a>中是对元素应该取什么值,哪些元素应该取值的约束.  </p>
+<p><strong>复杂数据类型的UML图</strong><br><img src="../material/complex-types.png" alt="">     </p>
+<p><a name="Attachment"><br><a name="attachment"></a></a></p>
+<h4 id="1-13-0-3_Attachment">1.13.0.3  Attachment</h4><p>参考<a href="datatypes-examples.html#Attachment">示例</a>, <a href="datatypes-definitions.html#Attachment">正式定义</a> and <a href="datatypes-mappings.html#Attachment">映射</a>.</p>
+<p>该数据类型针对的是包含或引用附件的情况-一些用其他格式定义的数据内容.最常用的情况是包含图片或诸如PDF等格式的报告.然而可以用来表示任何拥有MIME类型的数据.</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/attachment-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/attachment-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/attachment-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/attachment-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>ContentType元素应始终赋值。根据情况，它可以包含字符集charset信息和其他MIME类型扩展。在contentType中如果没有设置字符集，那么操作中会出现问题，但有些媒体类型可以使用默认的字符集和或字符集可以通过内容的检查来确定。 </p>
+<p>附件的实际内容可以直接使用data元素或者可以提供一个URL引用来表示。如果两者都设置，则引用指向的内容应该和data中的内容一致。引用不能被重用，即同一个引用指向一些不同的数据（即参考特定版本）。该URL引用应指向解析为实际数据的位置;一些如CID：的URI能够满足这一要求。如果URL是相对地址，对于同一个资源引用，它可以理解为指向同样的路径。</p>
+<p>应可以根据hash值来验证URL返回的内容是否被改变。</p>
+<p>在很多使用附件的情况下，该附件基数大于1。有效地重复利用可以传达使用不同MIME类型和语言的相同内容。关于重复利用元素的意义说明应该在该重复资源元素定义或指定该类型扩展引用的时候提供。在language字段中，对附件的语言描述使用的是BCP47编码。</p>
+<blockquote>
+<p>约束条件</p>
+<ul>
+<li>Inv-1:如果附件存在data字段，它必须有一个contentType类型(xpath: not(exists(f:data)) or exists(f:contentType))若data  和url字段都不存在，value字段中应表明不存在规定的mimeType或语言的数据.使用时可以规定附件的格式和类型，也就是可以使用的mime types.</li>
+</ul>
+</blockquote>
+<p>Attachment常用于:</p>
+<p><a href="communication.html">Communication</a>, <a href="practitioner.html">Practitioner</a>, <a href="questionnaireanswers.html">QuestionnaireAnswers</a>, <a href="bodysite.html">BodySite</a>, <a href="communicationrequest.html">CommunicationRequest</a>, <a href="observation.html">Observation</a>, <a href="supportingdocumentation.html">SupportingDocumentation</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="person.html">Person</a>, <a href="media.html">Media</a>, <a href="documentreference.html">DocumentReference</a>, <a href="imagingstudy.html">ImagingStudy</a>, <a href="diagnosticreport.html">DiagnosticReport</a>, <a href="contract.html">Contract</a> and <a href="patient.html">Patient</a></p>
+<p><a name="Coding"> </a><br><a name="coding"> </a><br><a name="codesystem"> </a></p>
+<h4 id="1-17-0-4_Coding">1.17.0.4  Coding</h4><p>See also <a href="datatypes-examples.html#Coding">Examples</a>, <a href="datatypes-definitions.html#Coding">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Coding">Mappings</a>.</p>
+<p>编码是使用“编码系统”里面定义好的一些符号来表示一个已经定义好的概念</p>
+<ul>
+<li>see <a href="terminologies.html">Using Codes in resources</a> for more details.</li>
+</ul>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/coding-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/coding-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/coding-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/coding-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>编码的含义是由code来定义。<em>system</em>提供代码定义的源，以及一个可选的version。display是human display，用于由系统定义的文本 – 它不会添加其他的值。该 valueSet 值对内容中选择的代码信息提供语境相关信息。</p>
+<p>system 字段的值是定义该code的的字典/代码系统的URI。该URI可能：<br>•    一个<a href="">可命名的系统列表</a>中定义的URI<br>•    一个存在于<a href="">HL7 OID注册库中</a>的OID (urn:oid:) 或UUID (urn:uuid:).。<br>•    一个直接引用该系统定义的URL，它可以是一个编码系统，这个编码系统是作为某个ValueSet资源中一部分定义的（即在ValueSet.define.system的值）<br>•    或者唯一标识编码系统定义的任何其他URI</p>
+<p>对于某个字典/编码体系而言，system 的正确取值可以按照下面的顺序来查找：<br>•    标准中已经罗列出来的<a href="">字典列表</a><br>•    <a href="">HL7 OID注册库</a><br>•    和字典/编码系统有关的文档<br>•    咨询代码系统的所有者<br>•    在HL7词汇邮件列表中提问</p>
+<p>有时候可能会提供代码系统的版本。如果编码的含义在代码系统中不同的版本一致，则可不提供系统版本。当编码系统的不同版本不能保持语义的一致性时，必须提供version字段。如果引用了一个值集合，并且该值集合定义了这个code system，而在code system定义中规定了版本， 则两个version字段(ValueSet.define.version和Coding.version)的值应保持一致。请注意使用以下系统必须给version字段赋值：<br>•    LOINC编码系统<br>•    不同版本的ICD<br>•    某些国家发布的SNOMED CT（在不同行政辖区之间，定义的一致性会不同，甚至一些行政辖区会指定他们自己的规则）</p>
+<p>See the <a href="valueset.html#versioning">discussion of code system versions in the Value Set resource</a> for further discussion on versioning.</p>
+<p>如果使用了code字段，编码必须是原始系统所定义的符号。在某些编码系统如SNOMED CT，可能是其他一些预定义的符号（如post-coordination）组成的表达式。需要注意的是，除非代码系统指定，否则区分大小写。display 是由系统定义代码的文本表示，在不了解系统的情况下通过一个应用来展示代码的含义。</p>
+<p>如果编码系统定义了多个展示用的字符串，至少在display字段中应该使用其中一个。如果某个被标记为优选项，它应被优先使用。如果编码系统中没有定义文本表示（例如SNOMED CT的表达式），那么display字段不能有值，不能理解编码的表达式的系统也无法获取编码的含义。</p>
+<p>在一些情况下，可能不知道出自哪个字典system - 只知道code编码。在这种情况下，除非该系统可以由上下文安全地判断，否则不能对编码进行处理。可以预见的是，信息将在更大范围内共享，不能在不知道字典的情况下使用code编码，应尽可能避免出现这种做法。</p>
+<p>如果知道是哪个字典，但没有编码，可以理解为，在系统中没有合适的代码来表达这个含义。</p>
+<p>如果两个编码，system、 version 和code 字段值都相同，则两个编码表达的是相同的含义。如果version不存在，或者system, version和code取值不同，这两个编码的关系需要在编码系统中和已有的映射关系中查找。</p>
+<p>如果用户在界面中选择了某个特殊的编码值，可以将其标记为主编码，在进行翻译等操作的时候，主编码是优先考虑的。</p>
+<p>有时候会在valueset字段中提供对某个valueset的引用值，以帮助用户或系统来理解编码的上下文。在某些情况下，编码取自哪里会影响编码的含义。这里需要注意的是Coding.system字段的值并不能替代Coding.valueSet。Coding.system字段中URI的值不能指向一个valueset的引用。（如果value set中的编码是它自己所定义的，那么该使用ValueSet.define.system而不是Coding.system字段，并且这个value set包含对这个valueset资源的直接引用。</p>
+<blockquote>
+<p>约束条件：<br>如果使用了Coding.valueSet字段,则Coding.system字段必须赋值，且其值与ValueSet.define.system 或ValueSet.compose.include.system一致。<br> The context of use (as defined in the resource or applicable profile) usually makes rules about what codes and systems are allowed or required in a particular context by binding the element to a value set. </p>
+</blockquote>
+<p>Coding常用于：<br><a href="#CodeableConcept">CodeableConcept</a>, <a href="#Signature">Signature</a>, <a href="valueset.html">ValueSet</a>, <a href="oralhealthclaim.html">OralHealthClaim</a>, <a href="coverage.html">Coverage</a>, <a href="composition.html">Composition</a>, <a href="conformance.html">Conformance</a>, <a href="statusresponse.html">StatusResponse</a>, <a href="pharmacyclaim.html">PharmacyClaim</a>, <a href="reversal.html">Reversal</a>, <a href="eligibilityrequest.html">EligibilityRequest</a>, <a href="questionnaireanswers.html">QuestionnaireAnswers</a>, <a href="paymentreconciliation.html">PaymentReconciliation</a>, <a href="professionalclaim.html">ProfessionalClaim</a>, <a href="claimresponse.html">ClaimResponse</a>, <a href="explanationofbenefit.html">ExplanationOfBenefit</a>, <a href="supportingdocumentation.html">SupportingDocumentation</a>, <a href="institutionalclaim.html">InstitutionalClaim</a>, <a href="auditevent.html">AuditEvent</a>, <a href="eligibilityresponse.html">EligibilityResponse</a>, <a href="statusrequest.html">StatusRequest</a>, <a href="visionclaim.html">VisionClaim</a>, <a href="readjudicate.html">Readjudicate</a>, <a href="paymentnotice.html">PaymentNotice</a>, <a href="questionnaire.html">Questionnaire</a>, <a href="operationoutcome.html">OperationOutcome</a>, <a href="visionprescription.html">VisionPrescription</a>, <a href="imagingstudy.html">ImagingStudy</a>, <a href="provenance.html">Provenance</a>, <a href="structuredefinition.html">StructureDefinition</a>, <a href="messageheader.html">MessageHeader</a>, <a href="pendedrequest.html">PendedRequest</a>, <a href="enrollmentrequest.html">EnrollmentRequest</a>, <a href="contract.html">Contract</a> and <a href="enrollmentresponse.html">EnrollmentResponse</a></p>
+<blockquote>
+<p><strong>设计说明</strong>：本规范定义了两种数据类型来表示编码值：<br>•    <strong>Coding</strong>:简单的引用其他编码系统中所定义的编码值<br>•    <strong>CodeableConcept</strong>: 文本描述和或一组编码列表（如系统定义的一组编码引用）</p>
+</blockquote>
+<p>Coding  针对的是最简单的情况，但在FHIR中并不常用。经验告诉我们，在一般的情况下，系统需要的编码中包括了多种翻译值和或原始文本。<br>如果确定值必须取自某些已经选定的编码，Coding数据类型可以直接使用</p>
+<h4 id="1-17-0-5_CodeableConcept">1.17.0.5 CodeableConcept</h4><p>See also <a href="datatypes-examples.html#CodeableConcept">Examples</a>, <a href="datatypes-definitions.html#CodeableConcept">Detailed Descriptions</a> and <a href="datatypes-mappings.html#CodeableConcept">Mappings</a>.</p>
+<p>CodeableConcept所表示的值，常常可以通过提供对一个或多个术语或本体的引用来得到(也就是这个值含义是由该术语、本体所定义的)，也可以通过所提供的文本来定义。这是在医疗数据是很常见的</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/coding-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/coding-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/coding-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/coding-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>每个coding都是上面所述的concept的一种表达方式。在不同的系统中同样的concept可以编码多次（甚至在相同的代码系统中多次编码，其中多个形式是可能的，例如在SNOMED CT中）。由于编码规则的差异，不同coding可以具有轻微不同的粒度。在CodeableConcept中Coding的排序是没有意义的。一个典型的使用CodeableConcept场景是当发送一个概念的本地非标化编码，与此同时，该概念可以转换到多个标化字典例如LOINC或SNOMED CT。发送本地化编码在调试和完整性审计中是非常有用和重要的。</p>
+<p>不管 <em>coding</em> 字段是否存在，<em>text</em> 都是用户输入或选择的概念的表达方式，而且最能代表用户或概念的本意。很多时候，text和coding.display两个字段值是一样的。其中一个Codings可能被标记为主编码-也就是用户直接选择的那个code或concept。当没有coding元素被标记为主编码，优先选择text（如果存在）的含义。</p>
+<blockquote>
+<p>约束条件<br>•    Inv-2: On 一组coding中，只能有一个coding是由用户直接选择的(xpath:count(f:coding[f:primary/@value=’true’])&lt;=1).具体使用场景通常通过元素与某个value set绑定来对允许或要求使用那些编码和字典做出规定，</p>
+</blockquote>
+<p>CodeableConcept在以下内容中使用:<br> <a href="condition.html">Condition</a>, <a href="supply.html">Supply</a>, <a href="devicecomponent.html">DeviceComponent</a>, <a href="communication.html">Communication</a>, <a href="group.html">Group</a>, <a href="valueset.html">ValueSet</a>, <a href="appointment.html">Appointment</a>, <a href="slot.html">Slot</a>, <a href="contraindication.html">Contraindication</a>, <a href="episodeofcare.html">EpisodeOfCare</a>, <a href="composition.html">Composition</a>, <a href="conformance.html">Conformance</a>, <a href="namingsystem.html">NamingSystem</a>, <a href="healthcareservice.html">HealthcareService</a>, <a href="orderresponse.html">OrderResponse</a>, <a href="conceptmap.html">ConceptMap</a>, <a href="practitioner.html">Practitioner</a>, <a href="careplan.html">CarePlan</a>, <a href="clinicalassessment.html">ClinicalAssessment</a>, <a href="substance.html">Substance</a>, <a href="deviceuserequest.html">DeviceUseRequest</a>, <a href="schedule.html">Schedule</a>, <a href="imagingobjectselection.html">ImagingObjectSelection</a>, <a href="bodysite.html">BodySite</a>, <a href="communicationrequest.html">CommunicationRequest</a>, <a href="riskassessment.html">RiskAssessment</a>, <a href="observation.html">Observation</a>, <a href="allergyintolerance.html">AllergyIntolerance</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="alert.html">Alert</a>, <a href="auditevent.html">AuditEvent</a>, <a href="procedurerequest.html">ProcedureRequest</a>, <a href="devicemetric.html">DeviceMetric</a>, <a href="organization.html">Organization</a>, <a href="immunizationrecommendation.html">ImmunizationRecommendation</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="medicationstatement.html">MedicationStatement</a>, <a href="appointmentresponse.html">AppointmentResponse</a>, <a href="media.html">Media</a>, <a href="other.html">Other</a>, <a href="visionprescription.html">VisionPrescription</a>, <a href="documentreference.html">DocumentReference</a>, <a href="immunization.html">Immunization</a>, <a href="provenance.html">Provenance</a>, <a href="device.html">Device</a>, <a href="structuredefinition.html">StructureDefinition</a>, <a href="order.html">Order</a>, <a href="procedure.html">Procedure</a>, <a href="diagnosticreport.html">DiagnosticReport</a>, <a href="medication.html">Medication</a>, <a href="messageheader.html">MessageHeader</a>, <a href="dataelement.html">DataElement</a>, <a href="documentmanifest.html">DocumentManifest</a>, <a href="medicationadministration.html">MedicationAdministration</a>, <a href="encounter.html">Encounter</a>, <a href="list.html">List</a>, <a href="deviceusestatement.html">DeviceUseStatement</a>, <a href="nutritionorder.html">NutritionOrder</a>, <a href="referralrequest.html">ReferralRequest</a>, <a href="familyhistory.html">FamilyHistory</a>, <a href="location.html">Location</a>, <a href="contract.html">Contract</a>, <a href="basic.html">Basic</a>, <a href="specimen.html">Specimen</a>, <a href="patient.html">Patient</a>, <a href="careplan2.html">CarePlan2</a> and <a href="diagnosticorder.html">DiagnosticOrder</a></p>
+<p><a name="Quantity"><br><a name="quantity"></a></a></p>
+<h4 id="1-17-0-6_Quantity">1.17.0.6 Quantity</h4><p>See also <a href="datatypes-examples.html#Quantity">Examples</a>, <a href="datatypes-definitions.html#Quantity">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Quantity">Mappings</a>.</p>
+<p>测定量（或可以潜在的被测量的量）。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/quantity-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/quantity-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/quantity-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/quantity-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>value 字段值包含了物理量的数值，包括一个隐含的精度。如果没有指定comparator的值，该值是一个点（即“=”）。永远不能忽略comparator 字段的值。</p>
+<p>units字段值包含你所测量内容的单位对应的文本表示。后续也可以使用code和system字段来进一步对其进行编码。</p>
+<p>如果该units字段值能够使用UCUM进行编码，且存在code字段的话，code字段值必须是一个UCUM 编码。如果code字段值必须是一个UCUM 编码，我们可以得到一个可以在不同物理量之间进行比较的标准值。需要注意的是，通常情况下 units 字段值包含了UCUM单位的文字表达方式(如US$<br>、US$)，但units字段值到底是不是一个有效的UCUM单位则需要进一步验证。</p>
+<blockquote>
+<p>约束条件<br>•    Inv-3: 如果code字段存在，则system字段也必须存在(xpath: not(exists(f:code)) or exists(f:system))<br>具体使用场景常常定义了Quantity的类型是什么，单位是什么。进一步也可以对单位进行编码。也可能对value的值进行限制。</p>
+</blockquote>
+<p>Quantity在以下内容中用到:<br> <a href="#Range">Range</a>, <a href="#Ratio">Ratio</a>, <a href="#SampledData">SampledData</a>, <a href="supply.html">Supply</a>, <a href="group.html">Group</a>, <a href="oralhealthclaim.html">OralHealthClaim</a>, <a href="pharmacyclaim.html">PharmacyClaim</a>, <a href="careplan.html">CarePlan</a>, <a href="substance.html">Substance</a>, <a href="questionnaireanswers.html">QuestionnaireAnswers</a>, <a href="professionalclaim.html">ProfessionalClaim</a>, <a href="bodysite.html">BodySite</a>, <a href="observation.html">Observation</a>, <a href="institutionalclaim.html">InstitutionalClaim</a>, <a href="visionclaim.html">VisionClaim</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="medicationstatement.html">MedicationStatement</a>, <a href="visionprescription.html">VisionPrescription</a>, <a href="immunization.html">Immunization</a>, <a href="medication.html">Medication</a>, <a href="medicationadministration.html">MedicationAdministration</a>, <a href="nutritionorder.html">NutritionOrder</a>, <a href="contract.html">Contract</a> and <a href="specimen.html">Specimen</a></p>
+<h4 id="1-17-0-6-1_Quantity数据类型的变种">1.17.0.6.1 Quantity数据类型的变种</h4><p>以下数据类型常常用于资源内容模型的定义之中，但其实它们都只是添加了额外约束的Quantity类型，<br><a name="Age"> </a><a name="age"> </a><br><a name="Count"> </a><a name="count"> </a><br><a name="Money"> </a><a name="money"> </a><br><a name="Distance"> </a><a name="distance"> </a><br><a name="Duration"> </a><a name="duration"> </a></p>
+<table class="list"><br> <tr><td>Age</td><td>UCUM编码的时间长度A duration (length of time) with a UCUM code</td><td>StructureDefinition (<a href="Age.profile.xml.html">XML</a>, <a href="Age.profile.json.html">JSON</a>)</td></tr><br> <tr><td>Count</td><td>离散元素的个数 没有单位A count of a discrete element (no unit)</td><td>StructureDefinition (<a href="Count.profile.xml.html">XML</a>, <a href="Count.profile.json.html">JSON</a>)</td></tr><br> <tr><td>Money</td><td>货币的数量，An amount of money. With regard to precision, see [[X]]</td><td>StructureDefinition (<a href="Money.profile.xml.html">XML</a>, <a href="Money.profile.json.html">JSON</a>)</td></tr><br> <tr><td>Distance</td><td>距离A measure of distance</td><td>StructureDefinition (<a href="Distance.profile.xml.html">XML</a>, <a href="Distance.profile.json.html">JSON</a>)</td></tr><br> <tr><td>Duration</td><td>时间长度A length of time</td><td>StructureDefinition (<a href="Duration.profile.xml.html">XML</a>, <a href="Duration.profile.json.html">JSON</a>)</td></tr><br></table>
+
+<p><a name="Range"><br><a name="range"></a></a></p>
+<h4 id="1-17-0-7_Range">1.17.0.7 Range</h4><p>See also <a href="datatypes-examples.html#Range">Examples</a>, <a href="datatypes-definitions.html#Range">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Range">Mappings</a>.</p>
+<p>有上限和下限的一组有序数量值，<br>Range规定了一组允许值；通常，可以取范围内的一个值(例如：患者可以服2-4片药)。Range通常用在指示、指令、医嘱instruction当中。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/range-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/range-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/range-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/range-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>low和 high字段中units 和code/system元素值应一致。如果low或 high字段不存在，意思是上限或下限是未知的，因此都不是完整的范围。</p>
+<p>在low和 high字段中不能存在comparator字段。注意，对于超出某个范围的度量值，应该使用带comparator的quantity类型来表示，而不是使用Range类型</p>
+<p>low和 high字段值是闭区间，并且被假定为具有任意高的精度。例如范围1.5至2.5，包括1.50，2.50，但不包括1.49或2.51。</p>
+<blockquote>
+<p>约束条件<br>•    Inv-2: 如果存在，low的值应比low小（(xpath: not(exists(f:low/f:value/@value)) or not(exists(f:high/f:value/@value)) or (number(f:low/f:value/@value) &lt;= number(f:high/f:value/@value)))）<br>•    Inv-3: low和 high字段值都不能有comparator字段</p>
+</blockquote>
+<p>Range 用于:</p>
+<p><a href="group.html">Group</a>, <a href="riskassessment.html">RiskAssessment</a>, <a href="observation.html">Observation</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a> and <a href="familyhistory.html">FamilyHistory</a></p>
+<p><a name="Ratio"><br><a name="ratio"></a></a></p>
+<h4 id="1-17-0-8_Ratio">1.17.0.8 Ratio</h4><p>See also <a href="datatypes-examples.html#Ratio">Examples</a>, <a href="datatypes-definitions.html#Ratio">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Ratio">Mappings</a>.</p>
+<p>用分子与分母来表示的两个Quantity值之间的关系</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/ratio-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/ratio-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/ratio-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/ratio-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>在分子和分母的共同因素是不会自动抵消。Ratio数据类型用于滴速（例如，“1：128”）和其他用比率来表示的实验室检验结果。比率不是简单的“结构化的数字” - 例如血压测量（例如，“120/60”）并不是比率。另外，比率所使用的地方，在分子和分母共同因素不抵消。这样做的最常见的例子是，其中的比率代表一个单位成本，而分子是一种货币（例如，50/10美元）。</p>
+<p>一个适当的比率同时具有分子和分母;然而，这些都不是强制性的，可以使用扩展来表示一些额外的信息。</p>
+<blockquote>
+<p>约束条件<br>•    Inv-1:: numerator和denominator字段要么都存在，要么都不存在(xpath: count(f:numerator) = count(f:denominator))<br>具体使用时分子或分母可能需要特定类型的Quantity。</p>
+</blockquote>
+<p>Ratio 常用于:<br>    <a href="substance.html">Substance</a>, <a href="observation.html">Observation</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="medicationstatement.html">MedicationStatement</a>, <a href="medication.html">Medication</a>, <a href="medicationadministration.html">MedicationAdministration</a> and <a href="nutritionorder.html">NutritionOrder</a></p>
+<p><a name="Period"><br><a name="period"></a></a></p>
+<h4 id="1-17-0-9_Period">1.17.0.9 Period</h4><p>See also <a href="datatypes-examples.html#Period">Examples</a>, <a href="datatypes-definitions.html#Period">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Period">Mappings</a>.</p>
+<p>由开始和结束日期/时间所定义的时间段。<br>Period规定了时间间隔。具体使用时指定是否整个范围内都适用（例如，“病人在这段时间内住院”）或一段时间内的一个值（例如“2013年6月24日下面2点到4点给病人服药“）。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/period-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/period-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/period-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/period-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>如果不存在start字段，该时间间隔的开始日期是未知的。如果end不存在，这意味着该时间间隔仍在进行中。<br>End的值包括了日期时间在内.比如2011-05-23 to 2011-05-27 包括了23和27号全天的时间。 </p>
+<p>Period常用于:<br> <a href="#Identifier">Identifier</a>, <a href="supply.html">Supply</a>, <a href="coverage.html">Coverage</a>, <a href="episodeofcare.html">EpisodeOfCare</a>, <a href="composition.html">Composition</a>, <a href="namingsystem.html">NamingSystem</a>, <a href="practitioner.html">Practitioner</a>, <a href="careplan.html">CarePlan</a>, <a href="deviceuserequest.html">DeviceUseRequest</a>, <a href="schedule.html">Schedule</a>, <a href="paymentreconciliation.html">PaymentReconciliation</a>, <a href="riskassessment.html">RiskAssessment</a>, <a href="observation.html">Observation</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="procedurerequest.html">ProcedureRequest</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="medicationstatement.html">MedicationStatement</a>, <a href="documentreference.html">DocumentReference</a>, <a href="provenance.html">Provenance</a>, <a href="procedure.html">Procedure</a>, <a href="diagnosticreport.html">DiagnosticReport</a>, <a href="medicationadministration.html">MedicationAdministration</a>, <a href="encounter.html">Encounter</a>, <a href="pendedrequest.html">PendedRequest</a>, <a href="deviceusestatement.html">DeviceUseStatement</a>, <a href="referralrequest.html">ReferralRequest</a>, <a href="familyhistory.html">FamilyHistory</a>, <a href="contract.html">Contract</a>, <a href="specimen.html">Specimen</a>, <a href="patient.html">Patient</a> and <a href="careplan2.html">CarePlan2</a></p>
+<p><a name="SampledData"><br><a name="sampleddata"></a></a></p>
+<h4 id="1-17-0-10_SampledData">1.17.0.10 SampledData</h4><p>See also <a href="datatypes-examples.html#SampledData">Examples</a>, <a href="datatypes-definitions.html#SampledData">Detailed Descriptions</a> and <a href="datatypes-mappings.html#SampledData">Mappings</a>.</p>
+<p>由设备采集得到的一系列的值，有上限和下限。数据的维度可能不止一个。</p>
+<p>SampledData类型提供了一个简洁的方式来处理由设备产生的对生理状态进行高频采用的数据。一个典型的使用便是心电图或心电图设备的输出。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/sampledData-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/sampledData-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/sampledData-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/sampledData-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>一组由空格（Unicode字符U20）分隔的带小数点的十进制值。除了带小数点的十进制值之外，也可使用特殊值“E”（错误），“L”（低于检测限）和“U”（高于检测限）。如果多个维度互相交织在一起，则某个时间点的所有数据表示在一起。默认的倍数值factor字段为1。</p>
+<p>SampledData类型常用于:<br> <a href="observation.html">Observation</a></p>
+<p><a name="Identifier"><br><a name="identifier"></a></a></p>
+<h4 id="1-17-0-11_Identifier">1.17.0.11 Identifier</h4><p>See also <a href="datatypes-examples.html#Identifier">Examples</a>, <a href="datatypes-definitions.html#Identifier">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Identifier">Mappings</a>.</p>
+<p>在一个系统内，与一个单独的对象或实体相关联的数字或字母组成的数字串。典型地，标识符在资源中被用来将内容连接到其他框架或协议表示的外部内容。标识符与对象相关联，并且会随着人为或系统的处理和错误被改变或不再使用。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/identifier-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/identifier-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/identifier-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/identifier-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>system字段的值指向标识符如何定义的URI(怎么样确保标识符的唯一性等等)。它可能是一个特定的应用程序或一个公认的标准/规范的所定义的唯一标识符。Value字段值在system定义的范围内应是唯一的，并具有一致的含义。system 和 value字段值都是大小写敏感的。</p>
+<p>FHIR直接定义了 <a href="terminologies-systems.html">一些有用的URI</a>。如果内容是共享的或跨越机构边界交换，应该在<a href="http://hl7.org/oid" target="_blank" rel="external">HL7 OID registry</a> 或任何公开的注册库中登记OIDs (urn:oid:) 和UUIDs (urn:uuid:)。如果标识符本身自然是全球唯一的（例如，一个OID，一个UUID，或没有尾随部分URI），那么system的值应该取“urn:ietf:rfc:3986”。</p>
+<p>在某些情况下，可能不知道system的值 – 只知道value 字段值(例如：它是一个可以扫条形码的简易装置) 或该系统默认是知道的(在有限的情况下简单的交流，往往是由条码阅读器驱动)。在这种情况下，除非该系统可以根据上下文安全地推断出system的值，否则不能对value的值进行任何匹配。若信息在更大范围内共享，应避免这种做法，没有system值的values值实用性有限有地限于在使用中。</p>
+<p>assigner 字段表示是哪个注册中心、国家、机构/等负责分配标识符。</p>
+<p>Identifier常用于:<br> <a href="condition.html">Condition</a>, <a href="supply.html">Supply</a>, <a href="devicecomponent.html">DeviceComponent</a>, <a href="communication.html">Communication</a>, <a href="group.html">Group</a>, <a href="valueset.html">ValueSet</a>, <a href="oralhealthclaim.html">OralHealthClaim</a>, <a href="coverage.html">Coverage</a>, <a href="appointment.html">Appointment</a>, <a href="slot.html">Slot</a>, <a href="contraindication.html">Contraindication</a>, <a href="episodeofcare.html">EpisodeOfCare</a>, <a href="composition.html">Composition</a>, <a href="healthcareservice.html">HealthcareService</a>, <a href="orderresponse.html">OrderResponse</a>, <a href="statusresponse.html">StatusResponse</a>, <a href="conceptmap.html">ConceptMap</a>, <a href="pharmacyclaim.html">PharmacyClaim</a>, <a href="reversal.html">Reversal</a>, <a href="practitioner.html">Practitioner</a>, <a href="careplan.html">CarePlan</a>, <a href="substance.html">Substance</a>, <a href="deviceuserequest.html">DeviceUseRequest</a>, <a href="schedule.html">Schedule</a>, <a href="eligibilityrequest.html">EligibilityRequest</a>, <a href="questionnaireanswers.html">QuestionnaireAnswers</a>, <a href="paymentreconciliation.html">PaymentReconciliation</a>, <a href="professionalclaim.html">ProfessionalClaim</a>, <a href="claimresponse.html">ClaimResponse</a>, <a href="bodysite.html">BodySite</a>, <a href="communicationrequest.html">CommunicationRequest</a>, <a href="riskassessment.html">RiskAssessment</a>, <a href="observation.html">Observation</a>, <a href="allergyintolerance.html">AllergyIntolerance</a>, <a href="explanationofbenefit.html">ExplanationOfBenefit</a>, <a href="supportingdocumentation.html">SupportingDocumentation</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="institutionalclaim.html">InstitutionalClaim</a>, <a href="alert.html">Alert</a>, <a href="auditevent.html">AuditEvent</a>, <a href="eligibilityresponse.html">EligibilityResponse</a>, <a href="statusrequest.html">StatusRequest</a>, <a href="person.html">Person</a>, <a href="procedurerequest.html">ProcedureRequest</a>, <a href="visionclaim.html">VisionClaim</a>, <a href="devicemetric.html">DeviceMetric</a>, <a href="organization.html">Organization</a>, <a href="readjudicate.html">Readjudicate</a>, <a href="immunizationrecommendation.html">ImmunizationRecommendation</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="paymentnotice.html">PaymentNotice</a>, <a href="medicationstatement.html">MedicationStatement</a>, <a href="appointmentresponse.html">AppointmentResponse</a>, <a href="questionnaire.html">Questionnaire</a>, <a href="media.html">Media</a>, <a href="other.html">Other</a>, <a href="visionprescription.html">VisionPrescription</a>, <a href="documentreference.html">DocumentReference</a>, <a href="immunization.html">Immunization</a>, <a href="imagingstudy.html">ImagingStudy</a>, <a href="device.html">Device</a>, <a href="structuredefinition.html">StructureDefinition</a>, <a href="order.html">Order</a>, <a href="procedure.html">Procedure</a>, <a href="diagnosticreport.html">DiagnosticReport</a>, <a href="dataelement.html">DataElement</a>, <a href="documentmanifest.html">DocumentManifest</a>, <a href="medicationadministration.html">MedicationAdministration</a>, <a href="encounter.html">Encounter</a>, <a href="pendedrequest.html">PendedRequest</a>, <a href="list.html">List</a>, <a href="deviceusestatement.html">DeviceUseStatement</a>, <a href="goal.html">Goal</a>, <a href="nutritionorder.html">NutritionOrder</a>, <a href="referralrequest.html">ReferralRequest</a>, <a href="familyhistory.html">FamilyHistory</a>, <a href="enrollmentrequest.html">EnrollmentRequest</a>, <a href="location.html">Location</a>, <a href="contract.html">Contract</a>, <a href="basic.html">Basic</a>, <a href="specimen.html">Specimen</a>, <a href="enrollmentresponse.html">EnrollmentResponse</a>, <a href="patient.html">Patient</a>, <a href="careplan2.html">CarePlan2</a> and <a href="diagnosticorder.html">DiagnosticOrder</a></p>
+<p><a name="HumanName"><br><a name="humanname"></a></a></p>
+<h4 id="1-17-0-12_HumanName">1.17.0.12 HumanName</h4><p>See also <a href="datatypes-examples.html#HumanName">Examples</a>, <a href="datatypes-definitions.html#HumanName">Detailed Descriptions</a> and <a href="datatypes-mappings.html#HumanName">Mappings</a>.</p>
+<p>包含了文本、不同部分和用途信息的一个人的名字。</p>
+<p>名字可以更改或弃用。一个人在不同的场景下可以有名字。名称可以分割成不同的部分。对于人名，不同部分可以有一些暗含的意义，也可能没有；各种文化对于不同部分的重视程度各不相同。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/humanName-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/humanName-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/humanName-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/humanName-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>下表总结了一个人的名字中有哪些常见的部分：</p>
+<table class="lines"><br> <tr><td><strong>Name</strong></td><td><strong>Example</strong></td><td><strong>Destination / Comments</strong></td></tr><br> <tr><td>Surname</td><td>Smith</td><td>Family Name</td></tr><br> <tr><td>First name</td><td>John</td><td>Given Name</td></tr><br> <tr><td>Title</td><td>Mr</td><td>Prefix</td></tr><br> <tr><td>Middle Name</td><td>Samuel</td><td>Subsequent Given Names</td></tr><br> <tr><td>Patronymic</td><td>bin Osman</td><td>Family Name</td></tr><br> <tr><td>Multiple family names</td><td>Carreño Quiñones</td><td>Family Name. See note below about repeats</td></tr><br> <tr><td>Initials</td><td>Q.</td><td>Given Name as initial (&quot;.&quot; recommended)</td></tr><br> <tr><td>Nick Name</td><td>Jock</td><td>Given name, with Use = common</td></tr><br> <tr><td>Qualifications</td><td>PhD</td><td>Suffix</td></tr><br> <tr><td>Honorifics</td><td>Senior</td><td>Suffix</td></tr><br></table>
+
+<p>For further information, including all <a href="http://www.w3.org/International/questions/qa-personal-names" target="_blank" rel="external">W3C International Examples</a>,<br>consult the <a href="datatypes-examples.html#HumanName">examples</a>.</p>
+<p>text字段规定了整个姓名的文本表达方式。可以是整体或以不同部分的形式来表示。姓名的不同部分之间不应该包含空格。对于姓名中的姓，带连字符的姓名如“Smith-Jones”认为是一个名称，但带空格的如“Smith Jones”的名字则可分解成多个部分。对于姓名中的名而言，如果没有记录全名的话可以用首字母代替。其中given 类型的顺序是有意义的，必须记录其顺序，至于姓和名顺序的使用则取决于文化和使用环境。跨文化系统一般在呈现时应依赖text字段的值，并使用不同的部分来做索引/搜索功能。</p>
+<p>在更新姓名时，系统应保证text和不同部分保持一致，或者之选其中一种。若系统不支持原始数据中的姓名的多个不同部分的话，可以使用空格将其拼接起来放在text字段中。</p>
+<p>HumanName 常用于:<br> <a href="practitioner.html">Practitioner</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="person.html">Person</a>, <a href="organization.html">Organization</a> and <a href="patient.html">Patient</a></p>
+<p><a name="Address"><br><a name="address"></a></a></p>
+<h4 id="1-17-0-13_Address">1.17.0.13  Address</h4><p>See also <a href="datatypes-examples.html#Address">Examples</a>, <a href="datatypes-definitions.html#Address">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Address">Mappings</a>.</p>
+<p>Address有多种世界各地的界定通信地址格式。通信地址通常用于记录可以访问、找到的患者或人的位置。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/address-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/address-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/address-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/address-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>text元素表示的是整个地址。可以是整体或以不同部分的形式来表示。在更新地址时，系统应保证text和不同部分保持一致，或者之选其中一种。<br>Address常用于:<br> <a href="practitioner.html">Practitioner</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="person.html">Person</a>, <a href="organization.html">Organization</a>, <a href="location.html">Location</a> and <a href="patient.html">Patient</a></p>
+<p><a name="ContactPoint"><br><a name="contactpoint"></a></a></p>
+<h4 id="1-17-0-14_ContactPoint">1.17.0.14 ContactPoint</h4><p>See also <a href="datatypes-examples.html#ContactPoint">Examples</a>, <a href="datatypes-definitions.html#ContactPoint">Detailed Descriptions</a> and <a href="datatypes-mappings.html#ContactPoint">Mappings</a>.</p>
+<p>一个人或组织的各种联络方式，包括电话，电子邮件等详细信息。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/contactPoint-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/contactPoint-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/contactPoint-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/contactPoint-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>如果联系方式是电话、传真或其他类似的方式，value值的格式应遵循 <a href="http://www.itu.int/rec/T-REC-E.123-200102-I/e" target="_blank" rel="external">ITU-T E.123</a>. 由于遗留数据和采集方式的不同，这通常是难以实现的</p>
+<blockquote>
+<p>约束条件<br>•    Inv-2: value字段存在的话，system必须存在. (xpath: not(exists(f:value)) or exists(f:system))</p>
+</blockquote>
+<p>ContactPoint常用于:<br> <a href="valueset.html">ValueSet</a>, <a href="conformance.html">Conformance</a>, <a href="namingsystem.html">NamingSystem</a>, <a href="healthcareservice.html">HealthcareService</a>, <a href="conceptmap.html">ConceptMap</a>, <a href="practitioner.html">Practitioner</a>, <a href="operationdefinition.html">OperationDefinition</a>, <a href="relatedperson.html">RelatedPerson</a>, <a href="person.html">Person</a>, <a href="organization.html">Organization</a>, <a href="questionnaire.html">Questionnaire</a>, <a href="subscription.html">Subscription</a>, <a href="device.html">Device</a>, <a href="structuredefinition.html">StructureDefinition</a>, <a href="messageheader.html">MessageHeader</a>, <a href="dataelement.html">DataElement</a>, <a href="searchparameter.html">SearchParameter</a>, <a href="location.html">Location</a> and <a href="patient.html">Patient</a></p>
+<p><a name="Timing"><br><a name="timing"></a></a></p>
+<h4 id="1-17-0-15_Timing">1.17.0.15 Timing</h4><p>See also <a href="datatypes-examples.html#Timing">Examples</a>, <a href="datatypes-definitions.html#Timing">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Timing">Mappings</a>.</p>
+<p>Timing规定了可重复出现多次的某个事件，Timing schedule不适用于记录已经发生的事件，而是用于记录那些即将发生或要求发生的事件。Timing schedule既可以是说明了起止日期时间的事件列表，也可是说明了重复条件的单个事件，也可以是只是重复条件而没有具体的事件。</p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/timing-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/timing-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/timing-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/timing-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>如果指定的事件，每个事件必须要有一个event.start字段值。如果event.end没有值，认为该时间持续了一段时间，但不知道何时停止。</p>
+<p>如果timing包含了重复条件，在每个规定的时间间隔或与某个现实生活的事件关联起来，事件会重复发生多次。如果是重复事件的话，可以规定其停止时间，可以通过时间重复的次数或者停止事件安排的截止日期时间来实现。如果没有指定截止日期时间，timing schedule会根据其他地方的一些条件停止。</p>
+<blockquote>
+<p>约束条件<br>•    Inv-1: event元素出现一次以下时才能使用repeat字段。 (xpath: not(exists(f:repeat)) or count(f:event) <2) •="" inv-2:="" 对于timing.repeat:="" 最多只能出现一个frequency或when元素，但二者不能同时出现="" (xpath="" on="" f:timing="" f:repeat:="" exists(f:frequency)="" !="exists(f:when))" inv-3:="" 对于="" timing.repeat:="" 最多只能出现一次count或end元素="" not(exists(f:count)="" and="" exists(f:end)))="" inv-4:="" timing.repeat.duration:="" duration应取正值="" f:repeat="" f:duration:="" @value=""> 0 or not(@value))</2)></p>
+</blockquote>
+<p>Timing常用于:<br> <a href="careplan.html">CarePlan</a>, <a href="deviceuserequest.html">DeviceUseRequest</a>, <a href="procedurerequest.html">ProcedureRequest</a>, <a href="devicemetric.html">DeviceMetric</a>, <a href="medicationdispense.html">MedicationDispense</a>, <a href="medicationprescription.html">MedicationPrescription</a>, <a href="medicationstatement.html">MedicationStatement</a>, <a href="order.html">Order</a>, <a href="deviceusestatement.html">DeviceUseStatement</a> and <a href="nutritionorder.html">NutritionOrder</a></p>
+<p><a name="Signature"><br><a name="signature"></a></a></p>
+<h4 id="1-17-0-16_Signature">1.17.0.16 Signature</h4><p>See also <a href="datatypes-examples.html#Signature">Examples</a>, <a href="datatypes-definitions.html#Signature">Detailed Descriptions</a> and <a href="datatypes-mappings.html#Signature">Mappings</a>.</p>
+<p>A Signature holds a Digital Signature and supporting context in a FHIR accessible form. The non-repudiation proof is provided through the XML-Signature blob. </p>
+<ul>
+<li><a href="">Structure</a><br><img src="../material/signature-structure.png" alt=""></li>
+<li><a href="#tabs-uml">UML</a><br><img src="../material/signature-uml.png" alt=""></li>
+<li><a href="#tabs-xml">XML</a><br><img src="../material/signature-xml.png" alt=""></li>
+<li><a href="#tabs-json">JSON</a><br><img src="../material/signature-json.png" alt=""></li>
+<li><a href="#tabs-all">All</a></li>
+</ul>
+<p>Signature.blob 字段值为base64编码的 XML 数字签名。 XML 数字签名是<a href="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/#def-SignatureDetached" target="_blank" rel="external">Detached</a> Signature.签名的内容和签名本身是分离的。</p>
+<p>为了支持长期的签名，Signature应该遵循XAdES-X-L 。XAdES-X-L标准增加了签名的时间戳，包括了签名的认证信息和废止的声明</p>
+<p>被签名的内容是FHIR 资源，签名本身<br>Where the signed content is a FHIR Resource(s), the signature is accross the the XML form of the resource(s).</p>
+<p>The content should be canonicalized using the &quot;Canonical XML 1.1. with Comments&quot;.</p>
+<p>Signature宜使用哈希算法sha256。XML-Signature中表明了所使用的算法。也可使用其他哈希算法，签名的验证策略视实际情况来定</p>
+<p>Signature应总是包含一个“CommitmentTypeIndication” 元素来表示签名的目的。The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013).<br>The Signature.type shall contain the same values as committmentTypeIndication.</p>
+<p>签名的确认分三个层次: </p>
+<ol>
+<li>verifying that the Digital Signature block itself has integrity through verifying the signature across the XML-Signature,</li>
+<li>confirming that the signer was authentic, not revoked, and appropriate to the signature purpose,</li>
+<li>confirming that the signed content of interest are unmodified using the hash algorithm.</li>
+</ol>
+<p>Deviations from these guidelines would need to be expressed in site policy, and would be enumerated in the XML-Signature block.<br>For example some environments may choose a different XAdES profile, hashing algorithm, policy identifier, or signature purpose vocabulary. </p>
+<blockquote>
+<p><strong>约束条件</strong></p>
+</blockquote>
+<p>Signature常用于:<br> <a href="provenance.html">Provenance</a></p>
+<p><a name="open"> </a></p>
+<h4 id="1-17-0-17_Open_Type_Element">1.17.0.17  Open Type Element</h4><p>一些元素中并没有规定使用那种具体的数据类型.该类型由通配符 “*”表示。在这些情况下，数据类型可以是下列之一：:</p>
+<ul>
+<li><a href="datatypes.html#integer">integer</a></li>
+<li><a href="datatypes.html#decimal">decimal</a></li>
+<li><a href="datatypes.html#dateTime">dateTime</a></li>
+<li><a href="datatypes.html#date">date</a></li>
+<li><a href="datatypes.html#instant">instant</a></li>
+<li><a href="datatypes.html#time">time</a></li>
+<li><a href="datatypes.html#string">string</a></li>
+<li><a href="datatypes.html#uri">uri</a></li>
+<li><a href="datatypes.html#boolean">boolean</a></li>
+<li><a href="datatypes.html#code">code</a> - if the extension definition provides a binding to a suitable set of codes</li>
+<li><a href="datatypes.html#base64Binary">base64Binary</a></li>
+<li><a href="datatypes.html#Coding">Coding</a></li>
+<li><a href="datatypes.html#CodeableConcept">CodeableConcept</a></li>
+<li><a href="datatypes.html#Attachment">Attachment</a></li>
+<li><a href="datatypes.html#Identifier">Identifier</a></li>
+<li><a href="datatypes.html#Quantity">Quantity</a></li>
+<li><a href="datatypes.html#Range">Range</a></li>
+<li><a href="datatypes.html#Period">Period</a></li>
+<li><a href="datatypes.html#Ratio">Ratio</a></li>
+<li><a href="datatypes.html#HumanName">HumanName</a></li>
+<li><a href="datatypes.html#Address">Address</a></li>
+<li><a href="datatypes.html#ContactPoint">ContactPoint</a></li>
+<li><a href="datatypes.html#Timing">Timing</a></li>
+<li><a href="datatypes.html#Signature">Signature</a></li>
+<li><a href="references.html#Reference">Reference</a> - a reference to another resource</li>
+</ul>
+<p>元素名称为“[X]”结尾，可以用具体的数据类型的名称来替换“[X]”。</p>
+<p>开放式元素常用于：<br> <a href="parameters.html">Parameters</a></p>
+<p><a name="other"> </a></p>
+<h4 id="1-17-0-18_Other_Types">1.17.0.18  Other Types</h4><p>下列类型被定义为数据类型的部分，但在本说明书别处说明：:</p>
+<p><img src="../material/other-types.png" alt=""></p>
+<ul>
+<li><strong><a href="resource.html#metadata">Resource</a></strong> - the conceptual base class for all resources</li>
+<li><strong><a href="references.html#Reference">Reference</a></strong> - for references from one resource to another</li>
+<li><strong><a href="extensibility.html">Extension</a></strong> - used to convey additional data in a resource</li>
+<li><strong><a href="narrative.html#Narrative">Narrative</a></strong> - conveys a human-readable representation of the content of a resource</li>
+</ul>
+<p>&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100.<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a>       </p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

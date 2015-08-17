@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Profiling FHIR
+Examples
+
+2.11.0  Profiling FHIR FHIR的定制与本地化FHIR标准本身描述了一系列可用于医疗领域多个场景下的基础资源、框架和API。但是不同的生态圈和地区的医学实践、法律和教育程度又存在巨大差异，鉴于此，我们需要根据具体的需求对FHIR标准进一步进行定制和本地化。一般而言，在定制与本地化过程中需要规定:
+
+规定资源中需要那些元素/字段">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/profiling.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="Profiling FHIR
+Examples
+
+2.11.0  Profiling FHIR FHIR的定制与本地化FHIR标准本身描述了一系列可用于医疗领域多个场景下的基础资源、框架和API。但是不同的生态圈和地区的医学实践、法律和教育程度又存在巨大差异，鉴于此，我们需要根据具体的需求对FHIR标准进一步进行定制和本地化。一般而言，在定制与本地化过程中需要规定:
+
+规定资源中需要那些元素/字段">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/slicing.png">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="Profiling FHIR
+Examples
+
+2.11.0  Profiling FHIR FHIR的定制与本地化FHIR标准本身描述了一系列可用于医疗领域多个场景下的基础资源、框架和API。但是不同的生态圈和地区的医学实践、法律和教育程度又存在巨大差异，鉴于此，我们需要根据具体的需求对FHIR标准进一步进行定制和本地化。一般而言，在定制与本地化过程中需要规定:
+
+规定资源中需要那些元素/字段">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <ul>
+<li><a href="#">Profiling FHIR</a></li>
+<li><a href="profiling-examples.html">Examples</a></li>
+</ul>
+<h2 id="2-11-0_Profiling_FHIR_FHIR的定制与本地化">2.11.0  Profiling FHIR FHIR的定制与本地化</h2><p>FHIR标准本身描述了一系列可用于医疗领域多个场景下的基础资源、框架和API。但是不同的生态圈和地区的医学实践、法律和教育程度又存在巨大差异，鉴于此，我们需要根据具体的需求对FHIR标准进一步进行定制和本地化。<br>一般而言，在定制与本地化过程中需要规定:</p>
+<ul>
+<li>规定资源中需要那些元素/字段，需要添加哪些额外的仍不存在的字段；</li>
+<li>规定使用哪些API以及如何使用；</li>
+<li>规定特定的元素中使用哪些术语字典；</li>
+<li>描述具体的元素与实际需求(数据库表字段)的对应关系</li>
+</ul>
+<p>鉴于医疗自身的特殊性，不同的业务领域、国家、机构或者是供应商、具体的产品、项目的定制与本地化会存在一些重叠的部分。</p>
+<p>一般而言，我们在实施规范中定义了如何限制和扩展API，资源以及术语字典。这些约束和限制以及扩展可以通过一些称之为一致性资源来表达。<br>开发人员能够从这些一致性资源中获得下列信息:</p>
+<ul>
+<li>确定某些API的调用不适用与某个场景，以及调用API的详细信息Indicate that <a href="http.html">some API calls</a> are not used for a particular use , and provide additional details about how the API calls are used (<a href="conformance.html">Conformance</a> Resource)</li>
+<li>定义了哪些新的操作和查询变量。 Add additional <a href="operations.html">operations</a> or <a href="search.html">search parameters</a> not in the base specification   (using the <a href="operationdefinition.html">OperationDefinition</a> resource or the <a href="searchparameter.html">SearchParameter</a> Resource</li>
+<li>确定某个资源中没有用到哪些字段Identify specific elements in resources that are not used (<a href="profile.html">Profile</a> Resource)</li>
+<li>描述如何使用资源中已有的字段Describe how existing elements in resources are used (Profile resource)</li>
+<li>定义在资源或数据类型中用到的新字段Define new elements that are used resources or data types (Profile resource)</li>
+<li>确定本地术语和标化术语的具体应用Mix custom and standard terminologies and choose which codes from these to use for a particular use (Profile and <a href="valueset.html">Value Set</a> Resources)</li>
+<li>本地术语和标化术语的映射 Map between local and standard terminologies or content models (<a href="conceptmap.html">Concept Map</a> Resource)</li>
+<li>系统命名空间的注册，术语字典的注册 Register system namespaces for identifiers and terminologies (<a href="namingsystem.html">NamingSystem</a> Resource)</li>
+<li>数据字典的描述和注册 Describe and register specific Data Elements that are used across systems in a Data Dictionary (<a href="dataelement.html">DataElement</a> Resource)</li>
+</ul>
+<p>These need to be used following the policies discussed below, and also<br>following the basic concepts for extension that are described in <a href="extensibility.html">&quot;Extensibility&quot;</a>.<br>For implementer convenience, the specification itself publishes its base definitions using these same resources.</p>
+<p><a name="api"> </a></p>
+<h3 id="2-11-0-1_API的扩展和约束_Extending_and_Restricting_the_API">2.11.0.1  API的扩展和约束 Extending and Restricting the API</h3><p>一致性资源中罗列了服务器中可用的REST交互(read, update, search增删改查等)，其中，用于查询服务器支持哪些交互的交互接口(<a href="http.html#conformance">Conformance</a>)是必须存在的.除此之外，客户端和服务器根据所需选择API实现即可。</p>
+<p>除了FHIR已经定义好的操作之外，服务器亦可定义新的操作，只需给自定义的操作名称加上前缀“$”即可，The Conformance resource supports defining what OperationDefinitions make use of particular names on an end point。如果没有使用OperationDefinition来声明已经定义哈的服务，使用较长的名称是比较好的，可用降低服务名称与其他接口冲突的可能性。鉴于FHIR标准中所定义的操作名称中不可能存在”.”，我们可以使用“.”来定义自己的名称 诸如”ihe.someService”</p>
+<p>建议使用FHIR operations framework来定义操作，也就是说使用OperationDefinition资源来声明所定义的操作，但有些操作可能涉及一些无法这样描述的格式。</p>
+<p>我们也可以通过额外的content-type来扩展FHIR的API,使用vCard格式来庚子年或读取appointment资源的数据是很不错的。vCard中定义了自己的mime type。</p>
+<h3 id="2-11-0-2_约束和扩展资源_Extending_and_Restricting_Resources">2.11.0.2  约束和扩展资源 Extending and Restricting Resources</h3><p>可以通过 &quot;StructureDefinition&quot; 资源来约束和扩展某个具体的资源, &quot;StructureDefinition&quot; 中描述了如何使用资源中的字段、元素，在那些地方使用扩展</p>
+<h3 id="2-11-0-3_Limitations_of_Use">2.11.0.3  Limitations of Use</h3><p>StructureDefinition 应遵循以下原则:</p>
+<ul>
+<li>StructureDefinition 不能破坏原始标准的已有规则(比如，某个元素的基数为1..1，则不能改为0..1 或1..*) </li>
+<li>StructureDefinition 中不能规定元素的默认值或含义  </li>
+<li>StructureDefinition 不能为元素规定具体的名称 </li>
+<li>在不知道StructureDefinition 的前提下应该能够安全的处理资源中的数据 </li>
+</ul>
+<p>如果StructureDefinition 中规定某个扩展的动作不能忽略，必须同时使用<a href="extensibility.html#modifiers">modifier extension</a>.<br>Another way of saying this is that knowledge must be explicit in<br>the instance, not implicit in the profile. </p>
+<p>举例说明，如果StructureDefinition中想要描述 <a href="procedure.html">Procedure</a>资源将被否定(也就是说该手术从未发生)，不能只是在StructureDefinition 中说明，相反，必须在StructureDefinition 规定 该资源要有一个扩展，这个扩展能够表达这样的信息。</p>
+<p>也有一种机制可以保证资源在了解和理解了一系列的规则之后才能够安全理解。具体请参考 <a href="resources.html#ruleset">Restricted Understanding of Resources</a>.</p>
+<h3 id="2-11-0-4_Using_Structure_Definitions">2.11.0.4  Using Structure Definitions</h3><p>Structure Definitions 中描述了某个FHIR资源或数据类型的约束、限制。某个Structure Definitions是通过具体的URL来确定的，:</p>
+<ul>
+<li>限制元素的基数 比如原来是0..* 可以限制成1..2</li>
+<li>通过将基数的上限设为0来排除某个元素的使用 </li>
+<li>限制某个元素值为某个固定值</li>
+<li>对资源内的嵌套元素进行约束(XPath表达式)</li>
+<li>限制支持多类型的元素的类型 </li>
+<li>Requiring a typed element or the target of a resource reference to conform to another structure profile (declared in the same profile, or elsewhere)</li>
+<li>指定其他的术语字典 值集</li>
+<li>为了描述某个元素在具体场景下的使用提供另外的定义和示例</li>
+<li>提供具体的映射关系 v2 v3或其他 </li>
+<li>规定Structure Definitions中必须支持的一到多个元素</li>
+</ul>
+<p>A profile contains a linear list of element declarations. The inherent<br>nested structure of the elements is derived from the <em>path</em> value of each element.<br>For instance, a sequence of the element paths like this:</p>
+<ul>
+<li>Root</li>
+<li>Root.childA</li>
+<li>Root.childA.grandchild1</li>
+<li>Root.childB</li>
+</ul>
+<p>defines the following structure:</p>
+<pre class="xml">
+ &lt;Root&gt;
+   &lt;childA&gt;
+     &lt;grandChild/&gt;
+   &lt;/childA&gt;
+   &lt;childB/&gt;
+ &lt;/Root&gt;
+</pre>
+
+<p>or its JSON equivalent. The structure is coherent - children are never<br>implied, and the path statements are always in order. The element list is<br>a linear list rather than being explicitly nested because element definitions<br>are frequently re-used in multiple places within a single profile, and this re-use<br>is easier with a flat structure.</p>
+<p><a name="snapshot"> </a></p>
+<h3 id="2-11-0-5_Differential_vs_Snapshot"><span class="sectioncount">2.11.0.5<a name="2.11.0.5"> </a></span> Differential vs Snapshot</h3><p>Profiles may contain either a differential statement, a snapshot<br>statement or both.</p>
+<p>Differential statements describe only the differences that they make<br>relative to another profile (which is most often the base FHIR resource or data type).<br>For example, a profile may make a single element mandatory (cardinality 1..1).<br>In the case of a differential structure, it will contain a single element<br>with the path of the element being made mandatory, and a cardinality statement.<br>Nothing else is stated - all the rest of the structure is implied (note:<br>this implies that a differential profile can be sparse, and only<br>mention the elements that are changed, without having to list the<br>full structure).</p>
+<p>In order to properly understand a differential structure, it must be<br>applied to the profile on which it is based. In order to save<br>tools from needing to support this operation (which is computationally intensive - and<br>impossible if the base structure is not available), a Profile<br>can also carry a &quot;snapshot&quot; - a fully calculated form of the<br>structure that is not dependent on any other structure. The FHIR<br>project provides tools for the common platforms that can populate<br>a snapshot from a differential.</p>
+<p>Profiles can contain both a differential and a snapshot view.<br>In fact, this is the most useful form - the differential<br>form serves the authoring process, while the snapshot serves<br>the implementation tooling. Profile resources used in operational<br>systems should always have the snapshot view populated.</p>
+<p><a name="slicing"> </a></p>
+<h3 id="2-11-0-6_Slicing"><span class="sectioncount">2.11.0.6<a name="2.11.0.6"> </a></span> Slicing</h3><p>One common feature of profiles is to take an element that may occur more than once (e.g. in a list),   <!-- What about slicing type choices? --><br>and split the list into a series of sublists, each with different restrictions on the elements in the sublist with associated<br>additional meaning. In FHIR, this operation is known as &quot;Slicing&quot; a list. It is common to<br>“slice” a list into sub-lists containing just one element, effectively putting constraints on each element in the list.</p>
+<p>Here is an example to illustrate the process:</p>
+<p><img src="slicing.png" alt="Slicing diagram"></p>
+<p>In this example, the base resource defines the &quot;related&quot; element which refers to<br>another Observation which is related to the main Observation and which may occur<br>multiple times. Each &quot;related&quot; element has a &quot;type&quot; element specifying the nature<br>of the relationship (component, replacement, derivation etc.), and a &quot;target&quot; element<br>which identifies the actual observation. In this diagram, for convenience, the contents<br>of the target element are shown in the inner box instead of the showing the target<br>reference explicitly. Also, to avoid adding clutter to this simplified example,<br>the &quot;name&quot; attribute of Observation is shown as just a code not a full CodeableConcept.</p>
+<p>The profile for Blood Pressure constrains the related element list into<br>2 sublists of one element: a systolic element, and a diastolic element. Each of these<br>elements has a fixed value for the type element, and the profile also fixes the<br>contents of the target observation as well, specifying a fixed LOINC code for<br>the name and specifying that both have a value of type Quantity. This process<br>is known as &quot;slicing&quot; and the Systolic and Diastolic elements are called &quot;slices&quot;.</p>
+<p>Note that when the resource is exchanged, the wire format that is exchanged is not<br>altered by the profile. This means that the item profile names defined in the<br>profile (&quot;systolic&quot;, etc. in this example) are never exchanged. A resource<br>instance looks like this:</p>
+<pre>
+ &lt;Observation&gt;
+   ...
+   &lt;related&gt;
+     &lt;type value=&quot;component&quot;/&gt;
+     &lt;target ...&gt; &lt;!-- has the name &quot;8480-6&quot; --&gt;
+   &lt;/related&gt;
+   &lt;related&gt;
+     &lt;type value=&quot;component&quot;/&gt;
+     &lt;target ...&gt;  &lt;!-- has the name &quot;8462-4&quot; --&gt;
+   &lt;/related&gt;
+ &lt;/Observation&gt;
+</pre>
+
+<p>In order to determine that the first related item corresponds to &quot;Systolic&quot; in<br>the profile  to determine to which additional constraints for a sub-list the item conforms,<br>the system checks the values of the elements - in this case, the name element<br>in the resource that target refers to. This element is called the “discriminator”.</p>
+<p><a name="discriminator"> </a></p>
+<h3 id="2-11-0-7_Discriminator"><span class="sectioncount">2.11.0.7<a name="2.11.0.7"> </a></span> Discriminator</h3><p>In the general case, systems processing resources using a profile<br>that slices a list can determine which profile slice an item in<br>the list by checking whether its content meets the rules specified<br>for the slice. </p>
+<p>This requires for a processor to be able to check all the rules<br>applied in the slice and to do so speculatively in a depth-first<br>fashion. Neither of these is appropriate for an operational system,<br>and particularly not for generated code. For this reason, a slice<br>can nominate a set of fields that act as a &quot;discriminator&quot; - they<br>are used to tell the slices apart. </p>
+<p>When a discriminator is provided, the composite of the values of<br>the elements nominated in the discriminator is unique and distinct<br>for each possible slice and applications can easily determine<br>which slice an item in a list corresponds to. The intention is that<br>this can be done in generated code.</p>
+<p>When a profile nominates one or more discriminators, it SHALL<br>fix the value of the element for each discriminator for each<br>slice, or if the element has a terminology binding, it SHALL be<br>associated with a complete binding with a version specific <a href="valueset.html">Value Set</a><br>reference that enumerates the possible codes in the value set.<br>The profile SHALL ensure that there is no overlap between the<br>set of values and/or codes in the value sets between slices.</p>
+<p>It is the composite (combined) values of the discriminators<br>that are unique, not each discriminator alone. For example,<br>a slice on a list of items that are references to other<br>resources could nominate fields from different resources,<br>where each resource only has one of the nominated elements,<br>as long as they are distinct across slices. </p>
+<p>A profile is not required to nominate any discriminator at all<br>for a slice, but profiles that don’t identify discriminators are describing<br>content that is very difficult to process, and so this is<br>discouraged.</p>
+<p>Within a profile, a slice is defined using multiple <em>element</em><br>entries that share a <em>path</em> but have distinct _name_s.<br>These entries together form a &quot;slice group&quot; that is:</p>
+<ol>
+<li><strong>Initiated by a &quot;slicing entry&quot;</strong> That is, the first<pre><code><span class="title">_element</span>_ <span class="operator">in</span> <span class="operator">a</span> slice group must contain <span class="operator">a</span>
+<span class="title">_slicing</span>_ property that defines <span class="operator">the</span>
+<span class="title">_discriminator</span>_ <span class="keyword">for</span> all members <span class="operator">of</span> <span class="operator">the</span> group.  It also <span class="operator">contains</span> <span class="operator">the</span> unconstrained definition <span class="operator">of</span> <span class="operator">the</span> <span class="keyword">element</span> that is sliced
+</code></pre></li>
+<li><strong>Mutually exclusive</strong>. This means that each<pre><code>_element_ <span class="keyword">in</span> a slice group <span class="type">SHALL</span> describe a
+<span class="keyword">distinct</span> <span class="type">set</span> <span class="keyword">of</span>  values <span class="keyword">for</span> the group's
+_discriminators_.  <span class="type">Because</span> <span class="keyword">of</span> this constraint, an            element <span class="keyword">in</span> a resource **instance** will never match more
+than one _element_ <span class="keyword">in</span> a given slice group. <span class="type">If</span> no discriminators are named,    it <span class="type">SHOULD</span> still be possible to differentiate the slices based    on their properties, though it may be substantially harder to    <span class="keyword">do</span> so
+</code></pre></li>
+<li><strong>Serialized as a group</strong>. The entries in a slice<pre><code><span class="keyword">group</span> must be **adjacent** <span class="keyword">in</span> a serialized Profile,
+**<span class="keyword">or</span>**, <span class="keyword">if</span> there are any intervening elements, those
+elements must be &amp;quot;compatible <span class="keyword">with</span>&amp;quot; the <span class="keyword">group</span>. Concretely, this
+means that any intervening elements must have a
+_path_ that starts <span class="keyword">with</span> the slice groups<span class="comment">'s</span>
+_path_.  <span class="keyword">For</span> example, an _element_ <span class="keyword">with</span> a
+_path_ <span class="keyword">of</span> _Observation.name.extension_
+would be compatible <span class="keyword">with</span> (<span class="keyword">and</span> thus, would <span class="keyword">not</span> &amp;quot;break up&amp;quot;) a
+slice <span class="keyword">group</span> whose path was _Observation.name_
+</code></pre></li>
+</ol>
+<p>The value of the discriminator element is a path name that identifies<br>the descendant element using a dotted notation. For references, the path<br>transitions smoothly across the reference and into the children of the<br>root element/object of the resource. For extensions, an extension can be<br>qualified with the URL of the extensions being referred to.<br>There are two special names: @type, and @profile. Here are some example discriminators:</p>
+<table class="grid"><br> <tr>  <td><strong>Context</strong></td> <td><strong>Discriminator</strong></td> <td><strong>Interpretation</strong></td> </tr><br> <tr>  <td>List.entry</td> <td>item.reference.name</td> <td>Entries are differentiated by the name element on the target resource - probably an observation, which could be determined by other information in the profile</td> </tr><br> <tr>  <td>List.entry</td> <td>item.reference.@type</td> <td>Entries are differentiated by the type of the target element that the reference points to</td> </tr><br> <tr>  <td>List.entry</td> <td>item.reference.@profile</td> <td>Entries are differentiated by a profile tag on the target of the reference, as specified by a profile (todo: how to do that?)</td> </tr><br> <tr>  <td>List.entry</td> <td>item.extension[&quot;<a href="http://acme.org/extensions/test&quot;].code" target="_blank" rel="external">http://acme.org/extensions/test&quot;].code</a></td> <td>Entries are differentiated by the value of the code element in the extension with the nominated URL</td> </tr><br> <tr>  <td>List.entry.extension</td> <td>url</td> <td>Extensions are differentiated by the value of their url property (usually how extensions are sliced)</td> </tr><br> <tr>  <td>List.entry</td> <td>item.reference.@type, item.reference.name</td> <td>Extensions are differentiated by the combination of item.reference.name, and, if it has one, the name element. This would be<br>   appropriate for where a List might be comprised of a Condition, and set of observations, each differentiated by it’s name - the condition has no name, so that is evaluated as a null in the discriminator set</td> </tr><br></table>
+
+<p>See also <a href="profiling-examples.html">examples of slicing and discriminators</a>.</p>
+<p><a name="extensions"> </a></p>
+<h3 id="2-11-0-8_Extension_Definitions"><span class="sectioncount">2.11.0.8<a name="2.11.0.8"> </a></span> Extension Definitions</h3><p>An extension definition defines the url that identifies the extension<br>and which is used to refers to the extension definition when it is used<br>in a resource.</p>
+<p>The extension definition also defines the context where the extension can be used (usually<br>a particular path or a data type) and then defines the extension element using the same details used to<br>profile the structural elements that are part of resources. This means that a single extension<br>can be defined once and used on different Resource and/or datatypes, e.g. one would only have to<br>define an extension for “hair color” once, and then specify it can be used on both Patient and Practitioner.</p>
+<p>For further discussion of defining and using extensions, along with some examples,<br>see <a href="extensibility.html">Extensibility</a>. </p>
+<h4 id="2-11-0-8-1_Using_Extensions_in_Profiles"><span class="sectioncount">2.11.0.8.1<a name="2.11.0.8.1"> </a></span> Using Extensions in Profiles</h4><p>Once defined, an extension can be used in an instance of a resource<br>without any Profile declaring that it can, should or must be, but<br>Profiles can be used to describe how an extension is used.</p>
+<p>To actually prescribe the use of an extension in an instance, the extension list<br>on the resource needs to be sliced. This is shown in <a href="extensibility-examples.html#sliceextensions">the extensibility<br>examples</a></p>
+<p>Note that the minimum cardinality of an extension SHALL be a valid restriction<br>on the minimum cardinality in the definition of the extension. if the minimum<br>cardinality of the extension is 1 when it is defined, it can only be mandatory<br>when it is added to a profile. This is not recommended - the minimum cardinality<br>of an extension should usually be 0. </p>
+<p><a name="binding"> </a></p>
+<h3 id="2-11-0-9_Binding_Definitions"><span class="sectioncount">2.11.0.9<a name="2.11.0.9"> </a></span> Binding Definitions</h3><p>Coded elements have bindings that link from the element to a definition of the<br>set of possible codes the element may contain. The binding identifies the<br>definition of the set of possible codes and controls how tightly the set of the possible codes is interpreted.</p>
+<p>The set of possible codes is either a formal reference to a <a href="valueset.html">ValueSet</a><br>resource, which may be version specific, or a general reference to some web content that defines a set of<br>codes. The second is most appropriate where set of values is defined by<br>some external standard (such as mime types). Alternatively, where the binding<br>is incomplete (e.g. under development) just a text description of the<br>possible codes can be provided. </p>
+<p>Bindings have two properties that define how the set of codes is used: <em>isExtensible</em> and <em>conformance</em>.</p>
+<ul>
+<li><p><strong>isExtensible</strong><a name="extensibility"> </a>indicates whether additional codes are allowed beyond those in the defined set of codes.</p>
+<pre><code><span class="tag">&lt;table&gt;</span>
+</code></pre><p>  <tr><td>false</td> <td>No additional codes are to be used beyond the list provided</td> </tr><br>  <tr><td>true</td>  <td>Supplemental codes or plain text may be needed (this is common because it is frequently the case that concepts will need to be used which won’t be in the defined set of codes)</td></tr><br></p>
+</li>
+<li><p><strong>Conformance</strong><a name="conformance"> </a>indicates the expectations for implementers of the specification.    There are three possible values:</p>
+<table><br>  <tr><td>required</td><td><br>    <p>Only codes in the specified set are allowed.<br><br>    If the strength is ‘extensible’, other codes may be used for concepts not covered by the        value set but cannot be used for concepts covered by the bound code list, even        if a profile constrains out some of those codes).<br><br>      </p></td></tr><br>  <tr><td>preferred</td><td><br>    For greater interoperability, implementers are strongly encouraged to use the bound set of<br>    codes, however alternate codes may be used in profiles if necessary without being considered<br>    non-conformant.<br>  </td></tr><br>  <tr><td>example</td><td><br>    The codes in the set are an example to illustrate the meaning of the field.<br>    There is no particular preference for the set’s use.<br>  </td></tr><br></table>
+
+</li>
+</ul>
+<p>The interplay between the meaning of these is subtle but sometimes important. The following table helps<br>define the meanings:</p>
+<table><br> <tr><td><strong>Conformance</strong></td><td><strong>isExtensible=false</strong></td><td><strong>isExtensible=true</strong></td></tr><br> <tr><td><strong>Required</strong></td><td>Implementers SHALL use a code from the defined set</td><td>Implementers SHALL use a code from the defined set if one is applicable, but otherwise may provide their own code or use text</td></tr><br> <tr><td><strong>Preferred</strong></td><td>Implementers SHOULD use a code from the defined set<br>Using a different code will generate a warning from a validator</td><td>Implementers SHOULD use a code from the defined set if one is applicable, but MAY provide their own code or use text</td></tr><br> <tr><td><strong>Example</strong></td><td>Implementers MAY use a code from the defined set, or provide their own code, or use text</td></tr><br></table>
+
+<p>Note: Example binding isExtensible = false is not generally a useful statement. </p>
+<p><a name="tx"> </a></p>
+<h3 id="2-11-0-10_Mixing_Custom_and_Standard_Terminologies"><span class="sectioncount">2.11.0.10<a name="2.11.0.10"> </a></span> Mixing Custom and Standard Terminologies</h3><p><a href="valueset.html">Value Set</a> resources can be used to define local codes (Example) and<br>to mix a combination of local codes and standard codes (examples: LOINC, SNOMED), or just<br>to choose a particular set of standard codes (examples: LOINC, SNOMED, RxNorm).<br>Profiles can bind to these value sets instead of the ones defined in the base<br>specification, following these rules:</p>
+<table class="grid"><br> <tr> <td><strong>Binding Type in base specification</strong></td> <td><strong>Matching Profile Properties</strong></td> <td><strong>Customization Rules in Profiles</strong></td> </tr><br><br> <tr> <td>Complete</td> <td>conformance = required, extensible = false</td> <td>The value set can only contain codes contained in the value set specified by the FHIR specification</td> </tr><br> <tr> <td>Incomplete</td> <td>conformance = preferred and extensible = true</td> <td>The value set can contain codes not found in the base value set. These additional codes SHOULD not have the same meaning as existing codes in the base value set</td> </tr><br> <tr> <td>Example</td> <td>conformance = example</td> <td>The value set can contain whatever is appropriate for local use</td> </tr><br></table> 
+
+<p><a name="mustSupport"> </a></p>
+<h3 id="2-11-0-11_Must_Support"><span class="sectioncount">2.11.0.11<a name="2.11.0.11"> </a></span> Must Support</h3><p>One property that can be declared on profiles that is not declared on the resource or data type definitions is &quot;Must Support&quot;.<br>This is a boolean property.  If true, it means that systems claiming to conform to a given profile must &quot;support&quot; the element.<br>This is distinct from cardinality.  It is possible to have an element with a minimum cardinality of &quot;0&quot;, but still expect systems<br>to support the element.</p>
+<p>The meaning of &quot;support&quot; is left deliberately ambiguous.  Examples might include:</p>
+<ul>
+<li>The system must be able to store and retrieve the element</li>
+<li>The system must display the element to the user and/or allow the user to capture the element via the UI</li>
+<li>The element must appear in an output report</li>
+<li>The element must be taken into account when performing decision support, calculations or other processing</li>
+<li>etc.</li>
+</ul>
+<p>The specific meaning of &quot;Must Support&quot; for the purposes of a particular profile SHALL be described in the Profile.description or in other documentation for the<br>implementation guide the profile is part of.</p>
+<p>If creating a profile based on another profile, Must Support can be changed from false to true, but cannot be changed from true to false.</p>
+<p><a name="search"> </a></p>
+<h3 id="2-11-0-12_Search_Criteria"><span class="sectioncount">2.11.0.12<a name="2.11.0.12"> </a></span> Search Criteria</h3><p>The final thing implementations can do is to define search criteria in addition to those defined in the specification itself.<br>Search criteria fall into one of four categories:</p>
+<ol>
+<li>Enabling search on core elements that don’t have standard search criteria defined (e.g. searching Observation by normal range)</li>
+<li>Enabling search on elements that already have a standard search criteria defined, but with custom matching rules.  E.g. a sounds-like search on Practitioner name</li>
+<li>Enabling search on a particular extension</li>
+<li>Enabling search that doesn’t correspond to a single element but rather a combination of elements or computation on an element.  E.g. searching for patients by age</li>
+</ol>
+<p>Additional Search Parameters can be defined using the <a href="searchparameter.html">SearchParameter</a> resource.</p>
+<p></p>
+<pre><code>            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /inner-wrapper --&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /row --&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /container --&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>  <span class="comment">&lt;!-- /segment-content --&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"segment-footer"</span> <span class="attribute">class</span>=<span class="value">"segment"</span>&gt;</span>  <span class="comment">&lt;!-- segment-footer --&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span>  <span class="comment">&lt;!-- container --&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"inner-wrapper"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>
+    © HL7.org 2011+. FHIR DSTU (v0.4.0-3900) generated on Sat, Dec 20, 2014 22:38+0000.   <span class="comment">&lt;!-- [QA Report](qa.html) --&gt;</span>   <span class="comment">&lt;!-- achive note --&gt;</span>
+</code></pre>
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

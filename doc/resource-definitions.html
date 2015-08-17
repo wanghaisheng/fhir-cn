@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt; 资源 &amp;gt; 详细描述
+
+Content
+示例
+详细描述
+对应关系
+规范
+Operations
+
+1.12.1.5 Resource - 详细描述基础资源定义中字段的详细介绍
+
+
+
+
+
+
+
+
+
+Resource
+
+
+Definition
+Base Resource for everything
+
+
+Control
+1..1
+
+
+Resource.id
+
+
+Defin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-definitions.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt; 资源 &amp;gt; 详细描述
+
+Content
+示例
+详细描述
+对应关系
+规范
+Operations
+
+1.12.1.5 Resource - 详细描述基础资源定义中字段的详细介绍
+
+
+
+
+
+
+
+
+
+Resource
+
+
+Definition
+Base Resource for everything
+
+
+Control
+1..1
+
+
+Resource.id
+
+
+Defin">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt; 资源 &amp;gt; 详细描述
+
+Content
+示例
+详细描述
+对应关系
+规范
+Operations
+
+1.12.1.5 Resource - 详细描述基础资源定义中字段的详细介绍
+
+
+
+
+
+
+
+
+
+Resource
+
+
+Definition
+Base Resource for everything
+
+
+Control
+1..1
+
+
+Resource.id
+
+
+Defin">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p><a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt; <a href="resource.html">资源</a> &gt; <strong>详细描述</strong></p>
+<ul>
+<li><a href="#">Content</a></li>
+<li><a href="resource-examples.html">示例</a></li>
+<li><a href="resource-definitions.html">详细描述</a></li>
+<li><a href="resource-mappings.html">对应关系</a></li>
+<li><a href="resource-packages.html">规范</a></li>
+<li><a href="resource-operations.html">Operations</a></li>
+</ul>
+<h2 id="1-12-1-5_Resource_-_详细描述">1.12.1.5 Resource - 详细描述</h2><p>基础资源定义中字段的详细介绍</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resource</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>Base Resource for everything</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>1..1</td>
+</tr>
+<tr>
+<td><strong>Resource.id</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>The logical id of the resource, as used in the url for the resoure. Once assigned, this value never changes.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#id">id</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>The only time that a resource does not have an id is when it is being submitted to the server using a create operation. Bundles always have an id, though it is usually a generated UUID.</td>
+</tr>
+<tr>
+<td><strong>Resource.meta</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="resource.html#Meta">Meta</a></td>
+</tr>
+<tr>
+<td><strong>Resource.implicitRules</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#uri">uri</a></td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#ismodifier">Is Modifier</a></td>
+<td>true</td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>Asserting this rule set restricts the content to be only understood by a limited set of trading partners. This inherently limits the usefulness of the data in the long term. However the existing health eco-system is highly fractured, and not yet ready to define, collect, and exchange data in a generally computable sense. Wherever possible, implementers and/or specification writers should avoid using this element as much as possible.</td>
+</tr>
+<tr>
+<td><strong>Resource.language</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>The base language in which the resource is written.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="terminologies.html">Binding</a></td>
+<td>Language: Required: <a href="http://tools.ietf.org/html/bcp47" target="_blank" rel="external">IETF language tag</a> (A human language)</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#code">code</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource  Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Meta</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>1..1</td>
+</tr>
+<tr>
+<td><strong>Meta.versionId</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>The version specific identifier, as it appears in the version portion of the url. This values changes when the resource is created, updated, or deleted.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#id">id</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>The server assigns this value, and ignores what the client specifies, except in the case that the server is imposing version integrity on updates/deletes.</td>
+</tr>
+<tr>
+<td><strong>Meta.lastUpdated</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>When the resource last changed - e.g. when the version changed.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#instant">instant</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>This value is always populated except when the resource is first being created. The server / resource manager sets this value; what a client provides is irrelevant.</td>
+</tr>
+<tr>
+<td><strong>Meta.deleted</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>Set to ‘true’ if the resource is deleted. Deleted resources can not be fetched via the RESTful API, but may appear in bundles for various reasons.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#boolean">boolean</a></td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>false</td>
+</tr>
+<tr>
+<td>Meaning if Missing</td>
+<td>Not deleted</td>
+</tr>
+<tr>
+<td><strong>Meta.profile</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>A list of profiles <a href="structuredefinition.html">StructureDefinition</a>s that this resource claims to conform to. The URL is a reference to <a href="null">StructureDefinition.url</a>.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#uri">uri</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over tiem.</td>
+</tr>
+<tr>
+<td><strong>Meta.security</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#Coding">Coding</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>The security labels can be updated without changing the stated version of the resource.</td>
+</tr>
+<tr>
+<td><strong>Meta.tag</strong></td>
+</tr>
+<tr>
+<td>Definition</td>
+<td>Tags applied to this resource. Tags are intended to to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.</td>
+</tr>
+<tr>
+<td><a href="conformance-rules.html#conformance">Control</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="datatypes.html">Type</a></td>
+<td><a href="datatypes.html#Coding">Coding</a></td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>The tags can be updated without changing the stated version of the resource.</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.12.3.3 内嵌资源在一些情况下,资源引用的内容并不是能够脱离资源本身而独立存在的-它不能够被单独的标识,也不可能有它独立的事务范围.一般而言,这种情况是由于原始数据的二手用户对资源进行了组装,比如中间件引擎.如果在构建资源时没有包含记录主键或者绝对标识信息,那么就不可能得到一个准确标识的资源,即使将其与任意的标识关联起来,这个资源也永远不能脱离引用它的资源的语境而成为某个事务的对象。比如,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/test.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="1.12.3.3 内嵌资源在一些情况下,资源引用的内容并不是能够脱离资源本身而独立存在的-它不能够被单独的标识,也不可能有它独立的事务范围.一般而言,这种情况是由于原始数据的二手用户对资源进行了组装,比如中间件引擎.如果在构建资源时没有包含记录主键或者绝对标识信息,那么就不可能得到一个准确标识的资源,即使将其与任意的标识关联起来,这个资源也永远不能脱离引用它的资源的语境而成为某个事务的对象。比如,">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="1.12.3.3 内嵌资源在一些情况下,资源引用的内容并不是能够脱离资源本身而独立存在的-它不能够被单独的标识,也不可能有它独立的事务范围.一般而言,这种情况是由于原始数据的二手用户对资源进行了组装,比如中间件引擎.如果在构建资源时没有包含记录主键或者绝对标识信息,那么就不可能得到一个准确标识的资源,即使将其与任意的标识关联起来,这个资源也永远不能脱离引用它的资源的语境而成为某个事务的对象。比如,">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <h4 id="1-12-3-3_内嵌资源">1.12.3.3 内嵌资源</h4><p>在一些情况下,资源引用的内容并不是能够脱离资源本身而独立存在的-它不能够被单独的标识,也不可能有它独立的事务范围.一般而言,这种情况是由于原始数据的二手用户对资源进行了组装,比如中间件引擎.如果在构建资源时没有包含记录主键或者绝对标识信息,那么就不可能得到一个准确标识的资源,即使将其与任意的标识关联起来,这个资源也永远不能脱离引用它的资源的语境而成为某个事务的对象。<br>比如,当某个接口引擎要通过一条V2消息构建某个病人的一条<a href="../clin/condition.html">condition</a>记录时,外科手术相关的仅有信息为她的姓名,如果没有可控的从业人员目录的话,就不足以创建一个可标识的<a href="../clin/practitioner.html">Practioner</a>资源 -同名同姓的医务人员可能不止一个。  </p>
+<p>在这样的情况下,资源是直接內联在资源内的.<strong>当内容能够准确标识时就不必这么做 因为一旦标识信息丢失以后,是极难再次恢复的</strong>                </p>
+<p>An example of a contained resource:                     </p>
+<pre class="xml">   <!-- Can't fragment test this - too incomplete -->                    
+ &lt;Document xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;extension&gt;...&lt;/extension&gt;
+  &lt;text&gt;...&lt;/text&gt;
+  &lt;contained&gt;
+    &lt;Organization id=&quot;org1&quot;&gt;
+      &lt;!-- whatever information is available --&gt;
+    &lt;/Organization&gt;
+  &lt;/contained&gt;
+  &lt;information&gt;
+    &lt;!-- other attributes --&gt;
+    &lt;custodian&gt;
+      &lt;reference value=&quot;#org1&quot; /&gt;
+    &lt;/custodian&gt;
+    &lt;!-- other attributes --&gt;
+  &lt;information&gt;
+ &lt;/Document&gt;
+</pre>                 　
+The same example in JSON:            
+<pre class="json"> 　　　
+{ &quot;resourceType&quot; : &quot;Document&quot;,
+  &quot;extension&quot; : { ... },
+  &quot;text&quot; : { .. },
+  &quot;contained: [
+    { &quot;resourceType&quot; : &quot;Organization&quot;,
+      &quot;id&quot; : &quot;org1&quot;,
+      .. whatever information is available ...
+  }  ]
+  &quot;information: {
+    ... other attributes ...
+    &quot;custodian&quot; : {
+      &quot;reference&quot; : &quot;#org1&quot;
+  }
+    ... other attributes ...
+  }
+}
+</pre>                 
+
+<p> 备注:内嵌资源仍然是一个引用,而不是直接对所引用元素的內联(比如上面的”custodian”),这样做是为了能够保证采用单一的方式来解析资源引用.尽管直接包含似乎会更简单些,当同样的内嵌资源引用不止一次时仍然会需要支持内在引用.最终,这样做会导致语法上的可选项.对于使用XPath处理资源的用户而言,如下的XPath能够解析内在引用:       </p>
+<pre><code><span class="string">ancestor:</span>:<span class="string">f:</span>*[not(<span class="string">parent:</span>:<span class="string">f:</span>*)]<span class="regexp">/f:contained/</span>*[<span class="annotation">@id</span>=substring-after(current()<span class="regexp">/f:reference/</span><span class="annotation">@value</span>, <span class="string">'#'</span>)]
+</code></pre><p> 对于内嵌资源的使用和解释要注意以下几点:       </p>
+<ul>
+<li>　内嵌资源和父资源拥有同样的内部id解析空间           </li>
+<li>　 内嵌资源不应包含另外的内嵌资源         </li>
+<li>　内嵌资源不宜包含任何叙述性文本         </li>
+<li>　 內联资源同样继承了父资源的语境.比如,如果父资源包含一个”subject”,<br>内嵌资源也同样拥有一个subject元素,但是并没有指明任何subject,处理程序可能会推理出二个subject是一样的.注意,然而,这些推理只是针对特定的场合.比如,并没有规则说明subject元素的含义在父资源和子资源中是一致的.          </li>
+</ul>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

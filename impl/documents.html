@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="# 2.4  FHIR DocumentsFHIR resources can be used to build documents that represent a composition:a set of coherent information that is a statement of healthcare information,particularly including clini">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/documents.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="# 2.4  FHIR DocumentsFHIR resources can be used to build documents that represent a composition:a set of coherent information that is a statement of healthcare information,particularly including clini">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="# 2.4  FHIR DocumentsFHIR resources can be used to build documents that represent a composition:a set of coherent information that is a statement of healthcare information,particularly including clini">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <div class="col-9"><br><br># <span class="sectioncount">2.4<a name="2.4"> </a></span> FHIR Documents<br><br>FHIR resources can be used to build documents that represent a composition:<br>a set of coherent information that is a statement of healthcare information,<br>particularly including clinical observations and services.<br><br>A document is an immutable set of resources with a fixed presentation<br>that is authored and/or attested by humans, organizations and devices.<br><br>Documents built in this fashion may be exchanged between systems and also<br>persisted in document storage and management systems, including systems such as IHE<br>XDS.<br><br>Applications claiming conformance to this framework claim to be conformant to<br>&quot;FHIR documents&quot;.<br><br>FHIR documents may be ‘clinical’ (focused on patient healthcare information) but<br>may also serve non-clinical purposes (e.g. practice guidelines, patient handouts, etc.)<br>HL7 will develop profiles in the future giving additional guidance on appropriate<br>representation of clinical documents in general as well as specific types of clinical<br>documents (e.g. Consolidated CDA).<br><br>Note that FHIR defines both this document format and also a <a href="documentreference.html">document reference resource</a>.<br>FHIR documents are for documents that are authored and assembled in FHIR, while the document reference resource is for<br>general references to other documents.<br><br>## <span class="sectioncount">2.4.1<a name="2.4.1"> </a></span> Document Content<br><br>All documents have the same structure: a <a href="extras.html#bundle">bundle</a><br><a href="extras.html#tags">of resources identified by the tag</a> &quot;<a href="http://hl7.org/fhir/tag/document&amp;quot" target="_blank" rel="external">http://hl7.org/fhir/tag/document&amp;quot</a>;<br>that has a <a href="composition.html">Composition</a> resource as the first resource<br>in the bundle, followed by a series of other resources referenced from the <em>Composition</em><br>resource that provides guidance on how they fit together. The bundle gathers all the content<br>of the document into a single XML document which may be signed and managed as required. The<br>resources include both human readable and computer processable portions. In addition, the bundle<br>may include <a href="http://www.w3.org/Style/CSS/Overview.en.html" target="_blank" rel="external">CSS stylesheets</a><br><a href="provenance.html">provenance</a> statements, and a signature.<br><br>The composition resource is the foundation of the clinical document. It:<br><br><em>   provides identity and its purpose, sets the context of the document
+</em>   carries key information such as the subject and author, and who attests to the document<br><em>   divides the document up into a series of sections that contain other resources identified in this specification that carry the content<br><br>Any resource referenced directly in the Composition SHALL be included in the bundle when the document<br>is assembled. Other resources that these referenced resources refer to may also be included in the<br>bundle if the document construction system chooses to so do. Including these additional resources will<br>make the document bigger, but will save applications from needing to retrieve the linked resources<br>if they need them while processing the document. Thus, whether these linked resources should be included or<br>not depends on the implementation environment.<br><br>The document bundle SHALL NOT include any resources not on this list:<br><br>1.  The Composition resource, and any resources directly or indirectly (i.e. recursively) referenced from it<br>2.  A Binary resource containing a stylesheet (as described below)<br>3.  Provenance Resources that have a target which is a resource included in item #1<br><br>There are two key identifiers on the document:
+
+</em>   The document identifier (mandatory). This is found in <em>feed.id</em> and is unique for this instance of the document, and is never re-used<br><em>   The Composition identifier (optional). This is found in <em>Composition.identifier</em>, and is the same for all documents that are derived from this composition<br><br>The document has several dates in it:
+
+</em>   The document date (mandatory). This is found in <em>feed.updated</em> and identifies when the document bundle was assembled from the underlying resources<br><em>   The Composition date (mandatory). This is found in <em>Composition.instant</em>, which is when the author wrote the document logically
+</em>   The Attestation dates (optional). This is found in <em>Composition.attester.time</em> and is when the document was witnessed by the attesters. This would usually be at the same time as the composition date or afterwards<br><em>   The Composition last modified time (mandatory per Atom). This is found in <em>entry.updated</em> for the composition, and is the last date of change of the composition. This must be &gt;= the composition date<br><br>Document Bundles may be signed using digital signatures following the rules laid out in<br>the <a href="http://tools.ietf.org/html/rfc4287" target="_blank" rel="external">Atom specification</a>.<br>The signature SHOULD be provided by a listed attester of the document and the signature<br>SHOULD contain a <a href="http://www.w3.org/TR/xmldsig-core/#sec-KeyInfo" target="_blank" rel="external">KeyInfo<br>element</a> that contains a KeyName element whose value is a URI that matches the Atom <em>link</em><br>element value for the matching attester resource.<br><br>Once assembled into a bundle, the document is immutable - its content can never be changed,<br>and the document id can never be reused. Note that the document may be represented in either<br>XML or JSON, and interconverted between these or have its character encoding changed, all<br>the while remaining the same document. However the content (the set of attested resources,<br>and their order) and the presentation of the document cannot change. Any additional<br>documents derived from the same composition SHALL have a different document id.<br><br><a name="presentation"> </a><br><br>### <span class="sectioncount">2.4.1.1<a name="2.4.1.1"> </a></span> Document Presentation<br><br>When the document is presented for human consumption, applications must present the<br>collated narrative portions of the following resources in order:<br><br>1.  The Composition resource<br>2.  The Subject resource<br>3.  Resources referenced in the <em>section.content</em><br><br>The Composition resource narrative should summarize the important parts of the document header that are required<br>to establish clinical context for the document (other than the subject, which is displayed in its own<br>right). To actually build the combined narrative, simply append all the narrative &lt;div&gt; fragments<br>together.<br><br>The attested content of the document is the composition, the subject, and the resources<br>referenced in the sections. Additional resources can be included in the bundle, but<br>these are not attested content. Specifically, the attester attests to the presented<br>form of the document.<br><br>The <a href="downloads.html#refimpl">XML Tools reference implementation</a> includes a<br>transform that converts a document into browser-ready XHTML.<br><br><a name="css"><br><br>In addition to the <a href="narrative.html#css">basic style rules about Narratives</a>, which<br>must be followed, a document can reference or contain one or more stylesheets that contains additional styles that<br>apply to the collated narrative. This is done by asserting stylesheet links on the feed:<br><br><pre class="xml"><br>&lt;feed xmlns=&quot;<a href="http://www.w3.org/2005/Atom&quot;&amp;gt" target="_blank" rel="external">http://www.w3.org/2005/Atom&quot;&amp;gt</a>;<br>  &lt;title&gt;FHIR Document&lt;/title&gt;<br>  &lt;id&gt;urn:uuid:e1db84d2-a524-40a3-827b-076a277ef7df&lt;/id&gt;<br>  &lt;link rel=&quot;stylesheet&quot; href=&quot;[uri]&quot;/&gt;<br></pre><br><br>The uri can be an absolute reference to a CSS stylesheet or<br>a relative reference to a Binary resource that carries a<br>CSS stylesheet. Stylesheet references can only refer to<br>a CSS stylesheet - other forms of stylesheet are not acceptable.<br><br>Relative (internal) references SHOULD be used if the document is not<br>safe to view without applying the specified stylesheet, as another location<br>might not be available to the viewer due to technical problems or policy decisions.<br><br>Unless otherwise agreed in local trading partner agreements, applications<br>displaying the collated narrative SHOULD use the stylesheets specified by the<br>document. Parties entering into a trading agreement to do otherwise should<br>consider the implications this action will have on their long term scope for document<br>exchange very carefully. If the parties agree to use stylesheets that are<br>not contained in the document, then it may be that they will never be able<br>to share their documents safely in a more general context, such as a regional<br>or national EHR or a global personal health record.<br><br>## <span class="sectioncount">2.4.2<a name="2.4.2"> </a></span> Document Profiles<br><br><a href="profile.html">Document profiles</a> are used to describe documents for a particular<br>purpose. Document profiles may make rules about:
+
+</a></em>   The content of the Composition resource, including<br><em>   The structure of the sections in the composition
+</em>   Which resources are to be included in the bundle along with the resources that are directly referenced in the Document resource<br><br>Applications should consider publishing <a href="conformance.html">conformance<br>statements</a> that identify particular documents they support. Documents can<br>identify a profile that they conform to by placing a profile tag in a <em>feed.category</em><br>element - see <a href="extras.html#profile-tags">Profile Tags</a> for a discussion of the utility<br>of this.<br><br>## <span class="sectioncount">2.4.3<a name="2.4.3"> </a></span> Document Handling Obligations<br><br>The authors/constructors and processors of Clinical Documents, whether human or software, have<br>obligations that they must satisfy.<br><br>### <span class="sectioncount">2.4.3.1<a name="2.4.3.1"> </a></span> Author/Constructor Obligations<br><br>A document constructor is an application that creates a document. An author<br>is a human, organization or device that uses the constructor to create a<br>document. Between them, the constructor and the author may create new<br>content resources and/or assemble already existing content resources while performing their tasks.<br>They also have the following responsibilities:<br><br><em>   To assure that the document SHALL contain valid composition that conforms to the rules described here and that only links to other valid resources
+</em>   To assure that the content of document SHALL conform to any declared <a href="profile.html">Profiles</a> (see below).<br><em>   Ensure that the attesters are properly aware of the presentation of the document to which they are attesting<br><br>### <span class="sectioncount">2.4.3.2<a name="2.4.3.2"> </a></span> Processor Obligations<br><br>A document processor is an application and/or human user that receives documents, and extracts data from them,<br>or makes decisions because of them. The documents may be received directly from a document constructor, accessed<br>via a document management system or forwarded by a third party. The document processor is responsible for<br>ensuring that received documents are processed and/or rendered in accordance to this specification. A<br>document processor has the obligation to assure that the following rules are followed:
+
+</em>   When storing/transmitting a document, any method may be used as long as the bundled document can be   (re-)assembled with sufficient integrity to validate a digital signature<br><em>   When presenting the narrative of the document, the rules described above SHALL be followed
+</em>   Resources or data from the document may be extracted for additional uses, but such data is no longer considered to be attested by the document author<br><em>   Wherever the data from the document is displayed to a user, there SHOULD always be a way for the user to access a presentation of the original document<br><br>In addition to these obligations, document receivers SHOULD carefully track the source of<br>documents for new documents that supersede existing documents, particularly when the documents<br>represent compositions that have been retracted. When documents have been replaced,<br>they SHOULD either withdraw data extracted from superseded documents or warn users when<br>they view the document or data taken from it.<br><br><a name="signatures"> </a><br><br>## <span class="sectioncount">2.4.4<a name="2.4.4"> </a></span> Signing Documents<br><br>Documents may have either an <a href="http://www.w3.org/TR/xmldsig-core/#def-SignatureEnveloped" target="_blank" rel="external">enveloped</a><br>or a <a href="http://www.w3.org/TR/xmldsig-core/#def-SignatureDetached" target="_blank" rel="external">detached</a> signature.<br><br>Enveloped signatures are included in the document using the technique described for<br><a href="http://tools.ietf.org/html/rfc4287#section-5.1" target="_blank" rel="external">Atom signatures</a>.<br>There is a single signature that signs the entire feed (e.g. on atom:feed).<br>The obligations described in the Atom specification apply, with the proviso<br>that atom:source has no use for Documents, and therefore there is no need<br>to create the atom:source elements.<br><br>Whether documents are signed with an enveloped or a detached signature, applications<br>processing documents need to relate the document to an existing document participant.<br>For this reasons, the keyName in the signature SHOULD contain a uri that points<br>directly to one of the document participants (person, device or organization)<br>by the resource identity.<br><br>If the document is represented in <a href="json.html">JSON</a>, the same signature<br>rules apply, and the signature is represented described for <a href="json.html#sig">JSON</a>.<br><br><a name="bundle"> </a><br><br>## <span class="sectioncount">2.4.5<a name="2.4.5"> </a></span> Document End-Points<br><br>There are several different RESTful end-points used when working with documents.<br>The use of the various end-points can be best be described by considering the consequences<br>of posting to them:<br><br><table class="grid"><br> <tr> <td><strong>End-Point</strong></td> <td><strong>Type of Content</strong></td> <td><strong>Description</strong></td> </tr><br> <tr> <td>[baseurl]/Document</td> <td>Document Bundle</td> <td>This works like a normal end point<br>   for managing a type of resource, but it works with whole document bundles - i.e. a read operation returns a bundle, an update gets a bundle and a search returns a bundle of bundles. The search parameters<br>   exposed by this end-point are those of the composition resource from the document bundle</td> </tr><br><br> <tr> <td>[baseurl]/Composition</td> <td>Composition Resource</td> <td>The normal end point for managing<br>   composition resources. This can be used while building a document or after breaking a document up into<br>   its constituent resources or when using compositions separately from documents</td> </tr><br><br> <tr> <td><a href="extras.html#binary">[baseurl]/Binary</a></td> <td>Document Bundle</td> <td>Just store the entire document as<br>   a sequence of bytes and return exactly that sequence when requested. There is no way to find content in the /Binary end-point,<br>   so usually this would be associated with a <a href="documentreference.html">Document Reference</a> so that applications<br>   can find and process the document, though this is not required</td> </tr><br><br> <tr> <td><a href="http.html#transaction">[baseurl]</a> (e.g. a transaction)</td> <td>Document Bundle</td> <td>Ignore the<br>   fact that the bundle is a document and process all of the resources that it contains as individual resources. Clients SHOULD<br>   not expect that a server that receives a document submitted using this method will be able to reassemble the document exactly. (Even if the<br>   server can reassemble the document (see below), the result cannot be expected to be in the same order, etc.  Thus a document signature will<br>   very likely be invalid.)</td> </tr><br><br> <tr> <td><a href="messaging.html#mailbox">[baseurl]/Mailbox</a></td> <td>Document Bundle</td> <td>Submit the<br> document to the server for processing. The exact processing the server performs is at the discretion of the<br> server. It MAY perform one or more of these actions:
+
+</td></tr></table></em>   Resend the document elsewhere<br><em>   Break it up into individually accessible resources and make them available on a RESTful interface
+</em>   Retain the document in its binary form and make it available on /Binary and perhaps also create a DocumentReference<br>  The server is not obliged to process the document in any particular fashion. The client does not know what action<br>  the server will take, only that the server has accepted responsibility for the document.<br><br>  Implementation Profiles should be careful when making rules about what happens when a document is submitted to the<br>  mailbox, as it would be easy to make rules such that a server cannot conform to more than one profile at a time.<br>   <br><br><br>Note: While these end-points are defined for use with document resources and document bundles,<br>it is not necessary to use them. Documents may be transferred between systems using any method desired.<br><br>### <span class="sectioncount">2.4.5.1<a name="2.4.5.1"> </a></span> Generating a Document<br><br>A client can ask a server to generate a fully bundled document from a composition resource.<br>The server takes the composition resource, locates all the referenced resources and other<br>additional resources as configured or requested and either returns a full document bundle,<br>or returns an error. Note that since this is a search operation, the document bundle is<br>wrapped inside the search bundle.<br><br>If some of the resources are located on other servers, it is at the discretion of the<br>server whether to retrieve them or return an error. If the correct version of the document<br>that would be generated already exists, then the server can return the existing one.<br><br>The operation is initiated by a named query, using _query=generate on the /Document<br>end point:<br><br><pre><br>  GET [service-url]/Document/?_query=generate&amp;id=:url&amp;…<br></pre><br><br>The &quot;id&quot; parameter is a relative or absolute reference to composition resource (e.g.<br>Composition/1234). The format of the document is specified using the accept: header or<br>a <a href="http.html#mime-type">_format parameter</a>. Other parameters may be supplied:<br><br><table class="grid"><br>  <tr> <td><strong>Name</strong></td> <td><strong>Meaning</strong></td> </tr><br>  <tr> <td>persist</td> <td>Whether to store the document at the document end-point (/Document) or not once it is generated. Value = true or false (default is for the server to decide)</td> </tr><br>  <tr> <td>cert</td> <td>Certificate URL to use to sign the document with</td> </tr><br>  <tr> <td>pword</td> <td>Password if certificate requires one and the server doesn’t know it by some other means. Putting the password in the URL has obvious security implications to consider. An alternative is for the client to sign the document</td> </tr><br></table><br><br></div>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

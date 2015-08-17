@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt; 实现 &amp;gt;Restful API
+本页内容:
+
+RESTful API
+示例
+详细描述
+映射
+
+2.1.0 RESTful API每种资源类型都定义了同样类型的交互/方法，可以一种高度模块化的方式来管理资源内容。 遵循这个框架也就是说遵循&amp;quot;RESTful FHIR&amp;quot;.
+需要注意的是在Restful 框架中，使用 HTTP 请求和响应来对服务器中的资源进行直接">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/http.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt; 实现 &amp;gt;Restful API
+本页内容:
+
+RESTful API
+示例
+详细描述
+映射
+
+2.1.0 RESTful API每种资源类型都定义了同样类型的交互/方法，可以一种高度模块化的方式来管理资源内容。 遵循这个框架也就是说遵循&amp;quot;RESTful FHIR&amp;quot;.
+需要注意的是在Restful 框架中，使用 HTTP 请求和响应来对服务器中的资源进行直接">
+<meta property="og:updated_time" content="2015-08-17T02:13:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt; 实现 &amp;gt;Restful API
+本页内容:
+
+RESTful API
+示例
+详细描述
+映射
+
+2.1.0 RESTful API每种资源类型都定义了同样类型的交互/方法，可以一种高度模块化的方式来管理资源内容。 遵循这个框架也就是说遵循&amp;quot;RESTful FHIR&amp;quot;.
+需要注意的是在Restful 框架中，使用 HTTP 请求和响应来对服务器中的资源进行直接">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p>  <a href="../home/index.html">首页</a> &gt; <a href="implementation.html">实现</a> &gt;<strong>Restful API</strong></p>
+<p>本页内容:</p>
+<ul>
+<li><a href="#">RESTful API</a></li>
+<li><a href="datatypes-examples.html">示例</a></li>
+<li><a href="datatypes-definitions.html">详细描述</a></li>
+<li><a href="datatypes-mappings.html">映射</a></li>
+</ul>
+<h3 id="2-1-0_RESTful_API">2.1.0 RESTful API</h3><p>每种资源类型都定义了同样类型的交互/方法，可以一种高度模块化的方式来管理资源内容。 遵循这个框架也就是说遵循&quot;RESTful FHIR&quot;.</p>
+<p>需要注意的是在Restful 框架中，使用 HTTP 请求和响应来对服务器中的资源进行直接操作.该API 中并没有直接规定认证、授权和审计的问题-更多详情请参考<a href="security.html">Security Page</a>.</p>
+<p>这些API定义了FHIR资源的一些方法，也叫做交互，单个资源的实例是以类型的集合来管理的。FHIR服务器可以选择实现其中的一些方法并且支持那些资源类型。FHIR服务器<br>应该提供一个<a href="conformance.html">符合性声明</a>的文件来描述它支持那些资源和交互。</p>
+<p>定义了下列方法/交互:</p>
+<p><a name="interactions"> </a><br><a name="operations"> </a></p>
+<table class="list"><br>  <tr><td><strong>实例层面的交互</strong></td><td></td></tr><br>  <tr><td><a href="#read">read</a></td><td>读取资源的最新内容</td></tr><br>  <tr><td><a href="#vread">vread</a></td><td>读取某个版本的资源内容</td></tr><br>  <tr><td><a href="#update">update</a></td><td>更新资源内容</td></tr><br>  <tr><td><a href="#delete">delete</a></td><td>删除资源内容</td></tr><br>  <tr><td><a href="#history">history</a></td><td>获取某个资源的版本变更记录</td></tr><br>  <tr><td colspan="2"><strong>资源类型层面的交互</strong></td></tr><br>  <tr><td><a href="#create">create</a></td><td>新增一条资源记录</td></tr><br>  <tr><td><a href="#search">search</a></td><td>根据过滤条件查询某种资源类型</td></tr><br>  <tr><td><a href="#history">history</a></td><td>获取某种类型资源的版本变更记录</td></tr><br>  <tr><td colspan="2"><strong>系统层面的交互</strong></td></tr><br>  <tr><td><a href="#conformance">conformance</a></td><td>获取系统的符合性声明</td></tr><br>  <tr><td><a href="#transaction">transaction</a></td><td>以单个事务形式来批量新增、修改和删除资源</td></tr><br>  <tr><td><a href="#history">history</a></td><td>获取所有资源类型所有资源实例的版本变更记录</td></tr><br>  <tr><td><a href="#search">search</a></td><td>根据一些过滤条件在所有资源类型中进行查找</td></tr><br></table>
+
+<p>除了上述交互之外， 还有<a href="operations.html">operations framework</a>,其中包括了<a href="operation-resource-validate.html">validation</a>, <a href="messaging.html#mailbox">messaging</a> 和 <a href="documents.html#bundle">Documents</a>.</p>
+<p><strong>样式说明</strong><br>这部分定义的交互形式如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VERB [base]/[type]/[id] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一个指的是HTTP的POST/PUT/GET等动词</li>
+<li><p>[] 中的内容是必须要存在的，可以使用相应的字符来替换。示例:</p>
+<ul>
+<li><strong>base</strong>:  <a href="#root">Service Root URL</a></li>
+<li><strong>mime-type</strong>:  <a href="#mime-type">Mime Type</a></li>
+<li><strong>type</strong>: 资源类型的名称 (e.g. &quot;Patient&quot;)</li>
+<li><strong>id</strong>:  资源的<a href="resource.html#id">逻辑标识Id</a></li>
+<li><strong>vid</strong>: 资源的<a href="resource.html#metadata">版本标识 Id</a></li>
+<li><strong>compartment</strong>: <a href="extras.html#compartment">compartment</a>的名称</li>
+<li><strong>parameters</strong>:某种方法中所定义的url参数</li>
+</ul>
+</li>
+<li>{}中的内容是可选项</li>
+</ul>
+<p>开发中所生成的URLs应符合 <a href="https://tools.ietf.org/html/rfc3986#appendix-A" target="_blank" rel="external">RFC 3986 Section 6 Appendix A</a><br>的要求，其中一些字符需要进行URL编码<br>which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).</p>
+<p><a name="root"> </a><br><a name="general"> </a></p>
+<h4 id="2-1-0-1_服务根路径">2.1.0.1 服务根路径</h4><p>所有资源都能够在服务的根路径中找到. 服务根路径的格式是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http(s)://server&#123;/path&#125;</span><br></pre></td></tr></table></figure>
+<p>path这部分是可选的，并且不包含拖尾斜杠。每种资源类型的管理节点在&quot;/[type]&quot;<br>&quot;type&quot; 也就是资源类型的名称.比如<br>&quot;Patient&quot; 就形如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://server/path/Patient</span><br></pre></td></tr></table></figure>
+<p>所有的交互都是相对服务根路径来定义的。也就是说当你知道系统中任何一个资源的路径，也就可以推断出其他资源的地址。</p>
+<p>注意：所有URL都是大小写敏感的。</p>
+<p>注意：服务器可能会使用这种 &quot;<a href="http://server/...[xx]...&quot;形式的path，这里的[xx" target="_blank" rel="external">http://server/...[xx]...&quot;形式的path，这里的[xx</a>] 指的是一个可变的部分，<br>用于表示某个具体的FHIR API的实现。一般而言，id能够标识患者或者用户， the underlying information is completely compartmented by the logical identity associated with [xx]。这样的话，FHIR API 提供了一个患者/用户为中心的病历视图，授权/认证信息是显式的赋予URL的，由于这样的原因，某些可标识的用户是于逻辑标识相关联的<br>显式的将患者id放在URL中并不是必须的，系统实现时可以利用OAuth 登录将患者或医疗机构与某个FHIR endpoint联系起来。具体参考 <a href="extras.html#compartments">Compartments</a> for the logical underpinning.</p>
+<p>Identity</p>
+<p>系统常常要通过比较2个URL来确定是否指向同一个URL。鉴于此，因遵循如下规则:</p>
+<ul>
+<li>URL中查询的部分应忽略，也就是?之后的内容</li>
+<li>The comparison of the document portion of the URL (i.e. not the server/port) is case sensitive</li>
+<li>http: and https: 是可以互换的，且指的是同一个对象</li>
+<li>如果指定了端口，端口必须一致否则是不同对象，只有端口对于服务器来讲是有意义的情况下才应该显式的体现</li>
+</ul>
+<p>比如: <a href="http://myserver,com/patient/1" target="_blank" rel="external">http://myserver,com/patient/1</a> 和 <a href="https://myserver.com/patient/1" target="_blank" rel="external">https://myserver.com/patient/1</a> 是一样的, 而 <a href="http://myserver.com:80/patient/1" target="_blank" rel="external">http://myserver.com:80/patient/1</a> 和前面两个都不一样</p>
+<p>Note: the identity comparison for protocols other than http/https is undefined.</p>
+<h4 id="2-1-0-2_Resource_Metadata_and_Versioning">2.1.0.2 Resource Metadata and Versioning</h4><p>每个资源都有一些<a href="resource.html#metadata">资源的元数据字段</a>. 这些字段与http 请求和响应的字段对应如下：</p>
+<table class="grid"><br>  <tr><th>Metadata Item</th><th>Where found in HTTP</th></tr><br>  <tr><td><a href="resource.html#id">Logical Id (.id)</a></td><td> Id显式的包含在URL里面 </td></tr><br>  <tr><td><a href="resource.html#metadata">Version Id (.meta.versionId)</a></td><td>Version Id可以用<code>ETag</code> header表示. Content-Location 中表示的是一个完整的URL (see <a href="#vread">vread</a> below)</td></tr><br>  <tr><td>Last modified (.meta.lastUpdated)</td><td>HTTP Last-Modified header</td></tr><br></table>
+
+<p>需要注意的是Version Id是弱&quot;weak&quot; ETag ， <code>ETag</code> headers<br>    的值是以 &quot;W/&quot; 为前缀的，值是用引号引起来的，比如:</p>
+<pre>
+ETag: W/&quot;3141&quot;
+</pre>
+
+<h4 id="2-1-0-3_安全Security">2.1.0.3  安全Security</h4><p>HTTPS 的使用是可选项，但任何生产环境下的医疗数据的交换与共享都应该使用SSL和其他的安全措施。详情请参考 <a href="security.html#http">HTTP Security</a></p>
+<p>至于说到底是返回403还是404取决于具体的情况和具体的本地策略、法规和法律。选择哪个错误码需要考虑相应的病历的公开是否是正当的PI信息的公开还是说是禁止的PI的公开。</p>
+<p>注意: 为了支持基于浏览器的客户端系统，建议服务端实现 <a href="http://enable-cors.org/" target="_blank" rel="external">cross-origin resource sharing</a></p>
+<h4 id="2-1-0-4_HTTP_Status_Codes">2.1.0.4 HTTP Status Codes</h4><p>该标准规定了特殊的HTTP status codes状态码的使用，状态码必须与某种状态相对应，只有不明确正确的状态码的时候，才可以使用其他合适的状态码，尤其是涉及授权认证和重定向的状态码<br>认证重定向不应该被当做资源本身位置的变更。</p>
+<p>FHIR 中定义了<a href="operationoutcome.html">OperationOutcome resource</a> 来表示某些具体的处理错误信息。对于某些交互/接口和某些状态码，必须在响应中返回<br>OperationOutcome。HTTP 4XX或5xx状态码可能会返回OperationOutcome，但不强制规定，通用的服务端框架可能会产生很多此类错误。</p>
+<h4 id="2-1-0-5_管理响应中返回的内容">2.1.0.5  管理响应中返回的内容</h4><p>处于“带宽”的考虑，spec允许客户端规定返回哪些内容</p>
+<h5 id="2-1-0-5-1_条件读取_conditional_read">2.1.0.5.1 条件读取 conditional read</h5><p>客户端可以在 <code>read</code> 请求中使用<code>If-Modified-Since</code>, 或 <code>If-None-Match</code> HTTP 头参数。如果这样的话，客户端必须接受状态码304表示未变更或完整的内容(要么是内容未变化，要么是不支持条件读取)作为响应。</p>
+<p>服务器可以根据指定的<code>If-Modified-Since</code> date-time or the <code>If-None-Match</code> ETag 来返回304表示内容未发生变更，或者正常的 返回整个资源内容<br>。这种优化在出于缓存的目的而减少带宽时是有意义的，鼓励服务器这样做但不做强制性规定</p>
+<h5 id="2-1-0-5-2_create/update/transaction">2.1.0.5.2 create/update/transaction</h5><p>增、改、和批量操作是通过<code>POST</code>,<code>PUT</code> and <code>POST</code> 来实现的，对于服务器而言，要么只返回一个状态码，要么返回新增或更改之后的完整内容。对于批量操作而言<br>，要返回一个有<code>Bundle.entry.transactionResponse</code>字段的Bundle，而不是有<code>Bundle.entry.resource</code>字段的Bundle。</p>
+<p>客户端可以用 <a href="https://tools.ietf.org/html/rfc7240#section-4.2" target="_blank" rel="external">HTTP<br>return preference</a>头参数来表示是否想要返回完整的资源内容:</p>
+<pre>
+Prefer: return=minimal
+Prefer: return=representation
+</pre>
+
+<p>第一个指的是只要状态码. 第二个指的是要返回完整内容.服务器应该能支持该头参数。<br>如果不存在该头参数,服务器可根据实际情况自行处理。</p>
+<p><a name="mime-type"> </a></p>
+<h4 id="2-1-0-6_Content_Types_and_encodings">2.1.0.6   Content Types and encodings</h4><p>FHIR 资源的正式MIME-type 是<code>application/xml+fhir</code> 或 <code>application/json+fhir</code>.<br>客户端和服务器必须使用的MIME-type是:</p>
+<ul>
+<li>XML: <strong>application/xml+fhir</strong></li>
+<li>JSON: <strong>application/json+fhir</strong></li>
+</ul>
+<p>服务器必须支持 <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html#sec12" target="_blank" rel="external">HTTP specification 标准中section 12的服务端内容协商</a><br>但为了支持不同的系统实现，服务器应该支持可选项<code>_format</code> 参数来规定响应的格式。<code>_format</code> 能够让客户端在客户端没法正确设置头参数的值时使用format参数覆盖头参数<br>的值。<code>_format</code> 参数的值可以是&quot;xml&quot;, &quot;text/xml&quot;, &quot;application/xml&quot;, 和 &quot;application/xml+fhir&quot; &quot;json&quot;, &quot;application/json&quot; and &quot;application/json+fhir&quot; 不管是哪个都应该能转换成正式的MIME-type。</p>
+<p>HTTP 请求和响应的体都使用的是UTF-8.由于HTTP标准 (section 3.7.1)定义了默认的字符编码为ISO-8859-1, 请求和响应中应在<code>Content-Type</code>头参数中<br>使用<code>charset</code>参数明确的规定字符编码。请求中也可以在<code>Accept</code> header and/or use the <code>Accept-Charset</code> header中使用<code>charset</code>参数来规定字符编码</p>
+<p><a name="versioning"> </a></p>
+<h4 id="2-1-0-7_对版本的支持">2.1.0.7  对版本的支持</h4><p>支持FHIR的服务器应该提供对完整版本的支持，也就是说正确的给versionId赋值，记录versionId的变化，支持<code>vread</code>, 实现 <a href="#versionaware">version aware updates</a>.<br>对版本的支持能够让相关的系统记录正确版本的信息，保证病历中信息的完整性。然而，现在的大多数系统是不支持版本的，要这么做是很困难的。</p>
+<p>鉴于此，允许服务器不支持版本:FHIR 并不强迫必须支持版本。客户端可以选择那些提供完整版本支持的服务器进行交互。系统在<a href="conformance-definitions.html#Conformance.rest.resource.noVersion">conformance statement</a>中记录是否支持版本.</p>
+<p><a name="read"> </a></p>
+<h4 id="2-1-0-8_read">2.1.0.8 read</h4><p><code>read</code> interaction读取操作获取资源当前最新的资源内容。使用HTTP <code>GET</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/[type]/[id] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<p>该接口返回的是一个某种资源类型的实例。可通过浏览器访问该url.<br><a href="resource.html#id">Logical Id</a> (id) 值的介绍在 <a href="datatypes.html#id">id type</a>.<br>返回的资源内容中应该包含 <code>id</code>字段，且值是[id].<br>服务器应该返回<code>ETag</code> 头参数，值为 versionId、<code>Content-Location</code> 头参数，值为完整的url和<code>Last-Modified</code> 头参数.</p>
+<p>注意: 在读取时未知的资源和已删除资源的处理是不一样的: 已删除资源返回的是410状态码，而未知的资源返回的是404。不记录已删除记录的系统<br>将已删除记录视为未知资源。</p>
+<p><a name="vread"> </a></p>
+<h4 id="2-1-0-9_vread">2.1.0.9  vread</h4><p><code>vread</code>  interaction特定版本读取操作获取资源某个版本的资源内容。使用HTTP GET:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/[type]/[id]/_history/[vid] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<p>该方法返回的是指定的资源类型的某个特定版本的资源实例。返回在资源内容必须包含<code>id</code> 字段，值为[id],包含<code>meta.versionId</code>头参数，值为[vid].<br>服务器应返回<code>ETag</code> 头参数，值为versionId ，返回<code>Content-Location</code> 头参数，值为包含版本的完整url，返回<code>Last-Modified</code> 头参数.</p>
+<p> <a href="resource.html#metadata">Version Id</a> (vid)是版本标识符，和<a href="resource.html#id">Logical Id</a>一样遵循 <a href="datatypes.html#id">format requirements</a> 。可以通过history方法获取id，通过read方法返回的内容中的content location中的version id，或者<br> 来自某个内容模型的针对版本的某个引用。如果规定的这个版本正好是被删除的资源，服务器应该返回410的状态码.</p>
+<p>即使服务器不支持读取既往版本的资源内容，也鼓励服务器支持针对某个版本的当前版本的资源内容的获取。如果请求中访问的是之前版本的资源，服务器不支持访问之前版本<br>，应该返回404 未找到的状态码，同时用operation outcome来解释当前资源类型不支持history操作.</p>
+<p><a name="update"> </a></p>
+<h4 id="2-1-0-10_update">2.1.0.10  update</h4><p><code>update</code> interaction 新增一个已有资源的最新版本或者创建一个对应id不存在资源的初始版本.使用HTTP <code>PUT</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT [base]/[type]/[id] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>请求的体是一个 <a href="resource.html">Resource</a> ，其中id字段的值与url中的[id]一致.<br>如果资源内容中包含了 <a href="resource.html#meta">meta</a>, 服务器应该忽略提交的资源中的<code>versionId</code> 和 <code>lastUpdated</code> 的值.<br>服务器必须给<code>meta.versionId</code> and <code>meta.lastUpdated</code>字段赋值.也允许服务器审查和更改其他metadata的值，但不推荐这样做(see <a href="resource.html#meta">metadata description</a>  for further information).</p>
+<p>当服务器接受了更新时，服务器应该接受提交的资源，后续读取时应该返回同样的内容。然而，系统可能会不支持，具体讨论请参考<a href="#transactional-integrity">transactional integrity</a> for.</p>
+<p>如果更新成功，如果是更新的话，服务器必须返回200状态码, 如果是新增的话，必须返回201状态码,<br>以及 <code>Last-Modified</code> 头参数, 和  <code>ETag</code> 头参数(包含新的资源<code>versionId</code>)<br>。服务器应该返回 <code>Content-Location</code> header，其中包含了更新操作得到的具体版本。如果是新增资源的话，服务器应该返回<code>Location</code> 头参数.</p>
+<p>服务器响应的body可包含<a href="operationoutcome.html">OperationOutcome</a>资源来表示资源内容处理中的hints和警告，其中不应包含任何错误信息.</p>
+<h5 id="2-1-0-10-1_条件更新Conditional_updates">2.1.0.10.1  条件更新Conditional updates</h5><p>条件更新能够让客户端根据某些标识条件而非逻辑标识<a href="resource.html#meta">logical id</a>来更新现有的资源。使用 <code>PUT</code> :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT [base]/[type]/?[search parameters]</span><br></pre></td></tr></table></figure></p>
+<p>当服务器处理条件更新时,先使用标准的<a href="search.html">search facilities</a> 来查询特定的资源类型，力图找到一个单独的逻辑id。后续的处理动作取决于查询得到的结果数目:</p>
+<ul>
+<li><strong>未找到匹配项</strong>: 服务器完成新增操作<a href="#create">create</a> operation</li>
+<li><strong>找到一个匹配项</strong>: 服务器对找到的资源进行更新操作</li>
+<li><strong>找到多个匹配项</strong>: 服务器返回412状态码，预设条件错误表示客户端的条件不够精确</li>
+</ul>
+<p>这个方法/接口能够让无状态的客户端提交更新后的结果给服务器，无需担心服务器分配的逻辑标识。比如客户端将实验室结果的状态从&quot;preliminary&quot;更改为<br>&quot;final&quot;，可以使用<code>PUT /Observation?identifier=http://my-lab-system|123</code>提交更新后的结果。</p>
+<h5 id="2-1-0-10-2_拒绝更新操作_Rejecting_Updates">2.1.0.10.2 拒绝更新操作 Rejecting Updates</h5><p>允许服务器依据完整性或其他业务考虑拒绝更新操作，视具体情况返回HTTP 状态码(大多数是422).</p>
+<p>表达与FHIR有关错误的常用HTTP 状态码(除了与一般的安全、请求头参数以及content type协商问题相关的错误码之外)如下:</p>
+<ul>
+<li><strong>400 错误的请求</strong> - 无法解析资源内容或未通过FHIR 的校验规则</li>
+<li><strong>404 未找到</strong> - 不支持的资源类型，或者错误的FHIR endpoint节点</li>
+<li><strong>405 不允许的方法</strong> - 此更新操作之前资源内容不存在，服务器不允许客户端自定义id</li>
+<li><strong>409/412</strong> - 资源内容版本冲突</li>
+<li><strong>422 无法处理的实体</strong> - 提交的资源内容违反了FHIR 规范中或者服务器业务规则的要求。与此同时应返回<a href="operationoutcome.html">OperationOutcome</a><br>表示详细的错误信息</li>
+</ul>
+<p>注意：在接受更新操作时，服务器可能会保留XML中的批注、指令，格式相关的内容，JSON中的空格，但不做强制要求。可能需要考虑这些内容对数字签名的影响。<br>对于其他系统该如何处理更新操作，请参考 <a href="updates.html">Create and Update Behavior</a></p>
+<p><a name="versionaware"> </a><br><a name="concurrency"> </a></p>
+<h4 id="2-1-0-11_资源内容的管理">2.1.0.11 资源内容的管理</h4><p><a href="http://www.w3.org/1999/04/Editing/" target="_blank" rel="external">Lost Updates</a>，当两个客户端同时更新同一个资源，第二个客户端的操作会覆盖第一个客户端的更新，但这<br>可以通过<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19" target="_blank" rel="external">ETag</a> 和<br><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.24" target="_blank" rel="external">If-Match</a> HTTP 头参数组合使用来避免.</p>
+<p>为了能够支持此类用途，服务器在返回每一个资源内容时都应包括一个<code>ETag</code> 头参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP 200 OK&#10;Date: Sat, 09 Feb 2013 16:09:50 GMT&#10;Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT&#10;ETag: W/&#38;quot;23&#38;quot;&#10;Content-Type: application/json+fhir</span><br></pre></td></tr></table></figure>
+<p>如果HTTP 响应中包含了Etag参数，其值必须与资源的版本标识相一致。服务器可以按照自己的方式来生成资源的版本标识，只要能够满足<a href="datatypes.html#id">id</a> data type,<br>且在统一资源的所有版本的寻址空间内保持唯一性即可。当资源内容以bundle的一部分返回的情况下，不会存在ETag，直接使用版本的vernsionId即可。</p>
+<p>如果客户端想要发送一次针对版本的更新操作，只需要在请求的HTTP头参数中包含<code>If-Match</code>，其值引用服务器中返回的ETag的值即可:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT /Patient/347 HTTP/1.1&#10;If-Match: W/&#38;quot;23&#38;quot;</span><br></pre></td></tr></table></figure>
+<p>如果版本标识与<code>If-Match</code>头参数中的不一致，服务器返回412 未满足预设条件的状态码，而非直接更新资源内容。</p>
+<p>如果服务器要求客户端在请求中包含头参数<code>If-Match</code>，但实际请求中并没有包含头参数<code>If-Match</code>，服务器可返回412 未满足预设条件的状态码。</p>
+<p><a name="delete"> </a></p>
+<h4 id="2-1-0-12_delete">2.1.0.12  delete</h4><p> <code>delete</code> interaction 移除已经存在的资源内容。该交互使用 HTTP DELETE 方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE [base]/[type]/[id]</span><br></pre></td></tr></table></figure>
+<p>delete交互意味着之后的对资源内容的<a href="#read">非指定版本的读取操作</a>将会得到410 状态码，而且 <a href="#search">查询操作</a>也再也找不到该资源。<br>删除成功之后或资源内容压根不存在，服务器应该返回状态码204(无内容)或者200 OK,同时包含<a href="operationoutcome.html">OperationOutcome</a><br>资源来表示删除操作的一些提示或提醒内容，如果包含了<a href="operationoutcome.html">OperationOutcome</a>，其中不应该包含任何错误信息。</p>
+<p>无论服务器支持删除操作与否，或是支持对某个资源类型或某个资源实例的删除操作与否，都取决于服务器具体使用场景下的自身的业务规则。<br>如果服务器拒绝删除某类资源，应返回状态码405 不允许使用的方法。如果由于一些针对某个具体资源的原因如参考完整性，服务器拒绝删除该资源，应返回状态码<br>409 冲突。对一个已经删除过的资源再次执行该操作不会产生任何效果，服务器应返回204或200状态码。已删除的资源可以通过后续的 <a href="#href">更新操作</a>恢复。</p>
+<p>很多资源中会包含status字段，会与删除的作用有一些重叠。每种资源类型都会定义删除操作具体的语义。如果没有提供额外的说明文档，删除操作应该视为删除资源的记录，<br>并非对资源所表示的现实世界中的资源状态有任何影响。</p>
+<p>对于那些会维护版本记录的服务器而言，删除操作并不会移除资源的版本记录，从版本记录的角度而言，删除资源相当于新增一个版本记录，数据内容为空，且标记为已删除状态。</p>
+<h5 id="2-1-0-12-1_条件删除_Conditional_deletes">2.1.0.12.1 条件删除 Conditional deletes</h5><p>条件删除操作允许客户端根据一些标识条件而非资源id逻辑标识来删除已有资源。客户端发起如下的HTTP请求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE [base]/[type]/?[search parameters]</span><br></pre></td></tr></table></figure></p>
+<p>服务器在处理此类删除时，首先利用提交的查询参数使用<a href="search.html">查询机制</a>进行资源的查询. 后续的处理动作依赖于查询到的结果数量：</p>
+<ul>
+<li><strong>无匹配项</strong>: 服务器返回状态码404(未找到待删除资源)</li>
+<li><strong>一个匹配项</strong>: 服务器对匹配到的资源进行普通的删除操作</li>
+<li><strong>多个匹配项</strong>: 服务器返回状态码412，未满足预设条件，表示客户端提交的 查询条件不足以确定唯一的待删除资源</li>
+</ul>
+<p>这个操作可以用在无状态的客户端(比如接口引擎)在不知道服务器分配的资源逻辑标识的情况下来删除服务器上的一个资源。比如，客户端要删除一个实验室检验结果，<br>可以使用请求 <code>DELETE /Observation?identifier=http://my-lab-system|123</code>.</p>
+<p><a name="create"> </a></p>
+<h4 id="2-1-0-13_create">2.1.0.13  create</h4><p>新增/创建 交互/操作会在服务器分配的位置新增/创建一个新的资源 。如果客户端想要控制新提交资源的逻辑标识，应该使用<a href="#update">更新操作</a>。<br>创建操作使用的是HTTP <code>POST</code>方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST [base]/[type] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<p>HTTP 请求的体应该是一个不包括id字段的FHIR 资源(这里是否应该不做要求，由服务器直接覆盖即可)，<br>如果提交的数据中包含了<a href="resource.html#meta">meta</a>字段,服务区应该忽略其中存在的 <code>versionId</code> and <code>lastUpdated</code> 的值.<br>服务器应该为<code>meta.versionId</code> and <code>meta.lastUpdated</code>字段分配新的值.允许服务器改变meta中的其他字段的值，但应避免此类操作 (更多信息请参考 <a href="resource.html#meta">metadata description</a>).</p>
+<p>在完成新增的时候，服务器应该接受所提交的资源，返回随后读取操作返回的一样的内容，但一些系统可能不支持这样，参考<a href="#transactional-integrity">transactional integrity</a> for 中的讨论.</p>
+<p>完成新增操作之后，服务器应返回状态码201，同时也应返回头参数<code>Location</code> ，其值中包含服务器为资源分配的<a href="resource.html#metadata">Logical Id</a><br> 和新增资源的<a href="resource.html#metadata">Version Id</a>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Location: [base]/[type]/[id]/_history/[vid]</span><br></pre></td></tr></table></figure></p>
+<p>其中[id] and [vid]为新增的资源的id逻辑标识和版本标识</p>
+<p>服务器应返回<code>ETag</code> 头参数，值为版本标识 vernsionId和<code>Content-Location</code> 头参数，值为包括版本编号的完整url，以及<code>Last-Modified</code> 头参数</p>
+<p>服务器可以返回<a href="operationoutcome.html">OperationOutcome</a> 资源来包括有关资源内容的提示和提醒，但不能包括任何错误信息.</p>
+<p>当资源的语法或数据不正确，或不能够用来创建新的资源，服务器应返回状态码400 错误请求。</p>
+<p>如果是由于业务规则，服务器拒绝了资源内容，应返回状态码422 表示无法处理的实体。</p>
+<p>不管是那种不成功的情况，服务器都应返回 <a href="operationoutcome.html">OperationOutcome</a>资源来表示操作失败的详细错误信息.</p>
+<p>与FHIR相关的常见HTTP 状态码(除了那些安全、头参数、content type协商相关的状态码之外)有：</p>
+<ul>
+<li><strong>400 错误的请求</strong> - 无法解析资源内容或资源内容不满足基本的FHIR校验条件</li>
+<li><strong>404 未找到资源</strong> - 不支持的资源类型或无效的FHIR 节点</li>
+<li><strong>422 无法处理的实体</strong> - 提交的资源内容违反了FHIR 规范或业务规则。同时应该有一个<a href="operationoutcome.html">OperationOutcome</a>来提供详细的错误信息</li>
+</ul>
+<p>注意：在接受更新操作时，服务器可能会保留XML中的批注、指令，格式相关的内容，JSON中的空格，但不做强制要求。可能需要考虑这些内容对数字签名的影响。<br>对于其他系统该如何处理更新操作，请参考 <a href="updates.html">Create and Update Behavior</a></p>
+<h5 id="2-1-0-13-1_条件新增_Conditional_create">2.1.0.13.1 条件新增  Conditional create</h5><p>条件新增操作使得客户端只有在一些等效的资源不存在与服务器上的时候才进行新增。在这种情况下，客户端通过在<code>If-None-Exist</code> 头参数中包含查询参数来定义<br>等效的含义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">If-None-Exist: base/[type]?[search parameters]</span><br></pre></td></tr></table></figure></p>
+<p>服务器在处理此类新增时，首先利用提交的查询参数使用<a href="search.html">查询机制</a>进行资源的查询. 后续的处理动作依赖于查询到的结果数量：</p>
+<ul>
+<li><strong>无匹配项</strong>: 服务器进行正常的新增操作</li>
+<li><strong>一个匹配项</strong>: 服务器无视提交的数据返回200状态码</li>
+<li><strong>多个匹配项</strong>: 服务器返回状态码412，未满足预设条件，表示客户端提交的 查询条件不足以确定唯一的待删除资源</li>
+</ul>
+<p>该操作可以用来避免两个客户端对同样的记录新增两条重复的资源。比如客户端新增实验室检验结果时可以使用<br><code>If-None-Exist: /Observation?identifier=http://my-lab-system|123</code> 来确保它不会重复新增一条记录</p>
+<p><a name="search"> </a></p>
+<h4 id="2-1-0-14_查询_search">2.1.0.14 查询 search</h4><p>该操作根据一些过滤条件来查询资源。使用不同的HTTP 方法.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/[type]&#123;?[parameters]&#123;&#38;amp;_format=[mime-type]&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过查询参数中的条件来查询/搜索某种类型的所有资源<br>由于用户代理和代理处理<code>GET</code> and <code>POST</code>请求的方式，除了基于get的查询方法之外，支持_search 的服务器也应支持基于’POST’的查询:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST  [base]/[type]/_search&#123;?[parameters]&#123;&#38;amp;_format=[mime-type]&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法和 <code>GET</code> 方法的效果一样.所有查询交互都使用形如参数名称’=’参数值的查询参数，要么是在URL 中，要么是<code>application/x-www-form-urlencoded</code>的body<br>(参考 <a href="http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type" target="_blank" rel="external">W3C HTML forms</a>).<br>查询的处理在<a href="search.html">查询处理机制Search handling mechanism</a>中进行了说明.</p>
+<p>如果查询失败，返回的状态码为4xx或5xx，同时有一个<a href="operationoutcome.html">OperationOutcome</a>。<br>如果查询成功，返回的结果是一个<a href="bundle-definitions.html#Bundle.type">type</a> = <code>searchset</code> 的<a href="extras.html#bundle">Bundle</a> 资源，其中包含了满足查询条件的所有资源，按特定的顺序排序。返回的结果列表可能会很长，服务器可以使用分页机制。如果要使用分页机制，应该使用下面所描述的<br><a href="#paging">described below</a><br>(adapted from <a href="https://tools.ietf.org/html/rfc5005" target="_blank" rel="external">RFC 5005 (Feed Paging and Archiving</a>)来将较长的列表拆成不同的页里面<br>服务器也可以返回 OperationOutcome 资源来表达查询操作的其他一些额外信息，且不能包含任何错误信息，且<a href="search-entry-mode.html">entry<br>mode</a> 值为<code>include</code>.</p>
+<h5 id="2-1-0-14-1_其他形式的查询_Variant_Searches">2.1.0.14.1  其他形式的查询 Variant Searches</h5><p>要查询一个<a href="extras.html#compartments">compartment</a>,不论是所有可能的资源还是某种类型的资源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/[Compartment]/[id]/&#123;*?[parameters]&#123;&#38;amp;_format=[mime-type]&#125;&#125;&#10;GET [base]/[Compartment]/[id]/[type]&#123;?[parameters]&#123;&#38;amp;_format=[mime-type]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>比如，要查询与某次encounter就诊相关的类型为某个LOINC编码的所有观察项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/Encounter/23423445/Observation?code=2951-2  &#123;&#38;amp;_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：特别的定义了一种操作来<a href="patient-operations.html#everything">获取患者的所有病历</a>或<br> <a href="encounter-operations.html#everything">某次就诊的所有病历</a>.</p>
+<p>也可能一次性查询所有的资源:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]?[parameters]&#123;&#38;amp;_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<p>在一次性查询所有资源时，只能使用那些所有资源都支持的查询参数</p>
+<p><a name="conformance"> </a></p>
+<h4 id="2-1-0-15_conformance">2.1.0.15  conformance</h4><p>符合性声明操作获取服务器的符合性声明，也就是服务器支持那些资源和操作的定义。使用 HTTP OPTIONS 或<code>GET</code> 方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/metadata &#123;?_format=[mime-type]&#125;&#10;OPTIONS [base] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure>
+<p>对于上述两种方法，服务器应该返回一个<a href="conformance.html">符合性声明 Conformance Resource</a>资源来表达服务器支持那些资源和交互。<br>如果返回了状态码404，也就是说服务器不支持FHIR。由于一些客户端库不支持<code>OPTIONS</code> 才定义了<code>GET</code> 方法。<br>返回符合性声明资源时应该也返回<code>ETag</code> 参数，其值随着符合性声明资源内容本身的变化而变化。也可以返回<code>Content-Location</code>头参数，其值为当前版本的<br>符合性声明资源的完整URL。<a href="#hdata">OMG hData RESTful Transport</a>规范中还定义了一些<code>OPTIONS</code>方法应返回的额外参数。</p>
+<p>返回的符合性声明资源一般都会有一个逻辑标识，不会有meta字段，但也不做限制。</p>
+<p>除了此符合性声明操作之外，服务器可以选择本节中所定义的获取、查询、更新和新增<a href="conformance.html">Conformance Resource</a> 节点的操作.<br>与符合性声明操作的不同之处在于:</p>
+<table class="grid"><br> <tr><td>符合性声明操作conformance operation</td><td>返回描述当前服务器功能的符合性声明</td></tr><br> <tr><td>符合性声明节点Conformance end point</td><td>管理符合性资源的注册库(e.g. the HL7 conformance statement registry)</td></tr><br></table><br>要求所有服务器都支持符合性声明操作，但服务器可以选择是否支持符合性节点。<br><br><a name="transaction"> </a><br><br>#### 2.1.0.16 事务 transaction<br><br>事务交互 transaction interaction 在单个原子性的动作中提交多个需要服务器完成的动作。可以提交同样类型或不同类型的多个资源的多个操作，也可以是相互混合在一起的(<br>如获取、查询、新增、更新或删除等 read, search, create, update, delete, etc).<br><br>尤其是在需要多个交互，如果某个交互失败就可能存在无法保证参考完整性的风险的情况下，特别适用(比如，在存储Provenance资源和对应的目标资源时，或<br>对于文档仓库而言，文档索引和文档本身).<br><br>该操作是使用HTTP <code>POST</code> 方法的:<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST [base] &#123;?_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure><br><br>Post所提交的内容是一个<a href="bundle.html">Bundle</a>资源， bundle的类型为(Bundle.type字段值为)<code>transaction</code>.每个entry都包含了操作的具体信息，<br>可以告诉处理该事务(transaction)的服务器如何处理该entry。如果其中HTTP 操作为<code>PUT</code> or <code>POST</code>, entry中应该包含该操作所需要的资源内容。<br>就像一个个单独的资源一样，bundle中的资源是分别按照本章中或是 <a href="operations.html">Extended<br>Operations</a>中介绍的操作/交互来处理的。包括 <a href="resource.html#meta">meta element</a>,<br>verification and version aware updates,<br>and <a href="#transactional-integrity">transactional integrity</a>，每个资源都是.<strong>The operations are subject to the the normal processing for each(待考证)</strong><br><br>服务器要么接受所有操作，返回状态码 200 OK和一个bundle；要么拒绝所有资源，返回状态码400 或500.如果提交的bundle中并不包含任何资源，这不应<br>视为错误。事务的处理结果不应依赖于bundle中资源的顺序。单个资源在transaction的bundle中只能出现一次。<br><br><strong>Bundle entry的处理</strong><br>由于事务是原子性的，所有操作要么都成功，要么都失败，且entry的顺序是没有影响的，处理该操作的顺序为:<br><br>1.  处理所有的<code>POST</code> 操作<br>2.  处理所有的<code>PUT</code> 操作<br>3.  处理所有的<code>DELETE</code> 操作<br>4.  处理所有的<code>GET</code> 操作<br><br>在上述的步骤1-3中，如果有任何资源标识重复了，事务就应该失败。<br><br>事务的bundle中的资源可能会存在相互引用，包括循环引用的情况。如果在上面的处理过程中，服务器为bundle的任一资源分配了新的id，服务器应该也同时更新bundle中对该资源的引用。<br>不是bundle中引用该资源的资源则先不管他。如果是针对版本的引用，在引用更新之后，应该仍然是针对版本的引用。不论是出现在资源id、资源引用，<br>url类型的字段、叙述性文本中的 &lt;a href=&quot;&quot; &amp; &lt;img src=&quot;&quot;，服务器都应该替换bundle中所有匹配的link.<br><br><a name="transaction-response"> </a><br><br>##### 2.1.0.16.1 事务响应 Transaction Response<br><br>为了让客户端知道entry处理的结果，确定服务器分配给资源的标识，服务器应返回一个<br><a href="bundle-definitions.html#Bundle.type">type</a> 类型为<code>transaction-response</code> 的<a href="extras.html#bundle">Bundle</a>资源，按照提交时一样的顺序，其中包含了每一个entry和处理的结果。<br><br>每个entry字段应包含<code>transactionResponse</code> ，用来表示entry的具体处理结果——HTTP 状态码、location和’ETag’头参数(用来表示资源的id和版本)，<br>除此之外，entry也可能会包括资源本身.<br><br><a name="other-bundles"> </a><br><br>###### 2.1.0.16.2  接受其他类型的bundle Accepting Other bundle types<br><br>服务器可以选择支持除了类型是transaction之外的bundle作为事务。<br><br>类型为<code>history</code>的Bundle本身和类型是transaction的Bundle结构一样，服务器应该支持history bundle，这也从一个服务器复制数据到另一个服务器上就<br>会很容易。但在history list中无法表示已有的translation的边界，在history list中同一个资源可能会出现不止一次，服务器应该存在一些处理该问题的策略。<br><br>对于类型为其他的Bundle，服务器也可以选择支持，这些Bundle中不存在’transaction’字段 ，这时候，服务器处理entry时要么是新增要么是更新操作，<br>取决于服务器是否能够识别出资源的标识——如果资源的标识存在于服务器中，应该当做更新操作。注意：这样的话，客户端就把匹配过程转移给服务器。<br><br><a name="history"> </a><br><br>#### 2.1.0.17   history<br><br>history 交互 获取单个资源、某类资源所有实例或服务器上所有按的变更记录。此三类history交互 使用的是HTTP <code>GET</code> 方法<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET [base]/[type]/[id]/_history&#123;?[parameters]&#38;amp;_format=[mime-type]&#125;&#10;GET [base]/[type]/_history&#123;?[parameters]&#38;amp;_format=[mime-type]&#125;&#10;GET [base]/_history&#123;?[parameters]&#38;amp;_format=[mime-type]&#125;</span><br></pre></td></tr></table></figure><br><br>返回的是<a href="bundle-definitions.html#Bundle.type">类型</a>为<code>history</code> 的<a href="extras.html#bundle">Bundle</a>包含了资源的版本变更记录，按时间先后顺序排列，<br>其中也包含了被删除资源。<br>每个entry都包含<code>transaction</code>元素,如果<code>entry.transaction.method</code> 值为<code>PUT</code> 或<code>POST</code>, a resource(这里需要在gforge上问一下  把句子补全).<br>entry应包含操作完成之后的资源状态。<br><br><a href="#create">create</a>, <a href="#update">update</a>, 和 <a href="#delete">delete</a>会产生资源变更记录的entry。其他操作则不会(此类操作可能会产生诸如AuditEvent的资源； these are represented as create operations in their own right)<br><br>history operation中的新增操作如下所示:<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;entry&#62;&#10;  &#60;resource&#62;&#10;    &#60;Patient&#62;&#10;      &#60;!-- the id of the created resource --&#62;&#10;      &#60;id value=&#34;23424&#34;/&#62;&#10;      &#60;!-- snip --&#62;&#10;    &#60;/Patient&#62;&#10;  &#60;/resource&#62;&#10;  &#60;transaction&#62;&#10;    &#60;!-- POST: this was a create --&#62;&#10;    &#60;method value=&#34;POST&#34;/&#62;&#10;    &#60;url value=&#34;Patient&#34;/&#62;&#10;  &#60;/transaction&#62;&#10;&#60;/entry&#62;</span><br></pre></td></tr></table></figure><br><br>注意：条件新增、条件更新和条件删除都转换成对现有的历史版本资源列表中资源的直接更新和删除(. in a history list, there’s never an instruction about creating an unidentified resource; it’s transformed to a record of creating one that is identified 也就是说在history返回的资源历史版本列表中，<br>由于条件新增、条件更新和条件删除操作产生的版本都记录为更新或删除操作)。<br><br>除了`_format`参数以外，history交互还包括如下参数:<br><br><table class="list"><br>  <tr><td>_count : <a href="datatypes.html#integer">integer</a></td><td>single</td><td>请求中规定应返回的记录条数。不要求服务器必须返回指定的条数，但不能超过这个数字</td></tr><br>  <tr><td>_since : <a href="datatypes.html#integer">instant</a></td><td>single</td><td>只返回该时间点及以后所创建的资源版本实例</td></tr><br></table>
+
+<p>使用带有时区的完整日期时间类型的<code>_since</code>参数可以限定只返回一段时间段内的历史版本资源列表，<br>对于客户端而言，由于时间精度的问题，可能会收到不止一次在边界时间点资源内容发生更新的通知。不强求服务器支持比秒更高的精度。</p>
+<p>历史版本的资源列表可能会很长，服务器可以使用分页。要用到分页的话，必须使用下面章节所描述的方法来进行分页，使用<code>_count_</code>来限定每页中条目的数量。</p>
+<p>history 交互可以用于一个系统对另一个系统的订阅，这样系统间的资源内容就可以保持同步。系统间同步的另一种方式请参考<a href="subscription.html">Subscription resource</a>.</p>
+<p><a name="transactional-integrity"> </a></p>
+<h4 id="2-1-0-18_事务的完备性">2.1.0.18  事务的完备性</h4><p>在处理 <a href="#create">create</a> and <a href="#update">update</a>操作时，不要求服务器完全接受提交的资源；随后如果使用<a href="#read">read</a><br>操作获取资源时，所获取的资源与提交的资源可能是不一样的。不同之处可以是由于以下原因：</p>
+<ul>
+<li>服务器把提交的内容与已存在的内容进行合并</li>
+<li>服务器使用业务规则，改变了内容</li>
+<li>服务器不支持资源的所有内容或允许值</li>
+</ul>
+<p>注意，并没有通用的方法来安全或可预测地实现与现有内容的合并或根据业务规则来变更内容——what is possible,<br>safe and/or required is highly context dependent。这类操作可能受安全方面的因素所驱动。考虑到支持的不全面，客户端可以获取服务器的<br>基本的符合性声明来确定服务器不支持哪些特性或取值。</p>
+<p>根据出于上面所述的三种理由对资源内容变更的程度，FHIR服务器给它所从属的生态系统所造成的后果是需要管理的。鉴于这样的原因，服务器宜尽可能少的对资源内容进行变更，。<br>但是由于医疗本身的多样性，FHIR 标准允许服务器在新增、更新时对资源内容进行变更。</p>
+<p>类似的，系统实现时有些应用场景需要有一些合并内容、变更内容的特殊规则，这些应用场景的维护成本会很高。</p>
+<p>尽管我们说这些规则是针对服务器的，对于客户端而言也有类似的概念——根据与服务器交互的不同客户端不支持同样特性/功能的程度，客户端/服务器被迫要实现一些<br>定制的业务逻辑以避免信息的丢失或受损。</p>
+<p>通过遵循基于版本的更新模式，可以减少一些此类问题，在这种模式中：</p>
+<ul>
+<li>服务器对于它所支持<a href="#update">update</a>操作的资源都要支持<a href="#read">read</a>操作</li>
+<li>在更新之前，客户端先通过<a href="#read">reads</a> 操作获取资源最新版本的内容</li>
+<li>客户端根据自己的需要对自己内容进行变更，保持其他内容完整即可(note the <a href="extensibility.html#exchange">extension related rules</a> around this)</li>
+<li>客户端调用<a href="#update">update</a> 操作,将变更后的内容提及给服务器，客户端要能够处理 409 412的http 响应</li>
+</ul>
+<p>如果客户端遵循的是这种模式，对于不能够理解的那些来自其他系统的信息，通过更新操作就可以维护起来.</p>
+<p>要注意服务器也可能选择维护那些可能会丢失的信息，但服务器没有明确的方法来确定客户端到底是因为不支持此类信息而省略了相应内容还是说客户端想要删除此类信息。</p>
+<h5 id="2-1-0-18-1_Conformance">2.1.0.18.1  Conformance</h5><p>Both client and server systems SHOULD clearly document how transaction<br>integrity is handled.</p>
+<p>DSTU TODO: how?</p>
+<p><a name="paging"> </a></p>
+<h3 id="2-1-0-19_Paging"><span class="sectioncount">2.1.0.19<a name="2.1.0.19"> </a></span> Paging</h3><p>If servers provide paging for the results of a <a href="#search">search</a> or <a href="#history">history</a> interaction,<br>they SHALL conform to this method (adapted from <a href="https://tools.ietf.org/html/rfc5005" target="_blank" rel="external">RFC 5005 (Feed<br>Paging and Archiving)</a> for sending continuation links to the client when returning a <a href="bundle.html">Bundle</a><br>(e.g. with history and search). If the server does not do this, there is no way to continue paging.</p>
+<p>This example shows the third page of a search result:</p>
+<pre class="xml">
+&lt;Bundle xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;!-- snip metadata --&gt;
+  &lt;!-- This Search. url starts with base search, and adds the effective
+    parameters, and additional parameters for search state. All searches
+    SHALL return this value.
+
+      In this case, the search continuation method is that the server
+    maintains a state, with page references into the stateful list.
+    --&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;self&quot;&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=3&quot;/&gt;
+  &lt;/link&gt;
+  &lt;!-- 4 links for navigation in the search. All of these are optional, but recommended --&gt;
+
+  &lt;link&gt;
+    &lt;relation value=&quot;first&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=1&quot;/&gt;
+  &lt;/link&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;previous&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=2&quot;/&gt;
+  &lt;/link&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;next&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=4&quot;/&gt;
+  &lt;/link&gt;
+  &lt;link&gt;
+    &lt;relation value=&quot;last&quot;/&gt;
+    &lt;url value=&quot;http://example.org/Patient?name=peter&amp;stateid=23&amp;page=26&quot;/&gt;
+  &lt;/link&gt;
+
+  &lt;!-- then the search results... --&gt;
+&lt;/Bundle&gt;
+</pre>
+
+<p>The server need not use a stateful paging method as shown in this example - it is at<br>the discretion of the server how to best ensure that the continuation retains<br>integrity in the context of ongoing changes to the resources. An alternative approach<br>is to use version specific references to the records on the boundaries, but this is<br>subject to continuity failures when records are updated.</p>
+<p>A server MAY inform the client of the total number of resources returned by the interaction for which the results are paged<br>using  the <a href="bundle-definitions.html#Bundle.total">Bundle.total</a>.</p>
+<p>Note that for search, where _include can be used to return additional related resources, the total number<br>of resources in the feed may exceed the number indicated in totalResults.</p>
+<h3 id="2-1-0-20_Intermediaries"><span class="sectioncount">2.1.0.20<a name="2.1.0.20"> </a></span> Intermediaries</h3><p>The HTTP protocol may be routed through an HTTP proxy such as<br>squid. Such proxies are transparent to the applications, though<br>implementers should be alert to the effects of caching, particularly<br>including the risk of receiving stale content. See the <a href="http://tools.ietf.org/html/rfc2616#page-74" target="_blank" rel="external">HTTP specification</a><br>for further detail</p>
+<p>Interface engines may also be placed between the consumer and<br>the provider. These differ from proxies because they actively<br>alter the content and/or destination of the HTTP exchange and are<br>not bound the rules that apply to HTTP proxies. Such agents are allowed,<br>but SHALL mark the http header to assist with troubleshooting.</p>
+<p>Any agent that modifies an HTTP request or Response content other<br>than under the rules for HTTP proxies SHALL add a stamp to the HTTP<br>headers like this:</p>
+<pre>
+  request-modified-[identity]: [purpose]
+  response-modified-[identity]: [purpose]
+</pre>
+
+<p>The identity SHALL be a single token defined by the administrator of the agent<br>that will sufficiently identify the agent in the context of use. The header<br>SHALL specify the agent’s purpose in modifying the content. End point systems SHALL<br>not use this header for any purpose. Its aim is to assist with<br>system troubleshooting.</p>
+<p><a name="hdata"> </a></p>
+<h3 id="2-1-0-21_OMG_hData_RESTful_Transport"><span class="sectioncount">2.1.0.21<a name="2.1.0.21"> </a></span> OMG hData RESTful Transport</h3><p>This RESTful specification described here is based on the <a href="http://www.omg.org" target="_blank" rel="external">OMG Health RESTful specification</a> (specific reference to be provided when this is published).<br>In this regard, FHIR functions as a Record Format Profile as described in that specification. Note the following significant factors to be aware of:</p>
+<ul>
+<li>FHIR maps the hData sections to resource types, and hData documents to resource instances. There are no subsections, and client systems are not able to create new sections,<br>though <a href="extras.html#compartments">compartments</a> behave somewhat like sections</li>
+<li>Because clients cannot submit new sections (<code>POST</code> to service URL), <code>POST</code> to the service URL has been re-used for <a href="#transaction">the transaction<br>interaction</a> (difference under review)</li>
+<li>FHIR does not (yet) define a root document. When defined, it will contain information about what the FHIR server has done (as opposed to a conformance statement, which describes what it is capable of doing)</li>
+<li>Note that this specification does not repeat the rules in the hData RESTful Transport concerning the <code>OPTIONS</code> command on the service URL, but these rules (extra headers etc.) still apply</li>
+</ul>
+<p><a name="summary"> </a></p>
+<h3 id="2-1-0-22_Summary"><span class="sectioncount">2.1.0.22<a name="2.1.0.22"> </a></span> Summary</h3><p>These tables present a summary of the interactions described here.</p>
+<p>Note that <em>all</em> requests may include an optional <code>Accept</code> header to indicate the format used for the response (this is even true for <code>DELETE</code> since an OperationOutcome may be returned).</p>
+<table class="grid"><br><tr><th>Interaction</th>                <th>Path</th><th colspan="5">Request</th></tr><br><tr><th colspan="2">                                                       </th><th>Verb</th>           <th>Content-Type</th>   <th>Body</th>     <th>Prefer</th>         <th>Conditional</th></tr><br><tr><td>read</td>                       <td>/[type]/[id]</td>                   <td>GET</td>            <td>N/A</td>            <td>N/A</td>      <td>N/A</td>               <td>O: ETag, If-Modified-Since, If-None-Match</td></tr><br><tr><td>vread</td>                      <td>/[type]/[id]/_history/[vid]</td>    <td>GET</td>            <td>N/A</td>            <td>N/A</td>      <td>N/A</td>             <td>N/A</td></tr><br><tr><td>update</td>                     <td>/[type]/[id]</td>                   <td>PUT</td>            <td>R</td>              <td>Resource</td> <td>O</td>             <td>O: If-Match</td></tr><br><tr><td>delete</td>                     <td>/[type]/[id]</td>                   <td>DELETE</td>         <td>N/A</td>            <td>N/A</td>      <td>N/A</td>             <td>N/A</td></tr><br><tr><td>create</td>                     <td>/[type]</td>                        <td>POST</td>           <td>R</td>              <td>Resource</td> <td>O</td>         <td>O: If-None-Exist</td></tr><br><tr><td rowspan="2">search</td>         <td>/[type]?</td>                       <td>GET</td>            <td>N/A</td>            <td>N/A</td>      <td>N/A</td>            <td>N/A</td></tr><br><tr>                                    <td>/[type]/_search?</td>               <td>POST</td>           <td>application/x-www-form-urlencoded</td>         <td>form data</td> <td>N/A</td>  <td>N/A</td></tr><br><tr><td rowspan="2">search-all</td>     <td>/_search? or /?</td>                <td>GET</td>            <td>N/A</td>            <td>N/A</td>              <td>N/A</td>  <td>N/A</td></tr><br><tr>                                    <td>/_search?</td>                        <td>POST</td>           <td>application/x-www-form-urlencoded</td>         <td>form data</td> <td>N/A</td> <td>N/A</td></tr><br><tr><td>conformance</td>                <td>/ or /metadata</td>                 <td>OPTIONS or GET</td>  <td>N/A</td>           <td>N/A</td>       <td>N/A</td>                   <td>N/A</td></tr><br><tr><td>transaction</td>                <td>/</td>                              <td>POST</td>           <td>R</td>              <td>Bundle</td>    <td>O</td>        <td>N/A</td></tr><br><tr><td>history</td>                    <td>/[type]/[id]/_history</td>          <td>GET</td>            <td>N/A</td>            <td>N/A</td>       <td>N/A</td>         <td>N/A</td></tr><br><tr><td>history-type</td>               <td>/[type]/_history</td>               <td>GET</td>            <td>N/A</td>            <td>N/A</td>       <td>N/A</td>         <td>N/A</td></tr><br><tr><td>history-all</td>                <td>/_history</td>                      <td>GET</td>            <td>N/A</td>            <td>N/A</td>       <td>N/A</td>         <td>N/A</td></tr><br><tr><td rowspan="3">(operation)</td>    <td rowspan="3">/$[name], /[type]/$[name]<br>                                        or /[type]/[id]/$[name]</td>               <td>POST</td>           <td>R</td>                 <td>Parameters</td><td>N/A</td>            <td>N/A</td></tr><br>                                                                        <tr>    <td>GET</td>               <td>N/A</td>             <td>N/A</td>        <td>N/A</td>          <td>N/A</td></tr><br>                                                                        <tr>    <td>POST</td>              <td>application/x-www-form-urlencoded</td>             <td>form data</td>        <td>N/A</td>          <td>N/A</td></tr><br></table>
+
+<p>Notes:</p>
+<ul>
+<li>N/A = not present, R = Required, O = optional</li>
+<li>For operations defined on all resources, including direct access to the meta element, see <a href="resource-operations.html">Resource Operations</a></li>
+</ul>
+<table class="grid"><br><tr><th>Interaction</th><th colspan="6">Response</th></tr><br><tr><th colspan="1">   </th><th>Content-Type</th> <th>Body</th>               <th>Location</th>     <th>Content-Location</th> <th>Versioning</th>                     <th>Status Codes</th></tr><br><tr><td>read</td>           <td>R</td>            <td>R: Resource</td>           <td>N/A</td>          <td>R</td>                <td>R: ETag, Last-Modified</td>        <td>200, 404, 410</td></tr><br><tr><td>vread</td>          <td>R</td>            <td>R: Resource</td>           <td>N/A</td>          <td>R</td>                <td>R: ETag, Last-Modified</td>        <td>200, 404</td></tr><br><tr><td>update</td>         <td>R if body</td>    <td>O: Resource (Prefer)</td>                  <td>R on create</td>    <td>R</td>                <td>R: ETag, Last-Modified</td>        <td>200, 201, 400, 404, 405, 409, 412, 422</td></tr><br><tr><td>delete</td>         <td>R if body</td><td>O: OperationOutcome</td>  <td>N/A</td>          <td>N/A</td>              <td>N/A</td>                            <td>200, 204, 404, 405, 409, 412</td></tr><br><tr><td>create</td>         <td>R if body</td>    <td>O : Resource (Prefer)</td>                <td>R</td>            <td>R</td>               <td>R: ETag, Last-Modified</td>        <td>201, 400, 404, 405, 422</td></tr><br><tr><td>search</td>         <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>          <td>N/A</td>              <td>N/A</td>                            <td>200, 403?</td></tr><br><tr><td>search-all</td>     <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>          <td>N/A</td>              <td>N/A</td>                            <td>200, 403?</td></tr><br><tr><td>conformance</td>    <td>R</td>            <td>R: Conformance</td>        <td>N/A</td>          <td>O</td>                <td>N/A</td>                            <td>200, 404</td></tr><br><tr><td>transaction</td>    <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>          <td>N/A</td>              <td>N/A</td>                            <td>200, 400, 404, 405, 409, 412, 422</td></tr><br><tr><td>history</td>        <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>             <td>N/A</td>              <td>N/A</td>                            <td>200</td></tr><br><tr><td>history-type</td>   <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>          <td>N/A</td>              <td>N/A</td>                            <td>200</td></tr><br><tr><td>history-all</td>    <td>R</td>            <td>R: Bundle</td>             <td>N/A</td>          <td>N/A</td>              <td>N/A</td>                            <td>200</td></tr><br><tr><td>(operation)</td>       <td>R</td>               <td>R: Parameters/Resource</td><td>N/A</td>        <td>N/A</td>              <td>N/A</td>                            <td>200</td></tr><br></table>
+
+<p>Note: this table lists the status codes described here, but other status codes are possible as described by the HTTP specification.<br>Additional codes that are likely a server errors and various codes associated with authentication protocols.</p>
+<p> &copy; HL7.org 2011 - 2014. FHIR DSTU (v0.2.1-2606)构建于2014  7月2号 16:29+0800 星期三 .<br>链接：<a href="http://hl7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://hl7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://hl7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677" target="_blank" rel="external">提交变更建议</a></p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FHIR 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首页 &amp;gt;文档 &amp;gt; 入门指南    
+1.8.0  FHIR概述欢迎使用 FHIR 标准，它是卫生保健信息电子化交换的一种标准。这部分是对标准的概述，作为一个路线图，希望能帮助初次接触的读者更快上手。   
+1.8.0.1  背景医疗保健记录越来越多的被数字化。当病人在整个医疗系统中转诊的时候，要求他们的病历能够获得、能够找到和能够理解。更深层次的，能够支撑自动化地临床决策支持和其他机器">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FHIR 中文版">
+<meta property="og:url" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/overview.html">
+<meta property="og:site_name" content="FHIR 中文版">
+<meta property="og:description" content="首页 &amp;gt;文档 &amp;gt; 入门指南    
+1.8.0  FHIR概述欢迎使用 FHIR 标准，它是卫生保健信息电子化交换的一种标准。这部分是对标准的概述，作为一个路线图，希望能帮助初次接触的读者更快上手。   
+1.8.0.1  背景医疗保健记录越来越多的被数字化。当病人在整个医疗系统中转诊的时候，要求他们的病历能够获得、能够找到和能够理解。更深层次的，能够支撑自动化地临床决策支持和其他机器">
+<meta property="og:image" content="http://wanghaisheng.github.io/fhir-cn/home/index.html/../material/header-tabs.png">
+<meta property="og:updated_time" content="2015-08-17T07:52:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FHIR 中文版">
+<meta name="twitter:description" content="首页 &amp;gt;文档 &amp;gt; 入门指南    
+1.8.0  FHIR概述欢迎使用 FHIR 标准，它是卫生保健信息电子化交换的一种标准。这部分是对标准的概述，作为一个路线图，希望能帮助初次接触的读者更快上手。   
+1.8.0.1  背景医疗保健记录越来越多的被数字化。当病人在整个医疗系统中转诊的时候，要求他们的病历能够获得、能够找到和能够理解。更深层次的，能够支撑自动化地临床决策支持和其他机器">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-50564678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div class='navbar menu'>
+    
+        <a href="/fhir-cn/home/index.html" title="首页">
+            <div class="menu-action"><img src="../images/icon-home.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/doc/documentation.html" title="文档">
+            <div class="menu-action"><img src="../images/icon-documentation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/impl/implementation.html" title="实现">
+            <div class="menu-action"><img src="../images/icon-implementation.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/res/resourcelist.html" title="资源">
+            <div class="menu-action"><img src="../images/icon-res.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/clin/clinical.html" title="临床类资源">
+            <div class="menu-action"><img src="../images/icon-clinical.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/admin/administration.html" title="行政管理类资源">
+            <div class="menu-action"><img src="../images/icon-administration.png"></div>
+        </a>
+    
+        <a href="/fhir-cn/infra/infrastructure.html" title="基础架构类资源">
+            <div class="menu-action"><img src="../images/icon-infrastructure.png"></div>
+        </a>
+    
+        <a href="https://github.com/hl7-fhir/hl7-fhir.github.io" title="github">
+            <div class="menu-action"><img src="../images/github.png"></div>
+        </a>
+    
+</div>
+
+    <div id="wrap">
+      <div class='header'>
+    
+        <h1> FHIR 中文版 </h1>
+    
+</div>
+
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <footer class="article-footer">
+        
+        
+
+      </footer>
+      <div class="article-entry" itemprop="articleBody">
+        
+          <p>  <a href="../home/index.html">首页</a> &gt;<a href="documentation.html">文档</a> &gt; <strong>入门指南</strong>    </p>
+<h2 id="1-8-0_FHIR概述">1.8.0  FHIR概述</h2><p>欢迎使用 FHIR 标准，它是卫生保健信息电子化交换的一种标准。这部分是对标准的概述，作为一个路线图，希望能帮助初次接触的读者更快上手。   </p>
+<h3 id="1-8-0-1_背景">1.8.0.1  背景</h3><p>医疗保健记录越来越多的被数字化。当病人在整个医疗系统中转诊的时候，要求他们的病历能够获得、能够找到和能够理解。更深层次的，<br>能够支撑自动化地临床决策支持和其他机器处理，要求数据是结构化的 并且是标准化的。(参考<a href="change.html">卫生保健所面临的数字化挑战</a>)</p>
+<p><a href="http://HL7.org/" target="_blank" rel="external">HL7</a>在过去20多年里，一直致力于构建卫生保健数据交换和信息模型标准来解决这些难题。FHIR是一种新标准，采用了其他行业的通用技术，<br>同时借鉴了在定义和实现 HL7V2，V3,RIM 和 CDA 标准过程中所获得成功、失败的教训。FHIR可以单独作为数据交换标准来使用，也可以和其他广泛应用的标准一起来使用(参考<a href="comparison.html">FHIR与其他HL7标准的比较</a>)   </p>
+<p>FHIR旨在不牺牲信息完整性的前提下，简化开发和实现。它利用了现有的逻辑和理论模型，为不同的应用程序间交换数据提供了一种一致的、易于实现的、健壮的机制。FHIR的内在机制使得其能够追溯到 HL7 RIM 和其他内容模型，这就保证了与HL7之前定义的模式，最佳实践间的保持一致，毋须开发人员充分了解 RIM 和 HL7 V3 的其他衍生制品。(参考<a href="comparison.html">FHIR与其他HL7标准的比较</a>)    </p>
+<h3 id="1-8-0-2_组件">1.8.0.2  组件</h3><p>FHIR 中最基本的组件叫做<a href="resource.html">资源</a>.所有可交换的内容都被定义成一个个资源。所有资源都拥有如下特征：  </p>
+<ul>
+<li>通用的<a href="resource.html">定义</a>、<a href="formats.html">表达</a>它们以及从<a href="datatypes.html">数据类型</a>(最基本的可重用元素)构建它们的方式   </li>
+<li>通用的<a href="resource.html#metadata">元数据</a>集合   </li>
+<li><a href="narrative.html">供人可读的部分</a>   </li>
+</ul>
+<h3 id="1-8-0-3_方法论">1.8.0.3  方法论</h3><h4 id="1-8-0-3-1_信息建模的方法">1.8.0.3.1  信息建模的方法</h4><p>FHIR 的理念在于定义一个资源的基础集合，要么直接使用它们，要么相互组合来满足大多数常见的应用场景的需求。<br>FHIR资源旨在定义绝大多数开发实现中通用的核心信息集合的信息内容和结构。如果需要的话，有内在的<a href="extensibility.html">扩展机制</a>来满足剩下的需求。  </p>
+<p>FHIR 的建模采用了一种组合式的方法论。相比而言，HL7 V3 建模是基于“model by constranit”(参考<a href="comparison.html">FHIR与其他HL7标准的比较</a>) 。对于 FHIR，特殊的应用场景通常是通过利用<a href="references.html">资源引用</a>整合资源来实现的。尽管对于一个特定场景，单独一个资源可能是存在价值的，<br>更多的是对资源互相整合和裁剪来满足特定的需求。用来描述资源如何整合使用的两类特殊资源：  </p>
+<ul>
+<li><a href="../infra/conformance.html">一致性声明</a>——描述一种实现中所暴露的交换数据的接口</li>
+<li><a href="../infra/structuredefinition.html">StructureDefinition</a>——描述具体实现中所使用的资源中定义的用以约束基数、可选性、术语、数据类型和扩展的其他规则。</li>
+</ul>
+<h4 id="1-8-0-4_标准规范">1.8.0.4 标准规范</h4><p>基本上，FHIR标准分为三大块：  </p>
+<ul>
+<li>基础<a href="documentation.html">文档</a>部分——描述了<a href="resources.html">资源是如何定义</a>的，<a href="datatypes.html">数据类型</a>、<a href="terminologies.html">代码编码</a>的定义和<a href="xml.html">XML</a> 、<a href="json.html">JSON</a>格式的相关背景信息。  </li>
+<li><a href="../impl/implementation">开发实现部分</a>——描述在<a href="../impl/http.html">REST</a> 、<a href="../impl/messaging.html">消息</a>、<a href="../impl/documents.html">文档</a>和<a href="../impl/services.html">SOA</a>中使用资源。 </li>
+<li><a href="resourcelist.html">资源列表</a>——resourcelist.htmlFHIR中定义的所有资源的列表。其中又分为<a href="../clin/clinical.html">临床类</a>、 <a href="../admin/administration.html">行政管理类</a> 和<a href="../infra/infrastructure.html">基础架构类</a>三大类。 </li>
+</ul>
+<p>资源有多种用途，从最基本的<a href="../clin/careplan.html">护理计划</a>和<a href="../clin/diagnosticreport.html">诊断报告</a>等临床内容到如<a href="../infra/messageheader.html">消息头</a>、<a href="../infra/conformance.html">一致性声明</a>等基础架构。虽然它们具有共同的技术特性，但却以完全不同的方式来使用。注意毋须为了使用资源而必须使用REST。 </p>
+<h3 id="1-8-0-5_如何入门">1.8.0.5 如何入门</h3><p>最好是快速浏览一下 <a href="resourcelist.html">资源列表</a>，对已经有了哪些资源有个感性认识，然后看一下<a href="../clin/patient.html">患者</a>的定义来看看资源的定义是什么样的，<br>接着读一下以下介绍背景信息的章节：</p>
+<ul>
+<li><a href="resource.html">资源的定义</a>——资源是如何定义的  </li>
+<li>所有资源都有的<a href="narrative.html">叙述性文本</a>，以及<a href="references.html">资源之间如何互相引用</a>   </li>
+<li><a href="formats.html">格式</a>：<a href="xml.html">XML</a> 、<a href="json.html">JSON</a></li>
+<li><a href="extensibility.html">扩展相关</a>——标准能够保持简单的关键</li>
+<li>如果你之前了解 HL7 标准(V2 V3 CDA)的话，<a href="comparison.html">FHIR 与其他 HL7 标准的比较</a>也值得一看。 </li>
+</ul>
+<h4 id="1-8-0-5-1_顶部标签">1.8.0.5.1 顶部标签</h4><p>整个标准规范中都会看到这些标签，很多读者可能会遗漏：</p>
+<p><img src="../material/header-tabs.png" alt="">  </p>
+<p><a href="resources.html">资源</a>和<a href="datatypes.html">数据类型</a>都是以一种类似XML的、易于阅读的方式来呈现的，它们也有详细描述内容的正规定义。<br>另外，大多数资源映射到很多不同的格式，如HL7V2，HL7V3 RIM ，CDA，DICOM等。同时，所有资源至少包含一个实例(有时候会有更多)，适当的时候，也会有描述它们如何在特殊情况下使用的profile规范。最后，一些资源包含了 帮助开发人员理解它们背后的设计原理的小贴士/备注。      </p>
+<h3 id="1-8-0-6_找到额外信息和提供反馈">1.8.0.6 找到额外信息和提供反馈</h3><p>为了能够让更多读者看懂的同时，FHIR标准是面向开发人员社区的——这些真正利用标准编写程序的人。为了满足开发人员社区的需求，编辑人员力求标准行文精确，减少在编写程序之前的阅读时间(然而这份标准并不如我们所想的那么简明扼要，有时候是医疗保健和现实世界的复杂度所致)。鉴于此，在开发过程中并不必要的信息，诸如原理、备选方案、一些争论点和将来的计划等并没有包含在标准里面。同样，开发人员时不时会发遇到标准不明晰或者不完整的清空。最终，会有一些情况，标准可能是错的，或者是对其进行修订以更好的满足开发人员的需求。<br>因此HL7提供了多种方法，通过这些方法可以维护和获取一些额外的FHIR相关信息，能够提供一些帮助，响应一些变更请求。  </p>
+<h4 id="1-8-0-6-1_评论">1.8.0.6.1 评论</h4><p>在每页底部，都有一个评论的部分，可以就特定章节进行提问和讨论。评论由 FHIR 编辑人员和HL7工作组来监管，每个问题都会在一定的时间内给予答复。This content will occasionally be currated to ensure ongoing relevance, particularly if the specification is subsequently updated to eliminate confusion that may have spawned an initial comment.   </p>
+<h4 id="1-8-0-6-2_FHIR_Wiki">1.8.0.6.2  FHIR Wiki</h4><p>FHIR 项目团队维护着一个<a href="http://wiki.HL7.org/index.php?title=FHIR" target="_blank" rel="external">wiki</a>，记录了开发过程、方法学和设计决策。开发人员和其他人员也可以参与到wiki中来，提供一些暂未出现在标准中的指导和补充信息。注意 FHIR wiki上的内容不具有权威性，与FHIR标准的一致性无关。同样，一些内容可能也没有和最近的FHIR版本保持一致。<br>FHIR标准中的每个页面在wiki中都有一页内容。用以记录原理、决策点和其他与开发人员无关的信息。额外的页面包括<a href="http://wiki.HL7.org/index.php?title=FHIR_Development_Process" target="_blank" rel="external">FHIR 方法论</a>、<a href="http://wiki.HL7.org/index.php?title=FHIR_Guide_to_Authoring_Resources" target="_blank" rel="external">FHIR 设计工具的使用</a>等。要研究wiki的话，建议从<a href="http://wiki.HL7.org/index.php?title=FHIR" target="_blank" rel="external">首页</a>开始.   </p>
+<h4 id="1-8-0-6-3_正式变更请求">1.8.0.6.3 正式变更请求</h4><p>正式请求可以在<a href="http://gforge.HL7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=688" target="_blank" rel="external">这里</a>提交。对应的工作组会审核这些请求，并作出是否将其纳入到标准中的决策，其中包括了纳入到那个版本。 </p>
+<h4 id="1-8-0-6-3_源码/参与机制的额外信息">1.8.0.6.3 源码/参与机制的额外信息</h4><p>除了上述机制，HL7提供了一个 Stack Overflow 的标签，邮件列表和skype聊天频道来提供对开发人员各个层面的全方位的支持。如何使用这些请参考<a href="http://wiki.HL7.org/index.php?title=FHIR#More_help_and_Asking_Questions" target="_blank" rel="external">指令</a></p>
+<h4 id="1-8-0-6-4_讨论组">1.8.0.6.4  讨论组</h4><p>qq群：194806088</p>
+<p>&copy; HL7.org 2011+. FHIR DSTU (v0.5.0-6321) generated on Sun, Aug 16, 2015 16:59+0000.<br>  链接：<a href="http://HL7.org/implement/standards/fhir/dstu.html" target="_blank" rel="external">试行版是什么</a> |<a href="http://HL7.org/implement/standards/fhir/history.html" target="_blank" rel="external">版本更新情况</a> | <a href="http://HL7.org/implement/standards/fhir/license.html" target="_blank" rel="external">许可协议</a> |<a href="http://gforge.HL7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=688" target="_blank" rel="external">提交变更建议</a></p>
+
+        
+      </div>
+    
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+
+
+      </div>
+      <footer id="footer">
+  <div class="footer-desc">
+      
+  </div>
+  <div class="footer-info">
+    <div class="copyright">
+      &copy; 2015 wanghaisheng<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script type='text/javascript' src='http://ajax.useso.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.4.2'></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

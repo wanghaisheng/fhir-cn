@@ -10,6 +10,17 @@ the Chinese translation of FHIR
 *  nodejs 
 *  npm 
 *  hexo3.0   
+
+注意：如果你的电脑中存在iojs、nodejs 多个版本，请先使用 nvm use选择一个版本，比如，这里选择
+```
+nvm  use iojs-v3.0.0
+```
+由于我电脑上也存在多个python版本，请切换至2.7
+```
+pyenv global 2.7.7
+
+npm install hexo --no-optional
+```
 2.theme的安装  
 ```
 git clone https://github.com/wanghaisheng/hexo-theme-lion.git themes/lion   
@@ -23,6 +34,15 @@ hexo server
 ```  
 
 
+
+## 校对进度
+
+| 名称 | 中文地址 | 原始地址 | 状态 | 更新日期 |
+| ---- | ---- | ---- | ---- | ---- |
+| HL7 FHIR简介 |  http://wanghaisheng.github.io/fhir-cn/doc/summary.html |  http://hl7-fhir.github.io/summary.html | [x] | 2015-08-17 |
+| HL7 FHIR 入门指南 | http://wanghaisheng.github.io/fhir-cn/doc/overview.html | http://hl7-fhir.github.io/overview.html | [x] |2015-08-17 |
+| HL7 FHIR 开发人员入门指南 | http://wanghaisheng.github.io/fhir-cn/doc/overview-dev.html | http://hl7-fhir.github.io/overview-dev.html | [x] |2015-08-17 |
+| HL7 FHIR 医护人员入门指南 | http://wanghaisheng.github.io/fhir-cn/doc/overview-clinical.html | http://hl7-fhir.github.io/overview-clinical.html | [x] |2015-08-17 |
 
 
 

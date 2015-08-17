@@ -3,416 +3,129 @@ date:
 categories: doc
 ---
 
-  [首页](../home/index.html) >[文档](documentation.html) > **开发者指南**	
-
-## 1.9.1 FHIR Overview - Developers
-
-FHIR (Fast Health Interoperability Resources)旨在数据交换，能够支撑医疗领域的多种流程。该标准基于Restful的最佳实践，能够实现跨团队的医疗系统的集成。 
-
-FHIR 所支持的范围很广泛，包括人、兽医、临床、公共卫生、临床试验、管理和财务等方面。全球通用且支持多种架构和场景。
-
-### 1.9.1.1 框架
-
-FHIR 是基于 `资源`这一通用组件.  每个资源都有如下 [通用特征](resources.html):
-
-*   用URL来标识   
-*   通用的元数据 
-*   [供人可读的XHTML概述](narrative.html)
-*   通用的数据元集合
-*   [扩展的框架](extensibility.html)以支持医疗中的多样性
-
-资源要么是 [XML](xml.html) ，要么是 [JSON](json.html)格式的. 目前已经定义了99种[资源类型](resourcelist.html)
-
-### 1.9.1.2  Patient实例
-
-如何用JSON来表示[patient](patient.html)。 标准中也定义了XML的表达方式。
-
-<div class="example">
-<pre class="json linecounter">
-`{`
-`  "resourceType": "Patient",`
-`  "id" : "23434",`
-`  "meta" : {`
-`    "versionId" : "12",`
-`    "lastUpdated" : "2014-08-18T01:43:30Z"`
-`  }`
-`  "text": {`
-`    "status": "generated",`
-`    "div": "<!-- Snipped for Brevity -->"`
-`  },`
-`  "extension": [`
-`    {`
-`      "url": "http://example.org/consent#trials",`
-`      "valueCode": "renal"`
-`    }`
-`  ],`
-`  "identifier": [`
-`    {`
-`      "use": "usual",`
-`      "label": "MRN",`
-`      "system": "http://www.goodhealth.org/identifiers/mrn",`
-`      "value": "123456"`
-`    }`
-`  ],`
-`  "name": [`
-`    {`
-`      "family": [`
-`        "Levin"`
-`      ],`
-`      "given": [`
-`        "Henry"`
-`      ],`
-`      "suffix": [`
-`        "The 7th"`
-`      ]`
-`    }`
-`  ],`
-`  "gender": {`
-`    "text": "Male"`
-`  },`
-`  "birthDate": "1932-09-24",`
-`  "active": true`
-`}`
-</pre>
-</div>
-
-每个资源包括如下内容:  
-
-*   **resourceType** (line 2) - 必须要有: FHIR 中定义了多种资源类型，详细列表请查看[the full index](resourcelist.html)
-*   **id** (line 3) - 资源自身的id(而非资源中数据的ID 相当于资源在数据库中的主键). 一般而言都是要有的，除了在新建时之外。
-*   **meta** (lines 4 - 7) - 通常要由 : [所有资源都会有的属性(这里和其他地方对元数据的定义略有偏差，参考https://github.com/memect/hao/issues/296)](resources.html#meta)受基础架构控制. 如果没有元数据可以为空
-*   **text** (lines 12 - 17) - 推荐使用: XHTML 包含了资源中 [供人可读的部分](narrative.html) 
-*   **extension** (lines 12 - 17) - 可选: [Extensions](extensibility.html)由扩展框架所定义
-*   **data** (lines 18 - 43) - 可选: 每种资源所定义的数据项。
-
-备注 尽管标准中总是以所定义的顺序来显示JSON中数据的顺序，但很多JSON库有其他排序标准。
-### 1.9.1.3 交互
-
-为了操作数据，FHIR 定义了[REST API](http.html):
-
-*   [Create](http.html#create) = POST https://example.com/path/{resourceType}
-*   [Read](http.html#read) = GET https://example.com/path/{resourceType}/{id}
-*   [Update](http.html#update) = PUT https://example.com/path/{resourceType}/{id}
-*   [Delete](http.html#delete) = DELETE https://example.com/path/{resourceType}/{id}
-*   [Search](http.html#search) = GET https://example.com/path/{resourceType}?search parameters...
-*   [History](http.html#history) = GET https://example.com/path/{resourceType}/{id}/_history
-*   [Transaction](http.html#transaction) = POST https://example.com/path/
-*   [Operation](operations.html) = GET https://example.com/path/{resourceType}/{id}/${opname}
-
-除了RESTful API之外,FHIR 中还定义了其他的数据交换方式，包括 [文档](documents.html), 
-[消息](messaging.html)和其他类型的[服务](services.html). 
-
-### 1.9.1.4 对多样性的管理
-
-医疗行业的一大特点就是不同地区和细分行业都存在很大的差异性,并不存在一个集中式的权威机构来定义通用的行业规范。鉴于此, 
-FHIR 中定义了[通用扩展框架](extensibility.html)和
-[管理多样性的框架](profiling.html).
-
-### 1.9.1.5 新增资源
-
-为了[新增资源](http.html#create), 需要发送一个 HTTP 的 POST 请求到某个资源节点(也就是某个URL).如下所示
-
-<div class="example">
-<pre class="http linecounter">
-`POST {some base path}/Patient HTTP/1.1`
-`Authorization: Bearer 37CC0B0E-C15B-4578-9AC1-D83DCED2B2F9`
-`Accept: application/json+fhir`
-`Content-Type: application/json+fhir`
-`Content-Length: 1198`
-` `
-`{`
-`  "resourceType": "Patient",`
-`  ...`
-`}`
-</pre>
-</div>
-
-向服务器提交一条患者记录, 服务器可以根据自己的情况分配ID来存储该患者记录。备注：
-
-*   **/Patient** (line 1) - 处理所有患者的节点- 这里使用资源类型的名称
-*   **Authorization** (line 2) - 参考 [Security for FHIR](security.html)
-*   **Accept, Content-Type** (lines 3-4) - 如果资源的数据是JSON格式，content type需要设置成这样application/json+fhir (XML的话设置成 application/xml+fhir). 数据的编码始终是UTF-8
-*   **id** (line 9) - 待新建的记录中并没有id，由服务器来分配   
-*   Resource Content, lines 8+ - 这时候也没有任何元数据。资源的其他部分同上述示例  
-
-### 1.9.1.6 新增资源的响应 
-
-响应中包含HTTP 201，表示服务器已经成功新建该条记录。location header 属性中包含了访问该资源的URL。响应中亦可包含[OperationOutcome](operationoutcome.html) 资源来表达处理的一些细节,并不做硬性要求。
-
-<div class="example">
-<pre class="http linecounter">
-`HTTP/1.1 201 Created`
-`Content-Length: 161`
-`Content-Type: application/json+fhir`
-`Date: Mon, 18 Aug 2014 01:43:30 GMT`
-`ETag: "1"`
-`Location: http://example.com/Patient/347`
-` `
-`{`
-`  "resourceType": "OperationOutcome",`
-`  "text": {`
-`    "status": "generated",`
-`    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">The operation was successful</div>"`
-`  }`
-`}`
-</pre>
-</div>
-
-Notes:
-
-*   **HTTP/1.1 201** (line 1) - 操作成功. Note that HTTP/1.1 is strongly recommended but not required
-*   **ETag** (line 5) - used in the [version aware update](http.html#update) pattern
-*   **Location** (line 6) - the id the server assigned to the resource. The id in the url must match the id in the resource when it is subsequently returned
-*   **operationOutcome** (line 9) - OperationOutcome resources in this context have no id or meta element (they have no managed identity)
-
-#### 1.9.1.6.1 Error response
-
-出于多种原因，服务器会返回一个错误信息，FHIR  内容相关的一些错误信息以HTTP 状态码加一个[OperationOutcome](operationoutcome.html)来表达.
-如下是一个不满足服务器端业务规则时的返回信息:
-
-<div class="example">
-<pre class="http linecounter">
-`HTTP/1.1 422 Unprocessable Entity`
-`Content-Length: 161`
-`Content-Type: application/json+fhir`
-`Date: Mon, 18 Aug 2014 01:43:30 GMT`
-` `
-`{`
-`  "resourceType": "OperationOutcome",`
-`  "text": {`
-`    "status": "generated",`
-`    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">MRN冲突`
-`   - the MRN 123456 is already assigned to a different patient</div>"`
-`  },`
-`}`
-</pre>
-</div>
-
-Notes:
-
-*   服务器可通过[OperationOutcome](operationoutcome.html)来表达更为详细的错误信息
-
-### 1.9.1.7 Read Request
-
-[读取资源内容](http.html#read)是通过HTTP GET请求来实现的. 
-
-<div class="example">
-<pre class="http linecounter">
-`GET /Patient/347?_format=xml HTTP/1.1`
-`Host: example.com`
-`Accept: application/xml+fhir`
-`Cache-Control: no-cache`
-</pre>
-</div>
-
-Notes:
-
-*   **347** (line 1) - 要访问资源的id
-*   **_format=xml** (line 1) - 希望返回的数据格式，这种方式适合于客户端无法访问HTTP 头信息的情况，例如XSLT转换时，也可以通过HTTP 头中的accept字段来指定(see [Mime Types](http.html#mimetypes)
-*   **cache control** (line 4) - 如何控制并发是很重要的，但FHIR中并未做出规定,更多信息请参考[http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html](http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) 或者 [https://www.mnot.net/cache_docs/](https://www.mnot.net/cache_docs/)
-
-### 1.9.1.8 Read Response
-
-读取单个资源内容GET请求的响应是单独的一个资源. 
-
-<div class="example">
-<pre class="http linecounter">
-`HTTP/1.1 200 OK`
-`Content-Length: 729`
-`Content-Type: application/xml+fhir`
-`Last-Modified: Sun, 17 Aug 2014 15:43:30 GMT`
-`ETag: "1"`
-` `
-`<?xml version="1.0" encoding="UTF-8"?>`
-`<Patient xmlns="http://hl7.org/fhir">`
-`  <id value="347"/>`
-`  <meta>`
-`    <versionId value="1"/>`
-`    <lastUpdated value="2014-08-18T01:43:30Z"/>`
-`  </meta>`
-`  <!-- content as shown above for patient -->  `
-`</Patient>`
-</pre>
-</div>
-
-Notes:
-
-*   **id** (line 8) - 资源的id，与请求中的id一致 
-*   **versionId** (line 11) - 该资源的最新版本. 最佳实践中要求该值与 ETag值匹配 (see [version aware update](http.html#update)), 对于客户端而言，不能认为二者总是匹配的.  一部分服务器并不记录资源的版本信息。
-*   尽管建议服务器能够保留版本信息，但不做强制性要求
-*   **lastUpdated** (line 12) - 如果存在该字段，字段值应与HTTP header中的值保持一致
-
-### 1.9.1.9 Search Request
-
-除了读取单个资源内容之外，也可以通过[查询参数和变量](search.html) [查询资源内容](http.html#search)，形式一般如下:
-
-<div class="example">
-<pre class="http">
-GET base/{resourceType}?criteria HTTP/1.1
-</pre>
-</div>
-
-or simply https://example.com/{resourceType}?criteria. The criteria is a set of 
-http parameters that specify which resources to return. The search operation
-
-<div class="example">
-<pre class="http">
-https://example.com/base/MedicationPrescription?patient=347
-</pre>
-</div>
-
-会返回该患者的所有处方信息.
-
-### 1.9.1.10 Search Response
-
-查询请求返回的对象是一个[bundle](extras.html#bundle): 如未明确要求，只返回满足查询参数要求的资源元数据:
-
-<div class="example">
-<pre class="json linecounter">
-`{`
-`  "resourceType": "Bundle",`
-`  "id" : "eceb4882-5c7e-4ca4-af62-995dfb8cef01"`
-`  "meta" : {`
-`    "lastUpdated" : "2014-08-19T15:43:30Z"`
-`  },`
-`  "base": "http://example.com/base",`
-`  "total": "3",`
-`  "link": [`
-`    {`
-`      "relation" : "next",`
-`      "url" : "https://example.com/base/MedicationPrescription?patient=347&searchId=ff15fd40-ff71-4b48-b366-09c706bed9d0&page=2"`
-`    }, {`
-`      "relation" : "self",`
-`      "url" : "https://example.com/base/MedicationPrescription?patient=347"`
-`    }`
-`  ],`
-`  "item": [`
-`    {`
-`      "resourceType": "MedicationPrescription",`
-`      "id" : "3123",`
-`      "meta" : {`
-`        "versionId" : "1",`
-`        "lastUpdated" : "2014-08-16T05:31:17Z"`
-`      }, `
-`      ... content of resource ...`
-`    }, `
-`    ... 2 additional resources ....`
-`  ]`
-`}`
-</pre>
-</div>
-
-Notes:
-
-*   **resourceType** (line 7) - &quot;SearchResults&quot; is the name for a bundle returned from a search
-*   **id** (line 3) -服务器为该次查询响应bundle的唯一标识. 有些情况下要求该id满足 [ 全球唯一](extras.html#bundle-unique)
-*   **meta.lastUpdated** (line 10) - This should match the HTTP header, and should be the date the search was executed, or more recent, depending on how the [server handles ongoing updates](search.html#currency). The lastUpdated data SHALL be the same or more recent than the most recent resource in the results
-*   **base** (line 12) - 返回的内容中所有[资源引用](references.html) 相对地址的根地址。
-*   **total** (line 13) - 满足查询条件的记录数量. 这里的数量指的是总数，而非仅该bundle中所包含的数量，详情查看 [可以对结果进行分页查询](http.html#search)
-*   **link** (line 14) - A set of named links that give related contexts to this bundle. Names defined in this specification: [first](http.html#search), [prev](http.html#search), [next](http.html#search), [last](http.html#search), [self](http.html#search)
-*   **item** (line 23) - 用来表达满足查询条件的实际资源的元数据信息
-*   如果加上include标签，可以强制要求服务器在返回结果中包含资源的内容，详情请参阅[return additional related resources](search.html#include)
-
-### 1.9.1.11 Update Request
-
-客户端用新版本的资源记录替换服务器中的老版本.
-
-<div class="example">
-<pre class="http linecounter">
-`PUT /Patient/347 HTTP/1.1`
-`Host: example.com`
-`Content-Type: application/json+fhir`
-`Content-Length: 1435`
-`Accept: application/json+fhir`
-`If-Match: 1`
-` `
-`{`
-`  "resourceType": "Patient",`
-`  "id" : "347",`
-`  "meta" : {`
-`    "versionId" : "1",`
-`    "lastUpdated" : "2014-08-18T01:43:30Z"    `
-`  },`
-`  ...`
-`}`
-</pre>
-</div>
-
-Notes:
-
-*   **resourceType** (line 1) - &quot;Patient&quot; URL请求中的资源类型必须与提交的数据中的资源类型保持一致 (line 9)
-*   **resource id** (line 1, &quot;347&quot;) - URL中的资源id必须与提交的数据中id值保持一致(line 9)
-*   **If-Match** (line 6) - 如果存在该字段，必须与资源内容中的meta.versionId值保持一致 (line 12), 服务器必须核实版本的完整性，如果不支持版本则返回412状态码
-*   **meta.lastUpdated** (line 10) - This value is ignored, and will be updated by the server
-*   **resource content** (line 14) - 这里省略了资源内容
-
-### 1.9.1.12 Update Response
-
-更新请求的响应包括了元数据、状态和OperationOutcome(可选):
-
-<div class="example">
-<pre class="http linecounter">
-`HTTP/1.1 200 OK`
-`Content-Length: 161`
-`Content-Type: application/json+fhir`
-`Date: Mon, 18 Aug 2014 01:43:30 GMT`
-`ETag: "2"`
-` `
-`{`
-`  "resourceType": "OperationOutcome",`
-`  "text": {`
-`    "status": "generated",`
-`    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">The operation was successful</div>"`
-`  }`
-`}`
-</pre>
-</div>
-
-Notes:
-
-*   **ETag** (line 5) - This is the versionId of the new version
-
-### 1.9.1.13 Base Resource Content
-
-所有资源都会包含的基础信息:
-
-<div class="example">
-<pre class="json linecounter">
-`{`
-`  "resourceType" : "X",`
-`  "id" : "12",`
-`  "meta" : {`
-`    "versionId" : "12",`
-`    "lastUpdated" : "2014-08-18T01:43:30Z",`
-`    "profile" : ["http://example-consortium.org/fhir/profile/patient"],`
-`    "security" : [{`
-`      "system" : "http://hl7.org/fhir/v3/ActCode",`
-`      "code" : "EMP"`
-`    }],`
-`    "tag" : [{`
-`      "system" : "http://example.com/codes/workflow",`
-`      "code" : "needs-review"`
-`    }]`
-`  },`
-`  "implicitRules" : "http://example-consortium.org/fhir/ehr-plugins",`
-`  "language" : "X"`
-`}`
-</pre>
-</div>
-
-Implementers notes:  
-
-*   **resourceType** (line 2) - 每个资源都会资源类型的字段. XML的话也就是根节点
-*   **id** (line 3) - 在资源新建之时分配后不再变化.只有在初次创建该资源时才没有该字段
-*   **meta.versionId** (line 5) - 当资源内容(除了meta.security、meta.profile、meta.tag三个之外)发生变更时该值随之变化 
-*   **meta.lastUpdated** (line 6) - 随versionId的变化而变化. 如果服务器不维护版本信息，则不用记录该字段
-*   **meta.profile** (line 7) - 表示资源的内容是否遵循某个规范(比方说满足阿里健康的开放API的要求或者说满足卫计委共享文档中的要求). 更多信息请参考 [Extending and Restricting Resources](profiling.html#resources). 当规范、值集本身发生变动时可以更改该字段的值
-*   **meta.security** (lines 8 - 11) - [安全类标签](securitylabels.html). 该标签将资源与某些安全策略、基础架构策略联系起来。该字段的值可随资源内容的变动而变动,或者随安全体系的控制。
-*   **meta.tag** (lines 12 - 15) - [其他类型的标签](extras.html). 如需将资源与特定的工作流程关联起来可以使用此类标签.在解读资源内容时无需考虑此类标签的值 。对此类标签值的更新不会影响资源内容版本的变化 [updated](http.html#tags) (这里好像是说 可以不变更资源的版本就修改tag标签的值 还是说tag值的修改压根就不影响资源版本 其他的security和profile tag三个字段是否都适用呢？待考证)
-*   **implicitRules** (lines 16) - 如何准确安全的处理资源内容而在发送接收双方达成的[协议](profiling.html#agreement). 由于使用了该字段就意味着其他系统要使用其中的数据可能会出现解读错误的情况，限制了数据的重复利用，故不推荐适用该字段
-*   **language** (lines 17) -  [资源内容所采用的表达语言](narrative.html#language). 当前，资源内容中亦可包含其他语言的内容; 该字段表示的是资源的主要语言。
-
-
-&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
+  [首页](../home/index.html) >[文档](documentation.html) > **医护人员入门指南**	
+
+## 1.8.2 FHIR Overview - Clinicians
+
+FHIR (Fast Health Interoperability Resources)旨在实现医疗健康信息的交换。其中包括了临床数据和健康相关的行政管理数据、公共卫生和临床研究数据。
+既包括了人类和兽医，又适合大多数应用场景——住院、慢病管理、社区护理、健康联盟等。
+
+FHIR 是一个以软件开发人员为对象的标准规范。真正使用 FHIR 来构建各种信息系统的是软件开发人员。FHIR 标准规范并没有想去定义最佳的临床实践，或为系统界面、工作流程提供建议。
+此类指南是很有帮助的，但是不在 FHIR 的范围之内。
+
+由于 FHIR 是紧紧围绕着开发实现的，该标准规范的很多方面都是为了解决医疗信息系统之间数据交换的技术问题。这部分内容介绍了FHIR 中能够提供哪些内容，跳过了一些技术的细节，
+试图强调 FHIR 中医护人员可能会有所兴趣的内容。但如果你想了解更多技术细节，请自行了解。
+
+### 1.8.2.1  资源 Resources
+
+从临床角度来看，FHIR 标准最核心的部分是理解资源的概念。把资源看作是表示所要采集和共享的不同类型医疗信息、管理信息的“form”(这里的form既可以是信息系统或纸质的各种表单，
+    也可以是为各种不同类型信息所定义的通用结构)。 FHIR 标准定义了一个每种类型
+医疗信息的一个通用结构-比如过敏、处方、转诊申请等等。
+
+FHIR 数据，也就是存储这些资源实例的各种库。资源实例描述了患者信息(人口学信息、疾病症状、手术操作等)、管理类信息(医护人员、组织机构、地理位置)。一些资源是用来支持信息交换的技术类基础架构组件——描述系统能做些什么，定义允许值集等等。
+FHIR 存储库可以是 EHR系统、药房系统、HIS 系统等。诸如决策支持系统等其他系统，即使并没有存在任何信息，也可以暴露一些 FHIR 接口。
+
+### 1.8.2.2  Building useful Clinical Systems out of Molecules
+
+每个资源都包含了很少量的高度专业的数据。单个资源并不能表达什么内容，但很多很小的资源聚集起来就构成了一份有用的临床记录。信息系统将用户的行为对应到相应的资源中去。
+
+资源之间的关联构成了信息的网络，能够表示一份健康记录。比如，处方资源实例可能会引用下达该处方的医护人员，处方所属的患者和处方中所包含的药物。每个资源都是单独来维护的。
+但是，FHIR 接口使得能够获取所有这些关联，并将碎片化的信息组装成一个用户的完整视图。
+
+### 1.8.2.3  Extensibility and Profiling
+
+FHIR 中的 form 都是通用型的。必须能够在不同的国家、不同的医生不同的场景(人医、兽医、公共卫生、研究等)下可以使用。FHIR 认识到在医疗领域一刀切的方法是行不通的，
+必须提供一种能力——添加额外的扩展或强化约束条件，能够根据不同实现中的需求来调整form。比如要支持对受限药品的追踪，需要在“处方”中添加扩展元素，同时也要约束所使用的药品编码。
+因此，即使其中包含了任何扩展，或者说接收的系统用不到其中的一些扩展，任何系统也要能够使用完整的form。
+
+ For example, a "prescription" form might have extension elements added to support tracking of restricted medications while also constraining what codes can be used to communicate types of drugs to a particular national standard. However, the forms are designed in such a way that these changes can be made without changing how systems pass forms around. Thus any system can consume completed forms even if they have "extra" elements added - and even if those particular extra elements aren't used by the receiving system.
+
+为了避免大家都在使用的最基本的form过于复杂，FHIR中定了这么一条规则：大多数情况下，一个资源只会包含哪些大多数实现中会使用的数据项。并不是说此类数据项必须总是存在。
+比如，现实中大多数系统能够记录患者的死亡日期，即使在大多数病历中该字段值为空。另一方面，很少的系统能够记录发色，所以base form中不存在发色这个数据项，需要该数据项的系统需要定义一个扩展来记录此项。
+
+为了使得资源的数目不会太多，其中一些资源的范围是很宽泛的。[Observation](observation.html) 可以用作生命体征、检验结果、心理学鉴定结果等很多东西。要限制它的范围，比
+如说该怎么表示血压呢? FHIR 中可以通过对 base form 的profile来实现。首先应该达成共识，应该采集哪些临床信息，细化程度如何，后续FHIR会发布一些用于辅助医生
+直接构建 profile的工具，但现在还处于早期阶段。有兴趣的可以在David Hay的博客上看看相关文章[clinfhir](http://fhirblog.com/2015/07/26/using-clinfhir-to-create-a-profile/)
+上次在厦门CHIMA的研讨会上他曾经示范过。
+
+### 1.8.2.4  Narrative
+
+信息系统间使用FHIR 来共享数据的时候要能够支持语义互操作性-决策支持、规则的触发、趋势分析等。然而并非所有系统都是一样的，都能够识别这样的数据。在数据交换的过程中，即使系统
+只能采集少量的结构化数据也是很有价值的。鉴于此， FHIR 资源不仅仅支持结构化的数据，也支持非结构的人可读的部分，即使没有结构化的数据，医生也能获取信息。
+
+大多数资源实例中应该是存在 Narrative 的部分的，极少数情况下可以忽略这部分内容。一些情况下，可以从结构化数据中生成 Narrative的部分。比如，患者信息的narrative部分如下所示：
+
+```html
+** Peter James Chalmers (OFFICIAL), Jim**  
+ **身份标识**: MRN = 12345 (USUAL)  
+ **联系方式**: ph: (03) 5555 6473(WORK)  
+ **性别**: MALE  
+ **出生日期**: Dec 25, 1974  
+ **死亡标志**: false  
+ **居住地址-家庭地址**: 534 Erewhon St PleasantVille Vic 3999 (HOME)
+
+```
+
+在一些情况下，narrative部分可能是由医生直接生成的。比如出院申请书、病理报告等。 其中一部分narrative数据可能会转化成结构化数据。
+
+### 1.8.2.5  Interfaces
+
+除了定义数据交换时用到的“form”，fhir中还定义了系统交互信息时会使用的各种接口。FHIR 中支持四大类主要的数据交换模式：REST、文档方式、消息方式和服务。
+
+#### 1.8.2.5.1  REST
+
+REST是其中一种最简单的模式。接着前面“form”的比喻，可以把 restful 服务器看作是放满文件柜的一所大房子。在这个房子里，每个文件柜用来存放某种类型的form。文件柜包含了不同的文件夹，每个文件夹有个唯一编号，每个文件夹表示一个唯一的实际存在的事物，
+比如一个患者、一次就诊、一种药物等。每个文件夹中可以包含多个文件，每个文件表示其中一个版本。每次出现病历内容的更新，就在文件夹最顶层增加一份文件。要想了解整个变更的历史情
+况，只需要翻一下文件夹即可。
+
+想象工作人员站在门口。你可以递给工作人员一个申请来处理文件夹中的信息。工作人员和处理请求就构成了整个RESTFUL API。有了这样的API，你可以完成如下：
+
+*   _search_: 查询文件夹中满足一系列查询条件的文件
+*   _read_: 拿到某个文件柜中某个文件夹中的一份文件
+*   _create_: 在某个文件柜中增加一个文件夹
+*   _update_: 在某个文件夹中增加一个新的文件
+*   _delete_: 从文件柜中拿掉一个文件夹 (或者贴个“请勿打开”的条子)
+*   _history_: 在某个文件夹中查看所有的文件 (或者是某个文件夹、某个文件柜乃至整个房间的所有文件)
+*   _transaction_: 批量提交给服务器很多文件夹来处理
+
+EHR 和其他系统可能会使用更加复杂的界面，但其背后都是类似与文件管理人员类似的请求操作。
+
+#### 1.8.2.5.2  Documents
+
+文档是医疗领域数据共享很常见的方式。无论是否需要告知信息的使用者如何使用，文档都是很有作用的，在未来也要能够可靠的获取之前"冷冻"起来的信息。
+文档包括了诸如出院摘要和检验报告等。
+
+在FHIR 中有个特殊的资源叫[Composition](composition.html)，可以将其看做文档的封面。其中确定了文档的标题、作者、日期以及患者、内容。一份 FHIR 文档可以看做是
+装订在一起的一堆sheet，包含了一个封面。可以单独存储或传输，一次性表达一组信息。
+
+#### 1.8.2.5.3  Messaging
+
+大多数医疗信息的交换是通过消息模式来实现的。在消息模式中，是通过一个明确的“做什么事”的请求来从一个系统向另一个系统发送一组信息的。
+一个消息可能要求执行某个检验医嘱、合并2个患者记录或是告知系统患者已经转床。消息与文档收集资源的方式很类似。然而，在消息中，封面页是[MessageHeader](messageheader.html) 
+不像文档那样是订书机装订起来的，消息中的资源更像是回形针别起来的。不期望消息的接收系统会按照数据原来的样子进行存储。
+
+#### 1.8.2.5.4  Services
+
+服务可以看做是轻量级的消息。与其说是完整的封面，而只是在资源的上面贴一个小纸片。有时候，不是发送完整的文件，而是将相应的片段切分开来，发送一个个片段。服务的响应
+是与订书机订起来的纸本类似的资源实例的bundle。服务可能被用在决策支持中，比如“病人Y的处方药X是否有问题？”，“患有A,B,C疾病的患者最佳的治疗方案是什么？”
+
+### 1.8.2.6  Approaching the specification
+
+基于FHIR 的系统功能是由它所支持的资源来定义的。从临床的角度来看，以下内容定义了一份临床记录：
+
+*   定义的资源类型
+*   数据内容，使用何种术语的业务规则
+*   资源之间如何关联
+*   如何检索信息
+
+资源定义的章节中可以找到上述四类信息。可以在 [Clinical](clinical.html) and [Administrative](administration.html) 章节中可以找到感兴趣的资源。
+如何解读资源内容中的解释可以在 [这里查看](formats.html).逻辑表和UML 可能是最容易理解的。同时，不要忘记查看示例。知道如何使用元素来表达真实数据比看定义来的更有帮助。同时，
+查看profile了解在特殊的应用场景中如何对资源进行约束。
+
+由于我们不断地在对 FHIR 标准规范进行重构，欢迎医生和其他专业人员的反馈。在每个资源的页面上有一个链接，指向负责该资源内容的工作组的首页。
+
+
+&copy;  HL7.org 2011+. FHIR DSTU (v0.5.0-6321) generated on Sun, Aug 16, 2015 16:59+0000\.   
+
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)
 

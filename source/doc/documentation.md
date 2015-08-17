@@ -27,9 +27,9 @@ categories: doc
 背景和教程信息
 
 *   [一页纸总结(Glossy)](summary.html)
-*   [简介和路线图](overview.html)
-*   [开发人员指南](overview-dev.html) 
-*   [医务人员指南](overview-clinical.html) 
+*   [入门指南](overview.html)
+*   [开发人员入门指南](overview-dev.html) 
+*   [医务人员入门指南](overview-clinical.html) 
 *   [FHIR 时间线](timelines.html)
 *   [版本间的兼容性](compatibility.html)
 

@@ -12,7 +12,8 @@ categories: doc
 
 
 
-CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，也可以是全编码的如V3实例。  需要注意的是：在FHIR中可以用Composition Resource](../infra/composition.html)来构建 [文档](../impl/documents.html) ，也能够用[DocumentReference](../infra/documentreference.html) 来传输传统的CDA R2文档.
+CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，
+也可以是全编码的如V3实例。  需要注意的是：在FHIR中可以用[Composition Resource](../infra/composition.html)来构建 [文档](../impl/documents.html) ，也能够用[DocumentReference](../infra/documentreference.html) 来传输传统的CDA R2文档.
  
 ####  1.26.3.1 与CDA的异同
 

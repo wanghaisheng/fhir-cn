@@ -13,7 +13,7 @@ HL7发行了大量与上述所列与FHIR不存在重叠的其他标准，主要�
 
 ####   1.26.4.1 EHR功能模型(EHR-FM)    
 
-这份标准为电子健康档案系统的功能富IFA你。FHIR是一种信息交换的标准，可以满足其中一些系统功能。如何在EHR-FM中使用FHIR [见此](ehr-fm.html)    
+这份标准为电子健康档案系统的功能规范。FHIR是一种信息交换的标准，可以满足其中一些系统功能。如何在EHR-FM中使用FHIR [见此](ehr-fm.html)    
 
 ####   1.26.4.2 语境管理标准Context Management Specifications (CCOW)     
 

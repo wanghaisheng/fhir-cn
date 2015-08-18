@@ -8,13 +8,13 @@ categories: doc
 
  [比较](comparison.html) >[V2消息](comparison-v2.html)> [V3](comparison-v3.html)>**CDA** >[其他](comparison-other.html) 
 
-### 1.10.3  Clinical Document Architecture (CDA)
+### 1.26.3  Clinical Document Architecture (CDA)
 
 
 
 CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中包含了文档相关的元数据， 用不同的章节来表达不同的临床相关内容。文档可以使未编码的，如PDF，也可以是全编码的如V3实例。  需要注意的是：在FHIR中可以用Composition Resource](../infra/composition.html)来构建 [文档](../impl/documents.html) ，也能够用[DocumentReference](../infra/documentreference.html) 来传输传统的CDA R2文档.
  
-####  1.10.3.1 与CDA的异同
+####  1.26.3.1 与CDA的异同
 
 1、**临床文档的关注点:**  正如它的名称所暗示，临床文档架构仅限于“临床”的场景。CDA模型不支持那些与临床无关的内容的交换，诸如财务信息，所处理的文档也只是和病人相关的哪些。(在一些情况下，诸如HL7结构化产品标签标准——不是针对病人的类似CDA标准，就是为了解决此类局限性的)。FHIR文档在内容上没有限制，对象可以是病人之外的其他。 
 
@@ -28,7 +28,7 @@ CDA是HL7应用最广泛的V3标准。它提供了一个标准化的头，头中
 
 5、**标记语言:** CDA为叙述性文本定义了自己的XML语法，基本上是基于XHTML，某种程度上，XHTML比HTML表达能力要强一些。 FHIR使用了XHTML的一个约束集，它比CDA中的标记语言 FHIR makes u表达能力更强。 从FHIR转换成CDA需要考虑这些约束(或者提供一份完整的已渲染过的文档版本)  
 
-#### 1.10.3.2 基于CDA实现互操作性需要考虑的因素  
+#### 1.26.3.2 基于CDA实现互操作性需要考虑的因素  
 
 CDA是V3标准的一种。因此，所有[V3中的注意事项](comparison-v3.html#V3-interoperability)适用于V3消息的也同样适用于CDA。另外，以下的部分只是针对CDA的实现。   
 
@@ -39,5 +39,5 @@ CDA是V3标准的一种。因此，所有[V3中的注意事项](comparison-v3.ht
 3、**叙述性文本与特定元素间的关联:**  为了保证语义上的可追踪性，FHIR和CDA都允许在叙述性文本和文档中可编码部分特定的离散元素组件建立关联。如果FHIR与CDA之间进行转换，也需要转换这些链接。然而，这是很复杂的，事实上，两个标准关联的粒度是不同的。 在CDA中，关联只能存在于章节的层面上或者是一组条目的层面上。对于FHIR，关联可以存在于任何层面上，包括单独的数据类型组件或者甚至是扩展的一部分。从CDA到FHIR的转换是单向的，然而，反向转换总会有信息损耗。  
 
 
-&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
+&copy; HL7.org 2011+. FHIR DSTU (v0.5.0-6346) generated on Tue, Aug 18, 2015 03:54+0000\.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)

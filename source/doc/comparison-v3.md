@@ -8,13 +8,13 @@ categories: doc
 
  [比较](comparison.html) >[V2消息](comparison-v2.html)>**V3消息** > [CDA](comparison-cda.html) > [其他](comparison-other.html) 
 
-###  1.10.2  HL7 Version 3 (and ISO 21090)
+###  1.26.2  HL7 Version 3 (and ISO 21090)
 
 
 HL7 V3 (V3)是新一代的HL7消息标准。它引入了一个通用的参考信息模型RIM，数据类型模型和词汇集合以及一个正式的标准开发方法学。另外，它引入了”文档“，作为消息架构的一种补充来实现卫生保健信息的共享
 (参考 [与CDA的比较](comparison-cda.html)).  尽管名义上涵盖了这些所有内容，但是“V3”这个词一般用来指代 &quot;V3 消息&quot;. 数据类型是V3的基础，已经被ISO采用，也就是ISO21090. HL7 RIM也已经被采纳为ISO标准。  
 很多大型项目中都采用了V3 消息，尤其是在电子健康档案领域，尽管它的市场占有率还是不及HL7 V2.  HL7 RIM 和ISO 21090 数据类型也已经被其他那些没有完全使用V3方法学的SDO和项目采纳。这里所提到的大多数评论和建议也都适用于基于V3的解决方案。   
-#### 1.9.2.1  与V3的异同
+#### 1.26.2.1  与V3的异同
 1、**参考模型:**  HL7 RIM的使用是HL7 V3方法学的核心，也是整个标准和wire format/传输格式的核心。V3实例中的所有数据元素都继承自RIM或者是ISO数据类型。在 FHIR里面, 大多数资源和数据类型元素也是这样，但不尽然。一些资源 ([Profile](../infra/profile.html), [Conformance](../infra/conformance.html), [ValueSet](../infra/valueset.html), etc.) 的内容超出了 RIM的范围.  在很少的一些情况下，FHIR中对那些V3数据类型模型中还不支持的数据类型进行了调整。我们期望在V3数据类型模型的下一个版本会支持这些变更。 FHIR传输格式的主要差异不是因为与RIM的映射。 这样使得实例更加简洁直观，这样就可能导致在完全不了解HL7 RIM情况下也可以实现FHIR.    
 
 2、**编码:**  V3中依赖可编码属性来表达实例的含义。包括classCode、moodCode、determinerCode等。这些属性的允许值受HL7严格管控。FHIR中也有一些属性，其编码受限于FHIR中定义的内容——这些使用 [code](datatypes.html#code) 数据类型. 然而，这些只限于拥有业务含义的属性——   status, contact types等.
@@ -34,7 +34,7 @@ FHIR 选择了不同的方法，在FHIR里面，任何语境都不能传递—�
 
 FHIR以完全不同的方式来处理这个问题。只有大多数系统需要的时候才会在核心标准中引入.  需要的话,只需要约束该元素相关的.Where needed, the flavors are constrained to those relevant to that element.     
 
-####  1.10.2.2   基于V3实现互操作性需要考虑的因素
+####  1.26.2.2   基于V3实现互操作性需要考虑的因素
 
 
 1、**使用 RIM 映射:** 大多数资源元素和数据类型属性包含了与RIM的映射.这些映射有2个目的,它们是用HL7的参考模型来辅助定义FHIR的语义,确保工作组所定义的数据元素能够对其有良好的、一致的理解.同样也能为V3标准的开发人员提供帮助,它们可能会想要迁移或者做V3与FHIR之间的映射.  RIM是一种语言,它能供让同样的想法能够以不同方式、不同表达能力来传输．因此完全有可能一个RIM元素对应到一个FHIR核心元素上，即使它的RIM表达形式与映射中的可能不同 。另外，不是所有V3模型都遵循了良好的建模实践，因此不能良好表示的一些数据元素可能会对应不到FHIR元素上去。因此，RIM映射应看做一个指导，不是绝对的，映射应该针对实际所使用的V3标准。 (同时参见下面的 [抽象模型](#V3-abstractModels) .)
@@ -48,6 +48,6 @@ FHIR以完全不同的方式来处理这个问题。只有大多数系统需要�
 
 5、**额外的考虑因素:**  大多数FHIR与V2之间互操作性要考虑的注意事项适用于FHIR与V3之间。特别是 : [扩展](comparison-v2.html#V2-extensions), [独立 vs. 内嵌资源 resources](comparison-v2.html#V2-contained), [资源标识](comparison-v2.html#V2-identification), [引用和资源的合并](comparison-v2.html#V2-merging) 以及 [生成人可读的内容](comparison-v2.html#V2-humanReadable).
 
-&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
+&copy; HL7.org 2011+. FHIR DSTU (v0.5.0-6346) generated on Tue, Aug 18, 2015 03:54+0000\.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)
 

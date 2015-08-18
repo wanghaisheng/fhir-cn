@@ -1,14 +1,14 @@
 title: 
 date: 
 categories: doc
----		
+---
 
   [首页](../home/index.html) >[文档](documentation.html) > **未来的挑战**	
 
 
-##1.11	附录： 信息学在被动式医疗向主动式医疗转变中的作用 
+## 1.27	附录： 信息学在被动式医疗向主动式医疗转变中的作用 
 
-正值医疗IT技术开始转变医疗卫生领域之时，我们提出了FHIR标准。这部分内容描述了一部分这种转变的原理，进一步说明一下FHIR出现的大背景。  
+正值医疗IT技术开始转变医疗卫生领域之时，我们提出了FHIR标准。这部分内容描述了这种转变的一部分原理，进一步说明一下FHIR出现的大背景。  
 
 正如JohnSnow利用地理位置分析(信息学的一个分支)来确定霍乱在伦敦的病源地，进而在1854年证明了胚种学说，带来了医学革命，信息学的应用和相关技术在下一次的医疗卫生领域的变革中也是很有帮助的.   
 
@@ -48,5 +48,5 @@ categories: doc
 这部分是 [Michael Legg](mailto:michael.legg@mlanda.com.au)在维护。	
 
 
-&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
+&copy;  HL7.org 2011+. FHIR DSTU (v0.5.0-6346) generated on Tue, Aug 18, 2015 03:54+0000. \.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677)

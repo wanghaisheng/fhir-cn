@@ -71,5 +71,5 @@ categories: doc
 **附录**    
 
 *	[与其他HL7标准的对比](comparison.html)   	
-*   [FHIR 与 EHR 的适用性](ehr-fm.html)
+*   [如何在 EHR 中使用 FHIR](ehr-fm.html)
 *	[未来的挑战所带来的变化](change.html)   

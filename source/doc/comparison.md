@@ -8,7 +8,7 @@ categories: doc
 
  **比较**  >[V2消息](comparison-v2.html) >[V3消息](comparison-v3.html) > [CDA](comparison-cda.html) > [其他](comparison-other.html) 
 
-###1.10.0  附录: FHIR与其他HL7标准的关系
+### 1.26.0  附录: FHIR与其他HL7标准的关系
 
 自1987年开始[Health Level Seven (HL7)](http://www.hl7.org) 就一直在开发卫生保健信息交换和相关的一些标准。在这些时间里，该组织已经开发了很多标准系列——很多在全球范围内用以实现卫生保健数据共享的自动化和改善病人的健康。FHIR是在毋须了解任何这些标准的背景下而开发的。然而，FHIR中继承了之前的一些经验，不论是对以往最佳实践的应用还是避免陷入之前的一些坑。   
 这部分介绍了FHIR与HL7其他一些标准系列的关系。之前有过HL7标准相关经验的和那些可能需要实现FHIR解决方案与其他HL7标准互操作性的人可能对此比较感兴趣。  
@@ -27,5 +27,5 @@ categories: doc
 *   FHIR能够满足之前的HL7互操作性标准(V2, V3 和CDA)的所有需求。在很多案例中，它还有易于实现互操作性的优势。因此，未来FHIR可能会逐步替代其中一些或所有标准。然而，至于市场作出这样的转变时间上有多快还不是很明朗。 极有可能的是在很长的一段时间内这些标准将共存。HL7承诺只要HL7会员需要现有的标准，它们就会一直维护下去。
  
 
-&copy; © HL7.org 2011+. FHIR DSTU (v0.5.0-5149) generated on Fri, Apr 3, 2015 14:36+1100\.  
+&copy;HL7.org 2011+. FHIR DSTU (v0.5.0-6346) generated on Tue, Aug 18, 2015 03:54+0000.  
   链接：[试行版是什么](http://hl7.org/implement/standards/fhir/dstu.html) |[版本更新情况](http://hl7.org/implement/standards/fhir/history.html) | [许可协议](http://hl7.org/implement/standards/fhir/license.html) |[提交变更建议](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) 		

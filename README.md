@@ -43,6 +43,10 @@ hexo server
 | HL7 FHIR 入门指南 | http://wanghaisheng.github.io/fhir-cn/doc/overview.html | http://hl7-fhir.github.io/overview.html | [x] |2015-08-17 |
 | HL7 FHIR 开发人员入门指南 | http://wanghaisheng.github.io/fhir-cn/doc/overview-dev.html | http://hl7-fhir.github.io/overview-dev.html | [x] |2015-08-17 |
 | HL7 FHIR 医护人员入门指南 | http://wanghaisheng.github.io/fhir-cn/doc/overview-clinical.html | http://hl7-fhir.github.io/overview-clinical.html | [x] |2015-08-17 |
+| HL7 FHIR 信息学在被动式医疗向主动式医疗转变中的作用 | http://wanghaisheng.github.io/fhir-cn/doc/change.html |  http://hl7-fhir.github.io/change.html | [x] |2015-08-18 |
+| HL7 FHIR与其他HL7标准的关系| http://wanghaisheng.github.io/fhir-cn/doc/comparison.html |  http://hl7-fhir.github.io/comparison.html | [x] |2015-08-18 |
+| HL7 FHIR与EHR功能模型对应表 | http://wanghaisheng.github.io/fhir-cn/doc/ehr-fm.html |  http://hl7-fhir.github.io/ehr-fm.html | [x] |2015-08-18 |
+
 
 
 

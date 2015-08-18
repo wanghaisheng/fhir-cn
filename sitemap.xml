@@ -2,6 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/documentation.html</loc>
+    <lastmod>2015-08-18T05:07:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/ehr-fm.html</loc>
+    <lastmod>2015-08-18T05:07:11.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/change.html</loc>
+    <lastmod>2015-08-18T05:02:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-other.html</loc>
+    <lastmod>2015-08-18T05:00:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-cda.html</loc>
+    <lastmod>2015-08-18T04:59:59.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-v3.html</loc>
+    <lastmod>2015-08-18T04:59:04.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-v2.html</loc>
+    <lastmod>2015-08-18T04:57:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison.html</loc>
+    <lastmod>2015-08-18T04:55:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/summary.html</loc>
     <lastmod>2015-08-17T07:52:58.000Z</lastmod>
   </url>
@@ -22,47 +62,7 @@
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/documentation.html</loc>
-    <lastmod>2015-08-17T04:40:10.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/resource-examples.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/conformance.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/conceptmap.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/bundle.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/binary.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/usecases.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/support.html</loc>
-    <lastmod>2015-08-17T02:13:01.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/services.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
@@ -302,7 +302,7 @@
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/ehr-fm.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/infrastructure.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/infrastructure.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/conformance.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
@@ -357,27 +357,27 @@
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/conceptmap.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-v3.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/bundle.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-v2.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/infra/binary.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-other.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/usecases.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/comparison-cda.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/support.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   
@@ -387,7 +387,7 @@
   </url>
   
   <url>
-    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/doc/change.html</loc>
+    <loc>http://wanghaisheng.github.io/fhir-cn/home/index.html/impl/services.html</loc>
     <lastmod>2015-08-17T02:13:01.000Z</lastmod>
   </url>
   

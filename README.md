@@ -1,4 +1,8 @@
 fhir-cn
+
+just check new update version https://github.com/FHIR-CN/fhir-spec-ZhCN
+
+
 =======
 
 FHIR中文版    
